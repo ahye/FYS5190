@@ -1,0 +1,523 @@
+% Standalone document
+\documentclass[notes.tex]{subfiles}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{The Poincar\'{e} algebra and its extensions}
+\label{chap:poincare}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We now take a look at the symmetry groups behind Special Relativity (SR), the Lorentz and Poincar\'{e} groups. We will first see what sort of states transform properly under SR, which has surprising connections to already familiar physics. We will then look for ways to extend these external symmetries of the coordinates to internal symmetries of quantum fields, {\it i.e.}\ the symmetries of gauge groups.
+
+
+%%%%%%%%%%%%%%
+\section{The Lorentz Group}
+%%%%%%%%%%%%%%
+Einstein's requirement in Special Relativity was that the laws of physics should be invariant under rotations and/or boosts (changes of velocity) between different inertial reference frames. A point in the Minkowski space-time manifold $\mathbb{M}_4$ is given by a four-vector $x^\mu = (t,x,y,z)$. The resulting allowed transformations of the space-time coordinates are captured in the Lorentz group.
+\df{The {\bf Lorentz group} is the group of linear transformations $x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu$ such that $x^2 \equiv x_\mu x^\mu = x'_\mu x'{}^{\mu}$ is invariant. The {\bf proper orthochronous} or {\bf restricted Lorentz group} is a subgroup of the Lorentz group where $\det \Lambda = 1$  ({\bf proper}) and $\Lambda^0{}_0 \geq 1$({\bf orthochronous}).
+}
+The physical interpretation of the orthochronous property is that it keeps the direction (sign) of time of the four vector, while a proper group preserves orientation in rotations.
+
+Since the definition of the Lorentz group effectively gives a composition function we can easily conclude that it is a Lie group. In fact, if we allow for a slight extension of the orthogonal group $O(n)$ to the {\bf indefinite orthogonal group} $O(m,n)$, where instead of the orthogonality property for group members $O$, $O^{-1}=O^T$, we demand $O^{-1}=g^{-1}O^Tg$ where
+\[g=\text{diag}(\underbrace{1,\ldots,1}_n,\underbrace{-1,\ldots,-1}_m),\] is the ``metric'',\footnote{Indeed, we can recognise this matrix relationship as one of the defining (necessary) properties of Lorentz transformations $\Lambda^Tg\Lambda=g$.} then we can write the Lorentz group as $SO^+(1,3)$, where the plus sign signifies the orthochronous property. The counting of the free parameters of $SO(n,m)$ works just as for $SO(n)$, giving a total of six free parameters for  $SO^+(1,3)$. Physically, we can identify these with the three parameters needed to specify a general rotation in three dimensions, and the three parameters needed to specify a boost (the velocity components).
+
+Since the rotation operations are closed, {\it i.e.}\ two rotations result in another rotation, one can prove that this forms a subgroup of $SO^+(1,3)$. We have earlier claimed that the generators of $SO(3)$ (rotations in three dimensions) are identical to the generators of $SU(2)$. This now allows us to identify three of the generators of $SO^+(1,3)$ as the $J_i$ that fulfil the $su(2)$ algebra
+\begin{equation}
+[J_i,J_j]=i\epsilon_{ijk}J_k.\label{eq:Jalgebra}
+\end{equation}
+The boost operations are not closed, and one can show that their generators $K_i$ (exercises) have the following relationships with the rotation generators
+\begin{eqnarray}
+\left[K_j,J_i\right] &=& i \epsilon_{ijk}K_k,\\
+\left[K_i, K_j\right] &=& -i \epsilon_{ijk}J_k.\label{eq:Kalgebra}
+\end{eqnarray}
+where (\ref{eq:Jalgebra}) and (\ref{eq:Kalgebra}) then defines the complete algebra of $SO^+(1,3)$.
+
+To simplify notation these generators can further be structured into a matrix $M$ given by
+\[M = \begin{bmatrix}0 & -K_1 & -K_2 & -K_3\\ K_1 & 0 & J_3 & -J_2\\ K_2 & -J_3 & 0 & J_1 \\ K_3 & J_2 & - J_1 & 0\end{bmatrix}.\]
+In terms of $M$ the commutation relations (\ref{eq:Jalgebra}) and (\ref{eq:Kalgebra})  can be written:
+\begin{equation}\label{eq:poco1}
+[M_\mu{}_\nu, M_\rho{}_\sigma] = -i(g_{\mu\rho}M_{\nu\sigma} - g_{\mu\sigma}M_{\nu\rho} - g_{\nu\rho}M_{\mu\sigma} + g_{\nu\sigma}M_{\mu\rho}).
+\end{equation}
+
+From the discussion in Sec.~\ref{sec:lie_algebras} and here, any $\Lambda \in SO^+(1,3)$ can now be written as
+\begin{equation}
+\Lambda^\mu{}_\nu = \left[\exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}\right)\right]^\mu{}_\nu,
+\end{equation}
+where $\omega_{\rho\sigma} = -\omega_{\sigma \rho}$ are the six free parameters of the transformation and $M_{\rho \sigma}$ are the generators of the group $SO(1,3)$ and form the basis of the Lie algebra for $O(1,3)$. In fact, this is also the algebra of $O(1,3)$ since the orthochronous and proper requirements do not change the number of free parameters, but rather restricts us to a subset of the matrices. This also nicely illustrates the local property of the exponential map: using these generators we can in fact not get outside of the $SO^+(1,3)$ subgroup of $O(1,3)$. The larger group $O(1,3)$ can be seen as four connected components with $\det\Lambda\pm1$ and $|\Lambda^0{}_0| \geq1$ that are joined by the time $T$ and parity $P$ inversion operators.
+
+
+
+%%%%%%%%%%%%%%%%%
+\section{The Poincaré group}
+%%%%%%%%%%%%%%%%%
+We can now extend $O(1,3)$ by adding translation by a constant four-vector $a^\mu$ to the transformation of the Lorentz group:  $x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu + a^\mu$. This transformation leaves lengths $(x-y)^2$ invariant in $\mathbb{M}_4$.
+\df{The {\bf Poincaré group} is the group of all transformations of the form
+\[x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu + a^\mu.\]
+We can also construct the {\bf restricted Poincaré group} by restricting the matrices $\Lambda$ in the same way as in $SO^+(1,3)$.}
+
+Writing a group member in terms of its parameters $(\Lambda, a)$, we can see  from the explicit form of the transformation that the composition of two elements in this group is:
+\[(\Lambda_1, a_1)\circ(\Lambda_2, a_2) = (\Lambda_1\Lambda_2, \Lambda_1a_2 + a_1).\]
+This tells us that the Poincar\'{e} group is {\it not} a direct product of the Lorentz group and the translation group, but rather a {\it semi-direct product} of $O(1,3)$ and the (indefinite) translation group $T(1,3)$, $O(1,3) \ltimes T(1,3)$. The translation group is a normal subgroup, and while the Lorentz group is a subgroup, it is not normal. The restricted Poincaré group is written in the same way as $SO^+(1,3) \ltimes T(1,3)$.
+
+The translation part of the Poincaré group adds four parameters to the six parameters of the rotations and boosts. This means that there are four more generators compared to the Lorentz group. Given our earlier discussion of the translation group in Sec.~\ref{sec:expmap} we can convince ourselves that we can use the momentum operators $P_\mu=-i\partial_\mu$. These generators have a trivial commutation relationship:
+%\footnote{This means that the translation group in Minkowski space is abelian. This is obvious, since $x^\mu + y^\mu = y^\mu + x^\mu$.}
+\begin{equation}\label{eq:poco2}
+[P_\mu, P_\nu] = 0.
+\end{equation}
+Finally, one can show the following commutators with the generators of the Lorentz group:\footnote{For a rigorous derivation of this see Chapter 1.2 of \cite{IntrSUSY2010}. The proof is constructed by looking at the infinitesimal action of the generators.}
+\begin{equation}
+[M_\mu{}_\nu, P_\rho] = -i(g_\mu{}_\rho P_\nu - g_{\nu \rho} P_\mu).
+\label{eq:poco3}
+\end{equation}
+
+Equations (\ref{eq:poco1}), (\ref{eq:poco2}) and (\ref{eq:poco3}) together form the {\bf Poincaré algebra}, a Lie algebra. This allows us to write a general member $g$ of the restricted Poincaré group by using the exponential map 
+\begin{equation}
+g=\exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}+ia^\mu P_\mu\right),
+\end{equation}
+where $a^\mu$ are the additional parameters of the translation. 
+%We would like to issue a warning here that the factorisation of the exponential is highly non-trivial. Since the exponent consists of non-commuting operators we can not rely on the usual properties of the exponential function. We need to use the {\bf Baker–Campbell–Hausdorff formula}
+%\begin{equation}
+%e^Xe^Y=\exp(X+Y+\frac{1}{2}[X,Y]+\frac{1}{12}[X,[X,Y]]-)
+%\end{equation}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Irreducible representations of the Poincaré group}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We would now like to ask the question: what sort of particles, or, if you like, quantum fields, can exist if we require that they are representations of the Poincaré group?\footnote{In the sense of being described by a vector space that the group representations act on.}
+
+To answer that question we will need to classify all the irreducible representations of the Poincaré group. This seems like a dramatically difficult task, however, we can now use Schur's lemma that we saw in Sec.~\ref{sec:irreps}. To do this we need to find the {\bf Casimir operators} of the algebra.
+
+\df{The {\bf Casimir operators} of a Lie algebra are the elements that commute with all other elements of the algebra
+%\footnote{Technically we say they are members of the centre of the universal enveloping algebra of the Lie algebra. Whatever that means.}
+}
+From Schur's lemma the Casimir operators should then be proportional to the identity for irreducible representations, and, most importantly, the constants of proportionality classify the irrep.
+
+Let us take an example to demonstrate how this works. We saw earlier that $SO(3)$ and $SU(2)$ had the same algebra, with three members that we can generically write as $J_i$. We can show that $J^2=J_1^2+J_2^2+J_3^2$ is a Casimir invariant of this algebra, meaning that in a given representation, we can write $J^2=\lambda I$, where $\lambda$ is this constant and $I$ is the identity matrix. It may not surprise you to find out that the constant is $\lambda=\ell(\ell+1)$, where $\ell$ can take half-integer values, meaning that we have the relationship $J^2=\ell(\ell+1) I$ that is familiar from quantum mechanics. We can now go back and test this, checking the relationship for the Pauli matrices and the $J_i$ matrices in (\ref{eq:SO3_generators}). We will find that if $J_i=\frac{1}{2}\sigma_i$, where $\sigma_i$ are the Pauli matrices, $J^2=\frac{3}{4}$, corresponding to $\ell=\frac{1}{2}$, and for the $J_i$ matrices, $\ell=1$. The point here is that $\ell$ labels the representation, here the spin-$\frac{1}{2}$ and spin-1 representations.
+
+We can now use the constants of proportionality  to classify the (irreducible) representations of our Lie algebra (and group). For the Poincaré algebra $P^2 = P_\mu P^\mu$ is a Casimir operator because the following holds:
+\begin{eqnarray}
+\left[P_\mu, P^2\right] &=& 0,\\
+\left[M_\mu{}_{\nu}, P^2\right]& =& 0.
+\end{eqnarray}
+This allows us to label the irreducible representation of the Poincar\'{e} group with a quantum number that we will (randomly, or maybe not) name $m^2\in\mathbb R$, writing a corresponding state in the vector space as $|m\rangle$, such that:\footnote{Note that in general $m^2$ is not restricted to be larger than zero.}
+\[P^2|m\rangle = m^2 |m\rangle.\]
+
+If we go to the rest frame of a particle the state has eigenvalues $(m, \vec{0})$ for the operator $P_\mu$, where $m$ is the mass (rest energy) of the particle.\footnote{This does not loose generality since physics should be independent of frame, however, this argument needs to be modified somewhat for massless particles.} This demonstrates that the label $m^2$ can indeed be interpreted as the (square) of the mass,
+
+The number of Casimir operators is equal to the {\bf rank} of the algebra, {\it e.g.}\ the rank of $su(n)$ is $n-1$. It turns out that the Poincare algebra has rank 2, and thus two Casimir operators. To demonstrate this is rather involved, and we will not make an attempt here, but note that it can be shown that $SO^+(1,3)$ is homomorphic  to $SU(2)\times SU(2)$, because of the structure of the boost and rotation generators, where the algebra of each $SU(2)$ has rank 1.
+%Furthermore, $L^\uparrow_+ \cong SL(2, \mathbb{C})$. We will return to this relationship between $L^\uparrow_+$ and $SL(2, \mathbb{C})$ in Section~\ref{sec:weyl}, where we use it to reformulate the algebras we work with in supersymmetry.
+
+So, what is the second Casimir of the Poincaré algebra?
+\df{We define the {\bf Pauli-Ljubanski polarisation vector} by:
+\begin{equation}
+W_\mu \equiv \frac{1}{2} \epsilon_\mu{}_ \nu{}_\rho{}_\sigma P^\nu M^{\rho\sigma}.
+\end{equation}
+where $ \epsilon_\mu{}_ \nu{}_\rho{}_\sigma$ is the totally antisymmetric Levi-Civita tensor with $ \epsilon_{0123}=1$.}
+We can show that this vector is translation invariant, {\it i.e.}\ that it commutes with the translation operator,
+\begin{equation}
+[P_\mu, W_\nu]=0.
+\label{eq:PW_commutator}
+\end{equation}
+Then $W^2 = W_\mu W^\mu$ is a Casimir operator of the Poincaré algebra since we can show that
+\begin{eqnarray}
+\left[P_\mu, W^2\right] &=& 0.\\
+\left[M_\mu{}_\nu, W^2\right] &=& 0,
+\end{eqnarray}
+Note that the second of these relationships is not trivial to demonstrate. See \cite{IntrSUSY2010} for a complete proof.
+
+If we again look at the situation in the rest frame we can write 
+\begin{equation}W_i = \frac{1}{2} \epsilon_{i 0 jk}m M^{jk} = mS_i,
+\label{eq:PL_restframe}
+\end{equation}
+where $S_i = \frac{1}{2} \epsilon_{ijk} M^{jk}$ is the {\bf spin operator}. \footnote{Observe that this discussion is problematic for massless particles. However, it is possible to find a similar relation for massless particles, when we chose a frame where the momentum of the particle is in a single direction.}
+By showing that $WP=0$ we also have $W_0 = 0$ in this reference frame. This gives $W^2 = -\mathbf W^2 = -m^2\mathbf S^2$. Since the spin operator acts on a state with spin $s$ as $\mathbf S^2| s\rangle=s(s+1)| s\rangle$, we have that
+\[W^2|m,s\rangle = -m^2 s(s+1)|m,s\rangle.\]
+In addition this, also leads to the immediate conclusion that for each irrep with spin $s$ there are $2s+1$ {\it states} with spin component $s_3=0,\frac{1}{2},1,\frac{3}{2},\ldots$.
+
+The conclusion of this subsection is that anything transforming under the Poincaré group, meaning the objects considered by special relativity, can be classified by two quantum numbers: mass $m^2$ and spin $s$.
+
+What do these (irreducible) representations then look like? If we start with spin-0 representations, $s=0$, we can write the corresponding states without any vector structure as $|m,0\rangle\sim e^{\pm ipx}$, where $p_\mu$ is the four-momentum of the particle, since $P^2|m,0\rangle=-\partial_\mu\partial^\mu|m,0\rangle\sim p^2|m,0\rangle=m^2|m,0\rangle$. This exponential part of states can then always be used to take care of the eigenvalues of the $P^2$-Casimir, and is often just implicitly implied in the states/fields.
+
+We can also immediately write down the $s=1$ vector representation of the Poincaré group, $|m,1\rangle\sim\epsilon_\mu e^{ipx}$. We simply use a four-vector $\epsilon_\mu$ that transforms under the fundamental (four-dimensional) representation of the Lorentz group $SO^+(1,3)$. In order to fulfil the eigenvalue equation of the $W^2$-Casimir, and describe the three spin states $s_3=-1,0,1$, this vector (called the polarisation vector) needs to fulfil certain requirements which we do not detail here (see a course on quantum field theory).
+
+However, to find a spin-$\frac{1}{2}$ representation we need to take some more care. 
+In fact, we will find representations both in four and two dimensions. For those familiar with quantum field theory, these will as expected be the Dirac and Weyl spinor representations.
+
+
+
+%%%%%%%%%%%%
+\section{Weyl spinors}
+\label{sec:weyl}
+%%%%%%%%%%%%
+Interestingly, there exists a homomorphism between the groups $SO^+(1,3)$ and $SL(2, \mathbb{C})$. This homomorphism, with $\Lambda^\mu{}_\nu \in SO^+(1,3)$ and $M \in SL(2, \mathbb{C})$, can be explicitly given by:\footnote{The choice of sign in Eq.~(\ref{eq:MofLambda}) is the reason that this is a homomorphism, instead of an isomorphism. Each element in  $SO^+(1,3)$ can be assigned to two in $SL(2, \mathbb{C})$.}
+\begin{eqnarray}
+\Lambda^\mu{}_\nu(M) &=& \frac{1}{2}{\rm Tr}[\bar{\sigma}^\mu M \sigma_\nu M^\dagger],\label{eq:LambdaofM}\\
+M(\Lambda^\mu{}_\nu) &=& \pm \frac{1}{\sqrt{\det(\Lambda^\mu{}_\nu \sigma_\mu \bar{\sigma}^\nu)}}\Lambda^\mu{}_\nu \sigma_\mu \bar{\sigma}^\nu,\label{eq:MofLambda}
+\end{eqnarray}
+where $\bar{\sigma}^\mu = (1, -\vec{\sigma})$ and $\sigma^\mu = (1, \vec{\sigma})$. 
+
+This two-to-one correspondence means that $SO^+(1,3) \cong SL(2, \mathbb{C})/\mathbb{Z}_2$. Thus we can look at the representations of $SL(2, \mathbb{C})$ instead of the  Lorentz group, when we describe particles, but what are those representations? It turns out that there exist two inequivalent fundamental representations $\rho$ of $SL(2, \mathbb{C})$:
+\begin{enumerate}[i)]
+\item The self-representation $\rho(M) = M$ acting on an element $\psi$ of a representation vector space $V$:
+\[\psi'_A = M_A{}^B\psi_B,  \quad A, B = 1,2.\]
+\item The complex conjugate self-representation $\rho(M) = M^*$ working on a vector $\bar{\psi}$ in a space $\dot V$:
+\[\bar{\psi}'_{\dot{A}} = (M^*)_{\dot{A}}{}^{\dot{B}}\bar{\psi}_{\dot{B}}, \quad  \dot{A}, \dot{B} = 1,2.\]
+\end{enumerate}
+The vectors $\psi$ and $\bar{\psi}$ in these representation spaces are called, respectively, {\bf left- and right-handed Weyl spinors}. 
+
+The indices here follow the same summation rules as four-vectors. Indices can be lowered and raised with:
+\begin{eqnarray}
+\epsilon_{AB} &=& \epsilon_{\dot A \dot B} = \begin{pmatrix} 0 & -1\\ 1 & 0\end{pmatrix}, \label{eq:epsilonAB} \\
+\epsilon^{AB} &=& \epsilon^{\dot{A}}{}^{\dot{B}} = \begin{pmatrix} 0 & 1\\ -1 & 0\end{pmatrix}.\label{eq:epsilonAdotBdot}
+\end{eqnarray}
+The dots on the indices for the complex conjugate representation are there to help us remember which representation we are using and does not carry any additional importance. 
+Since (\ref{eq:MofLambda}) gives $M$ in terms of the Pauli matrices, their index structure must be $\bar{\sigma^\mu}^{\dot{A}A}$ and $\sigma^\mu_{A\dot{A}}$. 
+For a consistent index notation, the relationship between the vectors $\psi$ and $\bar{\psi}$ can be expressed with:
+\[\bar{\sigma^0}^{\dot{A}A}(\psi_A)^* = \bar{\psi}^{\dot{A}}.\]
+This may be seen as a bit of an overkill in indices as $\bar{\sigma^0}^{\dot{A}A} = \delta^{\dot{A}A}$, and we will in the following often omit the matrix and simply write $(\psi_A)^* = \bar{\psi}^{\dot{A}}$.
+Note that from the above the following relationships hold for the hermitian conjugate:
+\[(\psi_A)^\dagger = \bar{\psi}_{\dot{A}}\]
+\[(\bar{\psi}_{\dot{A}})^\dagger = \psi_A.\]
+
+We further define contractions of Weyl spinors that are invariant under $SL(2,\mathbb{C})$ transformations -- just as  contractions of four-vectors are invariant under Lorentz transformations -- as follows:
+\df{The contraction of two Weyl spinors is given by $\psi\chi \equiv \psi ^A \chi_A$ and $\bar{\psi}\bar{\chi} \equiv \bar{\psi}_{\dot{A}}\bar{\chi}^{\dot{A}}$.}
+With this in hand we see that 
+\[\psi^2 \equiv \psi \psi = \psi^A\psi_A = \epsilon^{AB}\psi_B\psi_A = \epsilon^{12}\psi_2\psi_1 + \epsilon^{21}\psi_1\psi_2 = \psi_2\psi_1 - \psi_1\psi_2.\]
+This quantity is zero if the Weyl spinors commute. In order to avoid this we make the following assumption which is consistent with how we treat fermions as anti-commuting operators:
+\post{All Weyl spinors anticommute:\footnote{This means that Weyl spinors are so-called {\bf Grassmann numbers}.}
+ $\{\psi_A ,\psi_B\} = \{\bar{\psi}_{\dot{A}}, \bar{\psi}_{\dot{B}}\} = \{\psi_A, \bar{\psi}_{\dot{B}}\} = \{\bar{\psi}_{\dot{A}}, \psi_B\} = 0$.}
+This means that the contraction evaluates as
+\[\psi^2 \equiv \psi \psi = \psi^A\psi_A = -2 \psi_1\psi_2.\]
+
+Because of (\ref{eq:MofLambda}) we can now find how the Lorentz part of the Poincare group acts on the Weyl spinors, and can use this to show that they fulfil the requirements of the spin-$\frac{1}{2}$ representation of the Poincaré group. In the rest frame of a particle, this is relatively straight forward since the spin operators $S_i$ in (\ref{eq:PL_restframe}) in the fundamental representation of $SL(2,\mathbb{C})$ can be written in terms of the Pauli matrices $\sigma_i$ as $S_i=\frac{1}{2}\sigma_i$, and we already know that $\sigma^2=3I$, so $S^2=\frac{3}{4}I$, which corresponds to $s=\frac{1}{2}$.
+
+The Weyl spinors can in turn be used in a four-dimensional representation of the Poincaré group, stacking two Weyl spinors into a four-component Dirac spinor $\psi_a$:
+\begin{equation*}
+\psi_a = \begin{pmatrix}\psi_A\\ \bar{\chi}^{\dot{A}}\end{pmatrix}.
+\end{equation*}
+Here, we have in general $(\psi_A)^* \neq \bar{\chi}^{\dot{A}}$. In order to describe a Dirac fermion, which has both particle and antiparticle states, with this Dirac spinor we need two distinct Weyl spinors with different handednesses. For Majorana fermions that are their own antiparticles we have:
+\[\psi_a = \begin{pmatrix} \psi_A \\ \bar{\psi}^{\dot{A}}\end{pmatrix}.\]
+
+
+%%%
+\subsection{Useful relationships for Weyl spinors}
+\label{sec:Weylspinor_calc}
+%%%
+For Weyl spinors $\psi$, $\eta$, and $\phi$ we can prove the following relationships\footnote{For clarity we have inserted parenthesis to show the different contractions.} 
+\begin{eqnarray}
+\eta\psi 				&=& \psi\eta,  \label{eq:Weylspinor_etapsi}  \\
+\bar\eta\bar\psi 			&=& \bar\psi\bar\eta,  \\
+(\eta\psi)^\dagger 		&=& \bar\psi\bar\eta,  \\
+(\eta\psi)(\eta\phi) 		&=& \frac{1}{2}(\eta\eta)(\psi\phi) \label{eq:Weylspinor_etapsietapsi}  \\
+\eta\sigma^\mu\bar\psi 	&=& - \bar\psi\bar\sigma^\mu\eta,  \label{eq:Weylspinor_etasigmapsi} \\
+(\sigma^\mu \bar{\eta})_A(\eta\sigma^\nu \bar{\eta})&=&\frac{1}{2}g^{\mu\nu}\eta_A(\bar{\eta}\bar{\eta}), \label{eq:Weylspinor_sigmaetaetasigmaeta}\\
+(\eta\sigma^\mu \bar{\eta})(\eta\sigma^\nu \bar{\eta})&=&\frac{1}{2}g^{\mu\nu}(\eta\eta)(\bar{\eta}\bar{\eta}),   \label{eq:Weylspinor_etasigmamuetaetasigmanueta} \\
+(\eta\sigma^\mu\partial_\mu \bar\psi )(\eta\psi) &=& -\frac{1}{2}(\psi\sigma^\mu\partial_\mu \bar\psi)(\eta\eta),\\
+(\partial_\mu\psi\sigma^\mu \bar\eta)(\bar\eta\bar\psi) &=& -\frac{1}{2}(\partial_\mu\psi\sigma^\mu \bar\psi)(\bar\eta\bar\eta). \label{eq:Weylspinor_last} \\
+\eta\sigma^{\mu\nu}\psi	&=&-\psi\sigma^{\mu\nu}\eta   \label{eq:Weylspinor_etasigmamunupsi} 
+\end{eqnarray}
+Here $\sigma^{\mu\nu} = \frac{i}{4}(\sigma^\mu \bar{\sigma}^\nu - \sigma^\nu \bar{\sigma}^\mu)$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The no-go theorem and graded Lie algebras}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+The Poincaré group contains the complete set of transformations for the symmetries of special relativity (invariance under rotations, translations and boosts), and we have seen that this implies certain properties for the particles, or rather fields, that want to live in representations of the Poincaré group. At the same time we know that the quantum fields have (internal) gauge symmetries. It would then be tempting so ask if these are somehow related and can be described in a larger symmetry.
+
+Unfortunately, the answer to that question is `no', at least as long as we keep to describing our symmetries using Lie algebras. In 1967 Coleman and Mandula~\cite{Coleman:1967ad} showed that under reasonable assumptions any extension of the restricted Pointcaré group $P$ to include gauge symmetries is isomorphic to $G_\text{gauge}\times P$. A direct product like this means that the generators of the two groups all commute, meaning that the generators $B_i$ of the standard model gauge groups all have
+\[[P_\mu, B_i] = [M_\mu{}_\nu, B_i] = 0.\]
+The result is that there can be no real interaction between the external and internal symmetries.
+
+Not to be defeated by a simple mathematical proof, in 1975 Haag, \L opusza\'{n}ski and Sohnius (HLS)~\cite{Haag:1974qh} showed that there is a way around Coleman and Mandula's no-go theorem, if one introduces the concept of $\mathbb{Z}_2$ {\bf graded Lie superalgebras}.\footnote{The definition of graded Lie algebras can be extended to $\mathbb{Z}_n$ by a direct sum over $n$ vector spaces $L_i$, $L = \oplus_{i=0}^{n-1} L_i$, such that $x_i\circ x_j$ $\in$ $L_{i+j\mod{n}}$, with the same requirements for supersymmetrization and Jacobi identity as for the $\mathbb{Z}_2$ graded algebra.}
+
+\df{A {\bf graded Lie superalgebra} is a vector space $L$ that is a direct sum of two vector spaces $L_0$ and $L_1$, $L = L_0 \oplus L_1$, with a binary operation $\circ: L\times L \to L$ such that for $\forall x_i \in L_i$ 
+\begin{enumerate}[i)]
+\item $x_i\circ x_j$ $\in$ $L_{i+j\mod{2}}$ (grading)\footnote{For $x_0 \in  L_0$ and $x_1\in  L_1$, this means that $x_0 \circ x_0 \in  L_0$, $x_1 \circ x_1 \in  L_0$ and $x_0 \circ x_1 \in  L_1$.}
+\item $x_i\circ x_j = -(-1)^{ij}x_j\circ x_i$ (supersymmetrization)
+\item $x_i \circ(x_j \circ x_k)(-1)^{ik} + x_j\circ (x_k \circ x_i)(-1)^{ji} + x_k\circ (x_i \circ x_j)(-1)^{kj} = 0$ \\(generalised Jacobi identity)
+\end{enumerate}
+}
+The second requirement  generalises the definition of a Lie algebra in Sec.~\ref{sec:lie_algebras} to allow for anti-commutators, $x\circ y = \{x,y\}\equiv xy+yx$, as the binary operation for elements in  $L_1$. 
+
+We can now start, following HLS, with the Poincaré Lie algebra ($L_0 = P$) and add a new vector space $L_1$ spanned by some generators $Q_a$. It can be shown that the superalgebra requirements are fulfilled if there are four generators, $a=1,2,3,4$, that together form a four-component Majorana spinor, also called the {\bf supercharges}. The algebra is then
+\begin{eqnarray}
+\left[Q_a, P_\mu\right] &=& 0  \label{eq:QP} \\
+\left[Q_a, M_\mu{}_\nu\right] &=& (\sigma_{\mu}{}_\nu Q)_a \label{eq:QM}\\
+\{Q_a, \bar{Q}_b\} &=& 2 \slashed{P}_{ab},\label{eq:QQ}
+\end{eqnarray}
+where $\sigma_{\mu\nu}$ is given in terms of the $\gamma$-matrices, $\sigma_{\mu\nu} = \frac{i}{4}[\gamma_\mu, \gamma_\nu]$, and as usual $\slashed{P}=P_\mu\gamma^\mu$ and $\bar{Q}_a = (Q^\dagger \gamma_0)_a$.\footnote{Alternatively, (\ref{eq:QQ}) can be written as $\{Q_a, Q_b\} = -2(\gamma^\mu C)_{ab}P_\mu$.}
+Together with the commutators in (\ref{eq:poco1}), (\ref{eq:poco2}) and (\ref{eq:poco3}) this is called the {\bf super-Poincaré algebra}.
+
+Because of (\ref{eq:QM}) this new algebra is a non-trivial extension of the Poincaré algebra that avoids the no-go theorem. However, in the $Q_a$ we have introduced new operators that (disappointingly) do not correspond to the generators of the gauge groups (which should be related by commutators, not anti-commutators). The gauge group generators {\it can} appear in the algebra if we extend the algebra with a set of $N>1$ new spinors $Q_a^\alpha$, where $\alpha = 1,\ldots,N$. This gives rise to so-called $N>1$ supersymmetries.\footnote{Given a gauge group algebra $[B_i,B_j]=iC_{ij}^kB_k$, we can extended the $N=1$ superalgebra by  the non-trivial commutator $[Q_a^\alpha,B_l]=iS_l^{\alpha\beta}Q_a^\beta$, where $S_l$ are matrix representations of the gauge symmetry group. }
+However, this seems impossible to realise in nature at energies accessible in experiments due to an extensive number of extra particles.\footnote{Note that $N>8$ would also include elementary particles with spin greater than 2, which seems to be in contradiction with quantum field theory.} This extension, including the potential for $N>1$, can be proven, under some reasonable assumptions, to be the {\it largest possible} extension of the symmetries of special relativity.
+
+
+We can also write the super-Poincaré algebra in terms of the Weyl spinors introduced in Sec.~\ref{sec:weyl}. With 
+\begin{equation}
+Q_a=\begin{pmatrix} Q_A\\ \bar{Q}^{\dot{A}} \end{pmatrix},
+\end{equation}
+for the Majorana spinor charges, we have instead
+\begin{eqnarray}
+\left[Q_A, P_\mu\right] &=& [\bar{Q}_{\dot{A}}, P_\mu] = 0, \label{eq:QPweyl}\\
+\left[Q_A, M^{\mu \nu}\right] &=& \sigma^{\mu\nu}_A{}^B Q_B,  \label{eq:QMweyl}\\
+\{Q_A, Q_B\} &=& \{\bar{Q}_{\dot{A}}, \bar{Q}_{\dot{B}}\} = 0,\label{eq:QQweyl}\\
+\{Q_A, \bar{Q}_{\dot{B}}\} &=& 2\sigma^\mu_{A\dot{B}}P_\mu, \label{eq:QQbarweyl}
+\end{eqnarray}
+where now the  $\sigma^{\mu\nu}$ are given in terms of the Pauli matrices $\sigma^{\mu\nu} = \frac{i}{4}(\sigma^\mu \bar{\sigma}^\nu - \sigma^\nu \bar{\sigma}^\mu)$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Casimir operators of the super-Poincaré algebra}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+It is easy to see that $P^2$ is also a Casimir operator of the superalgebra. From Eq.~(\ref{eq:QP}) $P_\mu$ commutes with the $Q$s, so in turn $P^2$ must commute.\footnote{Although the fact that Eq.~(\ref{eq:QP}) holds crucially depends on $Q_a$ being four-dimensional. $P_\mu$ and $Q_a$ would not commute if there had been five $Q$s.} However, $W^2$ is not a Casimir because of the following result:\footnote{Which, by the way, is really hard work!}
+\[[W^2, Q_a] = W_\mu(\slashed{P}\gamma^\mu \gamma^5 Q)_a + \frac{3}{4}P^2 Q_a.\]
+
+We want to find an extension of $W$ that commutes with the $Q$s while retaining the commutators we already have. The construction
+\[C_\mu{}_\nu \equiv B_\mu P_\nu - B_\nu P_\mu,\]
+where
+\[B_\mu \equiv W_\mu + \frac{1}{4} X_\mu,\]
+and with
+\[X_\mu \equiv \frac{1}{2} \bar{Q}\gamma_\mu \gamma^5 Q,\]
+has the required relation:
+\[[C_\mu{}_\nu, Q_a] = 0.\]
+Note that we also have 
+\begin{equation}
+[X_\mu,P_\nu]=0.
+\label{eq:XP_commutator}
+\end{equation}
+
+We can show that $C^2$ then indeed commutes with all the generators in the algebra:
+\begin{eqnarray*}
+[C^2, Q_a] &=& 0, \quad\text{(trivial)}\\
+{}[C^2, P_\mu] &=& 0, \quad\text{(proof by excessive algebra)}\\
+{}[C^2, M_\mu{}_\nu] &=& 0. \quad\text{(because $C^2$ is a Lorentz scalar)}
+\end{eqnarray*}
+Thus $C^2$ is a Casimir operator for the superalgebra.
+
+As was the case for the original Poincaré group, states are labeled by $m$, where $m^2$ is the eigenvalue of $P^2$. To find the possible eigenvalues of $C^2$, let us again assume without loss of generality that we are in the rest frame (RF).\footnote{We can again carry out a similar argument in a different frame for massless particles.} For $C^2$ we have to do a bit of calculation:
+\begin{eqnarray*}
+C^2 &=& 2B_\mu P_\nu B^\mu P^\nu - 2B_\mu P_\nu B^\nu P^\mu\\
+&\stackrel{RF}{=}& 2m^2 B_\mu B^\mu - 2m^2 B_0^2\\
+&=& 2m^2 B_k B^k,
+\end{eqnarray*}
+where we used that $[B_\mu,P_\nu]=0$, which we get from  (\ref{eq:PW_commutator}) and (\ref{eq:XP_commutator}). From the definition of $B_\mu$:
+\begin{equation}
+B_k = W_k + \frac{1}{4}X_k = mS_k + \frac{1}{8}\bar{Q}\gamma_k \gamma^5 Q \equiv m J_k.
+\end{equation}
+
+The operator we just defined, $J_k \equiv \frac{1}{m} B_k$, is an extension of the ordinary spin operator $S_k$. Just like the spin operator it can be shown to fulfil the angular momentum $su(2)$ algebra:
+\[[J_i, J_j] = i\epsilon_{ijk}J_k,\]
+and, additionally, it commutes with the $Q$s\footnote{Again the proof is algebraically extensive, and  the interested reader is suggested to pursue \cite{IntrSUSY2010}.}
+\begin{equation}
+[J_k,Q_a]=0.
+\label{eq:JQ}
+\end{equation} 
+
+This gives us, still in the rest frame,
+\[C^2 = 2m^4 J_k J^k= -2m^4 J^2,\]
+so that the eigenvalue equation is:
+\[C^2|m, j \rangle = -m^4 j(j+1)|m, j\rangle,\]
+for $j=0,\frac{1}{2},1,\frac{3}{2},\ldots$, where the proof follows that for the angular momentum eigenvalues in quantum mechanics, because this  relies only on the properties of the $su(2)$ algebra. In addition, for each irrep with a value of $j$, the angular momentum algebra allows us to show there are $2j+1$ distinct {\it states} with labels $j_3 = -j, -j+1,\ldots,j-1,j$, so that we may  further  write
+\[C^2|m, j, j_3\rangle =- m^4 j(j+1)|m, j, j_3\rangle,\]
+labelling also the states of the irrep.\footnote{Note that, as we shall see,  unlike for spin  this does not exhaust the number of states for the irrep.}
+So, in summary, the irreducible representations of the superalgebra can be labeled by $(m, j)$, and any given set of $m$ and $j$ will give us $2j+1$ states with different $j_3$.\footnote{Make sure you remember that that $j$ is {\it not} the spin, but a generalisation of spin.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{Short interlude on $\gamma$-matrices}
+\label{sec:gammamatrices}
+%%%%%%%%%%%%%%%%%%%%%%%
+When we deal with four-component spinors we have a use for $\gamma$-matrices. These are defined as objects that fulfil a type of {\bf Clifford algebra} given by\footnote{Be aware that the expression on the right hand side should be read as consisting of a rank-2 tensor {\it with each element} being a $4\times4$ identity matrix.}
+\begin{equation}
+\{\gamma_\mu,\gamma_\nu\}=2g_{\mu\nu}.
+\end{equation}
+
+There exists different representations of this algebra, just as for the Lie algebras. In these notes we will use what is called the {\bf Weyl-representation} where the $\gamma$-matrices are given in terms of the Pauli matrices as
+\begin{equation}
+\gamma^\mu=\left(\begin{matrix} 0 & \sigma^\mu \\ \bar\sigma^\mu & 0 \end{matrix}\right).
+\end{equation}
+The $\gamma$-matrices can be used to form a `fifth'  $\gamma$-matrix
+\[ \gamma^5\equiv i\gamma^0\gamma^1\gamma^2\gamma^3=\left(\begin{matrix} -\sigma^0 & 0 \\ 0 & \sigma^0 \end{matrix}\right). \]
+Using these expressions one can find the relationships between the four-component and two-component (Weyl spinor) notation for the supercharges.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{Irreducible representations of the super-Poincaré group}
+\label{sec:superalgebrarep}
+%%%%%%%%%%%%%%%%%%%%%%%
+What sort of particles transform under the super-Poincaré group? Or, in other words, what are the properties of the irreducible representations of the group? 
+In the following we will construct all the states for a given representation labeled by the set $(m,j)$. To do this it is very useful to write the generators $Q$ in terms of two-component Weyl spinors instead of four-component Dirac spinors, making explicit use of their Majorana nature, as we did in Section~\ref{sec:weyl}. We note that from Eq.~(\ref{eq:JQ}) above 
+\[[J_k, Q_A] = [J_k, \bar{Q}_{\dot{B}}] = 0.\]
+
+We begin by claiming that for any state with a given value of $j_3$ there must then exist a state $|\Omega\rangle$ -- possibly the same state -- that has the same value of $j_3$ and for which
+\begin{equation}
+Q_A|\Omega\rangle = 0.\label{eq:Cliffordvac}
+\end{equation}
+This state is called the {\bf Clifford vacuum}.\footnote{It is called the Clifford vacuum because the operators satisfy a Clifford algebra $\{Q_A, \bar{Q}_{\dot{B}}\} = 2m\sigma^0_{A\dot{B}}$. Do not confuse this with a vacuum state, it is only a name.} 
+
+To show this, start with $|\beta\rangle$, a state with $j_3$. Then the construction
+\[ |\Omega\rangle=Q_1Q_2|\beta\rangle,\]
+has these properties. Using (\ref{eq:QQweyl}) we first we show that (\ref{eq:Cliffordvac}) holds:
+\[Q_1Q_1Q_2|\beta\rangle = -Q_1Q_1Q_2|\beta \rangle = 0,\]
+and
+\[Q_2Q_1Q_2|\beta\rangle = -Q_1Q_2Q_2|\beta\rangle = Q_1Q_2Q_2|\beta\rangle= 0.\]
+For this state we also  have:
+\begin{equation*}
+J_3 |\Omega\rangle = J_3Q_1Q_2|\beta\rangle =Q_1Q_2J_3|\beta\rangle = j_3|\Omega\rangle,
+\end{equation*}
+in other words, $|\Omega\rangle$ has the same value for $j_3$ as the $|\beta\rangle$ it was constructed from and  the Clifford vacuum exists. This proof demonstrates a general feature of the supercharges, if one supercharge with a particular index repeats in a term, then the term is zero by the anticommutation property of the supercharges.
+
+We can now use the explicit expression  for $J_k$ in terms of the two-component supercharges
+\begin{equation}
+J_k = S_k - \frac{1}{4m}\bar{Q}_{\dot{B}}\bar{\sigma}_k^{\dot{B}A}Q_A,
+\label{eq:Jk_twocomp}
+\end{equation}
+in order to find the spin for this state. First we can see that
+\[S_k|\Omega\rangle = J_k|\Omega\rangle =j_k|\Omega\rangle,\]
+meaning that $s_3 = j_3$ is the eigenvalue of $S_3$ for the Clifford vacuum $|\Omega\rangle$. Further, since 
+\[S^2|\Omega\rangle = J^2|\Omega\rangle =j(j+1)|\Omega\rangle,\]
+the eigenvalue of $S^2$ is $s(s+1)=j(j+1)$ for the Clifford vacuum.
+
+We can construct three more states from the Clifford vacuum:\footnote{All other possible combinations of $Q$s and $|\Omega\rangle$ give either one of the other four states, or the zero state which is trivial and of no interest.}
+\[\bar{Q}^{\dot{1}}|\Omega\rangle,\quad\bar{Q}^{\dot{2}}|\Omega\rangle,\quad\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle.\]
+This means that there are four possible states that can be constructed out of any state with the quantum numbers $m$, $j$, $j_3$. Taking a look at:
+\[J_k \bar{Q}^{\dot{A}}|\Omega\rangle = \bar{Q}^{\dot{A}}J_k |\Omega\rangle = j_k\bar{Q}^{\dot{A}}|\Omega\rangle,\]
+this means that all these states have the same $j_3$ (and $j$) quantum numbers.\footnote{The same can easily be shown for $\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle$.} 
+We can now find their eigenvalues for $S_3$. From the superalgebra (\ref{eq:QMweyl}) we have:
+\[[M^{ij}, \bar{Q}^{\dot{A}}] = -(\sigma^{ij})^{\dot{A}}{}_{\dot{B}}\bar{Q}^{\dot{B}},\]
+so that:
+\[S_3\bar{Q}^{\dot{A}}|\Omega\rangle = \bar{Q}^{\dot{A}}S_3|\Omega\rangle - \frac{1}{2}(\bar{\sigma}_3\sigma^0)^{\dot{A}}{}_{\dot{B}}\bar{Q}^{\dot{B}}|\Omega\rangle = \left(j_3\mp \frac{1}{2}\right) \bar{Q}^{\dot{A}}|\Omega\rangle,\]
+where $-$ is for $\dot{A}=\dot{1}$ and $+$ is for $\dot{A}=\dot{2}$. We can similarly show that
+\[S_3\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle = j_3\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle.\]
+This means that for en irrep with labels $m$ and $j$, there are $2j+1$ different values of $j_3$, each giving two states with $s_3 = j_3$, and two with $s_3 = j_3\pm\frac{1}{2}$, meaning two bosonic and two fermionic states with the same mass $m$, and in total $4(2j+1)$ states per irrep. 
+
+We should be careful to note here that we have only found the spin-components $s_3$ of these states, not their spins $s$. For the state $\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle$, $s$ is the same as for the Clifford vacuum, {\it i.e.}\ $s=j$. This is because in the application of $S_k$ from (\ref{eq:Jk_twocomp}) to the state the terms with supercharges will all be zero since at least one of the  $\bar{Q}^{\dot{A}}$ will repeat in each term, thus the eigenvalues of $S^2$ are the same as the eigenvalues of $J^2$. For the other states we may need to combine states into definite spin states using Clebsch-Gordan coefficients.
+
+The above explains the much repeated statement that any supersymmetry theory has an equal number of bosons and fermions, which, incidentally, is not true. What is true, is that there must be an equal number of bosonic and fermionic states.
+
+\theo{For any representation of the superalgebra where $P_\mu$ is a one-to-one operator there is an equal number of boson and fermion states.}
+To show this, divide the representation into two sets of states, one with bosons and one with fermions. Let $\{Q_A, \bar{Q}_{\dot{B}}\}$ act on the members of the set of bosons. $\bar{Q}_{\dot{B}}$ transforms bosons to fermions and $Q_A$ does the reverse mapping. If $P_\mu$ is one-to-one, then so is $\{Q_A, \bar{Q}_{\dot{B}}\} = 2\sigma^\mu_{A\dot{B}}P_\mu$. Thus there must be an equal number in both sets.
+
+%%%
+\subsection{Examples of irreducible representations}
+\label{sec:SP_irreps}
+Finally, let us briefly look at two examples of irreducible representations for a fixed non-zero $m$.
+%%%
+
+\subsubsection{$j=0$}
+For $j=0$, we must have $j_3=0$ and as a result the Clifford vacuum $|\Omega\rangle$ has $s=0$, $s_3=0$, and is a bosonic state. We can then create two states $\bar{Q}^{\dot{A}}|\Omega\rangle$ with $s_3 = \pm\frac{1}{2}$ and $s = \frac{1}{2}$,  and one state $\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle$ with $s_3 = 0$ and $s = 0$. Note that we should really check the total spin $s$ of each of the fermion states, which would involve some algebra. In total there are two scalar states and two spin-$\frac{1}{2}$ fermion states. We will later represent this set of states by the so-called {\bf scalar superfield}. 
+
+We should use be a little careful about using the term particle about these states since what we have found are in fact Weyl spinor states. As we saw in Sec.~\ref{sec:weyl} a Dirac fermion can then only be described by a $j=0$ representation together with a different complex conjugate representation, thus consisting of four states.
+%, or four degrees of freedom (d.o.f.). In field theory, when the fermion is on-shell, two of these states are eliminated by the Dirac equation, thus we get the expected two d.o.f.\ for a  spin-$\frac{1}{2}$ fermion. The situation for the scalars is the same, from the total four scalar d.o.f., two are eliminated by the equations of motion, resulting in two scalar particles. 
+The complex conjugate representation of the first representation together with the self-representation of the second then form the anti-particle of the fermion, and provide an additional two scalars. So the particle count from the two irreducible representations is a fermion--anti-fermion pair, and four scalars. Note that all of the resulting particles have the same mass $m$.
+
+For a Majorana fermion the situation is simpler, since we only need one self-representation and its complex conjugate representation. 
+
+\subsubsection{$j=\frac{1}{2}$}
+For $j=\frac{1}{2}$ we have two Clifford vacua $|\Omega\rangle $ with $j_3=\pm\frac{1}{2}$, and with $s=\frac{1}{2}$ and $s_3 = \pm\frac{1}{2}$, thus they are fermionic states. For the moment we label them as  $|\Omega; \frac{1}{2}\rangle$ and $|\Omega; -\frac{1}{2}\rangle$. From each of these we can construct two further fermion states $\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega;\pm \frac{1}{2}\rangle$ where we know $s=\frac{1}{2}$ and $s_3 = \mp\frac{1}{2}$.  Together these four states can form two fermions with $s = \frac{1}{2}$ and $s_3=\pm\frac{1}{2}$.
+
+In addition to this we have the two states $\bar{Q}^{\dot{1}}|\Omega;\frac{1}{2}\rangle$ and $\bar{Q}^{\dot{2}}|\Omega; -\frac{1}{2}\rangle$ with $s_3 = 0$, the state $\bar{Q}^{\dot{2}}|\Omega;\frac{1}{2}\rangle$ with $s_3 = 1$, and the state $\bar{Q}^{\dot{1}}|\Omega;-\frac{1}{2}\rangle$which has $s_3 = -1$. From these we can create three states with $s=1$, and $s_3 = 1, 0, -1$, and one state with $s=0$ and $s_3=0$, representing one massive vector particle and one scalar. We will later refer to this set of states as the {\bf vector superfield}.
+
+
+
+
+%%%%%%%%%
+\section{Exercises}
+%%%%%%%%%
+
+\begin{Exercise}[]
+Show the commutation properties of the Lorentz group generators $J_i$ and $K_i$.
+\end{Exercise}
+
+\begin{Exercise}[]
+Show the commutation properties of the Poincaré group generators $P_\mu$ and $M_{\mu\nu}$.
+\end{Exercise}
+
+\begin{Exercise}[]
+Show that
+\begin{eqnarray}
+\left[P_\mu, P^2\right] &=& 0,\\
+\left[M_\mu{}_{\nu}, P^2\right]& =& 0.
+\end{eqnarray}
+\end{Exercise}
+
+\begin{Answer} 
+The first relation follows trivially from the commutation of $P_\mu$ with $P_\nu$. To show the second
+we first use that
+\begin{equation}[M_\mu{}_\nu, P_\rho P^\rho] = [M_\mu{}_\nu, P_\rho] P^\rho  + P_\rho [M_\mu{}_\nu,  P^\rho],
+\end{equation}
+and Eq.~(\ref{eq:poco3}) to get:
+\begin{equation}
+[M_\mu{}_\nu, P_\rho P^\rho] = -i(g_\mu{}_\rho P_\nu - g_{\nu \rho} P_\mu) P^\rho  - iP_\rho (g_\mu{}^\rho P_\nu - g_{\nu}{}^{ \rho} P_\mu),
+\end{equation}
+thus
+\begin{equation}
+[M_\mu{}_\nu, P_\rho P^\rho] = -2i[P_\mu, P_\nu] = 0.
+\end{equation}
+\end{Answer}
+
+\begin{Exercise}[]
+Show that $[P_\mu,W_\nu]=0$.
+\end{Exercise}
+
+\begin{Answer} 
+From the definition of $W_\nu$ we have
+\begin{eqnarray*}
+[P_\mu,W_\nu] &=& \frac{1}{2}\epsilon_{\nu\rho\sigma\tau}[P_\mu,P^\rho M^{\sigma\tau}] \\
+&=& \frac{1}{2}\epsilon_{\nu\rho\sigma\tau}g_{\mu\gamma}([P^\gamma,P^\rho]M^{\sigma\tau} + P^\rho[P^\gamma, M^{\sigma\tau}] )\\
+&=& \frac{i}{2}\epsilon_{\nu\rho\sigma\tau}g_{\mu\gamma}P^\rho(g^{\sigma\gamma} P^\tau-g^{\tau\gamma}P^\sigma)\\
+&=& \frac{i}{2}\epsilon_{\nu\rho\sigma\tau}g_{\mu\gamma}P^\rho g^{\sigma\gamma} P^\tau-\frac{i}{2}\epsilon_{\nu\rho\sigma\tau}g_{\mu\gamma}P^\rho g^{\tau\gamma}P^\sigma\\
+&=& \frac{i}{2}\epsilon_{\nu\rho\mu\tau}P^\rho  P^\tau-\frac{i}{2}\epsilon_{\nu\rho\sigma\mu}P^\rho P^\sigma\\
+&=& 0,
+\end{eqnarray*}
+using the Poincaré algebra properties from (\ref{eq:poco3}).
+\end{Answer}
+
+
+\begin{Exercise}[]
+Show that
+\begin{eqnarray}
+\left[P_\mu, W^2\right] &=& 0 \\
+\left[M_\mu{}_\nu, W^2\right] &=& 0.
+\end{eqnarray}
+{\it Hint:} You can use that\footnote{This is non-trivial to demonstrate, see Chapter 1.2 of \cite{IntrSUSY2010}.}
+ \[W^2 = -\frac{1}{2} M_\mu{}_\nu M^{\mu}{}^{\nu}P^2 + M^{\rho\sigma}M_{\nu\sigma}P_\rho P^\nu, \]
+\end{Exercise}
+
+
+\begin{Exercise}[]
+Starting from the four-component form of the super-Poincaré algebra, derive the two-component (Weyl spinor) form.
+\end{Exercise}
+
+
+\begin{Exercise}[]
+Show that $[X_\mu,P_\nu]=0$.
+\end{Exercise}
+
+\begin{Answer} 
+\[
+[X_\mu,P_\nu]=\frac{1}{2}[\bar Q\gamma_\mu\gamma^5Q,P_\nu]=\frac{1}{2}(\bar Q\gamma_\mu\gamma^5)_a[Q_a,P_\nu]+\frac{1}{2}[\bar Q_a,P_\nu](\gamma_\mu\gamma^5Q)_a=0
+\]
+\end{Answer}
+
+\begin{Exercise}[]
+Show that $SO^+(1,3)$ and $SL(2, \mathbb{C})$ are indeed homomorphic, {\it i.e.}\ that the mapping defined by (\ref{eq:LambdaofM}) or (\ref{eq:MofLambda}) has the property that $\Lambda(M_1M_2)=\Lambda(M_1)\Lambda(M_2)$ or $M(\Lambda_1\Lambda_2)=M(\Lambda_1)M(\Lambda_2)$.
+\end{Exercise}
+
+\begin{Exercise}[]
+Show that the generalization of the spin operator, $J_k\equiv S_k + \frac{1}{8m}\bar{Q}\gamma_\mu \gamma^5 Q$, fulfils the algebra
+\[[J_i, J_j] = i\epsilon_{ijk}J_k.\]
+\end{Exercise}
+
+\begin{Exercise}[]
+What are the states for $j=1$?
+\end{Exercise}
+
+\end{document}
