@@ -458,12 +458,12 @@ The equation of motion for $F$ is then
 which we can solve for $F$. With $\frac{\partial W}{\partial A}=g+2mA+3\lambda A^2$, $F=-\frac{\partial W^*}{\partial A^*}$ and the action is
 \begin{eqnarray}
 S&=&\int d^4x \left\{-A^*(x)\square A(x)+i\partial_\mu\psi(x)\bar\sigma^\mu\psi(x)+m\psi(x)\psi(x)+3\lambda A(x)\psi(x)\psi(x) \right. \nonumber \\ 
-&&\left.  +m\bar\psi(x)\bar\psi(x)+3\lambda A^*(x)\bar\psi(x)\bar\psi(x) -|\frac{\partial W}{\partial A}|^2\right\}.
+&&\left.  +m\bar\psi(x)\bar\psi(x)+3\lambda A^*(x)\bar\psi(x)\bar\psi(x) -\left|\frac{\partial W}{\partial A}\right|^2\right\}.
 \end{eqnarray}
 Using the fermionic mass matrices in (\ref{eq:fermionic_mass_matrix}) this can be written as
 \begin{eqnarray}
 S&=&\int d^4x \left\{-A^*(x)\square A(x)+i\partial_\mu\bar\psi(x)\bar\sigma^\mu\psi(x)+\half\frac{\partial^2 W}{\partial A^2}\psi(x)\psi(x) \right. \nonumber \\ 
-&&\left.  +\half\frac{\partial^2 W^*}{\partial A^{*2}}\bar\psi(x)\bar\psi(x)-|\frac{\partial W}{\partial A}|^2\right\}.
+&&\left.  +\half\frac{\partial^2 W^*}{\partial A^{*2}}\bar\psi(x)\bar\psi(x)-\left|\frac{\partial W}{\partial A}\right|^2\right\}.
 \end{eqnarray}
 
 \end{Answer}
@@ -472,20 +472,28 @@ S&=&\int d^4x \left\{-A^*(x)\square A(x)+i\partial_\mu\bar\psi(x)\bar\sigma^\mu\
 %%%
 \begin{Exercise}[]
 \label{ex:abelian_field_strength}
-Write a supersymmetric field strength term for an abelian gauge field in terms of component fields. {\it Hint:} It may be productive to consider the coordinate change $y^\mu=x^\mu + i\theta\sigma^\mu\bar\theta$ to find the field strength term. 
+Show that the supersymmetric field strength term for an abelian gauge field can be written in terms of component fields as
+\begin{eqnarray}
+\mathcal L = -i\lambda(x)\sigma^\mu \partial_\mu \bar\lambda(x)+2D^2(x)-\frac{1}{4}F_{\mu\nu}(x)F^{\mu\nu}(x) -\frac{i}{4}F_{\mu\nu}(x)\tilde F^{\mu\nu}(x).
+\end{eqnarray}
+Try to find an argument why the last term with the dual field tensor $\tilde F^{\mu\nu}(x)$ can be ignored when finding the equations of motion.  {\it Hints:} To get started it may be productive to consider the coordinate change $y^\mu=x^\mu + i\theta\sigma^\mu\bar\theta$. You will also likely need the following algebraic relationship
+\begin{equation}
+(\sigma^{\mu\nu}\theta)^A F_{\mu\nu} (\sigma^{\rho\sigma}\theta)_A F_{\rho\sigma}  = -\frac{1}{2}\theta\theta [F_{\mu\nu}F^{\mu\nu} + iF_{\mu\nu}\tilde F^{\mu\nu}].
+\end{equation}
 \end{Exercise}
 
 \begin{Answer}
-To calculate the field strength in Wess--Zumino gauge we start from the field itself
+To calculate the field strength in Wess--Zumino gauge we start from the vector superfield itself
 \begin{equation}
 V_{WZ} (x, \theta, \bar{\theta}) = \theta\sigma^\mu \bar{\theta}V_\mu(x) + \theta\theta\bar{\theta}\bar{\lambda}(x) + \bar{\theta}\bar{\theta}\theta\lambda (x) + \theta\theta\bar{\theta}\bar{\theta}D(x),
 \end{equation}
 and make the coordinate change $y^\mu=x^\mu + i\theta\sigma^\mu\bar\theta$. This gives
 \begin{eqnarray}
-V_{WZ} (y, \theta, \bar{\theta}) &=& \theta\sigma^\mu \bar{\theta}V_\mu(y)+ i\theta\sigma^\nu\bar\theta\partial_\nu \theta\sigma^\mu \bar{\theta} V_\mu(y)  + \theta\theta\bar{\theta}\bar{\lambda}(y) + \bar{\theta}\bar{\theta}\theta\lambda (y) + \theta\theta\bar{\theta}\bar{\theta}D(y) \nonumber\\
-&=& \theta\sigma^\mu \bar{\theta}V_\mu(y)+ \frac{i}{2}g^{\mu\nu}\theta\theta \bar\theta\bar\theta\partial_\nu V_\mu(y)  + \theta\theta\bar{\theta}\bar{\lambda}(y) + \bar{\theta}\bar{\theta}\theta\lambda (y) + \theta\theta\bar{\theta}\bar{\theta}D(y)\nonumber\\
-&=& \theta\sigma^\mu \bar{\theta}V_\mu(y)+ \frac{i}{2}\theta\theta \bar\theta\bar\theta\partial^\mu V_\mu(y)  + \theta\theta\bar{\theta}\bar{\lambda}(y) + \bar{\theta}\bar{\theta}\theta\lambda (y) + \theta\theta\bar{\theta}\bar{\theta}D(y).
+V_{WZ} (x, \theta, \bar{\theta}) &=& \theta\sigma^\mu \bar{\theta}V_\mu(y)- i\theta\sigma^\nu\bar\theta\partial_\nu \theta\sigma^\mu \bar{\theta} V_\mu(y)  + \theta\theta\bar{\theta}\bar{\lambda}(y) + \bar{\theta}\bar{\theta}\theta\lambda (y) + \theta\theta\bar{\theta}\bar{\theta}D(y) \nonumber\\
+&=& \theta\sigma^\mu \bar{\theta}V_\mu(y) + \theta\theta\bar{\theta}\bar{\lambda}(y) + \bar{\theta}\bar{\theta}\theta\lambda (y) + \theta\theta\bar\theta\bar\theta[D(y)- \frac{i}{2}\partial^\mu V_\mu(y)],
 \end{eqnarray}
+where we have used (\ref{eq:Weylspinor_etasigmamuetaetasigmanueta}).
+
 Since, in this coordinate system, $D_A=\partial_A+2i(\sigma^\mu\bar\theta)_A\partial_\mu$ and $\bar D_{\dot A}=-\partial_{\dot A}$, so that $\bar D \bar D=\partial_{\dot A}\partial^{\dot A}$, we can then find the field strength as
 \begin{eqnarray}
 W_A&=& -\frac{1}{4} \bar D \bar D D_A V_{WZ} (y, \theta, \bar{\theta}) \nonumber\\
@@ -533,7 +541,7 @@ where the first term disappears due to the asymmetry of the Levi-Civita symbol. 
 %%%
 \begin{Exercise}[]
 \label{ex:U1gaugegroup}
-Extend the previous exercise to include a single abelian gauge group under which the superfield has charge $q$. {\it Hint:} The spinor relationship
+Extend Exercise \ref{ex:simpleL} to include a single abelian gauge group under which the scalar superfield has charge $q$. Simplify your answer using the covariant derivative $D_\mu\equiv \partial_\mu-i\frac{q}{2}V_\mu$.  {\it Hint:} The spinor relationship
 \begin{equation}
 \theta \psi \bar{\theta}\bar{\psi}(\theta\sigma^\mu \bar{\theta}) = -\frac{1}{4}(\theta\theta)(\bar\theta\bar\theta)\bar\psi\bar\sigma^\mu\psi,
 \label{eq:spinoridentity_U1ex}
@@ -542,8 +550,7 @@ may also come in handy.
 \end{Exercise}
 
 \begin{Answer}
-WARNING! THIS IS STILL JUST A SKETCH OF THE ANSWER\\
-We should note that in this case $W=0$ as we can not construct gauge invariant terms in the superpotential with only one superfield that is charged under the gauge group. This also implies that $F(x)=0$.
+We should note that in this case $W=0$ as we can not construct gauge invariant terms in the superpotential with only one superfield that is charged under the gauge group. This also implies that $F(x)\equiv0$.
 
 For an abelian gauge group the kinetic term in Wess--Zumino gauge is
 \begin{equation}
@@ -569,38 +576,39 @@ The third term is found from Eqs.~(\ref{eq:leftscalarsuperfield}), (\ref{eq:righ
 
 Summing up these three terms the total contribution from the kinetic terms is then
 \begin{eqnarray}
-\mathcal L_\text{kin} &=& -A^*(x)\square A(x)+i\partial_\mu\bar\psi(x)\bar\sigma^\mu\psi(x) +\frac{i}{2} q( A^*\partial^\mu A- A\partial^\mu A^* )V_\mu -\frac{1}{2}q\bar\psi\bar\sigma^\mu\psi V_\mu \nonumber \\
+\mathcal L_\text{kin} &=& -A^*\square A+i\partial_\mu\bar\psi\bar\sigma^\mu\psi +\frac{i}{2} q( A^*\partial^\mu A- A\partial^\mu A^* )V_\mu -\frac{1}{2}q\bar\psi\bar\sigma^\mu\psi V_\mu \nonumber \\
 && + \frac{1}{\sqrt{2}}qA\bar\psi\bar\lambda + \frac{1}{\sqrt{2}} qA^*\psi \lambda +q|A|^2D + \frac{1}{4}q^2 |A|^2V^\mu V_\mu.
 \end{eqnarray}
 We can simplify this expression by defining a covariant derivative from the vector component field $D_\mu\equiv \partial_\mu-i\frac{q}{2}V_\mu$.\footnote{The unusual factor of 2 here compared to the usual abelian gauge covariant derivative is due to our earlier choices in how to write down the vector superfield in terms of component fields. If we want we can absorb this by redefining $V_\mu$.}
-We see that 
+We immediately see that 
 \begin{equation}
-i\partial_\mu\bar\psi(x)\bar\sigma^\mu\psi(x) -\frac{1}{2}q\bar\psi\bar\sigma^\mu\psi V_\mu =iD_\mu^*\bar\psi(x)\bar\sigma^\mu\psi(x),
+i\partial_\mu\bar\psi\bar\sigma^\mu\psi-\frac{1}{2}q\bar\psi\bar\sigma^\mu\psi V_\mu =iD_\mu^*\bar\psi\bar\sigma^\mu\psi,
 \end{equation}
 and
 \begin{eqnarray}
-|D_\mu A(x)|^2 &\equiv& D^*_\mu A^*(x)D^\mu A(x)= (\partial_\mu A^*(x)+i\frac{q}{2}V_\mu(x) A^*(x))(\partial^\mu A(x)-i\frac{q}{2}V^\mu(x) A(x)) \nonumber\\
-&=& |\partial_\mu A(x)|^2+\frac{q^2}{4}V_\mu(x)V^\mu(x) |A(x)|^2 +i\frac{q}{2}(A^*(x)\partial^\mu A(x)-\partial^\mu A^*(x) A(x) )V_\mu(x),
+|D_\mu A|^2 &\equiv& D^*_\mu A^*D^\mu A= (\partial_\mu A^*+i\frac{q}{2}V_\mu A^*)(\partial^\mu A-i\frac{q}{2}V^\mu A) \nonumber\\
+&=& |\partial_\mu A|^2+\frac{q^2}{4}V_\mu V^\mu |A|^2 +i\frac{q}{2}(A^*\partial^\mu A-\partial^\mu A^* A )V_\mu,
 \end{eqnarray}
-so that we can write, using $-A^*(x)\square A(x)= |\partial_\mu A(x)|^2$,
+so that we can write, using $-A^*\square A= |\partial_\mu A|^2$,
 \begin{eqnarray}
 \mathcal L_\text{kin} &=& \frac{1}{\sqrt{2}}qA\bar\psi\bar\lambda + \frac{1}{\sqrt{2}} qA^*\psi \lambda +q|A|^2D 
-+iD_\mu^*\bar\psi(x)\bar\sigma^\mu\psi(x)+|D_\mu A(x)|^2
++iD_\mu^*\bar\psi\bar\sigma^\mu\psi+|D_\mu A|^2 \nonumber
 \end{eqnarray}
 
 Adding the  field strength terms from Exercise \ref{ex:abelian_field_strength} the complete Lagrangian is
 \begin{eqnarray}
-\mathcal L = &=& -A^*(x)\square A(x)+i\partial_\mu\psi(x)\bar\sigma^\mu\psi(x) -i\lambda(x)\sigma^\mu \partial_\mu \bar\lambda(x) \nonumber\\
-&&  -\frac{1}{2}q\bar\psi\bar\sigma^\mu\psi V_\mu(x) 
- + \frac{1}{\sqrt{2}}qA\bar\psi\bar\lambda +  \frac{1}{\sqrt{2}} qA^*(x)\psi(x) \lambda(x) +q|A(x)|^2D(x) \nonumber \\
-&& + \frac{i}{2}q ( A^*(x)\partial^\mu A(x)- A(x)\partial^\mu A^*(x) )V_\mu(x) + \frac{1}{4} q^2 |A(x)|^2V^\mu(x) V_\mu(x)  \nonumber\\
+\mathcal L &=& iD_\mu^*\bar\psi(x)\bar\sigma^\mu\psi(x)+|D_\mu A(x)|^2 -i\lambda(x)\sigma^\mu \partial_\mu \bar\lambda(x) \nonumber\\
+&& + \frac{1}{\sqrt{2}}qA(x)\bar\psi(x)\bar\lambda(x) + \frac{1}{\sqrt{2}} qA^*(x)\psi(x) \lambda(x) +q|A(x)|^2D(x) 
+\nonumber\\
 &&+2D^2(x)-\frac{1}{4}F_{\mu\nu}(x)F^{\mu\nu}(x) .
 \end{eqnarray}
 \end{Answer}
 
+
+%%%
 \begin{Exercise}[]
 \label{ex:SQED}
-Find the Lagrangian for supersymmetric QED (SQED) in terms of component fields. Supersymmetric QED is the smallest  (in terms of field content) supersymmetric theory that has the particles and interactions in QED as a subset.
+Find the Lagrangian for supersymmetric QED (SQED) in terms of component fields, eliminating any non-dynamical auxiliary fields. Supersymmetric QED is the smallest  (in terms of field content) supersymmetric theory that has the particles and interactions in QED as a subset.
 \end{Exercise}
 
 \begin{Answer}
@@ -608,33 +616,42 @@ In QED we have three particles, the electron, positron and the photon. As a Dira
 
 The supergauge transformations for the scalar superfields are $L\to L'=\exp{(-ie\Lambda)}L$  and $\bar E\to \bar E'=\exp{(ie\Lambda)}\bar E$, where $e$ is the elementary electrical charge, and the difference in sign signifies the opposite charges of the electron and positron. The general form of the superpotential must then be $W=mLE$ with a single (mass) parameter $m$. No tadpole terms in $L$ and $\bar E$ can survive since these are not gauge singlets, and only the $LE$ mass term survives since the two fields in the mass term must have opposite charges under the gauge group. Similarly, no Yukawa term can fulfil the gauge invariance criterium. 
 
-Solving for the auxiliary fields we  get
+Solving for the auxiliary $F$-fields we  get
 \begin{eqnarray}
 F_L^* &=& -W_L = -\frac{\partial W[A_L,A_E]}{\partial A_L}= -mA_E, \nonumber \\
 F_e^* &=& -W_E = -\frac{\partial W[A_L,A_E]}{\partial A_E}= -mA_L. \nonumber
 \end{eqnarray}
-Generalising the discussion in Exercise~\ref{ex:simpleL}, the contribution to the Lagrangian in terms of component fields is
+Generalising the discussion in Exercise~\ref{ex:simpleL}, the contribution to the Lagrangian from the superpotential in terms of component fields is
 \begin{equation}
-\mathcal L_\text{superpot} = m\psi_L(x)\psi_E(x)+m^*\bar\psi_L(x)\bar\psi_E(x)-|m|^2(|A_L|^2+|A_E|^2).
+\mathcal L_\text{superpot} = m\psi_L\psi_E+m^*\bar\psi_L\bar\psi_E-|m|^2(|A_L|^2+|A_E|^2),
 \end{equation}
+where we must reasonably identify $m$ with the electron mass, see also that, as expected the scalar fields $A_E$ and $A_L$ obtain the same mass.
 
-From the field content we know that the kinetic terms take the form $L^\dagger e^{eV}L$ and $\bar E^\dagger e^{-eV}\bar E$ where the sign ensures the gauge invariance under the supergauge transformations of the scalar and vector superfields together. Taking results from Exercise~\ref{ex:U1gaugegroup} the Lagrangian contribution is 
+From the field content we know that the kinetic terms take the form $L^\dagger e^{eV}L$ and $\bar E^\dagger e^{-eV}\bar E$ where the sign ensures the gauge invariance under the supergauge transformations of the scalar and vector superfields together. Taking results from Exercise~\ref{ex:U1gaugegroup} the Lagrangian contribution from the kinetic terms is 
 \begin{eqnarray}
-\mathcal L &=&
--A_L^*(x)\square A_L(x)-A_E^*(x)\square A_E(x)
-+i\partial_\mu\psi(x)\bar\sigma^\mu\psi(x) +\frac{i}{2} q( A^*\partial^\mu A- A\partial^\mu A^* )V_\mu -\frac{1}{2}q\bar\psi\bar\sigma^\mu\psi V_\mu  + \frac{1}{\sqrt{2}}qA\bar\psi\bar\lambda + \frac{1}{\sqrt{2}} qA^*\psi \lambda 
-+q (|A_L(x)|^2+ |A_E(x)|^2) D(x)
-+\frac{1}{4} e^2 (|A_L(x)|^2+ |A_E(x)|^2)V^\mu(x) V_\mu(x)
- \end{eqnarray}
-
-In Exercise~\ref{ex:U1gaugegroup} we saw that the abelian field strength term is
-\begin{eqnarray}
-\int d^4\theta\, \bar\theta\bar\theta W^AW_A = -2i\lambda(x)\sigma^\mu \partial_\mu \bar\lambda(x)+2D^2(x)-\frac{1}{2}F_{\mu\nu}(x)F^{\mu\nu}(x) -\frac{i}{2}F_{\mu\nu}(x)\tilde F^{\mu\nu}(x).
+\mathcal L_\text{kin} &=&
+\frac{1}{\sqrt{2}}eA_L\bar\psi_L\bar\lambda + \frac{1}{\sqrt{2}} eA^*_L\psi_L \lambda +e|A_L|^2D +iD_\mu^*\bar\psi_L\bar\sigma^\mu\psi_L+|D_\mu A_L|^2 \nonumber\\
+&&-\frac{1}{\sqrt{2}}eA_E\bar\psi_E\bar\lambda - \frac{1}{\sqrt{2}} eA^*_E\psi_E \lambda - e|A_E|^2D +iD_\mu^*\bar\psi_E\bar\sigma^\mu\psi_E+|D_\mu A_E|^2, \nonumber
 \end{eqnarray}
+where $\lambda$ is the Weyl fermion from the vector superfield $V,$ $D$ is the auxiliary field from $V$, and the covariant gauge derivative is $D_\mu=\partial_\mu-\frac{ie}{2}A_\mu$, where $A_\mu$ is the electromagnetic gauge field.
+
+In Exercise~\ref{ex:abelian_field_strength} we saw that the contribution from the abelian field strength term is
+\begin{eqnarray}
+\mathcal L_\text{field strength}= -i\lambda\sigma^\mu \partial_\mu \bar\lambda+2D^2-\frac{1}{4}F_{\mu\nu}F^{\mu\nu},
+\end{eqnarray}
+where $F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu$.
+
+Solving for the auxiliary $D$-field we get
+\begin{equation}
+D=\frac{e}{4}(|A_E|^2-|A_L|^2).
+\end{equation}
 
 This gives a total Lagrangian of
 \begin{eqnarray}
-\mathcal L &=& -i\lambda(x)\sigma^\mu \partial_\mu \bar\lambda(x)+D^2(x)-\frac{1}{4}F_{\mu\nu}(x)F^{\mu\nu}(x) -\frac{i}{4}F_{\mu\nu}(x)\tilde F^{\mu\nu}(x)
+\mathcal L &=&  iD_\mu^*\bar\psi_L\bar\sigma^\mu\psi_L+|D_\mu A_L|^2 +iD_\mu^*\bar\psi_E\bar\sigma^\mu\psi_E+|D_\mu A_E|^2 -i\lambda\sigma^\mu \partial_\mu \bar\lambda-\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \nonumber\\
+&& +m\psi_L\psi_E+m^*\bar\psi_L\bar\psi_E-|m|^2(|A_L|^2+|A_E|^2) \nonumber \\
+&& + \frac{1}{\sqrt{2}}eA_L\bar\psi_L\bar\lambda + \frac{1}{\sqrt{2}} eA^*_L\psi_L \lambda
+-\frac{1}{\sqrt{2}}eA_E\bar\psi_E\bar\lambda - \frac{1}{\sqrt{2}} eA^*_E\psi_E \lambda - \frac{e^2}{8}(|A_E|^2-|A_L|^2 )^2.\nonumber
 \end{eqnarray}
 \end{Answer}
 
