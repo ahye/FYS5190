@@ -62,7 +62,7 @@ The complete soft terms for such a mechanism can then be shown to be
  \end{eqnarray}
 Incidentally, we can now see why we assumed the maybe-soft breaking terms to be unimportant, as  in this model they are suppressed by $|\langle F_X \rangle|/M_P^2$ compared to the other masses. 
 
-If one assumes a minimal form for the parameters at the GUT scale, motivated by the wish for unification, {\it e.g.}\ $f=f_i$, $y'_{ijk} = \alpha y_{ijk}$, $\mu'_{ij} = \beta \mu$, and $k_{ij} = k\delta_{ij}$, then all the soft terms are fixed by just four parameters
+If one assumes a minimal form for the parameters at the GUT scale, motivated by the wish for unification, {\it e.g.}\ $f_i=f$, $y'_{ijk} = \alpha y_{ijk}$, $\mu'_{ij} = \beta \mu$, and $k_{ij} = k\delta_{ij}$, then all the soft terms are fixed by just four parameters
 \[m_{1/2} = f\frac{\langle F_X \rangle}{M_P}, \indent m_0^2 = k \frac{|\langle F_X \rangle|^2}{M_P^2}, \indent A_0 = \alpha \frac{\langle F_X \rangle }{M_P}, \indent B_0 = \beta\frac{\langle F_X \rangle}{M_P}.\]
 The resulting phenomenology is called {\bf minimal supergravity}, or {\bf mSUGRA/CMSSM}. This is minimal in the sense of the form of the parameters, and is the most studied, but perhaps not best motivated, version of the MSSM. Usually, $B_0$ and $|\mu|$ are exchanged for $\tan\beta$ at low scales using the EWSB condition  in Eq.~(\ref{eq:EWSB_condition}), so it is common to say that there are four and a half parameters in the model: $m_{1/2}$, $m_0$, $A_0$, $\tan\beta$ and ${\rm sgn}\,\mu$.
 
@@ -79,7 +79,8 @@ One way of thinking about how these mass terms appear is that the messenger fiel
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[scale=0.8]{figures/GMSB} 
-\caption{Diagram for GMSB giving masses to the gauginos. The messenger scalars and fermions run in the loop.\label{fig:GMSB}}
+\caption{Diagram for GMSB giving masses to the gauginos. The messenger scalars and fermions run in the loop.}
+\label{fig:GMSB}
 \end{center}
 \end{figure}
 
@@ -97,66 +98,114 @@ While this parameterisation looks independent of $M$, the messenger scale sets t
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Supersymmetry at lepton colliders}
 %%%%%%%%%%%%%%%%%%%%%%
-Most lepton colliders are $e^+e^-$-colliders, although plans are being made for a muon collider where there is less bremsstrahlung because of the higher muon mass, meaning that higher energies can be reached. The highest energy so-far at an $e^+e^-$-collider was 209 GeV CoM-energy at LEP2 in 2000.
+High-energy lepton colliders have traditionally been circular $e^+e^-$-colliders. These have the advantage of a well known centre-of-mass (CoM) energy given by the total energy of the electron--positron pair, clean final states, and periodic application of the accelerating gradient. The challenge is to reach high energies and high luminosities (collision rates). Since the electrons are light they radiate a lot of bremsstrahlung photons when bent in orbits. The highest energy so-far at an $e^+e^-$-collider was the 209 GeV CoM-energy at LEP2 in 2000. Plans are being made both for linear  $e^+e^-$-colliders, and a muon collider where there is less bremsstrahlung because of the higher muon mass, meaning that higher energies can be reached. However, there are significant technical challenges ahead for both. The linear colliders need very long installation tunnels and a very high accelerating gradient, while the muon collider must be able to produce and store the unstable muons.
 
-Most supersymmetry searches at lepton colliders rely on pair production from $e^+e^-\to \gamma^*/Z^*$ to set limits, and for R-parity conserving supersymmetry we (again) rely on misisng energy $\slashed{E}$ as an essential signature, however, since the longitudinal momentum is now exactly known full energy conservation can in principle be used. In practice this is challenging at high energies because of collinear Bremsstrahlung. This will be a particularly difficult for a future $0.5-3.0$ TeV CoM International Linear Collider (ILC) or the Compact LInear Collider (CLIC) project.\footnote{For more information on these projects see the websites for the International Linear Collider \url{http://www.linearcollider.org/} and the Compact LInear Collider \url{http://clic-study.org/}}
+Most supersymmetry searches at lepton colliders rely on the pair production of oppositely charged sparticles with electroweak couplings from $e^+e^-\to \gamma^*/Z^*\to S\bar{S}$, where $S$ symbolises a generic sparticle. Due to R-parity conservation these sparticles both decay to lighter sparticles and Standard Model decay products, until they, potentially after several successive decays known as a {\bf cascade decay}, leave only the stable LSP. This LSP must be electrically (and most likely colour) neutral due to experimental constraints on massive long-lived charged particles that would bind to atomic nuclei. The neutrality of the LSP means that it escapes detectors unseen.
 
-We can estimate the amplitude of the sfermion pair production process shown in Fig.~\ref{LCPP}. We can write down the matrix element as:
+The search for supersymmetry thus focuses on events with the Standard Model decay products of sparticles and an imbalance in momentum conservation due to the two missing LSPs. By the measured sum of the momenta of all the visible decay products the sum of the total momenta for the invisible particles can be inferred as going in the opposite direction. This is known as a {\bf missing energy} signature. 
+
+In practice such missing energy measurements are challenging experimentally due to the absence of detectors near the incoming beams in the longitudinal direction, where particles that are in principle visible may escape undetected and create an artificial momentum imbalance in the longitudinal direction. At high energies this is exacerbated by the increase of collinear bremsstrahlung  from the incoming electrons at the interaction point due to interaction of the beams. This will be a particularly difficult for a future $0.5-3.0$ TeV CoM International Linear Collider (ILC) or the Compact LInear Collider (CLIC) project.\footnote{For more information on these projects see the websites for the International Linear Collider \url{http://www.linearcollider.org/} and the Compact LInear Collider \url{https://clic.cern/}}
+
+We can now discuss more specifically the search for sfermions, neutralinos \& charginos, and Higgs bosons at lepton colliders.
+
+
+%%%
+\subsection{Sfermions}
+%%%
+We can estimate the leading order amplitude of the $s$-channel sfermion pair production process shown in Fig.~\ref{fig:LCPP}. We being by writing down the matrix element with an intermediary $\gamma$ as:
 \begin{equation}
 \mathcal{M} = \overline{v}ie\gamma^\mu u \frac{-ig_\mu{}_\nu}{k^2+i\epsilon}[-ie\cdot e_f (p_1-p_2)^\nu],
 \end{equation}
-which gives a squared matrix element of, assuming that the CoM  $s$ is much greater than $m_Z$ and taking into account both the photon and the $Z$:
+which gives a squared matrix element of, assuming that the CoM  $s$ is much greater than $m_Z$ and taking into account both the photon and the $Z$,
 \begin{equation}
 |\mathcal{M}|^2 \simeq \frac{g^4 e_f^2}{8\cos\theta_W}\frac{st+(m_{\tilde{f}}^2-t)^2}{s^2}\times (1+(4\sin^2\theta_W-1)^2).
 \end{equation}
-We take safely take $(1+(4\sin^2\theta_W-1)^2)\simeq1$. The complete differential cross-section is then:
+Here, we take safely take $(1+(4\sin^2\theta_W-1)^2)\simeq1$. The complete differential cross-section is then:
 \begin{equation}
 \frac{d\sigma}{dt} = \frac{1}{32\pi}\frac{1}{s^2}|\mathcal{M}|^2.
 \label{eq:sfermion_production_diff_xsec}
 \end{equation}
-This cross section is small due to the coupling factor $g^4$ and sfermion mass suppression. 
-\begin{figure}[h!]
+
+\begin{figure}[t!]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{figures/LCpp.eps} 
-\caption{Feynman diagram for the pair production of left-handed sfermions in the s-channel at a linear collider.\label{LCPP}}
+\caption{Feynman diagram for the pair production of left-handed sfermions in the s-channel at an  $e^+e^-$-collider.}
+\label{fig:LCPP}
 \end{center}
 \end{figure}
 
-For charginos and neutralinos, as in the case of hadron colliders, the production cross section depends on their wino, bino and higgsino components. The selectron and electron sneutrino have a special r\^ole for $e^+e^-$ colliders due to t-channel diagrams. Figure \ref{fig:tdiag} shows the t-channel diagrams that are important in pair production at a $e^+e^-$ collider.  We show an example of the slepton pair production cross section including the $Z$-resonance at low energies and the t-channel contributions from neutralinos in Fig.~\ref{fig:slepton_xsec}.
-Neutralino pair production with t-channel selectron exchange does not suffer from the same problems as neutralino pair production at a hadron collider in the s-channel. However, the process depends on the selectron mass as $m_{\tilde e}^{-4}$ for large mass values.
+This cross section is relatively small due to the electroweak coupling factor $g^4$ and sfermion mass suppression, so sfermion production events will be rare.
+We show an example of the slepton pair production cross section including the $Z$-resonance, and the $t$-channel contributions from neutralinos (see below) in Fig.~\ref{fig:slepton_xsec}.
+
+\begin{figure}[t!]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{figures/sleptons.eps} 
+\caption{Cross sections for selectron pair production as a function of CoM energy. Cross sections for ${\tilde e}_L^*{\tilde e}_L$ (solid line), ${\tilde e}_R^*{\tilde e}_R$ (dashed line), and ${\tilde e}_L^*{\tilde e}_R$ (dashed dotted line) are shown separately. The particular model point has a common slepton mass of $m_{\tilde e_{L/R}}=35$ GeV.}
+ \label{fig:slepton_xsec}
+\end{center}
+\end{figure}
+
+After production sfermions will decay, typically to a lighter neutralino or chargino and a Standard Model fermion $f$, in processes of the type $\tilde f \to f \tilde\chi_i^0$ or $\tilde f \to f' \tilde\chi_i^\pm$. Since the energy reach is limited, only the very lightest sfermions are likely to be producible, which are usually the sleptons, and these are likely to be near (but above) the mass of the lightest neutralino. See Fig.~\ref{fig:MSSMrun} for some expectations of the masses in an mSUGRA context. This means that the most expected decay is $\tilde \ell \to \ell \tilde\chi_1^0$, and  the total process is then $e^+e^-\to \tilde\ell^+\tilde\ell^- \to \ell^+\ell^- \tilde\chi^0_1\tilde\chi^0_1$, giving two oppositely charged Standard Model leptons and missing energy as the experimental signature. 
+
+Such a (weak) signal then needs to be discriminated from Standard Model backgrounds from for example $W^+W^-$ pair production, which can lead to the final state $\ell^+\nu_\ell\ell^-\bar\nu_\ell$, featuring the same leptons and missing energy from the neutrinos. Since backgrounds are usually well under control at lepton colliders, the limit to searches is the ability to produce the sparticles at all. With a CoM energy $\sqrt{s}$ sparticles up to $\sqrt{s}/2$ are energetically possible, and a rule of thumb is that the reach approaches $\sqrt{s}/2$ from below given sufficient data, never quite  getting to $\sqrt{s}/2$.
+
+In the event of a statistically significant observation, the properties of the sparticles can be measured through the inferred cross section, and the kinematical distribution of the final state products. The ability of a lepton collider to easily change the CoM energy $\sqrt{s}$, allows for a so-called {\bf threshold scan} of the cross section where the cross section is measured as a function of $\sqrt{s}$ around where it becomes zero. This in turn allows for a very precise measurement of the mass of the pair  produced particle. As an example of a kinematic distribution, for the process discussed here, it can be shown that the energy distribution for the final state leptons is a uniform distribution between $E_{\rm min}$ and $E_{\rm max}$ where
+\begin{equation}
+E_{\rm max/min} =\frac{\sqrt{s}}{4}\left(1-\frac{m^2_{\tilde{\chi}^0_1}}{m_{\tilde{l}}^2}\right)\left(1\pm \left(1-\frac{4m_{\tilde{l}}^2}{s}\right)^{1/2}\right),
+\end{equation}
+which, with a known slepton mass, also gives a handle on the LSP mass $m_{\tilde\chi^0_1}$ even though it is undetected.
+
+
+%%%
+\subsection{Neutralinos \& charginos}
+%%%
+For charginos and neutralinos the production cross section depends on their wino, bino and higgsino components. You would be forgiven to think that pair production of the lightest neutralino $e^+e^- \to \tilde{\chi}^0_1\tilde{\chi}^0_1$ would be the natural sparticle to search for, however, this has some significant problems. Since it is usually the LSP it does not decay, and there is nothing in the event that can actually be measured. We cannot use the missing energy as that requires an {\it imbalance} in momentum. Given sufficiently hard (energetic) radiation from either the initial electron or positron, a single photon recoiling against missing energy could potentially be measured, and this, so-called {\bf mono-photon search}, was indeed a search channel for dark matter production at LEP. However, for neutralino dark matter this does not work all that well for other reasons. The $Z\tilde\chi_i^0\tilde\chi_j^0$ vertex shown in Fig.~\ref{fig:ZNN}  has the Feynman rule 
+\begin{equation}
+\frac{ig}{2\cos\theta_W}\gamma^\mu\left[\left(N_{i3}N^*_{j3}-N_{i4}N^*_{j4}\right)P_L-\left(N^*_{i3}N_{j3}-N^*_{i4}N_{j4}\right)P_R\right],
+\end{equation}
+which depends only on the higgsino components of the neutralinos, $N_{i3}$ and $N_{i4}$. This can be understood from the fact that there are no $ZZZ$ or $Z\gamma\gamma$ vertices in the Standard Model that can be supersymmetrised, only a $Zhh$ vertex. For the photon there is no tree level coupling to the neutralinos at all since there are no direct couplings between the Higgs and the photon in the Standard Model. Thus, only neutralinos with significant higgsino components can be produced this way. To top it off, a light higgsino with a mass dominated by the $\mu$ parameter would have very similar values of $N_{i3}$ and $N_{i4}$, thus canceling the coupling.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics{figures/Zgaugino.eps} 
+\caption{Vertex for $Z\tilde\chi_i^0\tilde\chi_j^0$.}
+\label{fig:ZNN}
+\end{center}
+\end{figure}
+
+The selectron and electron sneutrino have a special r\^ole for $e^+e^-$ colliders due to the resulting $t$-channel diagrams. Figure \ref{fig:tdiag} shows the $t$-channel diagrams that are important in pair production at a $e^+e^-$ collider.  
+Neutralino pair production with $t$-channel selectron exchange does not suffer from the same problems as neutralino pair production in the $s$-channel. However, the process depends on the selectron mass as $m_{\tilde e}^{-4}$ for large mass values and is rapidly suppressed.
 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{figures/tdiaglc.eps} 
-\caption{The t-channel diagrams for pair production of selectrons and electron sneutrinos a) and gauginos b).\label{fig:tdiag}}
+\caption{The $t$-channel diagrams for pair production of a) selectrons and electron sneutrinos, and b) neutralinos and charginos.}
+\label{fig:tdiag}
 \end{center}
 \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.9\textwidth]{figures/sleptons.eps} 
-\caption{Cross sections for selectron pair production as a function of energy. The cross sections for ${\tilde e}_L^*{\tilde e}_L$ (solid line), ${\tilde e}_R^*{\tilde e}_R$ (dashed line), and ${\tilde e}_L^*{\tilde e}_R$ (dashed dotted line) are shown separately. The particular model point has a common slepton mass of $m_{\tilde e_{L/R}}=35$ GeV. \label{fig:slepton_xsec}}
-\end{center}
-\end{figure}
+The consequences of the above discussion is that it is the production of the second lightest neutralino and the lightest chargino that is typically searched for in the combinations $\tilde\chi_2^0\tilde\chi_1^0$, $\tilde\chi_2^0\tilde\chi_2^0$, and $\tilde\chi_1^+\tilde\chi_1^-$. These decay -- unless there is a slepton with a mass intermediary to the produced particle and the LSP -- to the LSP and a possibly off-shell vector boson, $\tilde\chi_2^0\to Z^{(*)}\tilde\chi_1^0$ and $\tilde\chi_1^\pm\to W^{(*)}\tilde\chi_1^0$. Thus the expected  experimental signature is the fermionic decay products of the vector bosons with additional missing energy from the LSPs.
 
-Should a signal be found the parameters of the new particles can be {\it precisely measured} at a lepton collider. either through threshold scans of cross section where the cross section is measured as a function of $\sqrt{s}$. Or, through kinematical distributions, {\it e.g.}\ in $e^+e^-\to \tilde{l}^+\tilde{l}^- \to l^+l^- \tilde{\chi}^0_1\tilde{\chi}^0_1$ the energy distribution for the final state leptons is a uniform distribution between $E_{\rm min}$ and $E_{\rm max}$ where
-\begin{equation}
-E_{\rm max/min} =\frac{\sqrt{s}}{4}\left(1-\frac{m^2_{\tilde{\chi}^0_1}}{m_{\tilde{l}}^2}\right)\left(1\pm \left(1-\frac{4m_{\tilde{l}}^2}{s}\right)^{1/2}\right).
-\end{equation}
+
+%%%
+\subsection{Higgs bosons}
+%%%
+Because of the very small Yukawa coupling of electrons, Higgs bosons are not expected to have significant direct production cross sections at a $e^+e^-$ collider. The most realistic production channels are Higgs-strahlung where the Higgs boson is attached to a vector boson: $e^+e^-\to Zh$, $e^+e^-\to ZH$, $e^+e^-\to Ah$ and $e^+e^-\to AH$, charged Higgs pair production $e^+e^-\to H^+H-$, and $W^+W^-$ vector boson fusion into Higgs bosons $e^+e^-\to \nu_e\bar\nu_e h(H)$. 
 
 
 %%%
 \subsection{Current bounds at lepton colliders}
 %%%
-The below bounds are all from the LEP (Large Electron Positron) collider, running from 1989 until 2000, which outdated all previous bounds with a top energy of $\sqrt{s}=209$ GeV, recording an integrated luminosity of 233~pb$^{-1}$ above 204 GeV. Results exist from all four LEP experiments ALEPH, DELPHI, L3 and OPAL.\footnote{Most of which are silly acronyms of course.} The numbers are all taken from the PDG (Particle Data Group) review~\cite{Agashe:2014kda}. While these bounds often come from pair-production of the relevant sparticles, and thus are less modell dependent than the hadron collider bounds, there remains some model dependence in many results, which, unfortunately, is sometimes ignored in the litterature. Complicating matters is a reliance by the LEP experiments on theoretical assumptions such as GUT-scale coupling and gaugino mass unification.
+The below bounds are all from the LEP (Large Electron Positron) collider, running from 1989 until 2000, which outdated all previous bounds with a top energy of $\sqrt{s}=209$ GeV, recording an integrated luminosity (amount of data) of 233~pb$^{-1}$ above 204 GeV. Results exist from all four LEP experiments ALEPH, DELPHI, L3 and OPAL.\footnote{Most of which are silly acronyms of course.} The numbers below are all taken from the 2014 PDG (Particle Data Group) review~\cite{Agashe:2014kda}, but the conclusions from the LEP data has changed little since then. 
+
+While these bounds often come from pair-production of the relevant sparticles, and thus are less model dependent than the hadron collider bounds presented in the next section, there remains some model dependence in many results, which, unfortunately, is sometimes ignored in the literature. Complicating matters is a reliance by the LEP experiments on theoretical assumptions such as GUT-scale coupling and gaugino mass unification in many searches.
 \begin{itemize}
-\item Selectron: $m_{\tilde{e}_L}>107$ GeV and $m_{\tilde{e}_R}>73$ GeV (ALEPH 2002) in searches for acoplanar di-electrons.\footnote{The observant reader will notice that two electrons are always in the same plane, however, when experimentalists say acoplanar, they mean not in one plane with the beam axis.} The limit is the result of a scan over MSSM parameter space assuming a common $m_0$ and $m_{1/2}$ at GUT scale. Interpreted in mSUGRA with $A_0=0$ the bounds are 152 GeV and 95 GeV, respectively. Due to strict limits on the measured $Z$-width, there is a model independent limit of $m_{\tilde{e}_{L/R}}>40$ GeV.\footnote{Similar model independent limits around half the $Z$-mass exists for all sparticles that couple to the $Z$.}
+\item Selectron: The strongest limit given is $m_{\tilde{e}_L}>107$ GeV and $m_{\tilde{e}_R}>73$ GeV (ALEPH 2002) in searches for acoplanar di-electrons.\footnote{The observant reader will notice that two electrons are always in the same plane, however, when experimentalists say acoplanar, they mean not in one plane with the beam axis.} However, the limit is the result of a scan over MSSM parameter space simplified by assuming a common $m_0$ and $m_{1/2}$ at GUT scale. Interpreted in the even more constrained mSUGRA with $A_0=0$ the bounds are even stronger, 152 GeV and 95 GeV, respectively. In contrast, due to strict limits on the precisely measured $Z$-width, there is a fully model independent limit of $m_{\tilde{e}_{L/R}}>40$ GeV.\footnote{Similar model independent limits around half the $Z$-mass exists for all sparticles that couple to the $Z$.}
 \item Smuon: $m_{\tilde{\mu}_R}>94$ GeV (DELPHI 2003). The limit is obtained as in the MSSM scenario for the selectron.
-\item Stau: $m_{\tilde{\tau}_1}>81.9$ GeV (DELPHI 2003) assuming exclusive $\tilde{\tau}_1 \to \tau \tilde{\chi}^0_1$ and $m_{\tilde{\tau}_1} - m_{\tilde{\chi}^0_1}> 15$ GeV.
-\item Sneutrinos: From the Z-width we can obtain the model independent limit $m_{\tilde{\nu}}> 44.7$ GeV. From collider experiments we have $m_{\tilde{\nu}}>94$ GeV (DELPHI 2003) in neutralino \& slepton searches. This assumes $m_{\tilde{e}_R} - m_{\tilde{\chi}^0_1}>10$ GeV.
-\item Neutralino: $m_{\tilde{\chi}^0_1}> 46$ GeV (DELPHI 2003). This limit is derived from the direct searches for $\tilde{\chi}^\pm_1 \tilde{\chi}^0_2$ and $\tilde{\chi}^0_1 \tilde{\chi}^0_2$. This assumes gauge coupling unification and a common gaugino mass $m_{1/2}$ at GUT scale. Even in the Z-decays, the contribution depends on the higgsino part in the lightest neutralino, so $m_{\tilde{\chi}^0_1} \simeq 0$ GeV is in principle allowed~\cite{Dreiner:2009ic}.
-\item From the $Z$-width we can extract a strict limit of $m_{\tilde{\chi}^\pm_1}\geq 45$ GeV.
-We also have $m_{\tilde{\chi}^\pm_1}\geq 94$ GeV (DELPHI 2003), assuming GUT scale universality of $m_0$ and $m_{1/2}$ and using multiple direct search channels from production of charginos, neutralinos and sleptons. It also assumes either no third generation mixing or $m_{\tilde{\chi}^\pm_1} - m_{\tilde{\chi}^0_1}>6$ GeV. 
+\item Stau: $m_{\tilde{\tau}_1}>81.9$ GeV (DELPHI 2003) assuming exclusive $\tilde{\tau}_1 \to \tau \tilde{\chi}^0_1$ decays and $m_{\tilde{\tau}_1} - m_{\tilde{\chi}^0_1}> 15$ GeV.
+\item Sneutrinos: From  LEP we have an indirect limit of  $m_{\tilde{\nu}}>94$ GeV (DELPHI 2003) in neutralino \& slepton searches. This assumes $m_{\tilde{e}_R} - m_{\tilde{\chi}^0_1}>10$ GeV. From the Z-width we can obtain the model independent limit $m_{\tilde{\nu}}> 44.7$ GeV. 
+\item Neutralino: The limit $m_{\tilde{\chi}^0_1}> 46$ GeV (DELPHI 2003) has been derived from the direct searches for $\tilde{\chi}^0_1 \tilde{\chi}^0_2$ and $\tilde{\chi}^0_2 \tilde{\chi}^0_2$. This assumes gauge coupling unification and a common gaugino mass $m_{1/2}$ at GUT scale. Even in the $Z$-decays, the contribution to the width depends on the higgsino component of the lightest neutralino, so $m_{\tilde{\chi}^0_1} \simeq 0$ GeV is still in principle allowed~\cite{Dreiner:2009ic}.
+\item Here we have $m_{\tilde{\chi}^\pm_1}\geq 94$ GeV (DELPHI 2003), assuming GUT scale universality of $m_0$ and $m_{1/2}$ and using multiple direct search channels from production of charginos, neutralinos and sleptons. It also assumes either no third generation sfermion mixing or $m_{\tilde{\chi}^\pm_1} - m_{\tilde{\chi}^0_1}>6$ GeV. From the $Z$-width we can extract a strict limit of $m_{\tilde{\chi}^\pm_1}\geq 45$ GeV.
 \end{itemize}
 
 
