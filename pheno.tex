@@ -149,7 +149,7 @@ After production sfermions will decay, typically to a lighter neutralino or char
 
 Such a (weak) signal then needs to be discriminated from Standard Model backgrounds from for example $W^+W^-$ pair production, which can lead to the final state $\ell^+\nu_\ell\ell^-\bar\nu_\ell$, featuring the same leptons and missing energy from the neutrinos. Since backgrounds are usually well under control at lepton colliders, the limit to searches is the ability to produce the sparticles at all. With a CoM energy $\sqrt{s}$ sparticles up to $\sqrt{s}/2$ are energetically possible, and a rule of thumb is that the reach approaches $\sqrt{s}/2$ from below given sufficient data, never quite  getting to $\sqrt{s}/2$.
 
-In the event of a statistically significant observation, the properties of the sparticles can be measured through the inferred cross section, and the kinematical distribution of the final state products. The ability of a lepton collider to easily change the CoM energy $\sqrt{s}$, allows for a so-called {\bf threshold scan} of the cross section where the cross section is measured as a function of $\sqrt{s}$ around where it becomes zero. This in turn allows for a very precise measurement of the mass of the pair  produced particle. As an example of a kinematic distribution, for the process discussed here, it can be shown that the energy distribution for the final state leptons is a uniform distribution between $E_{\rm min}$ and $E_{\rm max}$ where
+Should some excess be discovered, we need a smoking duck in order to confirm that this is indeed supersymmetry.  We would like to identify and measure the masses of as many new particles as possible, and hopefully also their spin. The properties of the sparticles can be measured through the inferred cross section, and the kinematical distribution of the final state products. The ability of a lepton collider to easily change the CoM energy $\sqrt{s}$, allows for a so-called {\bf threshold scan} of the cross section where the cross section is measured as a function of $\sqrt{s}$ around where it becomes zero. This in turn allows for a very precise measurement of the mass of the pair produced particle. As an example of a kinematic distribution, for the process discussed here, it can be shown that the energy distribution for the final state leptons is a uniform distribution between $E_{\rm min}$ and $E_{\rm max}$ where
 \begin{equation}
 E_{\rm max/min} =\frac{\sqrt{s}}{4}\left(1-\frac{m^2_{\tilde{\chi}^0_1}}{m_{\tilde{l}}^2}\right)\left(1\pm \left(1-\frac{4m_{\tilde{l}}^2}{s}\right)^{1/2}\right),
 \end{equation}
@@ -162,6 +162,7 @@ which, with a known slepton mass, also gives a handle on the LSP mass $m_{\tilde
 For charginos and neutralinos the production cross section depends on their wino, bino and higgsino components. You would be forgiven to think that pair production of the lightest neutralino $e^+e^- \to \tilde{\chi}^0_1\tilde{\chi}^0_1$ would be the natural sparticle to search for, however, this has some significant problems. Since it is usually the LSP it does not decay, and there is nothing in the event that can actually be measured. We cannot use the missing energy as that requires an {\it imbalance} in momentum. Given sufficiently hard (energetic) radiation from either the initial electron or positron, a single photon recoiling against missing energy could potentially be measured, and this, so-called {\bf mono-photon search}, was indeed a search channel for dark matter production at LEP. However, for neutralino dark matter this does not work all that well for other reasons. The $Z\tilde\chi_i^0\tilde\chi_j^0$ vertex shown in Fig.~\ref{fig:ZNN}  has the Feynman rule 
 \begin{equation}
 \frac{ig}{2\cos\theta_W}\gamma^\mu\left[\left(N_{i3}N^*_{j3}-N_{i4}N^*_{j4}\right)P_L-\left(N^*_{i3}N_{j3}-N^*_{i4}N_{j4}\right)P_R\right],
+\label{eq:ZNN_vertex}
 \end{equation}
 which depends only on the higgsino components of the neutralinos, $N_{i3}$ and $N_{i4}$. This can be understood from the fact that there are no $ZZZ$ or $Z\gamma\gamma$ vertices in the Standard Model that can be supersymmetrised, only a $Zhh$ vertex. For the photon there is no tree level coupling to the neutralinos at all since there are no direct couplings between the Higgs and the photon in the Standard Model. Thus, only neutralinos with significant higgsino components can be produced this way. To top it off, a light higgsino with a mass dominated by the $\mu$ parameter would have very similar values of $N_{i3}$ and $N_{i4}$, thus canceling the coupling.
 
@@ -184,7 +185,9 @@ Neutralino pair production with $t$-channel selectron exchange does not suffer f
 \end{center}
 \end{figure}
 
-The consequences of the above discussion is that it is the production of the second lightest neutralino and the lightest chargino that is typically searched for in the combinations $\tilde\chi_2^0\tilde\chi_1^0$, $\tilde\chi_2^0\tilde\chi_2^0$, and $\tilde\chi_1^+\tilde\chi_1^-$. These decay -- unless there is a slepton with a mass intermediary to the produced particle and the LSP -- to the LSP and a possibly off-shell vector boson, $\tilde\chi_2^0\to Z^{(*)}\tilde\chi_1^0$ and $\tilde\chi_1^\pm\to W^{(*)}\tilde\chi_1^0$. Thus the expected  experimental signature is the fermionic decay products of the vector bosons with additional missing energy from the LSPs.
+The consequences of the above discussion is that it is the production of the second lightest neutralino and the lightest chargino that is typically searched for in the combinations $\tilde\chi_2^0\tilde\chi_1^0$, $\tilde\chi_2^0\tilde\chi_2^0$, and $\tilde\chi_1^+\tilde\chi_1^-$. These decay -- unless there is a slepton with a mass intermediary to the produced particle and the LSP -- to the LSP and a possibly off-shell vector boson, $\tilde\chi_2^0\to Z^{(*)}\tilde\chi_1^0$ and $\tilde\chi_1^\pm\to W^{(*)}\tilde\chi_1^0$. Thus the expected  experimental signature is the fermionic decay products of the vector bosons with additional missing energy from the LSPs. 
+
+If the mass relevant differences between the neutralinos and charginos are small then the resulting decay products of the off-shell vector bosons will have little energy -- the technical term for this is that they are {\bf soft}, as opposed to very energetic particles that are {\bf hard}. Soft particles are difficult to reconstruct in detectors, and events dominated by soft particle production are easily missed, meaning that degenerate scenarios are difficult to discover, and sparticles mass bounds become very poor in this case. This is particularly unfortunate since a scenario where $\mu\ll M_1,M_2$ is well motivated on theoretical grounds, and with $\mu$ controlling two neutralino masses and one chargino, the lightest two neutralinos and the lightest chargino indeed become degenerate.
 
 
 %%%
@@ -214,167 +217,226 @@ While these bounds often come from pair-production of the relevant sparticles, a
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Supersymmetry at hadron colliders}
 %%%%%%%%%%%%%%%%%%%%%%
-Let us first point out some more or less obvious points.\footnote{You might find these very obvious, they are, however, quite important and some theory people seem oblivious to them.}
-\begin{enumerate}[1)]
-\item Hadron colliders collide quarks and gluons. This means that we get large cross sections only for QCD charged sparticles, {\it i.e.}\ squarks and gluinos, provided their masses are low enough. 
-\item  As discussed earlier, with R-parity conservation (RPC) sparticles are produced in pairs and both decay to the LSP.
-\item Illustrated in Fig.~\ref{cascade1} these sparticles can decay to the LSP in many different, and potentially complicated, cascades. The possible decays for a particular MSSM model point called SPS1a is shown in Fig.~\ref{cascade2}. We should realize that many of these decays are hard to distinguish from ordinary SM (background) processes, or just undetectable.
-\item Standard Model backgrounds have much, much bigger cross sections. Figure~\ref{LHCbackground} shows the expected backgrounds and signals produced in different channels at the 14 TeV LHC for different particle masses.
-%\begin{figure}[h!]
-%\centering
-%\includegraphics[scale=0.5]{figures/detector.eps} 
-%\caption{How detectors work.\label{detector}}
-%\end{figure}
-\item R-parity conservation gives you {\bf missing transverse energy} $\slashed{E}_T$ at hadron colliders due to the escaping LSPs, {\it i.e.}\ an imbalance in the directional sum of all energy deposits transverse to the beam direction. There is no logitudinal energy balance in a hadron colllider because the energies of the colliding partons are not known.
-\end{enumerate}
+Since the particles collided at hadron colliders (protons and other nuclei) are heavier they are not as susceptible to loosing energy through bremsstrahlung as the light leptons. Thus they can more readily be accelerated in a circular collider with periodic acceleration. However, this mass both means that linear colliders are inappropriate since the acceleration is smaller for the same applied fields, and that it is more difficult to steer the hadrons in a circular orbit. Thus the energy available at a hadron collider is limited by the strength of the bending magnets.
+
+Up to 2009 the highest energy hadron collider was the Tevatron based at Fermilab outside of Chicago, that collided protons and anti-protons at $\sqrt{s}=1.96$ TeV. The current record is held by the Large Hadron Collider (LHC) at CERN, colliding protons at a top energy of $\sqrt{s}=13$ TeV.\footnote{The LHC was designed to operate at $\sqrt{s}=14$ TeV, but has had problems fully reaching that energy. In the next round of the LHC to start in 2022, called Run III, the plan is to go to $\sqrt{s}=13.5$ TeV.}
+
+Since a proton--proton collider mostly collides partons, the quarks and gluons inside the protons, and since the strong coupling is large, this means that we can get large cross sections and potentially many events for QCD charged sparticles, {\it i.e.}\ squarks and gluinos, provided their masses are low enough. Cross sections for particles that have only electroweak charges (sleptons, electroweakinos, Higgs bosons) are expected to be considerably smaller, however, these sparticles are also expected to be lighter. The balance between these factors means that both types of sparticles are searched for.
+
+As discussed earlier, with R-parity conservation sparticles are produced in pairs and both decay to the LSP. In Fig.~\ref{fig:SPS1a_spectrum} we show the sparticle mass spectrum for a particular mSUGRA benchmark point called SPS1a that has $m_0=100$ GeV, $m_{1/2}=250$ GeV, $A_0=-100$ GeV, $\tan\beta=10$ and $\text{sgn}\,\mu=+$~\cite{Allanach:2002nj}.\footnote{This benchmark point is now quite old and clearly excluded by searches, but it still serves as a nice illustration of the kind of sparticle spectrum expected in mSUGRA models.}
+By producing the squarks or gluinos near the top of the mass spectrum in a collision we see that we can get many different quite long decay chains, called cascades. We illustrate such an event in  Fig.~\ref{fig:cascade}.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/sps1a} 
+\caption[Cascades for SPS1a]{Supersymmetric particle mass spectrum (coloured solid lines)  and possible decay channels (dashed lines) for the SPS1a benchmark point. Only decays with branching rations above 5\% are shown. The line opacity indicates relative branching ratios. This plot was generated using {\tt PySLHA~3.0.1}~\cite{Buckley:2013jua}. }
+\label{fig:SPS1a_spectrum}
+\end{figure}
+
+%%%
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{feynman}
+%
+\diagram [layered layout, horizontal=B to C] {
+B [blob]  -- [fermion, edge label=$\tilde g$] C  -- [scalar, edge label=$\tilde q$] D  -- [fermion, edge label=$\tilde\chi_2^0$] E -- [scalar, edge label=$\tilde e_L^*$] F -- [fermion] G [particle=$\tilde\chi_1^0$],
+C -- [anti fermion] c [particle=$\bar q$],
+D -- [fermion] d [particle=$q$],
+E -- [fermion] e [particle=$e^-$],
+F -- [anti fermion] f [particle=$e^+$],
+B --  [scalar, edge label=$\tilde q$] C2  -- [fermion, edge label=$\tilde\chi_2^0$] D2  -- [fermion, edge label=$\tilde\chi_1^0$] E2,
+C2 -- [fermion] c2 [particle=$q$],
+D2 -- [boson, edge label=$Z$] d2 -- [fermion] d3 [particle=$\mu^-$],
+d2-- [anti fermion] d4 [particle=$\mu^+$],
+A1 [particle=$q$] -- [fermion] B,
+A2 [particle=$g$] -- [gluon] B,
+};
+\end{feynman}
+\end{tikzpicture}
+\caption{Cascade decays starting with the production of a gluino and squark pair from a gluon--quark interaction.}  
+\label{fig:cascade}
+\end{figure}
+%%%
+
+In hadron collisions the momenta of the incoming partons is unknown, so no complete momentum balance can be made. However, the sum of the momenta in the direction transverse to the beam direction is zero. Thus with escaping LSPs we can observe  {\bf missing transverse energy}, $\slashed{E}_T$ or $E_T^\text{miss}$, {\it i.e.}\ an imbalance in the directional sum of all energy deposits transverse to the beam direction. The rest of the signal depends on which sparticles are searched for. In broad terms this means that if searching for gluino of squark production then at some point the cascade decay must shed colour charge to arrive at the LSP, resulting in Standard Model quarks or gluons that hadronise and produce jets in the detector (hadronic showers). If instead searching for electroweakly produced sparticles or Higgs bosons, one usually assumes an absence of significant jet activity, and instead looks for leptons from the decays of the sleptons or electroweakinos, possibly through vector bosons.
+
+At the LHC the Standard Model backgrounds are much more significant and problematic. For example, at design luminosity the LHC produces about 10 pairs of top quarks per second. Due to the top quark decay $t\to bW^+$, resulting in charged leptons and potential missing energy from neutrinos in $W$ decays, as well as jets produced in hadronic $W$ decays and from the $b$-quarks, this alone is a significant background to many supersymmetry searches. Figure~\ref{fig:LHCbackground} shows the expected backgrounds and signals produced in different channels at the $\sqrt{s}=14$ TeV LHC for different assumed particle masses. One can see that even the largest supersymmetric cross sections that we get for squark and gluino production are orders of magnitude below the Standard Model backgrounds for masses beyond 500 GeV.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/cascade1.eps} 
-\caption{Diagram of a possible collision process in the LHC for an RPC model. Illustration by C.\, Lester~\cite{Lester:TOOLS2012}.\label{cascade1}}
+\includegraphics[width=0.7\textwidth]{figures/background} 
+\caption{Plot of the expected cross sections and rates for various processes at the $\sqrt{s}=14$~TeV LHC plotted against the mass of the particles, assuming the design final luminosity of the LHC (rate of data taking). The current Run II of the LHC has collected around 140~fb$^{-1}$ of data, so the lowest point on the cross section axis indicates that $\mathcal{O}(1)$ events are expected to have been produced by now.}
+\label{fig:LHCbackground}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/sps1a.eps} 
-\caption[Cascades for SPS1a]{Possible sparticle cascades for the SPS1a model point. Only decays with branching rations above 5\% are shown. The line width indicates relative branching ratios. The plot was generated using {\tt PySLHA~3.0.1}~\cite{Buckley:2013jua}. \label{cascade2}}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth]{figures/background.eps} 
-\caption{Plot of the expected signals for various processes at the 14 TeV LHC plotted against the mass of the particles. The current Run II of the LHC has collected around 4~fb$^{-1}$ of data, so the fb scale indicates processes where $\mathcal{O}(1)$ events are expected. \label{LHCbackground}}
-\end{figure}
-
-The consequences of the above is that we search for events with jet activity---squarks/gluinos decaying to the LSP---and missing energy from two LSPs. One simple way to do this is to define the {\bf effective mass}
+To cope with this challenge, the searches define kinematical variables that are designed to separate supersymmetry events from Standard Model events. For example, searching for the production of squarks and/or gluinos decaying to the LSP, one expects jets and missing energy from two LSPs. One can then define the {\bf effective mass}
 \begin{equation}
 M_{\rm eff} = \sum p_T^{\text{jet}} + \slashed{E}_T,
 \label{eq:Meff}
 \end{equation}
-and search for deviations from SM expectations. Figure \ref{effectivemassplot} shows a simulation of such a supersymmetry signal at the LHC for a benchmark MSSM model called LHC Point 2. However, there are models where this is ineffective. Imagine a scenario where only the lightest stop $\tilde{t}_1$ is copiously produced. If $m_{\tilde{t}_1} - m_{\tilde{\chi}^0_1}< m_W$ then $\tilde{t}_1 \to c\tilde{\chi}^0_1$ or $\tilde{t}_1 \to b l \nu \tilde{\chi}^0_1$ decays dominate, where all final state particles have low energy ($p_T$), so-called {\bf soft particles}. This is very difficult to discover with standard techniques.
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.5]{figures/effmass.eps} 
-\caption{Plot of the differential cross section with respect to effective mass, plotted against the effective mass of the final state particles as given in (\ref{eq:Meff}). The colored data points represent different SM processes, and the histogram is the sum of all SM contributions, while the white circles represent a possible supersymmetry scenario. The position of the supersymmetry signal maximum is correlated to the masses of $\tilde{\chi}$ and $\tilde{q}$, but there is large variance. \label{effectivemassplot}}
-\end{figure}
+from the sum of the transverse momentum of the jets in the event, $p_T$, and the missing energy. The expectation is then that this is more significant in squark and gluino production events than in Standard Model events, so that a high requirement on $M_{\rm eff}$ reduces the number of background events without significantly removing events with sparticles. This helps for example to combat $t\bar t$ production because the jet $p_T$s in those events are limited by the energy in the top quark mass, while the more massive squarks and gluinos will have higher jet $p_T$s.
 
-One alternative to jets and lots of missing energy is to look for leptons (and some small missing energy) from gaugino pair production and decays. Searching the lepton and missing energy channels is a very effective way to isolate any production of sparticles from SM backgrounds, but for setting bounds it is bad since the only model independent production is {\bf Drell-Yan} production, {\it e.g.}\ $q\overline{q}\to (Z/\gamma)^*\to\tilde{\chi}^0_1\tilde{\chi}^0_2,\tilde{\chi}^{+}_1\tilde{\chi}^{-}_1,\tilde{l}_L^*\tilde{l}_L,\tilde{l}_R^*\tilde{l}_R$, and $q'\overline{q}\to W^*\to\tilde{\chi}^0_2\tilde{\chi}^\pm_1$, which all have low cross sections due to the smaller electroweak coupling and the smaller anti-quark content of the proton. The expected bounds from such searches for the mSUGRA model is compared to other searches in Fig.~\ref{fig:reach}.
+However, there are also models where this kind of approach is ineffective. Imagine a scenario where only the lightest stop $\tilde{t}_1$ is light enough to be copiously produced. If $m_{\tilde{t}_1} - m_{\tilde{\chi}^0_1}< m_W$ then the stop will dominantly decay as $\tilde{t}_1 \to c\tilde{\chi}^0_1$ or $\tilde{t}_1 \to b l \nu \tilde{\chi}^0_1$, where all final state particles have rather low energy ($p_T$), so-called {\bf soft particles}. 
+As for the degenerate neutralino scenario discussed above, this is very difficult to discover with standard techniques.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{figures/reach.eps} 
-\caption{Plot of the projected discovery reach for different values of $m_{1/2}$ and $m_0$ in the mSUGRA model with 100~fb$^{-1}$ or 300~fb$^{-1}$ of data at the Compact Muon Spectrometer (CMS). The light blue area represents theoretical restrictions on the parameter space. The dark blue area is the parameter space that was probed by the Tevatron. The red lines represents a pure jets pluss $\not\! E_T$ search at 14\,TeV. The blue lines represent searches using leptons. The dotted lines show the masses of different sparticles in this parameter space. \label{fig:reach}}
-\end{figure}
+%One alternative to jets and lots of missing energy is to look for leptons (and some small missing energy) from gaugino pair production and decays. Searching the lepton and missing energy channels is a very effective way to isolate any production of sparticles from SM backgrounds, but for setting bounds it is bad since the only model independent production is {\bf Drell-Yan} production, {\it e.g.}\ $q\overline{q}\to (Z/\gamma)^*\to\tilde{\chi}^0_1\tilde{\chi}^0_2,\tilde{\chi}^{+}_1\tilde{\chi}^{-}_1,\tilde{l}_L^*\tilde{l}_L,\tilde{l}_R^*\tilde{l}_R$, and $q'\overline{q}\to W^*\to\tilde{\chi}^0_2\tilde{\chi}^\pm_1$, which all have low cross sections due to the smaller electroweak coupling and the smaller anti-quark content of the proton. The expected bounds from such searches for the mSUGRA model is compared to other searches in Fig.~\ref{fig:reach}.
+%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=0.5]{figures/reach.eps} 
+%\caption{Plot of the projected discovery reach for different values of $m_{1/2}$ and $m_0$ in the mSUGRA model with 100~fb$^{-1}$ or 300~fb$^{-1}$ of data at the Compact Muon Spectrometer (CMS). The light blue area represents theoretical restrictions on the parameter space. The dark blue area is the parameter space that was probed by the Tevatron. The red lines represents a pure jets pluss $\not\! E_T$ search at 14\,TeV. The blue lines represent searches using leptons. The dotted lines show the masses of different sparticles in this parameter space. \label{fig:reach}}
+%\end{figure}
 
-You may ask, why not look for the production of $\tilde{\chi}^0_1\tilde{\chi}^0_1$? To first order the answer might be that with nothing else in the event, we cannot measure the missing energy as that requires an {\it imbalance} in momentum. However, given sufficient QCD radiation from the initial quark/gluon\footnote{For an $e^+e^-$ collider this would be photon radiation from the initial electron/positron.} a single jet recoiling against missing energy could potentially be measured, and this, so-called {\bf mono-jet search}, is indeed a search channel for dark matter production at the LHC. However, for neutralino dark matter this does not work all that well for other reasons. The $Z\tilde\chi_i^0\tilde\chi_j^0$ vertex shown in Fig.~\ref{fig:ZNN}  has the Feynman rule 
-\begin{equation}
-\frac{ig}{2\cos\theta_W}\gamma^\mu\left[\left(N_{i3}N^*_{j3}-N_{i4}N^*_{j4}\right)P_L-\left(N^*_{i3}N_{j3}-N^*_{i4}N_{j4}\right)P_R\right],
-\end{equation}
-which depends only on the higgsino components of the neutralinos, $N_{i3}$ and $N_{i4}$. This can be understood from the fact that there are no $ZZZ$ or $Z\gamma\gamma$ vertices in the SM that can be supersymmetrized, only a $Zhh$ vertex. For the photon there is no tree level coupling to the neutralinos at all since there are no direct couplings between the higgs and the photon in the SM. Thus, only neutralinos with significant higgsino components can be produced this way. To top it off, a light higgsino with a mass dominated by the $\mu$ parameter would have very similar values of $N_{i3}$ and $N_{i4}$, thus canceling the coupling.
-
-\begin{figure}[h!]
-\begin{center}
-\includegraphics{figures/Zgaugino.eps} 
-\caption{Coupling $Z\tilde\chi_i^0\tilde\chi_j^0$.\label{fig:ZNN}}
-\end{center}
-\end{figure}
-
-Should some excess be discovered in any search, we need some smoking duck in order to confirm that this is indeed supersymmetry.  We would like to identify and measure the masses of as many new particles as possible, and hopefully also their spin. To do this, a multitude of techniques have been invented, all facing the problem of how to deal with the loss of information from the LSP. Figure \ref{measurement} shows an example of one such technique where sequential two-body decays of sparticles are used. For the generic decay chain shown in Fig.~\ref{fig:gen_casc} with three sequential two-body decays we can measure the invariant mass between two detectable end-products, $a$ and $b$, $m_{ab}$. Even if the particle $A$ at the end of the chain is invisible one can show that the invariant mass distribution for $m_{ab}$ has a triangular shape with a sharp endpoint at the maximum
+Another example of the use of kinematics is the distribution of invariant masses. In  Fig.~\ref{fig:gen_cascade} we show an example of two sequential  two-body decays. Even if particle $A$ here is invisible, for example the LSP, we can use two visible decay products $a$ and $b$ to form the invariant mass $m_{ab}$. One can show that the distribution for $m_{ab}$ has a triangular shape with a sharp endpoint at the maximum
 \begin{equation}
 (m_{ab}^{\max})^{2} = \frac{\left(m_{C}^{2}-m_{B}^{2}\right)
 \left(m_{B}^{2}-m_{A}^{2}\right)}{m_{B}^{2}}, 
 \label{eq:m_ab}
 \end{equation}
-where we have assumed that $a$ and $b$ are massless.\footnote{A more complicated expression covers the massive case.} A measurement of this endpoint position gives us one realtionship between the three unknown (sparticle) masses. If we have a chain with three sequential two-body decays we can repeat this measurement with three more possible invariant mass combinations, arriving at four equations with four unknown, which can in principle at least be solved for the masses involved.
+where we have assumed that $a$ and $b$ are massless.\footnote{A more complicated expression covers the massive case.}  This can be used both to select events that potentially have supersymmetric particles in them depending on the value of the invariant mass, and to determine relationships between the sparticle masses. In Fig.~\ref{fig:mab_measurement} we show a simulation of the invariant mass distribution of two opposite-sign same-flavour  (OSSF) leptons $m_{\ell\ell}$ from the production of $\tilde\chi_2^0$ and its decay chain $\tilde\chi_2^0\to \ell^\pm\tilde\ell_R^\mp \to \ell^\pm\ell^\mp\tilde\chi_1^0$. 
 
+%%%
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{feynman}
+%
+\diagram [layered layout, horizontal=B to A] {
+C -- [edge label=$C$] B  -- [edge label=$B$] A  -- [edge label=$A$] E,
+B -- b [particle=$b$],
+A -- a [particle=$a$],
+};
+\end{feynman}
+\end{tikzpicture}
+\caption{A generic illustration of two successive two-body decays $C\to bB$ and $B\to aA$.}  
+\label{fig:gen_cascade}
+\end{figure}
+%%%
+
+%%%
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/fig-chain.eps} 
-\caption{Generic cascade decay $D\to Cc\to  Bb \to Aabc$~\cite{Miller:2005zp}. \label{fig:gen_casc}}
+\includegraphics[width=0.8\textwidth]{figures/p250_OSOF_mll.eps} 
+\caption{Invariant mass distribution of opposite sign same flavour (OSSF) dileptons for the mSUGRA benchmark model point SPS1a~\cite{Gjelsten:2004ki}.}
+\label{fig:mab_measurement}
 \end{figure}
+%%%
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth]{figures/p250_OSOF_mll.eps} 
-\caption{Invariant mass distribution of opposite sign same flavour (OSSF) dileptons for the mSUGRA benchmark model point SPS1a~\cite{Gjelsten:2004ki}. \label{measurement}}
-\end{figure}
-
-As alternatives to these standard searches we have searches for decaying LSPs when R-parity is violated, or the production of single sparticles.\footnote{Single sparticle production requires rather large RPV couplings for the $LQ\bar D$ or $\bar U \bar D\bar D$ operators, of the order of $\lambda > 10^{-2}$.} There is the possibility of {\bf massive metastable charged particles} (MMCPs), typically in scenarios with a gravitino LSP, where the next-to-lightest supersymmetric particle (NLSP) is charged and long-lived because the decay to the gravitino is via a very weak gravitational coupling. The latter also includes so-called {\bf R-hadrons} if the NLSP has color charge, which means that it will hadronize after production and be a short-lived but very massive meson or baryon. We should also mention the searches for the extra Higgs states predicted in the MSSM.\footnote{But we really don't have time.}
+As alternatives to these standard searches for pair produced sparticles with missing energy there are ongoing searches for decaying LSPs when R-parity is violated, or the production of single sparticles.\footnote{Single sparticle production at the LHC requires rather large R-parity violating couplings for the $LQ\bar D$ or $\bar U \bar D\bar D$ operators, of the order of $\lambda > 10^{-2}$.} There is also the possibility of {\bf massive metastable charged particles} (MMCPs), typically in scenarios with a gravitino LSP, where the next-to-lightest supersymmetric particle (NLSP) is charged and long-lived because the decay to the gravitino is via a very weak gravitational coupling. The latter also includes so-called {\bf R-hadrons} if the NLSP has colour charge, which means that it will hadronise after production and be a short-lived but very massive meson or baryon. We should also mention the searches for the extra Higgs states predicted in the MSSM.\footnote{But we don't really have time.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
 \section{Current bounds on sparticle masses}
 %%%%%%%%%%%%%%%%%%%%%%%
-With the LHC running and collecting data the details in this section are continuously becoming out-of-date. We will still try to make some general remarks on the current limits. Most of these limits are from Run I of the LHC at 8 TeV with analysis using up to 20 fb$^{-1}$ of data. This is strongest current limits are on the squark and gluino masses simply because of the production cross section. Bounds on EW gauginos and sleptons exist, but these are either model dependent (depend on squark/gluino mass assumptions and cascade decays), or weaker if the rely only on electroweak production. Direct bounds from the LHC experiments ATLAS and CMS now superseed  bounds from other colliders (Tevatron and LEP) in almost all channels.
+The LHC has finished its Run II and collected a total of around 140 fb$^{-1}$ of data per experiment at $\sqrt{s}=13$ TeV of energy. It is currently preparing for Run III to start in 2022.  Direct bounds from the LHC experiments ATLAS and CMS now supersede bounds from other colliders (Tevatron and LEP) in almost all channels, with some exceptions for models with degenerate masses. The below limits are mostly limits with the full Run II dataset and represent the current state-of-art in sparticle searches. We mostly use examples from ATLAS, the corresponding plots from CMS are very similar.
 
+The strongest current limits in terms of mass are on the gluino and squarks simply because of the large production cross sections. Significant bounds on electroweakinos and sleptons exist, but these are either model dependent (depend on squark/gluino mass assumptions and cascade decays), or weaker if the rely only on electroweak production.
+
+%%%
 \subsection{Squarks and gluinos}
-In Fig.~\ref{squarkgluinolimit} we show the most recent limits from ATLAS in the jets plus missing energy channel, using all currently available data at the highest energy of 8 TeV. The limit has been interpreted within the mSUGRA model, where the parameters $\tan\beta$ and $A_0$ have been chosen in order to give relatively large Higgs masses for small values of $m_{1/2}$ and $m_0$. The figure also shows the corresponing first and second generation squark masses, the gluino mass and the higgs mass for these parameter values. From ATLAS we then have the following approximate bounds in mSUGRA: $m_{\tilde{q}}>1600$\,GeV and $m_{\tilde{g}}> 1100$\,GeV.
+In Fig.~\ref{fig:msugra_squarkgluinolimit} we show the limits from the ATLAS experiment on the mSUGRA model using searches for jets plus missing energy with all the data collected at 8 TeV. The mSUGRA parameters $\tan\beta$ and $A_0$ have been chosen in order to give relatively large Higgs masses for small values of $m_{1/2}$ and $m_0$. The figure also shows the corresponding first and second generation squark masses, the gluino mass (both dot-dashed lines), and the Higgs mass (purple) for these parameter values. We then have the following approximate bounds in mSUGRA: $m_{\tilde{q}}>1600$\,GeV and $m_{\tilde{g}}> 1100$\,GeV. Bounds on the mSUGRA space directly have not been updated since this plot.
 
-\begin{figure}[h!]
+%%%
+\begin{figure}[t!]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{figures/fig_05a.eps} 
-\caption{Plot of the excluded area in the $m_{1/2}$-$m_0$ plane of the mSUGRA parameter space for $\tan\beta=30$, $A_0=-2m_0$ and $\mu >0$ . The limit is the red line. The green area is theoretically forbidden because it has a charged LSP (the stau) \cite{ATLAS-CONF-2013-047}.\label{squarkgluinolimit}}
+\includegraphics[width=0.9\textwidth]{figures/mSUGRA_0lep_limit} 
+\caption{Plot of the excluded area in the $m_{1/2}$-$m_0$ plane of the mSUGRA parameter space for $\tan\beta=30$, $A_0=-2m_0$ and $\mu >0$ for searches using missing energy and jets. The limit is the red line. The green area is theoretically forbidden because it has a charged LSP (the stau)~\cite{ATLAS-CONF-2013-047}.}
+\label{fig:msugra_squarkgluinolimit}
 \end{center}
 \end{figure}
+%%%
 
-Notice that in the figure the direct squark mass bound is almost equivalent to the mass required for a sufficiently heavy higgs, thus the direct search does not yet constrain the squarks masses significantly  more than the indirect constraint from the higgs mass. 
+Notice that in the figure the squark mass bound is more or less equivalent to the mass required for a sufficiently heavy Higgs, thus the direct search does not constrain the squarks masses significantly more here than the indirect constraint from the Higgs mass. 
 
-An important question is how these bounds change as we move away from the mSUGRA assumptions. By pushing the gluino up in mass using $M_3$ the production cross section falls significantly. Limits of at most  $m_{\tilde{q}}>850$\,GeV assuming only squark production were quoted in the summer 2013 conferences, and the limit falls away entirely if $m_{\tilde{\chi}_1^0}>300$\,GeV becuase the decay products of the squark (quarks) have too little energy.\footnote{The technical term for this is {\bf soft} decay products.} Should one squark generation or flavour be significantly lighter than the others this means a further reduction in the production cross section and thus an even weaker bound. It is also fairly clear that removing R-parity, meaning that the LSP decays, also weakens the above conclusions due to the possible absence of significant missing energy. Thus, despite popular optinion, the generic squark mass bounds outside of specific scnearios like mSUGRA, are currently still fairly weak, in particular compared to indirect bounds via the higgs.
+An important question is how these bounds change as we move away from the mSUGRA assumptions. In mSUGRA the resulting gluino and squark decays are very much constrained by the model. For more general models the limits depend on what decay chains are dominant. In Fig.~\ref{fig:gluino_squarklimit} we show current limits in the gluino--lightest neutralino and squark--lightest neutralino mass planes under various assumptions on the decay chain shown in different colours. 
 
-The gluino mass bound is somewhat more robust. Pushing up squark masses and assuming only gluino production gives $m_{\tilde{g}}>1200$\,GeV (when also including CMS results), however, the limit again disappears for $m_{\tilde{\chi}_1^0}>480$\,GeV.
-
-\subsection{Sbottom}
-The above bounds on the first and second generation squarks do not apply to the third generation as they are generically lighter and can have more complicated decay signatures. In Fig.~\ref{fig:sbottom} we see current best limits from ATLAS on the lightest sbottom taken from~\cite{Aad:2013ija}. Note that this limit assumes 100\% branching ratio for $\tilde b_1\to b \tilde \chi_0^1$. If this branching ratio  is reduced to 60\% the excluded upper limit on the sbottom mass for $m_{\tilde\chi_1^0} < 150$\,GeV is reduced to 520 GeV. Similarly for $m_{\tilde b_1} = 250$\,GeV, the upper limit on $m_{\tilde\chi_1^0}$ is reduced by 30 GeV.
-
-\begin{figure}[h!]
+%%%
+\begin{figure}[t!]
 \begin{center}
-\includegraphics[scale=0.5]{figures/fig_05.eps} 
-\caption{Plot of the excluded area in the ($m_{\tilde{b}_1}$,$m_{\tilde{\chi}_1^0}$) plane. The limit from ATLAS is the red line, while the green and blue colored areas are excluded from different Tevatron experiments~\cite{Aad:2013ija}.\label{fig:sbottom}}
+\includegraphics[width=0.49\textwidth]{figures/gluino_limit} 
+\includegraphics[width=0.49\textwidth]{figures/squark_limit} 
+\caption{Excluded regions in the $(m_{\tilde g}, m_{\tilde\chi_1^0})$ (left) and $(m_{\tilde q},m_{\tilde\chi_1^0})$ (right) mass planes under different assumptions on the decays of the gluino and squarks \cite{ATL-PHYS-PUB-2021-019}. References for the individual analysis given in the figure.}
+\label{fig:gluino_squarklimit}
 \end{center}
 \end{figure}
+%%%
 
+For the gluino the most minimal assumption we can make is that the gluino sheds its adjoint colour charge in the decay to two quarks of the first or second generation and a neutralino, $\tilde g \to q\bar q\tilde\chi_1^0$, either by a direct three-body decay or via an intermediary squark (red line).  We then get limits up to $m_{\tilde{g}}>2300$\,GeV under the assumption of a very light neutralino. This limit gradually weakens as the neutralino mass increases, and disappears beyond $m_{\tilde{\chi}_1^0}>1000$\,GeV for $m_{\tilde{g}}>1000$\,GeV. For $m_{\tilde{g}}<1000$\,GeV (not visible on the plot) most of the parameter space is excluded, with the exception that a small sliver remains when $m_{\tilde{g}} \simeq m_{\tilde{\chi}_1^0}$ in the degenerate scenario.
+
+For the first two generations of squarks the most minimal decay is $\tilde q\to q\tilde\chi_1^0$. Here the bound (red) reaches to around $m_{\tilde q}>1800$\,GeV for a light neutralino, while for heavier neutralinos the bound disappears beyond $m_{\tilde{\chi}_1^0}>700-800$\,GeV for $m_{\tilde q}>800$\,GeV. Below a squark mass of around 800\,GeV most of the parameter space is excluded, but we again lose sensitivity when there is degeneracy between the squark and the neutralino. Here a search for mono-jets has some impact in closing the gap, which shows as a spike in the excluded region between 800 and 900\,GeV, however, despite poor visibility in the plot, a very degenerate squark--neutralino pair is still allowed below 800\,GeV. 
+
+An additional assumption made in this plot is that all the eight squarks of the first two-generations are degenerate in mass and adding to the cross section. Should one squark generation or flavour be significantly lighter than the others this means a further reduction in the production cross section and thus a weaker bound. It is also fairly clear that removing R-parity, meaning that the LSP decays, also weakens the above conclusions due to the possible absence of significant missing energy. 
+
+
+%\subsection{Sbottom}
+%The above bounds on the first and second generation squarks do not apply to the third generation as they are generically lighter and can have more complicated decay signatures. In Fig.~\ref{fig:sbottom} we see current best limits from ATLAS on the lightest sbottom taken from~\cite{Aad:2013ija}. Note that this limit assumes 100\% branching ratio for $\tilde b_1\to b \tilde \chi_0^1$. If this branching ratio  is reduced to 60\% the excluded upper limit on the sbottom mass for $m_{\tilde\chi_1^0} < 150$\,GeV is reduced to 520 GeV. Similarly for $m_{\tilde b_1} = 250$\,GeV, the upper limit on $m_{\tilde\chi_1^0}$ is reduced by 30 GeV.
+%
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[scale=0.5]{figures/fig_05.eps} 
+%\caption{Plot of the excluded area in the ($m_{\tilde{b}_1}$,$m_{\tilde{\chi}_1^0}$) plane. The limit from ATLAS is the red line, while the green and blue colored areas are excluded from different Tevatron experiments~\cite{Aad:2013ija}.\label{fig:sbottom}}
+%\end{center}
+%\end{figure}
+
+%%%
 \subsection{Stop}
-For the stop there are many possible competing decay chanels, meaning that any limit set is very model dependent. The two main decay categories for the lightest stop are via the chargino, if available, $\tilde{t}_1\to b \tilde{\chi}^\pm_1$, and directly to the neutralino $\tilde{t}_1\to t\tilde{\chi}^0_1/ Wb \tilde{\chi}^0_1/ c\tilde{\chi}^0_1$, where the dominant decay mode depends on the stop--neutralino mass difference. A summary of (the many) current ATLAS limits for the stop is found in Fig.~\ref{fig:stop}. It is important to notice the surviving possibility of quite light stops in conjunction with a light neutralino or chargino.
+For the stop there are many possible competing decay channels, meaning that limits set are rather model dependent. The two main decay categories for the lightest stop are decays via the chargino, $\tilde{t}_1\to b \tilde{\chi}^+_1$, a supersymmetrised version of the Standard Model $t\to bW^+$, and decays directly to the neutralino $\tilde{t}_1\to t\tilde{\chi}^0_1/ bW \tilde{\chi}^0_1/bff'\tilde\chi_1^0$, where $ff'$ represents the fermions in a $W$ decay, and where the dominant decay mode depends on the stop--neutralino mass difference. Since the chargino decay is also typically $\tilde{\chi}^+_1\to ff'\tilde\chi_1^0$, the experimental signature of stop production is $bff'\tilde{\chi}^0_1$, a mixture of missing energy, fermions that may either be leptons or result in jets, and a $b$-quark that forms a jet with distinct properties, called a $b$-jet.
 
-\begin{figure}[h!]
+%%%
+\begin{figure}[t!]
 \begin{center}
-\includegraphics[width=\textwidth]{figures/stop.eps} 
-\caption{Plot of the excluded area in the ($m_{\tilde{t}_1}$,$m_{\tilde{\chi}^0_1}$) plane for the two main decay categories. References for the individual analysis given in figure.\label{fig:stop}}
+\includegraphics[width=\textwidth]{figures/stop_limit} 
+\caption{Plot of the excluded area in the ($m_{\tilde{t}_1}$,$m_{\tilde{\chi}^0_1}$)  mass plane~\cite{ATL-PHYS-PUB-2021-019}. References for the individual analysis given in the figure.}
+\label{fig:stoplimit}
 \end{center}
 \end{figure}
+%%%
 
+A summary of (the many) ATLAS searches for the stop is found in Fig.~\ref{fig:stoplimit} showing limits in the $(m_{\tilde t_1}, m_{\tilde\chi^0_1})$ mass plane. The dashed grey lines show the regions where the different stop decays are kinematically possible. We observe that for light neutralinos the limit goes all the way up to $m_{\tilde t_1}>1250$\,GeV, while there are essentially no limits for $m_{\tilde\chi^0_1} >580$\,GeV. Again degenerate scenarios 
+have weaker bounds. When the stop approaches the neutralino plus top mass stop masses down to 600\,GeV are allowed. And, again not very visible, for a degenerate stop--neutralino the limit is virtually non-existent. As an additional complication, if the stop--neutralino mass difference is below the bottom quark mass, the standard stop decays no longer work and the flavour changing neutral current decay $\tilde{t}_1\to c\tilde{\chi}^0_1$ becomes dominant. This decay has multiple still open theoretical questions, both about the potentially long lifetime of the stop in this scenario, and exactly where in parameter space this transition occurs.
+
+
+%%%
 \subsection{Sleptons}
-As mentioned above the mass bounds on sleptons will be very dependent on the assumed production mechanism. The most model independent bounds come from assuming only electroweak pair production as in \cite{ATLAS-CONF-2013-049}, which presents the results of a search for two opposite-sign same-flavour (OSSF) leptons with missing energy. The result for degenerate right- and left-handed smuons and selectrons, assuming 100\% branching ratio in the neutralino, is shown in Fig.~\ref{fig:slepton}. Individual selectron and smuon limits are significantly weaker. Limits from this kind of search in complete models, such as mSUGRA, are typically much weaker than those that come from searches for jets and missing energy, {\it e.g.}\ see Fig.~\ref{fig:reach}.
+The mass bounds on sleptons will be very dependent on the assumed production mechanism. If the sleptons are produced indirectly in cascade decays from heavier squarks or gluinos they could have large cross sections, however, the most model independent bounds come from assuming only direct electroweak pair production through a virtual photon or $Z$.
 
-\begin{figure}[h!]
+%%%
+\begin{figure}[t!]
 \begin{center}
-\includegraphics[width=\textwidth]{figures/slepton.eps} 
-\caption{Plot of the excluded area in the ($m_{\tilde l}$,\,$m_{\tilde{\chi}^0_1}$) plane for mass degenerate right- and left-handed smuons and selectrons~\cite{ATLAS-CONF-2013-049}.\label{fig:slepton}}
+\includegraphics[width=0.95\textwidth]{figures/slepton_limit} 
+\caption{Plot of the excluded area in the ($m_{\tilde l_{L,R}}$,\,$m_{\tilde\chi^0_1}$) plane for mass degenerate right- and left-handed  sleptons of different flavours~\cite{ATL-PHYS-PUB-2021-019}.}
+\label{fig:sleptonlimit}
 \end{center}
 \end{figure}
+%%%
 
-There are currently no constraining searches for direct pair production of staus.
 
+The result for degenerate right- and left-handed charged sleptons from electroweak production, assuming decays with 100\% branching ratio to the lightest neutralino, are shown in Fig.~\ref{fig:sleptonlimit}. These limits separate between selectron and smuon production, and stau production. The former are assumed degenerate, and have stricter bounds than the stau, which is harder to reconstruct due to the many different possible tau decays involving extra neutrinos. For all slepton flavours we see that there is a gap in the mass plane down to very low masses where no sleptons are excluded, all the way down to masses below 100\,GeV where the LEP bound applies. This is yet another example of the problems with degeneracy. If the slepton--neutralino mass difference is around 50\,GeV and lower, it becomes difficult to reliably reconstruct the soft leptons from the slepton decay and to separate them from the ordinary Standard Model pair production of lepton pairs.
+
+
+%%%
 \subsection{Charginos and neutralinos}
-As for the sleptons, bounds are dependent on the production process assumed. With chargino pair production, $\tilde\chi_1^+\tilde\chi_1^-$, the search for two OSSF leptons discussed in the previous subsection again applies because the chargino can decay via a slepton or sneutrino~\cite{ATLAS-CONF-2013-049}. We show the results assuming $m_{\tilde l}=m_{\tilde\nu} = (m_{\tilde\chi_1^\pm} +m_{\tilde\chi_1^0})/2$, and again 100\% branching ratio, in Fig.~\ref{fig:chargino}.
+As for the sleptons, bounds are dependent on the production process assumed. The search for direct electroweak pair production of the lightest neutralino, $\tilde{\chi}^0_1\tilde{\chi}^0_1$, has the same problem as at LEP, the coupling is vanishingly small for a non-higgsino $\tilde{\chi}^0_1$. This means that it is the heavier neutralinos and charginos that are typically searched for. Here some considerations on the possible masses hierarchies come into play. If the lightest neutralino is dominantly bino and the next-to-lightest dominantly wino ($M_1<M_2<|\mu|$) then the $\tilde{\chi}^0_2$ and $\tilde{\chi}^\pm_1$ states are degenerate in mass and the most important searches will be for $\tilde{\chi}^0_2\tilde{\chi}^\pm_1$ and $\tilde{\chi}^+_1\tilde{\chi}^-_1$ production.\footnote{Again because of the coupling in Eq.~(\ref{eq:ZNN_vertex}) the production of a pair of wino-like $\tilde{\chi}^0_2\tilde{\chi}^0_2$ is suppressed and the cross section is small.} These then decay as $\tilde{\chi}^0_2\to Z \tilde{\chi}^0_1$ or  $\tilde{\chi}^0_2\to h \tilde{\chi}^0_1$, and  $\tilde{\chi}^\pm_1\to W \tilde{\chi}^0_1$, where the bosons may be off-shell if the mass difference is small.
+This is the scenario usually considered by the experiments, in part because winos give the largest electroweak production cross sections. 
 
-\begin{figure}[h!]
+%%%
+\begin{figure}[t!]
 \begin{center}
-\includegraphics[width=\textwidth]{figures/chargino.eps} 
-\caption{Plot of the excluded area in the ($m_{\tilde\chi_1^\pm}$,\,$m_{\tilde{\chi}^0_1}$) plane~\cite{ATLAS-CONF-2013-049}.\label{fig:chargino}}
+\includegraphics[width=0.9\textwidth]{figures/chargino_neutralino_limit} 
+\caption{Plot of the excluded area in the ($m_{\tilde\chi_1^\pm,\tilde\chi_2^0}$,\,$m_{\tilde{\chi}^0_1}$) mass plane for different search signatures~\cite{ATL-PHYS-PUB-2021-019}. This plot assumes a degenerate wino-like  $\tilde{\chi}^0_2$ and $\tilde{\chi}^\pm_1$ and a 100\% branching ratio to the given decay channels.}
+\label{fig:charginolimit}
 \end{center}
 \end{figure}
+%%%
 
-We can also search for $\tilde\chi_2^0\tilde\chi_1^\pm$ production with three leptons and missing energy. 
-The results from~\cite{ATLAS-CONF-2013-035}, where 100\% branching ratio into vector bosons is assumed, are shown in Fig.~\ref{fig:cha_neu}.
+We show the current limits assuming degenerate wino-like states $\tilde{\chi}^0_2$ and $\tilde{\chi}^\pm_1$ in Fig.~\ref{fig:charginolimit}. We can see that limits up to 1050\,GeV can be set for $\tilde{\chi}^0_2$ and $\tilde{\chi}^\pm_1$ when the lightest neutralino is below around 200\,GeV. When the bosons in the decay go off-shell we see that the sensitivity of the searches go down significantly. If we move away from the wino-production scenario the production cross sections drop, and so does the reach of the experiments in the mass plane.
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=\textwidth]{figures/cha_neu.eps} 
-\caption{Plot of the excluded area in the ($m_{\tilde\chi_1^\pm}$,\,$m_{\tilde{\chi}^0_1}$) plane assuming $m_{\tilde\chi_1^\pm}=m_{\tilde\chi_2^0}$~\cite{ATLAS-CONF-2013-035}.\label{fig:cha_neu}}
-\end{center}
-\end{figure}
+An additional important complication appears if the lightest neutralino is wino ($M_2<M_1,|\mu|$) or higgsino ($|\mu|<M_1,M_2$). Then the lightest neutralino and chargino, $\tilde{\chi}^0_1$ and  $\tilde{\chi}^\pm_1$ (for higgsinos also $\tilde{\chi}^0_2$), are degenerate, and the crucial question becomes how degenerate they are. If the mass difference is small but above around 300\,MeV, then the particles are very difficult to discover at all, despite potentially having very large cross sections if they are light. The decays of the produced $\tilde{\chi}^\pm_1$ (and for higgsinos $\tilde{\chi}^0_2$) into $\tilde{\chi}^0_1$ lead to very soft decay products, either leptons in $\tilde{\chi}^\pm_1\to \ell^\pm\nu_\ell\tilde{\chi}^0_1$ (and $\tilde\chi^0_2\to \ell^+\ell^-\tilde{\chi}^0_1$), or decays to pions (the lightest hadronic states) $\tilde{\chi}^\pm_1\to \pi^\pm\tilde{\chi}^0_1$ (and $\tilde\chi^0_2\to \pi^0\tilde{\chi}^0_1$), that are unobservable above the backgrounds of a hadron collider. 
 
+If instead the mass difference becomes of the order off or less than the pion mass the width of the chargino can become so small that the state is sufficiently long lived to decay somewhere inside the detector, and not, effectively, at the interaction point. This would lead to charged tracks from the charginos that disappear somewhere inside the detector. Such disappearing track signatures are readily observable, and in fact the limits on very degenerate neutralinos and charginos are stronger than the limits on only somewhat degenerate ones.
+
+The consequences of this complication is that it is very difficult to exclude near massless wino- or higgsino-like charginos and neutralinos at the LHC. However, since the chargino mass is constrained by the $Z$-width measured at LEP, there is an absolute lower limit of 45 GeV for both in this scenario. To improve significantly on this limit one may have to wait for a new lepton collider.
 
 
 %%%%%%%%%%%%%%%%
