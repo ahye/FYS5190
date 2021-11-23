@@ -328,6 +328,7 @@ As alternatives to these standard searches for pair produced sparticles with mis
 
 %%%%%%%%%%%%%%%%%%%%%%%
 \section{Current bounds on sparticle masses}
+\label{sec:current_LHC_bounds}
 %%%%%%%%%%%%%%%%%%%%%%%
 The LHC has finished its Run II and collected a total of around 140 fb$^{-1}$ of data per experiment at $\sqrt{s}=13$ TeV of energy. It is currently preparing for Run III to start in 2022.  Direct bounds from the LHC experiments ATLAS and CMS now supersede bounds from other colliders (Tevatron and LEP) in almost all channels, with some exceptions for models with degenerate masses. The below limits are mostly limits with the full Run II dataset and represent the current state-of-art in sparticle searches. We mostly use examples from ATLAS, the corresponding plots from CMS are very similar.
 
@@ -442,77 +443,106 @@ The consequences of this complication is that it is very difficult to exclude ne
 %%%%%%%%%%%%%%%%
 \section{Precision observables}
 %%%%%%%%%%%%%%%%
-A different way to exclude supersymmetric models is their indirect effect on very accurately measured SM processes, so-called precision observables, through loop diagrams with sparticles. We will here discuss four of the most sensitive probes: electroweak precision observables, the value of the anomolous magnetic moment of the muon $(g-2)_\mu$, the flavour changing neutral current (FCNC) process $b\to s\gamma$ and the very rare (and FCNC) process $B_s\to\mu\mu$.
+A different way to search for the signs of supersymmetric particles is their indirect effect on very accurately measured Standard Model particle properties and processes, so-called {\bf precision observables}, mostly through loop diagrams with sparticles. We will here discuss four different types of probes: the electroweak precision observables, the value of the anomalous magnetic moment of the muon $(g-2)_\mu$, the flavour changing neutral current (FCNC) process $b\to s\gamma$ and the very rare (and FCNC) process $B_s\to\mu\mu$.
 
 %%%
 \subsection{Electroweak precision observables}
 %%%
-When we talk about electroweak precision observables, we study parameters such as $M_W$ (or $M_Z$), $\Gamma_W$, $\Gamma_Z$, $m_t$ and $\sin\theta_W$, as well as the Higgs mass $m_h$ and the properties of the Higgs such as its couplings to all the other particles (gauge and Yukawa couplings) and its self-coupling. 
+When we talk about {\bf electroweak precision observables}, we study particle properties such as $M_W$ (or $M_Z$), $\Gamma_W$, $\Gamma_Z$, $m_t$ and $\sin\theta_W$, as well as the Higgs mass $m_h$ and the properties of the Higgs such as its couplings to all the other particles (gauge and Yukawa couplings) and its self-coupling. 
 
-Up to last year we studied all of these as {\it functions} of the unknown Higgs mass, looking for devations that could be a sign of supersymmetry. We show a fit to all available electroweak data and direct exclusion bounds in Fig.~\ref{SMprecexcl} by the {\tt Gfitter} collaboration just before the LHC started taking data, a fit pretty much indicating that the most probable SM Higgs mass was 125 GeV. 
+Up to 2012 we could study all of these as {\it functions} of the unknown Higgs mass, looking for deviations that could be a sign of for example supersymmetry. We show a fit of the Higgs mass to all available electroweak data and direct exclusion bounds in Fig.~\ref{fig:higgs_mass_prediction}, made by the Gfitter Collaboration in 2011 just before the LHC started taking significant amounts of data~\cite{Baak:2011ze}, a fit pretty much indicating that the most probable Standard Model Higgs mass was around 120 GeV.  Here, 
+\[
+\Delta\chi^2=\chi^2(m_h)-\min_{m_h}\chi^2(m_h),
+\]
+is the difference in the $\chi^2$ from the best fit point as a function of the Higgs mass, which has a standard interpretation in terms of $\sigma$s of significance for a one dimensional fit.
 
-\begin{figure}[h!]
+%%%
+\begin{figure}[t!]
 \begin{center}
-\includegraphics[width=\textwidth]{figures/SMprecexcl.eps} 
-\caption{Plot of the total $\Delta \chi^2$ from all precision variable measurements and the direct exclusions bounds for the SM Higgs from LEP and the Tevatron, as a function of the Higgs mass.\label{SMprecexcl}}
+\includegraphics[width=\textwidth]{figures/higgs_mass_prediction} 
+\caption{Plot of the total $\Delta \chi^2$ from all precision observable measurements and the direct exclusions bounds for the Standard Model Higgs set by LEP and the Tevatron, as a function of the Higgs mass~\cite{Baak:2011ze}.}
+\label{fig:higgs_mass_prediction}
 \end{center}
 \end{figure}
+%%%
 
-Figure \ref{mSUGRAprec} shows a similar plot for mSUGRA. At that time the absolute minimum of the fit, even taking into account the different number of parameters, gave a better a better fit for mSUGRA, $\min\chi^2_{\rm mSUGRA}<\min\chi^2_{\rm SM}$, but this changed quickly when the Higgs was found because of the position of the two minima.
+Figure \ref{fig:mSUGRA_prediction} shows a similar plot for mSUGRA. At that time the absolute minimum of the fit, even taking into account the different number of parameters, gave a better fit for mSUGRA, $\min\chi^2_{\rm mSUGRA}<\min\chi^2_{\rm SM}$, but this changed quickly when the Higgs was found because of the position of the two minima.
 
+%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=\textwidth]{figures/mSUGRApre.eps} 
-\caption{Plot of the $\Delta \chi^2$ from all precision variable measurements for mSUGRA as a function of the Higgs mass. The yellow area shows the experimentally excluded area, while the brown shows the theoretically inaccessible area.\label{mSUGRAprec}}
+\includegraphics[width=0.7\textwidth]{figures/mSUGRApre.eps} 
+\caption{Plot of the $\Delta \chi^2$ from all precision observable measurements for mSUGRA as a function of the Higgs mass. The yellow area shows the area excluded by LEP searches ({\it not} included in the fit), while the brown shows the theoretically inaccessible area.}
+\label{fig:mSUGRA_prediction}
 \end{center}
 \end{figure}
+%%%
 
-Now all the parameters of the SM---neutrinos excepted---have been determined to some precission. Thus the SM is a completely constrained system. If we now do a electroweak fit the situation looks like that in Fig.~\ref{fig:EWfit_LHC2012}, where we show the global fit compared to the measured values of the $W$ and top masses. Clearly what we are seeing here is (still?) consistent with the SM.
+Now all the parameters of the Standard Model -- neutrinos excepted -- have been determined to some precision. Thus the Standard Model is a completely constrained system. If we now do a electroweak fit the situation looks like that in Fig.~\ref{fig:EWfit_LHC2018}, where we show the global fit to all measurements {\it except} the top and $W$ masses, compared to the measured values of the $W$ and top masses. Clearly what we are seeing here is (still?) consistent with the Standard Model.
 
+%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=\textwidth]{figures/2013_09_19_W_vs_top_logo.eps} 
-\caption{Electroweak fit excluding $M_W$ and $m_t$ (blue), compared to their measured values (green)~\cite{Baak:2012kk}.\label{fig:EWfit_LHC2012}}
+\includegraphics[width=0.85\textwidth]{figures/MW_vs_mt} 
+\caption{Electroweak fit excluding $M_W$ and $m_t$ (blue), compared to their measured values (green)~\cite{Haller:2018nnx}.}
+\label{fig:EWfit_LHC2018}
 \end{center}
 \end{figure}
+%%%
+
 
 %%%
 \subsection{$(g-2)_\mu$}
 %%%
-The anomalous magnetic moment of the muon, $(g-2)_\mu$, has been very precisely measured by the E821 experiment at BNL \cite{Bennett:2006fi} to be:
-\[g_\mu = 2.00116592089(63),\]
-or, in terms of $a_\mu$ which is the devation from 2, 
-\[a_\mu^{(\rm exp)}=11659208.9(6.3)\cdot 10^{-10},\]
-where the parenthesis indicates the uncertainty on the last digits. Figure \ref{moudig} a) shows the lowest order $\mu \to \mu \gamma$ diagram. Loop corrections to this diagram give $a_\mu$. In the SM we find the prediction
-\[a_\mu^{\rm SM}=11659183.0(5.1)\cdot 10^{-10},\]
+The {\bf anomalous magnetic moment} of the muon, $g_\mu$, in effect the interaction of a muon with an external electromagnetic field shown in Fig.~\ref{moudig} a), was calculated by Dirac in relativistic quantum mechanics as $g_\mu=2$. However, in quantum field theory we have higher order corrections from loop-process such as shown in  Fig.~\ref{moudig} b), that makes $g_\mu$ deviate from two. 
+
+It was very precisely measured by the E821 experiment at BNL \cite{Bennett:2006fi} to be:
+\[g_\mu^\text{exp} = 2.00116592089(63),\]
+or, in terms of the deviation $a_\mu=g_\mu-2$,
+\[a_\mu^\text{exp}=11659208.9(6.3)\cdot 10^{-10},\]
+where the parenthesis indicates the uncertainty on the last digits. 
+
+In the Standard Model we find the prediction
+\[a_\mu^\text{SM}=11659183.0(5.1)\cdot 10^{-10},\]
 giving a difference with respect to the experimental value of
-\[\delta_{a_\mu} \equiv a_\mu^{\rm exp}-a_\mu^{\rm SM} = (25.9\pm 8.1)\cdot 10^{-10},\]
-a value which is 3.2$\sigma$ away from zero. This is probably the clearest discrepancy that exists today between the SM and measurements.
+\[\Delta a_\mu \equiv a_\mu^{\rm exp}-a_\mu^{\rm SM} = (25.9\pm 8.1)\cdot 10^{-10},\]
+a value which is 3.2$\sigma$ away from zero. Recently, the Muon g-2 Collaboration at Fermilab made a new measurement~\cite{Muong-2:2021ojo} confirming this discrepancy with the value
+\[\Delta a_\mu = 25.1\pm 5.9\cdot 10^{-10},\]
+corresponding to $4.2\sigma$. The Muon g-2 Collaboration is set to make further improvements on this number, expecting to reduce the uncertainty by a factor of $2-4$.
 
-However, we should be aware that one of the SM contributions, the so called {\bf hadronic vacuum polarization} as shown in Figure~\ref{moudig} b), involves hadronic loops where one has to rely on experimental information on low energy $e^+e^-\to \gamma^* \to {\rm hadrons}$ in order to estimate a contribution of $a_\mu^{\rm HVP}=10.5(2.6)\cdot 10^{-10}$, which is of the same order of magnitude as the discrepancy, and may be prone to errors in the interpretation. 
+However, we should be aware that some of the Standard Model contributions involve hadronic loops, {\it e.g.} the so-called {\bf hadronic vacuum polarisation} shown in Figure~\ref{moudig} b), where one has to rely on experimental information from low energy $e^+e^-\to \gamma^* \to {\rm hadrons}$ in order to estimate a contribution of $a_\mu^{\rm HVP}=10.5(2.6)\cdot 10^{-10}$, which is of the same order of magnitude as the discrepancy, and may be prone to errors in the interpretation. 
 
+%%%
 \begin{figure}[h!]
 \begin{center}
 \includegraphics{figures/muonprec.eps} 
-\caption{Diagrams for muon interaction with an electromagnetic field. Loop corrections to the tree level diagram a) give the value of $a_\mu$. Diagram b) shows hadronic vacuum polarization where the blob contains QCD fields. Diagrams c) and d) show the lowest order MSSM contributions to $a_\mu$.\label{moudig}}
+\caption{Diagrams for muon interaction with an electromagnetic field. Loop corrections to the tree level diagram a) give the value of $a_\mu$. Diagram b) shows hadronic vacuum polarization where the blob contains QCD fields. Diagrams c) and d) show the lowest order MSSM contributions to $a_\mu$.}
+\label{moudig}
 \end{center}
 \end{figure}
+%
 
-One-loop corrections to $(g-2)_{\mu}$ in the MSSM are shown in Figure~\ref{moudig} c) and d). These contribute opposite sign terms $a_\mu(\tilde{\chi}^0)$ and $a_\mu(\tilde{\chi}^-)$. A thorough analysis shows that we need $\mu>0$ in order to give a positive contribution that will close the gap between the experimnetal value and the prediction. In order to get a sufficiently large contribution the loop masses must be less than $500-600$\,GeV for $\tan\beta = 40-50$ and $200-300$\,GeV for $\tan\beta \simeq10$.
+In the MSSM we can have contributions to $a_\mu$ at the one-loop level, either by the exchange of one of the new Higgs bosons across the muon line, or by loops containing a smuon $\tilde\mu$ or muon-sneutrino $\tilde\nu_\mu$, together with a neutralino or chargino. The diagrams for the latter two processes are shown in Figure~\ref{moudig} c) and d). These contribute opposite sign terms $a_\mu(\tilde{\chi}^0)$ and $a_\mu(\tilde{\chi}^-)$. A thorough analysis shows that we need $\mu>0$ in order to give a positive contribution that will close the gap between the experimnetal value and the prediction. In order to get a sufficiently large contribution the loop masses must be less than $500-600$\,GeV for $\tan\beta = 40-50$ and $200-300$\,GeV for $\tan\beta \simeq10$. However, as we saw in Sec.~\ref{sec:current_LHC_bounds} this is not implausible.
 
+
+%%%
 \subsection{$b \to s\gamma$}
-The process $b \to s\gamma$ is a FCNC process which must proceed through loops. Figure~\ref{btosdiags} a) shows the SM process. This is suppressed by the smallness of the CKM entries, and the large masses $m_W$ and $m_t$.
+%%%
+The  quark level process $b \to s\gamma$ is a Flavour Changing Neutral Current (FCNC) process which must proceed through loops in the Standard Model since there are no tree-level FCNC interactions there. At meson level it leads to measurable decays of the type $B\to X_s\gamma$, where $X_s$ is some meson with a strange quark, {\it e.g.}\  the decay $B\to K\gamma$. Figure~\ref{btosdiags} a) shows the one-loop Standard Model contribution with a virtual $W$ and up-type quarks. This contribution is suppressed by the smallness of the CKM entries in the $W$-vertices, and the large masses, $M_W$ and $m_t$, in the loop.
 
+%%%
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{figures/btosdiags.eps} 
 \caption{Diagrams for the process $b \to s\gamma$. a) shows the SM diagram while b), c) and d) show MSSM contributions.\label{btosdiags}}
 \end{center}
 \end{figure}
+%%%
 
-The process has been measured in decays of the type $B\to X_s\gamma$, {\it e.g.}\  in $B\to K\gamma$, and calculated at NNLO to be ${\rm Br}(B\to X_s\gamma)_{\rm SM} = (3.36 \pm 0.23)\cdot 10^{-4}$ for $E_\gamma \geq 1.6$\,GeV~\cite{Misiak:2015xwa,Czakon:2015exa}.\footnote{For the process $b\to d \gamma$ the SM calculation yields  ${\rm BR} (B \to X_d \gamma) = 1.73^{+0.12}_{-0.22} \cdot 10^{-5}$.}
+The process has been calculated at next-to-next-to-leading order (NNLO) in the Standard Model to be ${\rm Br}(B\to X_s\gamma)_{\rm SM} = (3.36 \pm 0.23)\cdot 10^{-4}$ for $E_\gamma \geq 1.6$\,GeV~\cite{Misiak:2015xwa,Czakon:2015exa}, inclusively summing over all meson final states.\footnote{For the process $b\to d \gamma$ the Standard Model calculation yields  ${\rm BR} (B \to X_d \gamma) = 1.73^{+0.12}_{-0.22} \cdot 10^{-5}$.}
 
-Supersymmetry may contribute, {\it e.g.} with diagrams such as Fig.~\ref{btosdiags} b) where the  $m_{bs}^2\tilde{b}^*\tilde{s}$ mass term that changes a $\tilde b_1$ to a $\tilde s$ is a soft breaking off-diagonal term, often denoted $\delta_{23}$. The main MSSM contributions are expected to come from chargino--stop\footnote{We usually expect a higher generation off-diagonal terms to be larger due to RGE running controlled by Yukawa couplings.} and charged higgs--top loops, as shown in Figs.~\ref{btosdiags} c) and d), respectively. However,  there is little room for effects from superymmetry  since the current experimental world average is ${\rm Br}(B\to X_s\gamma)=(3.55\pm 0.26)\cdot 10^{-4}$ (PDG 2010). This means that either the charged Higgs is heavy enough and the stop-scharm soft mass term small enough, or that there are cancellations between the contributions. 
+Supersymmetry may contribute to this process, {\it e.g.} with diagrams such as Fig.~\ref{btosdiags} b) where the  $m_{bs}^2\tilde{b}^*\tilde{s}$ mass term that changes a $\tilde b_1$ to a $\tilde s$ is a soft breaking off-diagonal term, often denoted $\delta_{23}$. The main MSSM contributions are expected to come from chargino--stop\footnote{We usually expect a higher generation off-diagonal terms to be larger due to RGE running controlled by Yukawa couplings.} and charged higgs--top loops, as shown in Figs.~\ref{btosdiags} c) and d), respectively. However,  there is little room for effects from superymmetry  since the current experimental world average is ${\rm Br}(B\to X_s\gamma)=(3.55\pm 0.26)\cdot 10^{-4}$ (PDG 2010). This means that either the charged Higgs is heavy enough and the stop-scharm soft mass term small enough, or that there are cancellations between the contributions. 
+
 
 %%%
 \subsection{$B_s \to \mu^+\mu^-$}
@@ -558,9 +588,10 @@ From relativistic kinematics, show Eq.~(\ref{eq:m_ab}). {\it Hint:} the choice o
 
 \begin{Exercise}[]
 Find the total cross section for the process $q\bar{q} \rightarrow \tilde{q}\tilde{q}^*$ via an s-channel gluon shown in Fig.~\ref{fig:feynmanq}.
-\unitlength=1mm
+%%%
 \begin{figure}[h!]
 \begin{center}
+\unitlength=1mm
 \begin{fmffile}{feynman_qqgqq}
 \begin{fmfgraph*}(40,20)
   \fmfleft{i1,i2}
@@ -579,9 +610,11 @@ Find the total cross section for the process $q\bar{q} \rightarrow \tilde{q}\til
 \end{fmfgraph*}
 \end{fmffile}
 \vspace{5mm}
-\caption{Strong SUSY production of two squarks through a gluon.}\label{fig:feynmanq}
+\caption{Strong production of a squark--anti-squark pair through a gluon.}
+\label{fig:feynmanq}
 \end{center}
 \end{figure}
+%%%
 \end{Exercise}
 
 \begin{Answer}
