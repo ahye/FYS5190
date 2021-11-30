@@ -159,63 +159,84 @@ One could even imagine colour charged supersymmetric particles as dark matter, i
 \section{Direct detection}
 \label{sec:DD}
 %%%%%%%%%%%%%
-In addition to the direct production of dark matter at colliders and the corresponding searches for missing energy, there are two other main ways to search for dark matter, direct and indirect detection. Here we briefly discuss direct detection.
+In addition to the direct production of dark matter at colliders and the corresponding searches for missing energy, there are two other main ways to search for dark matter, direct and indirect detection. Here we briefly discuss {\bf direct detection}.
 
-Direct detection seeks to make weak DM interactions with SM matter visible by very low background searches in large volumes, using galactic halo DM interacting with ordinary matter. This is very dependent on the $\chi$ scattering cross section on nucleons (quarks), which can be calculated in a given model, but also the DM halo density distribution and velocity distribution, which have large uncertainties. This can be expressed in the differential scattering rate with respect to the recoil energy $E_r$ of a scattered nucleon with mass $M$
+Direct detection seeks to make weak and thus rare dark matter interactions with standard model matter visible by very low background searches in large volumes, using local galactic halo dark matter interacting with ordinary matter on Earth. The feasibility of direct detection  is very dependent on the $\chi$ scattering cross section on nucleons (quarks), which can in principle be calculated in a given model,\footnote{However, while the quark--dark matter cross section is relatively easy to calculate, the fact that the quark is bound in a nucleon, and the nucleon bound to a nucleus makes this more difficult in practice, involving also estimates from nuclear physics.} but also on the dark matter halo density distribution and velocity distribution, which have large uncertainties. 
+
+The rate of interaction between dark matter and a particular type of nucleons in a sample can be expressed in the differential scattering rate with respect to the recoil energy $E_r$ of a scattered nucleon with mass $M$ as
 \begin{equation}
 \frac{dN}{dE_r} = \frac{\sigma \rho_{DM}}{2\mu^2 m_\chi}|F(q)|^2\int_{v_{min}}^{v_{esc}} \frac{f(\vec v)}{v}d^3v,
+\label{eq:DD_rate}
 \end{equation}
-where $\sigma$ is the DM scattering cross section off the nucleus in question, $\rho_{DM}$ is the DM halo density at Earth, $\mu$ is the dark matter and nucleus reduced mass, $F(q)$ is a nuclear form factor dependent on the scattering momentum transfer $q=\sqrt{2ME_r}$, $f(\vec v)$ is the velocity distribution in the halo, $v_{min}=\sqrt{ME_r/2\mu^2}$ is the minimal velocity that gives a recoil energy $E_r$ and $v_{esc}$ is the escape velocity from the halo.
+where $\sigma$ is the dark matter scattering cross section off the nucleus in question, $\rho_{DM}$ is the dark matter halo density at Earth, $\mu=m_\chi M/(m_\chi+M)$ is the dark matter and nucleus reduced mass, $F(q)$ is a nuclear form factor dependent on the scattering momentum transfer $q=\sqrt{2ME_r}$ and the nucleon type, $f(\vec v)$ is the velocity distribution of the dark matter in the halo, $v_{min}=\sqrt{ME_r/2\mu^2}$ is the minimal velocity that gives a recoil energy $E_r$ and $v_{esc}$ is the escape velocity from the halo.
 
-There two main tactics followed in order to try to directly detect DM:
+In general direct detection relies heavily on suppressing Standard Model backgrounds which would be the overwhelmingly dominant cause of observed recoils. This is done by moving the experiments deep under ground where they are shielded from cosmic rays, and by specifically shielding the detector samples against local radioactivity. Beyond this, there are  two main tactics followed in order to try to directly detect dark matter:
 \begin{itemize}
-\item Suppress (almost) all backgrounds, which is used in experiments such as XENON and CDMS.
-\item Look for an annular modulation, due to the Earth's movement in the galactic rest frame, in a small dark matter signal on top of a constant background, used in DAMA and CoGeNT.
+\item Suppress (almost) all backgrounds and monitor as large a volume as possible. This used in experiments such as XENON, PANDAS and CDMS.
+\item Look for an annular modulation in the event rate -- due to the Earth's movement in the galactic rest frame and thus in the dark matter halo, changing the velocity integral in Eq.~(\ref{eq:DD_rate}) -- to observe a small dark matter signal on top of a constant background, such as used in the DAMA and CoGeNT experiments.
 \end{itemize}
 
-Figure~\ref{DD} shows results from the most important direct detection experiments. Observe that while DAMA and CoGeNT both have signals for detection, these are already excluded by XENON and not compatible with each other. 
+Figure~\ref{fig:DD_exclusion} shows results from the current most important direct detection experiments as limits on the dark matter--nucleon cross section as a function of dark matter mass. Observe that while DAMA claims a detection (closed regions), these are already excluded by many other experiments. For reference, a neutralino WIMP could reasonably be expected to have a scattering cross section in the range $10^{-45}-10^{-50}$ cm$^2$ for masses in the range 100--1000 GeV~\cite{GAMBIT:2017zdo}. The dashed yellow line shows what is called the {\bf neutrino floor}. This is the cross section that can be reached before the experiments would be saturated with recoils due to neutrinos scattering off the experiment sample. Going below the neutrino floor would need new experimental techniques, fundamentally, the direction of the particle creating the recoil would need to be reconstructed.
 
+%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=\textwidth]{figures/DMexpplot.eps} 
-\caption{Plot of different exclusion and detection results for direct detection of DM in the WIMP mass versus WIMP--nucleon cross section plane. The grey area shows the expected mass and cross section in MSSM models, where we assume gauge unification at the GUT-scale. \label{DD}}
+\includegraphics[width=\textwidth]{figures/APPEC_si_current_limits} 
+\caption{Plot of different exclusion and detection results for direct detection of dark matter in the WIMP mass versus WIMP--nucleon cross section plane~\cite{Billard:2764484}. The dashed yellow line shows the neutrino floor. }
+\label{fig:DD_exclusion}
 \end{center}
 \end{figure}
+%%%
 
 
 %%%%%%%%%%%%%
 \section{Indirect detection}
 %%%%%%%%%%%%%
-In indirect detection we look for annihilation or decay products from DM in multiple final (messenger) states in cosmic rays. Search channels must be stable SM particles, so that they can reach the Earth (or satelites in orbit). The messengers should also have as low backgrounds from ordinary astrophysical processes as possible, this makes searches with electrons and protons difficult. The remaining candidates are photons, neutrinos, positrons, antiprotons and antideuterons. 
+In {\bf indirect detection} we look for the annihilation, $\chi\chi\to SM\, SM$, or decay products of dark matter in multiple final (messenger) states in cosmic rays. The viable search channels must be stable Standard Model particles, so that they can reach the Earth (or satellites in orbit). The messengers should also have as low backgrounds from ordinary astrophysical processes as possible, this makes searches with electrons and protons extra challenging. The remaining candidates are photons, neutrinos, positrons, antiprotons and antideuterons.\footnote{Potentially, even heavier antinuclei than antideuterons could be used, but they would be even rarer.} We now discuss the properties of each of these in a little more detail.
 
-\begin{itemize}
-\item {\bf Photons:} These can either come from direct production processes such as $\chi\chi \to \gamma \gamma, Z\gamma$, which is easier to detect because the spectrum is a sharp line spectrum at exactly the mass of the DM, or $\gamma$ from brehmsstrahlung or pion decays, which is a broad spectrum and hard to detect, but is expected to make up the majority of photons from dark matter. Photons from dark matter have the advantage that they point to the source so we can focus on areas with large $\rho_{DM}$, and thus reducing potential backgrounds relative tot he signal. We can also look for photons that are extragalactic in origin (but then we have to account for red-shifting the spectrum).
+%
+\subsubsection{Photons} 
+These can either come from direct production processes such as the annihilation channels $\chi\chi \to \gamma \gamma, Z\gamma$, which is relatively easy to detect because the spectrum is a sharp line at exactly the mass of the dark matter, or they could be $\gamma$ from bremsstrahlung or pion decays in the annihilation decay products, which creates a broad spectrum. This is harder to detect because of the large background of bog-standard astrophysical photons, but is expected to make up the majority of photons from dark matter. Photons from dark matter have the advantage that they point to the source, so we can focus our searches on areas in our galaxy or nearby galaxies with large $\rho_{DM}$, where annihilation or decay is more probable, and thus reducing potential backgrounds relative to the signal. We can also look for photons that are extragalactic in origin, but then we have to account for the red-shifting of the spectrum.
 
-Dark matter annihilating in our own galaxy into photons should result in a flux at Earth given by
+Dark matter annihilating in our own galaxy into photons should result in a differential flux at Earth in terms of energy $E$ and solid angle $\Omega$ given by
 \begin{equation}
 \frac{d\Phi}{dE d\Omega} = \frac{1}{8\pi m_\chi^2}\frac{dN_\gamma}{dE}\langle \sigma v \rangle \int_{\text{l.o.s.}} \rho^2_{DM}(l) dl,
 \end{equation}
-where $N_\gamma (E)$ gives the number of photons with energy $E$ in a single annihilation event. We see that the flux depends on the square of the DM density since annihilation requires two DM particles to be present. For decaying DM the corresponding expression is proportional to $\rho_{DM}$.
+where $N_\gamma (E)$ gives the number of photons with energy $E$ in a single annihilation event and the integral is over the dark matter density in the line of sight. We see that the flux depends on the square of the dark matter  density since annihilation requires two  particles to be present. For decaying dark matter the corresponding expression is proportional to $\rho_{DM}$.
 
-There have been som indications of an excess of photons above expected backgrounds from the galactic centre (a.k.a. the Hooperon~\cite{Hooper:2010mq}), however, no unambigeous DM signal has been confirmed. Current limits from the Fermi-LAT experiment seems to rule out most possible models a DM explanation for this excess, are sets a cross section limit close, and for some masses beyond, to the canonical limit
+There have been some indications of an excess of photons above expected backgrounds from the galactic centre (a.k.a.\ the Hooperon~\cite{Hooper:2010mq}), however, no unambiguous dark matter signal has been confirmed. Current limits from the Fermi-LAT experiment seems to rule out most possible models for  a dark matter  explanation for this excess, and, more importantly, sets a cross section limit for dark matter annihilation close, and for some masses beyond, to the canonical limit of
 \[\langle\sigma v\rangle = 3\times 10^{-26}\,{\rm cm}^{3}{\rm s}^{-1},\]
-see Fig.~\ref{fig:FERMI}.
+which would give the correct dark matter density, see Fig.~\ref{fig:FERMI}.\footnote{Keep in mind though, that the velocity distribution of any dark matter today would not be the same as during freeze-out at a much higher temperature, so the cross section numbers are not exactly translatable.} This limit is some of the strongest evidence today against WIMP dark glitter.
 
-\begin{figure}[h!]
+%%%
+\begin{figure}[t!]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{figures/FERMI_dSph_bb.eps} 
 \caption[Fermi-LAT results]{Results from Fermi-LAT indirect gamma-ray searches in the $\chi\chi\to b\bar b$ channel. Grey line shows limit from Milky Way halo search, black line from Milky Way dwarf spheroidal galaxy search with six years of data~\cite{Ackermann:2015zua}. \label{fig:FERMI}}
 \end{center}
 \end{figure}
+%%%
 
-\item {\bf Neutrinos:} These also point to the source and can be extragalactic in origin just like the photons. The same flux calculation can be used, starting from the neutrino spectrum from dark matter annihilation. The astrophysical background is smaller, however, the neutrino signal is difficult to detect. The current leading experiment is IceCube at the South Pole. One interesting possibility is that DM matter scatters on ordinary matter sufficiently strongly that DM accumulates at the centre of the Sun (or possibly the Earth). When these DM particles annihilate the only decay products that can escape the Sun's interior are neutrinos.
+%
+\subsubsection{Neutrinos} 
+These also point to their source since since they are electrically neutral, and can be extragalactic in origin just like the photons, still reaching the Earth. The same flux calculation can be used, starting from the neutrino spectrum from dark matter annihilation. While the astrophysical background is much smaller, the neutrino signal is difficult to detect due to the weak matter interaction. The current leading experiment in detecting neutrinos from dark matter annihilation or decay is the IceCube experiment at the South Pole that has instrumented a cubic kilometre of the South Pole ice with photodetectors a kilometre below the surface.\footnote{This should, on galactic scales, get some sort of prize for the geniusly nutscase idea.} 
 
-\item {\bf Positrons:} Charged particles propagate in a complicated way through the galactic magnetic field, and they are therefore impossible to track back to the source. Sources outside of our own Galaxy cannot contribute significantly to the flux at Earth. This source has large astrophysical backgrounds, so experiments search for small excesses, mostly at high energies. Some potential excess has been seen by Fermi-LAT and PAMELA.
+One interesting alternative possibility is that dark matter scatters on ordinary matter sufficiently strongly that the dark matter accumulates at the centre of the Sun (or possibly the Earth), because it scatters of the Suns atoms, loses energy and becomes gravitationally bound, ultimately being further downscattered in energy in multiple interactions, settling at the Suns centre. When these DM particles annihilate the only decay products that can escape the Sun's interior are neutrinos. These could then potentially be detected, and the fact that high energy neutrinos would be coming directly from the Sun would reduce astrophysical backgrounds significantly.
 
-\item {\bf Antiprotons:} As the positrons these propagate in a complicated manner, but the backgrounds are under better control. PAMELA has set strict limits.
+%
+\subsubsection{Positrons} 
+Charged particles propagate in a complicated way through the galactic magnetic field, and they are therefore impossible to track back to the source. At the same time sources outside of our own Galaxy cannot contribute significantly to the flux at Earth. 
+Positrons also have relatively  large astrophysical backgrounds, for example pulsars are expected to produce a significant amount of lower energy positrons,  so experiments search for small excesses on large backgrounds, mostly at high energies. Some potential excess has been seen in the past by Fermi-LAT and PAMELA, but this has not been conclusive.
 
-\item {\bf Antideuterons:} These have very low backgrounds because, however, the physics of the formation is quite complicated and hard to calculate. AMS-02 will provide new data soon.
-\end{itemize}
+%
+\subsubsection{Antiprotons} 
+Just as the positrons these propagate in a complicated manner, but the backgrounds are under better control due to the lack of significant astrophysical antiproton production, except from the scattering of very high energy cosmic rays on the interstellar medium. The  current best limits here come from the AMS-02 experiment.
+
+%
+\subsubsection{Antideuterons} 
+These have very low backgrounds because the production of antideuterons in astrophysical processes is extremely rare, in particular at low energies, due to the conservation of baryon number and the required high energy of cosmic rays to produce two antibaryons (at least two baryons must be produced in the same interaction). This means that the detection of an antideuteron should be a smoking duck signal of dark matter annihilation or decay. However, the physics of the formation of antideuterons from dark matter is quite complicated and hard to reliably calculate, brining in extra uncertainty. Current searches set upper bounds on the flux of antideuterons at the Earth. It is hoped that AMS-02 will provide new better data on antideuterons soon.\footnote{This has been hoped for a very long time.}
+
+
 
 %%%%%%%%%%%%%
 \section{Excercises}
