@@ -357,9 +357,17 @@ We will now turn to the most crucial type of algebras for physics, namely {\bf L
 \end{enumerate}}
 If the algebra is over $\mathbb R$ it is a real Lie algebra, and over $\mathbb C$ a complex Lie algebra.
 
-Again the vectors of $\mathbb{R}^3$ with the Lie bracket defined in terms of the cross product, $[\mathbf x, \mathbf y]=\mathbf x \times \mathbf y$, is a simple example of a Lie algebra. However, we usually restrict ourselves to algebras of linear operators where the Lie bracket is the commutator $[x,y] = xy-yx$, where the defining properties follow automatically. Thus also explaining the notation that we have used for the binary operator. 
+Again the vectors of $\mathbb{R}^3$ with the Lie bracket defined in terms of the cross product, $[\mathbf x, \mathbf y]=\mathbf x \times \mathbf y$, is a simple example of a Lie algebra. However, we usually restrict ourselves to algebras of linear operators where the Lie bracket is the commutator $[x,y] = xy-yx$, where the defining properties follow automatically. Thus also explaining the notation that we have used for the binary operator.
+
+The definition of the generators still leaves open their normalisation, along with the normalisation of the structure constants. For the unitary groups in physics it is common to use
+\begin{equation}
+f^{acd}f^{bcd}=N\delta^{ab}.
+\label{eq:generator_normalisation}
+\end{equation}
 
 From what we learnt in Section \ref{sec:Lie_groups} the generators of an $n$-dimensional Lie group then span a unique $n$-dimensional Lie algebra where a general element $X$ of the algebra can be written in terms of the generators $X_i$, as $X=a_iX_i$. However, the reverse is not true. There can be multiple Lie groups that have the same algebra. The often quoted example is $SO(3)$ and $SU(2)$. Here the generators are the same, however, while closely related, the groups are not isomorphic. We will denote the Lie algebra of a matrix group using lowercase letters, for example the algebra of $SU(n)$ is $su(n)$.\footnote{In some literature so-called {\bf fraktur} is used to represent the algebra, {\it e.g.}\ $\mathfrak{su(2)}$, as this is butt-ugly and unreadable we will seek to avoid it. }
+
+{\bf MOVE DISCUSSION OF DYNKIN INDEX AND CASIMIR QUADRATIC HERE. SEE MASTER THESIS}
 
 %%%
 \subsection{Exponential map}
