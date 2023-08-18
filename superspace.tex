@@ -14,7 +14,7 @@ In this chapter we will introduce a very handy notation system for considering s
 \section{Superspace calculus}
 \label{app:calc}
 %%%%%%%%%%%%%%%
-Grassmann numbers $\theta$ are numbers that anti-commute with each other but not with ordinary numbers. We will here use four such numbers and in addition we want to place them in Weyl spinors, indexed by $A$ and $\dot{A}$:\footnote{We can already see how this can be useful: if we consistently use $\theta^AQ_A$ and $\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}}$ instead of only $Q_A$ and $\bar{Q}^{\dot{A}}$ in Eqs.~(\ref{eq:QQweyl})--(\ref{eq:QMweyl}) we can actually rewrite the superalgebra as an ordinary Lie algebra, but with Grassman elements, because of these commutation properties.}
+Grassmann numbers $\theta$ are numbers that anti-commute with each other but not with ordinary numbers. We will here use four such numbers and in addition we want to place them in Weyl spinors, indexed by $A$ and $\dot{A}$:\footnote{We can already see how this can be useful: if we consistently use $\theta^AQ_A$ and $\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}}$ instead of only $Q_A$ and $\bar{Q}^{\dot{A}}$ in Eqs.~(\ref{eq:QPweyl})--(\ref{eq:QQbarweyl}) we can actually rewrite the superalgebra as an ordinary Lie algebra, but with Grassman elements, because of these commutation properties.}
 \[\{\theta^A, \theta^B\} = \{\theta^A, \bar{\theta}^{\dot{B}}\} = \{ \bar{\theta}^{\dot{A}}, \theta^B\} = \{\bar{\theta}^{\dot{A}}, \bar{\theta}^{\dot{B}}\} =0.\]
 From this we get the relationships:\footnote{There is no summation implied in the first line. These are of course the same relations we already used for the Weyl spinors.}
 \begin{eqnarray}
@@ -90,7 +90,7 @@ where we know that $P_\mu$ has mass dimension $[P_\mu] = M$. This means that $[Q
 
 We now want to find the effect of supersymmetry transformations (transformations by the super-Poincaré group) on the superspace coordinates, and we begin by noting that any $SP$ transformation can effectively be written in the following way without the boosts and rotations of the Lorentz group:
 \[g_0(a,\alpha) = \exp[ia^\mu P_\mu + i\alpha^AQ_A +i\bar{\alpha}^{\dot{A}}\bar{Q}_{\dot{A}}],\]
-because one can show that\footnote{Fortunately we are not going to do this because it is messy, but it can be done using the algebra of the group and the series expansion of the exponential function. Note, however, that the proof rests on the $P$s and $Q$s forming a closed set, which we saw in the algebra Eqs.~(\ref{eq:QQweyl})--(\ref{eq:QMweyl}).}
+because one can show that\footnote{Fortunately we are not going to do this because it is messy, but it can be done using the algebra of the group and the series expansion of the exponential function. Note, however, that the proof rests on the $P$s and $Q$s forming a closed set, which we saw in the algebra Eqs.~(\ref{eq:QPweyl})--(\ref{eq:QQbarweyl}).}
 \begin{equation}
 \exp\left[\frac{i}{2}\omega_{\rho\nu}M^{\rho\nu}\right]g_0(a,\alpha) = g_0(\Lambda a,S(\Lambda)\alpha)\exp\left[\frac{i}{2}\omega_{\rho\nu}M^{\rho\nu}\right],
 \end{equation}
@@ -330,10 +330,10 @@ Thus we must have $\bar{D}_{\dot{A}}\Lambda = 0$, which means that  the paramete
 
 Next, we move to the vector superfields.
 \df{Given a vector superfield $V(x,\theta,\bar{\theta})$, we define the {\bf abelian supergauge transformation} as
-\begin{eqnarray*}
+\begin{eqnarray}
 V(x,\theta,\bar{\theta}) \to V'(x,\theta,\bar{\theta}) &=& V(x,\theta,\bar{\theta}) + i[ \Lambda(x, \theta, \bar{\theta}) -  \Lambda^\dagger(x, \theta, \bar{\theta})],
 \label{eq:abelian_supergauge_vector_superfield}
-\end{eqnarray*}
+\end{eqnarray}
 where the parameter of the transformation $\Lambda$ is a scalar superfield.}
 
 
@@ -430,7 +430,7 @@ Show the vector superfield supergauge transformation properties for the componen
 \end{Exercise}
 
 \begin{Exercise}
-Find the expression for $V_{WZ}^2$.
+Derive the expression for $V_{WZ}^2$ in Eq.~(\ref{eq:V2_WZ}).
 \end{Exercise}
 
 %\begin{Exercise}

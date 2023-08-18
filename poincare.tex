@@ -34,10 +34,17 @@ The boost operations are not closed, and one can show that their generators $K_i
 where (\ref{eq:Jalgebra}) and (\ref{eq:Kalgebra}) then defines the complete algebra of $SO^+(1,3)$.
 
 To simplify notation these generators can further be structured into a matrix $M$ given by
-\[M = \begin{bmatrix}0 & -K_1 & -K_2 & -K_3\\ K_1 & 0 & J_3 & -J_2\\ K_2 & -J_3 & 0 & J_1 \\ K_3 & J_2 & - J_1 & 0\end{bmatrix}.\]
+\begin{equation}
+M = \begin{bmatrix}0 & -K_1 & -K_2 & -K_3\\ K_1 & 0 & J_3 & -J_2\\ K_2 & -J_3 & 0 & J_1 \\ K_3 & J_2 & - J_1 & 0\end{bmatrix}.
+\label{eq:M}
+\end{equation}
 In terms of $M$ the commutation relations (\ref{eq:Jalgebra}) and (\ref{eq:Kalgebra})  can be written:
 \begin{equation}\label{eq:poco1}
 [M_\mu{}_\nu, M_\rho{}_\sigma] = -i(g_{\mu\rho}M_{\nu\sigma} - g_{\mu\sigma}M_{\nu\rho} - g_{\nu\rho}M_{\mu\sigma} + g_{\nu\sigma}M_{\mu\rho}).
+\end{equation}
+The differential representation of these generators can be found to be
+\begin{equation}
+M_{\mu\nu}=i(x_\mu\partial_\nu-x_\nu\partial_\mu).
 \end{equation}
 
 From the discussion in Sec.~\ref{sec:lie_algebras} and here, any $\Lambda \in SO^+(1,3)$ can now be written as
@@ -124,8 +131,8 @@ We can show that this vector is translation invariant, {\it i.e.}\ that it commu
 \end{equation}
 Then $W^2 = W_\mu W^\mu$ is a Casimir operator of the Poincaré algebra since we can show that
 \begin{eqnarray}
-\left[P_\mu, W^2\right] &=& 0.\\
-\left[M_\mu{}_\nu, W^2\right] &=& 0,
+\left[P_\mu, W^2\right] &=& 0,\\
+\left[M_\mu{}_\nu, W^2\right] &=& 0.
 \end{eqnarray}
 Note that the second of these relationships is not trivial to demonstrate. See \cite{IntrSUSY2010} for a complete proof.
 
@@ -136,7 +143,7 @@ If we again look at the situation in the rest frame we can write
 where $S_i = \frac{1}{2} \epsilon_{ijk} M^{jk}$ is the {\bf spin operator}. \footnote{Observe that this discussion is problematic for massless particles. However, it is possible to find a similar relation for massless particles, when we chose a frame where the momentum of the particle is in a single direction.}
 By showing that $WP=0$ we also have $W_0 = 0$ in this reference frame. This gives $W^2 = -\mathbf W^2 = -m^2\mathbf S^2$. Since the spin operator acts on a state with spin $s$ as $\mathbf S^2| s\rangle=s(s+1)| s\rangle$, we have that
 \[W^2|m,s\rangle = -m^2 s(s+1)|m,s\rangle.\]
-In addition this, also leads to the immediate conclusion that for each irrep with spin $s$ there are $2s+1$ {\it states} with spin component $s_3=0,\frac{1}{2},1,\frac{3}{2},\ldots$.
+In addition, this also leads to the immediate conclusion that for each irrep with spin $s$ there are $2s+1$ {\it states} with spin component $s_3=0,\frac{1}{2},1,\frac{3}{2},\ldots$.
 
 The conclusion of this subsection is that anything transforming under the Poincaré group, meaning the objects considered by special relativity, can be classified by two quantum numbers: mass $m^2$ and spin $s$.
 
@@ -271,6 +278,33 @@ for the Majorana spinor charges, we have instead
 \{Q_A, \bar{Q}_{\dot{B}}\} &=& 2\sigma^\mu_{A\dot{B}}P_\mu, \label{eq:QQbarweyl}
 \end{eqnarray}
 where now the  $\sigma^{\mu\nu}$ are given in terms of the Pauli matrices $\sigma^{\mu\nu} = \frac{i}{4}(\sigma^\mu \bar{\sigma}^\nu - \sigma^\nu \bar{\sigma}^\mu)$.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conformal symmetry$^*$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Despite the Coleman and Mandula no-go theorem, there exists a larger potential space-time symmetry, namely {\bf conformal symmetry}. This extends the boosts, rotations and translations of the Poincaré symmetry with the {\bf special conformal transformations} and {\bf dilation},  with the generators $K_\mu$ and $D$, respectively. 
+
+We saw the one-dimensional differential representation of the dilation operator that changes scale in Sec.~\ref{sec:Lie_groups}. Generalised to four space-time dimensions this is $D=-x_\mu\partial^\mu$. The composition function for the special conformal transformation is
+\begin{equation}
+x'_\mu=f_\mu(x_\mu,a_\mu)=\frac{x_\mu-a_\mu x^2}{1-2ax+a^2x^2},
+\end{equation}
+which gives the representation $K_\mu=i(x^2\partial_\mu-2x_\mu x_\nu\partial^\nu)$.
+
+The extra products in the algebra are then
+\begin{eqnarray}
+\left[K_\mu, K_\nu \right] &=& 0, \\
+\left[K_\mu, D \right] &=& iK_\mu, \\
+\left[K_\mu, P_\nu \right] &=& 2i(g_{\mu\nu}D-M_{\mu\nu}), \\
+\left[K_\mu, M_{\nu\rho} \right] &=& i(g_{\mu\nu}K_\rho-g_{\mu\rho}K_\nu), \\
+\left[D, P_\mu \right] &=& iP_\mu, \\
+\left[D, M_{\mu\nu}\right] &=& 0.
+\end{eqnarray}
+
+Unfortunately, the scale invariance in conformal symmetry means that all the particles in the theory must be massless.\footnote{It is technically possible to have a quantum field theory that is scale invariant, but not conformally invariant, but examples are rare.}  The usual reason given is that a theory with a particular particle mass scale has a corresponding length scale, and since the dilation symmetry would require the action to be invariant under length scale transformation, this breaks the correspondence.\footnote{However, be aware that this is not the complete story. It possible to get away with both theories with a continuous mass spectrum and theories with infinite mass, that have conformal symmetry, however, neither of these fit with the observed microcosmos.}
+As a result, conformal symmetry can not be a symmetry of the Standard Model, however, conformal symmetries are an interesting area of study, because they appear in other important theories such as Maxwell's equations for electromagnetism, general relativity in two dimensions and the so-called $N=4$ supersymmetric Yang-Mills theory.
 
 
 
