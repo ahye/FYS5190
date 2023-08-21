@@ -9,9 +9,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The study of symmetries plays a central part in theoretical physics, and the mathematical language we use is that of groups. The action of the group elements on our (quantum mechanical) states describes the transformation of the symmetry operation, while the invariance of the physical properties of the system under that transformation is the symmetry itself. For example, rotations in three-dimensions can be carried out by the application of a $3\times3$ rotation matrix on the coordinates. These matrices form the group called $SO(3)$. For a sphere, which is invariant under these rotations, $SO(3)$ is then the symmetry group.
+The study of symmetries plays a central part in theoretical physics, and the mathematical language we use is that of groups. The action of the group elements on our (quantum) states effects the transformation that has the symmetry, while the invariance of the physical properties of the system under that transformation is the symmetry itself. For example, rotations in three-dimensions can be carried out by the application of a $3\times3$ rotation matrix on the coordinates of an object. As we will see, these matrices form the group called $SO(3)$. For a sphere, which is invariant under these rotations, $SO(3)$ is then the symmetry group.
 
-Of special interest to us are the Lie groups, which are the groups that represent continuous transformations, such as the rotations. The properties of Lie groups can be further studied by finding their generators which form a (Lie) algebra. The generators {\it almost} -- in a very specific sense of the word almost -- describes the whole group, and allows us to reconstruct the group elements by what is called the exponential map.
+Of special interest to us are the Lie groups, which are the groups that represent continuous transformations, such as the $SO(3)$ rotations. The properties of Lie groups can be further studied by finding their generators which form a (Lie) algebra. The generators {\it almost} -- in a very specific sense of the word almost -- describes the whole group, and allows us to reconstruct the group elements by what is called the exponential map.
 
 Here, we will begin by defining groups and looking at some of their most important properties. What is crucial in physics are the {\it representations} of groups, meaning what the operators of the transformations on the states actually look like. Returning to the rotation example these are $3\times3$ matrices, but with some restrictions on their elements. After discussing representations we will move on to defining Lie groups, before we end on a discussion of their generators and corresponding algebras.
 
@@ -19,7 +19,7 @@ Here, we will begin by defining groups and looking at some of their most importa
 \section{Group definition}
 %%%%%%%%%%%%%%
 A group is an abstract mathematical structure that consists of a set of objects (elements), and a multiplication rule acting between pairs of these objects. We define a group as follows.
-\df{The set of elements $G = \{g_i\}$ and operation $\circ$ (sometimes called multiplication) form a {\bf group} if and only if for $\forall\, g_i \in G$ :\begin{enumerate}[i)]
+\df{The set of elements $G = \{g_i\}$ and operation $\circ$ (sometimes called multiplication) form a {\bf group} if and only if for all $g_i \in G$ :\begin{enumerate}[i)]
 \item $g_i \circ g_j \in G$, \hfill (closure)
 \item $(g_i \circ g_j)\circ g_k = g_i\circ(g_j \circ g_k)$, \hfill (associativity)
 \item $\exists e \in G$ such that $g_i \circ e = e\circ g_i = g_i$, \hfill (identity element)
@@ -27,21 +27,21 @@ A group is an abstract mathematical structure that consists of a set of objects 
 \end{enumerate}}
 Below, where no confusion can occur, we will often drop the multiplication symbol for the group multiplication (and other abstract multiplications), writing $g_i \circ g_j =g_ig_j$.
  
-A straight forward example of a group is $G= \mathbb{Z}$ (the integers), with standard addition as the operation $\circ$. Then $e = 0$ and $g^{-1} = -g$. Alternatively we can restrict the group to $\mathbb{Z}_n$, where the operation is addition modulo $n$. In this group, $g_i^{-1} = n - g_i$ and the unit element is again $e = 0$.\footnote{Note that we here use $e$ for the identity in an abstract group, while we will later use $I$ or $1$ as the identity matrix in matrix representations of groups.} 
+A straight forward example of a group is $G= \mathbb{Z}$ (the integers), with standard addition as the operation $\circ$. Then $e = 0$ and $g^{-1} = -g$. Alternatively we can restrict the group to $\mathbb{Z}_n$, where the operation is now addition modulo $n$. In this group, $g_i^{-1} = n - g_i$ and the unit element is again $e = 0$.\footnote{Note that we here use $e$ for the identity in an abstract group, while we will later use $I$ or $1$ as the identity matrix in matrix representations of groups.} 
 Here, $\mathbb{Z}$ is an example of an {\bf infinite} group, the set has an infinite number of members, while $\mathbb{Z}_n$ is {\bf finite}, with {\bf order} $n$, meaning $n$ members. Both are {\bf abelian} groups, meaning that the elements commute: $g_i \circ g_j = g_j \circ g_i$, because the standard addition commutes.
 
-The simplest, non-trivial, of these $\mathbb{Z}_n$-groups is $\mathbb{Z}_2$ which only has the members $e=0$ and $1$. The ``multiplication'' operation is completely defined by the three possibilities $0+0=0$, $0+1=1$ and $1+1=0$. Now, compare this to the set $G=\{-1,1\}$ with the ordinary multiplication operation. Here, all the possible operations are $1\cdot 1=1$, $1\cdot (-1)=-1$ and $(-1)\cdot (-1)=1$. This has exactly the same structure as $\mathbb{Z}_2$, only that the identity element is now $1$.  We say that these two groups are {\bf isomorphic}, because there is a mapping between all the (two) elements $0\to 1$ and $1\to -1$, and the results of the multiplication operation is the same, and in fact we consider them as the {\it same group} despite the considerable apparent visual differences.\footnote{This observation  generalises to the set $G=\{e^{2\pi ik/n} | k=1,\ldots,n-1\}$, the {\bf $\mathbf n$-th roots of unity}, which, together with the standard multiplication operation, is isomorphic to  $\mathbb{Z}_n$.} 
-This notion of isomorphic (identical) groups is very important, and we will return to it in more detail in Sec.~\ref{sec:group_properties}.
+The simplest, non-trivial, of these $\mathbb{Z}_n$-groups is $\mathbb{Z}_2$ which only has the members $e=0$ and $1$. The ``multiplication'' operation is completely defined by the three possibilities $0+0=0$, $0+1=1$ and $1+1=0$. Now, compare this to the set $G=\{-1,1\}$ with the ordinary multiplication operation. Here, all the possible operations are $1\cdot 1=1$, $1\cdot (-1)=-1$ and $(-1)\cdot (-1)=1$. This has exactly the same structure as $\mathbb{Z}_2$, only that the identity element is now $1$.  We say that these two groups are {\bf isomorphic}, because there is a one-to-one correspondence between all the (two) elements, $0\leftrightarrow 1$ and $1\leftrightarrow -1$, and the results of the multiplication operation is the same, and in fact we consider them as the {\it same group} despite the considerable apparent visual differences.\footnote{This observation  generalises to the set $G=\{e^{2\pi ik/n} | k=1,\ldots,n-1\}$, the {\bf $\mathbf n$-th roots of unity}, which, together with the standard multiplication operation, is isomorphic to  $\mathbb{Z}_n$.} 
+This notion of isomorphic (``identical'') groups is very important, and we will return to it in more detail in Sec.~\ref{sec:group_properties}.
 
 A somewhat more sophisticated example of a group can be found in the Taylor expansion of a function $F$, where
 \begin{eqnarray*}
 F(x+a) &=& F(x) + aF'(x) + \frac{1}{2} a^2 F''(x) + \ldots \\
-&=& \sum_{n=0}^{\infty}\frac{a^n}{n!}\frac{d^n}{dx^n} F(x)\\
-&=& e^{a\frac{d}{dx}} F(x).
+&=& \sum_{n=0}^{\infty}\frac{a^n}{n!}\frac{\partial^n}{\partial x^n} F(x)\\
+&=& e^{a\frac{\partial}{\partial x}} F(x).
 \end{eqnarray*}
-The last equality uses the formal definition of the exponential series, but may drive some mathematicians crazy.\footnote{We will not discuss this further, but there is a deep question here whether the operator formed by this exponentiation is well defined.}  The resulting operator $T_a = e^{a\frac{d}{dx}}$ is called the {\bf translation operator}, in this case in one dimension, since it shifts the coordinate $x$ of the function $f$ it is operating on by an amount $a$. Defining the (natural) multiplication operation
+The last equality uses the formal definition of the exponential series, but may drive some mathematicians crazy.\footnote{We will not discuss this further, but there is a deep question here whether the operator formed by this exponentiation is well defined.}  The resulting operator $T_a = e^{a\frac{\partial}{\partial x}} $ is called the {\bf translation operator}, in this case in one dimension, since it shifts the coordinate $x$ of the function $F$ it is operating on by an amount $a$. Defining the (natural) multiplication operation
 $T_a \circ T_b = T_{a+b}$
-it forms the {\bf translational group} $T(1)$, where we can show that $T_a^{-1} = T_{-a}$.\footnote{We could instead have defined the operation between two group elements to be ordinary multiplication and used that to show the relationship $T_a \circ T_b = T_{a+b}$. However, it is important to notice that showing this is not entirely trivial because ordinary arithmetic rules for exponentials fail for operators. In this particular case the proof is fairly simple, but this is in general not so.} In $n$ dimensions the group $T(n)$ has the elements  $T_{\mathbf{a}} = e^{\mathbf{a}\cdot \mathbf{\nabla}}$. Whereas we say that the groups $\mathbb{Z}$ and $\mathbb{Z}_n$ are {\bf discrete groups}, since we can count the number of elements, $T_a$ is a {\bf continuous group} since the parameter $a$ can be any real number. 
+it forms the {\bf translational group} $T(1)$, where we can show that $T_0$ is the identity element and the inverse is $T_a^{-1} = T_{-a}$.\footnote{We could instead have defined the operation between two group elements to be ordinary multiplication and used that to show the relationship $T_a \circ T_b = T_{a+b}$. However, it is important to notice that showing this is not entirely trivial because ordinary arithmetic rules for exponentials fail for operators. In this particular case the proof is fairly simple, but this is in general not so. This will return to trouble us later in the notes.} In $n$ dimensions the group $T(n)$ has the elements  $T_{\mathbf{a}} = e^{\mathbf{a}\cdot \mathbf{\nabla}}$. Whereas we say that the groups $\mathbb{Z}$ and $\mathbb{Z}_n$ are {\bf discrete groups}, since we can count the number of elements, $T_a$ is a {\bf continuous group} since the parameter $a$ can be any real number. 
 
 
 %%%%%%%%%%%%%%
@@ -52,34 +52,59 @@ We next define some groups that are very important in physics and to the discuss
 
 %%%%
 \subsection{General and special linear groups}
-The largest matrix group for a given matrix dimension is the general linear group.
-\df{The {\bf general linear group} $GL(n)$ is defined by the set of invertible $n\times n$ matrices $A$ under matrix multiplication. If we additionally require that $\det(A) = 1$, the matrices form the {\bf special linear group} $SL(n)$.}
+The largest matrix group for a given matrix dimension $n$ is the general linear group.
+\df{The {\bf general linear group} $GL(n)$ is defined by the set of all invertible $n\times n$ matrices $A$ under matrix multiplication. If we additionally require that $\det(A) = 1$, the matrices form the {\bf special linear group} $SL(n)$.}
+Th closure property of groups is guaranteed by the fact that the product of two invertible matrices is also invertible, and matrix multiplication is always associative.
 The existence of the group identity is guaranteed by the identity matrix $I$ being an invertible matrix (with $I$ as the inverse). Since the existence of an inverse is also necessary in the group definition, we can not construct larger matrix groups. The general linear group also give us our first example of a {\bf non-abelian group}, since matrix multiplication does not in general commute. For two matrices $A$ and $B$, we may have $AB\ne BA$.
 
 We usually take the matrices in matrix groups to be defined over the field of complex numbers $\mathbb{C}$. If we want to specify the field we may use the notation $GL(n, \mathbb{R})$, signifying that the group is defined over the real numbers. Defined over the complex numbers the $GL(n)$ groups have $2n^2$ free parameters since each of the $n^2$ elements of the matrices can be a complex number, needing two parameters. The $SL(n)$ group has $2n^2-2$ free parameters since the requirement on the determinant fixes both the real and imaginary part of the determinant.
 
 %%%%
 \subsection{Unitary and special unitary groups}
-We first remind you that the {\bf Hermitian conjugate} or conjugate transpose of a matrix is given by transposing the matrix and taking the complex conjugate of its elements. Here, we will use the symbol $\dagger$ for this operation, so that for a matrix $A$, $A^\dagger=(A^T)^*$.
+We first remind you that the {\bf Hermitian conjugate} or conjugate transpose of a matrix is given by transposing the matrix and taking the complex conjugate of its elements. Here, we will use the dagger symbol $\dagger$ for this operation, so that for a matrix $A$, $A^\dagger=(A^T)^*$.
 
 We now define the unitary groups.
 \df{The {\bf unitary group} $U(n)$ is defined by the set of complex unitary $n\times n$ matrices $U$,
-{\it i.e.}\ matrices such that $U^\dagger U = I$ or $U^{-1} = U^{\dagger}$. If we additionally require that $\det(U) = 1$ the matrices form the {\bf special unitary group} $SU(n)$.}
+{\it i.e.}\ matrices such that $U^\dagger U = I$ or $U^{-1} = U^{\dagger}$. If we additionally require that $\det U = 1$ the matrices form the {\bf special unitary group} $SU(n)$.}
+
 Since for $U\in U(n)$,
 \[\det(UU^\dagger)=\det(U)\det(U^\dagger)=\det(U)\det(U^T)^*=\det(U)\det(U)^*=\det(I)=1,\] 
 we have that the determinant of these matrices must be complex numbers on the unit circle, {\it i.e.}\ $\det(U)=e^{i\theta}$.
-It can be shown (see exercises) that the $U(n)$ groups have $n^2$ independent parameters, while the $SU(n)$ groups have $n^2-1$.
+It can be shown, see Ex.~\ref{ex:Un_parameters}, that the $U(n)$, groups have $n^2$ independent parameters, while the $SU(n)$ groups have $n^2-1$.
 
-It is these groups that form the gauge symmetry groups of the Standard Model: $SU(3)$, $SU(2)$ and $U(1)$. The group $U(1)$ makes perfect sense despite the odd matrix dimensions. This is simply the set of all complex numbers of unit length with ordinary multiplication, {\it i.e.}\ $U(1)=\{e^{i\alpha} | \alpha \in\mathbb{R} \}$, but notice that $SU(1)$ would be trivial since it contains only 1. 
+It is these unitary groups that form the gauge symmetry groups of the Standard Model: $SU(3)$, $SU(2)$ and $U(1)$. The group $U(1)$ makes perfect sense despite the odd matrix dimensions. This is simply the set of all complex numbers of unit length with ordinary multiplication, {\it i.e.}\ $U(1)=\{e^{i\alpha} | \alpha \in\mathbb{R} \}$, but notice that $SU(1)$ would be trivial since it contains only the element 1. 
 
-The unitary group has has the important property that for $\forall \mathbf{x}, \mathbf{y} \in \mathbb{C}^n$ multiplication by  a unitary matrix leaves scalar products unchanged. If $\mathbf{x}'=U\mathbf{x}$ and $\mathbf{y}'=U\mathbf{y}$, then
+The members of the unitary group has has the important property that for all complex vectors $\mathbf{x}, \mathbf{y} \in \mathbb{C}^n$ (think finite-dimensional quantum states)  multiplication by  a unitary matrix leaves scalar products (inner products) unchanged. If $\mathbf{x}'=U\mathbf{x}$ and $\mathbf{y}'=U\mathbf{y}$, then
 \begin{eqnarray}
 \mathbf{x}'\cdot \mathbf{y}' &\equiv& \mathbf{x}'{}^\dagger \mathbf{y}' = (U\mathbf{x})^\dagger U\mathbf{y}\nonumber\\
 &=& \mathbf{x}^\dagger U^\dagger U\mathbf{y} = \mathbf{x}^\dagger \mathbf{y} = \mathbf{x} \cdot \mathbf{y}.\nonumber
 \end{eqnarray}
-Thus, its members do not change the length of the vectors they act on. 
+Thus, as this implies $|\mathbf{x}'|=|\mathbf{x}|$, its members do not change the length of the vectors they act on.  Since we would like to let our group representations act on vectors that describe quantum mechanical states, the unitary groups then conserve probability for these states. For example, when acting on a complex number (a complex scalar), such as a wavefunction $\psi(x)$, the elements of $U(1)$ rotate the phase of $\psi$, however, the magnitude is conserved since $\psi'=e^{i\alpha}\psi$ gives $|\psi'|^2=\psi^*e^{-i\alpha}e^{i\alpha}\psi=|\psi|^2$.
 
-Since we would like to let our group representations act on vectors that describe quantum mechanical states, the unitary groups then conserve probability for these states. For example, when acting on a complex number (a complex scalar), such as a wavefunction $\psi(x)$, the elements of $U(1)$ rotate the phase of $\psi$, however, the magnitude is conserved since $\psi'=e^{i\alpha}\psi$ gives $|\psi'|^2=\psi^*e^{-i\alpha}e^{i\alpha}\psi=|\psi|^2$.
+We can construct unitary matrices from either Hermitian or anti-Hermitian matrices by using an exponentiation of the matrix. This formally interprets the exponential series in terms of a matrix $M$ as
+\[ \exp(M)\equiv\sum_{n=0}^\infty \frac{M^n}{n!}=I+M+\frac{1}{2}M^2+\frac{1}{6}M^3+\ldots. \]
+Given a Hermitian matrix $M$, $M^\dagger=M$, the matrix $U=e^{iM}$ is then automatically unitary since $U^\dagger=e^{-iM^\dagger}=e^{-iM}$ so that $U^\dagger U=e^{-iM}e^{iM}=I$. This is the physics construction that we will mostly use in these notes because of our quantum fondness for Hermitian operators. For an anti-Hermitian matrix $M$, $M^\dagger=-M$ we could instead use that $U=e^M$ is automatically unitary since $U^\dagger=e^{-M}$ so that $U^\dagger U=e^{-M}e^{M}$=I. This is the mathematical construction found in a lot of mathematical literature.
+
+
+\subsubsection{$SU(2)$}
+A general member $S$ of $SU(2)$ can be written in terms of two complex parameters $\alpha,\beta\in\mathbb{C}$ as
+\begin{equation}
+S(\alpha,\beta)=\left[
+\begin{matrix} \alpha & -\beta^* \\ \beta & \alpha^* \end{matrix}
+\right],
+\label{eq:SU2_parameterisation}
+\end{equation}
+with the additional constraint $|\alpha|^2+|\beta|^2=1$, leaving three free parameters as expected. 
+
+There is a deep connection between the $SU(2)$ group and spin because the Hermitian {\bf Pauli matrices} 
+\begin{equation}
+\sigma^1 =\left[\begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix}\right], 
+\quad \sigma^2 =\left[\begin{matrix} 0 & -i \\ i & 0 \end{matrix}\right], 
+\quad \sigma^3 =\left[\begin{matrix} 1 & 0 \\ 0 & -1 \end{matrix}\right],
+\label{eq:pauli_matrices}
+\end{equation}
+that make up the spin-operators $S^i=\frac{\hbar}{2}\sigma^i$, are members of $SU(2)$, and indeed, as we shall see, they can be used to generate (almost) any member of $SU(2)$ by the exponential construction $U=e^{i\alpha_i\sigma^i}$, where $\alpha_i\in\mathbb R$ are three real parameters.\footnote{Make a note of the notation here, the position of the indices is used to prepare the ground for using these in a four-vector $\sigma^\mu=(\sigma^0,\boldsymbol{\sigma})$ together with the identity matrix 
+\[ \sigma^0=I_2=\left[ \begin{matrix}1 &0  \\ 0 & 1  \end{matrix} \right].\] }
 
 
 %%%
@@ -98,7 +123,7 @@ Given that $SO(2)$ has only one parameter, we can write a general group member $
 \[
 R(\theta)=\left[\begin{matrix} \cos\theta &  -\sin\theta \\ \sin\theta&  \cos\theta \end{matrix}\right].
 \]
-As expected, we can recognise this as the matrix of rotations of an angle $\theta$ around a point in the plane, and it represents the (orientation preserving) symmetries of a circle. Some tinkering with this representation will show that $SO(2)$ is in fact an abelian group, despite the matrix definition. From a physical viewpoint this should be expected: the order of rotations in the plane should not matter.
+As expected, we recognise this as the matrix of rotations of an angle $\theta$ around a point in the plane, and it represents the (orientation preserving) symmetries of a circle. Some tinkering with this representation will show that $SO(2)$ is in fact an abelian group, despite the matrix definition. From a physical viewpoint this should be expected: the order of rotations in the plane should not matter.
 
 It is interesting to observe that the elements of $SO(2)$ rotate points in the plane, while the elements of $U(1)$ rotate complex numbers, which can be represented by points in the plane. Indeed, a one-to-one correspondence can be found between the members of the two groups so that the groups are indeed the same, or, as we say, isomorphic, $SO(2)\cong U(1)$.
 
@@ -118,6 +143,25 @@ where $0\le\alpha,\gamma< 2\pi$ and $0\le\beta\le\pi$. These rotations do not co
 We have seen above that $SU(2)$ has three free parameters, just the same as $SO(3)$. You may at this point guess that $SO(3)$ is isomorphic to $SU(2)$. That would be a very good guess, however, it would also be wrong. We will return to this later, but this is one of those things in mathematics that turn out to be disappointingly only almost true.
 
 
+%%%
+\subsection{Symplectic and compact symplectic groups$^*$}
+
+\df{The {\bf symplectic group} $Sp(2n)$  is the group of $2n\times 2n$ symplectic matrices $M$, {\it i.e.}\ matrices where $M^T\Omega M=\Omega$, with
+\[ \Omega= \left[ \begin{matrix} 0 & I_n \\ -I_n & 0 \end{matrix} \right].\]
+The  {\bf compact symplectic group} $Sp(n)$ is the  intersection of the symplectic group $Sp(2n)$ and the unitary group $U(2n)$, {\it i.e.}\ 
+\[ Sp(n)\equiv Sp(2n)\cap U(2n), \]
+so that its matrices are members of both groups.\footnote{The $n$ as apposed to $2n$ here is intentional, the reason is that the compact symplectic group can be described in terms of the unitary group $U(n,\mathbb H)$ of $n\times n$ matrices over the quaternions (see Sec.~\ref{sec:normed_division_algebras}).} 
+}
+
+The choice here of $\Omega$ can be generalised to any nonsingular skew-symmetric matrix, {\it i.e.} an invertible matrix $\Omega$ where $\Omega^T=-\Omega$, however, this does not change the group structure.
+Note that we can easily show $\det\Omega=1$ and $\Omega^{-1}=\Omega^T=-\Omega$ for our choice of $\Omega$. This in turn implies that the symplectic matrices have $\det M=\pm1$, but this can be strengthened to show that indeed $\det M=1$.
+
+The compact symplectic group has interesting applications in classical mechanics. If a system of $n$ particles has generalised coordinates $q_i$ and momenta $p_i$ we can stack the coordinates in the vector $\boldsymbol \eta=(q_1,\ldots,q_n,p_1,\ldots,p_n)^T$. It can then be shown that any symplectic  matrix $M$ acting on $\boldsymbol\eta$ is a {\bf canonical transformation}, meaning it is a transformation that leaves Hamiltons equations unchanged, so the symplectic groups are the symmetry groups of Hamilton's equations.
+
+In quantum mechanics we can write the canonical commutation relations $[\hat q_i, \hat p_j]=i\hbar\delta_{ij}$ as
+\[ [\hat{\boldsymbol \eta}, \hat{\boldsymbol \eta}^T]=i\hbar\Omega. \]
+
+
 %%%%%%%%%%%%%%
 \section{Group properties}
 \label{sec:group_properties}
@@ -126,10 +170,10 @@ We have seen above that $SU(2)$ has three free parameters, just the same as $SO(
 %%%
 \subsection{Subgroups}
 We now extend our vocabulary for groups by defining the {\bf subgroup} of a group $G$.
-\df{A subset $H \subset G$ is a {\bf subgroup} if and only if:\footnote{An alternative, equivalent, and more compact way of writing these two requirements is the single requirement $h_i \circ h_j^{-1} \in H$ for $\forall h_i, h_j\in H$. This is often utilised in proofs.}
+\df{A subset $H \subset G$ is a {\bf subgroup} if and only if:\footnote{An alternative, equivalent, and more compact way of writing these two requirements is the single requirement $h_i \circ h_j^{-1} \in H$ for all $h_i, h_j\in H$. This is often utilised in proofs.}
 \begin{enumerate}[i)]
-\item $h_i \circ h_j \in H$  for $\forall h_i,h_j\in H$, (closure)
-\item $h_i^{-1} \in H$ for $\forall h_i\in H$. (inverse)
+\item $h_i \circ h_j \in H$  for all  $h_i,h_j\in H$, \hfill (closure)
+\item $h_i^{-1} \in H$ for all $h_i\in H$. \hfill (inverse)
 \end{enumerate}
 $H$ is a {\bf proper} subgroup if and only if $H\neq G$ and $H \neq \{e\}$. }
 We have already seen some examples of subgroups: the $SU(n)$ groups are subgroups of $U(n)$, and the $SO(n)$ groups are subgroups of the $O(n)$ groups. This can easily be shown using the properties of determinants.
@@ -137,39 +181,40 @@ We have already seen some examples of subgroups: the $SU(n)$ groups are subgroup
 There is a very important class of subgroup called the {\bf normal} subgroup. The importance will become clear in a moment.
 \df{A subgroup $H$ is a {\bf normal} (invariant) subgroup, if and only if the {\bf conjugation} of any element by any $g \in G$ is in $H$,\footnote{Another, pretty, but slightly abusive, way of writing the definition of a normal group is to say that $gHg^{-1}=H$. This implies (correctly), that the image if $H$ under the conjugation operation is guaranteed to be the whole of $H$.}
 meaning
-\[ ghg^{-1} \in H\text{ for }\forall h \in H.\]
+\[ ghg^{-1} \in H\text{ for all } h \in H.\]
 A {\bf simple} group $G$ has no proper normal subgroup. A {\bf semi-simple} group $G$ has no proper abelian normal subgroup.}
-We can for example show that for $n>1$, $SU(n)$ is a normal subgroup of $U(n)$ (see exercises). 
+We can for example show that for $n>1$, $SU(n)$ is a normal subgroup of $U(n)$, see Ex.~\ref{ex:SUn_normal}. 
 
 %%%
 \subsection{Quotient groups}
 The normal subgroup can be seen as a factor in the original group that can be divided out to form a simpler group that only retains the structure that was not in the normal group. To be more precise we need the concept of {\bf cosets}. 
 \df{A {\bf left coset} of a subgroup $H\subset G$ with respect to $g\in G$ is the set of members $\{gh | h\in H\}$, and a {\bf right coset} of the subgroup is the set  $\{hg|h\in H\}$. These are sometimes written $gH$ and $Hg$, respectively.}
-For normal subgroups $H$ it can be shown that the sets of left and right cosets coincide and form a group. This is called the {\bf quotient}  or {\bf coset group} and denoted $G/H$.\footnote{Sometimes also called the {\bf factor group}. The notation is pronounced ``G mod N'', where ``mod'' is short for modulo.}
-This has as its members all the {\it distinct sets} $\{gh|h\in H\}$, that can be generated by a $g\in G$, and has the binary operation $*$ with $\{gh|h\in H\}*\{g'h|h\in H\}=\{ (g\circ g')h| h\in H\}$. To simplify notation this can be written $gH*g'H=(g\circ g') H$. 
+For normal subgroups $N$ it can be shown that the sets of left and right cosets $gN$ and $Ng$ coincide and form a group. This is called the {\bf quotient}  or {\bf coset group} and denoted $G/N$.\footnote{Sometimes also called the {\bf factor group}. The notation $G/N$ is pronounced ``G mod N'', where ``mod'' is short for modulo.}
+This has as its members all the {\it distinct sets} $\{gn|n\in N\}$, that can be generated by a $g\in G$, and has the binary operation $*$ with $\{gn|n\in N\}*\{g'n|n\in N\}=\{ (g\circ g')n| n\in N\}$. To simplify notation this can be written $gN*g'N=(g\circ g') N$. 
  
-Let us briefly discuss an example of a quotient group. We already know that $SU(n)$ is a normal subgroup to $U(n)$. This means that $U(n)/SU(n)$ is a group. What sort of group is this? Notice that two matrices $U_i$ and $U_j$ live in the same coset of $SU(n)$ if and only if $\det(U_iU_j^{-1})=1$, which is true if and only if $\det(U_i)=\det(U_j)$. In other words, each coset constructed from $SU(n)$ is simply the set of all matrices with a given determinant, which we saw for the $U(n)$ group can be any unit complex number. Observe that this means that many of the cosets are the same set. Here, all cosets generated by members in $U(n)$ with the same determinant is the same coset. 
+To make some sense of this, let us briefly discuss an example of a quotient group. We already know that $SU(n)$ is a normal subgroup to $U(n)$. This means that $U(n)/SU(n)$ is a group. What sort of group is this? Notice that two matrices $U_i$ and $U_j$ live in the same coset of $SU(n)$ if and only if $\det(U_iU_j^{-1})=1$, which is true if and only if $\det(U_i)=\det(U_j)$. In other words, each coset constructed from $SU(n)$ is simply the set of all matrices with a given determinant, which we saw for the $U(n)$ group can be any unit complex number. Observe that this means that many of the cosets are the same set. Here, all cosets generated by members in $U(n)$ with the same determinant is the same coset. 
 When these cosets act on each other with the group operation of $U(n)/SU(n)$ they form new cosets of matrices with a determinant that is the product of their individual determinants, {\it i.e.}\ with $U,U'\in U(n)$ we have the product of quotient group member $\{US|S\in SU(n)\}*\{U'S| S\in SU(n)\}=\{ UU'S| S\in SU(n)\}$. Thus, the group behaves exactly as $U(1)$, and is in fact isomorphic to it.
 
 %%%
 \subsection{Product groups}
 Now that we have introduced group division,  we also need to introduce products of groups. 
 \df{The {\bf direct product} of groups $G$ and $H$, $G\times H$, is defined as the ordered pairs $(g,h)$ where $g\in G$ and $h\in H$, with component-wise operation $(g_i,h_i)\circ(g_j, h_j) = (g_i\circ g_j , h_i \circ h_j)$. $G\times H$ is then a group and $G$ and $H$ can be shown to be normal subgroups of $G\times H$.}
-We should note there that the subgroups are strictly $G\times\{e_H\}$ and $\{e_G\}\times H$, but these are isomorphic to $G$ and $H$.
+We should note here that the subgroups are strictly $G\times\{e_H\}$ and $\{e_G\}\times H$, but these are isomorphic to $G$ and $H$.
 
-Because it has at least one important guest star appearance in this text we also need the definition of the {\bf semi-direct product}.
+Because it has an important appearance in this text we also need the definition of the {\bf semi-direct product}.
 \df{The {\bf semi-direct product} of groups $G$ and $H$, $G\rtimes H$, where $G$ is also a mapping $G:H\to H$, is defined by the ordered pairs $(g,h)$ where $g\in G$ and $h\in H$, with component-wise operation $(g_i,h_i)\circ(g_j, h_j) = (g_i\circ g_j , h_i \circ g_i(h_j))$. Here $H$ is not a normal subgroup of $G\rtimes H$, but $G$ is.}
 Note how the semi-direct product is not symmetric between the factors.
 
-The famous Standard Model gauge group $SU(3) \times SU(2)\times U(1)$ is an example of a direct product. Direct products are ``trivial" structures because there is no ``interaction" between the subgroups, the elements of each group act only on elements of the same group. This is not true for semi-direct products. 
+The famous Standard Model gauge group $SU(3) \times SU(2)\times U(1)$ is an example of a direct product. Direct products are ``trivial" structures because there is no ``interaction" between the subgroups, the elements of each group act only on elements of the same group. For the Standard Model this means that the each of the gauge transformations can act independently on the states unaffected by any other gauge transformation. This is not true for semi-direct products. 
+
 
 %%%
 \subsection{Isomorphic groups}
-We have already talked about how two groups are the same if they have a correspondence between their members and the same results for the multiplication operation, and we have called this an isometry. Let us now try to put this notion of when two groups are the same into a more formal language.
-\df{Two groups $G$ and $H$ are {\bf homomorphic} if there exists a map between the elements of the groups $\rho:G\to H$, such that for $\forall g,g'\in G$,  $\rho(g\circ  g')=\rho(g)\circ \rho(g')$.}
+We have already talked about how two groups are the same if they have a one-to-one correspondence between their members and the same results for the multiplication operation, and we have called this an isometry. Let us now try to put this notion of when two groups are the same into a more formal language.
+\df{Two groups $G$ and $H$ are {\bf homomorphic} if there exists a map between the elements of the groups $\rho:G\to H$, such that for all $g,g'\in G$,  $\rho(g\circ  g')=\rho(g)\circ \rho(g')$.}
 For homomorphic groups we say that the mapping conserves the structure of the group, or in other words, all the rules for the group operation/multiplication. This leads to our notion of group equality, namely {\bf isomorphic} groups:
-\df{Two groups $G$ and $H$ are {\bf isomomorphic}, written $G\cong H$, if they are homomorphic and the relevant mapping is one-to-one.}
-The one-to-one mapping ensures that there is a one-to-one correspondence between the elements of the group, so that isomorphic groups effectively contain both the same members and have the same multiplication operation.
+\df{Two groups $G$ and $H$ are {\bf isomomorphic}, written $G\cong H$, if they are homomorphic and the relevant mapping is one-to-one (injective) and onto (surjective).}
+The one-to-one and onto (hitting all elements of $H$) mapping ensures that there is a one-to-one correspondence between the elements of the two groups, so that isomorphic groups effectively contain both the same members and have the same multiplication operation.
 
 For matrix groups, a good way of checking the plausibility of isomorphism is to count the number of free parameters. The difference of the parameters for the two factors should be equal to the number of parameters for the quotient group. In our example $U(n)/SU(n)$, $U(n)$ has $n^2$, while $SU(n)$ has $n^2-1$, and this gives $n^2-(n^2-1)=1$ parameters for the quotient group, which matches the one parameter of $U(1)$. 
 
@@ -178,67 +223,80 @@ For matrix groups, a good way of checking the plausibility of isomorphism is to 
 \section{Representations}
 \label{sec:rep}
 %%%%%%%%%%%%%
-In some contrast to the treatment in most introductory group theory texts in mathematics, physicists are mostly interested in the properties of groups $G$ where the elements of $G$ {\it act} to transform some elements of a vector space $v\in V$, $g(v) = v' \in V$.\footnote{This part of group theory is called {\it representation theory}.} Here, the members of $V$ can for example be the state of a system, say a wave-function in quantum mechanics or a field in quantum field theory. 
+In some contrast to the treatment in most introductory group theory texts in mathematics, physicists are mostly interested in the properties of groups $G$ where the elements of $G$ {\it act} to transform some elements of a vector space $v\in V$, $g(v) = v' \in V$. This part of group theory is called {\bf representation theory}. Here, the members of $V$ can for example be the state of a system, say a wave-function in quantum mechanics or a field in quantum field theory. 
 To be useful in physics, we would like that the result of the group operation $g_i \circ g_j$ acts as $(g_i\circ g_j)(v) = g_i(g_j(v))$ and the group identity acts as $e(v) = v$.
 
+
+%%%
+\subsection{Definition}
 We begin with the abstract definition of a representation that ensures these properties. 
-\df{A {\bf representation} of a group $G$ on a vector space $V$ is a map $\rho : G \to GL(V,K)$, where $GL(V,K)$ is the {\bf general linear group} on $V$, {\it i.e.}\ the invertible matrices of the field $K$ of $V$,\footnote{Technically, we can only be sure that we can write $GL(V,K)$ as matrices as long as $V$ is a finite dimensional vector space. However, we shall do our best not to ass around with infinite dimensional representations.} such that for $\forall g_i,g_j\in G$,
+\df{A {\bf representation} of a group $G$ on a vector space $V$ over the field $K$ is a map $\rho : G \to GL(V,K)$, where $GL(V,K)$ is the {\bf general linear group of the vector space} $V$,\footnote{The general linear group of the abstract vector space $V$ is the set of all one-to-one and onto linear transformations $V\to V$, together with functional composition as group operation. For finite dimensional spaces this group is isomorphic to the general linear group $GL(n,K)$ that we introduced earlier.} such that for all $ g_i,g_j\in G$,
 \begin{equation}
-\rho(g_i\circ g_j) = \rho(g_i)\rho(g_j).~{\rm (homomorphism)}\nonumber
+\rho(g_i\circ g_j) = \rho(g_i)\rho(g_j). \text{    (homomorphism)}\nonumber
 \end{equation}
 If this map is also isomorphic, we say that the representation is {\bf faithful}.
 }
+Here $V$ is called the {\bf representation space} and the dimension $n$ of $V$ is called the dimension of the representation. While somewhat confusing, it is common to talk about $V$ as the representation itself, even though it is really the space on which the representation acts. 
 
-From a physicist point of view, the underlying point here is that (the members of) our groups will be used on quantum mechanical states, or fields in field theory, which can be just complex numbers (functions) or multi-component vectors of such. They are thus members of a vector space, and the definition of representations force the transformation properties of the group to be written in terms of matrices. Furthermore, the mapping from the group, or, if you like, the concrete way of writing the abstract group elements, must be homomorphic (structure preserving), meaning that if we can write a group element as the product of two others, the matrix for that element must be the product of the two matrices for the individual group elements it can be written in terms of.
+To see that this fulfils our wanted properties, notice that $\rho(g)=\rho(e\circ g)=\rho(e)\rho(g)$, which means that $\rho(e)$ must be the identity transformation on $V$. The concatenation property follows directly from the homomorphism.
 
-You may by now have realized that the matrix groups defined in Sec.~\ref{sec:matrix_groups} have the property that they are defined in terms of one of their representations. These are called the {\bf fundamental} or {\bf defining  representations}. However, we will also have use for other representations, {\it e.g.}\ the {\bf adjoint representation} which we will introduce later.
+Writing this definition in terms of a generic vector space $V$ and field $K$ may be a bit obfuscating, but we need to keep in mind that our group elements can be acting on members of abstract vector space, {\it e.g.}\ spaces where the members of the space are functions, such as in the earlier example of the translation group acting on functions. In the case where $V$ is finite dimensional it is common to choose a concrete basis for $V$ and identify $GL(V,K)$ with $GL(n, K)$, the group of $n\times n$ invertible matrices with elements from the field $K$. So, in most cases, the representations we are interested in are matrices acting on coordinate space vectors over the fields $\mathbb R$ or $\mathbb C$, {\it i.e.} vectors in $\mathbb R^n$ or $\mathbb C^n$.
+
+From a physicist point of view, the underlying point here is that (the members of) our groups will be used on quantum mechanical states, or fields in field theory, which can be just complex numbers or functions, or multi-component vectors of such. They are thus members of a vector space, and the definition of representations allows the transformation properties of the group to be written in terms of matrices. Furthermore, the mapping from the group, or, if you like, the concrete way of writing the abstract group elements, must be homomorphic (structure preserving), meaning that if we can write a group element as the product of two others, the matrix for that element must be the product of the two matrices for the individual group elements it can be written in terms of.
+
+
+%%%
+\subsection{Representation examples}
+You may by now have realised that the matrix groups defined in Sec.~\ref{sec:matrix_groups} have the property that they are defined in terms of one of their representations. These are called the {\bf fundamental} or {\bf defining  representations}. However, we will also have use for other representations, {\it e.g.}\ the {\bf adjoint representation} which we will introduce later.
 
 Let us now take a few examples that connect to our definition. We saw earlier that for $U(1)$ the group members can be written as the complex numbers on the unit circle $e^{i \theta}$, which can be used as phase transformations on wavefunctions $\psi(x)$ that form a one dimensional vector space over the complex numbers. 
 
-For $SU(2)$, a quick count of the number of free parameters in $SU(2)$ should convince us that we need three real numbers to parametrise the group elements, here the $\alpha_i$: each matrix consists of four complex numbers, or eight real, the unitarity requirement removes four free parameters, while the requirement on the determinant one more. This means that that we should be able to write a general matrix in $SU(2)$ in terms of the linear combination of three unitary ``basis'' matrices. One common choice for this is the {\bf Pauli matrices}. 
-\begin{equation}
-\sigma_1 =\left[\begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix}\right], 
-\quad \sigma_2 =\left[\begin{matrix} 0 & -i \\ i & 0 \end{matrix}\right], 
-\quad \sigma_3 =\left[\begin{matrix} 1 & 0 \\ 0 & -1 \end{matrix}\right].
-\label{eq:pauli_matrices}
-\end{equation}
-Since the three Pauli matrices are linearly independent, the sum $\alpha_i\sigma_i$, $\alpha_i\in\mathbb R$, should then (hopefully) span all of $SU(2)$.\footnote{We will later see to what extent this is true.} In the Standard Model this representation is applied to weak doublets of fields, {\it e.g.}\ the electron--neutrino doublet $\psi = (\nu_e, e)$ that form a two-dimensional vector space, as the $SU(2)_L$ gauge transformation. In the SM the group elements are written as the exponential  $e^{i \alpha_i \sigma_i}$. We will return to why we want to write the group as an exponential in Sec.~\ref{sec:lie_algebras}. 
+For $SU(2)$ we saw that we needed three real numbers to parametrise the group elements. It then seems reasonable that we should be able to write a general matrix in $SU(2)$ in terms of the linear combination of three unitary ``basis'' matrices, for example the {\bf Pauli matrices} in (\ref{eq:pauli_matrices}). Since the three Pauli matrices are linearly independent, the sum $\alpha_i\sigma^i$, $\alpha_i\in\mathbb R$, should (hopefully) in some sense span all of $SU(2)$.\footnote{We will later see to what extent this is true, but we must emphasise here that $SU(2)$ is not a vector space, so it is not spanning in the vector space sense.} The group elements of $SU(2)$ are written as the exponentials  $e^{i \alpha_i \sigma^i}$. We will return to why we want to write the group elements as an exponential in Sec.~\ref{sec:lie_algebras}. In physics the fundamental representation of $SU(2)$ is often denoted {\bf 2}, following the pattern that the representations are written up with the dimension of their matrices in boldface. In the Standard Model the fundamental representation is applied to the vector space of doublets of fermion fields, {\it e.g.}\ the electron--neutrino doublet $\psi = (\nu_e, e)^T$ that form a two-dimensional vector space, as the $SU(2)_L$ gauge transformation. 
 
-However, we can construct many more representations of a single group such as $SU(2)$. Using the three free parameters in $SU(2)$ it turns out that we can also write the elements in the group in terms of three  $3\times3$-matrices that act on vectors in a three-dimensional space. For example we can use the matrices
+However, we can construct many more representations of a single group such as $SU(2)$. Using the three free parameters in $SU(2)$ it turns out that we can also generate the elements in the group in terms of three  $3\times3$-matrices that act on vectors in a three-dimensional space. In place of the Pauli matrices we can use the three matrices
 \begin{equation}
-J_1 =\left[\begin{matrix} 0 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0  \end{matrix}\right], 
-\quad J_2 =\left[\begin{matrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0  \end{matrix}\right], 
-\quad J_3 =\left[\begin{matrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0  \end{matrix}\right].
+J^1 =\left[\begin{matrix} 0 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0  \end{matrix}\right], 
+\quad J^2 =\left[\begin{matrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0  \end{matrix}\right], 
+\quad J^3 =\left[\begin{matrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0  \end{matrix}\right].
 \label{eq:SO3_generators}
 \end{equation}
-This forms the adjoint representation of $SU(2)$ and is essentially the representation used in the SM for operations on the gauge fields that transform under $SU(2)_L$ which is a three-vector. The central point here is that the group structure is the same (isometric), even if the objects in the representation are different.
+As we will see, this will form the basis for creating the adjoint representation of $SU(2)$, named {\bf 3}, and is essentially the representation used in the Standard Model for operations on the gauge fields that transform under $SU(2)_L$, which are represented as three-component vectors. The central point here is that the group structure is the same (isometric), even if the objects in the representation are different.
 
-The existence of more representations necessitates a definition of when representations are actually equivalent or isomorphic. This should not be confused with whether groups are isomorphic, but removes differences in representations that are simply due to a change in basis for the vector space the group is acting on, or trivial changes in the dimension of the vector space.\footnote{Imagine, for example, that you create a representation for $U(1)$ that consists of diagonal $2\times2$-matrices with the unit complex numbers repeated twice on the diagonal. This is not essentially different from the one-dimensional representation, and should not be considered as such.}
-\df{Two representations $\rho$ and $\rho'$ of $G$ on $V$ and $V'$ are {\bf equivalent} if and only if there exists a map $A:V\to V'$, that is one-to-one, such that for $\forall g \in G$, $A\rho(g)A^{-1} = \rho'(g)$.}
+At this point you may be worried about the translation group $T(1)$ that we saw earlier and its extensions to higher dimensions. There we wrote down the elements using differential operators $T_a=e^{a\frac{\partial}{\partial x}}$. This does not look a lot like matrices. However, here the abstract vector space that is acted on by the group elements is made up of smooth (infinitely differentiable) functions, and in our generic definition of a representation above there is no need for the general linear group of such a space to be written in terms of matrices. Unless we are very strict with what functions we allow, this is typically an infinite dimensional space. It is a bit tricky to prove that our differential operators $T_a$ form a representation, however, they do, and these kinds of group representations are called {\bf differential representations}.
+
+The existence of multiple representations for the same group necessitates a definition of when representations are actually equivalent, or isomorphic. This should not be confused with whether groups are isomorphic, but removes differences in representations that are simply due to a change in basis for the vector space the group is acting on, or trivial changes in the dimension of the vector space.\footnote{Imagine, for example, that you create a representation for $U(1)$ that consists of diagonal $2\times2$-matrices with the unit complex numbers repeated twice on the diagonal. This is not essentially different from the one-dimensional representation, and should not be considered as such.}
+\df{Two representations $\rho$ and $\rho'$ of $G$ on $V$ and $V'$ are {\bf equivalent} if and only if there exists a map $A:V\to V'$, that is one-to-one and onto, such that for all $g \in G$, $A\rho(g)A^{-1} = \rho'(g)$.}
 
 
 %%%
 \subsection{Irreducible representations}
 \label{sec:irreps}
 The building blocks of representations are so-called {\bf irreducible representations}, also called {\bf irreps}. These are the essential ingredients in representation theory, and are defined as follows: 
-\df{An {\bf irreducible representation} $\rho$ is a representation where there is {\it no} proper subspace $W \subset V$ that is closed under the group, {\it i.e.}\ there is no $W\subset V$ such that for $\forall w \in W$, $\forall g \in G$ we have $\rho(g)w \in W$.\footnote{In other words, we can not split the matrix representation of $G$ in two parts that do not ``mix".}}
+\df{An {\bf irreducible representation} $\rho$ of a group $G$ is a representation where there is {\it no} proper subspace $W \subset V$ that is closed under the group, {\it i.e.}\ there is no $W\subset V$ such that for all $w \in W$, and all $g \in G$ we have $\rho(g)w \in W$.\footnote{In other words, we can not split the matrix representation of $G$ in two parts that do not ``mix".}}
 
 Let us take an example to try to clear up what a {\it reducible} representation means in contrast to an irreducible. Assume the representation $\rho(g)$ for $g \in G$ acts on a vector space $V$ as matrices. If these matrices $\rho(g)$ can all be decomposed into $\rho_1(g)$, $\rho_2(g)$ and $\rho_{12}(g)$ such that for $\mathbf v =(\mathbf v_1, \mathbf v_2)\in V$ 
 \[\rho(g) \mathbf v = \begin{bmatrix}\rho_1(g) & \rho_{12}(g) \\ 0 & \rho_2(g)\end{bmatrix} \begin{bmatrix}\mathbf v_1 \\ \mathbf v_2 \end{bmatrix}  ,\]
 then $\rho$ is {\bf reducible}. The subspace $W$ of $V$ spanned by $\mathbf v_1$ violates the irreducibility condition above.
 
-If  we also have $\rho_{12}(g)=0$ we say that the representation is {\bf completely reducible}. It can be shown that in most cases a reducible representation is also completely reducible. In fact, representations for which this is not true tend to be mathematical curiosities. As a result, there is a tendency in physics to use the term ``reducible" where we should use the term ``completely reducible". In the case of a completely reducible representation we can split the vector space $V$ into two vector spaces $V=W_1\oplus W_2$, where $\mathbf v_1\in W_1$ and $\mathbf v_2\in W_2$, and define a representation of $G$ on each of them using $\rho_1$ and $\rho_2$, which in turn could either be reduced more, or would be irreducible.
+If  we also have $\rho_{12}(g)=0$ in our example we say that the representation is {\bf completely reducible}. It can be shown that in most cases a reducible representation is also completely reducible. In fact, representations for which this is not true tend to be mathematical curiosities. As a result, there is a tendency in physics to use the term ``reducible" where we should use the term ``completely reducible". In the case of a completely reducible representation we can split the vector space $V$ into two vector spaces $V=W_1\oplus W_2$, where $\mathbf v_1\in W_1$ and $\mathbf v_2\in W_2$, and define a representation of $G$ on each of them using $\rho_1$ and $\rho_2$, which in turn could either be reduced more, or would be irreducible.
 
 We end this section with an important theorem that helps us decide whether a representation is irreducible, and ultimately gives a property identifying the representation. As many important theorems, it is called a lemma.
-\theo{(Schur's Lemma~\cite{Schur})\\ If we have an irreducible representation $\rho$ of a group $G$, all the matrices $A$ that commute with $\rho(g)$ for $\forall g \in G$ are proportional to the identity, $A=\lambda I$. Here the $\lambda$ are constants that label the representation.}
-%
+\theo{(Schur's Lemma~\cite{Schur})\\ If we have an irreducible representation $\rho$ of a group $G$, all the matrices $A$ that commute with $\rho(g)$ for all $g \in G$ are proportional to the identity, $A=\lambda I$. Here the $\lambda$ are constants that label the representation.}
+
 %\bigskip
-%{\it Proof:} Let $V$ be the carrier space of $\rho(g)$. This means that any $\rho(g)$ acting on any element of $V$ produces another element of $V$. We introduce this in an obvious shorthand notation, $M V = V$. We will say that $A$ operating on $V$ produces
-%an element in the subspace $V'$, $AV = V'$. If $[M,A]=0$, then 
+%{\it Proof:} First we will see that if $A$ is not trivial, meaning $A=0$, then $\det A\neq 0$.
+%
+%
+%Let $V$ be the carrier space of $\rho(g)$. This means that any $\rho(g)$ acting on any element of $V$ produces another element of $V$. We introduce this in an obvious shorthand notation, $M V = V$. Let us begin by assuming that $A$ operating on elements of $V$ always produce an element in the subspace $V'\subset V$, $AV = V'$. This indirectly implies that $\det A = 0$ since otherwise
+%
+% If $A$ commutes with $M$, $[M,A]=0$, then 
 %\[(MA)V = (AM)V,\]
 %so
 %\[MV' =AV =V'.\]
-%Thus $M$ operating on $V'$ produces another vector in $V'$, so $V'$ must be an invariant subspace of $V$, which is inconsistent with the assumption that $M$ is irreducible. This contradiction would be avoided if $A=0$ or if $\det(A) \ne 0$, because then $V$ would be identical to $V'$. In this case we could still write $A=B+\lambda I$, where $\det(B)=0$ and $\det(A)=\lambda$. Then $[M,A]=0$ implies $[M,B] = 0$; and the only remaining way to avoid the contradiction is to admit that $B = 0$, and consequently $A$ is a multiple of the unit matrix.
+%Thus $M$ operating on $V'$ produces another vector in $V'$, so $V'$ must be an invariant subspace of $V$, which is inconsistent with our the assumption that $M$ is irreducible. This contradiction could be avoided if either $A$ is trivial,  $A=0$, or if $\det(A) \ne 0$, because then $V$ would be identical to $V'$. 
+%
+%Since we must have $\det A\neq 0$, we can write $A=B+\lambda I$ where $\det B=0$
+%In this case we could still write $A=B+\lambda I$, where $\det(B)=0$ and $\det(A)=\lambda$. Then $[M,A]=0$ implies $[M,B] = 0$; and the only remaining way to avoid the contradiction is to admit that $B = 0$, and consequently $A$ is a multiple of the unit matrix.
 %
 
 
@@ -328,6 +386,7 @@ As a very simple example, the vector space $\mathbb{R}^3$ together with the stan
 
 %%%
 \subsection{Normed division algebras$^*$}
+\label{sec:normed_division_algebras}
 As a slight aside to the main argument of the text, we want to give an interesting example of algebras. We start with a {\bf division algebra}, which informally is an algebra where the binary operation of the algebra also has a meaningful (implicit) concept of division for all members (except division by zero).
 \df{An algebra $D$ is a {\bf division algebra} if for any element $x$ in $D$ and any non-zero element $y$ in $D$ there exists precisely one element $z$ in $D$ with $x = y\circ z$ and precisely one element $z'$ in $D$ such that $x = z'\circ y$. In this sense $y$ is a divisor of $x$.}
 
@@ -395,7 +454,7 @@ For the translation group $T(1)$ we saw that a group member could be written as 
 \section{Exercises}
 %%%%%%%%%
 \begin{Exercise}[]
-Show that $T_a^{-1} = T_{-a}$ and that $T(1)$ is group.
+Show that for the translation group $T(1)$ the identity element is $T_0$ and that $T_a^{-1} = T_{-a}$, and use this to show that $T(1)$ is group.
 \end{Exercise}
 
 \begin{Answer}
@@ -403,10 +462,14 @@ Given the group multiplication definition the identity element must be $e=T_0=1$
 \end{Answer}
 
 \begin{Exercise}[]
-What are the elements of $O(1)$? Can you find a group that it is isomorphic to?
+Show that the set of complex unitary $n\times n$ matrices $U$ is a group.
 \end{Exercise}
 
 \begin{Exercise}[]
+What are the elements of $O(1)$? Can you find a group that it is isomorphic to?
+\end{Exercise}
+
+\begin{Exercise}[label=ex:Un_parameters]
 Show that the $U(n)$ and $SU(n)$ groups have $n^2$ and $n^2-1$ independent (real) parameters, respectively. {\it Hint:} Consider the fact that $M=U^\dagger U$ is a hermitian matrix, {\it i.e.}\ $M^\dagger=M$.
 \end{Exercise}
 
@@ -415,6 +478,14 @@ An $n\times n$ matrix $U$ over $\mathbb C$ has $n^2$ complex or $2n^2$ real para
 and $(n^2-n)/2$ complex elements above and below the diagonal. Because $M^\dagger=M$ all the $(n^2-n)/2$ elements below the diagonal are given by the complex conjugate the corresponding elements above the diagonal. Since $U$ is unitary $M=I$. That all the $n$ real diagonal elements of $M$ is equal to one gives $n$ restrictions ($n$ real equations) for the elements of $U$. Further, all $(n^2-n)/2$ complex elements above the diagonal are zero, which gives $(n^2-n)/2$ complex equations, which means $n^2-n$ real equations. For the terms below the diagonal we do not obtain any new equations. As a result the free parameters for the $U(n)$ matrices are $2n^2-n-(n^2-n)=n^2$.
 For $SU(n)$ we must use the additional requirement $\det U=1$. Because $1=\det M=\det (U^\dagger U)=\det U^\dagger \det U=|\det U|^2$, we see that $\det U$ must be a phase factor, and that the requirement $\det U=1$ only gives one new condition (equation). Thus there are $n^2-1$ independent real parameters in $SU(n)$.
 \end{Answer}
+
+\begin{Exercise}[]
+Show that Eq.~(\ref{eq:SU2_parameterisation}) is a parametrisation of $SU(2)$.
+\end{Exercise}
+
+\begin{Exercise}[]
+Show that a linear combination of the identity and Pauli matrices can be used to write any $SU(2)$ matrix.
+\end{Exercise}
 
 \begin{Exercise}[]
 Show that for a subset $H\subset G,$ if $h_i \circ h_j^{-1} \in H$ for $\forall h_i, h_j\in H$, then $H$ is a subgroup of $G$.
@@ -428,7 +499,7 @@ Show that if $H$ is a subgroup of $G$, then $h_i \circ h_j^{-1} \in H$ for $\for
 Since $H$ is a subgroup of $G$ then by point ii) in the definition since $h_j\in H$ we must also have $h_j^{-1} \in H$. With $h_i, h_j^{-1} \in H$ by point i) in definition $h_i  \circ h_j^{-1} \in H$.
 \end{Answer}
 
-\begin{Exercise}[]
+\begin{Exercise}[label=ex:SUn_normal]
 Show that $SU(n)$ is a proper subgroup of $U(n)$ and that $U(n)$ is not simple.
 \end{Exercise}
 
