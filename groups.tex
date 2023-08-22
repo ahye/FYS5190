@@ -81,9 +81,17 @@ The members of the unitary group has has the important property that for all com
 \end{eqnarray}
 Thus, as this implies $|\mathbf{x}'|=|\mathbf{x}|$, its members do not change the length of the vectors they act on.  Since we would like to let our group representations act on vectors that describe quantum mechanical states, the unitary groups then conserve probability for these states. For example, when acting on a complex number (a complex scalar), such as a wavefunction $\psi(x)$, the elements of $U(1)$ rotate the phase of $\psi$, however, the magnitude is conserved since $\psi'=e^{i\alpha}\psi$ gives $|\psi'|^2=\psi^*e^{-i\alpha}e^{i\alpha}\psi=|\psi|^2$.
 
-We can construct unitary matrices from either Hermitian or anti-Hermitian matrices by using an exponentiation of the matrix. This formally interprets the exponential series in terms of a matrix $M$ as
+We can construct unitary matrices from either Hermitian or anti-Hermitian matrices by using the {\bf matrix exponential}. This formally interprets the exponential series in terms of a real or complex valued $n\times n$ matrix $M$ as
 \[ \exp(M)\equiv\sum_{n=0}^\infty \frac{M^n}{n!}=I+M+\frac{1}{2}M^2+\frac{1}{6}M^3+\ldots. \]
-Given a Hermitian matrix $M$, $M^\dagger=M$, the matrix $U=e^{iM}$ is then automatically unitary since $U^\dagger=e^{-iM^\dagger}=e^{-iM}$ so that $U^\dagger U=e^{-iM}e^{iM}=I$. This is the physics construction that we will mostly use in these notes because of our quantum fondness for Hermitian operators. For an anti-Hermitian matrix $M$, $M^\dagger=-M$ we could instead use that $U=e^M$ is automatically unitary since $U^\dagger=e^{-M}$ so that $U^\dagger U=e^{-M}e^{M}$=I. This is the mathematical construction found in a lot of mathematical literature.
+This series can be shown to always converge, so the series is well defined. Since this is a series of non-commuting objects we again have to be careful with using properties of the exponential from ordinary arithmetic. The following useful properties of the matrix exponential can be proven:
+\begin{itemize}
+\item[i)] $\exp(M^T)=\exp(M)^T$
+\item[ii)] $\exp(M^*)=\exp(M)^*$
+\item[iii)] If $A$ is an invertible matrix then $\exp(AMA^{-1})=A\exp(M)A^{-1}$
+\item[iv)] If $[M,N]=0$ then $\exp(M)\exp(N)=\exp(M+N)$
+\end{itemize}
+
+Given a Hermitian matrix $M$, $M^\dagger=M$, the matrix $U=e^{iM}$ is then automatically unitary since $U^\dagger=e^{-iM^\dagger}=e^{-iM}$ so that $U^\dagger U=e^{-iM}e^{iM}=I$, where the last equality is due to $M$ commuting with itself. This is the physics construction that we will mostly use in these notes because of our quantum fondness for Hermitian operators. For an anti-Hermitian matrix $M$, $M^\dagger=-M$, we could instead use that $U=e^M$ is automatically unitary since $U^\dagger=e^{-M}$ so that $U^\dagger U=e^{-M}e^{M}=I$. This is the mathematical construction found in a lot of mathematical literature.
 
 
 \subsubsection{$SU(2)$}
@@ -179,7 +187,7 @@ $H$ is a {\bf proper} subgroup if and only if $H\neq G$ and $H \neq \{e\}$. }
 We have already seen some examples of subgroups: the $SU(n)$ groups are subgroups of $U(n)$, and the $SO(n)$ groups are subgroups of the $O(n)$ groups. This can easily be shown using the properties of determinants.
 
 There is a very important class of subgroup called the {\bf normal} subgroup. The importance will become clear in a moment.
-\df{A subgroup $H$ is a {\bf normal} (invariant) subgroup, if and only if the {\bf conjugation} of any element by any $g \in G$ is in $H$,\footnote{Another, pretty, but slightly abusive, way of writing the definition of a normal group is to say that $gHg^{-1}=H$. This implies (correctly), that the image if $H$ under the conjugation operation is guaranteed to be the whole of $H$.}
+\df{A subgroup $H$ is a {\bf normal} (invariant) subgroup, if and only if the {\bf conjugation} of any element $h\in H$ by any $g \in G$ is in $H$,\footnote{Another, pretty, but slightly abusive, way of writing the definition of a normal group is to say that $gHg^{-1}=H$. This implies (correctly), that the image if $H$ under the conjugation operation is guaranteed to be the whole of $H$.}
 meaning
 \[ ghg^{-1} \in H\text{ for all } h \in H.\]
 A {\bf simple} group $G$ has no proper normal subgroup. A {\bf semi-simple} group $G$ has no proper abelian normal subgroup.}
@@ -189,10 +197,10 @@ We can for example show that for $n>1$, $SU(n)$ is a normal subgroup of $U(n)$, 
 \subsection{Quotient groups}
 The normal subgroup can be seen as a factor in the original group that can be divided out to form a simpler group that only retains the structure that was not in the normal group. To be more precise we need the concept of {\bf cosets}. 
 \df{A {\bf left coset} of a subgroup $H\subset G$ with respect to $g\in G$ is the set of members $\{gh | h\in H\}$, and a {\bf right coset} of the subgroup is the set  $\{hg|h\in H\}$. These are sometimes written $gH$ and $Hg$, respectively.}
-For normal subgroups $N$ it can be shown that the sets of left and right cosets $gN$ and $Ng$ coincide and form a group. This is called the {\bf quotient}  or {\bf coset group} and denoted $G/N$.\footnote{Sometimes also called the {\bf factor group}. The notation $G/N$ is pronounced ``G mod N'', where ``mod'' is short for modulo.}
-This has as its members all the {\it distinct sets} $\{gn|n\in N\}$, that can be generated by a $g\in G$, and has the binary operation $*$ with $\{gn|n\in N\}*\{g'n|n\in N\}=\{ (g\circ g')n| n\in N\}$. To simplify notation this can be written $gN*g'N=(g\circ g') N$. 
+For normal subgroups $H$ it can be shown that the sets of left and right cosets $gH$ and $Hg$ coincide and form a group. This is called the {\bf quotient}  or {\bf coset group} and denoted $G/H$.\footnote{Sometimes also called the {\bf factor group}. The notation $G/H$ is pronounced ``G mod H'', where ``mod'' is short for modulo.}
+This has as its members all the {\it distinct sets} $\{gh|h\in H\}$, that can be generated by a $g\in G$, and has the binary operation $*$ with $\{gh|h\in H\}*\{g'h|h\in H\}=\{ (g\circ g')h| h\in H\}$. To simplify notation this can be written $gH*g'H=(g\circ g') H$. 
  
-To make some sense of this, let us briefly discuss an example of a quotient group. We already know that $SU(n)$ is a normal subgroup to $U(n)$. This means that $U(n)/SU(n)$ is a group. What sort of group is this? Notice that two matrices $U_i$ and $U_j$ live in the same coset of $SU(n)$ if and only if $\det(U_iU_j^{-1})=1$, which is true if and only if $\det(U_i)=\det(U_j)$. In other words, each coset constructed from $SU(n)$ is simply the set of all matrices with a given determinant, which we saw for the $U(n)$ group can be any unit complex number. Observe that this means that many of the cosets are the same set. Here, all cosets generated by members in $U(n)$ with the same determinant is the same coset. 
+To make some sense of this, let us briefly discuss an example of a quotient group. We already know that $SU(n)$ is a normal subgroup to $U(n)$. This means that $U(n)/SU(n)$ is a group. What sort of group is this? Notice that two matrices $U_i$ and $U_j$ live in the same coset of $SU(n)$ if and only if $\det(U_i)=\det(U_j)$. In other words, each coset constructed from $SU(n)$ is simply the set of all matrices with a given determinant, which we saw for the $U(n)$ group can be any unit complex number. Observe that this means that many of the cosets are the same, all cosets generated by members in $U(n)$ with the same determinant is the same coset. 
 When these cosets act on each other with the group operation of $U(n)/SU(n)$ they form new cosets of matrices with a determinant that is the product of their individual determinants, {\it i.e.}\ with $U,U'\in U(n)$ we have the product of quotient group member $\{US|S\in SU(n)\}*\{U'S| S\in SU(n)\}=\{ UU'S| S\in SU(n)\}$. Thus, the group behaves exactly as $U(1)$, and is in fact isomorphic to it.
 
 %%%
@@ -217,6 +225,8 @@ For homomorphic groups we say that the mapping conserves the structure of the gr
 The one-to-one and onto (hitting all elements of $H$) mapping ensures that there is a one-to-one correspondence between the elements of the two groups, so that isomorphic groups effectively contain both the same members and have the same multiplication operation.
 
 For matrix groups, a good way of checking the plausibility of isomorphism is to count the number of free parameters. The difference of the parameters for the two factors should be equal to the number of parameters for the quotient group. In our example $U(n)/SU(n)$, $U(n)$ has $n^2$, while $SU(n)$ has $n^2-1$, and this gives $n^2-(n^2-1)=1$ parameters for the quotient group, which matches the one parameter of $U(1)$. 
+
+At the end, let us make a warning: despite the enticing notation it is not in general the case that if $H$ is a normal subgroup to $G$, then $G\cong G/H\times H$.
 
 
 %%%%%%%%%%%%%
@@ -243,6 +253,10 @@ To see that this fulfils our wanted properties, notice that $\rho(g)=\rho(e\circ
 Writing this definition in terms of a generic vector space $V$ and field $K$ may be a bit obfuscating, but we need to keep in mind that our group elements can be acting on members of abstract vector space, {\it e.g.}\ spaces where the members of the space are functions, such as in the earlier example of the translation group acting on functions. In the case where $V$ is finite dimensional it is common to choose a concrete basis for $V$ and identify $GL(V,K)$ with $GL(n, K)$, the group of $n\times n$ invertible matrices with elements from the field $K$. So, in most cases, the representations we are interested in are matrices acting on coordinate space vectors over the fields $\mathbb R$ or $\mathbb C$, {\it i.e.} vectors in $\mathbb R^n$ or $\mathbb C^n$.
 
 From a physicist point of view, the underlying point here is that (the members of) our groups will be used on quantum mechanical states, or fields in field theory, which can be just complex numbers or functions, or multi-component vectors of such. They are thus members of a vector space, and the definition of representations allows the transformation properties of the group to be written in terms of matrices. Furthermore, the mapping from the group, or, if you like, the concrete way of writing the abstract group elements, must be homomorphic (structure preserving), meaning that if we can write a group element as the product of two others, the matrix for that element must be the product of the two matrices for the individual group elements it can be written in terms of.
+
+In physics an important category of representations are the {\bf unitary representations}, which are linear?representations $\rho$ of a group $G$ on a complex Hilbert space $V$ where $\rho(g)$ is a unitary operator, {\it i.e.} an operator that preserves the length of vectors in $V$, for every $g\in G$.
+
+This generalises the unitary (matrix) group, which are examples of unitary representations, beyond finite dimensional vector spaces.
 
 
 %%%
@@ -278,7 +292,7 @@ Let us take an example to try to clear up what a {\it reducible} representation 
 \[\rho(g) \mathbf v = \begin{bmatrix}\rho_1(g) & \rho_{12}(g) \\ 0 & \rho_2(g)\end{bmatrix} \begin{bmatrix}\mathbf v_1 \\ \mathbf v_2 \end{bmatrix}  ,\]
 then $\rho$ is {\bf reducible}. The subspace $W$ of $V$ spanned by $\mathbf v_1$ violates the irreducibility condition above.
 
-If  we also have $\rho_{12}(g)=0$ in our example we say that the representation is {\bf completely reducible}. It can be shown that in most cases a reducible representation is also completely reducible. In fact, representations for which this is not true tend to be mathematical curiosities. As a result, there is a tendency in physics to use the term ``reducible" where we should use the term ``completely reducible". In the case of a completely reducible representation we can split the vector space $V$ into two vector spaces $V=W_1\oplus W_2$, where $\mathbf v_1\in W_1$ and $\mathbf v_2\in W_2$, and define a representation of $G$ on each of them using $\rho_1$ and $\rho_2$, which in turn could either be reduced more, or would be irreducible.
+If  we also have $\rho_{12}(g)=0$ in our example we say that the representation is {\bf completely reducible}. It can be shown that in most cases a reducible representation is also completely reducible. In fact, representations for which this is not true tend to be mathematical curiosities. For example, if the vector space is a Hilbert space (states in quantum mechanics), there exist a proof that all representations are completely reducible.  As a result, there is a tendency in physics to use the term ``reducible" where we should use the term ``completely reducible". In the case of a completely reducible representation we can split the vector space $V$ into a direct sum of two vector spaces $V=W_1\oplus W_2$, where $\mathbf v_1\in W_1$ and $\mathbf v_2\in W_2$, and define a representation of $G$ on each of them using $\rho_1$ and $\rho_2$, which in turn could either be reduced more, or would be irreducible.
 
 We end this section with an important theorem that helps us decide whether a representation is irreducible, and ultimately gives a property identifying the representation. As many important theorems, it is called a lemma.
 \theo{(Schur's Lemma~\cite{Schur})\\ If we have an irreducible representation $\rho$ of a group $G$, all the matrices $A$ that commute with $\rho(g)$ for all $g \in G$ are proportional to the identity, $A=\lambda I$. Here the $\lambda$ are constants that label the representation.}
