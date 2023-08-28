@@ -85,10 +85,11 @@ We can construct unitary matrices from either Hermitian or anti-Hermitian matric
 \[ \exp(M)\equiv\sum_{n=0}^\infty \frac{M^n}{n!}=I+M+\frac{1}{2}M^2+\frac{1}{6}M^3+\ldots. \]
 This series can be shown to always converge, so the series is well defined. Since this is a series of non-commuting objects we again have to be careful with using properties of the exponential from ordinary arithmetic. The following useful properties of the matrix exponential can be proven:
 \begin{itemize}
-\item[i)] $\exp(M^T)=\exp(M)^T$
-\item[ii)] $\exp(M^*)=\exp(M)^*$
-\item[iii)] If $A$ is an invertible matrix then $\exp(AMA^{-1})=A\exp(M)A^{-1}$
-\item[iv)] If $[M,N]=0$ then $\exp(M)\exp(N)=\exp(M+N)$
+\item[i)] $\exp(A^T)=\exp(A)^T$
+\item[ii)] $\exp(A^*)=\exp(A)^*$
+\item[iii)] If $B$ is an invertible matrix then $\exp(BAB^{-1})=B\exp(A)B^{-1}$
+\item[iv)] If $[A,B]=0$ then $\exp(A)\exp(B)=\exp(A+B)$
+\item[v)] $\det e^A = e^{\Tr A}$. 
 \end{itemize}
 
 Given a Hermitian matrix $M$, $M^\dagger=M$, the matrix $U=e^{iM}$ is then automatically unitary since $U^\dagger=e^{-iM^\dagger}=e^{-iM}$ so that $U^\dagger U=e^{-iM}e^{iM}=I$, where the last equality is due to $M$ commuting with itself. This is the physics construction that we will mostly use in these notes because of our quantum fondness for Hermitian operators. For an anti-Hermitian matrix $M$, $M^\dagger=-M$, we could instead use that $U=e^M$ is automatically unitary since $U^\dagger=e^{-M}$ so that $U^\dagger U=e^{-M}e^{M}=I$. This is the mathematical construction found in a lot of mathematical literature.
@@ -248,37 +249,37 @@ If this map is also isomorphic, we say that the representation is {\bf faithful}
 }
 Here $V$ is called the {\bf representation space} and the dimension $n$ of $V$ is called the dimension of the representation. While somewhat confusing, it is common to talk about $V$ as the representation itself, even though it is really the space on which the representation acts. 
 
-To see that this fulfils our wanted properties, notice that $\rho(g)=\rho(e\circ g)=\rho(e)\rho(g)$, which means that $\rho(e)$ must be the identity transformation on $V$. The concatenation property follows directly from the homomorphism.
+To see that this fulfils our wanted properties, notice that $\rho(g)=\rho(e\circ g)=\rho(e)\rho(g)$, which means that $\rho(e)= \mathbb{1}$ must be the identity transformation on $V$. The concatenation property follows directly from the homomorphism.
 
-Writing this definition in terms of a generic vector space $V$ and field $K$ may be a bit obfuscating, but we need to keep in mind that our group elements can be acting on members of abstract vector space, {\it e.g.}\ spaces where the members of the space are functions, such as in the earlier example of the translation group acting on functions. In the case where $V$ is finite dimensional it is common to choose a concrete basis for $V$ and identify $GL(V,K)$ with $GL(n, K)$, the group of $n\times n$ invertible matrices with elements from the field $K$. So, in most cases, the representations we are interested in are matrices acting on coordinate space vectors over the fields $\mathbb R$ or $\mathbb C$, {\it i.e.} vectors in $\mathbb R^n$ or $\mathbb C^n$.
+Writing this definition in terms of a generic vector space $V$ and field $K$ may be a bit obfuscating, but we need to keep in mind that our group elements can be acting on members of abstract vector space, {\it e.g.}\ spaces where the members of the space are functions, such as in the earlier example of the translation group acting on functions. In the case where $V$ is finite dimensional it is common to choose a concrete basis for $V$ and identify $GL(V,K)$ with $GL(n, K)$, the group of $n\times n$ invertible matrices with elements from the field $K$. So, in many cases, the representations we are interested in are matrices acting on coordinate space vectors over the fields $\mathbb R$ or $\mathbb C$, {\it i.e.} vectors in $\mathbb R^n$ or $\mathbb C^n$.
 
-From a physicist point of view, the underlying point here is that (the members of) our groups will be used on quantum mechanical states, or fields in field theory, which can be just complex numbers or functions, or multi-component vectors of such. They are thus members of a vector space, and the definition of representations allows the transformation properties of the group to be written in terms of matrices. Furthermore, the mapping from the group, or, if you like, the concrete way of writing the abstract group elements, must be homomorphic (structure preserving), meaning that if we can write a group element as the product of two others, the matrix for that element must be the product of the two matrices for the individual group elements it can be written in terms of.
+From a physics point of view, the underlying point here is that (the members of) our groups will be used on quantum mechanical states, or fields in field theory, which can be just complex numbers or functions, or multi-component vectors of such. They are thus members of a vector space, and the definition of representations allows the transformation properties of the group to be written in terms of matrices for finite dimensional representation spaces. Furthermore, the mapping from the group, or, if you like, the concrete way of writing the abstract group elements, must be homomorphic (structure preserving), meaning that if we can write a group element as the product of two others, the matrix for that element must be the product of the two matrices for the individual group elements it can be written in terms of.
 
-In physics an important category of representations are the {\bf unitary representations}, which are representations $\rho$ of a group $G$ on a complex Hilbert space $V$ where $\rho(g)$ is a unitary operator, for every $g\in G$, {\it i.e.}\ an operator that preserves the length of vectors in $V$. This generalises the unitary (matrix) group, which are examples of unitary representations, beyond finite dimensional vector spaces.
+In physics an important category of representations are the {\bf unitary representations}, which are representations $\rho$ of a group $G$ on a complex Hilbert space $V$ where $\rho(g)$ is a unitary operator for every $g\in G$, {\it i.e.}\ an operator that preserves the length of vectors in $V$. This generalises the unitary (matrix) group, which are examples of unitary representations, beyond finite dimensional vector spaces.
 
 
 %%%
 \subsection{Representation examples}
 You may by now have realised that the matrix groups defined in Sec.~\ref{sec:matrix_groups} have the property that they are defined in terms of one of their representations. These are called the {\bf fundamental} or {\bf defining  representations}. However, we will also have use for other representations, {\it e.g.}\ the {\bf adjoint representation} which we will introduce later.
 
-Let us now take a few examples that connect to our definition. We saw earlier that for $U(1)$ the group members can be written as the complex numbers on the unit circle $e^{i \theta}$, which can be used as phase transformations on wavefunctions $\psi(x)$ that form a one dimensional vector space over the complex numbers. 
+Let us now take a few examples that connect to our definition and to relevant physics. We saw earlier that for $U(1)$ the group members can be written in the fundamental representation as the complex numbers on the unit circle $e^{i \theta}$, which can be used as phase transformations on wavefunctions $\psi(x)$. This can be viewed as the action on a one-dimensional space over $\mathbb C$ where the basis vector is the wavefunction.
 
-For $SU(2)$ we saw that we needed three real numbers to parametrise the group elements. It then seems reasonable that we should be able to write a general matrix in $SU(2)$ in terms of the linear combination of three unitary ``basis'' matrices, for example the {\bf Pauli matrices} in (\ref{eq:pauli_matrices}). Since the three Pauli matrices are linearly independent, the sum $\alpha_i\sigma^i$, $\alpha_i\in\mathbb R$, should (hopefully) in some sense span all of $SU(2)$.\footnote{We will later see to what extent this is true, but we must emphasise here that $SU(2)$ is not a vector space, so it is not spanning in the vector space sense.} As it turns out, the group elements of $SU(2)$ in the fundamental representation can indeed written as the exponentials  $e^{i \alpha_i \sigma^i}$. We will return to why we use an exponential in Sec.~\ref{sec:lie_algebras}. In physics the fundamental representation of $SU(2)$ is often denoted {\bf 2}, following the pattern that the representations are written up with the dimension of their matrices in boldface. In the Standard Model the fundamental representation is applied to the vector space of doublets of fermion fields, {\it e.g.}\ the electron--neutrino doublet $\psi = (\nu_e, e)^T$ that form a two-dimensional vector space, as the $SU(2)_L$ gauge transformation. 
+For $SU(2)$ we saw that we needed three real numbers to parametrise the group elements. It then seems reasonable that we should be able to write a general matrix in $SU(2)$ in terms of the linear combination of three unitary ``basis'' matrices, for example the {\bf Pauli matrices} in (\ref{eq:pauli_matrices}). Since the three Pauli matrices are linearly independent, the sum $\alpha_i\sigma^i$, $\alpha_i\in\mathbb R$, should (hopefully) in some sense span all of $SU(2)$.\footnote{We will later see to what extent this is true, but we must emphasise here that $SU(2)$ is not a vector space, so it is not spanning in the vector space sense.} As it turns out, the group elements of $SU(2)$ in the fundamental representation can indeed written as the exponentials  $e^{i \alpha_i \sigma^i}$. We will return to why we use an exponential in Sec.~\ref{sec:lie_algebras}. In physics the fundamental representation of $SU(2)$ is often denoted {\bf 2}, following the pattern that the representations are written up with the dimension of their matrices in boldface. In the Standard Model the fundamental representation is used on the vector space of doublets of fermion fields, {\it e.g.}\ the electron--neutrino doublet $\psi = (\nu_e, e)^T$ that form a two-dimensional vector space, as the $SU(2)_L$ gauge transformation. 
 
-However, we can construct many more representations of a single group such as $SU(2)$. Using the three free parameters in $SU(2)$ it turns out that we can also generate the elements in the group in terms of three  $3\times3$-matrices that act on vectors in a three-dimensional space. In place of the Pauli matrices we can use the three matrices
+However, we can construct many more representations than the fundamental from a single group such as $SU(2)$. Using the three free parameters in $SU(2)$ it turns out that we can also represent the elements in the group in terms of three  $3\times3$-matrices that act on vectors in a three-dimensional space. In place of the Pauli matrices we can use the three matrices
 \begin{equation}
-J^1 =\left[\begin{matrix} 0 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0  \end{matrix}\right], 
-\quad J^2 =\left[\begin{matrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0  \end{matrix}\right], 
-\quad J^3 =\left[\begin{matrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0  \end{matrix}\right].
+L^1 =\left[\begin{matrix} 0 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0  \end{matrix}\right], 
+\quad L^2 =\left[\begin{matrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0  \end{matrix}\right], 
+\quad L^3 =\left[\begin{matrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0  \end{matrix}\right].
 \label{eq:SO3_generators}
 \end{equation}
-With some thinking you may recognise these. ({\it Hint:} what do the components of angular momentum look like?)
-As we will see, this will form the basis for creating the adjoint representation of $SU(2)$, named {\bf 3}, and is essentially the representation used in the Standard Model for operations on the gauge fields that transform under $SU(2)_L$, which are represented as three-component vectors. The central point here is that the group structure is the same (isometric), even if the objects in the representation are different.
+You may recognise these as related to the angular momentum operators in quantum mechanics. As we will see later, these matrices will form the basis for creating the three-dimensional adjoint representation of $SU(2)$, named {\bf 3}. In the Standard Model this is the representation used for operations on the gauge fields that transform under $SU(2)_L$, which are represented as three-component vectors. The central point here is that the group structure is the same (isometric), even if the objects in the representation are different.
 
 At this point you may be worried about the translation group $T(1)$ that we saw earlier and its extensions to higher dimensions. There we wrote down the elements using differential operators $T_a=e^{a\frac{\partial}{\partial x}}$. This does not look a lot like matrices. However, here the abstract vector space that is acted on by the group elements is made up of smooth (infinitely differentiable) functions, and in our generic definition of a representation above there is no need for the general linear group of such a space to be written in terms of matrices. Unless we are very strict with what functions we allow, this is typically an infinite dimensional space. It is a bit tricky to prove that our differential operators $T_a$ form a representation, however, they do, and these kinds of group representations are called {\bf differential representations}.
 
-The existence of multiple representations for the same group necessitates a definition of when representations are actually equivalent, or isomorphic. This should not be confused with whether groups are isomorphic, but removes differences in representations that are simply due to a change in basis for the vector space the group is acting on, or trivial changes in the dimension of the vector space.\footnote{Imagine, for example, that you create a representation for $U(1)$ that consists of diagonal $2\times2$-matrices with the unit complex numbers repeated twice on the diagonal. This is not essentially different from the one-dimensional representation, and should not be considered as such.}
+The existence of multiple representations for the same group necessitates a definition of when representations are actually equivalent, or isomorphic. This should not be confused with whether groups are isomorphic, but removes differences in representations that are simply due to a change in basis for the vector space the group is acting on, or trivial changes in the dimension of the vector space.\footnote{Imagine, for example, that you create a representation for $U(1)$ that consists of diagonal $2\times2$-matrices with the unit complex numbers repeated twice on the diagonal. This is not essentially different from the one-dimensional representation, and should not be considered as such.} 
 \df{Two representations $\rho$ and $\rho'$ of $G$ on $V$ and $V'$ are {\bf equivalent} if and only if there exists a map $A:V\to V'$, that is one-to-one and onto, such that for all $g \in G$, $A\rho(g)A^{-1} = \rho'(g)$.}
+We again give the definition for an abstract representation space. For a finite-dimensional space with a given basis, $A$ and $\rho(g)$ are simply matrices.
 
 
 %%%
@@ -291,12 +292,12 @@ Let us take an example to try to clear up what a {\it reducible} representation 
 \[\rho(g) \mathbf v = \begin{bmatrix}\rho_1(g) & \rho_{12}(g) \\ 0 & \rho_2(g)\end{bmatrix} \begin{bmatrix}\mathbf v_1 \\ \mathbf v_2 \end{bmatrix}  ,\]
 then $\rho$ is {\bf reducible}. The subspace $W$ of $V$ spanned by $\mathbf v_1$ violates the irreducibility condition above.
 
-If  we also have $\rho_{12}(g)=0$ in our example we say that the representation is {\bf completely reducible}. It can be shown that in most cases a reducible representation is also completely reducible. In fact, representations for which this is not true tend to be mathematical curiosities. For example, if the representation is unitary and the vector space is a Hilbert space (states in quantum mechanics), there exist a proof that it is always completely reducible.  As a result, there is a tendency in physics to use the term ``reducible" where we should maybe use the term ``completely reducible". 
+If  we also have $\rho_{12}(g)=0$ in our example we say that the representation is {\bf completely reducible}. It can be shown that in most cases a reducible representation is also completely reducible. In fact, representations for which this is not true tend to be mathematical curiosities. For example, if the representation is unitary and the vector space is a Hilbert space (states in quantum mechanics), we can prove that the representation is always completely reducible.  As a result, there is a tendency in physics to use the term ``reducible" where we should maybe use the term ``completely reducible". 
 
-In the case of a completely reducible representation we can split the vector space $V$ into a direct sum of two vector spaces $V=W_1\oplus W_2$, where $\mathbf v_1\in W_1$ and $\mathbf v_2\in W_2$, and define a representation of $G$ on each of them using $\rho_1$ and $\rho_2$, which in turn could either be reduced more, or would themselves be irreducible. This process can then be continued until the representation has been broken down into its irreducible components.
+In the case of a completely reducible representation we can split the vector space $V$ into a direct sum of two vector spaces $V=V_1\oplus V_2$, where $\mathbf v_1\in V_1$ and $\mathbf v_2\in V_2$, and define a representation of $G$ on each of them using $\rho_1$ and $\rho_2$, which in turn could either be reduced more, or would themselves be irreducible. This process can then be continued until the representation has been broken down into only irreducible components.
 
-We end this section with an important theorem that helps us decide whether a representation is irreducible, and ultimately gives a property identifying the representation. As many important theorems, it is called a lemma.
-\theo{(Schur's Lemma~\cite{Schur})\\ If we have an irreducible representation $\rho$ of a group $G$, all the matrices $A$ that commute with $\rho(g)$ for all $g \in G$ are proportional to the identity, $A=\lambda I$. Here the $\lambda$ are constants that label the representation.}
+We end this section with an important theorem that helps us decide whether a representation is irreducible, and ultimately gives a property identifying the representation. As with many important theorems, it started its life as a lemma.
+\theo{{\bf (Schur's Lemma~\cite{Schur})}\\ If we have an irreducible representation $\rho$ of a group $G$ on a vector space $V$ and  a linear operator $A:V\to V$ that commutes with $\rho(g)$ for all $g \in G$, then  $A$ is proportional to the identity map, $A=\lambda \mathbb{1}$. The constant of proportionality $\lambda$ can be used to label the representation.}
 
 %\bigskip
 %{\it Proof:} First we will see that if $A$ is not trivial, meaning $A=0$, then $\det A\neq 0$.
@@ -314,6 +315,9 @@ We end this section with an important theorem that helps us decide whether a rep
 %In this case we could still write $A=B+\lambda I$, where $\det(B)=0$ and $\det(A)=\lambda$. Then $[M,A]=0$ implies $[M,B] = 0$; and the only remaining way to avoid the contradiction is to admit that $B = 0$, and consequently $A$ is a multiple of the unit matrix.
 %
 
+Schur's lemma as stated here has again been formulated in the language of general vector spaces. In terms of matrix representations it says that any matrix $A$ that commutes with all the matrices in an irreducible representation must be equal to a constant times the identity matrix, {\it i.e.}\ $A=\lambda I$.
+
+The constant of proportionality $\lambda$ is unique to the representation up to a common normalisation constant that can be incorporated into the linear operator/matrix (a constant multiple of $A$ would still have the same commutation properties). For us, these linear operators $A$ will generally turn out to have a very specific physical interpretation, so their natural normalisation will be clear. As a result the constants can be used to index the different irreducible representations. The proof of this property is somewhat beyond the scope of these notes.
 
 
 %Finally, we need two more calculation focused definitions for representations of Lie groups.
@@ -321,71 +325,106 @@ We end this section with an important theorem that helps us decide whether a rep
 %\df{For the representation $R$ the {\bf Casimir invariant} $C(R)$ is given by $C(R)\delta_{ij} = (T^a T^a)_{ij}$.}
 
 
+
 %%%%%%%%%%
 \section{Lie groups}
 \label{sec:Lie_groups}
 %%%%%%%%%%
-In physics we are particularly interested in a special type of group, the {\bf Lie group}, a class of continuous groups that we can parametrise and which are the basic tool we use to describe continuous symmetries. In order to define Lie groups we will need to use the technical term (smooth) manifold, meaning a mathematical object (formally a topological space) that locally\footnote{This insistence on local means that the parameterisation is not necessarily the same for the whole group.} can be parametrised as a function of  $\mathbb{R}^n$ or $\mathbb{C}^n$. We will describe a Lie group $G$ in terms of a parameterisation of the members $g(\mathbf a)\in G$, where $\mathbf a\in \mathbb{R}^n$ (or $\mathbb{C}^n$). Additionally, in order to describe continous symmetries these parameterisations need to be {\it smooth}, also in the technical sense of smooth, which means infinitely differentiable.
 
+
+%%%
+\subsection{Definitions}
+\label{sec:Lie_group_definitions}
+In physics we are particularly interested in a special type of continuous groups that we can parametrise, the {\bf Lie groups}, which are the basic tools we use to describe continuous symmetries. The abstract mathematical notion of continuity comes from topology, along with a notion of open sets and proximity, so continuous groups are also called {\bf topological groups}. For topological groups the group multiplication and inverse need to be continuous maps. We further say that a topological group is a {\bf compact group} if its topology is compact, meaning that it has no punctures or missing endpoints, {\it i.e.}\ it includes all limiting values of the group members. In practise the topology of our groups will be subspaces of Euclidean space $E^n$, in which case the space is compact if and only if it is closed and bounded. We will return to some examples of this later.
+
+A Lie group extends the continuity of topological groups by requiring the multiplication and inverse maps to be {\it smooth} (infinitely differentiable $C^\infty$).
+In order to define Lie groups we will need to use the technical term {\bf (smooth) manifold}, meaning a mathematical object (formally a topological space) that locally\footnote{This insistence on local means that the parameterisation is not necessarily the same for the whole group.} can be parametrised as a function of  $\mathbb{R}^n$ or $\mathbb{C}^n$. We will thus describe a Lie group $G$ as a manifold in terms of a parameterisation of the members $g(\mathbf a)\in G$, where $\mathbf a\in \mathbb{R}^n$ (or $\mathbb{C}^n$). Additionally, in order to describe continuous symmetries these parameterisations need to be smooth.
 \df{A {\bf Lie group} $G$ is a finite-dimensional {\bf smooth manifold} where group multiplication and inversion are smooth functions, meaning that given elements $g(\mathbf{a}), g(\mathbf{a}') \in G$, $g(\mathbf{a})\circ g(\mathbf{a}') = g(\mathbf{b})$ where $\mathbf{b}(\mathbf{a}, \mathbf{a}')$ is a smooth function of $\mathbf a$ and $\mathbf a'$, and $g^{-1}(\mathbf{a}) = g(\mathbf{b})$ where $\mathbf{b}(\mathbf{a})$ is a smooth function of $\mathbf a$.}
+The dimension of a Lie group is the dimension $n$ (or $2n$) of the manifold.
 
-The situation we are usually interested in is that a Lie group $G$ acting on an $m$-dimensional vector space $V$ through a representation. Here, it can be shown (for finite-dimensional representations) that we can locally write the map of the representation $G\times V \to V$ for $\mathbf{x} \in V$ in terms of an explicit function $f$ called the {\bf composition function}. We have $x_i \to x_i' = f_i(\mathbf x, \mathbf a)$, where the composition function $f_i$ is analytic\footnote{Meaning infinitely differentiable and in possession of a  convergent Taylor expansion. As a result analytic functions (on $\mathbb{R}$) are smooth, but the reverse does not hold.} in $x_i$ and $a_i$. Additionally $f_i$ should have an inverse.
+From our earlier example we immediately see that the translation group $T(1)$, given the parameterisation of the elements $g(a) = e^{a\frac{\partial}{\partial x}}$, is a Lie group since $g(a)g(a') =g(b)= g(a+a')$ and $b=a+a'$ is an analytic function of $a$ and $a'$, and for the inverse $g^{-1}(a)=g(b)=g(-a)$ where $b=-a$ is a smooth function of $a$. Since $a\in\mathbb R$ is unbounded the group members are also unbounded, and thus the group is not compact.
 
-From our earlier example we immediately see that the translation group $T(1)$, given the parameterisation of the elements $g(a) = e^{a\frac{d}{dx}}$, is a Lie group since $g(a)\cdot g(a') =g(b)= g(a+a')$ and $b=a+a'$ is an analytic function of $a$ and $a'$, and for the inverse $g^{-1}(a)=g(b)=g(-a)$ where $b=-a$ is a smooth function of $a$. Here, we can write the action of the group on the vector space $\mathbb{R}^1$ as $x'=f(x,a) = x+a$. The matrix groups are also Lie groups as they have $n\times n$-matrix representations where the matrices $A$ are parametrised by a certain number of parameters $\mathbf a$,  so that $x_i'=f_i(\mathbf{x}, \mathbf a) = [A(\mathbf a)\mathbf{x}]_i$. 
+All the matrix groups are also Lie groups. While their dimension and parameterisation is clear, for example a member of $GL(n,\mathbb R)$ has $n^2$ parameters by its elements, to prove that they are in fact Lie groups is tricky because of the requirement on the non-zero determinant. The proof is done by showing it for the general linear group, and then using the {\bf closed subgroup theorem}, saying that any closed (in the topological sense) subgroup of a Lie group is a Lie group, which applies to the other matrix groups. 
 
-By the analyticity of the explicit function $f$ we can always construct the parametrisation so that the zero parameter corresponds to the identity element of the group, $g(0) = e$, which means that  $f_i(\mathbf x, 0)=x_i$. By an infinitesimal change $da_j$ of the $j$-th parameter we then get the following Taylor expansion\footnote{The fact that $f_i$ is analytic means that this Taylor expansion must converge in some radius around $f_i(\mathbf x,0)$.}
+We saw several examples of parameterisations of matrix groups earlier, for example $U(1)$ could be parameterised by a single parameter $\theta\in [0,2\pi]$ by writing an element $U\in U(1)$ as the complex number $U=e^{i\theta}$. We can then identify the group topologically with a subspace of $E^2$, and since $|U|=1$ this group is bounded and closed, and thus a compact group. Similar arguments can be made for the compactness of all the matrix groups $U(n)$, $SU(n)$, $O(n)$, $SO(n)$, $Sp(2n)$, and $Sp(n)$, however, $GL(n)$ and $SL(n)$ are not compact because their elements are not bounded.
+
+
+%%%
+\subsection{Generators}
+\label{sec:generators}
+
+The situation we are usually in in physics is that of a $d$-dimensional Lie group $G$ acting on a vector space $V$ through a representation. This representation vector space  may be finite dimensional, in which case its members $\mathbf x\in V$ are written as vectors in some specific basis, or it may be infinite dimensional and consist of functions that in turn have a domain $\mathbb R^n$ or $\mathbb C^n$.
+
+For finite-dimensional representations we can locally write the map of the representation $G\times V \to V$ for $\mathbf{x} \in V$ in terms of an explicit function $\mathbf f$ called the {\bf composition function}. We have $x_i \to x_i' = f_i(\mathbf x, \mathbf a)$, $i=1, \ldots,n$, where the composition function $f_i$ is analytic\footnote{Analytic means infinitely differentiable and in possession of a  convergent Taylor expansion. As a result analytic functions (on $\mathbb{R}$) are smooth, but the reverse does not hold.} in $x_i$ and $a_j$, $j=1,\ldots,d$. Additionally $f_i$ should have an inverse. Note here that the dimensions of $\mathbf x$ and $\mathbf a$ are different, the first is given by the dimensions of the space $V$, $n$, while the second is given by the dimensions $d$ of the Lie group.
+
+By the analyticity of the explicit function $f$ we can always construct the parametrisation so that the zero parameter corresponds to the identity element of the group, $g(0) = e$, which means that  $f_i(\mathbf x, 0)=x_i$.\footnote{If this was not true for our parameterisation we could Taylor expand $\mathbf f$ around the parameter giving the identity element and then redefine the parameterisation by a linear shift.} By an infinitesimal change $d\mathbf a$ of the  parameters we then get the following Taylor expansion\footnote{The fact that $f_i$ is analytic means that this Taylor expansion must converge in some radius around $f_i(\mathbf x,0)$.}
 \begin{eqnarray*}
 x'_i &=& x_i + dx_i = f_i(\mathbf x, d\mathbf a)\\
-&=& f_i(\mathbf x, 0) + \frac{\partial f_i}{\partial a_j}da_j +\ldots\\
-&=& x_i +da_j \frac{\partial f_i}{\partial a_j}.
+&=& f_i(\mathbf x, 0) + \left.\frac{\partial f_i}{\partial a_j}da_j\right|_{\mathbf a =0} +\ldots\\
+&=& x_i +\left.da_j \frac{\partial f_i}{\partial a_j}\right|_{\mathbf a =0}.
 \end{eqnarray*}
-This is the result of the transformation by the member of the group that in the parameterisation sits $d\mathbf a$ from the identity. For a matrix group the change in the vector space is
+This is the result of the transformation by the member of the group that in the parameterisation sits $d\mathbf a$ from the identity. For a matrix group where the matrix $A$ is parametrised as $A(\mathbf a)$ the resulting change in the vector space is
 \[
-dx_i=da_j\frac{\partial f_i}{\partial a_j}=da_j\left[\frac{\partial A(\mathbf a)}{\partial a_j}\mathbf{x}\right]_i=[da_jX_j\mathbf{x}]_i,
+dx_i=\left.da_j\frac{\partial f_i}{\partial a_j}\right|_{\mathbf a =0}=da_j\left[\frac{\partial A(\mathbf a)}{\partial a_j}\mathbf{x}\right]_{i,\mathbf a=0}=[da_jX^j\mathbf{x}]_i,
 \]
-where 
+where we have defined 
 \[
-X_j\equiv \left. \frac{\partial A(\mathbf a)}{\partial a_j}\right|_{\mathbf a=0} ,
+X^j\equiv \left. \frac{\partial A(\mathbf a)}{\partial a_j}\right|_{\mathbf a=0} ,
 \]
-are the $n$ matrix {\bf generators} $X_j$ of the Lie group.
+as the $d$ matrix {\bf generators} $X^j$ of the Lie group.
 
-If we now let $F$ be a function from the vector space $V$ that we are interested in, to either the real $\mathbb{R}$ or complex numbers $\mathbb{C}$ -- giving for example some interesting physical quantity -- then the group transformation defined by $d\mathbf a$ changes $F$ by
+If we now instead let $F(\mathbf x)$ be a function taken from the (infinite dimensional) vector space $V$ that we are interested in, mapping to either the real $\mathbb{R}$ or complex numbers $\mathbb{C}$, where $\mathbf x$ is now in the $n$-dimensional domain of the function, and letting $\mathbf f$ be the transformation of the domain effected by the group elements, then the group transformation defined by $d\mathbf a$ changes $F$ by
 \begin{eqnarray*}
-dF &=& \frac{\partial F}{\partial x_i}dx_i\\
-&=& \frac{\partial F}{\partial x_i}\frac{\partial f_i}{\partial a_j}da_j\\
-&\equiv& da_j X_j F
+dF &=& \frac{\partial F}{\partial x_i}dx_i = \frac{\partial F}{\partial x_i}\frac{\partial f_i}{\partial a_j}da_j\\
+&\equiv& da_j X^j F,
 \end{eqnarray*}
-where the operators defined by \[X_j \equiv\frac{\partial f_i}{\partial a_j} \frac{\partial }{\partial x_i},\] are called the $n$ differential {\bf generators} of the Lie group. We see here that the number of generators is the same as the dimension of the manifold, which is also the number of free parameters in the parameterisation of the group. 
-It is these generators $X$ that then define the effect of the Lie group members in a given representation (near the zero parameter), while the $n$ $a_j$'s are mere parameters. We say that the generators determine the local structure of the group.
+where the operators defined by \[iX^j \equiv\frac{\partial f_i}{\partial a_j} \frac{\partial }{\partial x_i},\] are called the $d$ differential {\bf generators} of the Lie group. We see here that in both cases the number of generators is the same as the dimension of the manifold, which is also the number of free parameters in the parameterisation of the group.
 
-As an example of the above we can now go in the opposite direction and look at the two-parameter transformation {\it defined} by
+It is these generators $X$ that then define the effect of the Lie group members in a given representation (near the zero parameter), while the $d$ numbers $a_j$ are mere parameters. We say that the generators determine the local structure of the group. It turns out that this linearisation, often called the {\bf tangent space}, of a group using an infinitesimal change near the origin is sufficient to recover the whole group locally.
+
+For the translation group $T(1)$ the action of the group on the domain $\mathbb{R}^1$ of the functions in the representation space, is $x'=f(x,a) = x+a$. The resulting (single) generator is
+\[ iX^1=\frac{\partial f}{\partial a} \frac{\partial}{\partial x}= \frac{\partial}{\partial x}. \]
+Notice here how we represented a generic element of $T(1)$ by the parameter and the generator as
+\[ T_a=e^{ia_j X^j}=e^{a \frac{\partial}{\partial x}}. \]
+This is of course no coincidence, and shows the way to a general recipe that we will use.\footnote{While we are in the business of {\it deja vu}, notice also how the generator for translations is $X=-i \frac{\partial}{\partial x}$, which can be compared with the quantum mechanical momentum operator $\hat p=-i\hbar \frac{\partial}{\partial x}$, keeping in mind that the conservation of momentum through Noether's theorem is intimately linked to the invariance of our models under translation. This is a point we will return to later.}
+
+As another example of the above we can now go in the opposite direction and look at the two-parameter coordinate transformation {\it defined} by
 \[x' = f(x) = a_1x + a_2,\]
-which gives
-\[X_1 = \frac{\partial f}{\partial a_1} \frac{\partial}{\partial x} = x\frac{\partial}{\partial x},\]
-which is the generator for {\bf dilation} (scale change) in one dimension, and
-\[X_2 =  \frac{\partial f}{\partial a_2} \frac{\partial}{\partial x} =\frac{\partial}{\partial x},\]
-which is the generator for translation, meaning the generator of the group that we have called $T(1)$. These are examples of representations that are not in terms of matrices, but rather {\bf differential representations}.
-Notice that we can show the following relationship for these two generators: $[X_1, X_2] =X_1X_2-X_2X_1= -X_2$.
+which gives the generators
+\[iX^1 = \frac{\partial f}{\partial a_1} \frac{\partial}{\partial x} = x\frac{\partial}{\partial x},\]
+which is the generator for {\bf dilation} (scale change) in one dimension $D(1)$, and
+\[iX^2 =  \frac{\partial f}{\partial a_2} \frac{\partial}{\partial x} =\frac{\partial}{\partial x},\]
+which is again the generator for the translation $T(1)$. 
+Notice that we can show the following relationship for these two generators: $[X^1, X^2] \equiv X^1X^2-X^2X^1= iX^2$.
 
-As we have seen, the group $SU(2)$ has three free parameters $a_i$, so it must have three generators $X_i$. We can show that the generators for $SU(2)$ in the two-dimensional representation are proportional to the Pauli matrices in (\ref{eq:pauli_matrices}), namely $X_i=\frac{1}{2}\sigma_i$, see exercises. By multiplying out we can also show the following commutation relationships between the generators
+As we have seen, the group $SU(2)$ has three free parameters $a_i$, so it must have three generators $X^i$. We can now show that the generators for $SU(2)$ in the two-dimensional representation are indeed proportional to the Pauli matrices in (\ref{eq:pauli_matrices}) as intimated earlier, namely $X^i=\frac{1}{2}\sigma^i$, see Ex.~\ref{ex:SU2_generators}. By multiplying out we can also show the following commutation relationships between the generators (Pauli matrices):
 \begin{equation}
-[X_i,X_j]=i\epsilon_{ijk}X_k.
+[X_i,X_j]=i\epsilon_{ijk}X^k.
 \label{eq:su2_algebra}
 \end{equation}
-These commutators should look familiar to us as they have the same structure as the commutators for the spin $S_i$ and angular momentum operators $L_i$ in quantum mechanics. This is no coincidence, the group that describes rotations is $SO(3)$, and one can show that it has the same generators as $SU(2)$.
+These commutators should look familiar to us as they have the same structure as the commutators for the spin $S_i$ operators in quantum mechanics.\footnote{This would be $[S_i,S_j]=i\hbar\epsilon_{ijk}S^k$.} 
 
-In general, the commutator of the generators of a Lie group satisfy \[[X_i,X_j]=iC_{ij}^kX_k,\] where  $C^k_{ij}$ are called the {\bf structure constants} of the group.\footnote{There is an annoying difference in notation here between physics and mathematics, where the $i$ is commonly dropped.} 
-We can easily see that  these are antisymmetric in $i$ and $j$, $C^k_{ij} = -C_{ji}^k$. Lie also showed~\cite{MR1510035} that there is a {\bf Jacobi identity} among the generators,
+A similar calculation for $SO(3)$, which also has three free parameters, gives the generators $X^i=\frac{1}{2}L^i$, where $L^i$ are the three matrices in Eq~(\ref{eq:SO3_generators}). These generators have the exact same commutator, $[X_i,X_j]=i\epsilon_{ijk}X^k$, indicating a structural similarity between the groups $SU(2)$ and $SO(3)$. For $SO(3)$ we can further find a corresponding set of differential generators
+\[
+L_x=-i\left(y\frac{\partial}{\partial z}-z\frac{\partial}{\partial y} \right),\quad
+L_y=-i\left(z\frac{\partial}{\partial x}-x\frac{\partial}{\partial z} \right),\quad
+L_z=-i\left(x\frac{\partial}{\partial y}-y\frac{\partial}{\partial x} \right),
+\]
+see Ex.~\ref{ex:SO2_diff_generators}.
+Up to a constant factor of $\hbar$ you may recognise these operators as the angular momentum operators in quantum mechanics. This is not a coincidence, the angular momentum operators in quantum mechanics are a representation of the generators of the group of rotations in three dimensions. In fact, the possibility of going back and forth between differential representations and matrix representations of the Lie group is the essence of the duality between the Schr\"odinger and Heisenberg pictures of quantum mechanics.
+
+In general, the commutator of the generators of a Lie group satisfy \[[X_i,X_j]=iC_{ij}^{~~k}X_k,\] where  $C_{ij}^{~~k}$ are called the {\bf structure constants} of the group.\footnote{There is an annoying difference in notation here between physics and mathematics, where the $i$ is commonly dropped.} 
+We can easily see that  these are antisymmetric in the indices $i$ and $j$, $C_{ij}^{~~k} = -C_{ji}^{~~k}$. Lie also showed~\cite{MR1510035} that there is a {\bf Jacobi identity} among the generators,
 \begin{equation}
 [X_i, [X_j, X_k]] + [X_j, [X_k, X_i]] + [X_k, [X_i, X_j]] = 0.
 \end{equation}
-This immediately leads to the following identity for the structure constants:  $C^{k}_{ij}C^{m}_{kl} + C^{k}_{jl}C^{m}_{ki} + C_{li}^kC_{kj}^m = 0$.
+This immediately leads to a corresponding identity for the structure constants:
+\begin{equation}
+C_{il}^{~~m}C_{jk}^{~~l} + C_{jl}^{~~m}C_{ki}^{~~l} + C_{kl}^{~~m}C_{ij}^{~~l} = 0.
+\end{equation}
 
-We discussed the defining or fundamental representation of a matrix based group earlier. These representations usually have the lowest possible dimension. The {\bf adjoint representation} consists of the $n$ matrices $M_i$ with elements:
-\[(M_i)_{jk} = -iC^k_{ij},\]
-where $C^k_{ij}$ are the structure constants. From the Jacobi identity it follows that $[M_i, M_j] = iC^k_{ij}M_k$, meaning that the matrices of the adjoint representation fulfils the same commutation relationship as the fundamental (generators). Note that the dimension of the adjoint representation for $SO(m)$ and $SU(m)$ is equal to the number of independent parameters, $m(m-1)/2$ and $m^2-1$, respectively.
 
-We can now briefly return to the $SU(2)$ example. With structure constants $C^k_{ij}=\epsilon_{ijk}$ we get the elements of the adjoint matrices $(M_i)_{jk} =-i\epsilon_{ijk}$, which gives $M_i=iJ_i$, with the $J_i$ being the matrices in (\ref{eq:SO3_generators}). 
+
 
 
 %%%%%%%%%%%
@@ -442,6 +481,20 @@ f^{acd}f^{bcd}=N\delta^{ab}.
 From what we learnt in Section \ref{sec:Lie_groups} the generators of an $n$-dimensional Lie group then span a unique $n$-dimensional Lie algebra where a general element $X$ of the algebra can be written in terms of the generators $X_i$, as $X=a_iX_i$. However, the reverse is not true. There can be multiple Lie groups that have the same algebra. The often quoted example is $SO(3)$ and $SU(2)$. Here the generators are the same, however, while closely related, the groups are not isomorphic. We will denote the Lie algebra of a matrix group using lowercase letters, for example the algebra of $SU(n)$ is $su(n)$.\footnote{In some literature so-called {\bf fraktur} is used to represent the algebra, {\it e.g.}\ $\mathfrak{su(2)}$, as this is butt-ugly and unreadable we will seek to avoid it. }
 
 {\bf MOVE DISCUSSION OF DYNKIN INDEX AND CASIMIR QUADRATIC HERE. SEE MASTER THESIS}
+
+
+%%%
+\subsection{Adjoint representations}
+\label{sec:adjoint_reps}
+
+We discussed the defining or fundamental representation of a matrix group earlier. These representations usually have the lowest possible dimension. The definition of the structure constants allows us to also introduce the {\bf adjoint representation}, which consists of the $n$ matrices $M_i$ with elements:
+\[(M_i)_j^{~k} = -iC_{ij}^{~~k},\]
+where $C_{ij}^{~~k},$ are the structure constants. From the Jacobi identity it follows that
+\[ [M_i, M_j] = iC^{~~k}_{ij}M_k,\]
+meaning that the matrices of the adjoint representation fulfils the same commutation relationship as the fundamental (generators). Note that the dimension of the adjoint representation for $SO(m)$ and $SU(m)$ is equal to the number of independent parameters, $m(m-1)/2$ and $m^2-1$, respectively.
+
+We can now briefly return to the $SU(2)$ and $SO(3)$ examples. These groups have the same structure constants because they have the same commutators between generators. Thus their adjoint representations are the same. With structure constants $C^{~~k}_{ij}=\epsilon_{ij}^{~~k}$ we get the elements of the adjoint matrices $(M_i)_{jk} =-i\epsilon_{ijk}$, which gives $M_i=iL_i$, with the $L_i$ being the matrices in (\ref{eq:SO3_generators}). 
+
 
 %%%
 \subsection{Exponential map}
@@ -542,6 +595,13 @@ Show that the group $G$ and the group $(G\times H) / H$ are isomorphic.
 Show that $U(1)\cong\mathbb{R}/\mathbb{Z}\cong SO(2)$.
 \end{Exercise}
 
+\begin{Exercise}[difficulty={2}]
+Prove that all unitary representations on Hilbert spaces are completely reducible. {\it Hint:} For Hilbert spaces we always have an inner product defined.
+\end{Exercise}
+\begin{Answer}
+Split the representation space $V=V_1\oplus V_2$, where we assume $V_1$ is a closed subspace of $V$ under the unitary representation $\rho(g)$ (the reducible part). Let $\mathbf v_1\in V_1$ and $\mathbf v_2\in V_2$.  Since $V_1$ is closed $\rho(g)\mathbf v_1 \in V_1$ and thus the inner product $(\rho(g)\mathbf v_1,  \mathbf v_2)=0$.  By unitarity the inner product is also $(\rho(g)\mathbf v_1,  \mathbf v_2)=(\mathbf v_1, \rho(g)^{-1}\mathbf v_2)$, thus $\rho(g)^{-1}V_2 \subset V_2$ and both subspaces are closed, and the space thus completely reducible. 
+\end{Answer}
+
 \begin{Exercise}[]
 Find the dimensions of the fundamental and adjoint representations of $SU(n)$.
 \end{Exercise}
@@ -550,7 +610,7 @@ Find the dimensions of the fundamental and adjoint representations of $SU(n)$.
 Find the fundamental representation for $SO(3)$ and the adjoint representation for $SU(2)$. What does this say about the groups and their algebras?
 \end{Exercise}
 
-\begin{Exercise}[difficulty={3}]
+\begin{Exercise}[difficulty={3},label=ex:SU2_generators]
 Find an expression for the generators of $SU(2)$ and their commutation relationships. {\it Hint:} One answer uses a composition function but this approach has some dangers, try also to derive the properties of the generators from a member of the group an infinitesimal distance from the identity.
 \end{Exercise}
 
@@ -579,6 +639,11 @@ From the requirement $\alpha^2+|\gamma|^2=1$ we can recreate the three Pauli mat
 
 This approach emphasises two important properties of the generators. Firstly that the generators are hermitian. Since the generators will function as operators in a QM of QFT setting, this is very desirable. Second, the generators are traceless.  This will often be a calculational advantage.
 \end{Answer}
+
+\begin{Exercise}[difficulty={3},label=ex:SO2_diff_generators]
+Find the differential generators for $SO(3)$ and their commutation relationships by studying how a function on $\mathbb R$ changes under $SO(3)$ transformations. Show that they satisfy the same commutators as the matrix generators.
+\end{Exercise}
+
 
 
 \begin{Exercise}[]

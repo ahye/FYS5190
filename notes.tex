@@ -6,7 +6,9 @@
 \usepackage{amsmath}  % amsmath for pmatrix, boldsymbol and eqref
 \usepackage{amssymb}  
 \usepackage{textcomp} 
-%\usepackage[utf8]{inputenc}  % Taken out when using LuLaTeX
+\usepackage[utf8]{inputenc}  % Taken out when using LuLaTeX
+%\usepackage{unicode-math}  % Would like to use this in particular to get blackboard bold numbers, but collides with greek letters in headers
+\usepackage[bb=dsserif]{mathalpha} % Makes  blackboard bold numbers work
 \usepackage{a4wide}
 \usepackage{caption}
 \usepackage{color, enumerate, graphicx}
@@ -215,6 +217,7 @@ Note that sections marked with an asterisk are somewhat tangential to the main a
 %%%%%%%%%%%%%%%%%%
 \bibliography{notes}{}
 \bibliographystyle{JHEP}
+
 
 
 
