@@ -93,7 +93,7 @@ This series can be shown to always converge, so the series is well defined. Sinc
 \item[v)] $\det e^A = e^{\Tr A}$. 
 \end{itemize}
 
-Given a Hermitian matrix $M$, $M^\dagger=M$, the matrix $U=e^{iM}$ is then automatically unitary since $U^\dagger=e^{-iM^\dagger}=e^{-iM}$ so that $U^\dagger U=e^{-iM}e^{iM}=I$, where the last equality is due to $M$ commuting with itself. This is the physics construction that we will mostly use in these notes because of our quantum fondness for Hermitian operators. For an anti-Hermitian matrix $M$, $M^\dagger=-M$, we could instead use that $U=e^M$ is automatically unitary since $U^\dagger=e^{-M}$ so that $U^\dagger U=e^{-M}e^{M}=I$. This is the mathematical construction found in a lot of mathematical literature.
+Given a Hermitian matrix $M$, $M^\dagger=M$, the matrix $U=e^{iM}$ is then automatically unitary since $U^\dagger=e^{-iM^\dagger}=e^{-iM}$ so that $U^\dagger U=e^{-iM}e^{iM}=I$, where the last equality is due to $M$ commuting with itself. We shall later in this chapter show that in fact all unitary matrices can be written in terms of Hermitian matrices like this. This is the physics construction that we will mostly use in these notes because of our quantum fondness for Hermitian operators. For an anti-Hermitian matrix $M$, $M^\dagger=-M$, we could instead use that $U=e^M$ is automatically unitary since $U^\dagger=e^{-M}$ so that $U^\dagger U=e^{-M}e^{M}=I$. This is the mathematical construction found in a lot of mathematical literature.
 
 
 \subsubsection{$SU(2)$}
@@ -267,7 +267,7 @@ Let us now take a few examples that connect to our definition and to relevant ph
 
 For $SU(2)$ we saw that we needed three real numbers to parametrise the group elements. It then seems reasonable that we should be able to write a general matrix in $SU(2)$ in terms of the linear combination of three unitary ``basis'' matrices, for example the {\bf Pauli matrices} in (\ref{eq:pauli_matrices}). Since the three Pauli matrices are linearly independent, the sum $\alpha_i\sigma^i$, $\alpha_i\in\mathbb R$, should (hopefully) in some sense span all of $SU(2)$.\footnote{We will later see to what extent this is true, but we must emphasise here that $SU(2)$ is not a vector space, so it is not spanning in the vector space sense.} As it turns out, the group elements of $SU(2)$ in the fundamental representation can indeed written as the exponentials  $e^{i \alpha_i \sigma^i}$. We will return to why we use an exponential in Sec.~\ref{sec:lie_algebras}. In physics the fundamental representation of $SU(2)$ is often denoted {\bf 2}, following the pattern that the representations are written up with the dimension of their matrices in boldface. In the Standard Model the fundamental representation is used on the vector space of doublets of fermion fields, {\it e.g.}\ the electron--neutrino doublet $\psi = (\nu_e, e)^T$ that form a two-dimensional vector space, as the $SU(2)_L$ gauge transformation. 
 
-However, we can construct many more representations than the fundamental from a single group such as $SU(2)$. Using the three free parameters in $SU(2)$ it turns out that we can also represent the elements in the group in terms of three  $3\times3$-matrices that act on vectors in a three-dimensional space. In place of the Pauli matrices we can use the three matrices
+However, we can construct many more representations than the fundamental from a single group such as $SU(2)$. Using the three free parameters in $SU(2)$ it turns out that we can also represent the elements in the group in terms of three  $3\times3$-matrices that act on vectors in a three-dimensional space. In place of the Pauli matrices we can use the three (anti-Hermitian) matrices
 \begin{equation}
 L^1 =\left[\begin{matrix} 0 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0  \end{matrix}\right], 
 \quad L^2 =\left[\begin{matrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0  \end{matrix}\right], 
@@ -510,33 +510,9 @@ Again this is an abstract definition that is actually simple than it looks. For 
 What makes this definition of representations even simpler for Lie algebras is that {\bf Ado's theorem}~\cite{Ado:1935} proves that every finite-dimensional Lie algebra has a faithful representation on a finite-dimensional vector space.\footnote{For a modern version of a proof of Ado's theorem, see Terence Tao's blog \url{https://terrytao.wordpress.com/2011/05/10/ados-theorem/}.} In other words, the Lie algebras for the groups we most care about, Lie groups with a finite number of parameters and thus finite number of generators, is guaranteed to have representations using matrices.
 
 As for groups, we can talk about irreducible representations of the Lie algebras, which are representations such that $V$ has no proper invariant subspace under the representation, meaning that we cannot construct proper sub-representations.
+% Maybe say something about similarity transforms between different Lie algebras 
 
-
-%%%
-\subsection{Adjoint representations}
-\label{sec:adjoint_reps}
-In Sec.~\ref{sec:generators} we saw the generators of the Lie algebras $\mathfrak{su(2)}$ and $\mathfrak{so(3)}$, derived from the defining matrix representations of the groups. Since this is the same algebra this shows two different representations of the algebra.
-
-The definition of the structure constants in Sec.~\ref{sec:structure_constants} allows us to also introduce the {\bf adjoint representation} of the algebra (and later the group), which consists of the matrices $M_i$ with elements:
-\[(M_i)_j^{~k} = -iC_{ij}^{~~k},\]
-where $C_{ij}^{~~k},$ are the structure constants. If the dimension of the Lie algebra is $n$, then this is the number of generators, and it also means that the dimension of the matrices $M_i$ is $n\times n$. 
-To prove that this is actually a representation, we need to check that the mapping from the elements of the algebra $X_i$ to the matrices $M_i$ satisfies the homomorphism criteria of the Lie algebra representations. From the Jacobi identity of the algebra it follows that
-\begin{equation}
-[M_i, M_j] = iC^{~~k}_{ij}M_k,
-\label{eq:adjoint_rep_commutator}
-\end{equation}
-meaning that the matrices of the adjoint representation fulfils the same commutator relationship as the fundamental (generators). As a direct consequence the $M_i$ form a representation.
-
-Note that the dimension of the matrices in the adjoint representation for $\mathfrak so(m)$ and $\mathfrak su(m)$, which is equal to the number of independent parameters, is $m(m-1)/2$ and $m^2-1$, respectively. For the matrices in the representation derived from the defining representation of the group the dimensions is the same as the dimension of the defining matrices, $m$. This means that in most cases the matrices in the adjoint representation is larger, with the exception of  $\mathfrak so(2)$ and  $\mathfrak so(3)$.
-
-We can now briefly return to the $SU(2)$ and $SO(3)$ examples. These groups have the same structure constants because they have the same commutators between generators. Thus the adjoint representations of their algebras are the same. With structure constants $C^{~~k}_{ij}=\epsilon_{ij}^{~~k}$ we get the elements of the adjoint matrices $(M_i)_{jk} =-i\epsilon_{ijk}$, which gives $M_i=iL_i$, with the $L_i$ being the matrices in (\ref{eq:SO3_generators}). 
-
-
-
-%{\bf MOVE DISCUSSION OF DYNKIN INDEX AND CASIMIR QUADRATIC HERE. SEE MASTER THESIS}
-%Finally, we need two more calculation focused definitions for representations of Lie groups.
-%Representations have some numerical properties that we are often interested in. 
-%\df{For the representation $R$ the {\bf Casimir invariant} $C(R)$ is given by $C(R)\delta_{ij} = (T^a T^a)_{ij}$.}
+In Sec.~\ref{sec:generators} we saw the two sets of generators of the Lie algebras $\mathfrak{su(2)}$ and $\mathfrak{so(3)}$, derived from the defining matrix representations of the groups. Since this is the same algebra this shows two distinct representations of the same algebra. 
 
 
 %%%
@@ -562,9 +538,67 @@ Z=X+Y+\frac{1}{2}[X,Y]+\frac{1}{12}[[X,Y],Y]-\frac{1}{12}[[X,Y],X]+\ldots,
 \end{equation}
 where the omitted terms involve Lie brackets of four or more elements, and where every element in the series contains the commutator $[X,Y]$. If $X$ and $Y$ are close enough to the zero in $\mathfrak l$ (corresponding to the identity element in $G$) then this series can be shown to converge to an element in $\mathfrak l$.\footnote{This formula holds in general, even if the elements in the Lie algebra ${\mathfrak l}$ are not represented as finite-dimensional matrices.} Thus the exponential constructs a group at least locally around the identity element.
 
-The question of whether the exponential map reaches all of the members of the group, {\it i.e.}\ that it is surjective on $G$, depends on the properties of the group. We certainly have counter examples, since the groups $SO(3)$ and $SU(2)$ have the same Lie algebra and thus the same exponential map, but a re different groups, the map cannot reach all of the elements of both groups. What we do know is that locally, meaning sufficiently close to the identity group element, the exponential map generates the group.
+The question of whether the exponential map reaches all of the members of the group, {\it i.e.}\ that it is surjective on $G$, depends on the properties of the group. We certainly have counter examples, since the groups $SO(3)$ and $SU(2)$ have the same Lie algebra and thus the same exponential map, but are different groups, the map cannot reach all of the elements of both groups. What we do know is that locally, meaning sufficiently close to the identity group element, the exponential map generates the group.
 
-Let us end here by returning to some of our examples. For $U(1)$ we saw that we could write a generic group member as $e^{i\theta}$. Comparing to the exponential map we see that the single generator must here simply be 1, while $\theta$ is the parameter. For $SU(2)$ the generators were the Pauli matrices $\sigma_i$, and the exponential map is thus, as we alluded to earlier, $e^{i\alpha_i\sigma^i}$, where $\alpha_i$ are the parameters. For the translation group $T(1)$ we saw that a group member could be written as $e^{a\frac{\partial}{\partial x}}=e^{ia(-i\frac{\partial}{\partial x})}$. Thus the generator is the differential operator $P=-i\frac{\partial}{\partial x}$.
+Let us end this subsection by returning to some of our examples in view of what we now know about the exponential map. For $U(1)$ we saw that we could write a generic group member as $e^{i\theta}$. Comparing to the exponential map we see that the single generator must here simply be 1, while $\theta$ is the parameter. The Lie algebra is then a very simple one-dimensional vector space $\mathbb R$ where the multiplication is ordinary arithmetic multiplication. Similarly, for the translation group $T(1)$ we saw that a group member could be written as $e^{a\frac{\partial}{\partial x}}=e^{ia(-i\frac{\partial}{\partial x})}$. Thus the generator is the differential operator $P=-i\frac{\partial}{\partial x}$ and again the vector space of the Lie algebra is one dimensional.
+
+For $SU(2)$ the generators taken from the fundamental representation $\mathbf 2$ were the Pauli matrices $\sigma_i$, and the exponential map is thus, as we alluded to earlier, $e^{i\alpha_i\sigma^i}$, where $\alpha_i$ are the parameters. Beyond the fundamental representations $SU(2)$ has irreducible representations in all dimensions $\mathbf 2$, $\mathbf 3$, $\mathbf 4$, $\mathbf 5$, \ldots.
+
+From the exponential map and the properties of matrix exponentiation it immediately follows that the generators $T^a$ for all groups $SU(n)$ are matrices with zero trace. To see this write an element in $SU(n)$ as $U=\exp{(i\alpha_aT^a)}$, then by the defining group property $\det U=1$, we have $\det U=\exp{(\Tr[{i\alpha_aT^a}}])=\exp{(i\alpha_a\Tr{T^a}})$ which is only one if $\Tr T^a=0$ for all $a$.  
+
+We saw in Sec.~\ref{sec:unitary_groups} that we could construct unitary matrices from Hermitian ones by matrix exponentiation, but in fact for unitary groups the generators need to be Hermitian. To see this let a group member be $U=\exp(ia_iM^i)$. Then $U^\dagger = \exp(ia_iM^i)^\dagger=\exp(-ia_iM^{i\dagger})$,  but for a unitary matrix $U^\dagger = U^{-1}=\exp(-ia_iM^i)$, thus $M^{i\dagger}=M^i$ and the generators $M_i$ are Hermitian.
+
+
+%{\bf MOVE DISCUSSION OF DYNKIN INDEX AND CASIMIR QUADRATIC HERE. SEE MASTER THESIS}
+%Finally, we need two more calculation focused definitions for representations of Lie groups.
+%Representations have some numerical properties that we are often interested in. 
+%\df{For the representation $R$ the {\bf Casimir invariant} $C(R)$ is given by $C(R)\delta_{ij} = (T^a T^a)_{ij}$.}
+
+%%%
+\subsection{Adjoint representations}
+\label{sec:adjoint_reps}
+The definition of the structure constants in Sec.~\ref{sec:structure_constants} allows us to introduce another representation, the {\bf adjoint representation} of the algebra -- and by the exponential map the adjoint representation of the group -- where the representation of the algebra consists of the matrices $M_i$ with elements:
+\[(M_i)_j^{~k} = -iC_{ij}^{~~k},\]
+where $C_{ij}^{~~k},$ are the structure constants. If the dimension of the Lie algebra is $n$, then this is the number of generators, and it also means that the dimension of the matrices $M_i$ is $n\times n$. 
+To prove that this is actually a representation, we need to check that the mapping from the elements of the algebra $X_i$ to the matrices $M_i$ satisfies the homomorphism criteria of the Lie algebra representations. From the Jacobi identity of the algebra it follows that
+\begin{equation}
+[M_i, M_j] = iC^{~~k}_{ij}M_k,
+\label{eq:adjoint_rep_commutator}
+\end{equation}
+meaning that the matrices of the adjoint representation fulfils the same commutator relationship as the fundamental (generators). As a direct consequence the $M_i$ form a representation.
+
+Note that the dimension $n$ of the matrices in the adjoint representation for $\mathfrak so(m)$ and $\mathfrak su(m)$, which is equal to the number of independent parameters, is $n=m(m-1)/2$ and $n=m^2-1$, respectively. For the matrices in the representation derived from the defining representation of the group the dimensions is the same as the dimension of the defining matrices, $m$. This means that in most cases the matrices in the adjoint representation is larger, with the exception of  $\mathfrak so(2)$ and  $\mathfrak so(3)$.
+
+We can now briefly return to the $SU(2)$ and $SO(3)$ examples. These groups have the same structure constants because they have the same commutators between generators. Thus the adjoint representations of their algebras are the same. With structure constants $C^{~~k}_{ij}=\epsilon_{ij}^{~~k}$ we get the elements of the adjoint matrices $(M_i)_{jk} =-i\epsilon_{ijk}$, which gives $M_i=iL_i$, with the $L_i$ being the matrices in (\ref{eq:SO3_generators}). 
+
+From the adjoint representation of the Lie algebra we can construct  the adjoint representations of the Lie group. For example the adjoint representation of  $\mathfrak su(2)$ or $\mathfrak so(3)$ has the exponential map $\exp{(ia_i M^i)}=\exp{(-a_i L^i)}$. This happens to generate the $SO(3)$ fundamental representations, but this is not generally the case, it is ``accidental'' that the dimensions of the fundamental representation of $SO(3)$, $n=3$, and the dimension of its adjoint representation $n=3(3-1)/2=3$ is the same.
+
+% Mention double cover here?
+
+%%%
+\subsection{Dual representations}
+\label{sec:dual_reps}
+
+Every representation of a Lie algebra on a vector space $V$ (and every representation of a group) has a {\bf dual representation} (also known as a {\bf contragredient representation}) that is a representation on the {\bf dual vector space} $V^*$. The definition of a dual vector space is somewhat abstract, it is formally the space consisting of all linear maps $\phi:V\to K$, where $K$ is the field of $V$. Since the map takes members of $V$ and maps them linearly to the field $K$, for a finite-dimensional vector space we must be able to write any member of $V^*$ in terms of a row-vector over the same field, so that if $\mathbf v\in V$ and $\mathbf w^T \in V^*$, the map is given by the matrix multiplication $\mathbf w^T \mathbf v$ which gives a scalar. This means that in practice  $V^*$ consists of the corresponding row-vectors to the column vectors in $V$.\footnote{It is slightly unfortunate and confusing that the symbol for the dual space uses a star since this seems to imply complex conjugation, where instead we are actually talking about transpose, however, as we will see below, the complex conjugation is central to dual representations of unitary groups.}
+
+The definition of the dual representation for a Lie algebra is as follows:\footnote{This definition also applies beyond finite-dimensional vector space with a basis since the transpose operation can be generalised beyond matrices.}
+\df{If ${\mathfrak l}$ is a Lie algebra with a representation $\rho$ on a vector space $V$, then the {\bf dual representation} on the dual space $V^*$ is $\rho^*$ given by
+\[ \rho^*(x) = -\rho(x)^T, \]
+for all $x\in\mathfrak l$.}
+To see why this makes sense we need to look at the exponential map of the dual representation. If $X_i$ is a generator in the representation $\rho$, then the dual representation $\rho^*$ tells us to use instead $-X_i^T$. In the exponentiation the group element $g=\exp(iX_i)$ becomes the group element $\exp(-iX_i^T)=\exp(-iX_i)^T=(g^{-1})^T$ with the dual representation.
+% For this to be a group representation we must have that a product of two group elements $(g_1^{-1})^T(g_2^{-1})^T$ 
+
+For unitary groups like $U(n)$ or $SU(n)$ we have matrix representations of the Lie algebra with Hermitian generators $M_i=M_i^\dagger$,  generating the members in the group as $U=\exp(ia_iM^i)$. From the definition of the dual representation the group members generated in the dual representation are then
+\[ U=\exp(-ia_iM^{iT})=\exp(-ia_i(M^{i\dagger})^*)=\exp(-ia_iM^{i*}), \]
+meaning that the Lie algebra in the dual representation can be written in terms of Hermitian matrices $M_i'=-M_i^*$. As a check we can see that $M_i'$ indeed fulfils the same algebra:
+\[ [M_i',M_j']=[M_i^*,M_j^*]=-iC_{ij}^{~~k}M_k^*=iC_{ij}^{~~k}M_k',\] 
+which is true only if the structure constants $C_{ij}^{~~k}$ are real.\footnote{You can take this as a proof that the structure constants are real if you prove that the dual representation is actually a representation, or you can go the other way and prove that this is indeed a representation, if you can first show that the structure constants of unitary groups are real.}
+For the matrix groups we denote the dual representations using a bar, so that for example the dual of a representation $\mathbf 2$ is $\mathbf {\bar 2}$. The dual representations play a special role in quantum field theories, as the known fermions and anti-fermions transform under a representation of the gauge group and its dual, respectively.
+
+%If a finite-dimensional representation of a group is irreducible, then one can show that the dual representation is also irreducible. 
+For some groups, such as $SU(2)$, the original and dual representations can be shown to be isomorphic. However, this is not in general the case. For $SU(3)$ the dual representations $\mathbf {\bar 3}$, $\mathbf {\bar 6}$, and $\mathbf{\overline{10}}$, are not isomorphic to $\mathbf 3$, $\mathbf 6$, and $\mathbf{10}$. On the other hand, $\mathbf 8$ and $\mathbf {\bar 8}$ are isomorphic.\footnote{However, the dual of the dual of any representation is always isomorphic to the original representation.} This becomes important in the Standard Model as the quarks transform under the $\mathbf 3$ representation of the $SU(3)_c$ gauge group, and the anti-quarks under $\mathbf {\bar 3}$.
+
+
 
 
 
