@@ -130,9 +130,10 @@ The special orthogonal groups $SO(2)$ and $SO(3)$ are much used because their el
 
 \subsubsection{$SO(2)$}
 Given that $SO(2)$ has only one parameter, we can write a general group member $R$ as parameterised by $\theta$
-\[
+\begin{equation}
 R(\theta)=\left[\begin{matrix} \cos\theta &  -\sin\theta \\ \sin\theta&  \cos\theta \end{matrix}\right].
-\]
+\label{eq:SO2_parameterisation}
+\end{equation}
 As expected, we recognise this as the matrix of rotations of an angle $\theta$ around a point in the plane, and it represents the (orientation preserving) symmetries of a circle. Some tinkering with this representation will show that $SO(2)$ is in fact an abelian group, despite the matrix definition. From a physical viewpoint this should be expected: the order of rotations in the plane should not matter.
 
 It is interesting to observe that the elements of $SO(2)$ rotate points in the plane, while the elements of $U(1)$ rotate complex numbers, which can be represented by points in the plane. Indeed, a one-to-one correspondence can be found between the members of the two groups so that the groups are indeed the same, or, as we say, isomorphic, $SO(2)\cong U(1)$.
@@ -400,7 +401,14 @@ As we have seen, the group $SU(2)$ has three free parameters $a_i$, so it must h
 \end{equation}
 These commutators should look familiar to us as they have the same structure as the commutators for the spin $S_i$ operators in quantum mechanics.\footnote{This would be $[S_i,S_j]=i\hbar\epsilon_{ijk}S^k$.} 
 
-A similar calculation for $SO(3)$, which also has three free parameters, gives the generators $X^i=\frac{1}{2}L^i$, where $L^i$ are the three matrices in Eq~(\ref{eq:SO3_generators}). These generators have the exact same commutator, $[X_i,X_j]=\epsilon_{ijk}X^k$, up to a constant factor, indicating a structural similarity between the groups $SU(2)$ and $SO(3)$. For $SO(3)$ we can further find a corresponding set of differential generators
+For matrix groups there is an alternative method to the generating functions for finding the generators that sees a lot of use. Since we are looking for infinitesimal deviations from the identity (matrix) $I$, we add an infinitesimal matrix $dM$ (the generator) and look at the properties of $dM$ given the definition of the group. Let us take $SO(2)$ as an example. Here a matrix in the group $O$ must fulfil $O^TO=I$ and $\det O=1$. Writing near the identity $O=I+dM$ we get the requirement $O^TO=I+dM+dM^T=I$ to first order in the infinitesimal. Thus the generator must fulfil $dM=-dM^T$ (it is a real, anti-symmetric matrix). This means that the diagonal of $dM$ must be zero, and in two dimensions, up to a constant, the only matrix that fits the role of the generator is
+\[ X=\left[\begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix}\right],\]
+so that the group element can be written $O=I+d\theta X$, where $d\theta$ is some infinitesimal parameter of the group. To check the determinant we need to consider how we use the generator to recreate the group since the generator is defined through an infinitesimal change. For reasons that will become clearer later we use the exponential $O=\exp(\theta X)$, which to first order in an infinitesimal parameter $d\theta$ recreates the behaviour near the identity we used.
+By the properties of matrix exponentiation we  can now check that $\det O=\det \exp(\theta X)=\exp(\theta \Tr X)=\exp(0)=1$. Since $X$ is an anti-Hermitian matrix, and we as physicists are more comfortable as Hermitian, we tend to use instead
+\[ X=-i\left[\begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix}\right]=\left[\begin{matrix} 0 & -i \\ i & 0 \end{matrix}\right],\]
+as the generator, writing the group element as $O=\exp(i\theta X)$.
+
+A similar calculation for $SO(3)$, which has three free parameters, gives the generators $X^i=\frac{1}{2}L^i$, where $L^i$ are the three matrices in Eq~(\ref{eq:SO3_generators}). These generators have the exact same commutator as the $SU(2)$ generators, $[X_i,X_j]=\epsilon_{ijk}X^k$, up to a constant factor, indicating a structural similarity between the groups $SU(2)$ and $SO(3)$. For $SO(3)$ we can further find a corresponding set of differential generators
 \[
 L_x=-i\left(y\frac{\partial}{\partial z}-z\frac{\partial}{\partial y} \right),\quad
 L_y=-i\left(z\frac{\partial}{\partial x}-x\frac{\partial}{\partial z} \right),\quad
@@ -488,9 +496,11 @@ We will now turn to the most crucial type of algebras for physics, namely {\bf L
 \end{enumerate}}
 If the algebra is over $\mathbb R$ it is a real Lie algebra, and over $\mathbb C$ a complex Lie algebra. We write the name of Lie algebras $\mathfrak l$  in lower case {\bf fraktur} style.
 
+Since Lie algebras are vector spaces, a {\bf subalgebra} $\mathfrak m$  of a Lie algebra $\mathfrak l$ is simply a subspace $\mathfrak m\subseteq \mathfrak l$. An {\bf ideal} is a subalgebra that satisfies $[\mathfrak l, \mathfrak m] \subseteq \mathfrak m$. A {\bf simple} Lie algebra is a non-abelian Lie algebra (non-zero structure constants)  without any proper ideals. A Lie algebra is {\bf semi-simple} if it is a direct sum of simple Lie algebras.
+
 Again the vectors of $\mathbb{R}^3$ with the Lie bracket defined in terms of the cross product, $[\mathbf x, \mathbf y]=\mathbf x \times \mathbf y$, is a simple example of a Lie algebra. However, we usually restrict ourselves to algebras of linear operators where the Lie bracket is the standard commutator $[x,y] \equiv xy-yx$, where the defining properties follow automatically. Thus also explaining the notation that we have used for the binary operator. 
 
-From what we learnt in Section \ref{sec:Lie_groups} the generators $X_i$ of an $d$-dimensional Lie group then span a $d$-dimensional Lie algebra with the commutator as the Lie bracket. Since this is also a vector space, any element $X$ of the algebra can be written in terms of the generators $X_i$, as $X=a_iX^i$. This is called the {\bf tangent space} of the group at the identity. The differences between choices in the definition of the generators and the normalisation of the structure constants disappear as they can be absorbed into a rescaling and linear combinations of the basis $\{X_i\}_{i=1}^d$, this makes the Lie algebra of the group {\it unique}.
+From what we learnt in Section \ref{sec:Lie_groups} the generators $X_i$ of an $d$-dimensional Lie group then span a $d$-dimensional Lie algebra with the commutator as the Lie bracket.\footnote{If you are really paranoid here, you may question wether these generators are guaranteed to be linearly independent. However, since the Lie group is parameterised by $d$ parameters, if the generators were not linearly independent we should be able to remove one of the parameters, leading to a contradiction. Stop it!} Since this is also a vector space, any element $X$ of the algebra can be written in terms of the generators $X_i$, as $X=a_iX^i$. This is called the {\bf tangent space} of the group at the identity. The differences between choices in the definition of the generators and the normalisation of the structure constants disappear as they can be absorbed into a rescaling and linear combinations of the basis $\{X_i\}_{i=1}^d$, this makes the Lie algebra of the group {\it unique}.
 
 However, the reverse is not true. There can be multiple Lie groups that have the same algebra. The often quoted example is the groups $SO(3)$ and $SU(2)$ where we have seen that the commutator of the generators is the same up to constants, so the algebra is the same, we say $\mathfrak{so(3)}\cong \mathfrak{su(2)}$. However, while closely related, the groups are not isomorphic. 
 
@@ -500,19 +510,21 @@ However, the reverse is not true. There can be multiple Lie groups that have the
 \label{sec:algebra_rep}
 
 We saw in the previous subsection that -- just as for groups -- we have many different way of writing down a single Lie algebra. We then need a formal definition of representations of Lie algebras.
-\df{A {\bf representation} $\rho$ {\bf of a Lie algebra} $\mathfrak l$ on a vector space $V$  is a map
-\[\rho: \mathfrak{l} \to \mathfrak{gl}(V), \]
-where $ \mathfrak{gl}$ is the Lie algebra of all linear maps $V\to V$ (endomorphisms) with its bracket defined as the composition $[r,s]\equiv r\circ s-s\circ r$, for all $r,s\in \mathfrak{gl}$, and where the map $\rho$ is homomorphic (structure preserving) for the Lie algebra bracket so that for all $x,y\in \mathfrak{l} $,
-\[ \rho([x,y]) =\rho(x)\circ\rho(y)-\rho(y)\circ\rho(x). \]
+\df{A {\bf representation} $\pi$ {\bf of a Lie algebra} $\mathfrak l$ on a vector space $V$  is a map
+\[\pi: \mathfrak{l} \to \mathfrak{gl}(V), \]
+where $ \mathfrak{gl}$ is the Lie algebra of all linear maps $V\to V$ (endomorphisms) with its bracket defined as the composition $[r,s]\equiv r\circ s-s\circ r$, for all $r,s\in \mathfrak{gl}$, and where the map $\pi$ is homomorphic (structure preserving) for the Lie algebra bracket so that for all $x,y\in \mathfrak{l} $,
+\[ \pi([x,y]) =\pi(x)\circ\pi(y)-\pi(y)\circ\pi(x). \]
 }
 Again this is an abstract definition that is actually simple than it looks. For finite dimensional vector spaces $\mathfrak{gl}$ is the Lie algebra of the corresponding general linear matrix group, just as the definition of representations of groups was a map to the general linear group $GL(n)$. This algebra of $GL(n)$, called $\mathfrak{gl}(n)$, can be written up in terms of $n\times n$ matrices and their commutators, and in this case the multiplication operation $\circ$ is just matrix multiplication in hiding. One word of warning here though, while the group $GL(n)$ contained invertible matrices, there is no guarantee that its generators are invertible matrices, {\it e.g.} we saw earlier that the generators of $SO(3)$ were the matrices $L_i$ in Eq~(\ref{eq:SO3_generators}) that are not invertible since $\det L_i=0$.
 
-What makes this definition of representations even simpler for Lie algebras is that {\bf Ado's theorem}~\cite{Ado:1935} proves that every finite-dimensional Lie algebra has a faithful representation on a finite-dimensional vector space.\footnote{For a modern version of a proof of Ado's theorem, see Terence Tao's blog \url{https://terrytao.wordpress.com/2011/05/10/ados-theorem/}.} In other words, the Lie algebras for the groups we most care about, Lie groups with a finite number of parameters and thus finite number of generators, is guaranteed to have representations using matrices.
+What makes this definition of representations even simpler for Lie algebras is that {\bf Ado's theorem}~\cite{Ado:1935} proves that every finite-dimensional Lie algebra has a faithful (isomorphic to the Lie algebra) representation on a finite-dimensional vector space.\footnote{For a modern version of a proof of Ado's theorem, see Terence Tao's blog \url{https://terrytao.wordpress.com/2011/05/10/ados-theorem/}.} In other words, the Lie algebras for the groups we most care about, Lie groups with a finite number of parameters and thus finite number of generators, is guaranteed to have representations using matrices.
 
-As for groups, we can talk about irreducible representations of the Lie algebras, which are representations such that $V$ has no proper invariant subspace under the representation, meaning that we cannot construct proper sub-representations.
+As for groups, we can talk about irreducible representations, irreps, of the Lie algebras, which are representations such that $V$ has no proper invariant subspace under the representation, meaning that we cannot construct proper sub-representations.
 % Maybe say something about similarity transforms between different Lie algebras 
+An important result for representations of Lie groups is {\bf Weyl's complete reducibility theorem} which says that the any representation of a finite-dimensional semi-simple Lie algebra  on a finite-dimensional space is isomorphic to a direct sum of irreducible representations. This means that the classification of the representations of semi-simple Lie algebras can be done in a very systematic way. In particular, every semi-simple Lie algebra is a subalgebra of $\mathfrak {sl}$, the Lie algebra of the special linear group, and all our matrix groups have simple or semi-simple Lie algebras.
+%TODO: extend to semi-simple representation theory here
 
-In Sec.~\ref{sec:generators} we saw the two sets of generators of the Lie algebras $\mathfrak{su(2)}$ and $\mathfrak{so(3)}$, derived from the defining matrix representations of the groups. Since this is the same algebra this shows two distinct representations of the same algebra. 
+In Sec.~\ref{sec:generators} we saw the two sets of generators of the Lie algebras $\mathfrak{su(2)}$ and $\mathfrak{so(3)}$, derived from the defining matrix representations of the groups that have different dimensions. Since this is the same algebra this shows two distinct representations of the same algebra. 
 
 
 %%%
@@ -525,7 +537,7 @@ g=\exp(iX)\equiv\sum_{n=0}^{\infty}\frac{(ia_iX^i)^n}{n!}.
 \end{equation}
 Here the $X_i$ are the generators of $G$ and thus members of the Lie algebra, and $X=a_iX^i$.
 }
-The infinite sum in this definition is nothing more than the formal series definition of the matrix exponential introduced in Sec.~\ref{sec:unitary_groups}. By Ado's theorem any (finite-dimensional) Lie algebra can be represented by matrices, so this construction is always valid, however, we can also use the exponential map for differential representations where the $X_i$ are differential operators, and for infinite-dimensional Lie groups, but the technical aspects why this extension works is a little beyond the scope of these notes.
+By Ado's theorem any (finite-dimensional) Lie algebra can be represented by matrices, in which case the infinite sum in this definition is nothing more than the formal series definition of the matrix exponential introduced in Sec.~\ref{sec:unitary_groups}. However, we can also use the exponential map for differential representations where the $X_i$ are differential operators, and for infinite-dimensional Lie groups, but the technical aspects why this extension works is a little beyond the scope of these notes.
 
 We have already seen multiple example of the exponential map construction, but we may ask, why use the exponential? One reason is that it gives us a natural expansion of the group around the identity element. With the parameters $\mathbf a=0$ the resulting matrix is the identity matrix, which means that the group element is the identity element $g=e$. Similarly, for an infinitesimal $d\mathbf a$ step away from the parameters of the identity we have the group elements near the identity, $g=I+ida_iX_i$.
 
@@ -536,13 +548,20 @@ If we have two elements from the map $g=\exp{(iX)}$ and $g'=\exp{(iY)}$, then $g
 Z=X+Y+\frac{1}{2}[X,Y]+\frac{1}{12}[[X,Y],Y]-\frac{1}{12}[[X,Y],X]+\ldots,
 \label{eq:BKH_matrices}
 \end{equation}
-where the omitted terms involve Lie brackets of four or more elements, and where every element in the series contains the commutator $[X,Y]$. If $X$ and $Y$ are close enough to the zero in $\mathfrak l$ (corresponding to the identity element in $G$) then this series can be shown to converge to an element in $\mathfrak l$.\footnote{This formula holds in general, even if the elements in the Lie algebra ${\mathfrak l}$ are not represented as finite-dimensional matrices.} Thus the exponential constructs a group at least locally around the identity element.
+where the omitted terms involve Lie brackets of four or more elements, and where every element in the series contains the commutator $[X,Y]$. If $X$ and $Y$ are close enough to the zero in $\mathfrak l$ (corresponding to the identity element in $G$) then this series can be shown to converge to an element in $\mathfrak l$.\footnote{This formula holds even if the elements in the Lie algebra ${\mathfrak l}$ are not represented as finite-dimensional matrices.} Thus the exponential constructs a group at least locally around the identity element.
 
 The question of whether the exponential map reaches all of the members of the group, {\it i.e.}\ that it is surjective on $G$, depends on the properties of the group. We certainly have counter examples, since the groups $SO(3)$ and $SU(2)$ have the same Lie algebra and thus the same exponential map, but are different groups, the map cannot reach all of the elements of both groups. What we do know is that locally, meaning sufficiently close to the identity group element, the exponential map generates the group.
 
 Let us end this subsection by returning to some of our examples in view of what we now know about the exponential map. For $U(1)$ we saw that we could write a generic group member as $e^{i\theta}$. Comparing to the exponential map we see that the single generator must here simply be 1, while $\theta$ is the parameter. The Lie algebra is then a very simple one-dimensional vector space $\mathbb R$ where the multiplication is ordinary arithmetic multiplication. Similarly, for the translation group $T(1)$ we saw that a group member could be written as $e^{a\frac{\partial}{\partial x}}=e^{ia(-i\frac{\partial}{\partial x})}$. Thus the generator is the differential operator $P=-i\frac{\partial}{\partial x}$ and again the vector space of the Lie algebra is one dimensional.
 
-For $SU(2)$ the generators taken from the fundamental representation $\mathbf 2$ were the Pauli matrices $\sigma_i$, and the exponential map is thus, as we alluded to earlier, $e^{i\alpha_i\sigma^i}$, where $\alpha_i$ are the parameters. Beyond the fundamental representations $SU(2)$ has irreducible representations in all dimensions $\mathbf 2$, $\mathbf 3$, $\mathbf 4$, $\mathbf 5$, \ldots.
+For $SU(2)$ the generators taken from the fundamental representation $\mathbf 2$ were proportional to the Pauli matrices $X_i= \frac{1}{2}\sigma_i$, and the exponential map generating a group member $U$ is thus, as we alluded to earlier, $U=e^{i\alpha_iX^i}$, where $\alpha_i$ are the parameters. For $SO(3)$ the (Hermitian) generators taken from the fundamental representation $\mathbf 3$ are the matrices $Y_i=-iL_i$, where the $L_i$ were given in (\ref{eq:SO3_generators}), and the exponential map is $O=e^{i\alpha_iY^i}$.
+Since $SU(2)$ and  $SO(3)$ have the same algebra for $X_i$ and $Y_i$, but the groups are {\it not} isomorphic,  in what sense, if any, does these exponential maps generate different elements? The answer to that is that $SU(2)$ is a {\bf double cover} of $SO(3)$, it has double the number of elements. There exists a two-to-one group homomorphism $f:SU(2)\to SO(3)$. This can be represented by $U(\alpha_1,\alpha_2,\alpha_3)\to O(\alpha_1,\alpha_2,\alpha_3)$. To see that this is two-to-one, assume that $\alpha_1=\alpha_2=0$. Then $O(0,0,\alpha_3)=O(0,0,\alpha_3+2\pi)$ since a rotation by an extra $2\pi$ does nothing. For $SU(2)$ we instead have
+\[
+U(0,0,\alpha_3)=\left[\begin{matrix} e^{i\frac{\alpha_3}{2}} & 0 \\ 0 & -e^{i\frac{\alpha_3}{2}} \end{matrix}\right] \quad \text{and}\quad U(0,0,\alpha_3+2\pi)=\left[\begin{matrix} e^{i\frac{\alpha_3}{2}+i\pi} & 0 \\ 0 & -e^{i\frac{\alpha_3}{2}+i\pi} \end{matrix}\right]=-U(0,0,\alpha_3)
+\]
+Thus the $SU(2)$ matrices has a period $4\pi$ versus the period $2\pi$ for $SO(3)$.\footnote{The argument can be made more formal and independent of the parameterisation, but is to extensive to repeat here.} Notice that this means that the three-dimensional representation of the Lie algebra coming from the generators of $SO(3)$ does not generate all the elements of $SU(2)$, while the two-dimensional one does.
+
+Beyond the fundamental representation $SU(2)$ has irreducible representations in all dimensions $\mathbf 3$, $\mathbf 4$, $\mathbf 5$, \ldots. This is not true in general, for example $SU(3)$ has irreducible representations only in some dimensions, starting with $\mathbf 3$, $\mathbf 6$, $\mathbf 8$, and $\mathbf{10}$, \ldots.
 
 From the exponential map and the properties of matrix exponentiation it immediately follows that the generators $T^a$ for all groups $SU(n)$ are matrices with zero trace. To see this write an element in $SU(n)$ as $U=\exp{(i\alpha_aT^a)}$, then by the defining group property $\det U=1$, we have $\det U=\exp{(\Tr[{i\alpha_aT^a}}])=\exp{(i\alpha_a\Tr{T^a}})$ which is only one if $\Tr T^a=0$ for all $a$.  
 
@@ -567,13 +586,12 @@ To prove that this is actually a representation, we need to check that the mappi
 \end{equation}
 meaning that the matrices of the adjoint representation fulfils the same commutator relationship as the fundamental (generators). As a direct consequence the $M_i$ form a representation.
 
-Note that the dimension $n$ of the matrices in the adjoint representation for $\mathfrak so(m)$ and $\mathfrak su(m)$, which is equal to the number of independent parameters, is $n=m(m-1)/2$ and $n=m^2-1$, respectively. For the matrices in the representation derived from the defining representation of the group the dimensions is the same as the dimension of the defining matrices, $m$. This means that in most cases the matrices in the adjoint representation is larger, with the exception of  $\mathfrak so(2)$ and  $\mathfrak so(3)$.
+Note that the dimension $n$ of the matrices in the adjoint representation for $\mathfrak so(m)$ and $\mathfrak su(m)$, which is equal to the number of independent parameters, is $n=m(m-1)/2$ and $n=m^2-1$, respectively. For the matrices in the representation derived from the defining representation of the group the dimensions is the same as the dimension of the defining matrices, $m$. This means that in most cases the matrices in the adjoint representation is larger, with the exception of  $\mathfrak{so}(2)$ and  $\mathfrak{so}(3)$.
 
-We can now briefly return to the $SU(2)$ and $SO(3)$ examples. These groups have the same structure constants because they have the same commutators between generators. Thus the adjoint representations of their algebras are the same. With structure constants $C^{~~k}_{ij}=\epsilon_{ij}^{~~k}$ we get the elements of the adjoint matrices $(M_i)_{jk} =-i\epsilon_{ijk}$, which gives $M_i=iL_i$, with the $L_i$ being the matrices in (\ref{eq:SO3_generators}). 
+We can now briefly return to the $SU(2)$ and $SO(3)$ examples. These groups have the same structure constants because they have the same commutators between generators. Thus the adjoint representations of their algebras are the same. With structure constants $C^{~~k}_{ij}=\epsilon_{ij}^{~~k}$ we get the elements of the adjoint matrices $(M_i)_{jk} =-i\epsilon_{ijk}$, which gives $M_i=-iL_i$, with the $L_i$ being the matrices in (\ref{eq:SO3_generators}). 
 
-From the adjoint representation of the Lie algebra we can construct  the adjoint representations of the Lie group. For example the adjoint representation of  $\mathfrak su(2)$ or $\mathfrak so(3)$ has the exponential map $\exp{(ia_i M^i)}=\exp{(-a_i L^i)}$. This happens to generate the $SO(3)$ fundamental representations, but this is not generally the case, it is ``accidental'' that the dimensions of the fundamental representation of $SO(3)$, $n=3$, and the dimension of its adjoint representation $n=3(3-1)/2=3$ is the same.
+From the adjoint representation of the Lie algebra we can construct  the adjoint representations of the Lie group. For example the adjoint representation of  $\mathfrak{su}(2)$ or $\mathfrak{so}(3)$ has the exponential map $\exp{(ia_i M^i)}=\exp{(-a_i L^i)}$. This happens to generate the $SO(3)$ fundamental representations, but this is not generally the case, it is ``accidental'' that the dimensions of the fundamental representation of $SO(3)$, $n=3$, and the dimension of its adjoint representation $n=3(3-1)/2=3$ is the same.
 
-% Mention double cover here?
 
 %%%
 \subsection{Dual representations}
@@ -585,7 +603,7 @@ The definition of the dual representation for a Lie algebra is as follows:\footn
 \df{If ${\mathfrak l}$ is a Lie algebra with a representation $\rho$ on a vector space $V$, then the {\bf dual representation} on the dual space $V^*$ is $\rho^*$ given by
 \[ \rho^*(x) = -\rho(x)^T, \]
 for all $x\in\mathfrak l$.}
-To see why this makes sense we need to look at the exponential map of the dual representation. If $X_i$ is a generator in the representation $\rho$, then the dual representation $\rho^*$ tells us to use instead $-X_i^T$. In the exponentiation the group element $g=\exp(iX_i)$ becomes the group element $\exp(-iX_i^T)=\exp(-iX_i)^T=(g^{-1})^T$ with the dual representation.
+To see why this makes sense we need to look at the exponential map of the dual representation. If $X_i$ is a generator in the representation $\rho$, then the dual representation $\rho^*$ tells us to use instead $-X_i^T$. In the exponentiation the group element $g=\exp(iX_i)$ becomes the group element $\exp(-iX_i^T)=\exp(-iX_i)^T=(g^{-1})^T$ with the dual representation. This is the only sensible representation that fulfils the group multiplication properties as matrices acting on row-vectors.
 % For this to be a group representation we must have that a product of two group elements $(g_1^{-1})^T(g_2^{-1})^T$ 
 
 For unitary groups like $U(n)$ or $SU(n)$ we have matrix representations of the Lie algebra with Hermitian generators $M_i=M_i^\dagger$,  generating the members in the group as $U=\exp(ia_iM^i)$. From the definition of the dual representation the group members generated in the dual representation are then
@@ -694,6 +712,10 @@ Find the dimensions of the fundamental and adjoint representations of $SU(n)$.
 Find the fundamental representation for $SO(3)$ and the adjoint representation for $SU(2)$. What does this say about the groups and their algebras?
 \end{Exercise}
 
+\begin{Exercise}[difficulty={1}]
+Use the parameterisation of $SO(2)$ in (\ref{eq:SO2_parameterisation}) to find the generator of the group using generating functions and show that you get the same answer as when using the infinitesimal matrix demonstrated in the notes.
+\end{Exercise}
+
 \begin{Exercise}[difficulty={3},label=ex:SU2_generators]
 Find an expression for the generators of $SU(2)$ and their commutation relationships. {\it Hint:} One answer uses a composition function but this approach has some dangers, try also to derive the properties of the generators from a member of the group an infinitesimal distance from the identity.
 \end{Exercise}
@@ -723,6 +745,7 @@ From the requirement $\alpha^2+|\gamma|^2=1$ we can recreate the three Pauli mat
 
 This approach emphasises two important properties of the generators. Firstly that the generators are hermitian. Since the generators will function as operators in a QM of QFT setting, this is very desirable. Second, the generators are traceless.  This will often be a calculational advantage.
 \end{Answer}
+
 
 \begin{Exercise}[difficulty={3},label=ex:SO2_diff_generators]
 Find the differential generators for $SO(3)$ and their commutation relationships by studying how a function on $\mathbb R$ changes under $SO(3)$ transformations. Show that they satisfy the same commutators as the matrix generators.
