@@ -3,28 +3,137 @@
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{The Poincar\'{e} algebra and its extensions}
+\chapter{The Poincaré group and its extensions}
 \label{chap:poincare}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We now take a look at the symmetry groups behind Special Relativity (SR), the Lorentz and Poincar\'{e} groups. We will first see what sort of states transform properly under SR, which has surprising connections to already familiar physics. We will then look for ways to extend these external symmetries of the coordinates to internal symmetries of quantum fields, {\it i.e.}\ the symmetries of gauge groups.
+We now take a look at the symmetry groups behind Special Relativity (SR), the Lorentz and Poincaré groups. We will first see what sort of states transform properly under SR, which has surprising connections to already familiar physics. We will then look for ways to extend these external symmetries of the coordinates to internal symmetries of quantum fields, {\it i.e.}\ the symmetries of gauge groups.
+
+
+%%%%%%%%%%%%%%
+\section{Representations of $SU(2)$}
+%%%%%%%%%%%%%%
+As a warm up, and to introduce some of the methods we will be using, we will start with the $SU(2)$ group and constructing its representations. As alluded to in the previous chapter the $SU(2)$ group is the symmetry group for spin.  Since their Lie algebras are identical, this will also provide us information about  the rotation group in three dimensions $SO(3)$. We have seen that the (abstract) generators $X_i$ of both  groups fulfil the Lie algebra $\mathfrak{su}(2)$,
+\[ [X_i,X_j]=i\epsilon_{ijk} X^k,\quad i,j,k=1,2,3,\]
+which should be well known to us as the commutator for spin operators $S_i$ from our first quantum mechanics courses.\footnote{To be more exact, this was $[S_i,S_j]=i\hbar\epsilon_{ijk} S^k$. } So apparently the spin operators are part of something rather fundamental.
+
+To find a representation of $SU(2)$ through the exponential map we need to find representations $\pi$ of the algebra in terms of finite dimensional matrices (which exist given Ado's theorem). Let us very suggestively call the matrices in such a representation $J_i=\pi(X_i)$. These will then act on some vector space which we will also need to find. We can remind ourselves here that the spin operators we first learned about acted on a two-dimensional Hilbert space for the spin states of spin-$\half$ particles. The quantum mechanical notation for the vectors in this space was the Dirac-ket $|\psi\rangle$, which we will stick to in the following.
+
+Our first move in the construction is to consider that since the generators in any representation of the Lie algebra are not unique, we can change their basis by a {\bf similarity transform} $J_i'=SJ_iS^{-1}$, where $S$ is an invertible matrix. We can easily show that the $J_i'$ fulfil the same algebra and that this is thus an isomorphism of the representation. We can then uses this freedom to now diagonalise one of the three matrices, $J_3$, by a choice of basis. We can not diagonalise more than one because we know from linear algebra -- and operators in quantum mechanics -- that two matrices that are diagonalised by the same similarity transform must commute (since diagonal matrices commute), and this would contradict our commutator for the $J_i$.
+
+In the following sections of this chapter we will be particularly interested in the eigenvectors of the generators that we can simultaneously diagonalise, in the $SU(2)$ case only $J_3$, which we will call {\bf states}. This follows what we did in quantum mechanics where we found the set of all commuting operators for a given system, and found their common eigenstates/eigenfunctions, which we then used as basis states/vectors under the quantum mechanical axiom that the eigenstates form a complete set of basis states. The eigenvalues in these cases are the {\it only} possible measurements for the corresponding observables. Returning to our spin example, for the spin-$\half$ spin operator we have two states, the spin-up and spin-down states, and can measure the spin in the $z$-direction ($S_3$) to be in the up or down direction, $S_z=\pm\frac{\hbar}{2}$. Any spin-$\half$ fermion must then be in a linear combination of the two states. I should like to emphasise here that this says something dramatic about what exists according to quantum mechanics, there are only two states labeled by the quantum number $s_z$, $|s_z=\frac{1}{2}\rangle$ and $|s_z=-\frac{1}{2}\rangle$.
+
+%%%
+\subsection{Ladder operators}
+We now return to our $\mathfrak{su}(2)$ algebra and its representations. What follows might again cause some {\it deja vu}, as you might feel you have done this before in an earlier life. Let us call the eigenstates of $J_3$ for $|m\rangle$ and its eigenvalues $m$, {\it i.e.}\ $J_3|m\rangle=m|m\rangle$, and assume that the states are normalised, $\langle m|m\rangle=1$. We know that $m\in\mathbb R$ because the eigenvalues of a Hermitian matrix, as we saw $J_3$ was in the previous chapter, are real.
+
+We are constructing finite-dimensional representations, so we also know that $J_3$ has a finite number of eigenvalues and eigenstates. We pick the state with the largest eigenvalue, called the {\bf highest weight state}, and denote it by $|j\rangle$.\footnote{Although $j$ suggests an integer, at this point all we know is that $j$ is some real number.} We now define {\bf lowering and raising operators} $J_\pm$,
+\[ J_\pm \equiv\frac{1}{\sqrt{2}}(J_1\pm i J_2), \]
+and change our Lie algebra of generators to consist of the set $J_+$, $J_-$, and $J_3$. This is perfectly fine since the Lie algebra is a vector space and  we have just made a linear combination of our basis vectors. We can show that in the new basis the commutators are
+\[ [J_+, J_-]=J_3,\quad\text{and}\quad [J_3,J_\pm]=\pm J_\pm. \]
+Notice also that $J_\pm^\dagger=J_\mp$. 
+The lowering and raising operators have the property that operating on a state $|m\rangle$ we get 
+\[ J_3J_\pm |m\rangle=(J_\pm J_3\pm J_\pm)|m\rangle=(m\pm1)J_\pm|m\rangle, \]
+meaning that $J_\pm |m\rangle$ are also eigenstates of $J_3$, but with eigenvalue $m\pm1$. 
+We normalise the new eigenstates using the constants $N_m^\pm$:
+\[ J_\pm|m\rangle = N_m^\pm |m\pm1\rangle. \]
+
+Starting from the highest weight state $|j\rangle$ we can use $J_-$ to walk down a ladder of states
+$|j\rangle, |j-1\rangle,\ldots,|\Omega\rangle,$ but we know that the ladder must end at some point, since we are constructing a finite-dimensional representation. Thus there must be an eigenstate $|\Omega\rangle$ such that
+$J_-|\Omega\rangle=0$.
+The next step is to figure out what $\Omega$ is for a given $j$ and what values of $j$ that are admissible. This will also give us the dimension of the representation we are constructing. For this we shall need a very powerful structure in Lie group theory, the Casimir invariant.
+
+
+%%%
+\subsection{The Casimir invariant}
+A {\bf Casimir element} is a combination of the elements of the Lie algebra that commutes with all the elements of the algebra. However, in constructing a Casimir element we may take products of matrices in a given representation, and hence we leave the algebra (which is a vector space, thus allowing only linear combinations).\footnote{For those interested in further reading, the technical statement is that the Casimir elements live in the {\bf universal enveloping algebra} of a Lie algebra. A detailed discussion of this is significantly beyond the scope of these notes.}
+An important Casimir element is the {\bf quadratic Casimir invariant}. A semi-simple Lie algebra, such as the algebras of our matrix groups, has a number of Casimir invariants equal to its {\bf rank}.\footnote{Rank itself is a rather technical term and comes from the dimension of the Cartan subalgebra of the algebra.} 
+
+In the context of $\mathfrak{su}(2)$, this algebra has rank-1 and the single Casimir invariant is the operator
+\[ J^2\equiv J_1^2+J_2^2+J_3^2=J_+J_-+J_-J_++J_3^2. \]
+It is relatively easy to show that $[J^2,J_1]=[J^2,J_2]=[J^2,J_3]=0$, so that we can indeed confirm that this is a Casimir element. Physically we should recognise this as the total spin or angular momentum (squared). The significance of the Casimir invariant comes from Schur's lemma in Sec.~\ref{sec:irreps}. There is a corresponding version of Schur's lemma for Lie algebras that shows that a linear map on the representation space that commutes with all the elements of the algebra in an irreducible representation (such as the Casimir) is proportional to the identity map. Thus $J^2$ must be a multiple of the identity matrix, $J^2=\lambda I$.
+
+If we let the Casimir invariant act on the highest weight state $|j\rangle$ we get
+\[ J^2 |j\rangle=(J_+J_-+J_-J_++J_3^2) |j\rangle=(J_+J_-+J_3^2) |j\rangle=(N_{j-1}^+N_j^-+j^2) |j\rangle=j(j+1) |j\rangle. \]
+This identifies the constant of proportionality as $\lambda = j(j+1)$. However, this must be independent of which state is acted on, so $J^2|m\rangle=j(j+1)I|m\rangle=j(j+1)|m\rangle$ for all states $|m\rangle$ in the representation.
+In the above we have used  that $J_+|j\rangle=0$, otherwise the highest weight assumption is violated, and that $N_{j-1}^+N_j^-=j$, see Ex.~\ref{ex:ladder_norm}.
+
+The property of the Casimir invariant also allows us to find explicit expressions for the normalisation constants using
+\[|N_m^\pm|^2= \langle m|J_\mp J_\pm |m\rangle
+= \frac{1}{2}\langle m| J^2-J_3^2\mp J_3 |m\rangle=\frac{1}{2}( j(j+1)-m^2\mp m),  \]
+which gives\footnote{We choose an arbitrary phase factor to be real and positive. There is an alternative way of arriving at the same result that uses recursion relationships for the normalisations constants, but this is very heavy and tedious algebraically.}
+\begin{equation*}
+N^\pm_m = \frac{1}{\sqrt{2}}\sqrt{ j(j+1)-m^2\mp m }.
+\end{equation*}
+In turn, this finally allows us to determine where the ladder of states ends. The ladder ends with $J_-|m\rangle=0$ if and only if $m=-j$ since $N_{-j}^-=0$. However, this also implies that $j=0,\frac{1}{2},1,\frac{3}{2},\ldots$, {\it i.e.}\ it is half-integer, since otherwise we would not reach $m=-j$ from $m=j$ in a whole number of steps and then the ladder would never end, which contradicts the finite-dimensional nature of the representation.
+
+What we have now is proof that there exists an infinite tower of finite-dimensional representations of $\mathfrak{su}(2)$ that are indexed, or labeled, by the non-negative half-integer $j$, with one representation for every dimension. Although it is beyond the scope of these notes, these representations are irreducible, and they are indeed {\it all} the irreducible representations of $\mathfrak{su}(2)$. This fulfils the promise of Schur's lemma, namely that the irreducible representations are labeled by the eigenvalues of the Casimir, and show that these eigenvalues have a physical interpretation, in this case the total spin or angular momentum. Each of these representations has dimension $2j+1$, with that many states denoted by $|j,m\rangle$, $m=-j,j+1,\ldots,j-1,j$, that are eigenstates of the $J_3$ generator. We call these representations the spin-$j$ representations because they are indeed the representations of $SU(2)$ used for the different spin possibilities.
+These representations can also be used for $SO(3)$ in odd dimensions, where $j$ is integer
+
+%%%
+\subsection{The lowest-dimensional representations}
+The spin-0 representation is the trivial representation where $j=0$ and the representation space is one dimensional and everything acts as the identity element. 
+
+The first non-trivial representation is for spin-$\half$ with $j=\half$. Here the two states are $|\half,\half\rangle$ and $|\half,-\half\rangle$. To write down a representation of the algebra in terms of $2\times2$ matrices we think of the states as two basis vectors
+\[ \left|\half,\half\right>=\left(\begin{matrix} 1 \\ 0 \end{matrix}\right), \quad \left|\half,-\half\right>=\left(\begin{matrix} 0 \\ 1 \end{matrix}\right), \]
+and to fulfil the properties for the $J_\pm$ and $J_3$ generators
+\begin{eqnarray*}
+J_\pm |j,m\rangle &=& \frac{1}{\sqrt{2}}\sqrt{ j(j+1)-m^2\mp m }|j,m\pm1\rangle \\
+J_3|j,m\rangle &=& m|j,m\rangle,
+\end{eqnarray*}
+we must have
+\[ J_+=\frac{1}{\sqrt{2}}\left[\begin{matrix} 0 & 1 \\ 0 & 0 \end{matrix}\right], \quad 
+J_-=\frac{1}{\sqrt{2}}\left[\begin{matrix} 0 & 0 \\ 1 & 0 \end{matrix}\right],  \quad 
+J_3= \half\left[\begin{matrix} 1 & 0 \\ 0 & -1 \end{matrix}\right]. \]
+Going back to the $J_i$, $i=1,2,3$, basis we then get
+\[ J_1=\half\left[\begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix}\right], \quad 
+J_2=\half\left[\begin{matrix} 0 & -i \\ i & 0 \end{matrix}\right],  \quad 
+J_3= \half\left[\begin{matrix} 1 & 0 \\ 0 & -1 \end{matrix}\right], \]
+which, unsurprisingly, leaves us back at the Pauli matrices $J_i=\half\sigma_i$ that were the generators we found from the defining representation of $SU(2)$.
+
+For the spin-1 representation we have $j=1$ and the three states are $|1,1\rangle$, $|1,0\rangle$, and $|1,-1\rangle$. The basis vectors are then
+\[ \left|1,1\right>=\left(\begin{matrix} 1 \\ 0 \\ 0 \end{matrix}\right), \quad \left|1,0\right>=\left(\begin{matrix} 0 \\ 1 \\ 0 \end{matrix}\right),\quad \left|1,-1\right>=\left(\begin{matrix} 0 \\ 0 \\ 1 \end{matrix}\right), \]
+and the $J_\pm$ and $J_3$ generators
+\[ J_+=\left[\begin{matrix} 0 & 1  & 0 \\ 0 & 0 & 1 \\  0 & 0 & 0 \end{matrix}\right], \quad 
+J_-=\left[\begin{matrix} 0 & 0  & 0 \\ 1 & 0 & 0 \\  0 & 1 & 0 \end{matrix}\right],  \quad 
+J_3= \left[\begin{matrix} 1 & 0 & 0 \\ 0 & 0 & 0\\  0 & 0 & -1 \end{matrix}\right]. \]
+Going back to the $J_i$, $i=1,2,3$, basis we get
+\[ J_1=\frac{1}{\sqrt{2}}\left[\begin{matrix} 0 & 1  & 0 \\ 1 & 0 & 1 \\  0 & 1 & 0 \end{matrix}\right], \quad 
+J_2=- \frac{i}{\sqrt{2}}\left[\begin{matrix} 0 & 1  & 0 \\ -1 & 0 & 1 \\  0 & -1 & 0 \end{matrix}\right],  \quad 
+J_3= \left[\begin{matrix} 1 & 0 & 0 \\ 0 & 0 & 0\\  0 & 0 & -1 \end{matrix}\right]. \]
+We can check that these matrices indeed fulfil the $\mathfrak{su}(2)$ algebra, and we can also find a similarity transform that transforms them into the generators derived from the defining representation of the $SO(3)$ group in (\ref{eq:SO3_generators}).
+Our arguments here can be repeated for higher and higher dimensions at will.
+
+One final note on differential representations of the generators. There is in principle nothing in the arguments for the properties of the representations of the algebra in the previous subsection that can not be carried over into differential representations. If for the generators $J_i$ we take the differential generators we found for $SO(3)$ in Eq.~(\ref{eq:SO3_diff_generators}) we have here shown that there exists states, now functions $Y_m^l(\theta,\phi)$ in a vector space,  that fulfil the relationships
+\begin{eqnarray*}
+L_z Y_l^m(\theta,\phi) &=& mY_l^m(\theta,\phi), \\
+L^2 Y_l^m(\theta,\phi) &=& l(l+1)Y_l^m(\theta,\phi),
+\end{eqnarray*}
+for $l=0,1,2,\ldots$, and $m=-l,-l+1,\ldots,l-1,l$. Here we write the functions in spherical coordinates since rotations under $SO(3)$ can be easily expressed in the two spherical coordinate angles. The functions $Y_l^m(\theta,\phi)$ are well known as the {\bf spherical harmonics}.
+
+We have now shown what the representations of $SU(2)$ look like, but we have not seen why this group appears in physics in the first place. This will become clearer in the next sections.
+
 
 
 %%%%%%%%%%%%%%
 \section{The Lorentz Group}
 %%%%%%%%%%%%%%
-Einstein's requirement in Special Relativity was that the laws of physics should be invariant under rotations and/or boosts (changes of velocity) between different inertial reference frames. A point in the Minkowski space-time manifold $\mathbb{M}_4$ is given by a four-vector $x^\mu = (t,x,y,z)$. The resulting allowed transformations of the space-time coordinates are captured in the Lorentz group.
+Einstein's requirement in Special Relativity was that the laws of physics should be invariant under rotations and/or boosts (changes of velocity) between different inertial reference frames. A point in the Minkowski space-time manifold $\mathbb{M}_4$ is given by a four-vector $x^\mu = (t,x,y,z)$. The resulting transformations of the space-time coordinates are captured in the Lorentz group.
 \df{The {\bf Lorentz group} is the group of linear transformations $x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu$ such that $x^2 \equiv x_\mu x^\mu = x'_\mu x'{}^{\mu}$ is invariant. The {\bf proper orthochronous} or {\bf restricted Lorentz group} is a subgroup of the Lorentz group where $\det \Lambda = 1$  ({\bf proper}) and $\Lambda^0{}_0 \geq 1$({\bf orthochronous}).
 }
 The physical interpretation of the orthochronous property is that it keeps the direction (sign) of time of the four vector, while a proper group preserves orientation in rotations.
 
-Since the definition of the Lorentz group effectively gives a composition function we can easily conclude that it is a Lie group. In fact, if we allow for a slight extension of the orthogonal group $O(n)$ to the {\bf indefinite orthogonal group} $O(m,n)$, where instead of the orthogonality property for group members $O$, $O^{-1}=O^T$, we demand $O^{-1}=g^{-1}O^Tg$ where
-\[g=\text{diag}(\underbrace{1,\ldots,1}_n,\underbrace{-1,\ldots,-1}_m),\] is the ``metric'',\footnote{Indeed, we can recognise this matrix relationship as one of the defining (necessary) properties of Lorentz transformations $\Lambda^Tg\Lambda=g$.} then we can write the Lorentz group as $SO^+(1,3)$, where the plus sign signifies the orthochronous property. The counting of the free parameters of $SO(n,m)$ works just as for $SO(n)$, giving a total of six free parameters for  $SO^+(1,3)$. Physically, we can identify these with the three parameters needed to specify a general rotation in three dimensions, and the three parameters needed to specify a boost (the velocity components).
+Since the definition of the Lorentz group is in terms of a continuous transformation of coordinates we have strong reason to suspect that it is a Lie group. In fact, if we allow for a slight extension of the orthogonal group $O(n)$ to the {\bf indefinite orthogonal group} $O(m,n)$, where instead of the orthogonality property for group members $O$, meaning $O^{-1}=O^T$, we demand $O^{-1}=g^{-1}O^Tg$ where
+\[g=\text{diag}(\underbrace{1,\ldots,1}_n,\underbrace{-1,\ldots,-1}_m),\] is the {\bf metric},\footnote{Indeed, we can recognise this matrix relationship as one of the defining (necessary) properties of Lorentz transformations $\Lambda^Tg\Lambda=g$.} then we can write the Lorentz group as $SO^+(1,3)$, where the plus sign signifies the orthochronous property.\footnote{Because of the metric, $\det O=1$ alone no longer insures that we do not have time or parity reversal.} This is also the part of the group that contains the identity element. As a subgroup of the general linear group $GL(4)$ this is indeed a Lie group.
 
-Since the rotation operations are closed, {\it i.e.}\ two rotations result in another rotation, one can prove that this forms a subgroup of $SO^+(1,3)$. We have earlier claimed that the generators of $SO(3)$ (rotations in three dimensions) are identical to the generators of $SU(2)$. This now allows us to identify three of the generators of $SO^+(1,3)$ as the $J_i$ that fulfil the $su(2)$ algebra
+Compared to the $SO(4)$ group which it resembles the Lorentz group is more complicated. Unlike $SO(4)$, because of the metric it is not compact which means that it does not have any non-trivial finite-dimensional unitary representations. Fortunately, its algebra is semi-simple, so its finite-dimensional representations are equivalent to direct sums of irreducible representations by Weyl’s complete reducibility theorem. So we need only to find the irreducible representations to construct any representation.
+
+The counting of the free parameters of $SO(n,m)$ works just as for $SO(n)$, giving a total of six free parameters for  $SO^+(1,3)$, and then six generators. Physically, we can identify these with the three parameters needed to specify a general rotation in three dimensions, with generators named $J_i$, $i=1,2,3$, and the three parameters needed to specify a boost (the velocity components), with generators $K_i$, $i=1,2,3$.
+
+Since the rotation operations are known to be closed, {\it i.e.}\ two rotations result in another rotation, this forms a subgroup of $SO^+(1,3)$. We know that the generators fulfil the $\mathfrak{so}(3)$ algebra
 \begin{equation}
-[J_i,J_j]=i\epsilon_{ijk}J_k.\label{eq:Jalgebra}
+[J_i,J_j]=i\epsilon_{ijk}J^k.\label{eq:Jalgebra}
 \end{equation}
 The boost operations are not closed, and one can show that their generators $K_i$ (exercises) have the following relationships with the rotation generators
 \begin{eqnarray}
@@ -83,10 +192,6 @@ Equations (\ref{eq:poco1}), (\ref{eq:poco2}) and (\ref{eq:poco3}) together form 
 g=\exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}+ia^\mu P_\mu\right),
 \end{equation}
 where $a^\mu$ are the additional parameters of the translation. 
-%We would like to issue a warning here that the factorisation of the exponential is highly non-trivial. Since the exponent consists of non-commuting operators we can not rely on the usual properties of the exponential function. We need to use the {\bf Baker–Campbell–Hausdorff formula}
-%\begin{equation}
-%e^Xe^Y=\exp(X+Y+\frac{1}{2}[X,Y]+\frac{1}{12}[X,[X,Y]]-)
-%\end{equation}
 
 
 
@@ -467,6 +572,25 @@ In addition to this we have the two states $\bar{Q}^{\dot{1}}|\Omega;\frac{1}{2}
 %%%%%%%%%
 \section{Exercises}
 %%%%%%%%%
+
+\begin{Exercise}[label=ex:ladder_norm]
+Show the following relationship for the normalisation constants $N_m^\pm$ of the ladder operators for $\mathfrak{su}(2)$,
+\[ N_{m+1}^-N_m^++m=N_{m-1}^+N_m^-,\]
+and use this to conclude that $N_{j-1}^+N_j^-=j$ where $j$ is the largest eigenvalue of the $J_3$ operator.
+\end{Exercise}
+
+\begin{Answer} 
+Since 
+\[ J_+J_-|m\rangle=(J_- J_++J_3) |m\rangle=(J_- J_++m) |m\rangle=J_- N_m^+|m+1\rangle+m |m\rangle=(N_{m+1}^-N_m^++m) |m\rangle, \]
+and
+\[ J_+J_-|m\rangle=J_+N_m^-|m-1\rangle= N_{m-1}^+N_m^-|m\rangle, \]
+we get by comparison $N_{m+1}^-N_m^++m=N_{m-1}^+N_m^-$. Now $N_j^+=0$ since $|j\rangle$ is the highest weight state, and thus $N_{j-1}^+N_j^-=j$.
+\end{Answer}
+
+\begin{Exercise}[]
+Find the spin-$\frac{3}{2}$ representation of $\mathfrak{su}(2)$.
+\end{Exercise}
+
 
 \begin{Exercise}[]
 Show the commutation properties of the Lorentz group generators $J_i$ and $K_i$.

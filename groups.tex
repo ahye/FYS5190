@@ -409,11 +409,12 @@ By the properties of matrix exponentiation we  can now check that $\det O=\det \
 as the generator, writing the group element as $O=\exp(i\theta X)$.
 
 A similar calculation for $SO(3)$, which has three free parameters, gives the generators $X^i=\frac{1}{2}L^i$, where $L^i$ are the three matrices in Eq~(\ref{eq:SO3_generators}). These generators have the exact same commutator as the $SU(2)$ generators, $[X_i,X_j]=\epsilon_{ijk}X^k$, up to a constant factor, indicating a structural similarity between the groups $SU(2)$ and $SO(3)$. For $SO(3)$ we can further find a corresponding set of differential generators
-\[
+\begin{equation}
 L_x=-i\left(y\frac{\partial}{\partial z}-z\frac{\partial}{\partial y} \right),\quad
 L_y=-i\left(z\frac{\partial}{\partial x}-x\frac{\partial}{\partial z} \right),\quad
 L_z=-i\left(x\frac{\partial}{\partial y}-y\frac{\partial}{\partial x} \right),
-\]
+\label{eq:SO3_diff_generators}
+\end{equation}
 see Ex.~\ref{ex:SO2_diff_generators}.
 Up to a constant factor of $\hbar$ you may recognise these operators as the angular momentum operators in quantum mechanics. This is not a coincidence, the angular momentum operators in quantum mechanics are a representation of the generators of the group of rotations in three dimensions. In fact, the possibility of going back and forth between differential representations and matrix representations of the Lie group is the essence of the duality between the Schr\"odinger and Heisenberg pictures of quantum mechanics.
 
@@ -560,6 +561,7 @@ Since $SU(2)$ and  $SO(3)$ have the same algebra for $X_i$ and $Y_i$, but the gr
 U(0,0,\alpha_3)=\left[\begin{matrix} e^{i\frac{\alpha_3}{2}} & 0 \\ 0 & -e^{i\frac{\alpha_3}{2}} \end{matrix}\right] \quad \text{and}\quad U(0,0,\alpha_3+2\pi)=\left[\begin{matrix} e^{i\frac{\alpha_3}{2}+i\pi} & 0 \\ 0 & -e^{i\frac{\alpha_3}{2}+i\pi} \end{matrix}\right]=-U(0,0,\alpha_3)
 \]
 Thus the $SU(2)$ matrices has a period $4\pi$ versus the period $2\pi$ for $SO(3)$.\footnote{The argument can be made more formal and independent of the parameterisation, but is to extensive to repeat here.} Notice that this means that the three-dimensional representation of the Lie algebra coming from the generators of $SO(3)$ does not generate all the elements of $SU(2)$, while the two-dimensional one does.
+% Better description of double cover in 3.2 https://www.weizmann.ac.il/particle/perez/Courses/QMII18/TA7.pdf
 
 Beyond the fundamental representation $SU(2)$ has irreducible representations in all dimensions $\mathbf 3$, $\mathbf 4$, $\mathbf 5$, \ldots. This is not true in general, for example $SU(3)$ has irreducible representations only in some dimensions, starting with $\mathbf 3$, $\mathbf 6$, $\mathbf 8$, and $\mathbf{10}$, \ldots.
 
@@ -590,7 +592,7 @@ Note that the dimension $n$ of the matrices in the adjoint representation for $\
 
 We can now briefly return to the $SU(2)$ and $SO(3)$ examples. These groups have the same structure constants because they have the same commutators between generators. Thus the adjoint representations of their algebras are the same. With structure constants $C^{~~k}_{ij}=\epsilon_{ij}^{~~k}$ we get the elements of the adjoint matrices $(M_i)_{jk} =-i\epsilon_{ijk}$, which gives $M_i=-iL_i$, with the $L_i$ being the matrices in (\ref{eq:SO3_generators}). 
 
-From the adjoint representation of the Lie algebra we can construct  the adjoint representations of the Lie group. For example the adjoint representation of  $\mathfrak{su}(2)$ or $\mathfrak{so}(3)$ has the exponential map $\exp{(ia_i M^i)}=\exp{(-a_i L^i)}$. This happens to generate the $SO(3)$ fundamental representations, but this is not generally the case, it is ``accidental'' that the dimensions of the fundamental representation of $SO(3)$, $n=3$, and the dimension of its adjoint representation $n=3(3-1)/2=3$ is the same.
+From the adjoint representation of the Lie algebra we can construct  the adjoint representations of the Lie group. For example the adjoint representation of  $\mathfrak{su}(2)$ or $\mathfrak{so}(3)$ has the exponential map $\exp{(ia_i M^i)}=\exp{(a_i L^i)}$. This happens to generate the $SO(3)$ fundamental representations, but this is not generally the case, it is ``accidental'' that the dimensions of the fundamental representation of $SO(3)$, $n=3$, and the dimension of its adjoint representation $n=3(3-1)/2=3$ is the same.
 
 
 %%%
@@ -651,10 +653,6 @@ For $SU(n)$ we must use the additional requirement $\det U=1$. Because $1=\det M
 
 \begin{Exercise}[]
 Show that Eq.~(\ref{eq:SU2_parameterisation}) is a parametrisation of $SU(2)$.
-\end{Exercise}
-
-\begin{Exercise}[]
-Show that a linear combination of the identity and Pauli matrices can be used to write any $SU(2)$ matrix.
 \end{Exercise}
 
 \begin{Exercise}[]
