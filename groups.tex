@@ -370,12 +370,16 @@ iX^j\equiv \left. \frac{\partial A(\mathbf a)}{\partial a_j}\right|_{\mathbf a=0
 \]
 as the $d$ matrix {\bf generators} $X^j$ of the Lie group.
 
-If we now instead let $F(\mathbf x)$ be a function taken from the (infinite dimensional) vector space $V$ that we are interested in, mapping to either the real $\mathbb{R}$ or complex numbers $\mathbb{C}$, where $\mathbf x$ is now in the $n$-dimensional domain of the function, and letting $\mathbf f$ be the transformation of the domain effected by the group elements, then the group transformation defined by $d\mathbf a$ changes $F$ by
+If we now instead let $F(\mathbf x)$ be a function taken from the (infinite dimensional) vector space $V$ that we are interested in, mapping to either the real $\mathbb{R}$ or complex numbers $\mathbb{C}$, where $\mathbf x$ is now in the $n$-dimensional domain of the function, and letting $\mathbf f$ be the transformation of the domain effected by the group elements, then the group transformation defined by $d\mathbf a$ near the identity changes $F$  by
 \begin{eqnarray*}
-dF &=& \frac{\partial F}{\partial x_i}dx_i = \frac{\partial F}{\partial x_i}\frac{\partial f_i}{\partial a_j}da_j\\
+dF &=& \frac{\partial F}{\partial x_i}dx_i = \frac{\partial F}{\partial x_i}\left.\frac{\partial f_i}{\partial a_j}\right|_{\mathbf a=0}da_j\\
 &\equiv& i da_j X^j F,
 \end{eqnarray*}
-where the operators defined by \[iX^j \equiv\frac{\partial f_i}{\partial a_j} \frac{\partial }{\partial x_i},\] are called the $d$ differential {\bf generators} of the Lie group. We see here that in both cases the number of generators is the same as the dimension of the manifold, which is also the number of free parameters in the parameterisation of the group.
+where the operators defined by 
+\begin{equation}
+iX^j \equiv\left.\frac{\partial f_i}{\partial a_j} \right|_{\mathbf a=0}\frac{\partial }{\partial x_i},
+\end{equation}
+are called the $d$ differential {\bf generators} of the Lie group. We see here that in both cases the number of generators is the same as the dimension of the manifold, which is also the number of free parameters in the parameterisation of the group.
 
 It is these generators $X$ that then define the effect of the Lie group members in a given representation (near the zero parameter), while the $d$ numbers $a_j$ are mere parameters. We say that the generators determine the local structure of the group. It turns out that this linearisation, often called the {\bf tangent space}, of a group using an infinitesimal change near the origin is sufficient to recover the whole group locally. Note that the generators are not unique, they do depend on the parameterisation of the group, but as we shall see later some of their properties are independent of this.
 
@@ -540,7 +544,10 @@ Here the $X_i$ are the generators of $G$ and thus members of the Lie algebra, an
 }
 By Ado's theorem any (finite-dimensional) Lie algebra can be represented by matrices, in which case the infinite sum in this definition is nothing more than the formal series definition of the matrix exponential introduced in Sec.~\ref{sec:unitary_groups}. However, we can also use the exponential map for differential representations where the $X_i$ are differential operators, and for infinite-dimensional Lie groups, but the technical aspects why this extension works is a little beyond the scope of these notes.
 
-We have already seen multiple example of the exponential map construction, but we may ask, why use the exponential? One reason is that it gives us a natural expansion of the group around the identity element. With the parameters $\mathbf a=0$ the resulting matrix is the identity matrix, which means that the group element is the identity element $g=e$. Similarly, for an infinitesimal $d\mathbf a$ step away from the parameters of the identity we have the group elements near the identity, $g=I+ida_iX_i$.
+We have already seen multiple example of the exponential map construction, but we may ask, why use the exponential? One reason is that it gives us a natural expansion of the group around the identity element. With the parameters $\mathbf a=0$ the resulting matrix is the identity matrix, which means that the group element is the identity element $g=e$. Similarly, for an infinitesimal $d\mathbf a$ step away from the parameters of the identity we have the group elements near the identity, $g=I+ida_iX^i$ that we used to derive the generators. And now, if we apply a small finite step  $a_i$ away from the identity $g=I+i\frac{a_i}{n}X^i$ a total of $n$ times with smaller and smaller steps we will get
+\[g=\left(I+i\frac{a_i}{n}X^i\right)^n. \]
+By the limit definition of the exponential, for $n\to\infty$ this is the exponential map
+\[g=\lim_{n\to\infty}\left(I+i\frac{a_i}{n}X^i\right)^n=\exp( ia_iX^i). \]
 
 We should now ask two important questions, is the structure of these elements $g$ actually a group, and is it (isomorphic to) the group that gave the Lie algebra? For the first question we may check the group definition. The exponential map does give an identity element which is just the identity matrix. Associativity similarly holds because we are using matrices and matrix multiplication. There is indeed an inverse of an element $g=\exp{(iX)}$, which is $g^{-1}=\exp{(-iX)}$, since by the properties of matrix exponentiation we have $gg^{-1}=\exp{(iX)}\exp{(-iX)}=I$. The tricky point is whether group multiplication is closed.
 
@@ -634,17 +641,22 @@ Given the group multiplication definition the identity element must be $e=T_0=1$
 \end{Answer}
 
 \begin{Exercise}[]
-Show that the set of complex unitary $n\times n$ matrices $U$ is a group.
+Show that the set of complex unitary $n\times n$ matrices $U$ with matrix multiplication is a group.
 \end{Exercise}
+\begin{Answer}
+We need to demonstrate the four group requirements. We have closure since the product of two such unitary matrices $U_1$ and $U_2$ is a unitary matrix: $(U_1U_2)^\dagger U_1U_2= U_2^\dagger U_1^\dagger U_1U_2= U_2^\dagger U_2=I$. Matrix multiplication is always associative. There exists an identity among the matrices since the identity matrix is unitary: $I^\dagger I = II=I$. There exist an inverse $U^{-1}=U^\dagger$ for every $U$, since the matrix $U^\dagger$ is unitary if $U$ is: $(U^\dagger)^\dagger U^\dagger= UU^\dagger=I$.
+\end{Answer}
 
 \begin{Exercise}[]
 What are the elements of $O(1)$? Can you find a group that it is isomorphic to?
 \end{Exercise}
+\begin{Answer}
+Since $O(1)$ consists of $1\times1$ matrices, over $\mathbb R$ we suppose, also known as real numbers, the orthogonality requirement means that the transpose of that number (which is the number itself) multiplied by the number should be 1. There are two such reals, 1 and -1. The group thus has two elements. Since matrix multiplication in this case is just normal multiplication we have re-found the group $\mathbb Z_2$.
+\end{Answer}
 
 \begin{Exercise}[label=ex:Un_parameters]
 Show that the $U(n)$ and $SU(n)$ groups have $n^2$ and $n^2-1$ independent (real) parameters, respectively. {\it Hint:} Consider the fact that $M=U^\dagger U$ is a hermitian matrix, {\it i.e.}\ $M^\dagger=M$.
 \end{Exercise}
-
 \begin{Answer}
 An $n\times n$ matrix $U$ over $\mathbb C$ has $n^2$ complex or $2n^2$ real parameters. The hermitian matrix $M=U^\dagger U$ has $n$ real elements on the diagonal
 and $(n^2-n)/2$ complex elements above and below the diagonal. Because $M^\dagger=M$ all the $(n^2-n)/2$ elements below the diagonal are given by the complex conjugate the corresponding elements above the diagonal. Since $U$ is unitary $M=I$. That all the $n$ real diagonal elements of $M$ is equal to one gives $n$ restrictions ($n$ real equations) for the elements of $U$. Further, all $(n^2-n)/2$ complex elements above the diagonal are zero, which gives $(n^2-n)/2$ complex equations, which means $n^2-n$ real equations. For the terms below the diagonal we do not obtain any new equations. As a result the free parameters for the $U(n)$ matrices are $2n^2-n-(n^2-n)=n^2$.
@@ -746,7 +758,7 @@ This approach emphasises two important properties of the generators. Firstly tha
 
 
 \begin{Exercise}[difficulty={3},label=ex:SO2_diff_generators]
-Find the differential generators for $SO(3)$ and their commutation relationships by studying how a function on $\mathbb R$ changes under $SO(3)$ transformations. Show that they satisfy the same commutators as the matrix generators.
+Find the differential generators for $SO(3)$ and their commutation relationships by studying how a function on $\mathbb R^3$ changes under $SO(3)$ transformations. Show that they satisfy the same commutators as the matrix generators.
 \end{Exercise}
 
 
