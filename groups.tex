@@ -666,15 +666,28 @@ For $SU(n)$ we must use the additional requirement $\det U=1$. Because $1=\det M
 \begin{Exercise}[]
 Show that Eq.~(\ref{eq:SU2_parameterisation}) is a parametrisation of $SU(2)$.
 \end{Exercise}
+\begin{Answer}
+A matrix in $SU(2)$ has $2^2-1=3$ free parameters. Let us start with a generic $2\times2$ complex valued matrix
+\[ U=\left[ \begin{matrix} \alpha & \beta \\ \gamma & \delta \end{matrix} \right]. \]
+For this to be unitary we must have 
+\[ U^\dagger U=\left[ \begin{matrix} \alpha^* & \gamma^* \\ \beta^* & \delta^* \end{matrix} \right]\left[ \begin{matrix} \alpha & \beta \\ \gamma & \delta \end{matrix} \right] 
+=\left[ \begin{matrix} |\alpha|^2+|\gamma|^2 & \alpha^*\beta+\gamma^*\delta \\ \beta^*\alpha+\delta^*\gamma & |\beta|^2+|\delta|^2 \end{matrix} \right]
+=\left[ \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \right].\]
+Then from the off-diagonal, $\delta^*\gamma=-\beta^*\alpha$ and $\gamma^*\delta=-\alpha^*\beta$ which gives $|\delta|^2|\gamma|^2= |\alpha|^2 |\beta|^2$, and inserting from the diagonal we have $(1-|\beta|^2)|\gamma|^2= (1-|\gamma|^2) |\beta|^2$ which can be solved for $|\gamma|^2= |\beta|^2$. Similarly from the diagonal $|\delta|^2=|\alpha|^2$. We can then generically  write $\gamma=e^{i\theta}\beta$ and $\delta=e^{i\phi}\alpha$, where $\theta$ and $\phi$ are two phases. The diagonal requirement is then completely fulfilled if $|\alpha|^2+|\beta|^2=1$ and the matrix is
+\[ U=\left[ \begin{matrix} \alpha & \beta \\ e^{i\theta}\beta & e^{i\phi}\alpha \end{matrix} \right]. \]
+The determinant then requires $\alpha e^{i\phi}\alpha-\beta e^{i\theta}\beta=1$ which is fulfilled for a phase $\phi$ that rotates $\alpha$ to  $\alpha^*$ and a phase $\theta$ that rotates $\beta$ to $-\beta^*$. Thus we can write
+\[ U=\left[ \begin{matrix} \alpha & \beta \\ -\beta^* & \alpha^* \end{matrix} \right]. \]
+\end{Answer}
 
 \begin{Exercise}[]
-Show that for a subset $H\subset G,$ if $h_i \circ h_j^{-1} \in H$ for $\forall h_i, h_j\in H$, then $H$ is a subgroup of $G$.
+Show that for a subset $H\subset G,$ if $h_i \circ h_j^{-1} \in H$ for all $h_i, h_j\in H$, then $H$ is a subgroup of $G$.
 \end{Exercise}
+\begin{Answer}
+\end{Answer}
 
 \begin{Exercise}[]
-Show that if $H$ is a subgroup of $G$, then $h_i \circ h_j^{-1} \in H$ for $\forall h_i, h_j\in H$.
+Show that if $H$ is a subgroup of $G$, then $h_i \circ h_j^{-1} \in H$ for all $h_i, h_j\in H$.
 \end{Exercise}
-
 \begin{Answer}
 Since $H$ is a subgroup of $G$ then by point ii) in the definition since $h_j\in H$ we must also have $h_j^{-1} \in H$. With $h_i, h_j^{-1} \in H$ by point i) in definition $h_i  \circ h_j^{-1} \in H$.
 \end{Answer}
@@ -703,9 +716,11 @@ Show that the factors in a direct product of groups are normal groups to the pro
 Show that the group $G$ and the group $(G\times H) / H$ are isomorphic.
 \end{Exercise}
 
+
 \begin{Exercise}[]
 Show that $U(1)\cong\mathbb{R}/\mathbb{Z}\cong SO(2)$.
 \end{Exercise}
+
 
 \begin{Exercise}[difficulty={2}]
 Prove that all unitary representations on Hilbert spaces are completely reducible. {\it Hint:} For Hilbert spaces we always have an inner product defined.
@@ -714,22 +729,25 @@ Prove that all unitary representations on Hilbert spaces are completely reducibl
 Split the representation space $V=V_1\oplus V_2$, where we assume $V_1$ is a closed subspace of $V$ under the unitary representation $\rho(g)$ (the reducible part). Let $\mathbf v_1\in V_1$ and $\mathbf v_2\in V_2$.  Since $V_1$ is closed $\rho(g)\mathbf v_1 \in V_1$ and thus the inner product $(\rho(g)\mathbf v_1,  \mathbf v_2)=0$.  By unitarity the inner product is also $(\rho(g)\mathbf v_1,  \mathbf v_2)=(\mathbf v_1, \rho(g)^{-1}\mathbf v_2)$, thus $\rho(g)^{-1}V_2 \subset V_2$ and both subspaces are closed, and the space thus completely reducible. 
 \end{Answer}
 
-\begin{Exercise}[]
-Find the dimensions of the fundamental and adjoint representations of $SU(n)$.
-\end{Exercise}
-
-\begin{Exercise}[]
-Find the fundamental representation for $SO(3)$ and the adjoint representation for $SU(2)$. What does this say about the groups and their algebras?
-\end{Exercise}
 
 \begin{Exercise}[difficulty={1}]
 Use the parameterisation of $SO(2)$ in (\ref{eq:SO2_parameterisation}) to find the generator of the group using generating functions and show that you get the same answer as when using the infinitesimal matrix demonstrated in the notes.
 \end{Exercise}
 
+
+\begin{Exercise}[]
+Find the fundamental representation for $SO(3)$.
+\end{Exercise}
+
+
+\begin{Exercise}[difficulty={3},label=ex:SO2_diff_generators]
+Find the differential generators for $SO(3)$ and their commutation relationships by studying how a function on $\mathbb R^3$ changes under $SO(3)$ transformations. Show that they satisfy the same commutators as the matrix generators.
+\end{Exercise}
+
+
 \begin{Exercise}[difficulty={3},label=ex:SU2_generators]
 Find an expression for the generators of $SU(2)$ and their commutation relationships. {\it Hint:} One answer uses a composition function but this approach has some dangers, try also to derive the properties of the generators from a member of the group an infinitesimal distance from the identity.
 \end{Exercise}
-
 \begin{Answer}
 A member $U$ of $SU(2)$ fulfils $UU^\dagger=I$ and has $\det U =1$ and can be written as 
 \[U=\left[\begin{matrix} a+ib & c+id \\ -c+id &  a-ib \end{matrix}\right],\] 
@@ -757,15 +775,15 @@ This approach emphasises two important properties of the generators. Firstly tha
 \end{Answer}
 
 
-\begin{Exercise}[difficulty={3},label=ex:SO2_diff_generators]
-Find the differential generators for $SO(3)$ and their commutation relationships by studying how a function on $\mathbb R^3$ changes under $SO(3)$ transformations. Show that they satisfy the same commutators as the matrix generators.
-\end{Exercise}
-
-
-
 \begin{Exercise}[]
 What are the structure constants of SU(2)?
 \end{Exercise}
+
+
+\begin{Exercise}[]
+Find the adjoint representation for $SU(2)$. Compare this to the fundamental representation of $SO(3)$.
+\end{Exercise}
+
 
 
 \begin{Exercise}[]

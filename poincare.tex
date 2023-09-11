@@ -11,9 +11,10 @@
 We now take a look at the symmetry groups behind Special Relativity (SR), the Lorentz and Poincaré groups. We will first see what sort of states transform properly under SR, which has surprising connections to already familiar physics. We will then look for ways to extend these external symmetries of the coordinates to internal symmetries of quantum fields, {\it i.e.}\ the symmetries of gauge groups.
 
 
-%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
 \section{Representations of $SU(2)$}
-%%%%%%%%%%%%%%
+\label{sec:su2_rep}
+%%%%%%%%%%%%%%%%%%%%
 As a warm up, and to introduce some of the methods we will be using, we will start with the $SU(2)$ group and constructing its representations. As alluded to in the previous chapter the $SU(2)$ group is the symmetry group for spin.  Since their Lie algebras are identical, this will also provide us information about  the rotation group in three dimensions $SO(3)$. We have seen that the (abstract) generators $X_i$ of both  groups fulfil the Lie algebra $\mathfrak{su}(2)$,
 \[ [X_i,X_j]=i\epsilon_{ijk} X^k,\quad i,j,k=1,2,3,\]
 which should be well known to us as the commutator for spin operators $S_i$ from our first quantum mechanics courses.\footnote{To be more exact, this was $[S_i,S_j]=i\hbar\epsilon_{ijk} S^k$. } So apparently the spin operators are part of something rather fundamental.
@@ -48,11 +49,12 @@ The next step is to figure out what $\Omega$ is for a given $j$ and what values 
 %%%
 \subsection{The Casimir invariant}
 A {\bf Casimir element} is a combination of the elements of the Lie algebra that commutes with all the elements of the algebra. However, in constructing a Casimir element we may take products of matrices in a given representation, and hence we leave the algebra (which is a vector space, thus allowing only linear combinations).\footnote{For those interested in further reading, the technical statement is that the Casimir elements live in the {\bf universal enveloping algebra} of a Lie algebra. A detailed discussion of this is significantly beyond the scope of these notes.}
-An important Casimir element is the {\bf quadratic Casimir invariant}. A semi-simple Lie algebra, such as the algebras of our matrix groups, has a number of Casimir invariants equal to its {\bf rank}.\footnote{Rank itself is a rather technical term and comes from the dimension of the Cartan subalgebra of the algebra.} 
+%An important Casimir element is the {\bf quadratic Casimir invariant}. 
+A semi-simple Lie algebra, such as the algebras of our matrix groups, has a number of Casimir invariants equal to its {\bf rank}.\footnote{Rank itself is a rather technical term and comes from the dimension of the Cartan subalgebra of the algebra.} 
 
-In the context of $\mathfrak{su}(2)$, this algebra has rank-1 and the single Casimir invariant is the operator
-\[ J^2\equiv J_1^2+J_2^2+J_3^2=J_+J_-+J_-J_++J_3^2. \]
-It is relatively easy to show that $[J^2,J_1]=[J^2,J_2]=[J^2,J_3]=0$, so that we can indeed confirm that this is a Casimir element. Physically we should recognise this as the total spin or angular momentum (squared). The significance of the Casimir invariant comes from Schur's lemma in Sec.~\ref{sec:irreps}. There is a corresponding version of Schur's lemma for Lie algebras that shows that a linear map on the representation space that commutes with all the elements of the algebra in an irreducible representation (such as the Casimir) is proportional to the identity map. Thus $J^2$ must be a multiple of the identity matrix, $J^2=\lambda I$.
+In the context of $\mathfrak{su}(2)$, this algebra has the single Casimir invariant
+\[ J^2\equiv J_1^2+J_2^2+J_3^2=J_+J_-+J_-J_++J_3^2, \]
+and therefore has rank-1. It is relatively easy to show that $[J^2,J_1]=[J^2,J_2]=[J^2,J_3]=0$, so that we can indeed confirm that this is a Casimir element, and we can convince ourselves that there are no other combinations of the $J_i$ that will work. Physically we should recognise this as the total spin or angular momentum (squared). The significance of the Casimir invariant comes from Schur's lemma in Sec.~\ref{sec:irreps}. There is a corresponding version of Schur's lemma for Lie algebras that shows that a linear map on the representation space that commutes with all the elements of the algebra in an irreducible representation (such as the Casimir) is proportional to the identity map. Thus $J^2$ must be a multiple of the identity matrix, $J^2=\lambda I$.
 
 If we let the Casimir invariant act on the highest weight state $|j\rangle$ we get
 \[ J^2 |j\rangle=(J_+J_-+J_-J_++J_3^2) |j\rangle=(J_+J_-+J_3^2) |j\rangle=(N_{j-1}^+N_j^-+j^2) |j\rangle=j(j+1) |j\rangle. \]
@@ -120,14 +122,14 @@ We have now shown what the representations of $SU(2)$ look like, but we have not
 \section{The Lorentz Group}
 %%%%%%%%%%%%%%
 Einstein's requirement in Special Relativity was that the laws of physics should be invariant under rotations and/or boosts (changes of velocity) between different inertial reference frames. A point in the Minkowski space-time manifold $\mathbb{M}_4$ is given by a four-vector $x^\mu = (t,x,y,z)$. The resulting transformations of the space-time coordinates are captured in the Lorentz group.
-\df{The {\bf Lorentz group} is the group of linear transformations $x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu$ such that $x^2 \equiv x_\mu x^\mu = x'_\mu x'{}^{\mu}$ is invariant. The {\bf proper orthochronous} or {\bf restricted Lorentz group} is a subgroup of the Lorentz group where $\det \Lambda = 1$  ({\bf proper}) and $\Lambda^0{}_0 \geq 1$({\bf orthochronous}).
+\df{The {\bf Lorentz group} $L$ is the group of linear transformations $x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu$ such that $x^2 \equiv x_\mu x^\mu = x'_\mu x'{}^{\mu}$ is invariant. The {\bf proper orthochronous} or {\bf restricted Lorentz group} is a subgroup of the Lorentz group where $\det \Lambda = 1$  ({\bf proper}) and $\Lambda^0{}_0 \geq 1$({\bf orthochronous}).
 }
 The physical interpretation of the orthochronous property is that it keeps the direction (sign) of time of the four vector, while a proper group preserves orientation in rotations.
 
 Since the definition of the Lorentz group is in terms of a continuous transformation of coordinates we have strong reason to suspect that it is a Lie group. In fact, if we allow for a slight extension of the orthogonal group $O(n)$ to the {\bf indefinite orthogonal group} $O(m,n)$, where instead of the orthogonality property for group members $O$, meaning $O^{-1}=O^T$, we demand $O^{-1}=g^{-1}O^Tg$ where
 \[g=\text{diag}(\underbrace{1,\ldots,1}_n,\underbrace{-1,\ldots,-1}_m),\] is the {\bf metric},\footnote{Indeed, we can recognise this matrix relationship as one of the defining (necessary) properties of Lorentz transformations $\Lambda^Tg\Lambda=g$.} then we can write the Lorentz group as $SO^+(1,3)$, where the plus sign signifies the orthochronous property.\footnote{Because of the metric, $\det O=1$ alone no longer insures that we do not have time or parity reversal.} This is also the part of the group that contains the identity element. As a subgroup of the general linear group $GL(4)$ this is indeed a Lie group.
 
-Compared to the $SO(4)$ group which it resembles the Lorentz group is more complicated. Unlike $SO(4)$, because of the metric it is not compact which means that it does not have any non-trivial finite-dimensional unitary representations. Fortunately, its algebra is semi-simple, so its finite-dimensional representations are equivalent to direct sums of irreducible representations by Weyl’s complete reducibility theorem. So we need only to find the irreducible representations to construct any representation.
+Compared to the $SO(4)$ group which it resembles the Lorentz group is more complicated. Unlike $SO(4)$, because of the metric, it is not compact which means that it does not have any non-trivial finite-dimensional unitary representations. Fortunately, its algebra is semi-simple, so its finite-dimensional representations are equivalent to direct sums of irreducible representations by Weyl’s complete reducibility theorem. So we need only to find the irreducible representations to construct any representation.
 
 The counting of the free parameters of $SO(n,m)$ works just as for $SO(n)$, giving a total of six free parameters for  $SO^+(1,3)$, and then six generators. Physically, we can identify these with the three parameters needed to specify a general rotation in three dimensions, with generators named $J_i$, $i=1,2,3$, and the three parameters needed to specify a boost (the velocity components), with generators $K_i$, $i=1,2,3$.
 
@@ -159,7 +161,7 @@ M_{\mu\nu}=i(x_\mu\partial_\nu-x_\nu\partial_\mu),
 \end{equation}
 where we can more or less  see how the differential generators for $SO(3)$ in (\ref{eq:SO3_diff_generators}) appear as the $M_{ij}$ components. For a complete demonstration, see Ex.~\ref{ex:Lorentz_diff_gem}.
 
-With the generators from the defining representation we can now write a general element $\Lambda \in SO^+(1,3)$ as
+With the generators from the defining representation we can now write a general element $\Lambda \in SO^+(1,3)$ as\footnote{So this is definitely a finite-dimensional representation, but is it not also unitary? (Meaning conserves the length of vectors.) It does conserve Lorentz invariants, yes, however, those are not defined as the length of vectors.}
 \begin{equation}
 \Lambda^\mu{}_\nu = \left[\exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}\right)\right]^\mu_{~\nu},
 \label{eq:exp_map_Lorentz}
@@ -193,78 +195,76 @@ We will not immediately use this information to study the representations of the
 %%%%%%%%%%%%%%%%%
 \section{The Poincaré group}
 %%%%%%%%%%%%%%%%%
-We can now extend $O(1,3)$ by adding translation by a constant four-vector $a^\mu$ to the transformation of the Lorentz group:  $x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu + a^\mu$. This transformation leaves lengths $(x-y)^2$ invariant in $\mathbb{M}_4$m and invariance under this group add symmetry of time and space translation.
-\df{The {\bf Poincaré group} is the group of all transformations of the form
+We can now extend $O(1,3)$ by adding translation by a constant four-vector $a^\mu$ to the transformation of the Lorentz group:  $x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu + a^\mu$. This transformation leaves lengths $(x-y)^2$ invariant in $\mathbb{M}_4$, and invariance under this group add symmetry of time and space translation to the symmetries of the Lorentz group.
+\df{The {\bf Poincaré group} $P$ is the group of all transformations of the form
 \[x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu + a^\mu.\]
 We can also construct the {\bf restricted Poincaré group} by restricting the matrices $\Lambda$ in the same way as in $SO^+(1,3)$.}
 
 Writing a group member in terms of its parameters $(\Lambda, a)$, we can see  from the explicit form of the transformation that the composition of two elements in this group is:
 \[(\Lambda_1, a_1)\circ(\Lambda_2, a_2) = (\Lambda_1\Lambda_2, \Lambda_1a_2 + a_1).\]
-This tells us that the Poincar\'{e} group is {\it not} a direct product of the Lorentz group and the translation group, but rather a {\it semi-direct product} of $O(1,3)$ and the (indefinite) translation group $T(1,3)$, $O(1,3) \ltimes T(1,3)$. The translation group is a normal subgroup, and while the Lorentz group is a subgroup, it is not normal. The restricted Poincaré group is written in the same way as $SO^+(1,3) \ltimes T(1,3)$.
+This tells us that the Poincar\'{e} group is {\it not} a direct product of the Lorentz group and the translation group, but rather a {\it semi-direct product} of $O(1,3)$ and the (indefinite) translation group $T(1,3)$, $O(1,3) \ltimes T(1,3)$. The translation group is a normal subgroup, and while the Lorentz group is a subgroup, it is not normal. The restricted Poincaré group is written in the same way as the restricted Lorentz group, $SO^+(1,3) \ltimes T(1,3)$.
 
-The translation part of the Poincaré group adds four parameters to the six parameters of the rotations and boosts. This means that there are four more generators compared to the Lorentz group. Given our earlier discussion of the translation group in Sec.~\ref{sec:expmap} we can convince ourselves that we can use the momentum operators $P_\mu=-i\partial_\mu$. These generators have a trivial commutation relationship:
-%\footnote{This means that the translation group in Minkowski space is abelian. This is obvious, since $x^\mu + y^\mu = y^\mu + x^\mu$.}
+The translation part of the Poincaré group adds four parameters to the six parameters of the rotations and boosts. This means that there are four more generators compared to the Lorentz group. Given our earlier discussion of the translation group in Sec.~\ref{sec:expmap} we can convince ourselves that we can use the momentum operators $P_\mu=-i\partial_\mu$ as a differential representation. These generators have a trivial commutation relationship:
+%\footnote{This also means that the translation group in Minkowski space is abelian. This is obvious, since $x^\mu + y^\mu = y^\mu + x^\mu$.}
 \begin{equation}\label{eq:poco2}
 [P_\mu, P_\nu] = 0.
 \end{equation}
-Finally, one can show the following commutators with the generators of the Lorentz group:\footnote{For a rigorous derivation of this see Chapter 1.2 of \cite{IntrSUSY2010}. The proof is constructed by looking at the infinitesimal action of the generators.}
+Using the differential representation of $M_{\mu\nu}$ one can also show the following commutators with the generators of the Lorentz group:
 \begin{equation}
-[M_\mu{}_\nu, P_\rho] = -i(g_\mu{}_\rho P_\nu - g_{\nu \rho} P_\mu).
+[M_{\mu\nu}, P_\rho] = -i(g_\mu{}_\rho P_\nu - g_{\nu \rho} P_\mu).
 \label{eq:poco3}
 \end{equation}
 
-Equations (\ref{eq:poco1}), (\ref{eq:poco2}) and (\ref{eq:poco3}) together form the {\bf Poincaré algebra}, a Lie algebra. This allows us to write a general member $g$ of the restricted Poincaré group by using the exponential map 
+Equations (\ref{eq:poco1}), (\ref{eq:poco2}) and (\ref{eq:poco3}) together form the {\bf Poincaré algebra}, a Lie algebra for the Poincaré group. This allows us to write a general member $g$ of the restricted Poincaré group by using the exponential map 
 \begin{equation}
 g=\exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}+ia^\mu P_\mu\right),
 \end{equation}
 where $a^\mu$ are the additional parameters of the translation. 
+
+The Poincaré group, like the Lorentz group, is not compact, and thus does not have any non-trivial finite-dimensional unitary representations, and we must instead search for infinite-dimensional ones. The original classification of unitary representations of the Poincaré group is due to Wigner~\cite{Wigners_classification}.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Irreducible representations of the Poincaré group}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We would now like to ask the following fundamental question: what sort of physical objects -- in particles physics what particles or maybe what quantum fields -- can exist if we require that they are representations of the Poincaré group, and what properties do they as a result have?\footnote{Exist here in the sense of being described by a vector space that the group representations act on.} We have already learnt that this is an infinite-dimensional representation because of the non-compact nature of the Poincaré algebra.
 
-We would now like to ask the question: what sort of particles, or, if you like, quantum fields, can exist if we require that they are representations of the Poincaré group?\footnote{In the sense of being described by a vector space that the group representations act on.}
+To answer that question we will classify the irreducible representations of the Poincaré group. This seems like a dramatically difficult task, however, we will follow the arguments used for $SU(2)$ in Sec.~\ref{sec:su2_rep} to find and classify the representations by the eigenvalues of the Casimir invariants (via Schur's lemma), and the states in each representation by the eigenvalues of the set of commuting generators.
 
-To answer that question we will need to classify all the irreducible representations of the Poincaré group. This seems like a dramatically difficult task, however, we can now use Schur's lemma that we saw in Sec.~\ref{sec:irreps}. To do this we need to find the {\bf Casimir operators} of the algebra.
+For the Poincaré algebra $P^2 = P_\mu P^\mu$ is a Casimir operator because the following holds:
+\begin{align}
+[P_\mu, P^2] &= 0,\\
+[M_\mu{}_{\nu}, P^2]& = 0.
+\end{align}
+Let $\lambda$ be the eigenvalue of $P^2$ for a given irreducible representation  $|\lambda\rangle$, what can we say about $\lambda$? Since all four-momentum operators $P_\mu$ commute, and commute with $P^2$, they have simultaneous eigenvalues and eigenstates. We know from quantum mechanics that these are Hermitian operators with real eigenvalues equal to the momenta $p_\mu$. Thus the eigenvalue of $P^2$ is
+\[P^2|\lambda \rangle = (P_0^2-P_1^2-P_2^2-P_3^3)|\lambda \rangle = (E^2-p_x^2-p_y^2-p_z^2)|\lambda\rangle \equiv m^2 |\lambda\rangle. \]
+So, in fact the eigenvalue of $P^2$ is the number $m^2\in\mathbb R$ that we have called mass, and we use this to label our representations, 
+\[P^2|m\rangle = m^2 |m\rangle,\]
+of which there is a continuum. Note that nothing restricts $m^2$ to be larger or equal to zero, a negative $m^2$ is acceptable since a four vector can be time-like, light-like or space-like. In fact, we can happily insert $m^2<0$ into Special Relativity, but such objects would correspond to objects moving faster than light, so-called {\bf tachyons}, which do not seem to exist in nature. Since there are no restrictions on the eigenvalues of the momentum operator $p_\mu$ for a given $m^2$ we have infinite-dimensional representations where the states are labeled by the momentum value $ |m, p_\mu\rangle$.
 
-\df{The {\bf Casimir operators} of a Lie algebra are the elements that commute with all other elements of the algebra
-}
-From Schur's lemma the Casimir operators should then be proportional to the identity for irreducible representations, and, most importantly, the constants of proportionality classify the irrep.
+What we have done up to now does not reconstruct the full representation of the group (algebra). To proceed we look for further Casimir invariants. Any Casimir invariant needs to commute with the Lorentz group generators that are part of the algebra, thus it needs to be a Lorentz invariant (the four-indices are all contracted). Since we only have the operators $M_{\mu\nu}$ and $P_\mu$ in the algebra, and we have already used up $P^2$, we need to consider $M_{\mu\nu}M^{\mu\nu}$ and $\epsilon_{\mu\nu\rho\sigma}M^{\mu\nu}M^{\rho\sigma}$. However, these both fail to commute with $P_\mu$ due to (\ref{eq:poco3}). The remaining possibilities are combinations of $M_{\mu\nu}$ and $P_\mu$, and we need a combination that commutes with $P_\mu$.
 
-Let us take an example to demonstrate how this works. We saw earlier that $SO(3)$ and $SU(2)$ had the same algebra, with three members that we can generically write as $J_i$. We can show that $J^2=J_1^2+J_2^2+J_3^2$ is a Casimir invariant of this algebra, meaning that in a given representation, we can write $J^2=\lambda I$, where $\lambda$ is this constant and $I$ is the identity matrix. It may not surprise you to find out that the constant is $\lambda=\ell(\ell+1)$, where $\ell$ can take half-integer values, meaning that we have the relationship $J^2=\ell(\ell+1) I$ that is familiar from quantum mechanics. We can now go back and test this, checking the relationship for the Pauli matrices and the $J_i$ matrices in (\ref{eq:SO3_generators}). We will find that if $J_i=\frac{1}{2}\sigma_i$, where $\sigma_i$ are the Pauli matrices, $J^2=\frac{3}{4}$, corresponding to $\ell=\frac{1}{2}$, and for the $J_i$ matrices, $\ell=1$. The point here is that $\ell$ labels the representation, here the spin-$\frac{1}{2}$ and spin-1 representations.
-
-We can now use the constants of proportionality  to classify the (irreducible) representations of our Lie algebra (and group). For the Poincaré algebra $P^2 = P_\mu P^\mu$ is a Casimir operator because the following holds:
-\begin{eqnarray}
-\left[P_\mu, P^2\right] &=& 0,\\
-\left[M_\mu{}_{\nu}, P^2\right]& =& 0.
-\end{eqnarray}
-This allows us to label the irreducible representation of the Poincar\'{e} group with a quantum number that we will (randomly, or maybe not) name $m^2\in\mathbb R$, writing a corresponding state in the vector space as $|m\rangle$, such that:\footnote{Note that in general $m^2$ is not restricted to be larger than zero.}
-\[P^2|m\rangle = m^2 |m\rangle.\]
-
-If we go to the rest frame of a particle the state has eigenvalues $(m, \vec{0})$ for the operator $P_\mu$, where $m$ is the mass (rest energy) of the particle.\footnote{This does not loose generality since physics should be independent of frame, however, this argument needs to be modified somewhat for massless particles.} This demonstrates that the label $m^2$ can indeed be interpreted as the (square) of the mass,
-
-The number of Casimir operators is equal to the {\bf rank} of the algebra, {\it e.g.}\ the rank of $su(n)$ is $n-1$. It turns out that the Poincare algebra has rank 2, and thus two Casimir operators. To demonstrate this is rather involved, and we will not make an attempt here, but note that it can be shown that $SO^+(1,3)$ is homomorphic  to $SU(2)\times SU(2)$, because of the structure of the boost and rotation generators, where the algebra of each $SU(2)$ has rank 1.
-%Furthermore, $L^\uparrow_+ \cong SL(2, \mathbb{C})$. We will return to this relationship between $L^\uparrow_+$ and $SL(2, \mathbb{C})$ in Section~\ref{sec:weyl}, where we use it to reformulate the algebras we work with in supersymmetry.
-
-So, what is the second Casimir of the Poincaré algebra?
 \df{We define the {\bf Pauli-Ljubanski polarisation vector} by:
 \begin{equation}
 W_\mu \equiv \frac{1}{2} \epsilon_\mu{}_ \nu{}_\rho{}_\sigma P^\nu M^{\rho\sigma}.
 \end{equation}
 where $ \epsilon_\mu{}_ \nu{}_\rho{}_\sigma$ is the totally antisymmetric Levi-Civita tensor with $ \epsilon_{0123}=1$.}
-We can show that this vector is translation invariant, {\it i.e.}\ that it commutes with the translation operator,
+We can show that this vector is the one combination that is translation invariant, {\it i.e.}\ that it commutes with the translation operator,
 \begin{equation}
 [P_\mu, W_\nu]=0.
 \label{eq:PW_commutator}
 \end{equation}
-Then $W^2 = W_\mu W^\mu$ is a Casimir operator of the Poincaré algebra since we can show that
+This gives us two possibilities for Casimir invariants with the two Lorentz invariants $W_\mu P^\mu$ and $W_\mu W^\mu$, unfortunately from the definition of $W_\mu$ it is easy to see that  $W_\mu P^\mu=0$. However, the remaining option $W^2 = W_\mu W^\mu$ is a Casimir operator of the Poincaré algebra. While we argued from the Lorentz and translation invariance of the operators we can also show explicitly that
 \begin{eqnarray}
-\left[P_\mu, W^2\right] &=& 0,\\
-\left[M_\mu{}_\nu, W^2\right] &=& 0.
+[P_\mu, W^2] &=& 0,\\
+{[M_\mu{}_\nu, W^2]} &=& 0.
 \end{eqnarray}
-Note that the second of these relationships is not trivial to demonstrate. See \cite{IntrSUSY2010} for a complete proof.
+Note that the second of these relationships is not trivial to demonstrate. See \cite{IntrSUSY2010} for a complete proof. This exhausts the list of possibilities, and the Poincaré algebra is a rank-2 algebra.
+
+The $W_\mu$ do not commute among themselves, in fact 
+\[ [W_\mu,W_\nu]=\epsilon_{\mu\nu\rho\sigma}P^\rho W^\sigma. \]
+Thus, to find the full representation we can now look at states that are simultaneous eigenstates of $W^2$, $P^2$, the $P_\mu$, as well as one component of $W_\mu$. 
 
 If we again look at the situation in the rest frame we can write 
 \begin{equation}W_i = \frac{1}{2} \epsilon_{i 0 jk}m M^{jk} = mS_i,
@@ -274,6 +274,12 @@ where $S_i = \frac{1}{2} \epsilon_{ijk} M^{jk}$ is the {\bf spin operator}. \foo
 By showing that $WP=0$ we also have $W_0 = 0$ in this reference frame. This gives $W^2 = -\mathbf W^2 = -m^2\mathbf S^2$. Since the spin operator acts on a state with spin $s$ as $\mathbf S^2| s\rangle=s(s+1)| s\rangle$, we have that
 \[W^2|m,s\rangle = -m^2 s(s+1)|m,s\rangle.\]
 In addition, this also leads to the immediate conclusion that for each irrep with spin $s$ there are $2s+1$ {\it states} with spin component $s_3=0,\frac{1}{2},1,\frac{3}{2},\ldots$.
+
+
+
+If we go to the rest frame of a particle the state has eigenvalues $(m, \vec{0})$ for the operator $P_\mu$, where $m$ is the mass (rest energy) of the particle.\footnote{This does not loose generality since physics should be independent of frame, however, this argument needs to be modified somewhat for massless particles.} This demonstrates that the label $m^2$ can indeed be interpreted as the (square) of the mass,
+
+
 
 The conclusion of this subsection is that anything transforming under the Poincaré group, meaning the objects considered by special relativity, can be classified by two quantum numbers: mass $m^2$ and spin $s$.
 
