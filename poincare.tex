@@ -23,15 +23,15 @@ To find a representation of $SU(2)$ through the exponential map we need to find 
 
 Our first move in the construction is to consider that since the generators in any representation of the Lie algebra are not unique, we can change their basis by a {\bf similarity transform} $J_i'=SJ_iS^{-1}$, where $S$ is an invertible matrix. We can easily show that the $J_i'$ fulfil the same algebra and that this is thus an isomorphism of the representation. We can then uses this freedom to now diagonalise one of the three matrices, $J_3$, by a choice of basis. We can not diagonalise more than one because we know from linear algebra -- and operators in quantum mechanics -- that two matrices that are diagonalised by the same similarity transform must commute (since diagonal matrices commute), and this would contradict our commutator for the $J_i$.
 
-In the following sections of this chapter we will be particularly interested in the eigenvectors of the generators that we can simultaneously diagonalise, in the $SU(2)$ case only $J_3$, which we will call {\bf states}. This follows what we did in quantum mechanics where we found the set of all commuting operators for a given system, and found their common eigenstates/eigenfunctions, which we then used as basis states/vectors under the quantum mechanical axiom that the eigenstates form a complete set of basis states. The eigenvalues in these cases are the {\it only} possible measurements for the corresponding observables. Returning to our spin example, for the spin-$\half$ spin operator we have two states, the spin-up and spin-down states, and can measure the spin in the $z$-direction ($S_3$) to be in the up or down direction, $S_z=\pm\frac{\hbar}{2}$. Any spin-$\half$ fermion must then be in a linear combination of the two states. I should like to emphasise here that this says something dramatic about what exists according to quantum mechanics, there are only two states labeled by the quantum number $s_z$, $|s_z=\frac{1}{2}\rangle$ and $|s_z=-\frac{1}{2}\rangle$.
+In the following sections of this chapter we will be particularly interested in the eigenvectors of the generators that we can simultaneously diagonalise, in the $SU(2)$ case only $J_3$, which we will call {\bf states}. This follows what we did in quantum mechanics where we found the set of all commuting operators for a given system, and found their common eigenstates/eigenfunctions, which we then used as basis states/vectors under the quantum mechanical axiom that the eigenstates form a complete set of basis states. The eigenvalues in these cases are the {\it only} possible measurements for the corresponding observables. Returning to our spin example, for the spin-$\half$ spin operator we have two states, the spin-up and spin-down states, and can measure the spin in the $z$-direction ($S_3$) to be in the up or down direction, $S_3=\pm\frac{\hbar}{2}$. Any spin-$\half$ fermion must then be in a linear combination of the two states. We should like to emphasise here that this says something dramatic about what exists according to quantum mechanics, there are only two states labeled by the quantum number $s_3$, $|s_3=\frac{1}{2}\rangle$ and $|s_3=-\frac{1}{2}\rangle$.
 
 %%%
 \subsection{Ladder operators}
 We now return to our $\mathfrak{su}(2)$ algebra and its representations. What follows might again cause some {\it deja vu}, as you might feel you have done this before in an earlier life. Let us call the eigenstates of $J_3$ for $|m\rangle$ and its eigenvalues $m$, {\it i.e.}\ $J_3|m\rangle=m|m\rangle$, and assume that the states are normalised, $\langle m|m\rangle=1$. We know that $m\in\mathbb R$ because the eigenvalues of a Hermitian matrix, as we saw $J_3$ was in the previous chapter, are real.
 
 We are constructing finite-dimensional representations, so we also know that $J_3$ has a finite number of eigenvalues and eigenstates. We pick the state with the largest eigenvalue, called the {\bf highest weight state}, and denote it by $|j\rangle$.\footnote{Although $j$ suggests an integer, at this point all we know is that $j$ is some real number.} We now define {\bf lowering and raising operators} $J_\pm$,
-\[ J_\pm \equiv\frac{1}{\sqrt{2}}(J_1\pm i J_2), \]
-and change our Lie algebra of generators to consist of the set $J_+$, $J_-$, and $J_3$. This is perfectly fine since the Lie algebra is a vector space and  we have just made a linear combination of our basis vectors. We can show that in the new basis the commutators are
+\[ J_\pm \equiv\frac{1}{\sqrt{2}}(J_1\pm i J_2). \]
+We can show that these have commutators
 \[ [J_+, J_-]=J_3,\quad\text{and}\quad [J_3,J_\pm]=\pm J_\pm. \]
 Notice also that $J_\pm^\dagger=J_\mp$. 
 The lowering and raising operators have the property that operating on a state $|m\rangle$ we get 
@@ -48,12 +48,12 @@ The next step is to figure out what $\Omega$ is for a given $j$ and what values 
 
 %%%
 \subsection{The Casimir invariant}
-A {\bf Casimir element} is a combination of the elements of the Lie algebra that commutes with all the elements of the algebra. However, in constructing a Casimir element we may take products of matrices in a given representation, and hence we leave the algebra (which is a vector space, thus allowing only linear combinations).\footnote{For those interested in further reading, the technical statement is that the Casimir elements live in the {\bf universal enveloping algebra} of a Lie algebra. A detailed discussion of this is significantly beyond the scope of these notes.}
+A {\bf Casimir element} or {\bf Casimir invariant} is a combination of the elements of the Lie algebra that commutes with all the elements of the algebra. However, in constructing a Casimir element we may take products of matrices in a given representation, and hence we leave the algebra (which is a vector space, thus allowing only linear combinations).\footnote{For those interested in further reading, the technical statement is that the Casimir elements live in the {\bf universal enveloping algebra} of a Lie algebra. A detailed discussion of this is significantly beyond the scope of these notes.}
 %An important Casimir element is the {\bf quadratic Casimir invariant}. 
 A semi-simple Lie algebra, such as the algebras of our matrix groups, has a number of Casimir invariants equal to its {\bf rank}.\footnote{Rank itself is a rather technical term and comes from the dimension of the Cartan subalgebra of the algebra.} 
 
 In the context of $\mathfrak{su}(2)$, this algebra has the single Casimir invariant
-\[ J^2\equiv J_1^2+J_2^2+J_3^2=J_+J_-+J_-J_++J_3^2, \]
+\[ \mathbf J^2=J^2\equiv J_1^2+J_2^2+J_3^2=J_+J_-+J_-J_++J_3^2, \]
 and therefore has rank-1. It is relatively easy to show that $[J^2,J_1]=[J^2,J_2]=[J^2,J_3]=0$, so that we can indeed confirm that this is a Casimir element, and we can convince ourselves that there are no other combinations of the $J_i$ that will work. Physically we should recognise this as the total spin or angular momentum (squared). The significance of the Casimir invariant comes from Schur's lemma in Sec.~\ref{sec:irreps}. There is a corresponding version of Schur's lemma for Lie algebras that shows that a linear map on the representation space that commutes with all the elements of the algebra in an irreducible representation (such as the Casimir) is proportional to the identity map. Thus $J^2$ must be a multiple of the identity matrix, $J^2=\lambda I$.
 
 If we let the Casimir invariant act on the highest weight state $|j\rangle$ we get
@@ -120,6 +120,7 @@ We have now shown what the representations of $SU(2)$ look like, but we have not
 
 %%%%%%%%%%%%%%
 \section{The Lorentz Group}
+\label{sec:Lorentz_group}
 %%%%%%%%%%%%%%
 Einstein's requirement in Special Relativity was that the laws of physics should be invariant under rotations and/or boosts (changes of velocity) between different inertial reference frames. A point in the Minkowski space-time manifold $\mathbb{M}_4$ is given by a four-vector $x^\mu = (t,x,y,z)$. The resulting transformations of the space-time coordinates are captured in the Lorentz group.
 \df{The {\bf Lorentz group} $L$ is the group of linear transformations $x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu$ such that $x^2 \equiv x_\mu x^\mu = x'_\mu x'{}^{\mu}$ is invariant. The {\bf proper orthochronous} or {\bf restricted Lorentz group} is a subgroup of the Lorentz group where $\det \Lambda = 1$  ({\bf proper}) and $\Lambda^0{}_0 \geq 1$({\bf orthochronous}).
@@ -137,7 +138,7 @@ Since the rotation operations are known to be closed, {\it i.e.}\ two rotations 
 \begin{equation}
 [J_i,J_j]=i\epsilon_{ijk}J_k.\label{eq:Jalgebra}
 \end{equation}
-The boost operations are not closed, and one can show that their generators $K_i$, see Ex.~\ref{ex:boost_generators}, have the following relationships with the rotation generators
+The boost operations are not closed, and one can show that their anti-Hermitian generators $K_i$, see Ex.~\ref{ex:boost_generators}, have the following relationships with the rotation generators
 \begin{align}
 [K_i,J_j] &= i \epsilon_{ijk}K_k, \label{eq:KJalgebra} \\
 [K_i,K_j] &= -i\epsilon_{ijk}J_k. \label{eq:Kalgebra}
@@ -241,7 +242,7 @@ Let $\lambda$ be the eigenvalue of $P^2$ for a given irreducible representation 
 \[P^2|\lambda \rangle = (P_0^2-P_1^2-P_2^2-P_3^3)|\lambda \rangle = (E^2-p_x^2-p_y^2-p_z^2)|\lambda\rangle \equiv m^2 |\lambda\rangle. \]
 So, in fact the eigenvalue of $P^2$ is the number $m^2\in\mathbb R$ that we have called mass, and we use this to label our representations, 
 \[P^2|m\rangle = m^2 |m\rangle,\]
-of which there is a continuum. Note that nothing restricts $m^2$ to be larger or equal to zero, a negative $m^2$ is acceptable since a four vector can be time-like, light-like or space-like. In fact, we can happily insert $m^2<0$ into Special Relativity, but such objects would correspond to objects moving faster than light, so-called {\bf tachyons}, which do not seem to exist in nature. Since there are no restrictions on the eigenvalues of the momentum operator $p_\mu$ for a given $m^2$ we have infinite-dimensional representations where the states are labeled by the momentum value $ |m, p_\mu\rangle$.
+of which there is a continuum. Note that nothing restricts $m^2$ to be larger or equal to zero, a negative $m^2$ is acceptable since a four vector can be time-like, light-like or space-like. In fact, we can happily insert $m^2<0$ into Special Relativity, but such objects would correspond to objects moving faster than light, so-called {\bf tachyons}, which do not seem to exist in nature. Since there are no restrictions on the eigenvalues of the momentum operator $p_\mu$ for a given $m^2$ we have infinite-dimensional irreducible representations of the translation subgroup of the Poincaré group, where the states are labeled by the momentum value $ |m, p_\mu\rangle$.
 
 What we have done up to now does not reconstruct the full representation of the group (algebra). To proceed we look for further Casimir invariants. Any Casimir invariant needs to commute with the Lorentz group generators that are part of the algebra, thus it needs to be a Lorentz invariant (the four-indices are all contracted). Since we only have the operators $M_{\mu\nu}$ and $P_\mu$ in the algebra, and we have already used up $P^2$, we need to consider $M_{\mu\nu}M^{\mu\nu}$ and $\epsilon_{\mu\nu\rho\sigma}M^{\mu\nu}M^{\rho\sigma}$. However, these both fail to commute with $P_\mu$ due to (\ref{eq:poco3}). The remaining possibilities are combinations of $M_{\mu\nu}$ and $P_\mu$, and we need a combination that commutes with $P_\mu$.
 
@@ -260,34 +261,64 @@ This gives us two possibilities for Casimir invariants with the two Lorentz inva
 [P_\mu, W^2] &=& 0,\\
 {[M_\mu{}_\nu, W^2]} &=& 0.
 \end{eqnarray}
-Note that the second of these relationships is not trivial to demonstrate. See \cite{IntrSUSY2010} for a complete proof. This exhausts the list of possibilities, and the Poincaré algebra is a rank-2 algebra.
+The second of these relationships is not trivial to demonstrate. See \cite{IntrSUSY2010} for a complete proof. This exhausts the list of possibilities, and the Poincaré algebra is a rank-2 algebra. The $W_\mu$ do not in general commute among themselves, in fact 
+\begin{equation}
+[W_\mu,W_\nu]=\epsilon_{\mu\nu\rho\sigma}P^\rho W^\sigma.
+\label{eq:WW_commutator}
+\end{equation}
+Thus, to find the full representation we can now look for states that are simultaneous eigenstates of $W^2$, $P^2$, the $P_\mu$, as well as one component of $W_\mu$.  
 
-The $W_\mu$ do not commute among themselves, in fact 
-\[ [W_\mu,W_\nu]=\epsilon_{\mu\nu\rho\sigma}P^\rho W^\sigma. \]
-Thus, to find the full representation we can now look at states that are simultaneous eigenstates of $W^2$, $P^2$, the $P_\mu$, as well as one component of $W_\mu$. 
+We do this by starting from the representations of the translation subgroup with fixed eigenvalues $p_\mu$. What we are using here is know as the method of {\bf little groups} in physics. The idea is to consider the subgroup of the Poincare group that indeed leaves $p_\mu$ invariant: this is what is called the {\bf little group}.\footnote{In mathematics, it is often called the {\bf stabiliser subgroup}.} This will allow us to find unitary irreducible representations of the whole group from the unitary irreducible representations of the little group.  Because the behaviour of the little group is different depending on the value of $p_\mu$, we need to separate the problem into several discrete cases :
+\begin{itemize}
+\item[i)] $m=0$ and $p_\mu=(0,\mathbf 0)$
+\item[ii)] $m=0$ and $p_\mu\neq(0,\mathbf 0)$
+\item[iii)] $m^2>0$
+\item[iv)] $m^2<0$
+\end{itemize}
 
-If we again look at the situation in the rest frame we can write 
-\begin{equation}W_i = \frac{1}{2} \epsilon_{i 0 jk}m M^{jk} = mS_i,
+\paragraph{Case i)} Here, $P^2=0$ and $W^2=0$,\footnote{In the sense that their eigenvalues are always zero.} and there is only one representation $|0,0\rangle$. The little group that leaves $p_\mu=(0,\mathbf 0)$ invariant is the whole Lorentz group since boosts and rotations on a zero momentum point-like object just gives the same thing back. However, since the Lorentz group is not compact, we know that the only finite-dimensional unitary representation of the little group is the trivial representation. Thus this representation corresponds to the trivial representation for the Poincare group as well. We consider a state that transforms this way as the vacuum.
+
+\paragraph{Case iii)} If we go to the rest frame of the particle, the states have momentum eigenvalues $p_\mu=(m, \mathbf 0)$.\footnote{This does not loose generality since the physics of the representation should be independent of frame.}  In this case, the little group turns out to be the group of rotations in three-dimensional space, $SO(3)$. To see this consider the Pauli-Ljubanski vector acting on such a state
+\begin{equation}
+W_i |m, p_\mu\rangle = \frac{1}{2} \epsilon_{i 0 jk}m M^{jk}  |m, p_\mu\rangle= -mJ_i  |m, p_\mu\rangle,
 \label{eq:PL_restframe}
 \end{equation}
-where $S_i = \frac{1}{2} \epsilon_{ijk} M^{jk}$ is the {\bf spin operator}. \footnote{Observe that this discussion is problematic for massless particles. However, it is possible to find a similar relation for massless particles, when we chose a frame where the momentum of the particle is in a single direction.}
-By showing that $WP=0$ we also have $W_0 = 0$ in this reference frame. This gives $W^2 = -\mathbf W^2 = -m^2\mathbf S^2$. Since the spin operator acts on a state with spin $s$ as $\mathbf S^2| s\rangle=s(s+1)| s\rangle$, we have that
-\[W^2|m,s\rangle = -m^2 s(s+1)|m,s\rangle.\]
-In addition, this also leads to the immediate conclusion that for each irrep with spin $s$ there are $2s+1$ {\it states} with spin component $s_3=0,\frac{1}{2},1,\frac{3}{2},\ldots$.
+where $J_i = \frac{1}{2} \epsilon_{ijk} M^{jk}$ is the {\bf spin operator} that forms the $\mathfrak{so}(3)\cong\mathfrak{su}(2)$ algebra. Since $WP=0$ we also have $W_0 = 0$ in this reference frame.\footnote{In the sense that $W_0$ has eigenvalue 0 for all states.} This gives $W^2 = -\mathbf W^2 = -m^2\mathbf J^2$.  So in this case we want to find the eigenstates of $W^2=-m^2J^2$ and one component of $W_\mu$ which we choose to be $W_3=-mJ_3$ with eigenvalue named $j_3$.  
+
+We already found the representations of  $\mathfrak{su}(2)$ in Sec.~\ref{sec:su2_rep}, so for this case we immediately know that in total the irreducible representations can be labeled by two numbers, $m^3\in\mathbb R$ and $j=0,\frac{1}{2},1,\frac{3}{2},\ldots$, as $|m,j\rangle$, and while each representation is infinite dimensional because it has continuous number for the momentum eigenvalues $p_\mu$, for each momentum eigenvalue it has has $2j+1$ spin states with $J_3$ eigenvalue $j_3=-j,-j+1,\ldots,j-1,j$, which we write as $|m,j,p_\mu,j_3\rangle$. 
+Since the total spin operator acts on a state with spin $j$ as $\mathbf J^2| j\rangle=j(j+1)| j\rangle$, we also have that
+\[W^2|m,j\rangle = -m^2 j(j+1)|m,j\rangle.\]
+
+We have now arrived at the conclusion that massive particles transforming under the Poincaré group, meaning the objects that obey Special Relativity, can be classified by two numbers: mass $m^2$ and spin $j$. The appearance of spin in physics is thus intimately connected to the symmetries of Special Relativity.
+% Discuss that these are projective representations (double cover)
+
+\paragraph{Case ii)} We now want to look at massless particles, but  with non-zero $p_\mu$. Here we can not go to a rest frame and instead choose a frame such that $p_\mu=(p,0,0,p)$. We again have $P^2=0$  in the usual sense, and one can prove that $W_\mu$ and $P_\mu$ are proportional, $W_\mu=H P_\mu$. Thus $W^2=0$ and the proportionality factor  can be found from
+\begin{eqnarray*}
+W_0 |0, p_\mu\rangle &=& \frac{1}{2} \epsilon_{0 ijk}P^i M^{jk}  |0, p_\mu\rangle=P^i J_i  |0, p_\mu\rangle=\mathbf P\cdot\mathbf J |0, p_\mu\rangle, \\
+P_0 |0, p_\mu\rangle &=& p |0, p_\mu\rangle,
+\end{eqnarray*}
+as 
+\[ H = \frac{\mathbf P\cdot\mathbf J }{p}, \]
+which is the definition of the {\bf helicity} of a massless particle. 
+
+The little group that leaves $p_\mu$ unchanged here is not so obvious to see. But it turns out to be given by the so-called special Euclidean group $SE(2)$, which consists of rotations and translations in two dimensional Euclidean space.
+% Extend this by either discussing SE(2) earlier or proving the proportionality (see Zee VII.2).
+The eigenvalues $h$ of $H$, $H|0,p_\mu\rangle=h|0,p_\mu\rangle$  can then be shown to be $h=\pm j_3$, where $j_3$ is another half-integer, $j_3=0,\half,1,\ldots$.
+
+%In this case the $W_\mu$ do commute and have a simultaneous eigenstates. 
+So, in summary,  there is one representation $|0,0\rangle$, which is infinite-dimensional since the values of $p_\mu$ form a continuum, and for each of these momentum eigenstates there are two helicity eigenstates which we write in similarity with the massive case as $|0,0,p_\mu,\pm j_3\rangle$. 
 
 
+\paragraph{Case vi)} Because of time constraints and since tachyons do not seem to appear in nature we will not treat this case further.
 
-If we go to the rest frame of a particle the state has eigenvalues $(m, \vec{0})$ for the operator $P_\mu$, where $m$ is the mass (rest energy) of the particle.\footnote{This does not loose generality since physics should be independent of frame, however, this argument needs to be modified somewhat for massless particles.} This demonstrates that the label $m^2$ can indeed be interpreted as the (square) of the mass,
+\bigskip
+Let us finally try to ask the question, what do these (irreducible) infinite-dimensional unitary representations actually look like? If we start with spin-0 representations, $j=0$, we can write the corresponding infinite-dimensional representation of massive states without any vector structure as $|m,0\rangle\sim e^{\pm ipx}$, where $p_\mu$ is the four-momentum of the particle, since then
+\[P^2|m,0\rangle=-\partial_\mu\partial^\mu|m,0\rangle = p^2|m,0\rangle=m^2|m,0\rangle.\] 
+This exponential part of states can then always be used to take care of the eigenvalues of the $P^2$-Casimir, and is often just implicitly implied in the states/fields.
 
+We can also immediately write down the $j=1$ vector representation of the Poincaré group for massive particles, $|m,1\rangle\sim\epsilon_\mu e^{ipx}$. We simply use a four-vector $\epsilon_\mu$ that transforms under the fundamental (four-dimensional) representation of the Lorentz group $SO^+(1,3)$. In order to fulfil the eigenvalue equation of the $W^2$-Casimir, and describe the three spin states $j_3=-1,0,1$, this vector (called the {\bf polarisation vector}) needs to fulfil certain requirements which we do not detail here (see a course on quantum field theory).
 
-
-The conclusion of this subsection is that anything transforming under the Poincaré group, meaning the objects considered by special relativity, can be classified by two quantum numbers: mass $m^2$ and spin $s$.
-
-What do these (irreducible) representations then look like? If we start with spin-0 representations, $s=0$, we can write the corresponding states without any vector structure as $|m,0\rangle\sim e^{\pm ipx}$, where $p_\mu$ is the four-momentum of the particle, since $P^2|m,0\rangle=-\partial_\mu\partial^\mu|m,0\rangle\sim p^2|m,0\rangle=m^2|m,0\rangle$. This exponential part of states can then always be used to take care of the eigenvalues of the $P^2$-Casimir, and is often just implicitly implied in the states/fields.
-
-We can also immediately write down the $s=1$ vector representation of the Poincaré group, $|m,1\rangle\sim\epsilon_\mu e^{ipx}$. We simply use a four-vector $\epsilon_\mu$ that transforms under the fundamental (four-dimensional) representation of the Lorentz group $SO^+(1,3)$. In order to fulfil the eigenvalue equation of the $W^2$-Casimir, and describe the three spin states $s_3=-1,0,1$, this vector (called the polarisation vector) needs to fulfil certain requirements which we do not detail here (see a course on quantum field theory).
-
-However, to find a spin-$\frac{1}{2}$ representation we need to take some more care. 
+However, in order to find a spin-$\frac{1}{2}$ representation for fermions we need to take some more care. 
 In fact, we will find representations both in four and two dimensions. For those familiar with quantum field theory, these will as expected be the Dirac and Weyl spinor representations.
 
 
@@ -296,12 +327,12 @@ In fact, we will find representations both in four and two dimensions. For those
 \section{Weyl spinors}
 \label{sec:weyl}
 %%%%%%%%%%%%
-Interestingly, there exists a homomorphism between the groups $SO^+(1,3)$ and $SL(2, \mathbb{C})$. This homomorphism, with $\Lambda^\mu{}_\nu \in SO^+(1,3)$ and $M \in SL(2, \mathbb{C})$, can be explicitly given by:\footnote{The choice of sign in Eq.~(\ref{eq:MofLambda}) is the reason that this is a homomorphism, instead of an isomorphism. Each element in  $SO^+(1,3)$ can be assigned to two in $SL(2, \mathbb{C})$.}
+As we discussed at the end of Sec.~\ref{sec:Lorentz_group} there exists a two-to-one homomorphism between the  $SL(2, \mathbb{C})$ and the Lorentz group $SO^+(1,3)$. This homomorphism, with $\Lambda^\mu{}_\nu \in SO^+(1,3)$ and $M \in SL(2, \mathbb{C})$, can be explicitly given by:\footnote{The choice of sign in Eq.~(\ref{eq:MofLambda}) is the reason that this is a homomorphism, instead of an isomorphism. Each element in  $SO^+(1,3)$ can be assigned to two in $SL(2, \mathbb{C})$.}
 \begin{eqnarray}
 \Lambda^\mu{}_\nu(M) &=& \frac{1}{2}{\rm Tr}[\bar{\sigma}^\mu M \sigma_\nu M^\dagger],\label{eq:LambdaofM}\\
 M(\Lambda^\mu{}_\nu) &=& \pm \frac{1}{\sqrt{\det(\Lambda^\mu{}_\nu \sigma_\mu \bar{\sigma}^\nu)}}\Lambda^\mu{}_\nu \sigma_\mu \bar{\sigma}^\nu,\label{eq:MofLambda}
 \end{eqnarray}
-where $\bar{\sigma}^\mu = (1, -\vec{\sigma})$ and $\sigma^\mu = (1, \vec{\sigma})$. 
+where $\bar{\sigma}^\mu = (1, -\vec{\sigma})$ and $\sigma^\mu = (1, \vec{\sigma})$.
 
 This two-to-one correspondence means that $SO^+(1,3) \cong SL(2, \mathbb{C})/\mathbb{Z}_2$. Thus we can look at the representations of $SL(2, \mathbb{C})$ instead of the  Lorentz group, when we describe particles, but what are those representations? It turns out that there exist two inequivalent fundamental representations $\rho$ of $SL(2, \mathbb{C})$:
 \begin{enumerate}[i)]
