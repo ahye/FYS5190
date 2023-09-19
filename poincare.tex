@@ -228,6 +228,7 @@ The Poincaré group, like the Lorentz group, is not compact, and thus does not h
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Irreducible representations of the Poincaré group}
+\label{sec:Poincare_irreps}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 We would now like to ask the following fundamental question: what sort of physical objects -- in particles physics what particles or maybe what quantum fields -- can exist if we require that they are representations of the Poincaré group, and what properties do they as a result have?\footnote{Exist here in the sense of being described by a vector space that the group representations act on.} We have already learnt that this is an infinite-dimensional representation because of the non-compact nature of the Poincaré algebra.
 
@@ -334,31 +335,36 @@ M(\Lambda^\mu{}_\nu) &=& \pm \frac{1}{\sqrt{\det(\Lambda^\mu{}_\nu \sigma_\mu \b
 \end{eqnarray}
 where $\bar{\sigma}^\mu = (1, -\vec{\sigma})$ and $\sigma^\mu = (1, \vec{\sigma})$.
 
-This two-to-one correspondence means that $SO^+(1,3) \cong SL(2, \mathbb{C})/\mathbb{Z}_2$. Thus we can look at the representations of $SL(2, \mathbb{C})$ instead of the  Lorentz group, when we describe particles, but what are those representations? It turns out that there exist two inequivalent fundamental representations $\rho$ of $SL(2, \mathbb{C})$:
+This two-to-one correspondence means that $SO^+(1,3) \cong SL(2, \mathbb{C})/\mathbb{Z}_2$. Thus we can look at the representations of $SL(2, \mathbb{C})$ instead of the  Lorentz group, when we describe spin-$\half$ particles,\footnote{We can of course also use the $SL(2, \mathbb{C})$ representations to construct representations for higher spin.} but what are those representations? It turns out that there are two inequivalent fundamental representations $\rho$ of $SL(2, \mathbb{C})$ in terms of $2\times2$ matrices $M\in SL(2, \mathbb{C})$:
 \begin{enumerate}[i)]
-\item The self-representation $\rho(M) = M$ acting on an element $\psi$ of a representation vector space $V$:
+\item The self-representation $\rho(M) = M$  acting on a member $\psi$ of a representation vector space $V$:
 \[\psi'_A = M_A{}^B\psi_B,  \quad A, B = 1,2.\]
 \item The complex conjugate self-representation $\rho(M) = M^*$ working on a vector $\bar{\psi}$ in a space $\dot V$:
 \[\bar{\psi}'_{\dot{A}} = (M^*)_{\dot{A}}{}^{\dot{B}}\bar{\psi}_{\dot{B}}, \quad  \dot{A}, \dot{B} = 1,2.\]
 \end{enumerate}
-The vectors $\psi$ and $\bar{\psi}$ in these representation spaces are called, respectively, {\bf left- and right-handed Weyl spinors}. 
+The vectors $\psi$ and $\bar{\psi}$ in these representation spaces are called, respectively, {\bf left- and right-handed Weyl spinors}, and the induced representation of the Lorentz group is called the {\bf spinor representation}.
+In addition to these two representations there are two dual representations, see Sec.~\ref{sec:dual_reps}, with $\rho(M)=M^{-1T}$ acting on vectors $\psi^A$ in $V^*$, and $\rho(M)=M^{*-1T}$ on vectors  $\bar\psi^{\dot{A}}$ in $\dot{V}^*$, that are equivalent to i) and ii), respectively. 
 
 The indices here follow the same summation rules as four-vectors. Indices can be lowered and raised with:
 \begin{eqnarray}
 \epsilon_{AB} &=& \epsilon_{\dot A \dot B} = \begin{pmatrix} 0 & -1\\ 1 & 0\end{pmatrix}, \label{eq:epsilonAB} \\
-\epsilon^{AB} &=& \epsilon^{\dot{A}}{}^{\dot{B}} = \begin{pmatrix} 0 & 1\\ -1 & 0\end{pmatrix}.\label{eq:epsilonAdotBdot}
+\epsilon^{AB} &=& \epsilon^{\dot{A}}{}^{\dot{B}} = \begin{pmatrix} 0 & 1\\ -1 & 0\end{pmatrix},\label{eq:epsilonAdotBdot}
 \end{eqnarray}
-The dots on the indices for the complex conjugate representation are there to help us remember which representation we are using and does not carry any additional importance. 
+which work as maps between the dual spaces.
+The dots on the indices for the complex conjugate representation are there to help us remember which representation we are using and does not carry any additional importance, other than being a different index. 
+
 Since (\ref{eq:MofLambda}) gives $M$ in terms of the Pauli matrices, their index structure must be $\bar{\sigma^\mu}^{\dot{A}A}$ and $\sigma^\mu_{A\dot{A}}$. 
 For a consistent index notation, the relationship between the vectors $\psi$ and $\bar{\psi}$ can be expressed with:
-\[\bar{\sigma^0}^{\dot{A}A}(\psi_A)^* = \bar{\psi}^{\dot{A}}.\]
+\[  \psi^A = \bar\psi_{\dot{A}}^*\bar{\sigma}^{0\dot{A}A}, \quad  \psi_A = {\sigma}^0_{A\dot{A}}\bar\psi^{\dot{A}*}, \quad  \bar{\psi}^{\dot{A}} = \bar{\sigma}^{0\dot{A}A}\psi_A^*, \quad \text{and}\quad  \bar{\psi}_{\dot{A}} =\psi^{A*} \sigma^0_{A\dot{A}} .\]
 This may be seen as a bit of an overkill in indices as $\bar{\sigma^0}^{\dot{A}A} = \delta^{\dot{A}A}$, and we will in the following often omit the matrix and simply write $(\psi_A)^* = \bar{\psi}^{\dot{A}}$.
 Note that from the above the following relationships hold for the hermitian conjugate:
-\[(\psi_A)^\dagger = \bar{\psi}_{\dot{A}}\]
-\[(\bar{\psi}_{\dot{A}})^\dagger = \psi_A.\]
+\begin{eqnarray*}
+(\psi_A)^\dagger &=& \bar{\psi}_{\dot{A}} \\
+(\bar{\psi}_{\dot{A}})^\dagger &=& \psi_A.
+\end{eqnarray*}
 
 We further define contractions of Weyl spinors that are invariant under $SL(2,\mathbb{C})$ transformations -- just as  contractions of four-vectors are invariant under Lorentz transformations -- as follows:
-\df{The contraction of two Weyl spinors is given by $\psi\chi \equiv \psi ^A \chi_A$ and $\bar{\psi}\bar{\chi} \equiv \bar{\psi}_{\dot{A}}\bar{\chi}^{\dot{A}}$.}
+\df{The contraction of two Weyl spinors $\psi$ and $\chi$ is given by $\psi\chi \equiv \psi ^A \chi_A$ and $\bar{\psi}\bar{\chi} \equiv \bar{\psi}_{\dot{A}}\bar{\chi}^{\dot{A}}$.}
 With this in hand we see that 
 \[\psi^2 \equiv \psi \psi = \psi^A\psi_A = \epsilon^{AB}\psi_B\psi_A = \epsilon^{12}\psi_2\psi_1 + \epsilon^{21}\psi_1\psi_2 = \psi_2\psi_1 - \psi_1\psi_2.\]
 This quantity is zero if the Weyl spinors commute. In order to avoid this we make the following assumption which is consistent with how we treat fermions as anti-commuting operators:
@@ -366,15 +372,6 @@ This quantity is zero if the Weyl spinors commute. In order to avoid this we mak
  $\{\psi_A ,\psi_B\} = \{\bar{\psi}_{\dot{A}}, \bar{\psi}_{\dot{B}}\} = \{\psi_A, \bar{\psi}_{\dot{B}}\} = \{\bar{\psi}_{\dot{A}}, \psi_B\} = 0$.}
 This means that the contraction evaluates as
 \[\psi^2 \equiv \psi \psi = \psi^A\psi_A = -2 \psi_1\psi_2.\]
-
-Because of (\ref{eq:MofLambda}) we can now find how the Lorentz part of the Poincare group acts on the Weyl spinors, and can use this to show that they fulfil the requirements of the spin-$\frac{1}{2}$ representation of the Poincaré group. In the rest frame of a particle, this is relatively straight forward since the spin operators $S_i$ in (\ref{eq:PL_restframe}) in the fundamental representation of $SL(2,\mathbb{C})$ can be written in terms of the Pauli matrices $\sigma_i$ as $S_i=\frac{1}{2}\sigma_i$, and we already know that $\sigma^2=3I$, so $S^2=\frac{3}{4}I$, which corresponds to $s=\frac{1}{2}$.
-
-The Weyl spinors can in turn be used in a four-dimensional representation of the Poincaré group, stacking two Weyl spinors into a four-component Dirac spinor $\psi_a$:
-\begin{equation*}
-\psi_a = \begin{pmatrix}\psi_A\\ \bar{\chi}^{\dot{A}}\end{pmatrix}.
-\end{equation*}
-Here, we have in general $(\psi_A)^* \neq \bar{\chi}^{\dot{A}}$. In order to describe a Dirac fermion, which has both particle and antiparticle states, with this Dirac spinor we need two distinct Weyl spinors with different handednesses. For Majorana fermions that are their own antiparticles we have:
-\[\psi_a = \begin{pmatrix} \psi_A \\ \bar{\psi}^{\dot{A}}\end{pmatrix}.\]
 
 
 %%%
@@ -386,15 +383,65 @@ For Weyl spinors $\psi$, $\eta$, and $\phi$ we can prove the following relations
 \eta\psi 				&=& \psi\eta,  \label{eq:Weylspinor_etapsi}  \\
 \bar\eta\bar\psi 			&=& \bar\psi\bar\eta,  \\
 (\eta\psi)^\dagger 		&=& \bar\psi\bar\eta,  \\
-(\eta\psi)(\eta\phi) 		&=& \frac{1}{2}(\eta\eta)(\psi\phi) \label{eq:Weylspinor_etapsietapsi}  \\
+(\eta\psi)(\eta\phi) 		&=& \frac{1}{2}(\eta\eta)(\psi\phi), \label{eq:Weylspinor_etapsietapsi}  \\
 \eta\sigma^\mu\bar\psi 	&=& - \bar\psi\bar\sigma^\mu\eta,  \label{eq:Weylspinor_etasigmapsi} \\
 (\sigma^\mu \bar{\eta})_A(\eta\sigma^\nu \bar{\eta})&=&\frac{1}{2}g^{\mu\nu}\eta_A(\bar{\eta}\bar{\eta}), \label{eq:Weylspinor_sigmaetaetasigmaeta}\\
 (\eta\sigma^\mu \bar{\eta})(\eta\sigma^\nu \bar{\eta})&=&\frac{1}{2}g^{\mu\nu}(\eta\eta)(\bar{\eta}\bar{\eta}),   \label{eq:Weylspinor_etasigmamuetaetasigmanueta} \\
 (\eta\sigma^\mu\partial_\mu \bar\psi )(\eta\psi) &=& -\frac{1}{2}(\psi\sigma^\mu\partial_\mu \bar\psi)(\eta\eta),\\
-(\partial_\mu\psi\sigma^\mu \bar\eta)(\bar\eta\bar\psi) &=& -\frac{1}{2}(\partial_\mu\psi\sigma^\mu \bar\psi)(\bar\eta\bar\eta). \label{eq:Weylspinor_last} \\
-\eta\sigma^{\mu\nu}\psi	&=&-\psi\sigma^{\mu\nu}\eta   \label{eq:Weylspinor_etasigmamunupsi} 
+(\partial_\mu\psi\sigma^\mu \bar\eta)(\bar\eta\bar\psi) &=& -\frac{1}{2}(\partial_\mu\psi\sigma^\mu \bar\psi)(\bar\eta\bar\eta), \label{eq:Weylspinor_last} \\
+\eta\sigma^{\mu\nu}\psi	&=&-\psi\sigma^{\mu\nu}\eta.   \label{eq:Weylspinor_etasigmamunupsi} 
 \end{eqnarray}
 Here $\sigma^{\mu\nu} = \frac{i}{4}(\sigma^\mu \bar{\sigma}^\nu - \sigma^\nu \bar{\sigma}^\mu)$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dirac spinors}
+\label{sec:gammamatrices}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+We do not here find explicit expression for the representations in terms of matrices, but will rather in the following use the properties of Weyl spinors to describe physics models. The Weyl spinors can in turn be used in a four-dimensional representation of the Poincaré group for spin-$\half$ fermions, stacking two Weyl different spinors, one from the self-representation $\psi_A$, and one from the complex conjugate,  $\bar{\chi}^{\dot{A}}$, into a four-component {\bf Dirac spinor} $\psi_a$, 
+\begin{equation*}
+\psi_a = \begin{pmatrix}\phi_A\\ \bar{\chi}^{\dot{A}}\end{pmatrix},
+\end{equation*}
+making a new vector space that is a direct sum of the two vector spaces $W=V\oplus \dot{V}^*$.
+Here, we have in general $(\phi_A)^* \neq \bar{\chi}^{\dot{A}}$. In order to describe a Dirac fermion, which has both particle and antiparticle states, using this Dirac spinor we need two distinct Weyl spinors with different handedness. For Majorana fermions that are their own antiparticles we can instead use the simpler:
+\[\psi_a = \begin{pmatrix} \psi_A \\ \bar{\psi}^{\dot{A}}\end{pmatrix}.\]
+The representation of $SL(2,\mathbb{C})$ on $W$ is
+\[ \rho(M)=\left[\begin{matrix} M & 0 \\ 0 & M^{*-1T} \end{matrix}\right]. \]
+% Discuss parity here? See see Wiedemann 1.4
+
+When we deal with four-component spinors we have a use for $\gamma$-matrices. These are defined as objects that fulfil a type of {\bf Clifford algebra} given by\footnote{Be aware that the expression on the right hand side should be read as consisting of a rank-2 tensor {\it with each element} being a $4\times4$ identity matrix.}
+\begin{equation}
+\{\gamma_\mu,\gamma_\nu\}=2g_{\mu\nu}.
+\end{equation}
+There exists different representations of this algebra, just as for the Lie algebras. In these notes we will use what is called the {\bf Weyl-representation} where the $\gamma$-matrices are $4\times 4$ matrices given in terms of the Pauli matrices as
+\begin{equation}
+\gamma^\mu=\left(\begin{matrix} 0 & \sigma^\mu \\ \bar\sigma^\mu & 0 \end{matrix}\right).
+\end{equation}
+The $\gamma$-matrices can also be used to form a `fifth'  $\gamma$-matrix
+\[ \gamma^5\equiv i\gamma^0\gamma^1\gamma^2\gamma^3=\left(\begin{matrix} -\sigma^0 & 0 \\ 0 & \sigma^0 \end{matrix}\right). \]
+%Using these expressions one can find the relationships between the four-component and two-component (Weyl spinor) notation for the supercharges.
+
+The equation of motion for spin-$\half$ particles with mass $m$ in relativistic quantum mechanics is the {\bf Dirac equation}
+\begin{equation}
+(i\slashed{\partial} -m)\psi=0,
+\end{equation}
+where the `slash' notation signifies contraction with a $\gamma$-matrix, $\slashed{\partial}=\gamma\mu\partial_\mu$, and where $\psi$ is a four component spinor constructed as above. Using Weyl spinors and the Weyl-representation of the $\gamma$-matrices this can be written as the coupled differential equations
+\begin{eqnarray*}
+i\sigma^\mu\partial_\mu\bar\chi -m\phi &=& 0,\\
+i\bar\sigma^\mu\partial_\mu\phi -m\bar\psi &=& 0.
+\end{eqnarray*}
+In the massless limit or the extreme relativistic limit, $m\to 0$, these equations decouple into one separate equation per Weyl-spinor and become the {\bf Weyl-equations}
+\begin{eqnarray*}
+(i\partial_t - \boldsymbol\sigma\cdot \mathbf P) \bar\chi &=& 0,\\
+(i\partial_t + \boldsymbol\sigma\cdot \mathbf P)\phi  &=& 0.
+\end{eqnarray*}
+
+These equations have plane wave solutions $\phi \sim e^{-ipx}$ and $\bar\chi\sim e^{-ipx}$, which are the helicity eigenstates for the massless particles discussed in Sec.~\ref{sec:Poincare_irreps}, case ii), with eigenvalues $\pm\half$. To see this, notice that $i\partial_t\phi=E\phi=|\mathbf p|\phi$, since $m=0$, giving
+\[  |\mathbf p|\phi + \boldsymbol\sigma\cdot \mathbf P\phi = 0 \quad\text{or}\quad \half\frac{\boldsymbol\sigma\cdot \mathbf P}{|\mathbf p|}\phi =- \half \phi, \]
+and similarly for $\bar\chi$
+\[ \half\frac{\boldsymbol\sigma\cdot \mathbf P}{|\mathbf p|}\bar\chi = \half \bar\chi. \]
 
 
 
@@ -409,10 +456,10 @@ The result is that there can be no real interaction between the external and int
 
 Not to be defeated by a simple mathematical proof, in 1975 Haag, \L opusza\'{n}ski and Sohnius (HLS)~\cite{Haag:1974qh} showed that there is a way around Coleman and Mandula's no-go theorem, if one introduces the concept of $\mathbb{Z}_2$ {\bf graded Lie superalgebras}.\footnote{The definition of graded Lie algebras can be extended to $\mathbb{Z}_n$ by a direct sum over $n$ vector spaces $L_i$, $L = \oplus_{i=0}^{n-1} L_i$, such that $x_i\circ x_j$ $\in$ $L_{i+j\mod{n}}$, with the same requirements for supersymmetrization and Jacobi identity as for the $\mathbb{Z}_2$ graded algebra.}
 
-\df{A {\bf graded Lie superalgebra} is a vector space $L$ that is a direct sum of two vector spaces $L_0$ and $L_1$, $L = L_0 \oplus L_1$, with a binary operation $\circ: L\times L \to L$ such that for $\forall x_i \in L_i$ 
+\df{A {\bf graded Lie superalgebra} is a vector space $L$ that is a direct sum of two vector spaces $L_0$ and $L_1$, $L = L_0 \oplus L_1$, with a binary operation $\circ: L\times L \to L$ such that for all $x_i \in L_i$ 
 \begin{enumerate}[i)]
 \item $x_i\circ x_j$ $\in$ $L_{i+j\mod{2}}$ (grading)\footnote{For $x_0 \in  L_0$ and $x_1\in  L_1$, this means that $x_0 \circ x_0 \in  L_0$, $x_1 \circ x_1 \in  L_0$ and $x_0 \circ x_1 \in  L_1$.}
-\item $x_i\circ x_j = -(-1)^{ij}x_j\circ x_i$ (supersymmetrization)
+\item $x_i\circ x_j = -(-1)^{ij}x_j\circ x_i$ (supersymmetrisation)
 \item $x_i \circ(x_j \circ x_k)(-1)^{ik} + x_j\circ (x_k \circ x_i)(-1)^{ji} + x_k\circ (x_i \circ x_j)(-1)^{kj} = 0$ \\(generalised Jacobi identity)
 \end{enumerate}
 }
@@ -531,24 +578,6 @@ for $j=0,\frac{1}{2},1,\frac{3}{2},\ldots$, where the proof follows that for the
 labelling also the states of the irrep.\footnote{Note that, as we shall see,  unlike for spin  this does not exhaust the number of states for the irrep.}
 So, in summary, the irreducible representations of the superalgebra can be labeled by $(m, j)$, and any given set of $m$ and $j$ will give us $2j+1$ states with different $j_3$.\footnote{Make sure you remember that that $j$ is {\it not} the spin, but a generalisation of spin.}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%
-\section{Short interlude on $\gamma$-matrices}
-\label{sec:gammamatrices}
-%%%%%%%%%%%%%%%%%%%%%%%
-When we deal with four-component spinors we have a use for $\gamma$-matrices. These are defined as objects that fulfil a type of {\bf Clifford algebra} given by\footnote{Be aware that the expression on the right hand side should be read as consisting of a rank-2 tensor {\it with each element} being a $4\times4$ identity matrix.}
-\begin{equation}
-\{\gamma_\mu,\gamma_\nu\}=2g_{\mu\nu}.
-\end{equation}
-
-There exists different representations of this algebra, just as for the Lie algebras. In these notes we will use what is called the {\bf Weyl-representation} where the $\gamma$-matrices are given in terms of the Pauli matrices as
-\begin{equation}
-\gamma^\mu=\left(\begin{matrix} 0 & \sigma^\mu \\ \bar\sigma^\mu & 0 \end{matrix}\right).
-\end{equation}
-The $\gamma$-matrices can be used to form a `fifth'  $\gamma$-matrix
-\[ \gamma^5\equiv i\gamma^0\gamma^1\gamma^2\gamma^3=\left(\begin{matrix} -\sigma^0 & 0 \\ 0 & \sigma^0 \end{matrix}\right). \]
-Using these expressions one can find the relationships between the four-component and two-component (Weyl spinor) notation for the supercharges.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -792,6 +821,22 @@ Show that
 \end{Exercise}
 
 
+% This needs an earlier exercise where you derive the general representation of rotations
+%\begin{Exercise}[]
+%Find the generators of rotation $J_i$ in the Lorentz group expressed as members of $SL(2,\mathbb C)$.
+%\end{Exercise}
+%\begin{Answer} 
+%In the fundamental representation of the Lorentz group we have
+%\[ iJ_1 = -\left[\begin{matrix} 0 & 0  & 0 &  0\\  0 & 0 & 0 & 0 \\  0 & 0 & 0 & -1 \\ 0 & 0 & 1 & 0 \end{matrix}\right], \quad 
+%iJ_2 = -\left[\begin{matrix} 0 & 0  & 0 &  0\\  0 & 0 & 0 & 1 \\  0 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \end{matrix}\right], \quad
+%iJ_3 = -\left[\begin{matrix} 0 & 0  & 0 &  0\\  0 & 0 & -1 & 0 \\  0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{matrix}\right].  \]
+%The powers of these are
+%\[ (iJ_1)^2 = \left[\begin{matrix} 0 & 0  & 0 &  0\\  0 & 0 & 0 & 0 \\  0 & 0 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{matrix}\right], \quad 
+%(iJ_1)^3 = \left[\begin{matrix} 0 & 0  & 0 &  0\\  0 & 0 & 0 & 0 \\  0 & 0 & 0 & -1 \\ 0 & 0 & 1 & 0 \end{matrix}\right]=-iJ_1\]
+%Thus $\exp{iaJ_1)=\cos(aJ_1)+i\sin(aJ_1)=I+(\cos(a)-1)+i\sin(a)$
+%\end{Answer}
+
+
 \begin{Exercise}[]
 Starting from the four-component form of the super-Poincaré algebra, derive the two-component (Weyl spinor) form.
 \end{Exercise}
@@ -812,7 +857,7 @@ Show that $SO^+(1,3)$ and $SL(2, \mathbb{C})$ are indeed homomorphic, {\it i.e.}
 \end{Exercise}
 
 \begin{Exercise}[]
-Show that the generalization of the spin operator, $J_k\equiv S_k + \frac{1}{8m}\bar{Q}\gamma_\mu \gamma^5 Q$, fulfils the algebra
+Show that the generalisation of the spin operator, $J_k\equiv S_k + \frac{1}{8m}\bar{Q}\gamma_\mu \gamma^5 Q$, fulfils the algebra
 \[[J_i, J_j] = i\epsilon_{ijk}J_k.\]
 \end{Exercise}
 
