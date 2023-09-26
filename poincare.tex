@@ -452,7 +452,7 @@ and similarly for $\bar\chi$
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The no-go theorem and graded Lie algebras}
+\section{The no-go theorem and graded Lie superalgebras}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 The Poincaré group contains the complete set of transformations for the symmetries of special relativity (invariance under rotations, translations and boosts), and we have seen that this implies certain properties for the particles, or rather fields, that want to live in representations of the Poincaré group. At the same time we know that the quantum fields have (internal) gauge symmetries. It would then be tempting so ask if these are somehow related and can be described in a larger symmetry.
 
@@ -526,9 +526,14 @@ As a result, conformal symmetry can not be a symmetry of the Standard Model, how
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Casimir operators of the super-Poincaré algebra}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Irreducible representations of the super-Poincaré group}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We now want to find the (irreducible) representations, irreps, of the super-Poincaré algebra and compare it to the known representations of the Poincaré algebra so see what sort of particles/states this leads to.
+
+%%%
+\subsection{The Casimir operators of the superalgebra}
+%%%
 It is easy to see that $P^2$ is also a Casimir operator of the superalgebra. From Eq.~(\ref{eq:QP}) $P_\mu$ commutes with the $Q$s, so in turn $P^2$ must commute.\footnote{Although the fact that Eq.~(\ref{eq:QP}) holds crucially depends on $Q_a$ being four-dimensional. $P_\mu$ and $Q_a$ would not commute if there had been five $Q$s.} 
 The algebra, just as the Poincaré algebra, then also has irreducible representations labeled by the eigenvalue $m^2\in\mathbb R$ and an infinite number of states $|m,p_\mu\rangle$ that are eigenstates of the momentum operator $P_\mu$.
 However, $W^2$ is not a Casimir because of the following result:\footnote{Which, by the way, is really hard work!}
@@ -554,7 +559,7 @@ We can show that $C^2$ then indeed commutes with all the generators in the algeb
 \end{eqnarray*}
 Thus $C^2$ is a Casimir operator for the superalgebra.
 
-To find the possible eigenvalues of $C^2$, let us again assume without loss of generality that we are in the rest frame (RF).\footnote{We can again carry out a similar argument in a different frame for massless particles.} For $C^2$ we have to do a bit of calculation:
+To find the possible eigenvalues of $C^2$, let us again assume that we are in the rest frame (RF) of the particle.\footnote{We can again carry out a similar argument in a different frame for massless particles as we saw for the Poincaré algebra.} For $C^2$ we have to do a bit of calculation:
 \begin{eqnarray*}
 C^2 &=& 2B_\mu P_\nu B^\mu P^\nu - 2B_\mu P_\nu B^\nu P^\mu\\
 &\stackrel{RF}{=}& 2m^2 B_\mu B^\mu - 2m^2 B_0^2\\
@@ -565,41 +570,40 @@ where we used that $[B_\mu,P_\nu]=0$, which we get from  (\ref{eq:PW_commutator}
 B_k = W_k + \frac{1}{4}X_k = mS_k + \frac{1}{8}\bar{Q}\gamma_k \gamma^5 Q \equiv m J_k.
 \end{equation}
 
-The operator we just defined, $J_k \equiv \frac{1}{m} B_k$, is an extension of the ordinary spin operator which we have here renamed to $S_k$ due to a shortage of letters.
-Just like the spin operator $J_k$ can be shown to fulfil the  $\mathfrak{su}(2)$ algebra:
-\[[J_i, J_j] = i\epsilon_{ijk}Jk,\]
-and, additionally, it commutes with the $Q$s\footnote{Again the proof is algebraically extensive, and  the interested reader is suggested to pursue \cite{IntrSUSY2010}.}
+The operator we just defined, $J_k \equiv \frac{1}{m} B_k$, is an extension of the ordinary spin operator which we have here renamed to $S_k$ due to a shortage of letters. This gives us, still in the rest frame,
+\[C^2 = 2m^4 J_k J^k= -2m^4 \mathbf J^2,\]
+so $J^2$ also commutes with all the elements in the algebra since $C^2$ is a Casimir. We can also show that the $J_k$ commute with the $Q$s\footnote{Again the proof is algebraically extensive, and  the interested reader is suggested to pursue \cite{IntrSUSY2010}.}
 \begin{equation}
-[J_k,Q_a]=0.
+[J_k,Q_a]=0,
 \label{eq:JQ}
 \end{equation} 
+and just like the spin operator $J_k$ can be shown to fulfil the  $\mathfrak{su}(2)$ algebra:
+\[[J_i, J_j] = i\epsilon_{ijk}J^k.\]
 
-This gives us, still in the rest frame,
-\[C^2 = 2m^4 J_k J^k= -2m^4 \mathbf J^2,\]
-so that the eigenvalue equation for the second Casimir is:
+
+We then know that the eigenvalue equation for the second Casimir is:
 \[C^2|m, j \rangle = -m^4 j(j+1)|m, j\rangle,\]
 for $j=0,\frac{1}{2},1,\frac{3}{2},\ldots$. In addition, for each irrep with a value of $j$ there are $2j+1$ distinct {\it states} with labels $j_3 = -j, -j+1,\ldots,j-1,j$, so that we may  further  write $|m, j, p_\mu, j_3\rangle$,
-labelling also the states of the irrep.
-
-The above follows from the identical argument we made for the Poincaré algebra, which in turn relies just on the properties of the $\mathfrak{su}(2)$ algebra. So, in summary, the irreducible representations of the superalgebra can be labeled by $(m, j)$, and any given set of $m$ and $j$ will give us $2j+1$ states with different $j_3$, as well as an infinite number of momentum eigenstates.\footnote{Make sure you remember that $j$ is {\it not} the spin of the particles, but a generalisation of spin.}
-However, as we shall see, unlike for spin, because we have introduced another generator $Q$  this does not exhaust the number of states for the representation, which are different eigenstates of the original spin operator $S_3$.
+labelling also the states of the irrep. The above follows from the identical argument we made for the Poincaré algebra, which in turn relies just on the properties of the $\mathfrak{su}(2)$ algebra. 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%
-\section{Irreducible representations of the super-Poincaré group}
+%%%
+\subsection{The states of the irreps of the super-Poincaré group}
 \label{sec:superalgebrarep}
-%%%%%%%%%%%%%%%%%%%%%%%
-What sort of particles transform under the super-Poincaré group? Or, in other words, what are the properties of the irreducible representations of the group? 
-In the following we will construct all the states for a given representation labeled by the set $(m,j)$. To do this it is very useful to write the generators $Q$ in terms of two-component Weyl spinors instead of four-component Dirac spinors, making explicit use of their Majorana nature, as we did in Section~\ref{sec:weyl}. We note that from Eq.~(\ref{eq:JQ}) above 
+%%%
+What we have learned above is that the irreducible representations of the superalgebra can be labeled by $(m, j)$, and any given set of $m$ and $j$ will give us $2j+1$ eigenstates of $J_3$ with different eigenvalues $j_3$, as well as an infinite number of momentum eigenstates.\footnote{Make sure you remember that $j$ here is {\it not} the spin of the particles, but a generalisation of spin.}
+However, unlike for spin, because we have introduced another generator $Q$ this does not exhaust the number of states for the representation. We can have simultaneous eigenstates of $P^2$, $C^2$, $P_\mu$, $J^2$, and $J_3$, but also of the original spin operator $S_3$ which we can see commutes with all the other operators in this list.\footnote{We know this for $P_\mu$ and $M_{\mu\nu}$ already, and commutation with $J_k$ follows from (\ref{eq:JQ}).}
+
+To find all the states it is useful to write the generators $Q$ in terms of two-component Weyl spinors instead of four-component Dirac spinors, making explicit use of their Majorana nature, as we did in Section~\ref{sec:weyl}. We note that from Eq.~(\ref{eq:JQ}) above 
 \[[J_k, Q_A] = [J_k, \bar{Q}_{\dot{B}}] = 0.\]
 
-We begin by claiming that for any state with a given value of $j_3$ there must then exist a state $|\Omega\rangle$ -- possibly the same state -- that has the same value of $j_3$ and for which
+We begin by claiming that for any eigenstate of $J_3$ with eigenvalue $j_3$ there must then exist a state $|\Omega\rangle$ -- possibly the same state -- that has the same eigenvalue $j_3$ and for which
 \begin{equation}
 Q_A|\Omega\rangle = 0.\label{eq:Cliffordvac}
 \end{equation}
 This state is called the {\bf Clifford vacuum}.\footnote{It is called the Clifford vacuum because the operators satisfy a Clifford algebra $\{Q_A, \bar{Q}_{\dot{B}}\} = 2m\sigma^0_{A\dot{B}}$. Do not confuse this with a vacuum state, it is only a name.} 
 
-To show this, start with $|\beta\rangle$, a state with $j_3$. Then the construction
+To show this, start with $|\beta\rangle$, an eigenstate of $J_3$ with eigenvalue $j_3$. Then the construction
 \[ |\Omega\rangle=Q_1Q_2|\beta\rangle,\]
 has these properties. Using (\ref{eq:QQweyl}) we first we show that (\ref{eq:Cliffordvac}) holds:
 \[Q_1Q_1Q_2|\beta\rangle = -Q_1Q_1Q_2|\beta \rangle = 0,\]
@@ -617,50 +621,54 @@ J_k = S_k - \frac{1}{4m}\bar{Q}_{\dot{B}}\bar{\sigma}_k^{\dot{B}A}Q_A,
 \label{eq:Jk_twocomp}
 \end{equation}
 in order to find the spin for this state. First we can see that
-\[S_k|\Omega\rangle = J_k|\Omega\rangle =j_k|\Omega\rangle,\]
+\[S_3|\Omega\rangle = J_3|\Omega\rangle =j_3|\Omega\rangle,\]
 meaning that $s_3 = j_3$ is the eigenvalue of $S_3$ for the Clifford vacuum $|\Omega\rangle$. Further, since 
 \[S^2|\Omega\rangle = J^2|\Omega\rangle =j(j+1)|\Omega\rangle,\]
 the eigenvalue of $S^2$ is $s(s+1)=j(j+1)$ for the Clifford vacuum.
 
-We can construct three more states from the Clifford vacuum:\footnote{All other possible combinations of $Q$s and $|\Omega\rangle$ give either one of the other four states, or the zero state which is trivial and of no interest.}
+We can construct three more states from the Clifford vacuum using the $Q$s:\footnote{All other possible combinations of $Q$s and $|\Omega\rangle$ give either one of the other four states, or zero.}
 \[\bar{Q}^{\dot{1}}|\Omega\rangle,\quad\bar{Q}^{\dot{2}}|\Omega\rangle,\quad\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle.\]
-This means that there are four possible states that can be constructed out of any state with the quantum numbers $m$, $j$, $j_3$. Taking a look at:
+This means that there are four possible states that can be constructed out of any state with the labels $m$, $j$, $j_3$. Taking a look at:
 \[J_k \bar{Q}^{\dot{A}}|\Omega\rangle = \bar{Q}^{\dot{A}}J_k |\Omega\rangle = j_k\bar{Q}^{\dot{A}}|\Omega\rangle,\]
 this means that all these states have the same $j_3$ (and $j$) quantum numbers.\footnote{The same can easily be shown for $\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle$.} 
 We can now find their eigenvalues for $S_3$. From the superalgebra (\ref{eq:QMweyl}) we have:
-\[[M^{ij}, \bar{Q}^{\dot{A}}] = -(\sigma^{ij})^{\dot{A}}{}_{\dot{B}}\bar{Q}^{\dot{B}},\]
+\[[M^{ij}, \bar{Q}^{\dot{A}}] = -(\sigma^{ij})^{\dot{A}}{}_{\dot{B}}\bar{Q}^{\dot{B}},\quad\text{or}\quad [S_k, \bar{Q}^{\dot{A}}] = -\half\epsilon_{kij}(\sigma^{ij})^{\dot{A}}{}_{\dot{B}}\bar{Q}^{\dot{B}}, \]
 so that:
-\[S_3\bar{Q}^{\dot{A}}|\Omega\rangle = \bar{Q}^{\dot{A}}S_3|\Omega\rangle - \frac{1}{2}(\bar{\sigma}_3\sigma^0)^{\dot{A}}{}_{\dot{B}}\bar{Q}^{\dot{B}}|\Omega\rangle = \left(j_3\mp \frac{1}{2}\right) \bar{Q}^{\dot{A}}|\Omega\rangle,\]
+\begin{eqnarray*}
+S_3\bar{Q}^{\dot{A}}|\Omega\rangle &=&\bar{Q}^{\dot{A}}S_3|\Omega\rangle +\frac{i}{8}(\epsilon_{3ij}[\sigma^i,\sigma^j])^{\dot{A}}{}_{\dot{B}}\bar{Q}^{\dot{B}} |\Omega\rangle \\
+&=& \bar{Q}^{\dot{A}}S_3|\Omega\rangle - \frac{1}{2}(\bar{\sigma}_3\sigma^0)^{\dot{A}}{}_{\dot{B}}\bar{Q}^{\dot{B}}|\Omega\rangle \\
+&=& \left(j_3\mp \frac{1}{2}\right) \bar{Q}^{\dot{A}}|\Omega\rangle,
+\end{eqnarray*}
 where $-$ is for $\dot{A}=\dot{1}$ and $+$ is for $\dot{A}=\dot{2}$. We can similarly show that
 \[S_3\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle = j_3\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle.\]
 This means that for en irrep with labels $m$ and $j$, there are $2j+1$ different values of $j_3$, each giving two states with $s_3 = j_3$, and two with $s_3 = j_3\pm\frac{1}{2}$, meaning two bosonic and two fermionic states with the same mass $m$, and in total $4(2j+1)$ states per irrep. 
 
 We should be careful to note here that we have only found the spin-components $s_3$ of these states, not their spins $s$. For the state $\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle$, $s$ is the same as for the Clifford vacuum, {\it i.e.}\ $s=j$. This is because in the application of $S_k$ from (\ref{eq:Jk_twocomp}) to the state the terms with supercharges will all be zero since at least one of the  $\bar{Q}^{\dot{A}}$ will repeat in each term, thus the eigenvalues of $S^2$ are the same as the eigenvalues of $J^2$. For the other states we may need to combine states into definite spin states using Clebsch-Gordan coefficients.
 
-The above explains the much repeated statement that any supersymmetry theory has an equal number of bosons and fermions, which, incidentally, is not true. What is true, is that there must be an equal number of bosonic and fermionic states.
-
+The above explains the much repeated statement that any supersymmetry theory has an equal number of bosons and fermions, which, incidentally, is not true. What is true, is that there must be an equal number of bosonic and fermionic states in all representations.
 \theo{For any representation of the superalgebra where $P_\mu$ is a one-to-one operator there is an equal number of boson and fermion states.}
 To show this, divide the representation into two sets of states, one with bosons and one with fermions. Let $\{Q_A, \bar{Q}_{\dot{B}}\}$ act on the members of the set of bosons. $\bar{Q}_{\dot{B}}$ transforms bosons to fermions and $Q_A$ does the reverse mapping. If $P_\mu$ is one-to-one, then so is $\{Q_A, \bar{Q}_{\dot{B}}\} = 2\sigma^\mu_{A\dot{B}}P_\mu$. Thus there must be an equal number in both sets.
 
 %%%
 \subsection{Examples of irreducible representations}
 \label{sec:SP_irreps}
-Finally, let us briefly look at two examples of irreducible representations for a fixed non-zero $m$.
+Finally, let us briefly look at two examples of irreducible representations for a fixed positive value of $m$.
 %%%
 
 \subsubsection{$j=0$}
 For $j=0$, we must have $j_3=0$ and as a result the Clifford vacuum $|\Omega\rangle$ has $s=0$, $s_3=0$, and is a bosonic state. We can then create two states $\bar{Q}^{\dot{A}}|\Omega\rangle$ with $s_3 = \pm\frac{1}{2}$ and $s = \frac{1}{2}$,  and one state $\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega\rangle$ with $s_3 = 0$ and $s = 0$. Note that we should really check the total spin $s$ of each of the fermion states, which would involve some algebra. In total there are two scalar states and two spin-$\frac{1}{2}$ fermion states. We will later represent this set of states by the so-called {\bf scalar superfield}. 
 
-We should use be a little careful about using the term particle about these states since what we have found are in fact Weyl spinor states. As we saw in Sec.~\ref{sec:weyl} a Dirac fermion can then only be described by a $j=0$ representation together with a different complex conjugate representation, thus consisting of four states.
-%, or four degrees of freedom (d.o.f.). In field theory, when the fermion is on-shell, two of these states are eliminated by the Dirac equation, thus we get the expected two d.o.f.\ for a  spin-$\frac{1}{2}$ fermion. The situation for the scalars is the same, from the total four scalar d.o.f., two are eliminated by the equations of motion, resulting in two scalar particles. 
-The complex conjugate representation of the first representation together with the self-representation of the second then form the anti-particle of the fermion, and provide an additional two scalars. So the particle count from the two irreducible representations is a fermion--anti-fermion pair, and four scalars. Note that all of the resulting particles have the same mass $m$.
+We should use be a little careful about using the term particle about these states since what we have found for the fermions are in fact Weyl spinor states. From what we saw in Sec.~\ref{sec:weyl} a Dirac fermion can then only be described by a $j=0$ representation together with a different $j=0$ complex conjugate representation, thus consisting of four states.
+The complex conjugate representation of the first representation together with the self-representation of the second then form the anti-particle of the fermion, and provide an additional two scalars. So the total particle count from the two irreducible representations is a fermion--anti-fermion pair, and four scalars. Note that all of the resulting particles have the same mass $m$.
 
 For a Majorana fermion the situation is simpler, since we only need one self-representation and its complex conjugate representation. 
 
 \subsubsection{$j=\frac{1}{2}$}
 For $j=\frac{1}{2}$ we have two Clifford vacua $|\Omega\rangle $ with $j_3=\pm\frac{1}{2}$, and with $s=\frac{1}{2}$ and $s_3 = \pm\frac{1}{2}$, thus they are fermionic states. For the moment we label them as  $|\Omega; \frac{1}{2}\rangle$ and $|\Omega; -\frac{1}{2}\rangle$. From each of these we can construct two further fermion states $\bar{Q}^{\dot{1}}\bar{Q}^{\dot{2}}|\Omega;\pm \frac{1}{2}\rangle$ where we know $s=\frac{1}{2}$ and $s_3 = \mp\frac{1}{2}$.  Together these four states can form two fermions with $s = \frac{1}{2}$ and $s_3=\pm\frac{1}{2}$.
 
-In addition to this we have the two states $\bar{Q}^{\dot{1}}|\Omega;\frac{1}{2}\rangle$ and $\bar{Q}^{\dot{2}}|\Omega; -\frac{1}{2}\rangle$ with $s_3 = 0$, the state $\bar{Q}^{\dot{2}}|\Omega;\frac{1}{2}\rangle$ with $s_3 = 1$, and the state $\bar{Q}^{\dot{1}}|\Omega;-\frac{1}{2}\rangle$which has $s_3 = -1$. From these we can create three states with $s=1$, and $s_3 = 1, 0, -1$, and one state with $s=0$ and $s_3=0$, representing one massive vector particle and one scalar. We will later refer to this set of states as the {\bf vector superfield}.
+In addition to this we have the two states $\bar{Q}^{\dot{1}}|\Omega;\frac{1}{2}\rangle$ and $\bar{Q}^{\dot{2}}|\Omega; -\frac{1}{2}\rangle$ with $s_3 = 0$, the state $\bar{Q}^{\dot{2}}|\Omega;\frac{1}{2}\rangle$ with $s_3 = 1$, and the state $\bar{Q}^{\dot{1}}|\Omega;-\frac{1}{2}\rangle$which has $s_3 = -1$. From these we can create three states with $s=1$, and $s_3 = 1, 0, -1$, and one state with $s=0$ and $s_3=0$, representing one massive vector particle and one scalar.
+
+In total this representation then has one (massive) spin-1 vector with three spin-states, two spin-$\half$ fermions and one spin-0 scalar. We will later refer to this set of states as the {\bf vector superfield}.
 
 
 
