@@ -29,7 +29,7 @@ The transformation properties of four-vectors that we have learnt about can be d
 \[ \Lambda T(a) = \exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}\right)T(a)=T(\Lambda a) \exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}\right) =T(\Lambda a) \Lambda, \]
 where $\Lambda a \equiv \Lambda^\mu_{~\nu} a^\nu$ is the same Lorentz transformation of the four-vector translation parameter as the one we are accustomed to.
 
-If we now want to see how a Lorentz transformation $\Lambda$ acts for example on a scalar function $F(x)$ -- this could be a scalar quantum field -- we can write $F(x)=\exp(ix^\mu P_\mu)F(0)$. This means that the transformation is essentially captured as $x'$ in $\Lambda\exp(ix^\mu P_\mu)= \exp(ix'^\mu P_\mu)$. Now, from the above we have
+If we now want to see how a Lorentz transformation $\Lambda$ acts for example on a scalar function $F(x)$  we can write $F(x)=\exp(ix^\mu P_\mu)F(0)$. This means that the transformation is essentially captured as $x'$ in $\Lambda\exp(ix^\mu P_\mu)= \exp(ix'^\mu P_\mu)$. Now, from the above we have
 \[ \Lambda\exp(ix^\mu P_\mu)=\Lambda T(x)=T(\Lambda x) \Lambda, \]
 and since the Lorentz transformation does nothing to a scalar coordinate independent quantity such as $F(0)$, we have $x'^\mu=\Lambda^\mu_{~\nu} x^\nu$, and the scalar function transforms the way we are used to under Lorentz transformations, namely $\Lambda F(x)= F(x')$. This argument can easily be extended to vector fields $A_\mu(x)$ and higher rank tensors, for example
 \[ \Lambda A^\nu(x)= \Lambda^\mu_{~\nu} A^\nu(x'). \]
@@ -59,13 +59,13 @@ To understand what all of this means we start from the same perspective as for t
 \[g = \exp\left(ix^\mu P_\mu + i\theta^{A} Q_A + i\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}} + \frac{i}{2}\omega_{\rho\nu}M^{\rho\nu}\right),\]
 where $x^\mu$, $\theta^{A}$, $\bar{\theta}_{\dot{A}}$ and $\omega_{\rho\nu}$ constitute the parametrisation of the group, and $P_\mu$, $Q_A$, $\bar Q^{\dot{A}}$ and $M_{\rho\nu}$ are the generators. Following the same argument as above we can now parametrise the coset space $SP/L$ simply by setting $\omega_{\mu\nu} = 0$.\footnote{$SP/L$ is again {\it not} a coset group, because $L$ is not a normal subgroup of $SP$, but it still forms a vector space (the coset space) which we call superspace.} The remaining parameters of $SP/L$ are then the coordinates that span superspace. 
 
-In order for the exponential map to make sense the parameters $\theta$ need to anti-commute just like the $Q$s so that the contractions $\theta^{A} Q_A$ and $\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}}$ follow ordinary commutation rules. Otherwise the commutation properties of the exponential map would be different order by order.
+In order for the exponential map to make sense the parameters $\theta$ need to anti-commute just like the $Q$s so that the contractions $\theta^{A} Q_A$ and $\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}}$ follow ordinary commutation rules. Otherwise the commutation properties of the exponential map would be different order by order.\footnote{We might already see how this can be useful: if we consistently use $\theta^AQ_A$ and $\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}}$ instead of only $Q_A$ and $\bar{Q}^{\dot{A}}$ in Eqs.~(\ref{eq:QPweyl})--(\ref{eq:QQbarweyl}) we can actually rewrite the superalgebra as an ordinary Lie algebra, but with Grassman elements, because of these commutation properties.}
  As physicists we also want to know the dimensions of our new parameters. To do this we first look at Eq.~(\ref{eq:QQbarweyl}):
 \[\{Q_A, \bar{Q}_{\dot{B}}\} = 2\sigma^{\mu}_{A\dot{B}}P_\mu,\]
 where we know that $P_\mu$ has mass dimension $[P_\mu] = M$. This means that $[Q^2] = M$ and $[Q]=M^{1/2}$. In the exponential, all terms must have mass dimension zero to make sense. This means that $[\theta Q] = 0$, and therefore $[\theta] = M^{-1/2}$.
 
 We now want to find the effect of supersymmetry transformations (transformations by the super-Poincaré group) on the superspace coordinates, and we begin by noting that any $SP$ transformation can effectively be written in the following way without the boosts and rotations of the Lorentz group:
-\[g_0(a,\alpha) = \exp[ia^\mu P_\mu + i\alpha^AQ_A +i\bar{\alpha}^{\dot{A}}\bar{Q}_{\dot{A}}],\]
+\[g_0(a,\alpha) = \exp[ia^\mu P_\mu + i\alpha^AQ_A +i\bar{\alpha}_{\dot{A}}\bar{Q}^{\dot{A}}],\]
 effectively setting $\omega_{\rho\nu}=0$, because we can again show that\footnote{Fortunately we are not going to do this because it is messy, but it can be done using the algebra of the group and the series expansion of the exponential function. Note, however, that the proof rests on the $P$s and $Q$s forming a closed set, which we saw in the algebra Eqs.~(\ref{eq:QPweyl})--(\ref{eq:QQbarweyl}).}
 \begin{equation}
 \exp\left[\frac{i}{2}\omega_{\rho\nu}M^{\rho\nu}\right]g_0(a,\alpha) = g_0(\Lambda a,S(\Lambda)\alpha)\exp\left[\frac{i}{2}\omega_{\rho\nu}M^{\rho\nu}\right],
@@ -81,7 +81,7 @@ g_0 e^{iz^\pi K_\pi} &=& \exp(ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{
 &=& \exp(ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}} + iz^\pi K_\pi\\
 && + \frac{1}{2}[ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}}, iz^\pi K_\pi] + …)
 \end{eqnarray*}
-Now we take a closer look at the commutator:\footnote{Using that $P_\mu$ commutes with all elements in the  algebra, as well as $[\theta^A Q_A, \xi^B Q_B] = -\theta^A\xi^B\{Q_A, Q_B\} = 0$, and the same for $\bar{Q}^{\dot{B}}$.}
+Now we take a closer look at the commutator:\footnote{Using that $P_\mu$ commutes with all the other generators present, as well as $[\theta^A Q_A, \xi^B Q_B] = -\theta^A\xi^B\{Q_A, Q_B\} = 0$, and similarly for $\bar{Q}^{\dot{B}}$.}
 \begin{eqnarray*}
 [~,~]&=&-[\alpha^BQ_B,\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}}] - [\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}}, \theta^AQ_A]\\
 &=&\alpha^B\bar{\theta}_{\dot{A}}\epsilon^{\dot{A}\dot{C}}\{Q_B,\bar{Q}_{\dot{C}}\} + \bar{\alpha}_{\dot{B}}\theta^A\epsilon^{\dot{B}\dot{C}}\{\bar{Q}_{\dot{C}}, Q_A\}\\
@@ -116,18 +116,21 @@ iQ_A &=& -i(\sigma^\mu\bar{\theta})_A\partial_\mu +\partial_A,\\
 i\bar{Q}^{\dot{A}} &=& -i(\bar{\sigma}^\mu \theta)^{\dot{A}}\partial_\mu +\partial^{\dot{A}}.
 \label{eq:diffrepQbar}
 \end{eqnarray}
-
+The interested reader can now use these expressions to check the (anti-)commutation relations for the supercharges in Eqs.~(\ref{eq:QQweyl}) and (\ref{eq:QQbarweyl}).
 
 
 %%%%%%%%%%%%%%%
 \section{Superspace calculus}
-\label{app:calc}
+\label{sec:calc}
 %%%%%%%%%%%%%%%
-Grassmann numbers $\theta$ are numbers that anti-commute with each other but not with ordinary numbers. We will here use four such numbers and in addition we want to place them in Weyl spinors, indexed by $A$ and $\dot{A}$:\footnote{We can already see how this can be useful: if we consistently use $\theta^AQ_A$ and $\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}}$ instead of only $Q_A$ and $\bar{Q}^{\dot{A}}$ in Eqs.~(\ref{eq:QPweyl})--(\ref{eq:QQbarweyl}) we can actually rewrite the superalgebra as an ordinary Lie algebra, but with Grassman elements, because of these commutation properties.}
-\[\{\theta^A, \theta^B\} = \{\theta^A, \bar{\theta}^{\dot{B}}\} = \{ \bar{\theta}^{\dot{A}}, \theta^B\} = \{\bar{\theta}^{\dot{A}}, \bar{\theta}^{\dot{B}}\} =0.\]
-From this we get the relationships:\footnote{There is no summation implied in the first line. These are of course the same relations we already used for the Weyl spinors.}
+It should be clear from the following section that we need to know something about the calculus of anti-commuting Grassmann numbers in order to make sense of differentiation (and integration) with respect to them. In this section we will briefly discuss their most important properties, focusing on the coordinates of superspace.
+
+As Grassmann numbers the superspace coordinates obey the following commutation rules:
+\[\{\theta_A, \theta_B\} = \{\theta_A, \bar{\theta}_{\dot{B}}\} = \{ \bar{\theta}_{\dot{A}}, \theta_B\} = \{\bar{\theta}_{\dot{A}}, \bar{\theta}_{\dot{B}}\} =0.\]
+From this we get the relationships:\footnote{There is no summation implied in the first two lines, only a repetition of the same superspace coordinate. These are of course the same relations we already used for the Weyl spinors.}
 \begin{eqnarray}
 \theta_A^2 &=& \theta_A \theta_A = -\theta_A \theta_A = 0, \label{eq:thetasq}\\
+\bar{\theta}_{\dot{A}}^2 &=& \bar{\theta}_{\dot{A}}\bar{\theta}_{\dot{A}} = -\bar{\theta}_{\dot{A}}\bar{\theta}_{\dot{A}} = 0, \\
 \theta^2 &\equiv& \theta\theta \equiv \theta^A\theta_A = -2\theta_1\theta_2,\\
 \bar{\theta}^2 &\equiv& \bar{\theta}\bar{\theta} \equiv \bar{\theta}_{\dot{A}}\bar{\theta}^{\dot{A}} = 2\bar{\theta}^{\dot{1}}\bar{\theta}^{\dot{2}}.
 \end{eqnarray}
@@ -137,8 +140,8 @@ f(\theta_A) = a_0 + a_1 \theta_A,\label{eq:fexp}
 \end{equation}
 as there are simply no more terms because of (\ref{eq:thetasq}).
 
-We now need to define differentiation and integration on these numbers in order to create a calculus for them.\footnote{These definitions have no infinitesimal interpretations, not is there any notion of definite integrals.}
-\df{We define differentiation by:
+We now need to define differentiation and integration on these numbers in order to create a calculus for them.\footnote{These definitions have no infinitesimal interpretations, nor is there any separate notion of definite integrals.}
+\df{We define differentiation in superspace  by:
 \[\partial_A \theta^B \equiv \frac{\partial}{\partial \theta^A} \theta^B \equiv \delta_A{}^B,\]
 with a product rule
 \begin{eqnarray}
@@ -148,31 +151,32 @@ with a product rule
  \end{eqnarray}}
  This implies that the differential operator $\partial_A$ is itself a Grassmann number and anti-commutes. We can show that the indices of these operators can be raised and lowered with the $\epsilon$ in Eqs.~(\ref{eq:epsilonAB}) and (\ref{eq:epsilonAdotBdot}).
 
-\df{The integral of a function $f$ of a Grassmann number $\theta_A$ is defined as a functional $I[f]$
-\[ I[f]=\int d\theta_A f(\theta_A), \]
-which evaluates to a $c$-number. The evaluation is defined by the relations
- \[\int d\theta_A \equiv 0,\quad \int d\theta_A \theta_A \equiv 1,\] 
+\df{The integral of a function $f$ of a superspace coordinate $\theta_A$ is defined as a functional $I[f]$
+\[ I[f]=\int d\theta_A \, f(\theta_A), \]
+which evaluates to a {\bf $\mathbf c$-number} (number in $\mathbb C$). The evaluation is defined by the relations
+ \[\int d\theta_A \equiv 0,\quad \int d\theta_A \, \theta_A \equiv 1,\] 
 and similarly for $\bar\theta_{\dot A}$, and we demand linearity:
 \[\int d\theta_A[af(\theta_A) + bg(\theta_A)] \equiv a\int d\theta_A f(\theta_A) + b\int d\theta_A g(\theta_A).\]
 In these definitions there is no implied summation over the index $A$.}
 
-This has one surprising property. If we take the integral of (\ref{eq:fexp}) we get:
+This integral definition has a surprising property. If we take the integral of (\ref{eq:fexp}) we get:
 \[\int d\theta_A f(\theta_A) = a_1 = \partial^A f(\theta_A),\]
-meaning that differentiation and integration has the same effect on Grassman numbers.
+meaning that differentiation and integration has the same effect on functions of Grassmann numbers.
 
-To integrate over multiple Grassman numbers we define volume elements as
-\df{
-\[d^2\theta \equiv -\frac{1}{4}d\theta^Ad\theta_A,\]
-\[d^2\bar{\theta} \equiv -\frac{1}{4}d\bar{\theta}_{\dot{A}}d\bar{\theta}^{\dot{A}},\]
-\[d^4\theta \equiv d^2\theta d^2\bar{\theta}.\]}
+To integrate over multiple Grassmann numbers we define volume elements as
+\begin{eqnarray*}
+d^2\theta &\equiv& -\frac{1}{4}d\theta^Ad\theta_A,\\
+d^2\bar{\theta} &\equiv& -\frac{1}{4}d\bar{\theta}_{\dot{A}}d\bar{\theta}^{\dot{A}},\\
+d^4\theta &\equiv& d^2\theta d^2\bar{\theta},
+\end{eqnarray*}
 and we demand that the integral operators anti-commute, just as the differential operators
 \[ \{\int d\theta_A,\int d\theta_B\}=\{\int d\theta_A,\theta_B\}=0.\]
-
-
 This specific volume element definition is made to normalise the following integrals
-\[\int d^2\theta\text{ }\theta\theta = 1,\]
-\[\int d^2\bar{\theta}\text{ }\bar{\theta} \bar{\theta} = 1,\]
-\[\int d^4 \theta \text{ }(\theta\theta)(\bar{\theta} \bar{\theta}) = 1.\]
+\begin{eqnarray*}
+\int d^2\theta\text{ }\theta\theta &=& 1,\\
+\int d^2\bar{\theta}\text{ }\bar{\theta} \bar{\theta} &=& 1,\\
+\int d^4 \theta \text{ }(\theta\theta)(\bar{\theta} \bar{\theta}) &=& 1.
+\end{eqnarray*}
 
 Delta functions of Grassmann variables are given by:
 \[\delta(\theta_A) = \theta_A,\]
@@ -183,12 +187,11 @@ and we can easily show that these functions satisfy, just as the usual definitio
 
 
 
-
 %%%%%%%%%%%%%%%
 \section{Covariant derivatives}
 \label{sec:covder}
 %%%%%%%%%%%%%%%
-Similar to the properties of covariant derivatives for gauge transformations in gauge theories, it would be nice to have a derivative that is invariant under supersymmetry transformations, {\it i.e.}\ commutes with supersymmetry operators. Obviously $P_\mu = -i\partial_\mu$ does this, but more general covariant derivatives can be made.
+Similar to the properties of covariant derivatives for gauge transformations in gauge theories, it would be nice to have a derivative that is invariant under supersymmetry transformations, {\it i.e.}\ commutes with the supersymmetry generators. Obviously $P_\mu = -i\partial_\mu$ does this, but more general covariant derivatives can be made.
 \df{The following {\bf covariant derivatives} commute with supersymmetry transformations:
 \begin{eqnarray}
 D_A &\equiv& \partial_A + i(\sigma^\mu\bar{\theta})_A\partial_\mu ,\\
@@ -204,20 +207,21 @@ D^A\bar{D}^2 D_A &=& \bar{D}_{\dot{A}}D^2\bar{D}^{\dot{A}}.
 \end{eqnarray}
 Here, $D^3$ and $\bar D^3$ means the application of at least three of these covariant derivatives.
 
-%From the covariant derivatives we can construct projection operators.
-%\df{The operators
-%\begin{eqnarray}
-%\pi_+ &\equiv& -\frac{1}{16\Box} \bar{D}^2D^2,\\
-%\pi_- &\equiv& -\frac{1}{16\Box} D^2\bar{D}^2,\\
-%\pi_T &\equiv& \frac{1}{8\Box} \bar{D}_{\dot{A}}D^2\bar{D}^{\dot{A}},
-%\end{eqnarray}
-%with $\Box\equiv\partial_\mu\partial^\mu$, are projection operators, {\it i.e.}\ they fulfil:
-%\begin{eqnarray}
-%\pi_{\pm,T}^2 &=&\pi_{\pm, T} \\
-%\pi_+\pi_- &=& \pi_+\pi_T = \pi_-\pi_T= 0\\
-%1&=&\pi_+ + \pi_- + \pi_T
-%\end{eqnarray}
-%}
+From the covariant derivatives we can also construct  a set of three projection operators.
+\df{The operators
+\begin{eqnarray}
+\pi_+ &\equiv& -\frac{1}{16\Box} \bar{D}^2D^2,\\
+\pi_- &\equiv& -\frac{1}{16\Box} D^2\bar{D}^2,\\
+\pi_T &\equiv& \frac{1}{8\Box} \bar{D}_{\dot{A}}D^2\bar{D}^{\dot{A}},
+\end{eqnarray}
+with $\Box\equiv\partial_\mu\partial^\mu$, are orthogonal projection operators, {\it i.e.}\ they fulfil:
+\begin{eqnarray}
+\pi_{\pm,T}^2 &=&\pi_{\pm, T}, \\
+\pi_+\pi_- &=& \pi_+\pi_T = \pi_-\pi_T= 0,\\
+\pi_+ + \pi_- + \pi_T &=& 1.
+\end{eqnarray}
+}
+
 
 
 %%%%%%%%%%
@@ -227,7 +231,7 @@ Using the superspace coordinates we can now define functions of these to use in 
 \df{A {\bf superfield} $\Phi$ is an operator valued function on superspace $\Phi(x, \theta, \bar{\theta})$.}
 Notice how we write, just as for ordinary fields depending on four-vector coordinates, the coordinates sans indices. 
 
-We can expand any such superfield $\Phi(x, \theta, \bar{\theta})$  as a power series in $\theta$ and $\bar{\theta}$. This gives, in general,
+We can expand any such superfield $\Phi(x, \theta, \bar{\theta})$  as a power series in $\theta$ and $\bar{\theta}$. For a superfield without explicit spinor indices this gives in general,
 %\footnote{Equation (\ref{eq:gen_sup}) can be shown to be closed under supersymmetry transformations, meaning that a superfield transforms into another superfield under the transformations of the previous section.}
 \begin{eqnarray}
 \Phi(x, \theta, \bar{\theta}) &=& f(x) + \theta^A\phi_A(x) + \bar{\theta}_{\dot{A}}\bar{\chi}^{\dot{A}}(x) + \theta\theta m(x) + \bar{\theta}\bar{\theta}n(x) \nonumber\\ 
@@ -235,7 +239,7 @@ We can expand any such superfield $\Phi(x, \theta, \bar{\theta})$  as a power se
 \end{eqnarray} 
 where the functions of space-time coordinates $x$ are called the {\bf component fields}. Any superfield without explicit spinor indices, such as the one above, commutes with any other superfield, because all the Grassmann numbers appear in contracted pairs. 
 
-The properties of the component fields can be deduced from the requirement that $\Phi$ must be an (operator valued) Lorentz scalar or pseudoscalar. This is shown in Table~\ref{tab:gensup} along with the corresponding degrees of freedom each field has.
+The properties of the component fields can be deduced from the requirement that $\Phi$ must be an (operator valued) Lorentz scalar or pseudoscalar. These are shown in Table~\ref{tab:gensup} along with the corresponding degrees of freedom each field has.
 \begin{center}
    \begin{tabular}{c |l| c} 
    \noalign{\smallskip}\hline\noalign{\smallskip}
@@ -248,10 +252,10 @@ The properties of the component fields can be deduced from the requirement that 
    $d(x)$ & Complex scalar & 2 \\
    \noalign{\smallskip}\hline\noalign{\smallskip}
     \end{tabular}
-   \captionof{table}{Field content of a general superfield. \label{tab:gensup}}
+   \captionof{table}{Component field content of a general superfield. \label{tab:gensup}}
    \end{center}
 
-One can show that under supersymmetry transformations these component fields transform linearly into each other, thus we say that superfields (with the differential form of the supersymmetry generators) are {\it representations} of the supersymmetry (super-Poincar\'e) group just as ordinary quantum fields are representations of the Poincaré group, albeit {\it highly reducible} representations!\footnote{Indeed, they are linear representations since a sum of superfields is a superfield, and the differential supersymmetry operators act linearly.} 
+One can show that under supersymmetry transformations these component fields transform linearly into each other, thus we say that superfields (with the differential form of the supersymmetry generators) are {\it representations} of the super-Poincar\'e group -- in the sense of being states in the representation space -- just as ordinary quantum fields are representations of the Poincaré group, albeit {\it highly reducible} representations!\footnote{Indeed, they are linear representations since a sum of superfields is a superfield, and the differential supersymmetry operators act linearly.} 
 
 We can recover the known irreducible representations, see Section~\ref{sec:superalgebrarep}, by imposing some restrictions on the fields. To do this we define the following three types of superfields that we will discuss below:
 \begin{eqnarray}
@@ -269,14 +273,14 @@ The product of a left-handed scalar superfield $\Phi$ and its hermitian conjugat
 \[V^\dagger=(\Phi \Phi^\dagger)^\dagger=\Phi \Phi^\dagger=V.\]
 The same is true for sums of superfields of the same type. These properties will be important when creating a superfield version of a Lagrangian.
 
-%Note that the projection operators that we defined in Section~\ref{sec:covder}, $\pi_\pm$, project out left-/right-handed superfields, respectively, because:
-%\[\bar{D}_{\dot{A}}\pi_+\Phi = D_A \pi_- \Phi^\dagger = 0.\]
-%This is analogous to the familiar properties of $P_{L/R} = \frac{1}{2}(1\mp \gamma_5)$ in field theory.
+Note that the projection operators that we defined in Section~\ref{sec:covder}, $\pi_\pm$, project out left-/right-handed superfields, respectively,  from the general superfield, because:
+\[\bar{D}_{\dot{A}}\pi_+\Phi = D_A \pi_- \Phi^\dagger = 0, \]
+which follows from using Eq.~(\ref{eq:D3}). This is analogous to the properties of $P_{L/R} = \frac{1}{2}(1\mp \gamma_5)$ that we saw in Sec.~\ref{sec:Dirac_spinors}.
 
 %%%
 \subsection{Scalar superfields}
 %%%
-What is the connection of the scalar superfields to the $j=0$ irreducible representation? To see this we use a cute trick:\footnote{Here cute is used in the widest sense.} Change to the variable $y^\mu \equiv x^\mu + i\theta\sigma^\mu \bar{\theta}$. Then the covariant derivatives simplify to
+What is the connection between the scalar superfields and the $j=0$ irreducible representation? To see this we use a cute trick:\footnote{Here cute is used in the widest sense.} Change to the variable $y^\mu \equiv x^\mu + i\theta\sigma^\mu \bar{\theta}$. Then the covariant derivatives simplify to
 \begin{eqnarray}
 D_A &=& \partial_A + 2i\sigma^\mu_{A\dot{A}}\bar{\theta}^{\dot{A}}\frac{\partial}{\partial y^\mu},\\
 \bar{D}_{\dot{A}} &=& -\partial_{\dot{A}}.
@@ -296,7 +300,7 @@ and looking at the much restricted component field content we get the result in 
    $\psi_A(x)$ & Left-handed Weyl spinor & 4\\
    \noalign{\smallskip}\hline\noalign{\smallskip}
     \end{tabular}
-   \captionof{table}{Fields contained in a left-handed scalar superfield. \label{tab:lscsup}}
+   \captionof{table}{Component fields contained in a left-handed scalar superfield. \label{tab:lscsup}}
    \end{center}
 
 Since we wish to interpret the Weyl spinor here as a fermion quantum field with dimension $M^{3/2}$, and given that $[\theta]=M^{-1/2}$, the scalar superfield itself must have mass dimension $[\Phi]=1$. This means that the scalar field $A$ has the expected mass dimension $M^1$ of an ordinary scalar quantum field, however, the scalar $F$ has the odd dimension $[F]=2$.
