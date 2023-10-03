@@ -7,7 +7,116 @@
 \label{chap:superspace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In this chapter we will introduce a very handy notation system for considering supersymmetry transformations effected by the $Q$ elements of the superalgebra, or, more correctly, the elements of the super-Poincar\'e group and their representations. This notation uses a coordinate system called superspace, and allows us to define so-called superfields as a replacement of ordinary field theory fields. This mirrors the Lorentz invariance built into relativistic field theory by using four-vectors. In order to do this we first need to know a little more about the properties of Grassman numbers.
+In this chapter we will introduce a very handy notation system for considering supersymmetry transformations effected by the $Q$ elements of the superalgebra, or, more correctly, the elements of the super-Poincaré group and their representations. This notation uses a coordinate system called superspace, and allows us to define so-called superfields as a replacement of ordinary field theory fields. This mirrors the Lorentz invariance built into relativistic field theory by using four-vectors. In order to do this we need to know a little more about the properties of Grassman (anti-commuting) numbers. However, we begin by taking another look at the familiar four-vectors in light of what we have learnt about continuous groups and Lie algebras.
+
+
+%%%%%%%%%%%%%%%
+\section{An initial skirmish: four-vectors as a coset space}
+\label{sec:four-vectors}
+%%%%%%%%%%%%%%%
+Traditionally, we are introduced to four-vectors as a record keeping device for time and space-position in Special Relativity. In this notation we introduce (greek) four-vector indices, and some (odd) rules for manipulating these. 
+
+Let us now go back to the Poincaré group and its generators in Sec.~\ref{sec:Poincare_group}, and in particular the exponential map in Eq.~(\ref{eq:Poincare_exp_map}). We here followed the conventions of four-vectors, but we could have equally well written it up using ordinary vector component notation, starting with the generators we derived for the different transformations of the group, {\it i.e.} rotations $J_i$, boosts $K_i$, time-translation $P_0$, and space-translation $P_i$. 
+
+
+We can now form the (right) coset of the Poincaré group $P$ with its Lorentz subgroup $L$, $P/L$. This is not a group since $L$ is not normal to $P$, however, the coset space is a vector space formed by the elements $\{ \Lambda g | \Lambda \in L\}$ where $g\in P$. As before, we parameterise a general element $g$ in the Poincaré group $P$ as
+\begin{equation*}
+g=\exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}+ia^\mu P_\mu\right),
+\end{equation*}
+but keeping in mind the discussion above. Since any two cosets are either disjoint or identical, we can now represent each element in the coset space by one of the members in the coset picking the member where $\omega^{\rho \sigma}=0$ giving $\Lambda=I$. What remains in the coset is the four-dimensional translation operator $T(a)=e^{ia^\mu P_\mu}$.  Physically, this space is the set of all translations independent of reference frames (boosts and rotations), and it is equivalent (isomorphic) to the vector space formed by the four components of $a^\mu$ (parameters of the translation) since there is a one-to-one map between $a^\mu$  and the elements of the coset space. Thus we can say that the four-vectors form the coset space between the Poincaré group and the Lorentz group.
+
+The transformation properties of four-vectors that we have learnt about can be demonstrated by the properties of the Poincaré group. It is possible to show, using only the properties of the generators and their commutators,  that with a member of the Lorentz group $\Lambda=\exp(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma})$ we have
+\[ \Lambda T(a) = \exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}\right)T(a)=T(\Lambda a) \exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}\right) =T(\Lambda a) \Lambda, \]
+where $\Lambda a \equiv \Lambda^\mu_{~\nu} a^\nu$ is the same Lorentz transformation of the four-vector translation parameter as the one we are accustomed to.
+
+If we now want to see how a Lorentz transformation $\Lambda$ acts for example on a scalar function $F(x)$ -- this could be a scalar quantum field -- we can write $F(x)=\exp(ix^\mu P_\mu)F(0)$. This means that the transformation is essentially captured as $x'$ in $\Lambda\exp(ix^\mu P_\mu)= \exp(ix'^\mu P_\mu)$. Now, from the above we have
+\[ \Lambda\exp(ix^\mu P_\mu)=\Lambda T(x)=T(\Lambda x) \Lambda, \]
+and since the Lorentz transformation does nothing to a scalar coordinate independent quantity such as $F(0)$, we have $x'^\mu=\Lambda^\mu_{~\nu} x^\nu$, and the scalar function transforms the way we are used to under Lorentz transformations, namely $\Lambda F(x)= F(x')$. This argument can easily be extended to vector fields $A_\mu(x)$ and higher rank tensors, for example
+\[ \Lambda A^\nu(x)= \Lambda^\mu_{~\nu} A^\nu(x'). \]
+ The way we have defined four-vectors have built the Lorentz transformations of Special Relativity into our equations.
+
+%\begin{eqnarray*}
+%\Lambda \exp(ix^\mu P_\mu) &=& \exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}\right)\exp(ix^\mu P_\mu) \\
+%&=& \exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}+ix^\mu P_\mu  - \frac{1}{4} \omega^{\rho \sigma}x^\mu [M_{\rho \sigma},P_\mu ]+\ldots\right)
+%\end{eqnarray*}
+%using the Baker-Campbell-Haussdorff expression from (\ref{eq:BKH_matrices}) and the fact that $P_\mu$ commutes with itself from (\ref{eq:poco2}). Here, all higher order terms contain the commutator between $M_{\mu\nu}$ and $P_\mu$
+%\begin{equation}
+%\frac{1}{4} \omega^{\rho \sigma}x^\mu [M_{\rho \sigma},P_\mu ] = \frac{i}{4} \omega^{\rho \sigma}x^\mu (g_{\rho\mu} P_\sigma - g_{\sigma \mu} P_\rho)
+%= \frac{i}{4}( \omega^{\rho \sigma}x_\rho P_\sigma - \omega^{\rho \sigma}x_\sigma  P_\rho)
+%= \frac{i}{2}\omega^{\rho \sigma}x_\rho P_\sigma
+%\end{equation}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section[Superspace definition]{Superspace definition}
+\label{sec:superspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Superspace\footnote{First introduced by Salam \& Strathdee~\cite{Salam:1974jj}.} is a coordinate system where supersymmetry transformations are {\it manifest}, in other words, the action of elements in the super-Poincaré group ($SP$) are treated like Lorentz-transformations are in Minkowski space.
+\df{{\bf Superspace} is an eight-dimension manifold that can be constructed from the {\bf coset space} of the super-Poincaré group, $SP$, and the Lorentz group, $L$, $SP/L$, by giving coordinates $z^\pi = (x^\mu, \theta^A, \bar{\theta}_{\dot{A}})$, $\pi=\mu,A,\dot A$, where $x^\mu$ are the ordinary Minkowski coordinates, and where $\theta^A$ and $\bar{\theta}_{\dot{A}}$ are four Grassman (anti-commuting) numbers in the form of Weyl spinors, being the parameters of the supercharges $Q_A$ and $\bar{Q}^{\dot{A}}$, respectively, in the exponential map of the superalgebra.}
+
+To understand what all of this means we start from the same perspective as for the four-vectors in the previous section, and begin by writing a general element of SP, $g\in SP$, using the exponential map defined in Section \ref{sec:lie_algebras}:
+\[g = \exp\left(ix^\mu P_\mu + i\theta^{A} Q_A + i\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}} + \frac{i}{2}\omega_{\rho\nu}M^{\rho\nu}\right),\]
+where $x^\mu$, $\theta^{A}$, $\bar{\theta}_{\dot{A}}$ and $\omega_{\rho\nu}$ constitute the parametrisation of the group, and $P_\mu$, $Q_A$, $\bar Q^{\dot{A}}$ and $M_{\rho\nu}$ are the generators. Following the same argument as above we can now parametrise the coset space $SP/L$ simply by setting $\omega_{\mu\nu} = 0$.\footnote{$SP/L$ is again {\it not} a coset group, because $L$ is not a normal subgroup of $SP$, but it still forms a vector space (the coset space) which we call superspace.} The remaining parameters of $SP/L$ are then the coordinates that span superspace. 
+
+In order for the exponential map to make sense the parameters $\theta$ need to anti-commute just like the $Q$s so that the contractions $\theta^{A} Q_A$ and $\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}}$ follow ordinary commutation rules. Otherwise the commutation properties of the exponential map would be different order by order.
+ As physicists we also want to know the dimensions of our new parameters. To do this we first look at Eq.~(\ref{eq:QQbarweyl}):
+\[\{Q_A, \bar{Q}_{\dot{B}}\} = 2\sigma^{\mu}_{A\dot{B}}P_\mu,\]
+where we know that $P_\mu$ has mass dimension $[P_\mu] = M$. This means that $[Q^2] = M$ and $[Q]=M^{1/2}$. In the exponential, all terms must have mass dimension zero to make sense. This means that $[\theta Q] = 0$, and therefore $[\theta] = M^{-1/2}$.
+
+We now want to find the effect of supersymmetry transformations (transformations by the super-Poincaré group) on the superspace coordinates, and we begin by noting that any $SP$ transformation can effectively be written in the following way without the boosts and rotations of the Lorentz group:
+\[g_0(a,\alpha) = \exp[ia^\mu P_\mu + i\alpha^AQ_A +i\bar{\alpha}^{\dot{A}}\bar{Q}_{\dot{A}}],\]
+effectively setting $\omega_{\rho\nu}=0$, because we can again show that\footnote{Fortunately we are not going to do this because it is messy, but it can be done using the algebra of the group and the series expansion of the exponential function. Note, however, that the proof rests on the $P$s and $Q$s forming a closed set, which we saw in the algebra Eqs.~(\ref{eq:QPweyl})--(\ref{eq:QQbarweyl}).}
+\begin{equation}
+\exp\left[\frac{i}{2}\omega_{\rho\nu}M^{\rho\nu}\right]g_0(a,\alpha) = g_0(\Lambda a,S(\Lambda)\alpha)\exp\left[\frac{i}{2}\omega_{\rho\nu}M^{\rho\nu}\right],
+\end{equation}
+{\it i.e.}\ that all that a Lorentz boost does is to transform spacetime coordinates by $\Lambda$ and Weyl spinors by $S(\Lambda)$, which is the spinor representation of $\Lambda$ ($SL(2,\mathbb C)$). Thus, in more colloquial terms, for the supersymmetry transformation it does not matter which reference frame we are working in, we know how the transformation changes between the frames, given by  $\Lambda a$  and $S(\Lambda)\alpha$. 
+
+We can now find the transformation of superspace coordinates under a supersymmetry transformation, just as we have seen the Minkowski coordinates transform under Lorentz transformations. It might be tempting to look directly at the effects of an element $g_0(a, \alpha)$ on a function on superspace coordinates, $F(z^\pi) = F(x^\mu, \theta^A, \bar{\theta}_{\dot{A}})$, just as we did for the translation group. However, the powers of the sum of generators in the infinite series will become very unwieldy and messy. Instead, we pull out the coordinate dependence from the function $F(z^\pi) = e^{iz^\pi K_\pi}F(0)$, where $K_\pi=(P_\mu,Q_A,\bar{Q}^{\dot{A}})$,  and we look at the transformation $z^\pi \to z'{}^\pi$ given by
+\[g_0e^{iz^\pi K_\pi} = e^{iz'{}^\pi K_\pi}.\]
+In moving the problem to the exponential, we can use the power of some results on the exponentials of non-commuting quantities, in particular the Campbell-Baker-Hausdorff expansion from (\ref{eq:BKH_matrices}).
+We have\footnote{Here we use Campbell-Baker-Hausdorff expansion $e^{A}e^{B} = e^{A + B - \frac{1}{2}[A, B] + ...}$ where the terms that follow all contain commutators of the first commutator  $[A, B] $ and the operators $A$ and $B$.}
+\begin{eqnarray*}
+g_0 e^{iz^\pi K_\pi} &=& \exp(ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}})\exp( iz^\pi K_\pi)\\
+&=& \exp(ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}} + iz^\pi K_\pi\\
+&& - \frac{1}{2}[ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}}, iz^\pi K_\pi] + …)
+\end{eqnarray*}
+Now we take a closer look at the commutator:\footnote{Using that $P_\mu$ commutes with all elements in the  algebra, as well as $[\theta^A Q_A, \xi^B Q_B] = -\theta^A\xi^B\{Q_A, Q_B\} = 0$, and the same for $\bar{Q}^{\dot{B}}$.}
+\begin{eqnarray*}
+[~,~]&=&-[\alpha^BQ_B,\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}}] - [\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}}, \theta^AQ_A]\\
+&=&\alpha^B\bar{\theta}_{\dot{A}}\epsilon^{\dot{A}\dot{C}}\{Q_B,\bar{Q}_{\dot{C}}\} + \bar{\alpha}_{\dot{B}}\theta^A\epsilon^{\dot{B}\dot{C}}\{\bar{Q}_{\dot{C}}, Q_A\}\\
+&=&2\alpha^B\bar{\theta}_{\dot{A}}\epsilon^{\dot{A}\dot{C}}\sigma^\mu_{B\dot{C}}P_\mu + 2\bar{\alpha}_{\dot{B}}\theta^A\epsilon^{\dot{B}\dot{C}}\sigma^\mu_{A\dot{C}}P_\mu\\
+&=&2(\alpha^B\bar{\theta}^{\dot{C}}\sigma^\mu_{B\dot{C}} + \bar{\alpha}^{\dot{C}}\theta^A\sigma^\mu_{A\dot{C}})P_\mu
+\end{eqnarray*}
+We can relabel $B = A$ and $\dot{C} = \dot{A}$ which leads to 
+\begin{eqnarray*}
+-\frac{1}{2}[~,~]&=&-(\alpha^A\sigma^\mu{}_{A\dot{A}}\bar{\theta}^{\dot{A}} -\theta^A\sigma^\mu{}_{A\dot{A}}\bar{\alpha}^{\dot{A}})P_\mu.
+\end{eqnarray*}
+The commutator is proportional with $P_\mu$, and will therefore commute with all operators, in particular the higher terms in the Campbell-Baker-Hausdorff expansion, meaning that the series reduces to
+\begin{eqnarray*}
+g_0 e^{iz^\pi K_\pi} 
+&=& \exp[i(x^\mu + a^\mu+ i\alpha^A\sigma^\mu_{A\dot{A}}\bar{\theta}^{\dot{A}} - i\theta^A\sigma^\mu_{A\dot{A}}\bar{\alpha}^{\dot{A}})P_\mu + i(\theta^A+\alpha^A)Q_A + i(\bar{\theta}_{\dot{A}}+\bar{\alpha}_{\dot{A}})\bar{Q}^{\dot{A}}].
+%&=& \exp[i(x^\mu + a^\mu+ i\alpha\sigma^\mu\bar\theta - i\theta\sigma^\mu\bar\alpha)P_\mu + i(\theta^A+\alpha^A)Q_A + i(\bar{\theta}_{\dot{A}}+\bar{\alpha}_{\dot{A}})\bar{Q}^{\dot{A}}].
+\end{eqnarray*}
+So superspace coordinates transform under supersymmetry transformations as:
+\begin{equation}
+(x^\mu, \theta^A, \bar{\theta}_{\dot{A}}) \to  (x^\mu + a^\mu -i\alpha^A\sigma^\mu_{A\dot{A}}\bar{\theta}^{\dot{A}} + i\theta^A\sigma^\mu_{A\dot{A}}\bar{\alpha}^{\dot{A}}, \theta^A + \alpha^A, \bar{\theta}_{\dot{A}} + \bar{\alpha}_{\dot{A}}).
+\end{equation}
+or given more explicitly as a composition function
+\begin{equation}
+f(x^\mu, \theta^A, \bar{\theta}_{\dot{A}},a^\mu, \alpha^A, \bar{\alpha}_{\dot{A}}) =  (x^\mu + a^\mu -i\alpha^A\sigma^\mu{}_{A\dot{A}}\bar{\theta}^{\dot{A}} + i\theta^A\sigma^\mu{}_{A\dot{A}}\bar{\alpha}^{\dot{A}}, \theta^A + \alpha^A, \bar{\theta}_{\dot{A}} + \bar{\alpha}_{\dot{A}}).
+\end{equation}
+
+As a crucial by-product we can now write down a differential representation for the supersymmetry generators by applying the standard expression for the generators $X_i$ of a Lie algebra, given the composition functions $f_\pi$:
+\[X_j = \frac{\partial f_\pi}{\partial a_j}\frac{\partial}{\partial z_\pi},\]
+which gives us:\footnote{We define the generators $X_i$ as $iP_\mu$, $iQ_A$ and $iQ_B$ respectively. Again, this is in order to end up with hermitian instead of anti-hermitian generators.}
+\begin{eqnarray}
+P_\mu &=& -i\partial_\mu \label{eq:diffrepP},\\
+iQ_A &=& -i(\sigma^\mu\bar{\theta})_A\partial_\mu +\partial_A,\\
+i\bar{Q}^{\dot{A}} &=& -i(\bar{\sigma}^\mu \theta)^{\dot{A}}\partial_\mu +\partial^{\dot{A}}.
+\label{eq:diffrepQbar}
+\end{eqnarray}
+
 
 
 %%%%%%%%%%%%%%%
@@ -73,74 +182,6 @@ and we can easily show that these functions satisfy, just as the usual definitio
 \[\int d\theta_A f(\theta_A)\delta(\theta_A) = f(0).\]
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section[Superspace definition]{Superspace definition}
-\label{sec:superspace}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Superspace\footnote{First introduced by Salam \& Strathdee~\cite{Salam:1974jj}.} is a coordinate system where supersymmetry transformations are {\it manifest}, in other words, the action of elements in the super-Poincaré group ($SP$) are treated like Lorentz-transformations are in Minkowski space.
-\df{{\bf Superspace} is an eight-dimension manifold that can be constructed from the {\bf coset space} of the super-Poincaré group ($SP$) and the Lorentz group ($L$), $SP/L$, by giving coordinates $z^\pi = (x^\mu, \theta^A, \bar{\theta}_{\dot{A}})$, $\pi=\mu,A,\dot A$, where $x^\mu$ are the ordinary Minkowski coordinates, and where $\theta_A$ and $\bar{\theta}^{\dot{A}}$ are four Grassman (anti-commuting) numbers, being the parameters of the $Q$-operators in the algebra.}
-
-To understand what all of this means we begin by writing a general element of SP, $g\in SP$, using the exponential map defined in Section \ref{sec:lie_algebras}:
-\[g = \exp[ix^\mu P_\mu + i\theta^{A} Q_A + i\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}} + \frac{i}{2}\omega_{\rho\nu}M^{\rho\nu}],\]
-where $x^\mu$, $\theta^{A}$, $\bar{\theta}_{\dot{A}}$ and $\omega_{\rho\nu}$ constitute the parametrisation of the group, and $P_\mu$, $Q_A$, $\bar Q^{\dot{A}}$ and $M_{\rho\nu}$ are the generators. We can now parametrise $SP/L$ simply by setting $\omega_{\mu\nu} = 0$.\footnote{$SP/L$ is {\it not} a coset group as defined previously, because $L$ is not a normal subgroup of $SP$, but its parametrisation still forms a vector space (the coset space) which we call superspace.} The remaining parameters of $SP/L$ are then the coordinates that span superspace. 
-
-As physicists we also want to know the dimensions of our new parameters $\theta$. To do this we first look at Eq.~(\ref{eq:QQbarweyl}):
-\[\{Q_A, \bar{Q}_{\dot{B}}\} = 2\sigma^{\mu}_{A\dot{B}}P_\mu,\]
-where we know that $P_\mu$ has mass dimension $[P_\mu] = M$. This means that $[Q^2] = M$ and $[Q]=M^{1/2}$. In the exponential, all terms must have mass dimension zero to make sense. This means that $[\theta Q] = 0$, and therefore $[\theta] = M^{-1/2}$.
-
-We now want to find the effect of supersymmetry transformations (transformations by the super-Poincaré group) on the superspace coordinates, and we begin by noting that any $SP$ transformation can effectively be written in the following way without the boosts and rotations of the Lorentz group:
-\[g_0(a,\alpha) = \exp[ia^\mu P_\mu + i\alpha^AQ_A +i\bar{\alpha}^{\dot{A}}\bar{Q}_{\dot{A}}],\]
-because one can show that\footnote{Fortunately we are not going to do this because it is messy, but it can be done using the algebra of the group and the series expansion of the exponential function. Note, however, that the proof rests on the $P$s and $Q$s forming a closed set, which we saw in the algebra Eqs.~(\ref{eq:QPweyl})--(\ref{eq:QQbarweyl}).}
-\begin{equation}
-\exp\left[\frac{i}{2}\omega_{\rho\nu}M^{\rho\nu}\right]g_0(a,\alpha) = g_0(\Lambda a,S(\Lambda)\alpha)\exp\left[\frac{i}{2}\omega_{\rho\nu}M^{\rho\nu}\right],
-\end{equation}
-{\it i.e.}\ all that a Lorentz boost does is to transform spacetime coordinates by $\Lambda$ and Weyl spinors by $S(\Lambda)$, which is a spinor representation of $\Lambda$. Thus, in more colloquial terms, for the supersymmetry transformation it does not matter which reference frame we are working in, we know how the transformation changes between the frames, given by  $\Lambda a$  and $S(\Lambda)\alpha$. 
-
-We can now find the transformation of superspace coordinates under a supersymmetry transformation, just as we have seen the Minkowski coordinates transform under Lorentz transformations. It might be tempting to look at the effects of an element $g_0(a, \alpha)$ on a function on superspace coordinates, $F(z^\pi) = F(x^\mu, \theta^A, \bar{\theta}^{\dot{A}})$ just as we did for the translation group. However, the powers of the sum of generators in the infinite series will become very unwieldy and messy. Instead, we pull out the coordinate dependence from the function $F(z^\pi) = e^{iz^\pi K_\pi}f(0)$, where $K_\pi=(P_\mu,Q_A,\bar{Q}^{\dot{A}})$,  and we look at the transformation $z^\pi \to z'{}^\pi$ given by
-%\footnote{If this way of thinking seems odd, imagine not knowing the effect of the translation generator $P_\mu$. With the exponential map $e^{ia^\mu P_\mu}$ the effect is $e^{ia^\mu P_\mu}e^{ix^\mu P_\mu}=e^{i(x^\mu+a^\mu) P_\mu}$ since $[P_\mu,P_\nu]=0$, and we can conclude that the effect is $x^\mu\to x'^\mu=x^\mu+a^\mu$.}
-\[g_0e^{iz^\pi K_\pi} = e^{iz'{}^\pi K_\pi}.\]
-In moving the problem to the exponential, we can use the power of some results on the exponentials of non-commuting quantities, in particular the Campbell-Baker-Hausdorff expansion.
-We have\footnote{Here we use Campbell-Baker-Hausdorff expansion $e^{A}e^{B} = e^{A + B - \frac{1}{2}[A, B] + ...}$ where the terms that follow all contain commutators of the first commutator  $[A, B] $ and the operators $A$ and $B$.}
-\begin{eqnarray*}
-g_0 e^{iz^\pi K_\pi} &=& \exp(ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}})\exp( iz^\pi K_\pi)\\
-&=& \exp(ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}} + iz^\pi K_\pi\\
-&& - \frac{1}{2}[ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}}, iz^\pi K_\pi] + …)
-\end{eqnarray*}
-Now we take a closer look at the commutator:\footnote{Using that $P_\mu$ commutes with all elements in the  algebra, as well as $[\theta^A Q_A, \xi^B Q_B] = -\theta^A\xi^B\{Q_A, Q_B\} = 0$, and the same for $\bar{Q}^{\dot{B}}$.}
-\begin{eqnarray*}
-[~,~]&=&-[\alpha^BQ_B,\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}}] - [\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}}, \theta^AQ_A]\\
-&=&\alpha^B\bar{\theta}_{\dot{A}}\epsilon^{\dot{A}\dot{C}}\{Q_B,\bar{Q}_{\dot{C}}\} + \bar{\alpha}_{\dot{B}}\theta^A\epsilon^{\dot{B}\dot{C}}\{\bar{Q}_{\dot{C}}, Q_A\}\\
-&=&2\alpha^B\bar{\theta}_{\dot{A}}\epsilon^{\dot{A}\dot{C}}\sigma^\mu_{B\dot{C}}P_\mu + 2\bar{\alpha}_{\dot{B}}\theta^A\epsilon^{\dot{B}\dot{C}}\sigma^\mu_{A\dot{C}}P_\mu\\
-&=&2(\alpha^B\bar{\theta}^{\dot{C}}\sigma^\mu_{B\dot{C}} + \bar{\alpha}^{\dot{C}}\theta^A\sigma^\mu_{A\dot{C}})P_\mu
-\end{eqnarray*}
-We can relabel $B = A$ and $\dot{C} = \dot{A}$ which leads to 
-\begin{eqnarray*}
--\frac{1}{2}[~,~]&=&-(\alpha^A\sigma^\mu{}_{A\dot{A}}\bar{\theta}^{\dot{A}} -\theta^A\sigma^\mu{}_{A\dot{A}}\bar{\alpha}^{\dot{A}})P_\mu.
-\end{eqnarray*}
-The commutator is proportional with $P_\mu$, and will therefore commute with all operators, in particular the higher terms in the Campbell-Baker-Hausdorff expansion, meaning that the series reduces to
-\begin{eqnarray*}
-g_0 e^{iz^\pi K_\pi} 
-&=& \exp[i(x^\mu + a^\mu+ i\alpha^A\sigma^\mu_{A\dot{A}}\bar{\theta}^{\dot{A}} - i\theta^A\sigma^\mu_{A\dot{A}}\bar{\alpha}^{\dot{A}})P_\mu + i(\theta^A+\alpha^A)Q_A + i(\bar{\theta}_{\dot{A}}+\bar{\alpha}_{\dot{A}})\bar{Q}^{\dot{A}}].
-%&=& \exp[i(x^\mu + a^\mu+ i\alpha\sigma^\mu\bar\theta - i\theta\sigma^\mu\bar\alpha)P_\mu + i(\theta^A+\alpha^A)Q_A + i(\bar{\theta}_{\dot{A}}+\bar{\alpha}_{\dot{A}})\bar{Q}^{\dot{A}}].
-\end{eqnarray*}
-So superspace coordinates transform under supersymmetry transformations as:
-\begin{equation}
-(x^\mu, \theta^A, \bar{\theta}_{\dot{A}}) \to  (x^\mu + a^\mu -i\alpha^A\sigma^\mu_{A\dot{A}}\bar{\theta}^{\dot{A}} + i\theta^A\sigma^\mu_{A\dot{A}}\bar{\alpha}^{\dot{A}}, \theta^A + \alpha^A, \bar{\theta}_{\dot{A}} + \bar{\alpha}_{\dot{A}}).
-\end{equation}
-or given more explicitly as a composition function
-\begin{equation}
-f(x^\mu, \theta^A, \bar{\theta}_{\dot{A}},a^\mu, \alpha^A, \bar{\alpha}_{\dot{A}}) =  (x^\mu + a^\mu -i\alpha^A\sigma^\mu{}_{A\dot{A}}\bar{\theta}^{\dot{A}} + i\theta^A\sigma^\mu{}_{A\dot{A}}\bar{\alpha}^{\dot{A}}, \theta^A + \alpha^A, \bar{\theta}_{\dot{A}} + \bar{\alpha}_{\dot{A}}).
-\end{equation}
-
-As a crucial by-product we can now write down a differential representation for the supersymmetry generators by applying the standard expression for the generators $X_i$ of a Lie algebra, given the composition functions $f_\pi$:
-\[X_j = \frac{\partial f_\pi}{\partial a_j}\frac{\partial}{\partial z_\pi},\]
-which gives us:\footnote{We define the generators $X_i$ as $iP_\mu$, $iQ_A$ and $iQ_B$ respectively. Again, this is in order to end up with hermitian instead of anti-hermitian generators.}
-\begin{eqnarray}
-P_\mu &=& -i\partial_\mu \label{eq:diffrepP},\\
-iQ_A &=& -i(\sigma^\mu\bar{\theta})_A\partial_\mu +\partial_A,\\
-i\bar{Q}^{\dot{A}} &=& -i(\bar{\sigma}^\mu \theta)^{\dot{A}}\partial_\mu +\partial^{\dot{A}}.
-\label{eq:diffrepQbar}
-\end{eqnarray}
 
 
 %%%%%%%%%%%%%%%
