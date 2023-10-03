@@ -75,43 +75,43 @@ effectively setting $\omega_{\rho\nu}=0$, because we can again show that\footnot
 We can now find the transformation of superspace coordinates under a supersymmetry transformation, just as we have seen the Minkowski coordinates transform under Lorentz transformations. It might be tempting to look directly at the effects of an element $g_0(a, \alpha)$ on a function on superspace coordinates, $F(z^\pi) = F(x^\mu, \theta^A, \bar{\theta}_{\dot{A}})$, just as we did for the translation group. However, the powers of the sum of generators in the infinite series will become very unwieldy and messy. Instead, we pull out the coordinate dependence from the function $F(z^\pi) = e^{iz^\pi K_\pi}F(0)$, where $K_\pi=(P_\mu,Q_A,\bar{Q}^{\dot{A}})$,  and we look at the transformation $z^\pi \to z'{}^\pi$ given by
 \[g_0e^{iz^\pi K_\pi} = e^{iz'{}^\pi K_\pi}.\]
 In moving the problem to the exponential, we can use the power of some results on the exponentials of non-commuting quantities, in particular the Campbell-Baker-Hausdorff expansion from (\ref{eq:BKH_matrices}).
-We have\footnote{Here we use Campbell-Baker-Hausdorff expansion $e^{A}e^{B} = e^{A + B - \frac{1}{2}[A, B] + ...}$ where the terms that follow all contain commutators of the first commutator  $[A, B] $ and the operators $A$ and $B$.}
+We have\footnote{Here we use Campbell-Baker-Hausdorff expansion $e^{A}e^{B} = e^{A + B + \frac{1}{2}[A, B] + ...}$ where the terms that follow all contain commutators of the first commutator  $[A, B] $ and the operators $A$ and $B$.}
 \begin{eqnarray*}
 g_0 e^{iz^\pi K_\pi} &=& \exp(ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}})\exp( iz^\pi K_\pi)\\
 &=& \exp(ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}} + iz^\pi K_\pi\\
-&& - \frac{1}{2}[ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}}, iz^\pi K_\pi] + …)
+&& + \frac{1}{2}[ia^\nu P_\nu + i\alpha^BQ_B + i\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}}, iz^\pi K_\pi] + …)
 \end{eqnarray*}
 Now we take a closer look at the commutator:\footnote{Using that $P_\mu$ commutes with all elements in the  algebra, as well as $[\theta^A Q_A, \xi^B Q_B] = -\theta^A\xi^B\{Q_A, Q_B\} = 0$, and the same for $\bar{Q}^{\dot{B}}$.}
 \begin{eqnarray*}
 [~,~]&=&-[\alpha^BQ_B,\bar{\theta}_{\dot{A}}\bar{Q}^{\dot{A}}] - [\bar{\alpha}_{\dot{B}}\bar{Q}^{\dot{B}}, \theta^AQ_A]\\
 &=&\alpha^B\bar{\theta}_{\dot{A}}\epsilon^{\dot{A}\dot{C}}\{Q_B,\bar{Q}_{\dot{C}}\} + \bar{\alpha}_{\dot{B}}\theta^A\epsilon^{\dot{B}\dot{C}}\{\bar{Q}_{\dot{C}}, Q_A\}\\
 &=&2\alpha^B\bar{\theta}_{\dot{A}}\epsilon^{\dot{A}\dot{C}}\sigma^\mu_{B\dot{C}}P_\mu + 2\bar{\alpha}_{\dot{B}}\theta^A\epsilon^{\dot{B}\dot{C}}\sigma^\mu_{A\dot{C}}P_\mu\\
-&=&2(\alpha^B\bar{\theta}^{\dot{C}}\sigma^\mu_{B\dot{C}} + \bar{\alpha}^{\dot{C}}\theta^A\sigma^\mu_{A\dot{C}})P_\mu
+&=&2(\alpha^B\bar{\theta}^{\dot{C}}\sigma^\mu_{B\dot{C}} + \bar{\alpha}^{\dot{C}}\theta^A\sigma^\mu_{A\dot{C}})P_\mu .
 \end{eqnarray*}
 We can relabel $B = A$ and $\dot{C} = \dot{A}$ which leads to 
 \begin{eqnarray*}
--\frac{1}{2}[~,~]&=&-(\alpha^A\sigma^\mu{}_{A\dot{A}}\bar{\theta}^{\dot{A}} -\theta^A\sigma^\mu{}_{A\dot{A}}\bar{\alpha}^{\dot{A}})P_\mu.
+\frac{1}{2}[~,~]&=&(\alpha^A\sigma^\mu{}_{A\dot{A}}\bar{\theta}^{\dot{A}} -\theta^A\sigma^\mu{}_{A\dot{A}}\bar{\alpha}^{\dot{A}})P_\mu.
 \end{eqnarray*}
-The commutator is proportional with $P_\mu$, and will therefore commute with all operators, in particular the higher terms in the Campbell-Baker-Hausdorff expansion, meaning that the series reduces to
+The commutator is proportional with $P_\mu$, and will therefore commute with all the operators in the problem, in particular the higher terms in the Campbell-Baker-Hausdorff expansion, meaning that the series reduces to
 \begin{eqnarray*}
 g_0 e^{iz^\pi K_\pi} 
-&=& \exp[i(x^\mu + a^\mu+ i\alpha^A\sigma^\mu_{A\dot{A}}\bar{\theta}^{\dot{A}} - i\theta^A\sigma^\mu_{A\dot{A}}\bar{\alpha}^{\dot{A}})P_\mu + i(\theta^A+\alpha^A)Q_A + i(\bar{\theta}_{\dot{A}}+\bar{\alpha}_{\dot{A}})\bar{Q}^{\dot{A}}].
+&=& \exp[i(x^\mu + a^\mu - i\alpha^A\sigma^\mu_{A\dot{A}}\bar{\theta}^{\dot{A}} + i\theta^A\sigma^\mu_{A\dot{A}}\bar{\alpha}^{\dot{A}})P_\mu + i(\theta^A+\alpha^A)Q_A + i(\bar{\theta}_{\dot{A}}+\bar{\alpha}_{\dot{A}})\bar{Q}^{\dot{A}}].
 %&=& \exp[i(x^\mu + a^\mu+ i\alpha\sigma^\mu\bar\theta - i\theta\sigma^\mu\bar\alpha)P_\mu + i(\theta^A+\alpha^A)Q_A + i(\bar{\theta}_{\dot{A}}+\bar{\alpha}_{\dot{A}})\bar{Q}^{\dot{A}}].
 \end{eqnarray*}
 So superspace coordinates transform under supersymmetry transformations as:
 \begin{equation}
-(x^\mu, \theta^A, \bar{\theta}_{\dot{A}}) \to  (x^\mu + a^\mu -i\alpha^A\sigma^\mu_{A\dot{A}}\bar{\theta}^{\dot{A}} + i\theta^A\sigma^\mu_{A\dot{A}}\bar{\alpha}^{\dot{A}}, \theta^A + \alpha^A, \bar{\theta}_{\dot{A}} + \bar{\alpha}_{\dot{A}}).
+(x^\mu, \theta^A, \bar{\theta}_{\dot{A}}) \to  (x^\mu + a^\mu -i\alpha^A\sigma^\mu_{A\dot{A}}\bar{\theta}^{\dot{A}} + i\theta^A\sigma^\mu_{A\dot{A}}\bar{\alpha}^{\dot{A}}, \theta^A + \alpha^A, \bar{\theta}_{\dot{A}} + \bar{\alpha}_{\dot{A}}),
 \end{equation}
 or given more explicitly as a composition function
 \begin{equation}
-f(x^\mu, \theta^A, \bar{\theta}_{\dot{A}},a^\mu, \alpha^A, \bar{\alpha}_{\dot{A}}) =  (x^\mu + a^\mu -i\alpha^A\sigma^\mu{}_{A\dot{A}}\bar{\theta}^{\dot{A}} + i\theta^A\sigma^\mu{}_{A\dot{A}}\bar{\alpha}^{\dot{A}}, \theta^A + \alpha^A, \bar{\theta}_{\dot{A}} + \bar{\alpha}_{\dot{A}}).
+f_\pi(x^\mu, \theta^A, \bar{\theta}_{\dot{A}},a^\mu, \alpha^A, \bar{\alpha}_{\dot{A}}) =  (x^\mu + a^\mu -i\alpha^A\sigma^\mu{}_{A\dot{A}}\bar{\theta}^{\dot{A}} + i\theta^A\sigma^\mu{}_{A\dot{A}}\bar{\alpha}^{\dot{A}}, \theta^A + \alpha^A, \bar{\theta}_{\dot{A}} + \bar{\alpha}_{\dot{A}}).
 \end{equation}
 
 As a crucial by-product we can now write down a differential representation for the supersymmetry generators by applying the standard expression for the generators $X_i$ of a Lie algebra, given the composition functions $f_\pi$:
-\[X_j = \frac{\partial f_\pi}{\partial a_j}\frac{\partial}{\partial z_\pi},\]
-which gives us:\footnote{We define the generators $X_i$ as $iP_\mu$, $iQ_A$ and $iQ_B$ respectively. Again, this is in order to end up with hermitian instead of anti-hermitian generators.}
+\[ iX_j = \frac{\partial f_\pi}{\partial a_j}\frac{\partial}{\partial z_\pi},\]
+which gives us:
 \begin{eqnarray}
-P_\mu &=& -i\partial_\mu \label{eq:diffrepP},\\
+iP_\mu &=& \partial_\mu \label{eq:diffrepP},\\
 iQ_A &=& -i(\sigma^\mu\bar{\theta})_A\partial_\mu +\partial_A,\\
 i\bar{Q}^{\dot{A}} &=& -i(\bar{\sigma}^\mu \theta)^{\dot{A}}\partial_\mu +\partial^{\dot{A}}.
 \label{eq:diffrepQbar}
