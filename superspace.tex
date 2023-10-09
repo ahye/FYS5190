@@ -255,7 +255,17 @@ The properties of the component fields can be deduced from the requirement that 
    \captionof{table}{Component field content of a general superfield. \label{tab:gensup}}
    \end{center}
 
-One can show that under supersymmetry transformations these component fields transform linearly into each other, thus we say that superfields (with the differential form of the supersymmetry generators) are {\it representations} of the super-Poincar\'e group -- in the sense of being states in the representation space -- just as ordinary quantum fields are representations of the Poincaré group, albeit {\it highly reducible} representations!\footnote{Indeed, they are linear representations since a sum of superfields is a superfield, and the differential supersymmetry operators act linearly.} 
+One can show that under supersymmetry transformations these component fields transform linearly into each other, thus we say that superfields (with the differential form of the supersymmetry generators) are {\it representations} of the super-Poincar\'e group -- in the sense of being states in a representation space -- just as ordinary quantum fields are representations of the Poincaré group, albeit {\it highly reducible} representations since there are subsets of the component fields that are closed on the supersymmetry transformation!\footnote{Indeed, they are linear representations since a sum of superfields is a superfield, and the differential supersymmetry operators act linearly.} 
+%We often write the supersymmetry transformation as
+%\[ \delta_S=(i\theta Q+i\bar\theta \bar Q), \] 
+%as the translation part is `trivial' and its generators in any case commutes with the $Q$s. 
+For example, the scalar field $f$ and the Weyl-spinor $\phi$ transform as\footnote{A word of warning is in order here. Considering $\Phi$ as a {\it quantum} field with operator value it transforms under the supersymmetry transformations in the {\it passive sense}  
+\[ \Phi(x)\to \exp{(i\alpha Q+i\bar\alpha \bar Q)}\Phi(x)\exp{(-i\alpha Q-i\bar\alpha \bar Q)}. \]}
+\begin{eqnarray*}
+\delta_S f &=& \alpha\phi +\bar\alpha\bar\chi, \\
+\delta_S\phi_A &=& 2 \alpha_A m + (\sigma^\mu \bar\alpha)_A (i\partial_\mu f + V_\mu).
+\end{eqnarray*}
+% TODO: Add some more examples of the actual transforms here
 
 We can recover the known irreducible representations, see Section~\ref{sec:superalgebrarep}, by imposing some restrictions on the fields. To do this we define the following three types of superfields that we will discuss below:
 \begin{eqnarray}
@@ -263,7 +273,7 @@ We can recover the known irreducible representations, see Section~\ref{sec:super
 D_{A}\Phi^\dagger (x, \theta, \bar{\theta}) =& 0 &\quad\text{(\bf{right-handed scalar superfield})}\label{eq:rightsup}\\
 \Phi^\dagger (x, \theta, \bar{\theta}) =& \Phi(x, \theta, \bar{\theta}) &\quad\text{({\bf vector superfield})}
 \end{eqnarray}
-Note that it is $\Phi^\dagger$ which is the right handed superfield in Eq.~(\ref{eq:rightsup}), not $\Phi$. However, we can show that the hermitian conjugate of a left-handed scalar superfield fulfils the condition for a right-handed scalar superfield. Supersymmetry transformations can also be shown to transform left-handed superfields into left-handed superfields, right-handed superfields into right-handed superfields and vector superfields into vector superfields. This means that they can be considered separate representations.
+Note that it is $\Phi^\dagger$ which is the right handed superfield in Eq.~(\ref{eq:rightsup}), not $\Phi$. However, we can show that the hermitian conjugate of a left-handed scalar superfield fulfils the condition for a right-handed scalar superfield. We always keep the ``dagger'' operator on the right-handed fields to remember what they are since the difference between left- and right-handed superfields will become crucial later. Supersymmetry transformations can also be shown to transform left-handed superfields into left-handed superfields, right-handed superfields into right-handed superfields and vector superfields into vector superfields. This means that they are separate representations.
 
 Products of the same type of superfield is a superfield of the same type since for left-handed scalar superfields $\Phi_i$ and $\Phi_j$,
 \[ \bar{D}_{\dot{A}}(\Phi_i\Phi_j) = (\bar{D}_{\dot{A}}\Phi_i)\Phi_j +\Phi_i( \bar{D}_{\dot{A}}\Phi_j)=0,\]
@@ -280,9 +290,9 @@ which follows from using Eq.~(\ref{eq:D3}). This is analogous to the properties 
 %%%
 \subsection{Scalar superfields}
 %%%
-What is the connection between the scalar superfields and the $j=0$ irreducible representation? To see this we use a cute trick:\footnote{Here cute is used in the widest sense.} Change to the variable $y^\mu \equiv x^\mu + i\theta\sigma^\mu \bar{\theta}$. Then the covariant derivatives simplify to
+What is the connection between the scalar superfields and the $j=0$ irreducible representation? To see this we use a cute trick:\footnote{Here cute is used in the widest possible sense.} Change to the variable $y^\mu \equiv x^\mu + i\theta\sigma^\mu \bar{\theta}$. Then the covariant derivatives simplify to
 \begin{eqnarray}
-D_A &=& \partial_A + 2i\sigma^\mu_{A\dot{A}}\bar{\theta}^{\dot{A}}\frac{\partial}{\partial y^\mu},\\
+D_A &=& \partial_A + 2i(\sigma^\mu\bar{\theta})_{A}\frac{\partial}{\partial y^\mu},\\
 \bar{D}_{\dot{A}} &=& -\partial_{\dot{A}}.
 \end{eqnarray}
 This means that a field fulfilling $\bar{D}_{\dot{A}} \Phi = 0$ in the new set of coordinates must be independent of the $\bar{\theta}$ coordinates. Thus we can write this field as:
@@ -303,7 +313,7 @@ and looking at the much restricted component field content we get the result in 
    \captionof{table}{Component fields contained in a left-handed scalar superfield. \label{tab:lscsup}}
    \end{center}
 
-Since we wish to interpret the Weyl spinor here as a fermion quantum field with dimension $M^{3/2}$, and given that $[\theta]=M^{-1/2}$, the scalar superfield itself must have mass dimension $[\Phi]=1$. This means that the scalar field $A$ has the expected mass dimension $M^1$ of an ordinary scalar quantum field, however, the scalar $F$ has the odd dimension $[F]=2$.
+Since we wish to interpret the Weyl spinor here as a fermion quantum field with dimension $M^{3/2}$, and given that $[\theta]=M^{-1/2}$, the scalar superfield itself must have mass dimension $[\Phi]=1$. This means that the scalar field $A$ has the expected mass dimension $M^1$ of an ordinary scalar quantum field, however, the scalar $F$ has the odd mass dimension $[F]=2$.\footnote{Odd as in strange, 2 is known to be an even number.}
 
 We can undo the coordinate change in (\ref{eq:leftscalarsuperfield_y}) by inserting for $y$ and expanding in powers of $\theta$ and $\bar{\theta}$, giving
 \begin{equation}
@@ -311,25 +321,28 @@ We can undo the coordinate change in (\ref{eq:leftscalarsuperfield_y}) by insert
 \label{eq:leftscalarsuperfield}
 \end{equation}
 
-By using the transformation  $y^\mu \equiv x^\mu - i\theta\sigma^\mu \bar{\theta}$ we can show a similar field content for the right-handed scalar superfield. The general form of a right handed scalar superfield is then:
+By using the transformation  $y^\mu \equiv x^\mu - i\theta\sigma^\mu \bar{\theta}$ we can show a similar field content for the right-handed scalar superfield. The general form of a right handed scalar superfield is then as could be expected:
 \begin{equation}
 \Phi^\dagger (x, \theta, \bar{\theta}) = A^*(x) - i(\theta\sigma^\mu \bar{\theta})\partial_\mu A^*(x) - \frac{1}{4}\theta\theta\bar{\theta}\bar{\theta}\Box A^*(x) + \sqrt{2}\bar{\theta}\bar{\psi}(x) + \frac{i}{\sqrt{2}}\bar{\theta}\bar{\theta}\theta \sigma^\mu\partial_\mu \bar{\psi}(x) +\bar{\theta}\bar{\theta} F^*(x).
 \label{eq:rightscalarsuperfield}
 \end{equation}
 
-We can now compare the above to the $j=0$ representation with two scalar states and two fermionic states (d.o.f.).  After applying the equations of motions (e.o.m.)\ the {\bf auxillary} field $F(x)$, with the strange mass dimension, can be completely eliminated as it does not have any derivatives. The e.o.m.\ also eliminates two of the fermion d.o.f.  Thus, after the equations of motion, we are left with the same states as in the $j=0$ representation.
+We can now compare the above to the $j=0$ representation of the super-Poincaré group that had two scalar states and two fermionic states (d.o.f.).  After applying the equations of motions (e.o.m.)\ the {\bf auxillary} field $F(x)$, with the strange mass dimension, can be completely eliminated as it does not have any derivatives.\footnote{Remember that the classical equation of motion for a field/particle, the Lagrange equation, has a term with the derivative of the Lagrangian w.r.t.\ to the field derivatives/velocities and one w.r.t.\ the fields/coordinates. For $F$ only the latter is non-zero and can be used to solve for $F$. We will show this in more detail in Sec.~\ref{sec:eom} when we construct supersymmetric Lagrangians.} The e.o.m.\ also eliminate two of the fermion d.o.f. using the Direc/Weyl equations from Sec.~\ref{sec:Dirac_spinors}.\footnote{Since the Lagrangian is linear in time derivatives of $\psi$ -- it will have to be  when we construct it from these superfields that are linear -- the generalised momenta $\pi=\partial_0\psi$ can be re-expressed in terms of the generalised coordinates without time derivatives and are not independent coordinates.} 
+% TODO: Move this comment to the Weyl spinor section and include a Lagrangian?
+This does not happen for the scalar $\phi$ since they are not linear in the time-derivative. Thus, after the equations of motion, we are left with the same states as in the $j=0$ representation.
 
-However, the scalar superfields will not correspond directly to particle states for the known SM particles since, as we discussed in Sec.~\ref{sec:SP_irreps}, a Weyl spinor on its own cannot describe a Dirac fermion. When we construct particle representations we will take one left-handed scalar superfield and one {\it different} right-handed scalar superfield. These will form a Dirac fermion and two scalars (and their anti-particles) after application of the e.o.m. 
+However, the scalar superfields will not correspond directly to particle states for the known Standard Model particles since, as we discussed in Sec.~\ref{sec:SP_irreps}, a Weyl spinor on its own cannot describe a Dirac fermion. When we construct particle representations we will take one left-handed scalar superfield and one {\it different} right-handed scalar superfield. These will form a Dirac fermion and two scalars (and their anti-particles) after application of the e.o.m. 
 
 %%%
 \subsection{Vector superfields}
 %%%
 If we take the general superfield in (\ref{eq:gen_sup}) and compare the $\Phi$ and $\Phi^\dagger$ expressions we can see that the following is the restricted component field structure of a vector superfield:
 \begin{eqnarray*}
-\Phi(x, \theta, \bar{\theta}) &=& C(x) + \theta\phi(x) + \bar{\theta}\bar{\phi}(x) + \theta\theta M(x) + \bar{\theta}\bar{\theta}M^*(x) \\
+V(x, \theta, \bar{\theta}) &=& C(x) + \theta\phi(x) + \bar{\theta}\bar{\phi}(x) + \theta\theta M(x) + \bar{\theta}\bar{\theta}M^*(x) \\
 && + \theta \sigma^\mu \bar{\theta}V_\mu(x) + \theta \theta \bar{\theta}\bar{\lambda}(x) +\bar{\theta}\bar{\theta}\theta\lambda(x) + \theta\theta\bar{\theta}\bar{\theta}D(x).
 \end{eqnarray*} 
-The properties of the component fields  are summarised in Table~\ref{tab:vecsup}.
+The properties of the component fields  are summarised in Table~\ref{tab:vecsup}. Repeating the arguments of mass dimension, if the $V_\mu$ is to represent a vector quantum field with $[V_\mu]=M^1$, then the dimension of the vector superfield must be $[V]=M^0$, the Wey-spinor $\lambda$ is a normal looking $[\lambda]=M^{3/2}$, while the scalar $D$ again has the odd $[D]=M^2$. For the $C$ and $\phi$ fields the mass dimension is even stranger.
+
 
 \begin{center}
    \begin{tabular}{c |l| c} 
@@ -345,7 +358,7 @@ The properties of the component fields  are summarised in Table~\ref{tab:vecsup}
    \captionof{table}{Field content of a general vector superfield. \label{tab:vecsup}}
    \end{center}
 
-With the large number of component fields, you may now be a little suspicious that this vector superfield does not correspond to the promised degrees of freedom in the $j=\frac{1}{2}$ representation of the superalgebra. However, gauge-freedom now comes to our rescue.
+With the large number of component fields, and their strange mass dimensions, you may now be a little suspicious that this vector superfield does not correspond to the promised degrees of freedom in the $j=\frac{1}{2}$ representation of the superalgebra, even after the application of the equations of motion. However, gauge-freedom now comes to our rescue.
 
 
 
@@ -356,27 +369,24 @@ We first define what we will mean by an abelian (super)gauge transformation of a
 
 \df{The abelian {\bf supergauge transformation} (local or global) on a left handed scalar superfield $\Phi_i$ is defined as:
 \begin{equation}
-\Phi_i \to \Phi'_i = e^{-iq_i\Lambda}\Phi_i
+\Phi_i \to \Phi'_i = e^{iq_i\Lambda}\Phi_i
 \label{eq:scalar_supergauge}
 \end{equation}
 where $q_i$ is the charge of $\Phi_i$ under that gauge group and $\Lambda$ (global), or $\Lambda(x)$ (local), is the parameter of the gauge transformation.}
-The definition is of course completely equivalent for right-handed scalar fields. For the definition to make sense the transformed field $\Phi_i'$ must be a left-handed scalar superfield itself, thus
+The definition is of course completely equivalent for right-handed scalar fields and generalises the standard definition of (abelian) gauge transformation in quantum field theory.
+For the definition to make sense the transformed field $\Phi_i'$ must be a left-handed scalar superfield itself, thus
 \[\bar{D}_{\dot{A}}\Phi'_i = 0,\]
 and this requires:
 \begin{eqnarray*}
-\bar{D}_{\dot{A}}\Phi'_i = \bar{D}_{\dot{A}}e^{-iq_i\Lambda }\Phi_i =  e^{-iq_i\Lambda }\bar{D}_{\dot{A}}\Phi_i -iq_i(\bar{D}_{\dot{A}}\Lambda)e^{-i q_i\Lambda}\Phi_i
-= -iq_i(\bar{D}_{\dot{A}}\Lambda)\Phi_i'=0.
+\bar{D}_{\dot{A}}\Phi'_i = \bar{D}_{\dot{A}}e^{iq_i\Lambda }\Phi_i =  e^{iq_i\Lambda }\bar{D}_{\dot{A}}\Phi_i +iq_i(\bar{D}_{\dot{A}}\Lambda)e^{i q_i\Lambda}\Phi_i
+= iq_i(\bar{D}_{\dot{A}}\Lambda)\Phi_i'=0.
 \end{eqnarray*}
-Thus we must have $\bar{D}_{\dot{A}}\Lambda = 0$, which means that  the parameter $\Lambda$ is also a left-handed superfield. 
-
-%We see that the component fields in the scalar superfields transform as $e^{-iq_i}$ as in a standard $U(1)$ gauge transformation.
-%the same all
-%easy to extend.
+Thus we must have $\bar{D}_{\dot{A}}\Lambda = 0$, which means that  the parameter $\Lambda$ is also a left-handed superfield. Note, however, that $\Lambda$ has must have a mass dimension $[\Lambda]=M^0$ in order for the exponentiation to make sense.
 
 Next, we move to the vector superfields.
 \df{Given a vector superfield $V(x,\theta,\bar{\theta})$, we define the {\bf abelian supergauge transformation} as
 \begin{eqnarray}
-V(x,\theta,\bar{\theta}) \to V'(x,\theta,\bar{\theta}) &=& V(x,\theta,\bar{\theta}) + i[ \Lambda(x, \theta, \bar{\theta}) -  \Lambda^\dagger(x, \theta, \bar{\theta})],
+V(x,\theta,\bar{\theta}) \to V'(x,\theta,\bar{\theta}) &=& V(x,\theta,\bar{\theta}) - i[ \Lambda(x, \theta, \bar{\theta}) -  \Lambda^\dagger(x, \theta, \bar{\theta})],
 \label{eq:abelian_supergauge_vector_superfield}
 \end{eqnarray}
 where the parameter of the transformation $\Lambda$ is a scalar superfield.}
@@ -398,17 +408,14 @@ If we demand that our theory is invariant under these gauge transformations we c
 \begin{eqnarray}
 \psi(x) &=& -\frac{1}{\sqrt{2}}\phi(x),\\
 F(x) &=& -M(x),\\
-A(x) + A^*(x) &=& -C(x).
+A(x) + A^*(x) &=& 2\Re{A(x)} = -C(x).
 \end{eqnarray}}
-
 A vector superfield in the WZ-gauge can then be written:
 \begin{equation}
-V_{WZ} (x, \theta, \bar{\theta}) = (\theta\sigma^\mu \bar{\theta})[V_\mu(x) + i\partial_\mu(A(x) - A^*(x))] + \theta\theta\bar{\theta}\bar{\lambda}(x) + \bar{\theta}\bar{\theta}\theta\lambda (x) + \theta\theta\bar{\theta}\bar{\theta}D(x),
+V_{WZ} (x, \theta, \bar{\theta}) = (\theta\sigma^\mu \bar{\theta})[V_\mu(x) + i\partial_\mu(A(x) - A^*(x))] + \theta\theta\bar{\theta}\bar{\lambda}(x) + \bar{\theta}\bar{\theta}\theta\lambda (x) + \theta\theta\bar{\theta}\bar{\theta}D(x).
 \label{eq:vectorsuperfieldWZ}
 \end{equation}
-which, considered carefully, contains one real scalar field d.o.f., three gauge field d.o.f.\footnote{Hang on, where did that last d.o.f.\ go from $V(x)$? We have a remaining gauge freedom in the choice of the imaginary component of $A(x)$, which is the ordinary gauge freedom of a $U(1)$ field theory. This can be used to eliminate one d.o.f.\ from the vector field.} and four fermion d.o.f., meaning it corresponds to the representation $j=\frac{1}{2}$. Unfortunately, supersymmetry transformations break this gauge, meaning that a vector superfield in the WZ-gauge will no longer be in the WZ-gauge after a supersymmetry transformation. 
-Again, the equations of motion will eliminate the auxiliary $D$-field, as well as one d.o.f.\ from the gauge field (a massless on-shell gauge boson has two), and two d.o.f.\ from the (Majorana) fermion formed by $\lambda$.
-Repeating the arguments of mass dimension, if the $V_\mu$ is to represent a vector quantum field with $[V_\mu]=M^1$, then the dimension of the vector superfield must be $[V]=M^0$.
+Again, the equations of motion will eliminate the auxiliary $D$-field, as well as one d.o.f.\ from the gauge field leaving the  two d.o.f.\ of a massless on-shell gauge boson,\footnote{Hang on, where did that last d.o.f.\ go from $V(x)$? We have a remaining gauge freedom in the choice of the imaginary component of $A(x)$, which is the ordinary gauge freedom of a $U(1)$ field theory. This can be used to eliminate one d.o.f.\ from the vector field.}  and two d.o.f.\ from the (Majorana) fermion formed by $\lambda$. This does contain the correct number of degrees of freedom that corresponds to the representation $j=\frac{1}{2}$, however, for the massless $m=0$ representation.\footnote{The vector bosons will get mass through electroweak symmetry breaking just as in the Standard Model.}
 
 Notice that the WZ gauge is particularly convenient for calculations because:
 \begin{equation}
@@ -419,6 +426,7 @@ and, since multiplying in any $\theta$ or $\bar\theta$ into $V_{WZ}^2$ will then
 \[V_{WZ}^3 = 0,\]
 so that 
 \[e^{V_{WZ}} = 1 + V_{WZ} + \frac{1}{2}V_{WZ}^2.\]
+Unfortunately, supersymmetry transformations break the Wess-Zumiono gauge, meaning that a vector superfield in the WZ-gauge will no longer be in the WZ-gauge after a supersymmetry transformation. 
 
 
 
@@ -445,7 +453,7 @@ Check that the explicit differential forms of the generators in Eqs.~(\ref{eq:di
 \end{Exercise}
 
 \begin{Exercise}
-Demonstrate the correctness of the general expression for the left-handed scalar superfield in Eq.~(\ref{eq:leftscalarsuperfield}). {\it Hint:} Prove the spinor identities
+Demonstrate the correctness of the general expression for the left-handed scalar superfield in Eq.~(\ref{eq:leftscalarsuperfield}). {\it Hint:} You may have use for the spinor identities
 \[ (\theta\sigma^\mu \bar{\theta})(\theta\sigma^\nu \bar{\theta})=\frac{1}{2}g^{\mu\nu}\theta\theta\bar\theta\bar\theta, \]
 \[ \theta\partial_\mu\psi\theta\sigma^\mu \bar{\theta}=\frac{1}{2}\theta\theta\partial_\mu \psi\sigma^\mu\bar{\theta}. \]
 \end{Exercise}
