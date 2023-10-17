@@ -249,6 +249,38 @@ V(A_i, A_i^*) = \sum_i |F_i|^2+\sum_a D^aD^a = \sum_i\left|\frac{\partial W[A_1,
 
 
 
+%%%%%%%%%%%%%%%%
+\section{$R$-symmetry}
+\label{sec:R_symmetry}
+%%%%%%%%%%%%%%%%
+The Lagrangian we have constructed is invariant under both internal gauge transformations and external (coordinate) super-Poincaré transformations, where the latter has been built in through the superspace coordinates. The Minkowski part of superspace, the four-vector coordinates, transform under the Lorentz group, and since all our Lagrangian ingredients are Lorentz scalars they are invariant. We can now ask the question if there is any transformation of the superspace coordinates $\theta$ and $\bar\theta$ that the Lagrangian is also invariant under. 
+
+In Sec.~\ref{sec:superalgebra} we claimed there there is no nontrivial interaction between a gauge group and the supersymmetry generators for $N=1$ supersymmetry. This is not entirely true as we may have non-trivial commutators for the generator $R$ of an abelian group, {\it i.e.}
+\begin{equation}
+[Q_A, R] = Q_A, \quad  [\bar Q_{\dot A}, R ] = -\bar Q_{\dot A}.
+\end{equation}
+Using this we define a $U(1)_R$ transformation called {\bf $\mathbf R$-symmetry} as
+\begin{equation}
+\theta_A \to \theta_A' = e^{i\alpha} \theta_A, \quad \bar\theta_{\dot A} \to  \bar\theta'_{\dot A}= e^{-i\alpha} \bar\theta_{\dot A},
+\end{equation}
+where $\alpha$ is the parameter of the transformation and the charge of $\theta$ and $\bar\theta$ under the transformation is 1 and $-1$, respectively.
+If a Lagrangian is to be invariant under such a transformation then a superfield $\Phi$ must transform as
+\begin{equation}
+\Phi(x,\theta,\bar\theta)\to \Phi'(x,\theta,\bar\theta)= e^{ir_\Phi\alpha}\Phi(x,e^{-i\alpha} \theta,e^{i\alpha} \bar\theta),
+\end{equation}
+where $r_\Phi$ is the charge of that superfield under the transformation. The charge of a product of two superfields is then just the sum of the charges of the fields. This is required so that the kinetic term in the Lagrangian is invariant under the transformation.
+
+This means that for a scalar (left- or right-handed) superfield the component fields $A$, $\psi$, and $F$ must transform as
+\begin{equation}
+A\to e^{ir_\Phi\alpha}A,\quad \psi\to e^{i(r_\Phi-1)\alpha} \psi,\quad F\to e^{i(r_\Phi-2)\alpha} F,
+\end{equation}
+while vector superfields must have zero $R$-charge since they are real, and their component fields, in the Wess-Zumino gauge must thus transform as
+\begin{equation}
+V_\mu \to V_\mu ,\quad \lambda \to e^{i\alpha} \lambda,\quad D\to D.
+\end{equation}
+We can check that all the terms in the Lagrangian (\ref{eq:SUSY_Lagrangian}) are invariant under this transformation, with the exception of the superpotential $W$, which must have total $R$-charge 2. This will exclude most allowed charge assignments for the the scalar superfields, and in the minimal supersymmetruc models we shall look at there will be no viable continuous $R$-symmetry. However, $R$-symmetry has importance in building models of supersymmetry breaking, and could remain as a broken symmetry in the model.
+
+
 
 %%%%%%%%%%%%%%%%
 \section{The hierarchy problem}
