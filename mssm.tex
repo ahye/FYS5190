@@ -312,7 +312,7 @@ which is the {\bf renormalisation group equation} (RGE). Here $\beta_\lambda$ is
 \begin{equation}
 \beta_\lambda\equiv\mu\frac{\partial \lambda}{\partial \mu}.
 \end{equation}
-which describes the behaviour of a Lagrangian parameter $\lambda$ as a function of the energy scale $\mu$ away from the value where it was defined, often denoted $\mu_0$. The {\bf anomalous dimension} $\boldsymbol\gamma$ describes the scaling of the fields and the factor $n$ gives the number of fields (of a given kind) in the effective action.
+which describes the behaviour of a Lagrangian parameter $\lambda$ as a function of the energy scale $\mu$ away from the value where it was defined, often denoted $\mu_0$. The {\bf anomalous dimension} $\boldsymbol\gamma$ describes the scaling of the fields and the factor $n$ gives the number of fields (of a given kind) in the effective action. The RGE balances the different contributions to sum to zero.
 
 The reason for keeping around the factor of $\mu$ in the definition of the $\beta$-function is that it typically changes very slowly over large differences in energy scale, so it is practical to change variable to $t = \ln\frac{\mu}{\mu_0}$, so that $\mu\frac{\partial}{\partial\mu}=\frac{\partial}{\partial t}$ and $\beta_\lambda = \frac{\partial \lambda}{\partial t}$.
 If the $\beta$-functions of a quantum field theory are zero at some value of the couplings, then the value of the theory is said to be {\bf scale-invariant}. 
@@ -432,14 +432,14 @@ used for this illustration were $m_0 = 200$\,GeV, $m_{1/2 }= -A_0 =600$\,GeV, $\
 \section{Radiative Electroweak Symmetry Breaking}
 \label{sec:rewsb}
 %%%%%%%%%%%%%
-In the Standard Model both the vector bosons and the fermions are given mass spontaneously by electroweak symmetry breaking (EWSB), which is induced by the shape of the scalar potential for the Higgs field $H$, which is an $SU(2)_L$ doublet of scalar fields:
+In the Standard Model the gauge symmetries prevent mass terms for both vector bosons and fermions. The $W$ and $Z$ bosons, and all the fermions are given mass by spontaneously electroweak symmetry breaking (EWSB), which is induced by the shape of the scalar potential for the Higgs field $H$, which is an $SU(2)_L$ doublet of scalar fields:
 \begin{equation}
 V(H) = \mu^2 |H|^2+ \lambda |H|^4,
 \label{eq:SMscalarpot}
 \end{equation}
 with $|H|^2=H^\dagger H$. 
 
-Here, the requirement for successful EWSB is that $\lambda > 0$ and $\mu^2 < 0$.\footnote{This is called the {\bf Mexican hat} or {\bf wine bottle potential}, depending on preferences.} The first of these requirements ensures that the potential is {\bf bounded from below}, {\it i.e.}\ that in the limit of large field values the potential does not turn to negative infinity. The second ensures that the minimum of the potential, the vacuum, is not given by zero field values, {\it i.e.}\ that the fields have {\bf vacuum expectation values} (vevs).
+Here, the requirement for successful EWSB is that $\lambda > 0$ and $\mu^2 < 0$.\footnote{This is called the {\bf Mexican hat} or {\bf wine bottle potential}, depending on preferences.} The first of these is a consistency requirement that ensures that the potential is {\bf bounded from below}, {\it i.e.}\ that in the limit of large field values the potential does not turn to negative infinity. The second ensures that the minimum of the potential, the vacuum, is not given by zero field values, {\it i.e.}\ that the Higgs field has a {\bf vacuum expectation value} (vev).
 
 In supersymmetry we found the following general scalar potential in Eq.~(\ref{eq:scalarpotglobal}) for unbroken supersymmetry,
 \begin{equation}
@@ -453,22 +453,22 @@ V(H_u,H_d) &=& |\mu|^2 (|H_u^0|^2 + |H_u^+|^2 + |H_d^0|^2 + |H_d^-|^2)  \text{\i
 &&+\frac{1}{8} (g^2 + g'{}^2)(|H^0_u|^2 + |H_u^+|^2 - |H^0_d|^2 - |H_d^-|^2)^2  \text{\indent\indent\indent\indent(from $D$-terms)} \nonumber\\
 &&+ \frac{1}{2}g^2|H^+_uH_d^0{}^* + H^0_u H^-_d{}^*|^2 \nonumber\\
 &&+ m_{H_u}^2(|H_u^0|^2 + |H_u^+|^2) + m_{H_d}^2(|H_d^0|^2 + |H_d^-|^2) \text{\indent}\text{(from soft breaking terms)}\nonumber\\
-&& + [b(H_u^+H_d^- - H_u^0H_d^0) + \text{c.c}]
+&& + [b(H_u^+H_d^- - H_u^0H_d^0) + \text{c.c.}]
 \label{eq:MSSMscalarpot}
 \end{eqnarray}
-This potential has 8 d.o.f.\ from 4 complex scalar fields $H_u^+$, $H_u^0$, $H_d^0$ and $H_d^-$. At the same time it has 6 parameters: the two Standard Model couplings $g$ and $g'$, the magnitude of the supersymmetric parameter $\mu$, and the three soft-breaking parameters $b$, $m_{H_u}^2$ and $m_{H_d}^2$.
+This potential has 8 d.o.f.\ from 4 complex scalar fields $H_u^+$, $H_u^0$, $H_d^0$ and $H_d^-$. At the same time it has 6 parameters: the two Standard Model gauge couplings $g$ and $g'$, the magnitude of the supersymmetric parameter $\mu$, and the three soft-breaking parameters $b$, $m_{H_u}^2$ and $m_{H_d}^2$. Notice how if $b=m_{H_u}^2=m_{H_d}^2=0$, meaning no supersymmetry breaking terms, the Higgs potential has a global minimum at $V=0$ for zero values of all the Higgs fields. In this case there is no EWSB, so EWSB is intimately connected to supersymmetry breaking in the MSSM.
 
-We now want to do as in the Standard Model and break $SU(2)_L\times U(1)_Y \to U(1)_{\rm em}$ in order to give masses to gauge bosons and SM fermions.\footnote{You may ask why we can not use the soft-terms from the spontaneous breaking of {\it supersymmetry} to do this. However, the soft-terms are unable to effectively provide masses to vector bosons and fermions because they deal (mostly) with scalar fields.} To do this we need to show that (\ref{eq:MSSMscalarpot}) has: i) a minimum for finite, {\it i.e.}\ non-zero, field values, ii) that this minimum has a remaining $U(1)_{\rm em}$ symmetry and iii) that the potential is bounded from below. We will here restrict our analysis to tree level, ignoring loop effects on the potential.
+We now want to do as in the Standard Model and break $SU(2)_L\times U(1)_Y \to U(1)_{\rm em}$ in order to give masses to gauge bosons and SM fermions.\footnote{You may ask why we can not use the soft-terms from the spontaneous breaking of {\it supersymmetry} to do this. However, the soft-terms are unable to effectively provide masses to vector bosons and fermions because they deal (mostly) with scalar fields.} To do this we need to show that, and under which conditions, Eq.~(\ref{eq:MSSMscalarpot}) has: i) a minimum for finite, {\it i.e.}\ non-zero, field values, ii) that this minimum has a remaining $U(1)_{\rm em}$ symmetry and iii) that the potential is bounded from below. We will here restrict our analysis to tree level, ignoring loop effects on the potential.
 
-We start by using our $SU(2)_L$ gauge freedom, picking a gauge so that we rotate away any field value for $H_u^+$ at the minimum of the potential. So without loss of generality we can use that $H_u^+ = 0$ at the minimum in what follows. At the minimum we must have $\partial V/\partial H_u^+= 0$, and by explicit differentiation of the potential one can show that $H_u^+ = 0$ then also leads to $H^-_d = 0$. This is good and proper since it guarantees our item ii), that $U(1)_{\rm em}$ is a symmetry for the minimum of the potential, since the charged fields then have no vevs. 
+We start by using our $SU(2)_L$ gauge freedom, picking a gauge so that we rotate away any field value for $H_u^+$ at the minimum of the potential. So without loss of generality we can use that $H_u^+ = 0$ at the minimum in what follows. At the minimum we must also have $\partial V/\partial H_u^+= 0$ since it is a minimum, and by explicit differentiation of the potential one can show that $H_u^+ = 0$ then also leads to $H^-_d = 0$. This is good and proper since it guarantees our item ii), that $U(1)_{\rm em}$ is a symmetry for the minimum of the potential, since the charged fields then have no vevs. 
 
-We are now left with the following potential only in terms of the uncharged Higgs fields $H_u^0$ and $H_d^0$ (after gauge choice and at the minimum):
+We are now left with the following potential only in terms of the uncharged Higgs fields $H_u^0$ and $H_d^0$ (after the $SU(2)_L$ gauge choice and at the minimum):
 \begin{eqnarray}
 V(H_u^0,H_d^0) &=& (|\mu|^2 + m_{H_u}^2)|H^0_u|^2 + (|\mu|^2 + m_{H_d}^2)|H^0_d|^2 \nonumber\\
 &&+ \frac{1}{8}(g^2 + g'{}^2)(|H_u^0|^2 - |H_d^0|^2)^2 - (bH_u^0H_d^0 + \text{c.c.})
 \label{eq:higgspot_gauged}
 \end{eqnarray}
-We can now absorb a complex phase in $H^0_u$ or $H_d^0$, in order to take $b$ to be real and positive. This does not affect other terms because they are protected by absolute values. The minimum must also have the total phase of $H_u^0H_d^0$ real and positive, to get an as large as possible negative contribution from the $b$ term. Thus the vevs $v_u = \langle H_u^0\rangle$ and $v_d = \langle H_d^0\rangle$ must have opposite phases. By the remaining $U(1)_Y$ gauge symmetry of the potential, which is effectively a phase rotation, and the fact that $H^0_u$ and $H_d^0$ have opposite hypercharge, we can transform $v_u$ and $v_d$ so that they are real and have the same sign. For the potential to have a negative mass term, and thus fulfill point i) above, we must then have
+We can now absorb a complex phase in $H^0_u$ or $H_d^0$, in order to take $b$ to be real and positive. This does not affect other terms because they are protected by absolute values. The minimum must also have the total phase of $H_u^0H_d^0$ real and positive, to get an as large as possible negative contribution from the $b$ term, which is the only term that can be negative. Thus the vevs $v_u \equiv\langle H_u^0\rangle$ and $v_d \equiv \langle H_d^0\rangle$ must have opposite phases. By the remaining $U(1)_Y$ gauge symmetry of the potential, which is effectively a phase rotation, and the fact that $H^0_u$ and $H_d^0$ have opposite hypercharge, we can transform $v_u$ and $v_d$ so that they are real and have the same sign. For the potential to have a negative mass term, and thus fulfill point i) above, we must then have
 \begin{equation}\label{eq:higgsbound2}
 b^2 > (|\mu|^2 + m_{H_u}^2)(|\mu|^2 + m_{H_d}^2).
 \end{equation}
@@ -478,7 +478,7 @@ Since we have broken supersymmetry we must also check that the potential is actu
 2b < 2|\mu|^2 + m_{H_u}^2 + m_{H_d}^2.
 \end{equation}
 
-To summarise what we have learnt so far: at the minimum of the Higgs potential we know that the expectation values of the charged Higgs component fields are zero, $\langle H_u^+\rangle =0$ and $\langle H_d^-\rangle =0$, and we fulfil the condition for the existence of an extremal point in the neutral Higgs component fields
+To summarise what we have learnt so far: at the minimum of the Higgs potential we know that there exists a gauge choice so that the expectation values of the charged Higgs component fields are zero, $\langle H_u^+\rangle =0$ and $\langle H_d^-\rangle =0$, and we fulfil the condition for the existence of an extremal point in the neutral Higgs component fields
 \begin{equation}
 \frac{\partial V}{\partial H_u^0}=\frac{\partial V}{\partial H_d^0}= 0.
 \label{eq:EWSB_condition}
@@ -492,7 +492,7 @@ The resulting non-zero expectation values at the minimum for the neutral Higgs c
 
 To satisfy (\ref{eq:higgsbound2}) and (\ref{eq:higgsbound1}),  a negative value for $m_{H_u}^2$ (or $m_{H_d}^2$) can help, in particular if $|\mu|^2+m_{H_u}^2<0$, as that automatically fulfils (\ref{eq:higgsbound2}). Such a negative value is indeed perfectly allowed as a parameter in the Lagrangian. No negative particle masses will result. 
 
-In fact, if we assume that $m_{H_d} = m_{H_u}$ at some scale  $\mu$, for example the supersymmetry breaking scale, then \eqref{eq:higgsbound2} and \eqref{eq:higgsbound1} cannot be simultaneously be satisfied {\it at that scale}. However, to 1-loop the RGE running of these mass parameters is:
+In fact, if we assume that $m_{H_d} = m_{H_u}$ at some scale  $\mu$, for example the GUT scale, then \eqref{eq:higgsbound2} and \eqref{eq:higgsbound1} cannot be simultaneously be satisfied {\it at that scale}. However, to 1-loop the RGE running of these mass parameters is:
 \[16\pi^2 \beta_{m_{H_u}^2} \equiv 16\pi^2 \frac{dm_{H_u}^2}{dt} = 6|y_t|^2(m_{H_u}^2 + m_{Q_3}^2 + m_{u_3}^2) + ...\]
 \[16\pi^2 \beta_{m_{H_d}^2} \equiv 16\pi^2 \frac{dm_{H_d}^2}{dt} = 6|y_b|^2(m_{H_d}^2 + m_{Q_3}^2 + m_{d_3}^2) + ...,\]
 where $y_t$ and $y_b$ are the top and bottom quark Yukawa couplings, and $m_{Q_3} = m_{33}^Q$, $m_{u_3}  = m_{33}^u$, and $m_{d_3} = m_{33}^d$, in a simplification of our previous notation for the soft-masses in Sec.~\ref{sec:MSSM_soft_terms}. Because $y_t\gg y_b$, $m_{H_u}^2$ runs much faster with scale than $m_{H_d}^2$. If the parameters start out the same at some high scale, say from some universal supersymmetry breaking effect,  as we go down to the electroweak scale  $m_{H_u}^2$ becomes significantly smaller than  $m_{H_d}^2$, and may become negative, fulfilling the EWSB criteria. For an illustration, see Fig.~\ref{fig:MSSMrun}, where the running of  $\mu^2+m_{H_u}^2$ and  $\mu^2+m_{H_u}^2$ is shown.
@@ -516,7 +516,7 @@ where by convention $0<\beta<\pi/2$, so that $0<\tan\beta<\infty$.
 
 Using the condition for the existence of an extremal point in (\ref{eq:EWSB_condition}), the two non-SM parameters $b$ and $|\mu|$ can be eliminated as free parameters from the model, however, not the sign of $\mu$. Alternatively, we can choose to eliminate $m_{H_u}^2$ and $m_{H_d}^2$. You can look at this as giving away the freedom of these parameters to the vevs, and then fixing one vev by the electroweak constraint, and using $\tan\beta$ for the other.
 
-Let us make a little remark here on the parameter $\mu$. We have what is called the {\bf $\mu$ problem}. The soft terms all get their scale from some common mechanism at some common high energy scale, it is assumed, however, $\mu$ is a mass term in the superpotential (the only one in fact) and could {\it a priori} take {\it any} value, even $M_P$. Why is $\mu$ then of the order of the soft terms, which is what allows us to achieve REWSB?\footnote{This problem can be solved in extensions of the MSSM such as the Next-to-Minimal Supersymmetric Standard Model (NMSSM).}
+Let us make a little remark here on the parameter $\mu$. Given the criteria for REWSB above we have what is called the {\bf $\boldsymbol \mu$ problem}. The soft terms all get their scale from some common mechanism at some common high energy scale, it is assumed, setting the parameters $b$, $m_{H_u}^2$ and $m_{H_d}^2$ in the Higgs potential.  However, $\mu$ is a mass term in the superpotential (the only one in fact) and could {\it a priori} take {\it any} value, even $M_P$. Why is $\mu$ then of the order of the soft terms, which is what allows us to achieve REWSB, when a much larger value would prevent us from fulfilling the criteria in  (\ref{eq:higgsbound2}) and (\ref{eq:higgsbound1})?\footnote{This problem can be solved in extensions of the MSSM such as the Next-to-Minimal Supersymmetric Standard Model (NMSSM).}
 
 
 %%%%%%%%%%%%%%%%%
@@ -552,23 +552,25 @@ assuming a common sparticle mass scale of around $m_{\rm SUSY} \leq 1$\,TeV. Hig
 It is very interesting to discuss what the Higgs discovery actually implies for low-energy supersymmetry. As can be seen from the above numbers it requires rather large squark masses even in the favourable scenario with $\tan\beta\gg 1$ where the tree level mass is $m_h\sim 90$ GeV. A naive estimate from Eq.~(\ref{eq:mhchiralstop}) gives $m_{\tilde t}> 1$\, TeV. However, this does not take into account possible negative contributions to the Higgs mass from heavy gauginos (fermions in the vector superfields), and possible increases in the stop contribution due to tuning of the mixing of the chiral eigenstates $\tilde t_L$ and $\tilde t_R$, in the mass eigenstates $\tilde t_1$ and $\tilde t_2$.
 
 Since the lightest stop quark is expected to be the lightest squark in scenarios with universal soft masses at some high scale -- the reasoning here is the large downward RGE running of $m_{33}^Q$ from a common squark soft mass at some high scale due to the large top Yukawa coupling -- the expected sparticle spectrum lies mostly above 1 TeV, with the possible exception of gauginos/higgsinos. This points to so-called {\bf Split-SUSY} scenarios with heavy scalars and light gauginos, and a relatively large degree of fine-tuning. If one can live with this little hierarchy problem, it will explain why no signs of supersymemtry have been seen yet at the LHC. 
-%With squark masses above 1 TeV any hints of SUSY are not likely to come before the machine has been upgraded to 14 TeV in 2014. 
 
 If you are willing to accept fine-tuning of the stop mixing instead, or come up with a good reason for why the mixing should be just-so to give a maximal Higgs mass, you can keep fairly light stop quarks. With the addition of light higgsinos and a light gluino the model is then technically natural, these scenarios are called {\bf Natural SUSY} and could be within the current or near future reach of the LHC. The problem with these models, as we shall see, is that the higgsinos are degenerate, and thus difficult to detect.
 
 %In Split-SUSY scenarios with a neutralino dark matter candidate (see below) the lightest neutralino typically has a significant higgsino component. This means that its should be relatively accessible in direct detection experiments due to its large coupling to normal matter, and in the indirect search for neutrinos from captured dark matter annihilation in the Sun. Both types of experiments may very soon see first indications of a signal if this scenario is indeed realised in nature.
 
-To do calculations with the Higgs bosons in the MSSM we need the Feynman rules that result from the relevant Lagrangian terms. Since these have been listed elsewhere we will not repeat them here, but recommend in particular the PhD-thesis of Peter Richardson~\cite{Richardson:2000nt}, where they can be found in Appendix A.6, including all interactions with fermions and sfermions. These can also be found, together with all gauge and self-interactions, in the classic paper by Gunion and Haber~\cite{Gunion:1984yn}. Note that in this paper a complex Higgs singlet appears which can safely be ignored.
+To do calculations with the Higgs bosons in the MSSM we need the Feynman rules that result from the relevant Lagrangian terms. Since these have been listed elsewhere we will not repeat them here, but recommend in particular the PhD-thesis of Peter Richardson~\cite{Richardson:2000nt}, where they can be found in Appendix A.6, including all interactions with fermions and sfermions. These can also be found, together with all gauge and self-interactions, in the classic paper by Gunion and Haber~\cite{Gunion:1984yn}. Note that in this paper a complex Higgs singlet appears in some interactions because they perform their calculations in the NMSSM, but this can safely be ignored and all other results carry over into the MSSM.
 
 
 %%%%%%%%%%%%%%%
 \section{The gluino}
 %%%%%%%%%%%%%%%
-The fermion partner of the Standard Model gluon $g$ is called the {\bf gluino} $\tilde g$, and as the gluon it is a colour octet Majorana fermion. We usually talk about the gluino as being one particle, however, as an adjoint representation of $SU(3)$ there are actually eight  (thus octet) distinct gluons, and we write $\tilde g^a$ when we want to make the distinction. As a colour octet it has nothing to mix with in the MSSM -- this is still true even if we add R-parity violation -- and at tree level the mass is given by the soft term $M_3$. Since it lives in the same superfield as the massless gluon it would otherwise had zero mass. 
+The fermion partner of the Standard Model gluon $g$ is called the {\bf gluino} $\tilde g$, and as the gluon it is a colour octet Majorana fermion. We usually talk about the gluino as being one particle, however, as an adjoint representation of $SU(3)$ there are actually eight  (thus octet) distinct gluons, and we write $\tilde g^a$ when we want to make the distinction. As a colour octet it has nothing to mix with in the MSSM -- this is still true even if we allow for R-parity violation -- and at tree level the mass is given by the soft term $M_3$. Since it lives in the same superfield as the massless gluon it would otherwise had zero mass. 
 
-The one complication for the gluino is that it is strongly interacting so $M_3(\mu)$ runs quickly with energy. It is useful to instead talk about the scale-independent {\bf pole-mass}, {\it i.e.}\ the pole of the renormalised propagator, $m_{\tilde{g}}$. Including one loop effects due to gluon exchange and squark loops, see Fig.~\ref{fig:cogluion}, in the $\overline{DR}$ renormalisation scheme we get:\footnote{Note that the right-hand side here {\it is} $\mu$ dependent since the expression is only to finite order.} 
+The one complication for the gluino is that it is strongly interacting so $M_3(\mu)$ runs, relatively speaking, quickly with energy scale $\mu$. It is useful to instead talk about the scale-independent {\bf pole-mass}  $m_{\tilde{g}}$, meaning the pole of the renormalised propagator,
+\[ \frac{i}{\slashed{p}-m_0-\Sigma(\slashed p)},\]
+where $m_0$ is the Lagrangian mass, $\Sigma$ is the self-energy, and the pole mass is the solution $\slashed p=m$ to the equation $\slashed{p}-m_0-\Sigma(\slashed p) =0$.
+For the gluino, including all one-loop effects in the self-energy due to gluon exchange and squark loops, see Fig.~\ref{fig:cogluion}, in the $\overline{DR}$ renormalisation scheme we get:\footnote{Note that the right-hand side here {\it is} $\mu$ dependent since the expression is only to finite order.} 
 \[m_{\tilde{g}} \simeq M_3(\mu)\left[1 + \frac{\alpha_s}{4\pi}\left(15 + 6\ln\frac{\mu}{M_3}+ \sum_{{\rm all}\,\tilde q} A_{\tilde{q}}\right) \right],\]
-where the squark loop contributions are
+where the squark loop contribution $A_{\tilde q}$ for a given squark depends on the squark $m_{\tilde{q}}$ and corresponding quark $m_q$ masses, and are given by
 \[A_{\tilde{q}} = \int_0^1dx\,x \ln\left(x \frac{m_{\tilde{q}}^2}{M_3^2} +(1-x)\frac{m_q^2}{M_3^2} - x(1-x) -i\epsilon\right).\]
 Due to the $15$-factor the correction can be significant (colour factor).
 \begin{figure}[h]
@@ -578,7 +580,7 @@ Due to the $15$-factor the correction can be significant (colour factor).
 \end{center}
 \end{figure}
 
-Complete Feynman rules for gluinos can be found in Appendix C of the classic MSSM reference paper of Haber \& Kane~\cite{Haber:1984rc}. A more comprehensible alternative may be Appendix A.3 from the PhD-thesis of Bolz~\cite{Bolz:2000xi}. This thesis also provides a diagramatic prescription of how to handle clashing fermion lines that can appear with Majorana fermions. 
+Complete Feynman rules for gluinos can be found in Appendix C of the classic MSSM reference paper of Haber \& Kane~\cite{Haber:1984rc}. A more comprehensible alternative may be Appendix A.3 from the PhD-thesis of Bolz~\cite{Bolz:2000xi}. This thesis also provides a diagramatic prescription of how to handle clashing fermion lines that can appear with Majorana fermions such as the gluino. 
 
 
 
@@ -592,7 +594,7 @@ and the fermions from the Higgs superfields $H_u$ and $H_d$, called {\bf higgsin
 \[\tilde{H}^+_u, \quad \tilde{H}^0_u, \quad \tilde{H}^-_d \quad \text{and} \quad \tilde{H}^0_d.\]
 Together these are called the {\bf electroweakinos}.
 
-In the Standard Model the neutral gauge field components  $B^0_\mu$ and $W^0_\mu$ mix into the photon and the $Z$-boson. The neutral gauginos can mix the same way into the states 
+In the Standard Model the neutral gauge fields  $B^0_\mu$ and $W^0_\mu$ mix into the photon $\gamma$ and the $Z$-boson. The neutral gauginos can mix the same way into the states 
 \begin{eqnarray}
 \tilde{\gamma} &=& N'_{11}\tilde{B}^0 + N'_{12}\tilde{W}^0 \indent \text{({\bf photino})},\\
 \tilde{Z} &=& N'_{21}\tilde{B}^0 + N'_{22}\tilde{W}^0 \indent \text{({\bf zino})}.
@@ -623,14 +625,15 @@ With the $Z$-mass condition on the vevs (\ref{eq:Zmass_vev_condition}) we can al
 \frac{1}{\sqrt{2}}gv_u &=& \sin\beta \cos\theta_W m_Z .\label{eq:g_vu}
 \end{eqnarray}
 
-The mass matrix can now be diagonalised to find the $\tilde\chi^0_i$ masses. If $N$ is a unitary diagonalisation matrix for $M_{\tilde\chi}$, we can write
+The mass matrix can now be diagonalised to find the $\tilde\chi^0_i$ masses. If $N$ is a unitary diagonalisation matrix for $M_{\tilde\chi}$, we can write\footnote{A symmetric matrix is always unitary diagonalisable.}
 \[\mathcal{L}_{\chi-{\rm mass}} = -\frac{1}{2}\tilde{\psi}^{0T}N^TN^*M_{\tilde\chi} N^\dagger N \tilde{\psi}^0 + \text{c.c.},
 = -\frac{1}{2}\tilde{\chi}^{0T} D\tilde{\chi}^0 + \text{c.c.},\]
-where $D=N^*M_{\tilde{\chi}}N^\dagger$ is diagonal and contains the neutralino masses $m_{\tilde\chi_i^0}$, and we see that $N$ gives the mixing of the gauge eigenstates  $\tilde{\psi}^0$ into the mass eigenstates $\tilde\chi^0$. We number the neutralino eigenstates in (\ref{eq:neutralino}), or, equivalently, sort the mass eigenvalues after diagonalisation, so that the neutralinos are numbered from lightest to heaviest.
+where $D=N^*M_{\tilde{\chi}}N^\dagger$ is diagonal and contains the real and non-negative neutralino masses $m_{\tilde\chi_i^0}\ge0$ that are the eigenvalues of $M_{\tilde\chi}$. We also see that $N$ gives the mixing of the gauge eigenstates  $\tilde{\psi}^0$ into the mass eigenstates $\tilde\chi^0=N\tilde{\psi}^0$. We number the neutralino mass eigenstates in (\ref{eq:neutralino}), or, equivalently, sort the mass eigenvalues after diagonalisation, so that the neutralinos are numbered from lightest to heaviest. The neutralinos also have loop corrections to their masses coming from the self energies, however, since the coupling is weak -- in the technical sense -- these are usually significantly smaller than for the gluino.
 
-The mass parameters of the neutralino mass matrix may in general be complex, leading to complex mass eigenvalues. Redefinition of fields can rotate away either the $M_1$ or $M_2$ phase, to make the parameter real and positive, but not both and not the $\mu$-phase. This gives rise to problematic CP-violation that can easily be in contradiction with experiments. Therefore, these are often just assumed to be real in order not to violate experimental bounds. However, we are in principle perfectly happy with negative or even complex mass eigenvalues here, as this is just a phase for the corresponding mass eigenstate in (\ref{eq:neutralino}). 
 
-One particularly interesting solution to the diagonalisation is in the limit where EWSB is a small effect, $m_Z\ll |\mu \pm M_1|$, $|\mu \pm M_2|$, and when $M_1<M_2\ll |\mu|$. Then the lightest neutralino is bino-like, $\tilde{\chi}_1^0\approx \tilde{B}^0$, the next-to-lightest is wino like, $\tilde{\chi}_2^0\approx \tilde{W}^0$, and $\tilde{\chi}^0_{3,4} \approx \frac{1}{\sqrt{2}}(\tilde{H}^0_d \pm \tilde{H}^0_u)$, and the masses are to first order in $1/\mu$:
+The mass parameters of the neutralino mass matrix may in general be complex, leading to complex entries in $N$. Redefinition of fields can rotate away either the $M_1$ or $M_2$ phase, to make the parameter real and positive, but not both of these, and not the $\mu$-phase. These phases give rise to problematic CP-violation that can easily be in contradiction with experiments. Therefore, $M_1$, $M_2$ and $\mu$ are often just assumed to be real in order not to violate experimental bounds. In this case a diagonalisation matrix $N$ can be found that is orthogonal, meaning with only real entries, which simplifies calculations. In this case the diagonal mass values in $D$ are not guaranteed to be positive. This does not imply negative fermion masses, but instead indicates a phase factor that must be incorporated into Feynman rules for the interactions of the mass eigenstates.
+
+One particularly interesting solution to the diagonalisation is in the limit where EWSB is a small effect, $m_Z\ll |\mu \pm M_1|$, $|\mu \pm M_2|$, and when we have the hierarchy $M_1<M_2\ll |\mu|$. The mass eigenvalues scale with the size of the supersymmetric parameters, which makes the lightest neutralino bino-like, $\tilde{\chi}_1^0\approx \tilde{B}^0$, the next-to-lightest wino like, $\tilde{\chi}_2^0\approx \tilde{W}^0$, and $\tilde{\chi}^0_{3,4} \approx \frac{1}{\sqrt{2}}(\tilde{H}^0_d \pm \tilde{H}^0_u)$, and the masses are to first order in $1/\mu$:
 \begin{eqnarray}
 m_{\tilde{\chi}^0_1} &=& M_1 +\frac{m_Z^2\sin^2\theta_W\sin2\beta}{\mu} +\ldots\\
 m_{\tilde{\chi}^0_2} &=& M_2 -\frac{m_W^2\sin2\beta}{\mu} +\ldots\\
@@ -652,16 +655,16 @@ gv_u &=& \sqrt{2}\sin\beta\, m_W.
 Diagonalising this mass matrix gives the mass eigenstates $\tilde\chi_i^\pm$, $i=1,2$. The eigenvalues are doubly degenerate, giving the same masses to the $\tilde\chi_i^+$ and $\tilde\chi_i^-$ particle and anti-particle pairs, and are explicitly given as:
 \[m_{\tilde{\chi}^\pm_{1,2}} = \frac{1}{2}\left(|M_2|^2 + |\mu|^2 + 2m_W^2 \mp \sqrt{(|M_2|^2 + |\mu|^2 + 2m_W^2)^2 - 4|\mu M_2-m_W^2\sin^2\beta|^2}\right).\]
 
-In the same limit of small EWSB effects discussed above we have $\tilde{\chi}^\pm_1 \approx \tilde{W}^\pm$ and $\tilde{\chi}^\pm_2 \approx \tilde{H}^+_u/\tilde{H}^-_d$ with 
+In the same limit of small EWSB effects discussed above we have a wino-like lightest chargino, $\tilde{\chi}^\pm_1 \approx \tilde{W}^\pm$, and a higgsino-like heavy chargino, $\tilde{\chi}^\pm_2 \approx \tilde{H}^+_u/\tilde{H}^-_d$, with masses 
 \begin{eqnarray}
 m_{\tilde{\chi}^\pm_1} &=& M_2 - \frac{m_W^2}{\mu}\sin2\beta+\ldots,\\
 m_{\tilde{\chi}^\pm_2} &=& |\mu| + \frac{m_W^2}{\mu}{\rm sgn}\,\mu+\ldots.
 \end{eqnarray}
-Note that in this limit $m_{\tilde{\chi}^0_2} \simeq m_{\tilde{\chi}^\pm_1}$.
+Note that in this limit $m_{\tilde{\chi}^0_2} \simeq m_{\tilde{\chi}^\pm_1}$ since they are both wino-like and governed by the $M_2$ soft mass.
 
 We saw earlier that the soft-mass ratio
 \[M_3:M_2:M_1 \simeq 6:2:1,\]
-appears at a scale of around 1\,TeV if the same soft-masses unify at the GUT-scale. From our above discussion, as long as $|\mu|\gg M_1,M_2$, this gives the very predictive mass relationships $m_{\tilde{g}} \simeq 6m_{\tilde{\chi}^0_1}$, $m_{\tilde{\chi}^0_2} \simeq m_{\tilde{\chi}^\pm_1} \simeq 2m_{\tilde{\chi}^0_1}$. However, it is important to remember that this often used relationship is based on the {\it conjecture} of gauge coupling unification, and the unification of gaugino soft masses!
+appears at a scale of around $\mu=1$\,TeV if the same soft-masses unify at the GUT-scale. From our above discussion, as long as $|\mu|\gg M_1,M_2$, this gives the very predictive mass relationships $m_{\tilde{g}} \simeq 6m_{\tilde{\chi}^0_1}$, $m_{\tilde{\chi}^0_2} \simeq m_{\tilde{\chi}^\pm_1} \simeq 2m_{\tilde{\chi}^0_1}$. However, it is important to remember that this often used relationship is based on the {\it conjecture} of gauge coupling unification, and the unification of gaugino soft masses!
 
 
 We should mention that some authors prefer other symbols for the neutralinos and charginos. Common examples are $\tilde N_i$ or $\tilde Z_i$ for neutralinos, and $\tilde C_i$ or $\tilde W_i$ (again!) for the charginos. 
@@ -674,7 +677,9 @@ Feynman rules for charginos \& neutralinos can again be found in Haber \& Kane~\
 %%%%%%%%%%%%%%%
 \section{Sleptons \& Squarks}
 %%%%%%%%%%%%%%%
-The {\bf sfermions}, the scalar partners of the Standard Model fermions, consists of the {\bf squarks} and the {\bf sleptons}. Reading of from the MSSM Lagrangian there  are multiple tree-level contributions to the sfermion masses. In the following $\tilde{F}_i$ represents a $SU(2)_L$ doublet of sfermions with generation index $i$, for example $\tilde Q_i=(\tilde u_{iL},\tilde d_{iL})$, while $\tilde{f}_{iR}$ represents a singlet.
+The {\bf sfermions}, the scalar partners of the Standard Model fermions, the quarks and leptons, consists of the {\bf squarks} and the {\bf sleptons}. These inherit the interactions of their partner fermions since they live in the same superfields.
+
+For their masses, reading of from the MSSM Lagrangian, including the possible soft-breaking terms,  there are multiple tree-level contributions to the sfermion masses. In the following discussion  $\tilde{F}_i$ represents a generic $SU(2)_L$ doublet of sfermions with generation index $i$, for example $\tilde Q_i=(\tilde u_{iL},\tilde d_{iL})$, while $\tilde{f}_{iR}$ represents a singlet, for example $\tilde u_{iR}$.
 We make the following list: 
 \begin{enumerate}[i)]
 \item Under the reasonable assumption that soft masses are (close to) diagonal\footnote{This assumption is of course made to avoid flavour changing neutral currents (FCNCs). However, it is also reasonable in that if the soft masses are diagonal, or even all the same, at a high scale, the RGE running will not create large off-diagonal terms. } the sfermions get contributions $-m_F^2\tilde{F}_i^\dagger \tilde{F}_i$ and $-m_{f}^2\tilde{f}^*_{iR}\tilde{f}_{iR}$ from the soft terms.
