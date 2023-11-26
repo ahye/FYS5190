@@ -287,6 +287,7 @@ are allowed because they have the same gauge structure as the supersymmetric kin
 \begin{eqnarray}
 \mathcal L_\text{soft} &=& -(m^L_{ij})^2\tilde{L}_i^\dagger\tilde{L}_j -(m^e_{ij})^2\tilde{l}_{iR}^*\tilde{l}_{jR} - (m_{ij}^Q)^2\tilde{Q}_i^\dagger \tilde{Q}_j - (m^u_{ij})^2\tilde{u}^*_{iR}\tilde{u}_{jR} - (m_{ij}^d)^2\tilde{d}^*_{iR}\tilde{d}_{jR}\nonumber\\
 && - m_{H_u}^2H_u^\dagger H_u - m_{H_d}^2 H_d^\dagger H_d,
+\label{eq:MSSM_soft_kin}
 \end{eqnarray}
 where the $m_{ij}^2$ are potentially complex valued, however, also hermitian. This gives rise to 47 new parameters. Despite technically being allowed the MSSM ignores the ``maybe-soft" terms in Eq.~(\ref{eq:maybesoft}).
 
@@ -680,11 +681,12 @@ Feynman rules for charginos \& neutralinos can again be found in Haber \& Kane~\
 The {\bf sfermions}, the scalar partners of the Standard Model fermions, the quarks and leptons, consists of the {\bf squarks} and the {\bf sleptons}. These inherit the interactions of their partner fermions since they live in the same superfields.
 
 For their masses, reading of from the MSSM Lagrangian, including the possible soft-breaking terms,  there are multiple tree-level contributions to the sfermion masses. In the following discussion  $\tilde{F}_i$ represents a generic $SU(2)_L$ doublet of sfermions with generation index $i$, for example $\tilde Q_i=(\tilde u_{iL},\tilde d_{iL})$, while $\tilde{f}_{iR}$ represents a singlet, for example $\tilde u_{iR}$.
-We make the following list: 
+
+We can make the following list of mass terms: 
 \begin{enumerate}[i)]
-\item Under the reasonable assumption that soft masses are (close to) diagonal\footnote{This assumption is of course made to avoid flavour changing neutral currents (FCNCs). However, it is also reasonable in that if the soft masses are diagonal, or even all the same, at a high scale, the RGE running will not create large off-diagonal terms. } the sfermions get contributions $-m_F^2\tilde{F}_i^\dagger \tilde{F}_i$ and $-m_{f}^2\tilde{f}^*_{iR}\tilde{f}_{iR}$ from the soft terms.
-\item There are $F$-term contributions that come from Yukawa terms in the superpotential of the form $y_fFH\bar K$. From the contribution $\sum |W_i|^2$ to the scalar potential
-these give Lagrangian terms $y_f^2H^0{}^*H^0\tilde{f}^*_{iL}\tilde{f}_{iL}$ and $y_f^2 H^{0*}H^0\tilde{f}^*_{iR}\tilde{f}_{iR}$. After EWSB we then get the mass terms $m_f^2 \tilde{f}^*_{iL}\tilde{f}_{iL}$ and $m_f^2\tilde{f}^*_{iR}\tilde{f}_{iR}$, where $m_f = v_{u/d}\,y_f$. These are only significant for large Yukawa coupling $y_f$, and give the same mass as their Standard Model fermion partner gets from the same Yukawa terms.
+\item Under the reasonable assumption that soft masses are (close to) diagonal\footnote{This assumption is of course made to avoid flavour changing neutral currents (FCNCs). However, it is also reasonable in that if the soft masses are diagonal, or even all the same, at a high scale, the RGE running will not create large off-diagonal terms. } the sfermions get contributions $-m_{F_i}^2\tilde{F}_i^\dagger \tilde{F}_i$ and $-m_{f_i}^2\tilde{f}^*_{iR}\tilde{f}_{iR}$ from the soft terms in (\ref{eq:MSSM_soft_kin}). These are typically dominant.
+\item There are $F$-term contributions that come from Yukawa terms in the superpotential of the form $y_fFH\bar K$, where $F$ and $\bar K$ are two scalar superfields with sfermions, and $H$ is one of the two Higgs superfields. From the contribution $\sum |W_i|^2$ to the scalar potential
+these give Lagrangian terms $y_f^2H^0{}^*H^0\tilde{f}^*_{iL}\tilde{f}_{iL}$ and $y_f^2 H^{0*}H^0\tilde{f}^*_{iR}\tilde{f}_{iR}$. After EWSB when the Higgs field gets a vev we then get the mass terms $m_f^2 \tilde{f}^*_{iL}\tilde{f}_{iL}$ and $m_f^2\tilde{f}^*_{iR}\tilde{f}_{iR}$, where $m_f = v_{u/d}\,y_f$. These are only significant for large Yukawa coupling $y_f$, and give the same mass as their Standard Model fermion partner gets from the same Yukawa terms.
 \item There are also so-called {\bf hyperfine} terms that come from $D$-terms $\sum g^2(A^*T^aA)^2$ in the scalar potential that give Lagrangian terms of the form (sfermion)$^2$(Higgs)$^2$ when one of the scalar fields $A$ is a neutral Higgs field, and the other is a sfermion. Under EWSB, when the Higgs field gets a vev these become mass terms. They contribute with a mass \[\Delta_F = (T_{3F}g^2 - Y_Fg'{}^2)(v_d^2-v_u^2) = (T_{3F} - Q_F\sin^2\theta_W)\cos2\beta\, m_Z^2,\] where the weak isospin, $T_3$, hypercharge, $Y$, and electric charge, $Q$, are for the left-handed supermultiplet $F$ to which the sfermion belongs. However, these contributions are usually quite small.
 \item Furthermore, there are also $F$-terms that combine scalars from the $\mu H_uH_d$ term and Yukawa terms $y_fFH\bar K$ in the superpotential. These give Lagrangian terms $-\mu^*H^0{}^* y_f \tilde{f}_L \tilde{f}_R^*$. With a Higgs vev this gives mass terms $-\mu^* v_{u/d}\,y_f\tilde{f}^*_R\tilde{f}{}_L + {\rm c.c.}$
 \item Finally, the soft Yukawa terms of the form $a_f \tilde{F}H\tilde{f}^*_R$ with a Higgs vev give mass terms $a_f v_{u/d} \tilde{f}_L\tilde{f}^*_R + {\rm c.c.}$\footnote{We often assume that $a_f = A_0 y_f$ in order to further reduce the FCNC, meaning that there is a global constant $A_0$ with unit mass relating the Yukawa couplings and the trilinear A-term couplings.} 
@@ -694,12 +696,16 @@ For the first two generations of sfermions, terms of type ii), iv) and v) are sm
 \begin{eqnarray}
 m_{\tilde{u}_L}^2 &=& m^2_{Q_1} + \Delta \tilde{u}_L,\\
 m_{\tilde{d}_L}^2 &=& m^2_{Q_1} + \Delta \tilde{d}_L,\\
-m_{\tilde{u}_R}^2 &=& m_{u_1}^2 + \Delta \tilde{u}_R.
+m_{\tilde{c}_L}^2 &=& m^2_{Q_2} + \Delta \tilde{c}_L,\\
+m_{\tilde{s}_L}^2 &=& m^2_{Q_2} + \Delta \tilde{s}_L,\\
+m_{\tilde{u}_R}^2 &=& m_{u_1}^2 + \Delta \tilde{u}_R \\
+m_{\tilde{d}_R}^2 &=& m_{d_1}^2 + \Delta \tilde{d}_R \\
+m_{\tilde{s}_R}^2 &=& m_{u_2}^2 + \Delta \tilde{u}_R.
 \end{eqnarray}
 Mass splitting between same generation slepton/squark is then given by the hyperfine splitting  \[m_{\tilde{e}_L}^2 - m_{\tilde{\nu}_{eL}}^2 = m_{\tilde{d}_L}^2-m_{\tilde{u}_L}^2  = -\frac{1}{2}g^2 (v_d^2 - v_u^2) = -\cos 2\beta\, m_W^2,\] since they have the same hypercharge, see Table~\ref{tab:hyper}. For $\tan\beta >1$ this gives the definite prediction $m_{\tilde{e}_L}^2 > m_{\tilde{\nu}_{eL}}^2$ and $ m_{\tilde{d}_L}^2 > m_{\tilde{u}_L}^2$.
 
 The {\bf third generation sfermions} $\tilde{t}$, $\tilde{b}$ and $\tilde{\tau}$ have a more complicated mass matrix structure, {\it e.g.}\ in the gauge eigenstate basis $(\tilde{t}_L,\, \tilde{t}_R)$ for stop quarks the mass term is
-\[\mathcal{L}_{\rm stop} = -\begin{pmatrix}\tilde{t}_L& \tilde{t}_R\end{pmatrix}m^2_{\tilde{t}}\begin{pmatrix}\tilde{t}_L\\ \tilde{t}_R\end{pmatrix},\]
+\[\mathcal{L}_{\rm stop} = -\begin{pmatrix}\tilde{t}_L^*& \tilde{t}_R^*\end{pmatrix}m^2_{\tilde{t}}\begin{pmatrix}\tilde{t}_L\\ \tilde{t}_R\end{pmatrix},\]
 where the mass matrix is given by
 \begin{equation}
 m_{\tilde{t}}^2 = \begin{bmatrix}m_{Q_3}^2 + m_t^2 + \Delta \tilde{u}_L & v(a_t^*\sin\beta - \mu y_t \cos\beta)\\ v(a_t\sin\beta - \mu^* y_t \cos\beta) & m_{u_3}^2 + m_t^2 + \Delta \tilde{u}_R \end{bmatrix}.
