@@ -144,13 +144,14 @@ It is interesting to observe that the elements of $SO(2)$ rotate points in the p
 This group has three free parameters. Already at this point writing down the explicit form of a general group member is not very enlightening. There are also a number of different conventions in use, so proper care is advised when using results from the literature. In terms of a general rotation in three dimensions this can either be viewed as rotation angles around three fixed axis, or as the fixing of a rotation axis by two angles, with a third rotation angle around that axis. 
 
 One particular explicit form, where the angles correspond to the three {\bf Euler angles} of rotation in three dimensions, $\alpha$, $\beta$ and $\gamma$, is
-\[
+\begin{equation}
 R(\alpha,\beta,\gamma)=\left[\begin{matrix} 
 \cos\alpha\cos\beta\cos\gamma-\sin\alpha\sin\gamma & -\cos\alpha\cos\beta\sin\gamma-\sin\alpha\cos\gamma & \cos\alpha\sin\beta  \\ 
 \sin\alpha\cos\beta\cos\gamma+\cos\alpha\sin\gamma & -\sin\alpha\cos\beta\sin\gamma+\cos\alpha\cos\gamma & \sin\alpha\sin\beta  \\ 
 -\sin\beta\cos\gamma & \sin\beta\sin\gamma  & \cos\beta 
 \end{matrix}\right],
-\]
+\label{eq:R3_rotation_Euler}
+\end{equation}
 where $0\le\alpha,\gamma< 2\pi$ and $0\le\beta\le\pi$. These rotations do not commute, so the group is non-abelian.
 
 We have seen above that $SU(2)$ has three free parameters, just the same as $SO(3)$. You may at this point guess that $SO(3)$ is isomorphic to $SU(2)$. That would be a very good guess, however, it would also be wrong. We will return to this later, but this is one of those things in mathematics that turn out to be disappointingly only almost true.
@@ -749,14 +750,41 @@ Use the parameterisation of $SO(2)$ in (\ref{eq:SO2_parameterisation}) to find t
 
 
 \begin{Exercise}[]
-Find the fundamental representation for $SO(3)$.
+Find the fundamental matrix representation for $SO(3)$.
 \end{Exercise}
 
 
-\begin{Exercise}[difficulty={3},label=ex:SO2_diff_generators]
-Find the differential generators for $SO(3)$ and their commutation relationships by studying how a function on $\mathbb R^3$ changes under $SO(3)$ transformations. Show that they satisfy the same commutators as the matrix generators.
+\begin{Exercise}[difficulty={2},label=ex:SO2_diff_generators]
+Find a differential representation of the generators for $SO(3)$ by studying how a vector in $\mathbb R^3$ changes under a parameterised $SO(3)$ transformation. {\it Hint}: Depending on the choice of parametrisation you may also need to use the commutator relationships between the generators.
 \end{Exercise}
+\begin{Answer}
+Finding the differential generators for SO(3) begins with finding the composition function, or more specifically the elements of $\mathbf  x'=\mathbf f(\mathbf x, \boldsymbol \Lambda)$ where $\mathbf x$ is a vector in $\mathbb{R}^3$, $\boldsymbol \Lambda$ are the parameters of the transformation (the parameterisation of the manifold of the Lie group), and $\mathbf  x'$ the transformed vector. Using the parameterisation of rotations in $\mathbb{R}^3$ given in Eq.~(\ref{eq:R3_rotation_Euler}) ur composition function becomes 
+$$f_i(\mathbf  x,\boldsymbol \Lambda) = R(\alpha,\beta,\gamma)_{ij} x_j,$$ 
+with $\boldsymbol\Lambda= (\alpha,\beta,\gamma)$ containing the angles which we rotate around the different axis. Explicitly, the components thus become
+\begin{align}
+f_1(\mathbf  x,\boldsymbol \Lambda) &= (\cos\alpha\cos\beta\cos\gamma - \sin\alpha\sin\gamma)x - (\cos\alpha\cos\beta\sin\gamma+\sin\theta\cos\gamma)y + \cos\alpha\sin\beta z \\
+f_2(\mathbf  x,\boldsymbol\Lambda) &= (\sin\alpha\cos\beta\cos\gamma + \cos\alpha\sin\gamma)x + (\cos\alpha\cos\gamma-\sin\alpha\cos\beta\sin\gamma)y + \sin\alpha\sin\beta z\\
+f_3(\mathbf  x,\boldsymbol\Lambda) &= -\sin\beta\cos\gamma x + \sin\beta\sin\gamma y + \cos\beta z
+\end{align}
 
+The next step is finding the generators $X^j$ from the definition
+$$iX^j = \left.\frac{\partial f_i}{\partial\Lambda_j}\frac{\partial}{\partial x_i}\right|_{\boldsymbol\Lambda = 0}.$$
+To simplify notation we abbreviate $\frac{\partial}{\partial x} =\partial_x$. Doing the calculation for all three parameters of the manifold we get three generators, as follows. 
+$$iX^1 = x\partial_y-y\partial_x \Rightarrow L_z\equiv X^1 = -i(x\partial_y-y\partial_x),$$
+$$iX^2 = z\partial_x-x\partial_z \Rightarrow L_y\equiv X^2 = -i(z\partial_x-x\partial_z),$$
+$$iX^3 = x\partial_y-y\partial_x \Rightarrow L_z\equiv X^3 = -i(x\partial_y-y\partial_x).$$
+The generators we found are proportional to (two of) the angular momentum operators in quantum mechanics.
+Unfortunately, only two of the generators are unique. This is due to the choices made in the parametrisation of the manifold, and will depend on which parametrisation you start with. To find the last generator of our group, all we need to do here is to use the commutator relations between the generators. We start with
+\begin{eqnarray*}
+\left[L_y,L_z\right]f &=& -(z\partial_x-x\partial_z)(x\partial_y-y\partial_x)f + (x\partial_y-y\partial_x)(z\partial_x-x\partial_z)f \\
+&=& -z\partial_y f -zx\partial_x\partial_y f + zy\partial_x^2 f+x^2\partial_z\partial_y f - xy\partial_z\partial_x f \\
+&&+ xz\partial_y\partial_x f-x^2\partial_y\partial_z f-yz\partial_x^2 f+y\partial_zf+yx\partial_x\partial_z f \\
+&=& i(-i)(y\partial_z-z\partial_y)f,
+\end{eqnarray*}
+where we have use that the partial derivatives commute. Since we know from our commutators that $\left[L_y,L_z\right]=iL_x$, our last generator becomes $$L_x=-i(y\partial z-z\partial y).$$
+ %The last two commutators are $$\left[L_x,L_y\right] = -y\partial_x+x\partial_y = i(-i)(x\partial_y-y\partial_x) = iL_z.$$
+%$$\left[L_z,L_x\right] = -x\partial_z+z\partial_x = i(-i)(z\partial_x-x\partial_z) = iL_y.$$
+\end{Answer}
 
 \begin{Exercise}[difficulty={3},label=ex:SU2_generators]
 Find an expression for the generators of $SU(2)$ and their commutation relationships. {\it Hint:} One answer uses a composition function but this approach has some dangers, try also to derive the properties of the generators from a member of the group an infinitesimal distance from the identity.
