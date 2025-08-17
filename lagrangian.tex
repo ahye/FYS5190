@@ -313,12 +313,12 @@ a [particle=$h$] -- [scalar] b [dot, black,  label=$\lambda_s$]
 \draw [dashed] (A) circle(0.8);
 \draw (B) node[above] {$s$};
 %
-%\diagram [xshift=10cm, layered layout, horizontal=b to c] {
-%a [particle=$h$] -- [scalar] b [dot, black, label=$\lambda_V\hphantom{m}$]
-%-- [boson, half left, out=90, in=90, edge label = $V$] c [dot, black, label=$\hphantom{nm}\lambda_V$]
-%-- [boson, half left, out=90, in=90, edge label = $\bar{V}$] b,
-%c -- [scalar] d [particle=$h$],
-%};
+\diagram [xshift=10cm, layered layout, horizontal=b to c] {
+a [particle=$h$] -- [scalar] b [dot, black, label=$\lambda_V\hphantom{m}$]
+-- [boson, half left, out=90, in=90, edge label = $V$] c [dot, black, label=$\hphantom{nm}\lambda_V$]
+-- [boson, half left, out=90, in=90, edge label = $\bar{V}$] b,
+c -- [scalar] d [particle=$h$],
+};
 %
 \end{feynman}
 \end{tikzpicture}
@@ -326,12 +326,14 @@ a [particle=$h$] -- [scalar] b [dot, black,  label=$\lambda_s$]
 \label{fig:hierarchy}
 \end{figure}
 
-There are different ways of achieving regularisation. Since we know that the Standard Model is an incomplete theory, at least when we go up to Planck scale energies where we need an unknown quantum theory of gravity, we can introduce a {\bf cut-off regularisation} where we limit the integral in the loop-correction to momenta below a scale $\Lambda_{UV}$. Then the loop-correction to the Higgs mass is, at leading order in $\Lambda_{UV}$,
-\begin{equation}
-\Delta m_h^2 = -\frac{|\lambda_f|^2}{8\pi^2}\Lambda_{UV}^2 + \frac{\lambda_s}{16\pi^2}\Lambda_{UV}^2+\ldots \label{eq:higgsqdiv}
-\end{equation}
-where $\lambda_f$ and $\lambda_s$ are the couplings of $f$ and $s$ to the Higgs, respectively, from the Lagrangian interaction terms $\mathcal L \sim \lambda_f \bar\psi\psi h+\text{h.c.}+\lambda_s |s|^2 |h|^2$. The dots represents terms that are less than quadratically divergent in terms of the cut-off scale, the first missing terms being logarithmically divergent.
-Picking $\Lambda_{UV}$  suggestively as the Planck scale, $\Lambda_{UV} =M_P = 2.44\times 10^{18}$ GeV, meaning that the quantum corrections to the Higgs mass are some 15 orders of magnitude greater than its measured value. 
+There are different ways of achieving regularisation. Since we know that the Standard Model is an incomplete theory, at least when we go up to Planck scale energies where we need an unknown quantum theory of gravity, we can introduce a {\bf cut-off regularisation} where we limit the integral in the loop-correction to momenta below a scale $\Lambda$. Then the loop-corrections to the Higgs mass are
+\begin{eqnarray}
+\Delta m_{h,f}^2 &=& \frac{|\lambda_f|^2}{16\pi^2}\left[-2\Lambda^2 +6m_f^2\ln\frac{\Lambda}{m_f}+\ldots \right], \label{eq:higgsqdiv} \\
+\Delta m_{h,s}^2 &=&  \frac{\lambda_s}{16\pi^2}\left[\Lambda^2 -2m_s^2\ln\frac{\Lambda}{m_s}+\ldots\right],  \\
+\Delta m_{h,V}^2 &=& \frac{3\lambda_V^2}{16\pi^2}\left[\Lambda^2 - 2M_V^2\ln\frac{\Lambda}{M_V}+\ldots \right],
+\end{eqnarray}
+where $\lambda_f$, $\lambda_s$ and $\lambda_V$ are the couplings of $f$, $s$ and $V$ to the Higgs, respectively, from the Lagrangian interaction terms $\mathcal L \sim \lambda_f \bar\psi\psi h+\text{h.c.}-\frac{1}{4}\lambda_s |s|^2 |h|^2-\frac{1}{4}\lambda_V VV h$. The dots represents terms that are not divergent in terms of the cut-off scale.
+Picking $\Lambda$  suggestively as the Planck scale, $\Lambda_{UV} =M_P = 2.44\times 10^{18}$ GeV, means that the quantum corrections to the Higgs mass are some 15 orders of magnitude greater than its measured value. 
 
 We observe that the difference in sign between the fermions and bosons in (\ref{eq:higgsqdiv}) means that it could {\it in principle} be possible that these huge contributions cancel to keep $m_h \sim 125$\,GeV as measured,\footnote{Could we not fix this by introducing a very large Lagrangian Higgs mass $\mu$? Not really, in that the tree-level Higgs mass is constrained by the properties of the other electroweak masses, {\it i.e.}\ the $Z$ and $W$-bosons.} however, as physicists we should worry why the Universe seems to be organised in such a strange way without any specific cause. This is known as the {\bf Higgs fine tuning problem}, or the scale {\bf hierarchy problem} because it is fundamentally a problem of why the electroweak scale at around 100 GeV where the Higgs lives, is so much lighter than the Planck scale of $10^{18}$ GeV, when the former should in principle be pulled up to the latter by the sensitivity of scalars to loop corrections.\footnote{With some background in renormalisation you may ask: What about choosing dimensional regularisation instead where there is no cut-off scale? That would in principle work, however, as soon as you introduce {\it any} new particle (significantly) heavier than the Higgs there is still a quadratic correction of the form of (\ref{eq:higgsqdiv}) with the new particle masses as the scale, meaning that we cannot complete the Standard Model at a higher scale without reintroducing the problem.}
 
@@ -343,8 +345,11 @@ V(A,A^*) \sim \left|\frac{\partial W}{\partial A_i}\right|^2 = |\lambda_{ijk}|^2
 \end{equation}
 If $A_j$ is the second scalar $s$ in Fig.~\ref{fig:hierarchy}, then this term becomes $|\lambda_{ijk}|^2|s|^2|h|^2$ and we have $\lambda_s=|\lambda_{ijk}|^2$. As a result $\lambda_f^2=\lambda_s$.
 
+There is a similar matching between the vector bosons and the fermions in the vector superfields.
+
 The fact that there are loop contributions from two scalars for each fermion due to the same number of states (two scalar states per fermion state), means that unbroken supersymmetry predicts an exact cancellation in Eq.~(\ref{eq:higgsqdiv}).\footnote{To keep the argument simple we have avoided the contributions from vector bosons, however, we can show that these also cancel exactly against the contributions from their fermionic partners.} Notice that there is nothing here that is special about the Higgs boson, this mechanism will in fact protect all scalar particles from quadratic corrections to their mass in supersymmetric models.
 
+% Mention also that the prediction of the MSSM was < 150 geV while SM + X can give < 800 GeV, chance to exclude supersymmetry.
 
 
 %%%%%%%%%%%%%%%%%%%%%%

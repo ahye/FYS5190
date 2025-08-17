@@ -331,7 +331,7 @@ In fact, we will find representations both in four and two dimensions. For those
 \section{Weyl spinors}
 \label{sec:weyl}
 %%%%%%%%%%%%
-As we discussed at the end of Sec.~\ref{sec:Lorentz_group} there exists a two-to-one homomorphism between the  $SL(2, \mathbb{C})$ and the Lorentz group $SO^+(1,3)$. This homomorphism, with $\Lambda^\mu{}_\nu \in SO^+(1,3)$ and $M \in SL(2, \mathbb{C})$, can be explicitly given by:\footnote{The choice of sign in Eq.~(\ref{eq:MofLambda}) is the reason that this is a homomorphism, instead of an isomorphism. Each element in  $SO^+(1,3)$ can be assigned to two in $SL(2, \mathbb{C})$.}
+As we discussed at the end of Sec.~\ref{sec:Lorentz_group} there exists a two-to-one homomorphism between the  $SL(2, \mathbb{C})$ and the Lorentz group $SO^+(1,3)$. This homomorphism, with $\Lambda^\mu{}_\nu \in SO^+(1,3)$ and $M \in SL(2, \mathbb{C})$, can be explicitly given by:\footnote{The choice of sign in Eq.~(\ref{eq:MofLambda}) is the reason that this is a homomorphism, instead of an isomorphism. Each element in  $SO^+(1,3)$ can be assigned to two elements in $SL(2, \mathbb{C})$.}
 \begin{eqnarray}
 \Lambda^\mu{}_\nu(M) &=& \frac{1}{2}{\rm Tr}[\bar{\sigma}^\mu M \sigma_\nu M^\dagger],\label{eq:LambdaofM}\\
 M(\Lambda^\mu{}_\nu) &=& \pm \frac{1}{\sqrt{\det(\Lambda^\mu{}_\nu \sigma_\mu \bar{\sigma}^\nu)}}\Lambda^\mu{}_\nu \sigma_\mu \bar{\sigma}^\nu,\label{eq:MofLambda}
@@ -339,17 +339,18 @@ M(\Lambda^\mu{}_\nu) &=& \pm \frac{1}{\sqrt{\det(\Lambda^\mu{}_\nu \sigma_\mu \b
 where $\bar{\sigma}^\mu = (1, -\vec{\sigma})$ and $\sigma^\mu = (1, \vec{\sigma})$. The generators of $SO^+(1,3)$ can be shown to transform to (be proportional to) the Pauli matrices in $SL(2,\mathbb C)$:
 \[ J_i=\half \sigma_i, \quad K_i=\frac{i}{2}\sigma_i. \]
 
-This two-to-one correspondence means that $SO^+(1,3) \cong SL(2, \mathbb{C})/\mathbb{Z}_2$ and the groups have the same algebra (as discussed in Sec.~\ref{sec:Lorentz_group} ). Thus we can look at the representations of $SL(2, \mathbb{C})$ instead of the  Lorentz group, when we describe spin-$\half$ particles,\footnote{We can of course also use the $SL(2, \mathbb{C})$ representations to construct representations for higher spin.} and working in $SL(2, \mathbb{C})$ if often much easier, but what are those representations? It turns out that there are two inequivalent fundamental representations $\rho$ of $SL(2, \mathbb{C})$ in terms of $2\times2$ matrices $M\in SL(2, \mathbb{C})$:
+This two-to-one correspondence means that $SO^+(1,3) \cong SL(2, \mathbb{C})/\mathbb{Z}_2$ and the groups have the same algebra, as discussed in Sec.~\ref{sec:Lorentz_group}. Thus we can look at the representations of $SL(2, \mathbb{C})$ instead of the  Lorentz group, when we describe spin-$\half$ particles,\footnote{We can of course also use the $SL(2, \mathbb{C})$ representations to construct representations for higher spin.} and working in $SL(2, \mathbb{C})$ is often easier. But what are those representations? It turns out that there are two inequivalent fundamental representations $\rho$ of $SL(2, \mathbb{C})$ in terms of $2\times2$ matrices $M\in SL(2, \mathbb{C})$:
 \begin{enumerate}[i)]
 \item The self-representation $\rho(M) = M$  acting on a member $\psi$ of a representation vector space $V$:
 \[\psi'_A = M_A{}^B\psi_B,  \quad A, B = 1,2.\]
 \item The complex conjugate self-representation $\rho(M) = M^*$ working on a vector $\bar{\psi}$ in a space $\dot V$:
 \[\bar{\psi}'_{\dot{A}} = (M^*)_{\dot{A}}{}^{\dot{B}}\bar{\psi}_{\dot{B}}, \quad  \dot{A}, \dot{B} = 1,2.\]
 \end{enumerate}
-The vectors $\psi$ and $\bar{\psi}$ in these representation spaces are called, respectively, {\bf left- and right-handed Weyl spinors}, and the induced representation of the Lorentz group is called the {\bf spinor representation}.
-In addition to these two representations there are two dual representations, see Sec.~\ref{sec:dual_reps}, with $\rho(M)=M^{-1T}$ acting on vectors $\psi^A$ in $V^*$, and $\rho(M)=M^{*-1T}$ on vectors  $\bar\psi^{\dot{A}}$ in $\dot{V}^*$, that are equivalent to i) and ii), respectively. 
+The indices here follow the same summation conventions as four-vectors. 
+The vectors $\psi$ and $\bar{\psi}$ in these representation spaces are called, respectively, {\bf left- and right-handed Weyl spinors}, and the representation of the Lorentz group induced by the homomorphism is called the {\bf spinor representation}.
+In addition to these two representations there are two dual representations, see Sec.~\ref{sec:dual_reps}, with $\rho(M)=M^{-1T}$ acting on vectors $\psi^A$ in $V^*$, the dual space of $V$, and $\rho(M)=M^{*-1T}$ acting on vectors  $\bar\psi^{\dot{A}}$ in $\dot{V}^*$, that are equivalent to i) and ii), respectively. 
 
-The indices here follow the same summation rules as four-vectors. Indices can be lowered and raised with:
+Indices can be lowered and raised with:
 \begin{eqnarray}
 \epsilon_{AB} &=& \epsilon_{\dot A \dot B} = \begin{pmatrix} 0 & -1\\ 1 & 0\end{pmatrix}, \label{eq:epsilonAB} \\
 \epsilon^{AB} &=& \epsilon^{\dot{A}}{}^{\dot{B}} = \begin{pmatrix} 0 & 1\\ -1 & 0\end{pmatrix},\label{eq:epsilonAdotBdot}
@@ -360,8 +361,8 @@ The dots on the indices for the complex conjugate representation are there to he
 Since (\ref{eq:MofLambda}) gives $M$ in terms of the Pauli matrices, their index structure must be $\bar{\sigma^\mu}^{\dot{A}A}$ and $\sigma^\mu_{A\dot{A}}$. 
 For a consistent index notation, the relationship between the vectors $\psi$ and $\bar{\psi}$ can be expressed with:
 \[  \psi^A = \bar\psi_{\dot{A}}^*\bar{\sigma}^{0\dot{A}A}, \quad  \psi_A = {\sigma}^0_{A\dot{A}}\bar\psi^{\dot{A}*}, \quad  \bar{\psi}^{\dot{A}} = \bar{\sigma}^{0\dot{A}A}\psi_A^*, \quad \text{and}\quad  \bar{\psi}_{\dot{A}} =\psi^{A*} \sigma^0_{A\dot{A}} .\]
-This may be seen as a bit of an overkill in indices as $\bar{\sigma^0}^{\dot{A}A} = \delta^{\dot{A}A}$, and we will in the following often omit the matrix and simply write $(\psi_A)^* = \bar{\psi}^{\dot{A}}$.
-Note that from the above the following relationships hold for the hermitian conjugate:
+This may seem as a bit of an overkill in indices as the sigma matrices involved are the identity: $\bar{\sigma}^{0\dot{A}A} = \delta^{\dot{A}A}$ and  $\sigma^0_{A\dot{A}} = \delta_{A\dot{A}}$, and we will in the following often omit the $\sigma^0$ matrix and simply write $(\psi_A)^* = \bar{\psi}^{\dot{A}}$ and similarly.
+Note that from the above the following relationships hold for the hermitian conjugate when we ignore the $\sigma^0$ matrices that keep track of the indices:
 \begin{eqnarray}
 (\psi_A)^\dagger &=& \bar{\psi}_{\dot{A}} \\
 (\bar{\psi}_{\dot{A}})^\dagger &=& \psi_A. \label{eq:Weyl_hc}
@@ -385,7 +386,7 @@ This means that the contraction evaluates as
 For Weyl spinors $\psi$, $\eta$, and $\phi$ we can prove the following relationships\footnote{For clarity we have inserted parenthesis to show the different contractions.} 
 \begin{eqnarray}
 \eta\psi 				&=& \psi\eta,  \label{eq:Weylspinor_etapsi}  \\
-\bar\eta\bar\psi 			&=& \bar\psi\bar\eta,  \\
+\bar\eta\bar\psi 			&=& \bar\psi\bar\eta, \label{eq:Weylspinor_contraction_order_bared} \\
 (\eta\psi)^\dagger 		&=& \bar\psi\bar\eta,  \\
 (\eta\psi)(\eta\phi) 		&=& -\frac{1}{2}(\eta\eta)(\psi\phi), \label{eq:Weylspinor_etapsietapsi}  \\
 \eta\sigma^\mu\bar\psi 	&=& - \bar\psi\bar\sigma^\mu\eta,  \label{eq:Weylspinor_etasigmapsi} \\
@@ -432,14 +433,50 @@ P_R \psi=\left(\begin{matrix} 0 & 0 \\ 0 & I \end{matrix}\right) \psi=\begin{pma
 Note the projection properties $P_L+P_R=I$, $P_L^2=P_L$, $P_R^2=P_R$, and $P_LP_R=0$.
 %Using these expressions one can find the relationships between the four-component and two-component (Weyl spinor) notation for the supercharges.
 
-The equation of motion for spin-$\half$ particles with mass $m$ in relativistic quantum mechanics is the {\bf Dirac equation}
+We define a bared version of the Dirac spinor by  $\bar\psi \equiv \psi^\dagger\gamma^0$, which can be written in terms of Weyl spinors as 
+\begin{equation*}
+\bar\psi  =\begin{pmatrix}\phi_A^\dagger & \bar{\chi}^{\dot{A}^\dagger}\end{pmatrix} \left(\begin{matrix} 0 & \sigma^0_{A\dot{A}} \\ \bar\sigma^{0\dot A A} & 0 \end{matrix}\right)
+= \begin{pmatrix}  \bar{\chi}^{\dot{A}*}\bar\sigma^{0\dot A A}  & \phi_A^*  \sigma^0_{A\dot{A}} \end{pmatrix}
+= \begin{pmatrix}  \chi^A & \bar{\phi}_{\dot A} \end{pmatrix}.
+\end{equation*}
+
+
+
+%%%
+\subsection{Dirac and Weyl equations}
+\label{sec:fermion_eoms}
+%%%
+
+The equation of motion for spin-$\half$ particles with mass $m$ can be found from the Dirac Lagrangian written in terms of the  four component spinor constructed above,
 \begin{equation}
-(i\slashed{\partial} -m)\psi=0,
+\mathcal L_D = \bar\psi (i \slashed{\partial}-m)\psi,
+\label{eq:Dirac_lagrangian}
 \end{equation}
-where the `slash' notation signifies contraction with a $\gamma$-matrix, $\slashed{\partial}\equiv\gamma^\mu\partial_\mu$, and where $\psi$ is a four component spinor constructed as above. Using Weyl spinors and the Weyl-representation of the $\gamma$-matrices this can be written as the coupled differential equations
+where the `slash' notation signifies contraction with a $\gamma$-matrix, $\slashed{\partial}\equiv\gamma^\mu\partial_\mu$, and where an identity matrix is implied for the mass term. After solving for $\psi$ using the Lagrange equation this gives the {\bf Dirac equation} of motion
+\begin{equation}
+(i\slashed{\partial} -m)\psi=0.
+\end{equation}
+
+In two-component Weyl-spinor notation, using the Weyl-representation og the $\gamma$-matrices, the Lagrangian (\ref{eq:Dirac_lagrangian}) becomes
+\begin{eqnarray*}
+\mathcal L_D &=& \begin{pmatrix}  \chi^A & \bar{\phi}_{\dot A} \end{pmatrix} \left(\begin{matrix} -m  & i\sigma^\mu_{A\dot A}\partial_\mu \\  i\bar\sigma^{\mu\dot A A}\partial_\mu& -m \end{matrix}\right) \begin{pmatrix}\phi_A\\ \bar{\chi}^{\dot{A}}\end{pmatrix} \\
+&=& -m  \chi \phi + i\chi\sigma^\mu\partial_\mu\bar\chi+ i\bar\phi\bar\sigma^\mu\partial_\mu\phi -m\bar\phi\bar\chi \\
+&=& i\chi\sigma^\mu\partial_\mu\bar\chi+ i\bar\phi\bar\sigma^\mu\partial_\mu\phi  -m  (\chi \phi + \bar\phi\bar\chi).  
+\end{eqnarray*}
+Here we can use (\ref{eq:Weylspinor_contraction_order_bared}) and (\ref{eq:Weylspinor_etasigmapsi}) with
+\begin{equation}
+i\chi\sigma^\mu\partial_\mu\bar\chi = \partial_\mu (i\chi\sigma^\mu\bar\chi) - i\partial_\mu\chi\sigma^\mu\bar\chi =  i\bar\chi\bar\sigma^\mu\partial_\mu\chi,
+\end{equation}
+where we assume the surface term disappears, to make the expression more symmetric
+\begin{equation*}
+\mathcal L_D = i\bar\chi\bar\sigma^\mu\partial_\mu\chi+ i\bar\phi\bar\sigma^\mu\partial_\mu\phi  -m  (\chi \phi + \bar\chi\bar\phi).  
+\end{equation*}
+
+The equation of motion for the Weyl-spinors that corresponds to the Dirac equation can be found by using the Lagrange equation for $\chi$ and $\bar\phi$
+ as the coupled differential equations
 \begin{eqnarray*}
 i\sigma^\mu\partial_\mu\bar\chi -m\phi &=& 0,\\
-i\bar\sigma^\mu\partial_\mu\phi -m\bar\psi &=& 0.
+i\bar\sigma^\mu\partial_\mu\phi -m\bar\chi &=& 0.
 \end{eqnarray*}
 In the massless limit or the extreme relativistic limit, $m\to 0$, these equations decouple into one separate equation per Weyl-spinor and become the {\bf Weyl-equations}
 \begin{eqnarray*}
@@ -451,7 +488,6 @@ These equations have plane wave solutions $\phi \sim e^{-ipx}$ and $\bar\chi\sim
 \[  |\mathbf p|\phi + \boldsymbol\sigma\cdot \mathbf P\phi = 0 \quad\text{or}\quad \half\frac{\boldsymbol\sigma\cdot \mathbf P}{|\mathbf p|}\phi =- \half \phi, \]
 and similarly for $\bar\chi$
 \[ \half\frac{\boldsymbol\sigma\cdot \mathbf P}{|\mathbf p|}\bar\chi = \half \bar\chi. \]
-
 
 
 
