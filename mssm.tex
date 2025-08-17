@@ -159,18 +159,20 @@ If you have paid very close attention to the argument above you may have noticed
 where $\mu'\in\mathbb C$ is some other mass parameter in the superpotential. This is clearly an allowable term (and we will return to it below), however, it also raises a very interesting question: Could we have $L_i\equiv H_d$? Could the lepton superfields $L_i$ play the r\^ole of Higgs superfields, thus reducing the field content needed to describe the SM particles in a supersymmetric theory? While not immediately forbidden as a superpotential term, this suggestions unfortunately leads to problems with anomaly cancelation, processes with large lepton flavour violation (LFV) and much too massive neutrinos, and has been abandoned.
 
 We have now found all possible mass terms in the superpotential. What about the {\bf Yukawa terms} $\lambda_{ijk}\Phi_i\Phi_j\Phi_k$? The hypercharge requirement here is $Y_i + Y_j + Y_k = 0$. From our table of hypercharges only the following terms are found to be viable:
-\[W_\text{Yukawa}=y^e_{ij}L_iH_d E_j + y^u_{ij}Q_iH_u\bar{U}_j +  y^d_{ij}Q_iH_d\bar{D}_j+ \lambda_{ijk} L_iL_j\bar{E}_k + \lambda'_{ijk} L_iQ_j\bar{D}_k + \lambda''_{ijk}\bar{U}_i\bar{D}_j\bar{D}_k,\]
+\[W_\text{Yukawa}=y^e_{ij}L_iH_d \bar{E}_j + y^u_{ij}Q_iH_u\bar{U}_j +  y^d_{ij}Q_iH_d\bar{D}_j+ \lambda_{ijk} L_iL_j\bar{E}_k + \lambda'_{ijk} L_iQ_j\bar{D}_k + \lambda''_{ijk}\bar{U}_i\bar{D}_j\bar{D}_k,\]
 where we have named and indexed the Yukawa couplings in a hopefully natural way.\footnote{For some particular opinion of what is natural.} 
 For all these terms we can simultaneously keep $SU(2)_L$ invariance with the $i\sigma_2$ construction implicitly inserted between any two superfield doublets.  Note that because of the $SU(2)_L$  invariance, we must have $i\ne j$ for  $\lambda_{ijk}$, since $i=j$ gives $ L_iL_i\bar{E}_k =(\nu_i l_i- l_i\nu_i)\bar E_k=0$.
 
-For $SU(3)_c$ to be conserved for the Yukawa terms, we need to have colour singlets. Some of these terms are colour singlets by construction since they do not contain any coloured fields -- the $LHE$ and $LLE$ terms. The terms with only two quark superfields contain left-handed Weyl spinors for quarks and anti-quarks, which form $SU(3)_c$ singlets if the superfields come in colour--anti-colour pairs. In representation language the superfields (and as a consequence their component fields) are in the $\mathbf 3$ and $\mathbf{\bar 3}$ representations of $SU(3)_c$. Written with explicit  colour indices we have for example $L_i Q_j \bar{D}_k= L_i i\sigma_2 Q_j^a \bar{D}_k^a$, where $a$ is the colour index. The final term $\bar{U}_i\bar{D}_j\bar{D}_k$ is a colour singlet once we demand that it is totally anti-symmetric in the colour indices: $\bar{U}_i\bar{D}_j\bar{D}_k\equiv\epsilon_{abc}\bar{U}_i^a\bar{D}_j^b\bar{D}_k^c$. The anti-symmetry property of the Levi-Civita tensor $\epsilon_{abc}$ means that we must have $j\ne k$ in $ \lambda''_{ijk}$.
+For $SU(3)_c$ to be conserved for the Yukawa terms, we need to have colour singlets. Some of these terms are colour singlets by construction since they do not contain any coloured fields -- the $LH\bar{E}$ and $LL\bar{E}$ terms. The terms with only two quark superfields contain left-handed Weyl spinors for quarks and anti-quarks, which form $SU(3)_c$ singlets if the superfields come in colour--anti-colour pairs. In representation language the superfields (and as a consequence their component fields) are in the $\mathbf 3$ and $\mathbf{\bar 3}$ representations of $SU(3)_c$. Written with explicit  colour indices we have for example $L_i Q_j \bar{D}_k= L_i i\sigma_2 Q_j^a \bar{D}_k^a$, where $a$ is the colour index. The final term $\bar{U}_i\bar{D}_j\bar{D}_k$ is a colour singlet once we demand that it is totally anti-symmetric in the colour indices: $\bar{U}_i\bar{D}_j\bar{D}_k\equiv\epsilon_{abc}\bar{U}_i^a\bar{D}_j^b\bar{D}_k^c$. The anti-symmetry property of the Levi-Civita tensor $\epsilon_{abc}$ means that we must have $j\ne k$ in $ \lambda''_{ijk}$.
 
 Our complete superpotential is then:
-\begin{eqnarray}
+\begin{equation}
 \label{eq:supolag}
-W &=& \mu H_u H_d + \mu'_i L_iH_u + y^e_{ij}L_iH_d E_j + y^u_{ij}Q_iH_u\bar{U}_j +  y^d_{ij}Q_iH_d\bar{D}_j \nonumber\\
-&&+ \lambda_{ijk} L_iL_j\bar{E}_k + \lambda'_{ijk} L_iQ_j\bar{D}_k + \lambda''_{ijk}\bar{U}_i\bar{D}_j\bar{D}_k.
-\end{eqnarray}
+\begin{split}
+W =\ & \mu H_u H_d + \mu'_i L_iH_u + y^e_{ij}L_iH_d \bar{E}_j + y^u_{ij}Q_iH_u\bar{U}_j +  y^d_{ij}Q_iH_d\bar{D}_j \\
+&+ \lambda_{ijk} L_iL_j\bar{E}_k + \lambda'_{ijk} L_iQ_j\bar{D}_k + \lambda''_{ijk}\bar{U}_i\bar{D}_j\bar{D}_k.
+\end{split}
+\end{equation}
 The parameter $\mu$, potentially complex, is a brand new supersymmetric parameter appearing in the superpotential, with no corresponding parameter existing in the Standard Model Lagrangian. However, the Yukawa couplings $y_{ij}$ are identical to the Standard Model Yukawa couplings since they will be required to give mass to the Standard Model fermions after electroweak symmetry breaking when the Higgs fields get a vev, see Section~\ref{sec:rewsb}. The fate of the other parameters will be discussed in the next section.
 
 
@@ -178,7 +180,7 @@ The parameter $\mu$, potentially complex, is a brand new supersymmetric paramete
 %%%%%%%%%
 \section{R-parity}
 %%%%%%%%%
-The superpotential terms $LH_u$, $LLE$ and $LQ\bar{D}$ that we have written down in Eq.~(\ref{eq:supolag}) all violate lepton number conservation, and $\bar{U}\bar{D}\bar{D}$ violates baryon number conservation. Such terms do not exist in the Standard Model, although there is no symmetry forbidding their existence there. Instead a seemingly accidental combination of what fields exist and the gauge symmetries that limit their interactions means that there are no such tree-level interactions. We call this an {\bf accidental symmetry} of the Standard Model.  
+The superpotential terms $LH_u$, $LL\bar{E}$ and $LQ\bar{D}$ that we have written down in Eq.~(\ref{eq:supolag}) all violate lepton number conservation, and $\bar{U}\bar{D}\bar{D}$ violates baryon number conservation. Such terms do not exist in the Standard Model, although there is no symmetry forbidding their existence there. Instead a seemingly accidental combination of what fields exist and the gauge symmetries that limit their interactions means that there are no such tree-level interactions. We call this an {\bf accidental symmetry} of the Standard Model.  
 
 Allowing such terms in the MSSM would lead to, among other phenomenological problems, processes like rapid proton decay, for example through $p\to e^+ \pi^0$ as shown in Fig.~\ref{fig:proton}, which breaks both baryon number and lepton number. These are not observed in nature. We can estimate the resulting proton life-time by noting that the exchange of a scalar particle (in this example a strange squark $\tilde s$) creates an effective dimension-6 four-fermion interaction Lagrangian term $\lambda\bar u \bar deu$ with coupling 
 \begin{equation}
@@ -240,7 +242,7 @@ where $s$ is a particle's spin, $B$ its baryon number and $L$ its lepton number.
 For all Standard Model particles, including all the scalar Higgs bosons, this gives $R=1$, while the superpartners all have $R=-1$. One usually {\it defines} the MSSM as conserving R-parity. For the MSSM this excludes the terms $L H_u$, $LL\bar{E}$, $LQ\bar{D}$ and $\bar{U}\bar{D} \bar{D}$ from the superpotential,\footnote{All the superpotential Yukawa terms lead to component field terms of the form $A_i\psi_j\psi_k$. If the scalar $A_i$ here is {\it not} a Higgs boson, then it is a superpartner and if none of the fermions come from a Higgs superfield so that they are also a superpartner the term breaks R-parity conservation. This means that every Yukawa term needs one, and only one, Higgs superfield to conserve R-parity.  The superpotential mass terms have component field terms of the form $\psi_i\psi_j$. If one of the fermions here comes from a Higgs superfield, then it is a superpartner, and if the other does not, the term breaks R-parity.}
 leaving us with the R-partiy conserving superpotential
 \begin{eqnarray}
-W &=& \mu H_u H_d + y^e_{ij}L_iH_d E_j + y^u_{ij}Q_iH_u\bar{U}_j +  y^d_{ij}Q_iH_d\bar{D}_j.
+W &=& \mu H_u H_d + y^e_{ij}L_iH_d \bar{E}_j + y^u_{ij}Q_iH_u\bar{U}_j +  y^d_{ij}Q_iH_d\bar{D}_j.
 \label{eq:RPCsuperpot}
 \end{eqnarray}
 

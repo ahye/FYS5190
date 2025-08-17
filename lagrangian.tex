@@ -69,10 +69,10 @@ Dimension counting, starting from $[\mathcal{L}]=M^2$ and $[\Phi]=1$, means that
 We will of course require not only a supersymmetry invariant Lagrangian, but also a gauge invariant Lagrangian, and we start with the requirements for an abelian gauge group. 
 
 Let us first look at the transformation of the superpotential $W$ under the gauge transformation of the scalar superfields in (\ref{eq:scalar_supergauge}):
-\[W[\Phi] \to W[\Phi'] = t_ie^{iq_i\Lambda }\Phi_i + m_{ij}e^{i(q_i+q_j)\Lambda}\Phi_i\Phi_j + \lambda_{ijk}e^{i(q_i+q_j+q_k)\Lambda}\Phi_i\Phi_j\Phi_k.\]
+\[W[\Phi] \to W[\Phi'] = g_i e^{iq_i\Lambda }\Phi_i + m_{ij}e^{i(q_i+q_j)\Lambda}\Phi_i\Phi_j + \lambda_{ijk}e^{i(q_i+q_j+q_k)\Lambda}\Phi_i\Phi_j\Phi_k.\]
 Requiring gauge invariance, $W[\Phi] = W[\Phi']$, we must have:
 \begin{eqnarray}
-q_i &=& 0 ~~\text{or}~t_i = 0, \\
+q_i &=& 0 ~~\text{or}~g_i = 0, \\
 q_i+q_j &=& 0 ~~\text{or}~~m_{ij} = 0,  \\
 q_i+q_j+q_k &=& 0  ~~\text{or}~~ \lambda_{ijk}=0.
 \end{eqnarray}
@@ -105,7 +105,7 @@ in a non-abelian supergauge transformation. Here $q$ is the charge of $\Phi$ und
 
 For the superpotential to be gauge invariant we must now have:
 \begin{eqnarray}
-t_iU_{ir} &=& t_r ~~\text{or}~~ t_i = 0, \\
+t_iU_{ir} &=& t_r ~~\text{or}~~ g_i = 0, \\
 m_{ij}U_{ir} U_{js} &=& m_{rs} ~~\text{or}~~m_{ij}=0, \\
  \lambda_{ijk}U_{ir} U_{js}U_{kt}&=& \lambda_{rst} ~~\text{or}~~\lambda_{ijk}=0,
 \end{eqnarray}
@@ -135,7 +135,7 @@ The supergauge transformations of vector superfields can be written more efficie
 \[e^{V'} = e^{i\Lambda^\dagger}e^V e^{-i\Lambda},\]
 where we have defined matrix superfields $\Lambda \equiv q \Lambda^aT_a$ and $V \equiv q V^aT_a$, and the inverse transformation is then given by
 \[e^{-V'} = e^{i\Lambda}e^{-V} e^{-i\Lambda^\dagger},\]
-such that $e^Ve^{-V} = e^{V'}e^{-V'} = 1$.\footnote{Notice that despite the non-commutative nature of the matrices involved, the identity $e^{A}e^{-A}=1$ holds. See Exercise~\ref{chap:groups}.\ref{ex:expmapprop}.}
+such that $e^Ve^{-V} = e^{V'}e^{-V'} = 1$.\footnote{Notice that despite the non-commutative nature of the matrices involved, the identity $e^{A}e^{-A}=1$ holds. See Exercise~\ref{chap:groups}.\ref{ex:expmap_prop}.}
 
 
 
@@ -278,7 +278,7 @@ while vector superfields must have zero $R$-charge since they are real, and thei
 \begin{equation}
 V_\mu \to V_\mu ,\quad \lambda \to e^{i\alpha} \lambda,\quad D\to D.
 \end{equation}
-We can check that all the terms in the Lagrangian (\ref{eq:SUSY_Lagrangian}) are invariant under this transformation, with the exception of the superpotential $W$, which must have total $R$-charge 2. This will exclude most allowed charge assignments for the the scalar superfields, and in the minimal supersymmetruc models we shall look at there will be no viable continuous $R$-symmetry. However, $R$-symmetry has importance in building models of supersymmetry breaking, and could remain as a broken symmetry in the model.
+We can check that all the terms in the Lagrangian (\ref{eq:SUSY_Lagrangian}) are invariant under this transformation, with the exception of the superpotential $W$, which must have total $R$-charge 2. This will exclude most allowed charge assignments for the the scalar superfields, and in the minimal supersymmetric models we shall look at there will be no viable continuous $R$-symmetry. However, $R$-symmetry has importance in building models of supersymmetry breaking, and could remain as a broken symmetry in the model.
 
 
 
@@ -337,7 +337,7 @@ Picking $\Lambda$  suggestively as the Planck scale, $\Lambda_{UV} =M_P = 2.44\t
 
 We observe that the difference in sign between the fermions and bosons in (\ref{eq:higgsqdiv}) means that it could {\it in principle} be possible that these huge contributions cancel to keep $m_h \sim 125$\,GeV as measured,\footnote{Could we not fix this by introducing a very large Lagrangian Higgs mass $\mu$? Not really, in that the tree-level Higgs mass is constrained by the properties of the other electroweak masses, {\it i.e.}\ the $Z$ and $W$-bosons.} however, as physicists we should worry why the Universe seems to be organised in such a strange way without any specific cause. This is known as the {\bf Higgs fine tuning problem}, or the scale {\bf hierarchy problem} because it is fundamentally a problem of why the electroweak scale at around 100 GeV where the Higgs lives, is so much lighter than the Planck scale of $10^{18}$ GeV, when the former should in principle be pulled up to the latter by the sensitivity of scalars to loop corrections.\footnote{With some background in renormalisation you may ask: What about choosing dimensional regularisation instead where there is no cut-off scale? That would in principle work, however, as soon as you introduce {\it any} new particle (significantly) heavier than the Higgs there is still a quadratic correction of the form of (\ref{eq:higgsqdiv}) with the new particle masses as the scale, meaning that we cannot complete the Standard Model at a higher scale without reintroducing the problem.}
 
-Enter supersymmetry to the rescue: with unbroken supersymmetry we find that we automatically have $|\lambda_f|^2 = \lambda_s$ and exactly twice as many scalar as fermion degrees of freedom running around in loops. This provides a magical exact cancellation of the quadratic divergence in Eq.~(\ref{eq:higgsqdiv}). To see that this relation between the couplings holds, notice that it is the superpotential term $W \sim \lambda_{ijk}\Phi_i\Phi_j \Phi_k$ which is responsible for generating Lagrangian Yukawa terms of the form $\lambda_{ijk} \psi_i\psi_j A_k$ that couple two fermions to a scalar $A_k$. If the superfield $\Phi_k$ is the one that contains the Higgs boson this means that $A_k$ is the Higgs boson field $h$, and it couples to the right-handed Weyl-spinors $\psi_i$ and $\psi_j$  in the superfields $\Phi_i$ and $\Phi_j$  as $\lambda_{ijk}\psi_i\psi_j h$, with the coupling $\lambda_{ijk}$. From the superpotential with right-handed scalar superfields the same term appears with right-handed Weyl-spinors $\lambda_{ijk}\bar\psi_i\bar\psi_j h^*$. These two terms can be combined to the same interaction term with a single Dirac fermion $\psi$,  $\lambda_{ijk}\bar\psi\psi h$, as in the Standard Model, giving $\lambda_f = \lambda_{ijk}$. There are no other such terms coupling two fermions to a scalar in the whole Lagrangian.
+Enter supersymmetry to the rescue: with unbroken supersymmetry we find that we automatically have $|\lambda_f|^2 = \lambda_s$ and exactly twice as many scalar as fermion degrees of freedom running around in loops. This provides a magical exact cancellation of the quadratic divergence in Eq.~(\ref{eq:higgsqdiv}). To see that this relation between the couplings holds, notice that it is the superpotential term $W \sim \lambda_{ijk}\Phi_i\Phi_j \Phi_k$ which is responsible for generating Lagrangian Yukawa terms of the form $\lambda_{ijk} \psi_i\psi_j A_k$ that couple two fermions to a scalar $A_k$. If the superfield $\Phi_k$ is the one that contains the Higgs boson this means that $A_k$ is the Higgs boson field $h$, and it couples to the left-handed Weyl-spinors $\psi_i$ and $\psi_j$  in the superfields $\Phi_i$ and $\Phi_j$  as $\lambda_{ijk}\psi_i\psi_j h$, with the coupling $\lambda_{ijk}$. From the superpotential with right-handed scalar superfields the same term appears with right-handed Weyl-spinors $\lambda_{ijk}\bar\psi_i\bar\psi_j h^*$. These two terms can be combined to the same interaction term with a single Dirac fermion $\psi$,  $\lambda_{ijk}\bar\psi\psi h$, as in the Standard Model, giving $\lambda_f = \lambda_{ijk}$. There are no other such terms coupling two fermions to a scalar in the whole Lagrangian.
 
 At the same time, in the scalar potential (\ref{eq:scalarpotglobal}), that same superpotential term is responsible for the terms
 \begin{equation}
@@ -495,7 +495,7 @@ Using (\ref{eq:Weylspinor_etasigmapsi}) we can similarly write
 \end{eqnarray}
 Removing the terms with total derivatives the kinetic term is
 \begin{equation}
-\int d^4\theta \,\Phi^\dagger\Phi=\int d^4x \left\{-A^*(x)\square A(x)+|F(x)|^2+i\partial_\mu\psi(x)\bar\sigma^\mu\psi(x)\right\}.
+\int d^4\theta \,\Phi^\dagger\Phi=\int d^4x \left\{-A^*(x)\square A(x)+|F(x)|^2+i\partial_\mu\bar\psi(x)\bar\sigma^\mu\psi(x)\right\}.
 \end{equation}
 
 The (left-handed) superpotential terms are
@@ -509,25 +509,32 @@ The (left-handed) superpotential terms are
 %&=& 3\theta\theta  A(x)A(x)F(x) + 3A(x)\theta\theta  \psi(x)\psi(x)
 \end{eqnarray*}
 where we have used (\ref{eq:Weylspinor_etapsietapsi}) to rewrite the terms with $\psi$. The total action is then 
-\begin{eqnarray}
-S&=&\int d^4x \left\{-A^*(x)\square A(x)+|F(x)|^2+i\partial_\mu\bar\psi(x)\bar\sigma^\mu\psi(x) \right. \nonumber \\ 
-&+&\left. gF(x)+ 2mA(x)F(x)+m\psi(x)\psi(x)+3\lambda A(x)^2F(x)+3\lambda A(x)\psi(x)\psi(x)+\text{h.c.} \right\}
-\end{eqnarray}
+\begin{equation}
+\begin{split}
+    S = \int d^4x \big(&-A^*(x)\square A(x)+|F(x)|^2+i\partial_\mu\bar\psi(x)\bar\sigma^\mu\psi(x) \\
+    &+ gF(x)+ 2mA(x)F(x)+m\psi(x)\psi(x)+3\lambda A(x)^2F(x) \\
+    &+ 3\lambda A(x)\psi(x)\psi(x)+\text{h.c.} \big)
+\end{split}
+\end{equation}
 
 The equation of motion for $F$ is then
 \begin{equation}
 \frac{\partial\mathcal{L}}{\partial F^*}=F+g+2mA^*+3\lambda A^{*2}=0,
 \end{equation}
 which we can solve for $F$. With $\frac{\partial W}{\partial A}=g+2mA+3\lambda A^2$, $F=-\frac{\partial W^*}{\partial A^*}$ and the action is
-\begin{eqnarray}
-S&=&\int d^4x \left\{-A^*(x)\square A(x)+i\partial_\mu\psi(x)\bar\sigma^\mu\psi(x)+m\psi(x)\psi(x)+3\lambda A(x)\psi(x)\psi(x) \right. \nonumber \\ 
-&&\left.  +m\bar\psi(x)\bar\psi(x)+3\lambda A^*(x)\bar\psi(x)\bar\psi(x) -\left|\frac{\partial W}{\partial A}\right|^2\right\}.
-\end{eqnarray}
+\begin{equation}
+\begin{split}
+    S = \int d^4x \Bigg(&-A^*(x)\square A(x)+i\partial_\mu\bar\psi(x)\bar\sigma^\mu\psi(x)+m\psi(x)\psi(x)+3\lambda A(x)\psi(x)\psi(x) \\
+    &+ m\bar\psi(x)\bar\psi(x)+3\lambda A^*(x)\bar\psi(x)\bar\psi(x) -\left|\frac{\partial W}{\partial A}\right|^2 \Bigg).
+\end{split}
+\end{equation}
 Using the fermionic mass matrices in (\ref{eq:fermionic_mass_matrix}) this can be written as
-\begin{eqnarray}
-S&=&\int d^4x \left\{-A^*(x)\square A(x)+i\partial_\mu\bar\psi(x)\bar\sigma^\mu\psi(x)+\half\frac{\partial^2 W}{\partial A^2}\psi(x)\psi(x) \right. \nonumber \\ 
-&&\left.  +\half\frac{\partial^2 W^*}{\partial A^{*2}}\bar\psi(x)\bar\psi(x)-\left|\frac{\partial W}{\partial A}\right|^2\right\}.
-\end{eqnarray}
+\begin{equation}
+\begin{split}
+    S = \int d^4x \Bigg(&-A^*(x)\square A(x)+i\partial_\mu\bar\psi(x)\bar\sigma^\mu\psi(x)+\half\frac{\partial^2 W}{\partial A^2}\psi(x)\psi(x) \\
+    &+ \half\frac{\partial^2 W^*}{\partial A^{*2}}\bar\psi(x)\bar\psi(x)-\left|\frac{\partial W}{\partial A}\right|^2 \Bigg).
+\end{split}
+\end{equation}
 
 \end{Answer}
 
