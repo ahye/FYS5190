@@ -4,33 +4,45 @@
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Groups and algebras}
+\chapter{Groups}
 \label{chap:groups}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The study of symmetries plays a central part in theoretical physics, and the mathematical language we use is that of groups. The action of the group elements on our (quantum) states effects the transformation that has the symmetry, while the invariance of the physical properties of the system under that transformation is the symmetry itself. For example, rotations in three-dimensions can be carried out by the application of a $3\times3$ rotation matrix on the coordinates of an object. As we will see, these matrices form the group called $SO(3)$. For a sphere, which is invariant under these rotations, $SO(3)$ is then the symmetry group.
+The study of symmetries plays a central part in theoretical physics, and the mathematical language we use is that of groups. The action of the group elements on our states or fields is what effects the transformation that has the symmetry, while the invariance of the physical properties of the system under that transformation is the symmetry itself. For example, rotations in three-dimensions can be carried out by the application of a $3\times3$ rotation matrix on the coordinates of an object. As we shall see, these matrices form the group called $SO(3)$. For a sphere, which is invariant under these rotations, $SO(3)$ is then the symmetry group.
 
-Of special interest to us are the Lie groups, which are the groups that represent continuous transformations, such as the $SO(3)$ rotations. The properties of Lie groups can be further studied by finding their generators which form a (Lie) algebra. The generators {\it almost} -- in a very specific sense of the word almost -- describes the whole group, and allows us to reconstruct the group elements by what is called the exponential map.
+Of special interest to us are the Lie groups, which are the groups that represent continuous transformations, such as the $SO(3)$ rotations. The properties of Lie groups can be further studied by finding their generators which form a (Lie) algebra. The generators {\it almost} -- in a very specific sense of the word almost -- describes the whole group, and allows us to reconstruct the group elements by what is called the exponential map. This we will return to in the next chapter.
 
-Here, we will begin by defining groups and looking at some of their most important properties. What is crucial in physics are the {\it representations} of groups, meaning what the operators of the transformations on the states actually look like. Returning to the rotation example these are $3\times3$ matrices, but with some restrictions on their elements. After discussing representations we will move on to defining Lie groups, before we end on a discussion of their generators and corresponding algebras.
+Here, we will begin by defining groups and looking at some of their most important properties. What is crucial in physics are the {\it representations} of groups, meaning what the operators of the transformations on the states actually look like. Returning to the rotation example these are $3\times3$ matrices, but with some restrictions on their elements. After discussing representations we will move on to defining Lie groups, before we end on a discussion of their generators.
+
 
 %%%%%%%%%%%%%%
 \section{Group definition}
 %%%%%%%%%%%%%%
-A group is an abstract mathematical structure that consists of a set of objects (elements), and a multiplication rule acting between pairs of these objects. We define a group as follows.
-\df{The set of elements $G = \{g_i\}$ and operation $\circ$ (sometimes called multiplication) form a {\bf group} if and only if for all $g_i \in G$ :\begin{enumerate}[i)]
+A group is an abstract algebraic structure that consists of a set of objects (the elements), and an operation acting between pairs of these elements that gives another element in the set. In addition the set needs to contain an element that works as an identity, and every element in the group needs to have an inverse. Because these properties are very similar to the properties of multiplication with real numbers (or rationals), the operation is often called multiplication.
+
+We define a group as follows.
+\df{The set of elements $G = \{g_i\}$ and operation $\circ$ (multiplication) form a {\bf group} if and only if for all $g_i \in G$ :\begin{enumerate}[i)]
 \item $g_i \circ g_j \in G$, \hfill (closure)
 \item $(g_i \circ g_j)\circ g_k = g_i\circ(g_j \circ g_k)$, \hfill (associativity)
-\item $\exists e \in G$ such that $g_i \circ e = e\circ g_i = g_i$, \hfill (identity element)
-\item $\exists g_i^{-1} \in G$ such that $g_i \circ g_i^{-1} = g_i^{-1}\circ g_i = e$. \hfill (inverse)
+\item There exists an $e \in G$ such that $g_i \circ e = e\circ g_i = g_i$, \hfill (identity element)
+\item There exists an $g_i^{-1} \in G$ such that $g_i \circ g_i^{-1} = g_i^{-1}\circ g_i = e$. \hfill (inverse)
 \end{enumerate}}
-Below, where no confusion can occur, we will often drop the multiplication symbol for the group multiplication (and other abstract multiplications), writing $g_i \circ g_j =g_ig_j$.
+Below, where no confusion can occur, we will often drop the multiplication symbol for the group multiplication, writing $g_i \circ g_j =g_ig_j$. We should also speak of the group as the pair $\{G,\circ\}$, however, we will often abusively refer to just the set $G$, with the multiplication operation being implied.
  
-A straight forward example of a group is $G= \mathbb{Z}$ (the integers), with standard addition as the operation $\circ$. Then $e = 0$ and $g^{-1} = -g$. Alternatively we can restrict the group to $\mathbb{Z}_n$, where the operation is now addition modulo $n$. In this group, $g_i^{-1} = n - g_i$ and the unit element is again $e = 0$.\footnote{Note that we here use $e$ for the identity in an abstract group, while we will later use $I$ or $1$ as the identity matrix in matrix representations of groups.} 
-Here, $\mathbb{Z}$ is an example of an {\bf infinite} group, the set has an infinite number of members, while $\mathbb{Z}_n$ is {\bf finite}, with {\bf order} $n$, meaning $n$ members. Both are {\bf abelian} groups, meaning that the elements commute: $g_i \circ g_j = g_j \circ g_i$, because the standard addition commutes.
+The real numbers sans zero, ${\mathbb R}\setminus \{0\}$, with ordinary multiplication as the operation $\circ$ and $e=1$ as the identity, is an obvious example of a group. Here we need to remove zero since it does not have an inverse. Another straight forward example of a group is $G= \mathbb{Z}$ (the integers), with standard addition as the operation $\circ$. Then $e = 0$ and $g^{-1} = -g$. Alternatively we can restrict the group to $\mathbb{Z}_n$, where the operation is now addition modulo $n$. In this group, $g_i^{-1} = n - g_i$, and the unit element is again $e = 0$.\footnote{Note that we here use $e$ for the identity in an abstract group, while we will later use $I$ or $1$ as the identity matrix in matrix representations of groups.} 
 
-The simplest, non-trivial, of these $\mathbb{Z}_n$-groups is $\mathbb{Z}_2$ which only has the members $e=0$ and $1$. The ``multiplication'' operation is completely defined by the three possibilities $0+0=0$, $0+1=1$ and $1+1=0$. Now, compare this to the set $G=\{-1,1\}$ with the ordinary multiplication operation. Here, all the possible operations are $1\cdot 1=1$, $1\cdot (-1)=-1$ and $(-1)\cdot (-1)=1$. This has exactly the same structure as $\mathbb{Z}_2$, only that the identity element is now $1$.  We say that these two groups are {\bf isomorphic}, because there is a one-to-one correspondence between all the (two) elements, $0\leftrightarrow 1$ and $1\leftrightarrow -1$, and the results of the multiplication operation is the same, and in fact we consider them as the {\it same group} despite the considerable apparent visual differences.\footnote{This observation  generalises to the set $G=\{e^{2\pi ik/n} | k=1,\ldots,n-1\}$, the {\bf $\mathbf n$-th roots of unity}, which, together with the standard multiplication operation, is isomorphic to  $\mathbb{Z}_n$.} 
+Here  $\mathbb{Z}$ is an example of an {\bf infinite} group, the set has an infinite number of members, while $\mathbb{Z}_n$ is {\bf finite}, with {\bf order} $n$, meaning $n$ members. Both are {\bf abelian} groups, meaning that the elements commute: $g_i \circ g_j = g_j \circ g_i$, because the standard addition commutes, but this is not a requirement for groups, and we will soon see non-abelian groups.
+
+The simplest, non-trivial, of these $\mathbb{Z}_n$-groups is $\mathbb{Z}_2$ which only has the members $e=0$ and $1$. The ``multiplication'' operation is completely defined by the three possibilities
+\begin{eqnarray*}
+0+0 &=&0, \\ 0+1 &=& 1, \\ 1+1 &=&0.
+\end{eqnarray*}
+Now, compare this to the set $G=\{-1,1\}$ with the ordinary multiplication operation. Here, all the possible operations are 
+\begin{eqnarray*}
+1\cdot 1 &=& 1,\\  1\cdot (-1) &=&-1,\\ (-1)\cdot (-1) &=&1.
+\end{eqnarray*}
+This has exactly the same structure as $\mathbb{Z}_2$, only that the identity element is now $e=1$ and the other element is $-1$.  We say that these two groups are {\bf isomorphic}, because there is a one-to-one correspondence between all the (two) elements, $0\leftrightarrow 1$ and $1\leftrightarrow -1$, and the results of the multiplication operation is the same. In fact, we consider them as the {\it same group} despite the considerable apparent visual differences.\footnote{This observation  generalises to the set $G=\{e^{2\pi ik/n} | k=1,\ldots,n-1\}$, the {\bf $\mathbf n$-th roots of unity}, which, together with the standard multiplication operation, is isomorphic to  $\mathbb{Z}_n$.} 
 This notion of isomorphic (``identical'') groups is very important, and we will return to it in more detail in Sec.~\ref{sec:group_properties}.
 
 A somewhat more sophisticated example of a group can be found in the Taylor expansion of a function $F$, where
@@ -39,9 +51,17 @@ F(x+a) &=& F(x) + aF'(x) + \frac{1}{2} a^2 F''(x) + \ldots \\
 &=& \sum_{n=0}^{\infty}\frac{a^n}{n!}\frac{\partial^n}{\partial x^n} F(x)\\
 &=& e^{a\frac{\partial}{\partial x}} F(x).
 \end{eqnarray*}
-The last equality uses the formal definition of the exponential series, but may drive some mathematicians crazy.\footnote{We will not discuss this further, but there is a deep question here whether the operator formed by this exponentiation is well defined.}  The resulting operator $T_a = e^{a\frac{\partial}{\partial x}} $ is called the {\bf translation operator}, in this case in one dimension, since it shifts the coordinate $x$ of the function $F$ it is operating on by an amount $a$. Defining the (natural) multiplication operation
+The last equality uses the formal definition of the exponential series, but may drive some mathematicians crazy.\footnote{We will not discuss this further, but there is a deep question here whether the operator formed by this exponentiation is well defined.}  
+
+The resulting operator 
+\begin{equation*}
+T_a = e^{a\frac{\partial}{\partial x}},
+\end{equation*} 
+is called the {\bf translation operator}, in this case in one dimension, since it shifts the coordinate $x$ of the function $F$ it is operating on by an amount $a$. Defining the (natural) multiplication operation
 $T_a \circ T_b = T_{a+b}$
-it forms the {\bf translational group} $T(1)$, where we can show that $T_0$ is the identity element and the inverse is $T_a^{-1} = T_{-a}$.\footnote{We could instead have defined the operation between two group elements to be ordinary multiplication and used that to show the relationship $T_a \circ T_b = T_{a+b}$. However, it is important to notice that showing this is not entirely trivial because ordinary arithmetic rules for exponentials fail for operators. In this particular case the proof is fairly simple, but this is in general not so. This will return to trouble us later in the notes.} In $n$ dimensions the group $T(n)$ has the elements  $T_{\mathbf{a}} = e^{\mathbf{a}\cdot \mathbf{\nabla}}$. Whereas we say that the groups $\mathbb{Z}$ and $\mathbb{Z}_n$ are {\bf discrete groups}, since we can count the number of elements, $T_a$ is a {\bf continuous group} since the parameter $a$ can be any real number. 
+it forms the {\bf translational group} $T(1)$, where we can show that $T_0$ is the identity element and the inverse is $T_a^{-1} = T_{-a}$.\footnote{We could instead have defined the operation between two group elements to be ordinary multiplication and used that to show the relationship $T_a \circ T_b = T_{a+b}$. However, it is important to notice that showing this is not entirely trivial because ordinary arithmetic rules for exponentials fail for operators. In this particular case the proof is fairly simple, but this is in general not so. This will return to trouble us later in the notes.} Here, we call $a\in\mathbb R$ the {\bf parameterisation} of the group. In $n$ dimensions the group $T(n)$ has the elements  $T_{\mathbf{a}} = e^{\mathbf{a}\cdot \del}$, where $\del$ is the $n$-dimensional partial derivative vector, and the group is parameterised by the $n$-dimensional vector $\mathbf a$. 
+
+Whereas we say that the groups $\mathbb{Z}$ and $\mathbb{Z}_n$ are {\bf discrete groups}, since we can count the number of elements, $T_a$ is a {\bf continuous group} since the parameter $a$ can be any real number. 
 
 
 %%%%%%%%%%%%%%
@@ -54,8 +74,14 @@ We next define some groups that are very important in physics and to the discuss
 \subsection{General and special linear groups}
 The largest matrix group for a given matrix dimension $n$ is the general linear group.
 \df{The {\bf general linear group} $GL(n)$ is defined by the set of all invertible $n\times n$ matrices $A$ under matrix multiplication. If we additionally require that $\det(A) = 1$, the matrices form the {\bf special linear group} $SL(n)$.}
-Th closure property of groups is guaranteed by the fact that the product of two invertible matrices is also invertible, and matrix multiplication is always associative.
-The existence of the group identity is guaranteed by the identity matrix $I$ being an invertible matrix (with $I$ as the inverse). Since the existence of an inverse is also necessary in the group definition, we can not construct larger matrix groups. The general linear group also give us our first example of a {\bf non-abelian group}, since matrix multiplication does not in general commute. For two matrices $A$ and $B$, we may have $AB\ne BA$.
+Here, the closure property of groups is guaranteed by the fact that the product of two invertible matrices is also invertible, and matrix multiplication is always associative.
+The existence of the group identity is guaranteed by the identity matrix $I$ being an invertible matrix (with $I$ as the inverse). Since the existence of an inverse is also necessary in the group definition, we cannot construct larger matrix groups. The general linear group also gives us our first example of a {\bf non-abelian group}, since matrix multiplication does not in general commute. For two matrices $A$ and $B$, we may have $AB\ne BA$.
+
+The special linear group inherits all the properties of the general linear group. It is closed because the determinant of the product of two matrices, is the product of their determinants, {\it i.e.} if $A,B\in SL(n)$ then
+\begin{equation*}
+\det{AB}=\det{A}\cdot \det{B} =1 \cdot 1 = 1.
+\end{equation*}
+Also, the identity element is in $SL(n)$ since $\det{I}=1$.
 
 We usually take the matrices in matrix groups to be defined over the field of complex numbers $\mathbb{C}$. If we want to specify the field we may use the notation $GL(n, \mathbb{R})$, signifying that the group is defined over the real numbers. Defined over the complex numbers the $GL(n)$ groups have $2n^2$ free parameters since each of the $n^2$ elements of the matrices can be a complex number, needing two parameters. The $SL(n)$ group has $2n^2-2$ free parameters since the requirement on the determinant fixes both the real and imaginary part of the determinant.
 
@@ -465,180 +491,12 @@ C_{kl}^{~~i}C_{}^{klj}=N\delta^{ij},
 which coincides with the choices made above for $SU(2)$.
 
 
-%%%%%%%%%%%
-\section{Algebras}
-\label{sec:algebras}
-%%%%%%%%%%%
-
-To further study the structure of groups we begin by defining an {\bf algebra}. An algebra extends the familiar structure of vector spaces by adding a multiplication operation for the vectors which gives a new vector.
-\df{An {\bf algebra} $A$ over a field (say $\mathbb{R}$ or $\mathbb{C}$) is a linear vector space with a binary (multiplication) operation $\circ : A \times A \to A$.}
-It is important to remember here that the vector space part of the definition implies that there is field, so for example from $\mathbf x\in A$ and $a\in \mathbb{R}$ (as the field) we can always form new members $a\mathbf x\in A$.
-
-As a very simple example, the vector space $\mathbb{R}^3$ together with the standard cross-product constitutes an algebra since the cross product results in a new vector in  $\mathbb{R}^3$. Even more trivially perhaps is that $\mathbb{R}$ with ordinary multiplication as the binary operation fulfils the algebra requirements (more on this case below).
-
-Connecting to the discussion of Lie groups in Section \ref{sec:Lie_groups}, we see that the generators $X_i$ of a Lie group also span an algebra as basis vectors of a vector space, if we use the commutator as  the multiplication operation between two members. We leave it as an exercise to ponder out how all the criteria for a vector space is fulfilled by the generators, but this is not very difficult.
-
-
-%%%
-\subsection{Normed division algebras$^*$}
-\label{sec:normed_division_algebras}
-As a slight aside to the main argument of the text, we want to give an interesting example of algebras. We start with a {\bf division algebra}, which informally is an algebra where the binary operation of the algebra also has a meaningful (implicit) concept of division for all members (except division by zero).
-\df{An algebra $D$ is a {\bf division algebra} if for any element $x$ in $D$ and any non-zero element $y$ in $D$ there exists precisely one element $z$ in $D$ with $x = y\circ z$ and precisely one element $z'$ in $D$ such that $x = z'\circ y$. In this sense $y$ is a divisor of $x$.}
-
-We see that division algebras have the addition and subtraction properties of ``ordinary numbers'' (reals) since they are vector spaces, and they have the  multiplication (algebra) and division (division algebra) properties of the reals as well. So, in a sense, division algebras are structures close to the reals in terms of properties -- and, of course, the reals are again an example of a division algebra. 
-
-We can now add to the division algebra the notion of a {\bf norm}, or length, of the members $\|x\|$. This is a map from the algebra to the field, $\|\,\|:D\to\mathbb{R}$, so that we can discuss for example convergence of the members as we do for the reals. We have to require here that the norm is homomorphic, meaning that it preserves the structure of the algebra, so that for example the ``product''  of two objects with large norm has a large norm. We then get a {\bf normed division algebra}. 
-\df{If there exists a homomorphic norm for the division algebra, {\it i.e.}\ one where $\|x\circ y\|=\|x\|\|y\|$ for all $x,y\in D$, then the division algebra is a {\bf normed division algebra}.}
-
-There is an important theorem by Hurwitz (1923) that demonstrates that only four of these real number ``lookalikes'' exist.
-\theo{Hurwitz's theorem. There are only four normed division algebras over the reals (up to isomorphism), the reals themselves $\mathbb{R}$, the complex numbers $\mathbb{C}$,  the quaternions $\mathbb{H}$, and the octonions $\mathbb{O}$.}
-
-In addition it is (relatively speaking) easy to show that $\mathbb{R} \subset\mathbb{C}\subset\mathbb{H}\subset\mathbb{O}$. One perspective on the relationship between these algebras is that the reals is the only ordered normed division algebra, {\it i.e.}, where we can compare uniquely the elements $a>b$. This is not possible for the complex numbers, but they keep the commutative and associate properties of the reals. The quaternions in turn break the commutativity of the complex numbers, while being associative, while the most unruly of the bunch, the octonions, are not even associative.
-
-
-%%%%%%%%%%%
-\section{Lie algebras}
-\label{sec:lie_algebras}
-%%%%%%%%%%%
-We will now turn to the most crucial type of algebras for physics, namely {\bf Lie algebras}. To distinguish these from the more general algebras that we have introduced above, we will use the notation $[\,,\,]$ for the binary operation in Lie algebras. 
-\df{A {\bf Lie algebra} $\mathfrak l$  is an algebra where the binary operator $[\,,\,]$, called the {\bf Lie bracket}, has the properties that for $x,y,z \in \mathfrak l$ and $a,b \in \mathbb{R}$ (or $\mathbb{C}$):
-\begin{enumerate}[i)]
-\item (bilinearity)
- \[[ax + by, z] = a[x,z] + b[y,z]\]
-\[[z, ax + by] = a[z,x] + b[z,y]\]
-\item (anti-commutation) \[[x,y] = -[y,x] \]
-\item (Jacobi identity) \[[x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0\]
-\end{enumerate}}
-If the algebra is over $\mathbb R$ it is a real Lie algebra, and over $\mathbb C$ a complex Lie algebra. We write the name of Lie algebras $\mathfrak l$  in lower case {\bf fraktur} style.
-
-Since Lie algebras are vector spaces, a {\bf subalgebra} $\mathfrak m$  of a Lie algebra $\mathfrak l$ is simply a subspace $\mathfrak m\subseteq \mathfrak l$. An {\bf ideal} is a subalgebra that satisfies $[\mathfrak l, \mathfrak m] \subseteq \mathfrak m$. A {\bf simple} Lie algebra is a non-abelian Lie algebra (non-zero structure constants)  without any proper ideals. A Lie algebra is {\bf semi-simple} if it is a direct sum of simple Lie algebras.
-
-Again the vectors of $\mathbb{R}^3$ with the Lie bracket defined in terms of the cross product, $[\mathbf x, \mathbf y]=\mathbf x \times \mathbf y$, is a simple example of a Lie algebra. However, we usually restrict ourselves to algebras of linear operators where the Lie bracket is the standard commutator $[x,y] \equiv xy-yx$, where the defining properties follow automatically. Thus also explaining the notation that we have used for the binary operator. 
-
-From what we learnt in Section \ref{sec:Lie_groups} the generators $X_i$ of an $d$-dimensional Lie group then span a $d$-dimensional Lie algebra with the commutator as the Lie bracket.\footnote{If you are really paranoid here, you may question wether these generators are guaranteed to be linearly independent. However, since the Lie group is parameterised by $d$ parameters, if the generators were not linearly independent we should be able to remove one of the parameters, leading to a contradiction. Stop it!} Since this is also a vector space, any element $X$ of the algebra can be written in terms of the generators $X_i$, as $X=a_iX^i$. This is called the {\bf tangent space} of the group at the identity. The differences between choices in the definition of the generators and the normalisation of the structure constants disappear as they can be absorbed into a rescaling and linear combinations of the basis $\{X_i\}_{i=1}^d$, this makes the Lie algebra of the group {\it unique}.
-
-However, the reverse is not true. There can be multiple Lie groups that have the same algebra. The often quoted example is the groups $SO(3)$ and $SU(2)$ where we have seen that the commutator of the generators is the same up to constants, so the algebra is the same, we say $\mathfrak{so(3)}\cong \mathfrak{su(2)}$. However, while closely related, the groups are not isomorphic. 
-
-
-%%%
-\subsection{Representations of a Lie algebra}
-\label{sec:algebra_rep}
-
-We saw in the previous subsection that -- just as for groups -- we have many different way of writing down a single Lie algebra. We then need a formal definition of representations of Lie algebras.
-\df{A {\bf representation} $\pi$ {\bf of a Lie algebra} $\mathfrak l$ on a vector space $V$  is a map
-\[\pi: \mathfrak{l} \to \mathfrak{gl}(V), \]
-where $ \mathfrak{gl}$ is the Lie algebra of all linear maps $V\to V$ (endomorphisms) with its bracket defined as the composition $[r,s]\equiv r\circ s-s\circ r$, for all $r,s\in \mathfrak{gl}$, and where the map $\pi$ is homomorphic (structure preserving) for the Lie algebra bracket so that for all $x,y\in \mathfrak{l} $,
-\[ \pi([x,y]) =\pi(x)\circ\pi(y)-\pi(y)\circ\pi(x). \]
-}
-Again this is an abstract definition that is actually simpler than it looks. For finite dimensional vector spaces $\mathfrak{gl}$ is the Lie algebra of the corresponding general linear matrix group, just as the definition of representations of groups was a map to the general linear group $GL(n)$. This algebra of $GL(n)$, called $\mathfrak{gl}(n)$, can be written up in terms of $n\times n$ matrices and their commutators, and in this case the multiplication operation $\circ$ is just matrix multiplication in hiding. One word of warning here though, while the group $GL(n)$ contained invertible matrices, there is no guarantee that its generators are invertible matrices, {\it e.g.} we saw earlier that the generators of $SO(3)$ were the matrices $L_i$ in Eq~(\ref{eq:SO3_generators}) that are not invertible since $\det L_i=0$.
-
-What makes this definition of representations even simpler for Lie algebras is that {\bf Ado's theorem}~\cite{Ado:1935} proves that every finite-dimensional Lie algebra has a faithful (isomorphic to the Lie algebra) representation on a finite-dimensional vector space.\footnote{For a modern version of a proof of Ado's theorem, see Terence Tao's blog \url{https://terrytao.wordpress.com/2011/05/10/ados-theorem/}.} In other words, the Lie algebras for the groups we most care about, Lie groups with a finite number of parameters and thus finite number of generators, is guaranteed to have representations using matrices.
-
-As for groups, we can talk about irreducible representations, irreps, of the Lie algebras, which are representations such that $V$ has no proper invariant subspace under the representation, meaning that we cannot construct proper sub-representations.
-% Maybe say something about similarity transforms between different Lie algebras 
-An important result for representations of Lie groups is {\bf Weyl's complete reducibility theorem} which says that the any representation of a finite-dimensional semi-simple Lie algebra  on a finite-dimensional space is isomorphic to a direct sum of irreducible representations. This means that the classification of the representations of semi-simple Lie algebras can be done in a very systematic way. In particular, every semi-simple Lie algebra is a subalgebra of $\mathfrak {sl}$, the Lie algebra of the special linear group, and all our matrix groups have simple or semi-simple Lie algebras.
-%TODO: extend to semi-simple representation theory here
-
-In Sec.~\ref{sec:generators} we saw the two sets of generators of the Lie algebras $\mathfrak{su(2)}$ and $\mathfrak{so(3)}$, derived from the defining matrix representations of the groups that have different dimensions. Since this is the same algebra this shows two distinct representations of the same algebra. 
-
-
-%%%
-\subsection{Exponential map}
-\label{sec:expmap}
-As we discussed in Section \ref{sec:Lie_groups}, the generators describe the local structure of the group near the identity element. We can now finally look at how the group (and matrix representation) is reconstructed from the algebra. For this we use what is called the {\bf exponential map}. 
-\df{The {\bf exponential map} from a finite-dimensional Lie algebra $\mathfrak l$ of a group $G$ to $G$ is defined by $\exp:\mathfrak l\to G$, where for $X\in\mathfrak l$ we get the element $g\in G$ given by
-\begin{equation}
-g=\exp(iX)\equiv\sum_{n=0}^{\infty}\frac{(ia_iX^i)^n}{n!}.
-\end{equation}
-Here the $X_i$ are the generators of $G$ and thus members of the Lie algebra, and $X=a_iX^i$.
-}
-By Ado's theorem any (finite-dimensional) Lie algebra can be represented by matrices, in which case the infinite sum in this definition is nothing more than the formal series definition of the matrix exponential introduced in Sec.~\ref{sec:unitary_groups}. However, we can also use the exponential map for differential representations where the $X_i$ are differential operators, and for infinite-dimensional Lie groups, but the technical aspects why this extension works is a little beyond the scope of these notes.
-
-We have already seen multiple example of the exponential map construction, but we may ask, why use the exponential? One reason is that it gives us a natural expansion of the group around the identity element. With the parameters $\mathbf a=0$ the resulting matrix is the identity matrix, which means that the group element is the identity element $g=e$. Similarly, for an infinitesimal $d\mathbf a$ step away from the parameters of the identity we have the group elements near the identity, $g=I+ida_iX^i$ that we used to derive the generators. And now, if we apply a small finite step  $a_i$ away from the identity $g=I+i\frac{a_i}{n}X^i$ a total of $n$ times we will get
-\[g=\left(I+i\frac{a_i}{n}X^i\right)^n. \]
-By the limit definition of the exponential, with smaller and smaller steps letting $n\to\infty$ this is the exponential map
-\[g=\lim_{n\to\infty}\left(I+i\frac{a_i}{n}X^i\right)^n=\exp( ia_iX^i). \]
-
-We should now ask two important questions, is the structure of these elements $g$ actually a group, and is it (isomorphic to) the group that gave the Lie algebra? For the first question we may check the group definition. The exponential map does give an identity element which is just the identity matrix. Associativity similarly holds because we are using matrices and matrix multiplication. There is indeed an inverse of an element $g=\exp{(iX)}$, which is $g^{-1}=\exp{(-iX)}$, since by the properties of matrix exponentiation we have $gg^{-1}=\exp{(iX)}\exp{(-iX)}=I$. The tricky point is whether group multiplication is closed.
-
-If we have two elements from the map $g=\exp{(iX)}$ and $g'=\exp{(iY)}$, then $gg'=\exp{(iX)}\exp{(iY)}$, and we would like to show that  $\exp{(iX)}\exp{(iY)}=\exp{(iZ)}$, where $Z\in\mathfrak l$. However, unless $X$ and $Y$ commute we cannot  easily join them in the same exponential. We here use the {\bf Baker--Campbell--Haussdorff  formula},
-\begin{equation}
-Z=X+Y+\frac{1}{2}[X,Y]+\frac{1}{12}[[X,Y],Y]-\frac{1}{12}[[X,Y],X]+\ldots,
-\label{eq:BKH_matrices}
-\end{equation}
-where the omitted terms involve Lie brackets of four or more elements, and where every element in the series contains the commutator $[X,Y]$. If $X$ and $Y$ are close enough to the zero in $\mathfrak l$ (corresponding to the identity element in $G$) then this series can be shown to converge to an element in $\mathfrak l$.\footnote{This formula holds even if the elements in the Lie algebra ${\mathfrak l}$ are not represented as finite-dimensional matrices.} Thus the exponential constructs a group at least locally around the identity element.
-
-The question of whether the exponential map reaches all of the members of the group, {\it i.e.}\ that it is surjective on $G$, depends on the properties of the group. We certainly have counter examples, since the groups $SO(3)$ and $SU(2)$ have the same Lie algebra and thus the same exponential map, but are different groups, the map cannot reach all of the elements of both groups. What we do know is that locally, meaning sufficiently close to the identity group element, the exponential map generates the group.
-
-Let us end this subsection by returning to some of our examples in view of what we now know about the exponential map. For $U(1)$ we saw that we could write a generic group member as $e^{i\theta}$. Comparing to the exponential map we see that the single generator must here simply be 1, while $\theta$ is the parameter. The Lie algebra is then a very simple one-dimensional vector space $\mathbb R$ where the multiplication is ordinary arithmetic multiplication. Similarly, for the translation group $T(1)$ we saw that a group member could be written as $e^{a\frac{\partial}{\partial x}}=e^{ia(-i\frac{\partial}{\partial x})}$. Thus the generator is the differential operator $P=-i\frac{\partial}{\partial x}$ and again the vector space of the Lie algebra is one dimensional.
-
-For $SU(2)$ the generators taken from the fundamental representation $\mathbf 2$ were proportional to the Pauli matrices $X_i= \frac{1}{2}\sigma_i$, and the exponential map generating a group member $U$ is thus, as we alluded to earlier, $U=e^{i\alpha_iX^i}$, where $\alpha_i$ are the parameters. For $SO(3)$ the (Hermitian) generators taken from the fundamental representation $\mathbf 3$ are the matrices $Y_i=-iL_i$, where the $L_i$ were given in (\ref{eq:SO3_generators}), and the exponential map is $O=e^{i\alpha_iY^i}$.
-Since $SU(2)$ and  $SO(3)$ have the same algebra for $X_i$ and $Y_i$, but the groups are {\it not} isomorphic,  in what sense, if any, does these exponential maps generate different elements? The answer to that is that $SU(2)$ is a {\bf double cover} of $SO(3)$, it has double the number of elements. There exists a two-to-one group homomorphism $f:SU(2)\to SO(3)$. This can be represented by $U(\alpha_1,\alpha_2,\alpha_3)\to O(\alpha_1,\alpha_2,\alpha_3)$. To see that this is two-to-one, assume that $\alpha_1=\alpha_2=0$. Then $O(0,0,\alpha_3)=O(0,0,\alpha_3+2\pi)$ since a rotation by an extra $2\pi$ does nothing. For $SU(2)$ we instead have
-\[
-U(0,0,\alpha_3)=\left[\begin{matrix} e^{i\frac{\alpha_3}{2}} & 0 \\ 0 & -e^{i\frac{\alpha_3}{2}} \end{matrix}\right] \quad \text{and}\quad U(0,0,\alpha_3+2\pi)=\left[\begin{matrix} e^{i\frac{\alpha_3}{2}+i\pi} & 0 \\ 0 & -e^{i\frac{\alpha_3}{2}+i\pi} \end{matrix}\right]=-U(0,0,\alpha_3)
-\]
-Thus the $SU(2)$ matrices has a period $4\pi$ versus the period $2\pi$ for $SO(3)$.\footnote{The argument can be made more formal and independent of the parameterisation, but is to extensive to repeat here.} Notice that this means that the three-dimensional representation of the Lie algebra coming from the generators of $SO(3)$ does not generate all the elements of $SU(2)$, while the two-dimensional one does.
-% TODO: Better description of double cover in 3.2 https://www.weizmann.ac.il/particle/perez/Courses/QMII18/TA7.pdf
-
-Beyond the fundamental representation $SU(2)$ has irreducible representations in all dimensions $\mathbf 3$, $\mathbf 4$, $\mathbf 5$, \ldots. This is not true in general, for example $SU(3)$ has irreducible representations only in some dimensions, starting with $\mathbf 3$, $\mathbf 6$, $\mathbf 8$, and $\mathbf{10}$, \ldots.
-
-From the exponential map and the properties of matrix exponentiation it immediately follows that the generators $T^a$ for all groups $SU(n)$ are matrices with zero trace. To see this write an element in $SU(n)$ as $U=\exp{(i\alpha_aT^a)}$, then by the defining group property $\det U=1$, we have $\det U=\exp{(\Tr[{i\alpha_aT^a}}])=\exp{(i\alpha_a\Tr{T^a}})$ which is only one if $\Tr T^a=0$ for all $a$.  
-
-We saw in Sec.~\ref{sec:unitary_groups} that we could construct unitary matrices from Hermitian ones by matrix exponentiation, but in fact for unitary groups the generators need to be Hermitian. To see this let a group member be $U=\exp(ia_iM^i)$. Then $U^\dagger = \exp(ia_iM^i)^\dagger=\exp(-ia_iM^{i\dagger})$,  but for a unitary matrix $U^\dagger = U^{-1}=\exp(-ia_iM^i)$, thus $M^{i\dagger}=M^i$ and the generators $M_i$ are Hermitian.
-%TODO: Add tracelessness for $SU$. If $U=\exp(ia_iM^i)$ then $\det U = \exp{ia_i\Tr[M^i]}$ and if $\det U =1$ then we must have $\Tr M_i =0$ for all $i$.
-
-
-%%%
-\subsection{Adjoint representations}
-\label{sec:adjoint_reps}
-The definition of the structure constants in Sec.~\ref{sec:structure_constants} allows us to introduce another representation, the {\bf adjoint representation} of the algebra -- and by the exponential map the adjoint representation of the group -- where the representation of the algebra consists of the matrices $M_i$ with elements:
-\[(M_i)_j^{~k} = -iC_{ij}^{~~k},\]
-where $C_{ij}^{~~k},$ are the structure constants. If the dimension of the Lie algebra is $n$, then this is the number of generators, and it also means that the dimension of the matrices $M_i$ is $n\times n$. 
-% TODO: Comment on when index position is important (not for semi-simple compact groups). Source?
-To prove that this is actually a representation, we need to check that the mapping from the elements of the algebra $X_i$ to the matrices $M_i$ satisfies the homomorphism criteria of the Lie algebra representations. From the Jacobi identity of the algebra it follows that
-\begin{equation}
-[M_i, M_j] = iC^{~~k}_{ij}M_k,
-\label{eq:adjoint_rep_commutator}
-\end{equation}
-meaning that the matrices of the adjoint representation fulfils the same commutator relationship as the fundamental (generators). As a direct consequence the $M_i$ form a representation.
-
-Note that the dimension $n$ of the matrices in the adjoint representation for $\mathfrak so(m)$ and $\mathfrak su(m)$, which is equal to the number of independent parameters, is $n=m(m-1)/2$ and $n=m^2-1$, respectively. For the matrices in the representation derived from the defining representation of the group the dimensions is the same as the dimension of the defining matrices, $m$. This means that in most cases the matrices in the adjoint representation is larger, with the exception of  $\mathfrak{so}(2)$ and  $\mathfrak{so}(3)$.
-
-We can now briefly return to the $SU(2)$ and $SO(3)$ examples. These groups have the same structure constants because they have the same commutators between generators. Thus the adjoint representations of their algebras are the same. With structure constants $C^{~~k}_{ij}=\epsilon_{ij}^{~~k}$ we get the elements of the adjoint matrices $(M_i)_{jk} =-i\epsilon_{ijk}$, which gives $M_i=-iL_i$, with the $L_i$ being the matrices in (\ref{eq:SO3_generators}). 
-
-From the adjoint representation of the Lie algebra we can construct  the adjoint representations of the Lie group. For example the adjoint representation of  $\mathfrak{su}(2)$ or $\mathfrak{so}(3)$ has the exponential map $\exp{(ia_i M^i)}=\exp{(a_i L^i)}$. This happens to generate the $SO(3)$ fundamental representations, but this is not generally the case, it is ``accidental'' that the dimensions of the fundamental representation of $SO(3)$, $n=3$, and the dimension of its adjoint representation $n=3(3-1)/2=3$ is the same.
-
-
-%%%
-\subsection{Dual representations}
-\label{sec:dual_reps}
-
-Every representation of a Lie algebra on a vector space $V$ (and every representation of a group) has a {\bf dual representation} (also known as a {\bf contragredient representation}) that is a representation on the {\bf dual vector space} $V^*$. The definition of a dual vector space is somewhat abstract, it is formally the space consisting of all linear maps $\phi:V\to K$, where $K$ is the field of $V$. Since the map takes members of $V$ and maps them linearly to the field $K$, for a finite-dimensional vector space we must be able to write any member of $V^*$ in terms of a row-vector over the same field, so that if $\mathbf v\in V$ and $\mathbf w^T \in V^*$, the map is given by the matrix multiplication $\mathbf w^T \mathbf v$ which gives a scalar. This means that in practice  $V^*$ consists of the corresponding row-vectors to the column vectors in $V$.\footnote{It is slightly unfortunate and confusing that the symbol for the dual space uses a star since this seems to imply complex conjugation, where instead we are actually talking about transpose, however, as we will see below, the complex conjugation is central to dual representations of unitary groups.}
-
-The definition of the dual representation for a Lie algebra is as follows:\footnote{This definition also applies beyond finite-dimensional vector space with a basis since the transpose operation can be generalised beyond matrices.}
-\df{If ${\mathfrak l}$ is a Lie algebra with a representation $\rho$ on a vector space $V$, then the {\bf dual representation} on the dual space $V^*$ is $\rho^*$ given by
-\[ \rho^*(x) = -\rho(x)^T, \]
-for all $x\in\mathfrak l$.}
-To see why this makes sense we need to look at the exponential map of the dual representation. If $X_i$ is a generator in the representation $\rho$, then the dual representation $\rho^*$ tells us to use instead $-X_i^T$. In the exponentiation the group element $g=\exp(iX_i)$ becomes the group element $\exp(-iX_i^T)=\exp(-iX_i)^T=(g^{-1})^T$ with the dual representation. This is the only sensible representation that fulfils the group multiplication properties as matrices acting on row-vectors.
-% For this to be a group representation we must have that a product of two group elements $(g_1^{-1})^T(g_2^{-1})^T$ 
-
-For unitary groups like $U(n)$ or $SU(n)$ we have matrix representations of the Lie algebra with Hermitian generators $M_i=M_i^\dagger$,  generating the members in the group as $U=\exp(ia_iM^i)$. From the definition of the dual representation the group members generated in the dual representation are then
-\[ U=\exp(-ia_iM^{iT})=\exp(-ia_i(M^{i\dagger})^*)=\exp(-ia_iM^{i*}), \]
-meaning that the Lie algebra in the dual representation can be written in terms of Hermitian matrices $M_i'=-M_i^*$. As a check we can see that $M_i'$ indeed fulfils the same algebra:
-\[ [M_i',M_j']=[M_i^*,M_j^*]=-iC_{ij}^{~~k}M_k^*=iC_{ij}^{~~k}M_k',\] 
-which is true only if the structure constants $C_{ij}^{~~k}$ are real.\footnote{You can take this as a proof that the structure constants are real if you prove that the dual representation is actually a representation, or you can go the other way and prove that this is indeed a representation, if you can first show that the structure constants of unitary groups are real.}
-For the matrix groups we denote the dual representations using a bar, so that for example the dual of a representation $\mathbf 2$ is $\mathbf {\bar 2}$. The dual representations play a special role in quantum field theories, as the known fermions and anti-fermions transform under a representation of the gauge group and its dual, respectively.
-
-%If a finite-dimensional representation of a group is irreducible, then one can show that the dual representation is also irreducible. 
-For some groups, such as $SU(2)$, the original and dual representations can be shown to be isomorphic. However, this is not in general the case. For $SU(3)$ the dual representations $\mathbf {\bar 3}$, $\mathbf {\bar 6}$, and $\mathbf{\overline{10}}$, are not isomorphic to $\mathbf 3$, $\mathbf 6$, and $\mathbf{10}$. On the other hand, $\mathbf 8$ and $\mathbf {\bar 8}$ are isomorphic.\footnote{However, the dual of the dual of any representation is always isomorphic to the original representation.} This becomes important in the Standard Model as the quarks transform under the $\mathbf 3$ representation of the $SU(3)_c$ gauge group, and the anti-quarks under $\mathbf {\bar 3}$.
-
-
-
-
 
 %%%%%%%%%
 \section{Exercises}
 %%%%%%%%%
+
+%%%
 \begin{Exercise}[]
 Show that for the translation group $T(1)$ the identity element is $T_0$ and that $T_a^{-1} = T_{-a}$, and use this to show that $T(1)$ is group.
 \end{Exercise}
@@ -646,6 +504,21 @@ Show that for the translation group $T(1)$ the identity element is $T_0$ and tha
 \begin{Answer}
 Given the group multiplication definition the identity element must be $e=T_0=1$ since $T_a\circ T_0=T_{a+0}=T_a$. Let $T_a^{-1} =T_b$. Since $T_a \circ T_b=T_{a+b}=1$, we find $b=-a$. (This does not show that the inverse is unique, but this is not a requirement.) We have now demonstrated the required existence of an identity element (iii) and an inverse (iv) for $T(1)$ as required by the group definition (the order of operations can obviously be reversed). The closure of the multiplication operation (i) is true by its definition. The associativity (ii) can be demonstrated as follows $(T_a\circ T_b)\circ T_c=T_{a+b}\circ T_c=T_{a+b+c}=T_{a}\circ T_{b+c}=T_a\circ (T_b\circ T_c)$.
 \end{Answer}
+%%%
+
+
+%%%
+\begin{Exercise}[]
+Do vectors in a vector space together with the vector addition operation form a group?
+\end{Exercise}
+%%%
+
+
+%%%
+\begin{Exercise}[]
+Are the vectors in $\mathbb R^3$ together with the cross-product a group?
+\end{Exercise}
+%%%
 
 \begin{Exercise}[]
 Show that the set of complex unitary $n\times n$ matrices $U$ with matrix multiplication is a group.

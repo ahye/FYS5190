@@ -31,6 +31,8 @@
 \newcommand{\str}[1]{\operatorname{STr}\left(#1\right)}
 \renewcommand{\Im}[1]{\operatorname{Im}\left(#1\right)}
 \renewcommand{\Re}[1]{\operatorname{Re}\left(#1\right)}
+% Proper triangle
+\newcommand{\del}{\boldsymbol\nabla}
 
 
 \definecolor{grey}{RGB}{205,205,205}
@@ -83,13 +85,13 @@
 %%%%%%%%%%%%
 
 
-The goal of these lecture notes is to introduce the basics of low-energy models of supersymmetry (SUSY) using the Minimal Supersymmetric Standard Model (MSSM) as our main example. The notes are based on lectures given at the University of Oslo in 2011, 2013, 2015, 2017, 2019, 2021, 2023, and 2025, and lectures at the NORDITA Winter School on Theoretical Particle Physics in 2012. 
+The goal of these lecture notes is twofold: first to give an introduction to the mathematical concepts behind symmetries in physics in general and supersymmetry in particular, and secondly to introduce the basics of low-energy models of supersymmetry using the Minimal Supersymmetric Standard Model (MSSM) as our main example. 
 
-Several student have contributed significantly to these notes. We owe a particular gratitude to Paul Batzing, who took notes during the first version of the lectures in 2011, forming the start of this document, and to Carl Martin Favang who has fixed many of my mistakes. Morten Tryti Berg has supplied a solution to one of the exercises.
+The notes are based on lectures given at the University of Oslo in 2011, 2013, 2015, 2017, 2019, 2021, 2023, and 2025, and lectures at the NORDITA Winter School on Theoretical Particle Physics in 2012.  Several student have contributed significantly to the notes. We owe a particular gratitude to Paul Batzing, who took notes during the first version of the lectures in 2011, forming the start of this document, and to Carl Martin Favang who has fixed many of my mistakes. Morten Tryti Berg has supplied a solution to one of the exercises.
 
 
 \vspace{5mm}
-Oslo, October 2025
+Oslo, August 2025
 
 Are Raklev
 
@@ -113,20 +115,28 @@ Are Raklev
 %%%%%%%%%%%%%%%%%%%
 Rather than the traditional approach of starting with the current problems of the Standard Model of particle physics, and how supersymmetry can solve these, in these notes we will focus on the algebraic origin of supersymmetry in the sense of an extension of the symmetries of Einstein's special relativity (SR). This was the original motivation for work on what we today call supersymmetry. 
 
-We first need to introduce some basic mathematical concepts used in physics for exploring symmetries, mainly groups and Lie algebras, which we will take care of in Chapter~\ref{chap:groups}. 
+We first need to introduce some basic mathematical concepts used in physics for exploring symmetries, mainly groups and Lie algebras, which we will take care of in Chapter~\ref{chap:groups} and  Chapter~\ref{chap:algebras}. 
 In Chapter~\ref{chap:poincare} we will then study the symmetries of special relativity, through the Poincaré group, and look at how these symmetries can be extended into the super-Poincaré group by adding so-called supercharges to the Poincaré Lie algebra.
 We will then introduce superspace, a coordinate system where supersymmetry is manifest, and use this to derive differential representations for the supercharges in Chapter~\ref{chap:superspace}. Here, we also define superfields, which function as representations of the super-Poincaré group, and are the building blocks of the supersymmetric Largrangians we construct in Chapter~\ref{chap:lagrangian}. In Chapter \ref{chap:breaking} we discuss how to break supersymmetry using spontaneous symmetry breaking.
 
 From Chapter \ref{chap:mssm} and onwards we turn more towards phenomenology, constructing the minimal realisation of a supersymmetric Standard Model, before we discuss its phenomenology in Chapter \ref{chap:pheno}, before ending with a discussion of supersymmetric Dark Matter candidates in Chapter \ref{chap:dm}.
 
-Note that sections marked with an asterisk are somewhat tangential to the main argument of the text and can be read for light entertainment only. Solutions to some of the exercises can be found in Appendix \ref{chap:solutions}.
+Note that sections marked with an asterisk are somewhat tangential to the main argument of the text and can be read for light entertainment. Solutions to some of the exercises can be found in Appendix \ref{chap:solutions}.
 
 
 
 %%%%%%%%%%%%%%%%%%%
-% Groups and algebras %
+% Groups                                          %
 %%%%%%%%%%%%%%%%%%%
 \subfile{groups}
+%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%
+% Algebras %
+%%%%%%%%%%%%%%%%%%%
+\subfile{algebras}
 %%%%%%%%%%%%%%%%%%%
 
 
