@@ -58,10 +58,13 @@ The resulting operator
 T_a = e^{a\frac{\partial}{\partial x}},
 \end{equation*} 
 is called the {\bf translation operator}, in this case in one dimension, since it shifts the coordinate $x$ of the function $F$ it is operating on by an amount $a$. Defining the (natural) multiplication operation
-$T_a \circ T_b = T_{a+b}$
-it forms the {\bf translational group} $T(1)$, where we can show that $T_0$ is the identity element and the inverse is $T_a^{-1} = T_{-a}$.\footnote{We could instead have defined the operation between two group elements to be ordinary multiplication and used that to show the relationship $T_a \circ T_b = T_{a+b}$. However, it is important to notice that showing this is not entirely trivial because ordinary arithmetic rules for exponentials fail for operators. In this particular case the proof is fairly simple, but this is in general not so. This will return to trouble us later in the notes.} Here, we call $a\in\mathbb R$ the {\bf parameterisation} of the group. In $n$ dimensions the group $T(n)$ has the elements  $T_{\mathbf{a}} = e^{\mathbf{a}\cdot \del}$, where $\del$ is the $n$-dimensional partial derivative vector, and the group is parameterised by the $n$-dimensional vector $\mathbf a$. 
+$T_a \circ T_b =  T_{a+b}$
+it forms the {\bf translational group} $T(1)$, where we can show that $T_0$ is the identity element and the inverse is $T_a^{-1} = T_{-a}$.\footnote{We could instead have defined the operation between two group elements to be ordinary multiplication and used that to show the relationship $T_a \circ T_b = T_{a+b}$. However, it is important to notice that showing this is not entirely trivial because ordinary arithmetic rules for exponentials fail for operators. In this particular case the proof is fairly simple, but this is in general not so. This will return to trouble us later in the notes.} Here, we call $a\in\mathbb R$ the {\bf parameterisation} of the group. 
 
-Whereas we say that the groups $\mathbb{Z}$ and $\mathbb{Z}_n$ are {\bf discrete groups}, since we can count the number of elements, $T_a$ is a {\bf continuous group} since the parameter $a$ can be any real number. 
+In $n$ dimensions the group $T(n)$ has the elements  $T_{\mathbf{a}} = e^{\mathbf{a}\cdot \del}$, where $\del$ is the $n$-dimensional partial derivative vector, and the group is parameterised by the $n$-dimensional vector $\mathbf a$. We can of course also talk about the translation group in terms of how it acts on  finite-dimensional vector spaces, where the translation of a vector $\mathbf x\in \mathbb R^n$ is given by
+\[ \mathbf x' =T_{\mathbf a} \mathbf x= \mathbf x + \mathbf a.\] 
+
+Whereas we say that the groups $\mathbb{Z}$ and $\mathbb{Z}_n$ are {\bf discrete groups}, since we can count the number of elements, $T(n)$ is a {\bf continuous group} since the parameter $a$ can be any real number. 
 
 
 %%%%%%%%%%%%%%
@@ -244,26 +247,46 @@ When these cosets act on each other with the group operation of $U(n)/SU(n)$ the
 %%%%%%%%%%%%%%
 \subsection{Product groups}
 Now that we have introduced group division,  we also need to introduce products of groups. 
-\df{The {\bf direct product} of groups $G$ and $H$, $G\times H$, is defined as the ordered pairs $(g,h)$ where $g\in G$ and $h\in H$, with component-wise operation $(g_i,h_i)\circ(g_j, h_j) = (g_i\circ g_j , h_i \circ h_j)$. $G\times H$ is then a group and $G$ and $H$ can be shown to be normal subgroups of $G\times H$.}
-We should note here that the subgroups are strictly $G\times\{e_H\}$ and $\{e_G\}\times H$, but these are isomorphic to $G$ and $H$.
+\df{The {\bf direct product} $G\times H$ of groups $G$ and $H$  is defined as the ordered pairs $(g,h)$ where $g\in G$ and $h\in H$, with component-wise operation $(g_i,h_i)\circ(g_j, h_j) = (g_i\circ g_j , h_i \circ h_j)$. $G\times H$ is then a group and $G$ and $H$ can be shown to be normal subgroups of $G\times H$.}
+We should note here that the subgroups are strictly $G\times\{e_H\}$ and $\{e_G\}\times H$, but these are isomorphic to $G$ and $H$. 
 
-Because it has an important appearance in this text we also need the definition of the {\bf semi-direct product}.
-\df{The {\bf semi-direct product} of groups $G$ and $H$, $G\rtimes H$, where $G$ is also a mapping $G:H\to H$, is defined by the ordered pairs $(g,h)$ where $g\in G$ and $h\in H$, with component-wise operation $(g_i,h_i)\circ(g_j, h_j) = (g_i\circ g_j , h_i \circ g_i(h_j))$. Here $H$ is not a normal subgroup of $G\rtimes H$, but $G$ is.}
-Note how the semi-direct product is not symmetric between the factors.
+The famous Standard Model gauge group $SU(3) \times SU(2)\times U(1)$ is an example of a direct product. Direct products are ``trivial" structures because there is no ``interaction" between the subgroups, the elements of each group act only on elements of the same group. For the Standard Model this means that the each of the gauge transformations can act independently on the states unaffected by any other gauge transformation. 
 
-The famous Standard Model gauge group $SU(3) \times SU(2)\times U(1)$ is an example of a direct product. Direct products are ``trivial" structures because there is no ``interaction" between the subgroups, the elements of each group act only on elements of the same group. For the Standard Model this means that the each of the gauge transformations can act independently on the states unaffected by any other gauge transformation. This is not true for semi-direct products. 
+We will also need the definition of the {\bf semi-direct product}.
+\df{The {\bf semi-direct product} $G\rtimes H$ of groups $G$ and $H$,  where $G$ is also a mapping $G:H\to H$, is defined by the ordered pairs $(g,h)$ where $g\in G$ and $h\in H$, with component-wise operation \[(g_i,h_i)\circ(g_j, h_j) = (g_i\circ g_j , h_i \circ g_i(h_j)).\] Here $H$ is not a normal subgroup of $G\rtimes H$, but $G$ is.}
+Note how the semi-direct product is not symmetric between the factors, the members of $G$ change the members of $H$ in the multiplication.
 
-% TODO: More examples here. Use Euclidean group
+An example of a semi-direct product is found in the {\bf Euclidean group} $E(n)$ which is the semi-direct product of the translation group $T(n)$ and the orthogonal group $O(n)$, $E(n) = T(n)\rtimes O(n)$.  Physically, the Euclidean group is the group of all rotations, translations and reflections in $n$-dimensional Euclidean space $\mathbb {E}^n$. These are the transformations that preserve the distance between two points in that space, and we say that it is the (coordinate/external) symmetry group of the space. 
 
-%%%
+We can see how the semi-direct product works by writing down how coordinates change under the transformations of the Euclidean group. A vector $\mathbf x \in \mathbb {E}^n$ would be transformed as
+\[ \mathbf x' = O\mathbf x + \mathbf a,\]
+where $O$ is a matrix in $O(n)$ that performs rotations and reflections, and $\mathbf a$ is a constant vector that performs the translation of the vector. If we now do two Euclidean transformations with $(O_j,\mathbf a_j)$ and $(O_i,\mathbf a_i)$ we get the total transformation
+\[ \mathbf x' = O_i(O_j\mathbf x + \mathbf a_j)+\mathbf a_i= O_iO_j\mathbf x + O_i\mathbf a_j+\mathbf a_i,\]
+which is equivalent to the Euclidean transformation with parameters $(O_iO_j,\mathbf a_i  +O_i\mathbf a_j)$.
+
+If we specialise by taking away the reflections, we define the {\bf special Euclidean group} $SE(n)= T(n)\rtimes SO(n)$.  
+
+
+%%%%%%%%%%%%%%%%
 \subsection{Isomorphic groups}
 We have already talked about how two groups are the same if they have a one-to-one correspondence between their members and the same results for the multiplication operation, and we have called this an isometry. Let us now try to put this notion of when two groups are the same into a more formal language.
 \df{Two groups $G$ and $H$ are {\bf homomorphic} if there exists a map between the elements of the groups $\rho:G\to H$, such that for all $g,g'\in G$,  $\rho(g\circ  g')=\rho(g)\circ \rho(g')$.}
-For homomorphic groups we say that the mapping conserves the structure of the group, or in other words, all the rules for the group operation/multiplication. This leads to our notion of group equality, namely {\bf isomorphic} groups:
+For homomorphic groups we say that the mapping $\rho$ conserves the structure of the group, or in other words, all the rules for the group operation/multiplication. This leads directly to our notion of group equality, namely {\bf isomorphic} groups:
 \df{Two groups $G$ and $H$ are {\bf isomomorphic}, written $G\cong H$, if they are homomorphic and the relevant mapping is one-to-one (injective) and onto (surjective).}
 The one-to-one and onto (hitting all elements of $H$) mapping ensures that there is a one-to-one correspondence between the elements of the two groups, so that isomorphic groups effectively contain both the same members and have the same multiplication operation.
 
-For matrix groups, a good way of checking the plausibility of isomorphism is to count the number of free parameters. The difference of the parameters for the two factors should be equal to the number of parameters for the quotient group. In our example $U(n)/SU(n)$, $U(n)$ has $n^2$, while $SU(n)$ has $n^2-1$, and this gives $n^2-(n^2-1)=1$ parameters for the quotient group, which matches the one parameter of $U(1)$. 
+Let us look at an example with the isomorphism $U(n)/SU(n)\cong U(1)$. For matrix groups, a way of checking the plausibility of isomorphism is to count the number of free parameters.  In our example $U(n)/SU(n)$, the difference of the number of parameters for the two factors should be equal to the number of parameters for the quotient group. Here, $U(n)$ has $n^2$ parameters, while $SU(n)$ has $n^2-1$, and this gives $n^2-(n^2-1)=1$ parameter for the quotient group, which matches the one parameter of $U(1)$. To demonstrate the isomorphism we need to find the mapping between the groups. For the quotient group each member of $U(n)/SU(n)$ is the coset $\{US|S\in SU(n)\}$, while each member of $U(1)$ can be written as $e^{i\theta}$. If we then make the map $\rho(\{US|S\in SU(n)\})=\det U$, then this is homomorphic since
+\begin{align*}
+\rho(\{US|S\in SU(n)\}*\{U'S| S\in SU(n)\}) &= \rho( \{ UU'S| S\in SU(n)\} ) \\ 
+& = \det UU'  \\
+&= \det U \det U' \\
+&= \rho(\{US|S\in SU(n)\})\rho(\{U'S| S\in SU(n)\}),
+\end{align*}
+and isomorphic since the determinants of unitary matrices are numbers on the unit circle in the complex plane, and the cosets can be identified uniquely with the determinant of the matrix that generate them.
+
+Another example is the isomorphism $SO(2)\cong U(1)$. Here the elements $R\in SO(2)$ are the matrices in (\ref{eq:SO2_parameterisation}). The map is then simply $\rho(R)= e^{i\theta}$. This is homomorphic since
+\[ \rho(R_iR_j)= e^{i(\theta_i+\theta_j)}= e^{i\theta_i} e^{i\theta_j} =\rho(R_i)\rho(R_j), \]
+where we have used that we can just add up rotations in the plane in the first equality. It is isomorphic since all rotation angles correspond to one, and only one, number on the complex unit circle.
 
 At the end of this subsection, let us make a warning: despite the enticing notation it is {\it not} in general the case that if $H$ is a normal subgroup to $G$, then $G\cong G/H\times H$.
 
@@ -272,22 +295,22 @@ At the end of this subsection, let us make a warning: despite the enticing notat
 \section{Representations}
 \label{sec:rep}
 %%%%%%%%%%%%%
-In some contrast to the treatment in most introductory group theory texts in mathematics, physicists are mostly interested in the properties of groups $G$ where the elements of $G$ {\it act} to transform some elements of a vector space $v\in V$, $g(v) = v' \in V$. This part of group theory is called {\bf representation theory}. Here, the members of $V$ can for example be the state of a system, say a wave-function in quantum mechanics or a field in quantum field theory. 
-To be useful in physics, we would like that the result of the group operation $g_i \circ g_j$ acts as $(g_i\circ g_j)(v) = g_i(g_j(v))$ and the group identity acts as $e(v) = v$.
+In some contrast to the treatment in most introductory group theory texts in mathematics, physicists are mostly interested in the properties of groups $G$ where the elements of $G$ {\it act} to transform some elements of a vector space $v\in V$, $g(v) = v' \in V$. We have seen above how the matrix group members could act on finite-dimensional vector spaces.  This part of group theory is called {\bf representation theory}. Here, the members of $V$ can for example be the state of a system, say a wave-function in quantum mechanics or a field in quantum field theory. 
+To be useful to us in physics, we would like that the result of the group operation $g_i \circ g_j$ acts on the vector space as $(g_i\circ g_j)(v) = g_i(g_j(v))$, and the group identity acts as $e(v) = v$.
 
 
-%%%
+%%%%%%%%%%%
 \subsection{Definition}
 We begin with the abstract definition of a representation that ensures these properties. 
-\df{A {\bf representation} of a group $G$ on a vector space $V$ over the field $K$ is a map $\rho : G \to GL(V,K)$, where $GL(V,K)$ is the {\bf general linear group of the vector space} $V$,\footnote{The general linear group of the abstract vector space $V$ is the set of all one-to-one and onto linear transformations $V\to V$, together with functional composition as group operation. For finite dimensional spaces this group is isomorphic to the general linear group $GL(n,K)$ that we introduced earlier.} such that for all $ g_i,g_j\in G$,
+\df{A {\bf representation} of a group $G$ on a vector space $V$ over the field $K$ is a map $\rho : G \to GL(V,K)$, where $GL(V,K)$ is the {\bf general linear group of the vector space} $V$,\footnote{The general linear group of the abstract vector space $V$ is the set of all one-to-one and onto linear transformations $V\to V$ (transformations that preserve vector addition and scalar multiplication), together with functional composition as group operation. For finite dimensional spaces this group is isomorphic to the general linear group $GL(n,K)$ that we introduced earlier.} such that for all $ g_i,g_j\in G$,
 \begin{equation}
 \rho(g_i\circ g_j) = \rho(g_i)\rho(g_j). \text{    (homomorphism)}\nonumber
 \end{equation}
 If this map is also isomorphic, we say that the representation is {\bf faithful}.
 }
-Here $V$ is called the {\bf representation space} and the dimension $n$ of $V$ is called the dimension of the representation. While somewhat confusing, it is common to talk about $V$ as the representation itself, even though it is really the space on which the representation acts. 
+Here $V$ is called the {\bf representation space} and the dimension $n$ of $V$ is called the dimension of the representation. Somewhat confusing, it is common to talk about $V$ as the representation itself, even though it is really the space on which the representation acts. 
 
-To see that this fulfils our wanted properties, notice that $\rho(g)=\rho(e\circ g)=\rho(e)\rho(g)$, which means that $\rho(e)= \mathbb{1}$ must be the identity transformation on $V$. The concatenation property follows directly from the homomorphism.
+To see that this definition fulfils our wanted properties, notice that $\rho(g)=\rho(e\circ g)=\rho(e)\rho(g)$, which means that $\rho(e)= \mathbb{1}$ must be the identity transformation on $V$. The concatenation property follows directly from the homomorphism.
 
 Writing this definition in terms of a generic vector space $V$ and field $K$ may be a bit obfuscating, but we need to keep in mind that our group elements can be acting on members of abstract vector space, {\it e.g.}\ spaces where the members of the space are functions, such as in the earlier example of the translation group acting on functions. In the case where $V$ is finite dimensional it is common to choose a concrete basis for $V$ and identify $GL(V,K)$ with $GL(n, K)$, the group of $n\times n$ invertible matrices with elements from the field $K$. So, in many cases, the representations we are interested in are matrices acting on coordinate space vectors over the fields $\mathbb R$ or $\mathbb C$, {\it i.e.} vectors in $\mathbb R^n$ or $\mathbb C^n$.
 
@@ -297,10 +320,10 @@ From a physics point of view, the underlying point here is that (the members of)
 %% TODO: Discuss the difference between active and passive view of transformation, e.g. Williams Sec. 1.2
 % TODO: Linear representations as a special category
 
-In physics an important category of representations are the {\bf unitary representations}, which are representations $\rho$ of a group $G$ on a complex Hilbert space $V$ where $\rho(g)$ is a unitary operator for every $g\in G$, {\it i.e.}\ an operator that preserves the length of vectors in $V$. This generalises the unitary (matrix) group, which are examples of unitary representations, beyond finite dimensional vector spaces.
+In physics an important category of representations are the {\bf unitary representations}, which are representations $\rho$ of a group $G$ on a complex Hilbert space $V$ where $\rho(g)$ is a unitary operator for every $g\in G$, {\it i.e.}\ an operator that preserves the length of vectors in $V$.\footnote{As a Hilbert space the space is an inner product space, so it has a notion of vector length.} This generalises the unitary (matrix) group, which are examples of unitary representations, beyond finite dimensional vector spaces.
 
 
-%%%
+%%%%%%%%%%%%%%%%%%%
 \subsection{Representation examples}
 You may by now have realised that the matrix groups defined in Sec.~\ref{sec:matrix_groups} have the property that they are defined in terms of one of their representations. These are called the {\bf fundamental} or {\bf defining  representations}. However, we will also have use for other representations, {\it e.g.}\ the {\bf adjoint representation} which we will introduce later.
 
