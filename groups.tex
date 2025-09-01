@@ -322,11 +322,10 @@ From a physics point of view, the underlying point here is that (the members of)
 
 You may by now have realised that the matrix groups defined in Sec.~\ref{sec:matrix_groups} have the property that they are defined in terms of one of their representations. These are called the {\bf fundamental} or {\bf defining  representations}. However, we will also have use for other representations, {\it e.g.}\ the {\bf adjoint representation} which we will introduce later.
 
-
 The existence of multiple representations for the same group necessitates a definition of when representations are actually equivalent, or isomorphic. This should not be confused with whether groups are isomorphic, but removes differences in representations that are simply due to a change in basis for the vector space the group is acting on, or trivial changes in the dimension of the vector space.\footnote{Imagine, for example, that you create a representation for $U(1)$ that consists of diagonal $2\times2$-matrices with the unit complex numbers repeated twice on the diagonal. This is not essentially different from the one-dimensional representation, and should not be considered as such.} We again give the definition for an abstract representation space.  
 \df{Two representations $\rho$ and $\rho'$ of $G$ on $V$ and $V'$ are {\bf equivalent} if and only if there exists a map $A:V\to V'$, that is one-to-one and onto, such that for all $g \in G$, $A\rho(g)A^{-1} = \rho'(g)$.}
 For a finite-dimensional space $V=V'$ with a given basis, $A$ and $\rho(g)$ are simply matrices, and the transformation $A\rho(g)A^{-1} $ is a {\bf similarity transformation}, where $A$ is the change-of-basis matrix that transforms between two different bases for $V$.
-
+% TODO: Introduce character as that which seperates representations
 
 %%%%%%%%%%%%%%%%%%%
 \subsection{Representation examples}
@@ -481,14 +480,14 @@ By the properties of matrix exponentiation we  can now check that $\det O=\det \
 \[ X=-i\left[\begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix}\right]=\left[\begin{matrix} 0 & -i \\ i & 0 \end{matrix}\right],\]
 as the generator, writing the group element as $O=\exp(i\theta X)$.
 
-A similar calculation for $SO(3)$, which has three free parameters, gives the generators $X^i=\frac{1}{2}L^i$, where $L^i$ are the three matrices in Eq~(\ref{eq:SO3_generators}). These generators have the exact same commutator as the $SU(2)$ generators, $[X_i,X_j]=i\epsilon_{ijk}X^k$, indicating a structural similarity between the groups $SU(2)$ and $SO(3)$. For $SO(3)$ we can further find a corresponding set of differential generators
+A similar calculation for $SO(3)$, which has three free parameters, gives the generators $X^i=\frac{1}{2}L^i$, where $L^i$ are the three matrices in Eq~(\ref{eq:SO3_generators}), see Ex.~\ref{ex:SO3_matrix_generators}. These generators have the exact same commutator as the $SU(2)$ generators, $[X_i,X_j]=i\epsilon_{ijk}X^k$, indicating a structural similarity between the groups $SU(2)$ and $SO(3)$. For $SO(3)$ we can further find a corresponding set of differential generators
 \begin{equation}
 L_x=-i\left(y\frac{\partial}{\partial z}-z\frac{\partial}{\partial y} \right),\quad
 L_y=-i\left(z\frac{\partial}{\partial x}-x\frac{\partial}{\partial z} \right),\quad
 L_z=-i\left(x\frac{\partial}{\partial y}-y\frac{\partial}{\partial x} \right),
 \label{eq:SO3_diff_generators}
 \end{equation}
-see Ex.~\ref{ex:SO2_diff_generators}.
+see Ex.~\ref{ex:SO3_diff_generators}.
 Up to a constant factor of $\hbar$ you may recognise these operators as the angular momentum operators in quantum mechanics. This is not a coincidence, the angular momentum operators in quantum mechanics are a representation of the generators of the group of rotations in three dimensions. In fact, the possibility of going back and forth between differential representations and matrix representations of the Lie group is the essence of the duality between the Schr\"odinger and Heisenberg pictures of quantum mechanics.
 
 
@@ -530,62 +529,63 @@ which coincides with the choices made above for $SU(2)$.
 %%%%%%%%%
 
 %%%
-\begin{Exercise}[]
+\begin{Exercise}[difficulty=0]
 Show that for the translation group $T(1)$ the identity element is $T_0$ and that $T_a^{-1} = T_{-a}$, and use this to show that $T(1)$ is group.
 \end{Exercise}
-
 \begin{Answer}
 Given the group multiplication definition the identity element must be $e=T_0=1$ since $T_a\circ T_0=T_{a+0}=T_a$. Let $T_a^{-1} =T_b$. Since $T_a \circ T_b=T_{a+b}=1$, we find $b=-a$. (This does not show that the inverse is unique, but this is not a requirement.) We have now demonstrated the required existence of an identity element (iii) and an inverse (iv) for $T(1)$ as required by the group definition (the order of operations can obviously be reversed). The closure of the multiplication operation (i) is true by its definition. The associativity (ii) can be demonstrated as follows $(T_a\circ T_b)\circ T_c=T_{a+b}\circ T_c=T_{a+b+c}=T_{a}\circ T_{b+c}=T_a\circ (T_b\circ T_c)$.
 \end{Answer}
 %%%
 
-
 %%%
-\begin{Exercise}[]
+\begin{Exercise}[difficulty=0]
 Do the vectors in a vector space together with the vector addition operation form a group?
 \end{Exercise}
-
-
 \begin{Answer}
 Yes. Vector addition is closed (the result is a new vector in the same space). Vector addition is associative. There is an identity in the null-vector, and the inverse is the negative of the vector.
 \end{Answer}
 %%%
 
-
 %%%
-\begin{Exercise}[]
+\begin{Exercise}[difficulty=0]
 Do the vectors in $\mathbb R^3$, together with the cross-product as the multiplication operation, from a group?
 \end{Exercise}
-
 \begin{Answer}
 No. The cross product is not associative, among other things. (There is also no identity element since all cross products change the direction of the vectors.)
 \end{Answer}
 %%%
 
-\begin{Exercise}[]
+%%%
+\begin{Exercise}[difficulty=1]
 Show that the set of complex unitary $n\times n$ matrices $U$ with matrix multiplication is a group.
 \end{Exercise}
 \begin{Answer}
 We need to demonstrate the four group requirements. We have closure since the product of two such unitary matrices $U_1$ and $U_2$ is a unitary matrix: $(U_1U_2)^\dagger U_1U_2= U_2^\dagger U_1^\dagger U_1U_2= U_2^\dagger U_2=I$. Matrix multiplication is always associative. There exists an identity among the matrices since the identity matrix is unitary: $I^\dagger I = II=I$. There exist an inverse $U^{-1}=U^\dagger$ for every $U$, since the matrix $U^\dagger$ is unitary if $U$ is: $(U^\dagger)^\dagger U^\dagger= UU^\dagger=I$.
 \end{Answer}
+%%%
 
-\begin{Exercise}[]
+%%%
+\begin{Exercise}[difficulty=1]
 What are the elements of $O(1)$? Can you find a group that it is isomorphic to?
 \end{Exercise}
 \begin{Answer}
 Since $O(1)$ consists of $1\times1$ matrices, over $\mathbb R$ we suppose, also known as real numbers, the orthogonality requirement means that the transpose of that number (which is the number itself) multiplied by the number should be 1. There are two such reals, 1 and -1. The group thus has two elements. Since matrix multiplication in this case is just normal multiplication we have re-found the group $\mathbb Z_2$.
 \end{Answer}
+%%%
 
-\begin{Exercise}[label=ex:Un_parameters]
-Show that the $U(n)$ and $SU(n)$ groups have $n^2$ and $n^2-1$ independent (real) parameters, respectively. {\it Hint:} Consider the fact that $M=U^\dagger U$ is a hermitian matrix, {\it i.e.}\ $M^\dagger=M$.
+%%%
+\begin{Exercise}[difficulty=1,label=ex:Un_parameters]
+Show that the $U(n)$ and $SU(n)$ groups have $n^2$ and $n^2-1$ independent (real) parameters, respectively. {\it Hint:} Consider the fact that if $U$ is unitary, then $M=U^\dagger U$ is a hermitian matrix, {\it i.e.}\ $M^\dagger=M$.
 \end{Exercise}
 \begin{Answer}
-An $n\times n$ matrix $U$ over $\mathbb C$ has $n^2$ complex or $2n^2$ real parameters. The hermitian matrix $M=U^\dagger U$ has $n$ real elements on the diagonal
+An $n\times n$ matrix $U$ over $\mathbb C$ has $n^2$ complex or $2n^2$ real elements. The hermitian matrix $M=U^\dagger U$ has $n$ real elements on the diagonal
 and $(n^2-n)/2$ complex elements above and below the diagonal. Because $M^\dagger=M$ all the $(n^2-n)/2$ elements below the diagonal are given by the complex conjugate the corresponding elements above the diagonal. Since $U$ is unitary $M=I$. That all the $n$ real diagonal elements of $M$ is equal to one gives $n$ restrictions ($n$ real equations) for the elements of $U$. Further, all $(n^2-n)/2$ complex elements above the diagonal are zero, which gives $(n^2-n)/2$ complex equations, which means $n^2-n$ real equations. For the terms below the diagonal we do not obtain any new equations. As a result the free parameters for the $U(n)$ matrices are $2n^2-n-(n^2-n)=n^2$.
 For $SU(n)$ we must use the additional requirement $\det U=1$. Because $1=\det M=\det (U^\dagger U)=\det U^\dagger \det U=|\det U|^2$, we see that $\det U$ must be a phase factor, and that the requirement $\det U=1$ only gives one new condition (equation). Thus there are $n^2-1$ independent real parameters in $SU(n)$.
 \end{Answer}
+%%%
 
-\begin{Exercise}[]
+%%%
+\begin{Exercise}[difficulty=2]
 Show that Eq.~(\ref{eq:SU2_parameterisation}) is a parametrisation of $SU(2)$.
 \end{Exercise}
 \begin{Answer}
@@ -600,24 +600,29 @@ Then from the off-diagonal, $\delta^*\gamma=-\beta^*\alpha$ and $\gamma^*\delta=
 The determinant then requires $\alpha e^{i\phi}\alpha-\beta e^{i\theta}\beta=1$ which is fulfilled for a phase $\phi$ that rotates $\alpha$ to  $\alpha^*$ and a phase $\theta$ that rotates $\beta$ to $-\beta^*$. Thus we can write
 \[ U=\left[ \begin{matrix} \alpha & \beta \\ -\beta^* & \alpha^* \end{matrix} \right]. \]
 \end{Answer}
+%%%
 
-\begin{Exercise}[]
+%%%
+\begin{Exercise}[difficulty=1]
+Show that if $H$ is a subgroup of $G$, then $h_i \circ h_j^{-1} \in H$ for all $h_i, h_j\in H$.
+\end{Exercise}
+\begin{Answer}
+Since $H$ is a subgroup of $G$ then by point ii) in the definition of subgroups, since $h_j\in H$, we must also have $h_j^{-1} \in H$. With $h_i, h_j^{-1} \in H$ by point i) in definition $h_i  \circ h_j^{-1} \in H$.
+\end{Answer}
+%%%
+
+%%%
+\begin{Exercise}[difficulty=2]
 Show that for a subset $H\subset G,$ if $h_i \circ h_j^{-1} \in H$ for all $h_i, h_j\in H$, then $H$ is a subgroup of $G$.
 \end{Exercise}
 \begin{Answer}
 \end{Answer}
+%%%
 
-\begin{Exercise}[]
-Show that if $H$ is a subgroup of $G$, then $h_i \circ h_j^{-1} \in H$ for all $h_i, h_j\in H$.
-\end{Exercise}
-\begin{Answer}
-Since $H$ is a subgroup of $G$ then by point ii) in the definition since $h_j\in H$ we must also have $h_j^{-1} \in H$. With $h_i, h_j^{-1} \in H$ by point i) in definition $h_i  \circ h_j^{-1} \in H$.
-\end{Answer}
-
-\begin{Exercise}[label=ex:SUn_normal]
+%%%
+\begin{Exercise}[label=ex:SUn_normal,difficulty=1]
 Show that $SU(n)$ is a proper subgroup of $U(n)$ and that $U(n)$ is not simple.
 \end{Exercise}
-
 \begin{Answer}
 Let $U_i, U_j \in SU(n)$, then 
 \[\det(U_i U_j^{-1}) = \det(U_i)\det(U_j^{-1}) = 1.\]
@@ -625,51 +630,83 @@ This means that $U_i U^{-1}_j \in SU(n)$. In other words, $SU(n)$ is a proper su
 \[\det(VUV^{-1}) = \det(V)\det(U)\det(V^{-1}) = \frac{\det(V)}{\det(V)} \det(U) = 1.\]
 In other words, $SU(n)$ is also a normal subgroup of $U(n)$, thus $U(n)$ is not simple.
 \end{Answer}
+%%%
 
-\begin{Exercise}
+%%%
+\begin{Exercise}[difficulty=2]
 Show any two (left or right) cosets are either disjoint or identical sets.
 \end{Exercise}
 \begin{Answer}
 Let $H$ be a subgroup of $G$ and $g\in G$. For a member of the left coset $f\in gH$ then $gH=fH$ because $f\in gH$ implies that there must exist an $x\in H$ so that $gx=f$. Thus $fH=(gx)H=g(xH)$. Since $H$ is a group this means $xH=H$.  Thus every element in $G$ belong to exactly one left coset. The argument of right cosets is identical.
 \end{Answer}
+%%%
 
+%%%
 \begin{Exercise}[]
 If $H$ is a normal subgroup of $G$, show that its left and right cosets are the same, and show that the set formed of the cosets is a group under an appropriate group operation.
 \end{Exercise}
+%%%
 
+%%%
 \begin{Exercise}[]
 Show that the factors in a direct product of groups are normal groups to the product.
 \end{Exercise}
+%%%
 
+%%%
 \begin{Exercise}[]
 Show that the group $G$ and the group $(G\times H) / H$ are isomorphic.
 \end{Exercise}
+%%%
 
-
+%%%
 \begin{Exercise}[]
 Show that $U(1)\cong\mathbb{R}/\mathbb{Z}\cong SO(2)$.
 \end{Exercise}
+%%%
 
-
+%%%
 \begin{Exercise}[difficulty={2}]
 Prove that all unitary representations on Hilbert spaces are completely reducible. {\it Hint:} For Hilbert spaces we always have an inner product defined.
 \end{Exercise}
 \begin{Answer}
 Split the representation space $V=V_1\oplus V_2$, where we assume $V_1$ is a closed subspace of $V$ under the unitary representation $\rho(g)$ (the reducible part). Let $\mathbf v_1\in V_1$ and $\mathbf v_2\in V_2$.  Since $V_1$ is closed $\rho(g)\mathbf v_1 \in V_1$ and thus the inner product $(\rho(g)\mathbf v_1,  \mathbf v_2)=0$.  By unitarity the inner product is also $(\rho(g)\mathbf v_1,  \mathbf v_2)=(\mathbf v_1, \rho(g)^{-1}\mathbf v_2)$, thus $\rho(g)^{-1}V_2 \subset V_2$ and both subspaces are closed, and the space thus completely reducible. 
 \end{Answer}
+%%%
 
-
+%%%
 \begin{Exercise}[difficulty={1}]
 Use the parameterisation of $SO(2)$ in (\ref{eq:SO2_parameterisation}) to find the generator of the group using generating functions and show that you get the same answer as when using the infinitesimal matrix demonstrated in the notes.
 \end{Exercise}
+\begin{Answer}
+Since there is only a single parameter in the group, the matrix generator is given by
+\[
+iX=\left. \frac{\partial R(\theta)}{\partial\theta }\right|_{\mathbf \theta=0} =\left[\begin{matrix} -\sin\theta &  -\cos\theta \\ \cos\theta&  -\sin\theta \end{matrix}\right]_{\mathbf \theta=0} =\left[\begin{matrix} 0&  -1 \\ 1& 0 \end{matrix}\right].
+\]
+which is the same as the generator from the infinitesimal matrix up to a constant.
+\end{Answer}
+%%%
 
-
-\begin{Exercise}[]
-Find the fundamental matrix representation for $SO(3)$.
+%%%
+\begin{Exercise}[label=ex:SO3_matrix_generators,difficulty={1}]
+Find the matrix generators for $SO(3)$.
 \end{Exercise}
+\begin{Answer}
+Using the idea of an infinitesimal matrix $dM$ we write an element in  $SO(3)$ as $O=I+dM$. Then the orthogonality requirements gives
+$O^TO=I+dM+dM^T$, so $dM=-dM^T$. We must then be able to write
+\[ dM= \left[\begin{matrix} 0 & -a & b \\  a & 0 & -c \\ -b & c & 0 \end{matrix}\right]. \]
+Since  $SO(3)$ has three free parameters we know there will be three generators. Up to constants this leaves us only with the possibility of the three generators
+\begin{equation}
+X^1 =\left[\begin{matrix} 0 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0  \end{matrix}\right], 
+\quad X^2 =\left[\begin{matrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0  \end{matrix}\right], 
+\quad X^3 =\left[\begin{matrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0  \end{matrix}\right],
+\end{equation}
+which are an anti-hermitian version of the matrices in (\ref{eq:SO3_generators}).
+\end{Answer}
+%%%
 
-
-\begin{Exercise}[difficulty={2},label=ex:SO2_diff_generators]
+%%%
+\begin{Exercise}[difficulty={2},label=ex:SO3_diff_generators]
 Find a differential representation of the generators for $SO(3)$ by studying how a vector in $\mathbb R^3$ changes under a parameterised $SO(3)$ transformation. {\it Hint}: Depending on the choice of parametrisation you may also need to use the commutator relationships between the generators.
 \end{Exercise}
 \begin{Answer}
@@ -700,9 +737,11 @@ where we have use that the partial derivatives commute. Since we know from our c
  %The last two commutators are $$\left[L_x,L_y\right] = -y\partial_x+x\partial_y = i(-i)(x\partial_y-y\partial_x) = iL_z.$$
 %$$\left[L_z,L_x\right] = -x\partial_z+z\partial_x = i(-i)(z\partial_x-x\partial_z) = iL_y.$$
 \end{Answer}
+%%%
 
+%%%
 \begin{Exercise}[difficulty={3},label=ex:SU2_generators]
-Find an expression for the generators of $SU(2)$ and their commutation relationships. {\it Hint:} One answer uses a composition function but this approach has some dangers, try also to derive the properties of the generators from a member of the group an infinitesimal distance from the identity.
+Find an expression for the generators of $SU(2)$. {\it Hint:} One answer uses a composition function but this approach has some dangers, try also to derive the properties of the generators from a member of the group an infinitesimal distance from the identity.
 \end{Exercise}
 \begin{Answer}
 A member $U$ of $SU(2)$ fulfils $UU^\dagger=I$ and has $\det U =1$ and can be written as 
@@ -729,45 +768,22 @@ From the requirement $\alpha^2+|\gamma|^2=1$ we can recreate the three Pauli mat
 
 This approach emphasises two important properties of the generators. Firstly that the generators are hermitian. Since the generators will function as operators in a QM of QFT setting, this is very desirable. Second, the generators are traceless.  This will often be a calculational advantage.
 \end{Answer}
+%%%
 
-
-\begin{Exercise}[]
-What are the structure constants of SU(2)?
+%%%
+\begin{Exercise}[difficulty={1}]
+Find the structure constants of SU(2).
 \end{Exercise}
+%%%
 
-
-\begin{Exercise}[]
-Find the adjoint representation for $SU(2)$. Compare this to the fundamental representation of $SO(3)$.
-\end{Exercise}
-
-
-
-\begin{Exercise}[]
-Let $A$ be an algebra based on a finite-dimensional vector space over a field $F$ ,with a basis $B=\{b_i | i=1,\ldots,n\}$. Show that the multiplication of elements in $A$ is completely determined by the $n^2$ products $b_ib_j$ for each pair of basis vectors in $B$. 
-\end{Exercise}
-
-
-\begin{Exercise}[]
-Let $V$ be a finite-dimensional vector space over a field $F$ with a basis $B=\{b_i | i=1,\ldots,n\}$. Let  $\{c_{rst}| r,s,t=1,\ldots,n\}$ be a collection of $n^3$ elements in $F$. Show that there exists one, and only one, multiplication operation on $V$ so that $V$ is an algebra over $F$ under this multiplication and
-\[ b_rb_s = c_{rst}b_t,\]
-for every pair of basis vectors in $B$. The elements $c_{rst}$ are the structure constants of the algebra.
-\end{Exercise}
-
-
-\begin{Exercise}[]
-Show that $\mathbb{R}^3$ with the binary operator $[\mathbf x, \mathbf y]=\mathbf x \times \mathbf y$ is a Lie algebra.
-\end{Exercise}
-
-\begin{Exercise}[]
-Show Eq.~(\ref{eq:adjoint_rep_commutator}).
-\end{Exercise}
-
-\begin{Exercise}[]
+%%%
+\begin{Exercise}[difficulty={1}]
 Let $A_i$ be the generators of the group $G$ and $B_j$ be the generators of group $H$. Explain in what sense the $A_i$ and $B_j$ are generators of the direct product group $G\times H$ and show that $[A_i,B_j]=0$.
 \end{Exercise}
+%%%
 
-
-\begin{Exercise}[title={Properties of matrix exponentiation},label={ex:expmap_prop}]
+%%%
+\begin{Exercise}[title={Properties of matrix exponentiation},label={ex:expmap_prop},difficulty={2}]
 Prove the following useful properties of matrix exponentiation. $A$ and $B$ are matrices.
 \begin{enumerate}
 \item If $A$ and $B$ commute, $e^{A+B}=e^Ae^B$.
@@ -779,7 +795,7 @@ Prove the following useful properties of matrix exponentiation. $A$ and $B$ are 
 \item $\det e^A=e^{\tr{A}}$.
 \end{enumerate}
 \end{Exercise}
-
+%%%
 
 
 \end{document}

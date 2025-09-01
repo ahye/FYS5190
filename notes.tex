@@ -56,11 +56,11 @@
 
 % Make exercise headers a bit better
 \renewcounter{Exercise}[chapter]
-\renewcommand{\ExerciseHeader}{\centerline{\textbf{\large
-\ExerciseName\,\thechapter.\ExerciseHeaderNB\ExerciseHeaderTitle
-\ExerciseHeaderOrigin\medskip}}}
-\renewcommand{\AnswerHeader}{\medskip\noindent\textbf{
-\ExerciseName\ \thechapter.\ExerciseHeaderNB}\newline\smallskip}
+% Header for exercise
+\renewcommand{\ExerciseHeader}{\noindent\textbf{\ExerciseName\,\thechapter.\ExerciseHeaderNB\,\ExerciseHeaderDifficulty\,\ExerciseHeaderTitle\ExerciseHeaderOrigin\newline}}
+\renewcommand{\AtBeginExercise}{\noindent\hspace{-2.1mm}}
+% Header for answer
+\renewcommand{\AnswerHeader}{\noindent\textbf{\ExerciseName\ \thechapter.\ExerciseHeaderNB}\newline}
 
 
 % Front page

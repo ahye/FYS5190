@@ -34,7 +34,7 @@ We see that division algebras have the addition and subtraction properties of ``
 We can now add to the division algebra the notion of a {\bf norm}, or length, of the members $\|x\|$. This is a map from the algebra to the field, $\|\,\|:D\to\mathbb{R}$, so that we can discuss for example convergence of the members as we do for the reals. We have to require here that the norm is homomorphic, meaning that it preserves the structure of the algebra, so that for example the ``product''  of two objects with large norm has a large norm. We then get a {\bf normed division algebra}. 
 \df{If there exists a homomorphic norm for the division algebra, {\it i.e.}\ one where $\|x\circ y\|=\|x\|\|y\|$ for all $x,y\in D$, then the division algebra is a {\bf normed division algebra}.}
 
-There is an important theorem by Hurwitz (1923) that demonstrates that only four of these real number ``lookalikes'' exist.
+There is an important theorem by Hurwitz~\cite{Hurwitz1923} that demonstrates that only four of these real number ``lookalikes'' exist.
 \theo{Hurwitz's theorem. There are only four normed division algebras over the reals (up to isomorphism), the reals themselves $\mathbb{R}$, the complex numbers $\mathbb{C}$,  the quaternions $\mathbb{H}$, and the octonions $\mathbb{O}$.}
 
 In addition it is (relatively speaking) easy to show that $\mathbb{R} \subset\mathbb{C}\subset\mathbb{H}\subset\mathbb{O}$. One perspective on the relationship between these algebras is that the reals is the only ordered normed division algebra, {\it i.e.}, where we can compare uniquely the elements $a>b$. This is not possible for the complex numbers, but they keep the commutative and associate properties of the reals. The quaternions in turn break the commutativity of the complex numbers, while being associative, while the most unruly of the bunch, the octonions, are not even associative.
@@ -53,15 +53,22 @@ We will now turn to the most crucial type of algebras for physics, namely {\bf L
 \item (anti-commutation) \[[x,y] = -[y,x] \]
 \item (Jacobi identity) \[[x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0\]
 \end{enumerate}}
-If the algebra is over $\mathbb R$ it is a real Lie algebra, and over $\mathbb C$ a complex Lie algebra. We write the name of Lie algebras $\mathfrak l$  in lower case {\bf fraktur} style.
+If the algebra is over $\mathbb R$ it is a real Lie algebra, and over $\mathbb C$ a complex Lie algebra. We write the name of Lie algebras $\mathfrak l$  in lower case {\bf fraktur} style. A Lie algebra is called {\bf abelian} if its Lie bracket is always zero.
 
-Since Lie algebras are vector spaces, a {\bf subalgebra} $\mathfrak m$  of a Lie algebra $\mathfrak l$ is simply a subspace $\mathfrak m\subseteq \mathfrak l$. An {\bf ideal} is a subalgebra that satisfies $[\mathfrak l, \mathfrak m] \subseteq \mathfrak m$. A {\bf simple} Lie algebra is a non-abelian Lie algebra (non-zero structure constants)  without any proper ideals. A Lie algebra is {\bf semi-simple} if it is a direct sum of simple Lie algebras.
+Since Lie algebras are vector spaces, a {\bf subalgebra} $\mathfrak m$  of a Lie algebra $\mathfrak l$ is simply a subspace $\mathfrak m\subseteq \mathfrak l$ that is closed under the Lie bracket. An {\bf ideal} is a subalgebra that also satisfies $[\mathfrak l, \mathfrak m] \subseteq \mathfrak m$, where we interpret the notation as saying that the product by Lie bracket of elements in $\mathfrak l$ and $\mathfrak m$ are in $\mathfrak m$.   A {\bf simple} Lie algebra is a non-abelian Lie algebra without any proper ideals. A Lie algebra is {\bf semi-simple} if it is a direct sum of simple Lie algebras.
 
 Again the vectors of $\mathbb{R}^3$ with the Lie bracket defined in terms of the cross product, $[\mathbf x, \mathbf y]=\mathbf x \times \mathbf y$, is a simple example of a Lie algebra. However, we usually restrict ourselves to algebras of linear operators where the Lie bracket is the standard commutator $[x,y] \equiv xy-yx$, where the defining properties follow automatically. Thus also explaining the notation that we have used for the binary operator. 
 
-From what we learnt in Section \ref{sec:Lie_groups} the generators $X_i$ of an $d$-dimensional Lie group then span a $d$-dimensional Lie algebra with the commutator as the Lie bracket.\footnote{If you are really paranoid here, you may question wether these generators are guaranteed to be linearly independent. However, since the Lie group is parameterised by $d$ parameters, if the generators were not linearly independent we should be able to remove one of the parameters, leading to a contradiction. Stop it!} Since this is also a vector space, any element $X$ of the algebra can be written in terms of the generators $X_i$, as $X=a_iX^i$. This is called the {\bf tangent space} of the group at the identity. The differences between choices in the definition of the generators and the normalisation of the structure constants disappear as they can be absorbed into a rescaling and linear combinations of the basis $\{X_i\}_{i=1}^d$, this makes the Lie algebra of the group {\it unique}.
+We have the same notion of sameness for the Lie algebras as for the groups, namely that of isomorphism. A Lie algebra {\bf homomorphism} is a linear map 
+$\rho:\mathfrak l \to \mathfrak m$ where
+\[ \rho ( [ x , y ] ) = [ \rho ( x ) , \rho( y ) ], \]
+for all $x,y\in \mathfrak l$, and an {\bf isomorphism} of Lie algebras is a one-to-one and onto homomorphism. 
 
-However, the reverse is not true. There can be multiple Lie groups that have the same algebra. The often quoted example is the groups $SO(3)$ and $SU(2)$ where we have seen that the commutator of the generators is the same up to constants, so the algebra is the same, we say $\mathfrak{so(3)}\cong \mathfrak{su(2)}$. However, while closely related, the groups are not isomorphic. 
+From what we learnt about structure constants  in Section \ref{sec:Lie_groups} the generators $X_i$ of an $d$-dimensional Lie group then span a $d$-dimensional Lie algebra with the commutator as the Lie bracket.\footnote{If you are really paranoid here, you may question whether these generators are guaranteed to be linearly independent. However, since the Lie group is parameterised by $d$ parameters, if the generators were not linearly independent we should be able to remove one of the parameters, leading to a contradiction. Stop it!} Since this is also a vector space, any element $X$ of the algebra can be written in terms of the generators $X_i$, as $X=a_iX^i$. This is called the {\bf tangent space} of the group at the identity. The differences between choices in the definition of the generators and the normalisation of the structure constants disappear as they can be absorbed into a rescaling and linear combinations of the basis $\{X_i\}_{i=1}^d$, this makes the Lie algebra of the group {\it unique}. 
+%Given a Lie group, the Jacobi identity for its Lie algebra follows from the associativity of the group operation. 
+In the correspondence between Lie groups and Lie algebras, subgroups correspond to Lie subalgebras, and normal subgroups correspond to ideals. 
+
+However, the reverse is not true. There can be multiple Lie groups that have the same algebra. The often quoted example is the groups $SO(3)$ and $SU(2)$ where we have seen that the commutator of the generators is the same up to constants, so the algebras are isomorphic, we say $\mathfrak{so(3)}\cong \mathfrak{su(2)}$. However, while closely related, the groups are not isomorphic. 
 
 
 %%%
@@ -178,4 +185,43 @@ For some groups, such as $SU(2)$, the original and dual representations can be s
 
 
 
+%%%%%%%%%
+\section{Exercises}
+%%%%%%%%%
+
+%%%
+\begin{Exercise}[difficulty=1]
+Show that $\mathbb{R}^3$ with the binary operator $[\mathbf x, \mathbf y]=\mathbf x \times \mathbf y$ is a Lie algebra.
+\end{Exercise}
+\begin{Answer}
+Clearly,  $\mathbb{R}^3$ with the cross product is algebra since $\mathbb{R}^3$ is a vector space and the cross product maps two elements of $\mathbb{R}^3$ into $\mathbb{R}^3$. We thus need to check the Lie conditions: i) the cross product is bilinear $(a\mathbf x +b\mathbf y)\times \mathbf z = a\mathbf x\times\mathbf z + b\mathbf y\times \mathbf z$, ii) the cross products is anti-symmetric $\mathbf x \times \mathbf y=-\mathbf y \times \mathbf x$, and iii), 
+\[
+\mathbf x \times (\mathbf y \times \mathbf z ) + \mathbf y \times (\mathbf z \times \mathbf x )+ \mathbf z \times (\mathbf x \times \mathbf y ) = 0,
+\] 
+is a standard relationship for cross products.
+\end{Answer}
+%%%
+
+\begin{Exercise}[]
+Find the adjoint representation for $SU(2)$. Compare this to the fundamental representation of $SO(3)$.
+\end{Exercise}
+
+\begin{Exercise}[]
+Show Eq.~(\ref{eq:adjoint_rep_commutator}).
+\end{Exercise}
+
+
+
+\begin{Exercise}[]
+Let $A$ be an algebra based on a finite-dimensional vector space over a field $F$ ,with a basis $B=\{b_i | i=1,\ldots,n\}$. Show that the multiplication of elements in $A$ is completely determined by the $n^2$ products $b_ib_j$ for each pair of basis vectors in $B$. 
+\end{Exercise}
+
+\begin{Exercise}[]
+Let $V$ be a finite-dimensional vector space over a field $F$ with a basis $B=\{b_i | i=1,\ldots,n\}$. Let  $\{c_{rst}| r,s,t=1,\ldots,n\}$ be a collection of $n^3$ elements in $F$. Show that there exists one, and only one, multiplication operation on $V$ so that $V$ is an algebra over $F$ under this multiplication and
+\[ b_rb_s = c_{rst}b_t,\]
+for every pair of basis vectors in $B$. The elements $c_{rst}$ are the structure constants of the algebra.
+\end{Exercise}
+
+
+\end{document}
 
