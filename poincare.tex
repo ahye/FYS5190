@@ -11,6 +11,7 @@
 We now take a look at the symmetry groups behind Special Relativity (SR), the Lorentz and Poincaré groups. We will first see what sort of states transform properly under SR, which has surprising connections to already familiar physics. We will then look for ways to extend these external symmetries of the coordinates to internal symmetries of quantum fields, {\it i.e.}\ the symmetries of gauge groups.
 
 
+
 %%%%%%%%%%%%%%%%%%%%%
 \section{Representations of $SU(2)$}
 \label{sec:su2_rep}
@@ -19,15 +20,16 @@ As a warm up, and to introduce some of the methods we will be using, we will sta
 \[ [X_i,X_j]=i\epsilon_{ijk} X^k,\quad i,j,k=1,2,3,\]
 which should be well known to us as the commutator for spin operators $S_i$ from our first quantum mechanics courses.\footnote{To be more exact, this was $[S_i,S_j]=i\hbar\epsilon_{ijk} S^k$. } So apparently the spin operators are part of something rather fundamental.
 
-To find a representation of $SU(2)$ through the exponential map we need to find representations $\pi$ of the algebra in terms of finite dimensional matrices (which exist given Ado's theorem). Let us very suggestively call the matrices in such a representation $J_i=\pi(X_i)$. These will then act on some vector space which we will also need to find. We can remind ourselves here that the spin operators we first learned about acted on a two-dimensional Hilbert space for the spin states of spin-$\half$ particles. The quantum mechanical notation for the vectors in this space was the Dirac-ket $|\psi\rangle$, which we will stick to in the following.
+To find a representation of $SU(2)$ through the exponential map we need to find representations $\pi$ of its algebra in terms of finite dimensional matrices (which exist given Ado's theorem). Let us very suggestively call the matrices in such a representation $J_i=\pi(X_i)$. These will then act on some vector space which we will also need to find. We can remind ourselves here that the spin operators we first learned about acted on a two-dimensional Hilbert space for the spin states of spin-$\half$ particles. The quantum mechanical notation for the vectors in this space was the Dirac-ket $|\psi\rangle$, which we will stick to in the following.
 
-Our first move in the construction is to consider that since the generators in any representation of the Lie algebra are not unique, we can change their basis by a {\bf similarity transform} $J_i'=SJ_iS^{-1}$, where $S$ is an invertible matrix. We can easily show that the $J_i'$ fulfil the same algebra and that this is thus an isomorphism of the representation. We can then uses this freedom to now diagonalise one of the three matrices, $J_3$, by a choice of basis. We can not diagonalise more than one because we know from linear algebra -- and operators in quantum mechanics -- that two matrices that are diagonalised by the same similarity transform must commute (since diagonal matrices commute), and this would contradict our commutator for the $J_i$.
+Our first move in the construction is to consider that since the generators in any representation of the Lie algebra are not unique, we can change their basis by a {\bf similarity transform} $J_i'=SJ_iS^{-1}$, where $S$ is an invertible matrix. We can easily show that the $J_i'$ fulfil the same algebra and that this is thus an isomorphism of the representation. We can then use this freedom to now diagonalise one of the three matrices, $J_3$, by a choice of basis.  We remember here from linear algebra that hermitian matrices, which we have seen that the generators of $SU(2)$ are, are all unitarily diagonalisable with real eigenvalues.\footnote{Unitarily diagonalisable means that there exists a unitary matrix $U$ so that $U^\dagger J_3 U = D$ is diagonal.}  We can not diagonalise more than one of the $J_i$ because we know from linear algebra that two matrices that are diagonalised by the same similarity transform must commute (since diagonal matrices commute), and this would contradict our commutator for the $J_i$. 
 
 In the following sections of this chapter we will be particularly interested in the eigenvectors of the generators that we can simultaneously diagonalise, in the $SU(2)$ case only $J_3$, which we will call {\bf states}. This follows what we did in quantum mechanics where we found the set of all commuting operators for a given system, and found their common eigenstates/eigenfunctions, which we then used as basis states/vectors under the quantum mechanical axiom that the eigenstates form a complete set of basis states. The eigenvalues in these cases are the {\it only} possible measurements for the corresponding observables. Returning to our spin example, for the spin-$\half$ spin operator we have two states, the spin-up and spin-down states, and can measure the spin in the $z$-direction ($S_3$) to be in the up or down direction, $S_3=\pm\frac{\hbar}{2}$. Any spin-$\half$ fermion must then be in a linear combination of the two states. We should like to emphasise here that this says something dramatic about what exists according to quantum mechanics, there are only two states labeled by the quantum number $s_3$, $|s_3=\frac{1}{2}\rangle$ and $|s_3=-\frac{1}{2}\rangle$.
 
-%%%
+
+%%%%%%%%%%%%%%%
 \subsection{Ladder operators}
-We now return to our $\mathfrak{su}(2)$ algebra and its representations. What follows might again cause some {\it deja vu}, as you might feel you have done this before in an earlier life. Let us call the eigenstates of $J_3$ for $|m\rangle$ and its eigenvalues $m$, {\it i.e.}\ $J_3|m\rangle=m|m\rangle$, and assume that the states are normalised, $\langle m|m\rangle=1$. We know that $m\in\mathbb R$ because the eigenvalues of a Hermitian matrix, as we saw $J_3$ was in the previous chapter, are real.
+We now return to our $\mathfrak{su}(2)$ algebra and its representations. What follows might again cause some {\it deja vu}, as you might feel you have done this before in an earlier life. Let us call the eigenstates of $J_3$ for $|m\rangle$ and its eigenvalues $m$, {\it i.e.}\ $J_3|m\rangle=m|m\rangle$, and assume that the states are normalised, $\langle m|m\rangle=1$. We know that $m\in\mathbb R$ because the eigenvalues of a hermitian matrix are real.
 
 We are constructing finite-dimensional representations, so we also know that $J_3$ has a finite number of eigenvalues and eigenstates. We pick the state with the largest eigenvalue, called the {\bf highest weight state}, and denote it by $|j\rangle$.\footnote{Although $j$ suggests an integer, at this point all we know is that $j$ is some real number.} We now define {\bf lowering and raising operators} $J_\pm$,
 \[ J_\pm \equiv\frac{1}{\sqrt{2}}(J_1\pm i J_2). \]
@@ -46,15 +48,15 @@ $J_-|\Omega\rangle=0$.
 The next step is to figure out what $\Omega$ is for a given $j$ and what values of $j$ that are admissible. This will also give us the dimension of the representation we are constructing. For this we shall need a very powerful structure in Lie group theory, the Casimir invariant.
 
 
-%%%
+%%%%%%%%%%%%%%%%%%
 \subsection{The Casimir invariant}
-A {\bf Casimir element} or {\bf Casimir invariant} is a combination of the elements of the Lie algebra that commutes with all the elements of the algebra. However, in constructing a Casimir element we may take products of matrices in a given representation, and hence we leave the algebra (which is a vector space, thus allowing only linear combinations).\footnote{For those interested in further reading, the technical statement is that the Casimir elements live in the {\bf universal enveloping algebra} of a Lie algebra. A detailed discussion of this is significantly beyond the scope of these notes.}
+A {\bf Casimir element} or {\bf Casimir invariant} is a combination of the elements of the Lie algebra that commutes with all the elements of the algebra. However, in constructing a Casimir element we may take products of matrices in a given representation, and hence we leave the algebra (which is a vector space, thus allowing only linear combinations and Lie brackets).\footnote{For those interested in further reading, the technical statement is that the Casimir elements live in the {\bf universal enveloping algebra} of a Lie algebra. A detailed discussion of this is significantly beyond the scope of these notes.}
 %An important Casimir element is the {\bf quadratic Casimir invariant}. 
 A semi-simple Lie algebra, such as the algebras of our matrix groups, has a number of Casimir invariants equal to its {\bf rank}.\footnote{Rank itself is a rather technical term and comes from the dimension of the Cartan subalgebra of the algebra.} 
 
 In the context of $\mathfrak{su}(2)$, this algebra has the single Casimir invariant
 \[ \mathbf J^2=J^2\equiv J_1^2+J_2^2+J_3^2=J_+J_-+J_-J_++J_3^2, \]
-and therefore has rank-1. It is relatively easy to show that $[J^2,J_1]=[J^2,J_2]=[J^2,J_3]=0$, so that we can indeed confirm that this is a Casimir element, and we can convince ourselves that there are no other combinations of the $J_i$ that will work. Physically we should recognise this as the total spin or angular momentum (squared). The significance of the Casimir invariant comes from Schur's lemma in Sec.~\ref{sec:irreps}. There is a corresponding version of Schur's lemma for Lie algebras that shows that a linear map on the representation space that commutes with all the elements of the algebra in an irreducible representation (such as the Casimir) is proportional to the identity map. Thus $J^2$ must be a multiple of the identity matrix, $J^2=\lambda I$.
+and therefore has rank-1. It is relatively easy to show that $[J^2,J_1]=[J^2,J_2]=[J^2,J_3]=0$, so that we can indeed confirm that this is a Casimir element, and we can convince ourselves that there are no other combinations of the $J_i$ that will work. Physically we should recognise this as the total spin or angular momentum (squared). The significance of the Casimir invariant comes from Schur's lemma in Sec.~\ref{sec:irreps}. There is a corresponding version of Schur's lemma for Lie algebras that shows that a linear map (such as the Casimir) on the representation space that commutes with all the elements of the algebra in an irreducible representation  is proportional to the identity map. Thus $J^2$ must be a multiple of the identity matrix, $J^2=\lambda I$.
 
 If we let the Casimir invariant act on the highest weight state $|j\rangle$ we get
 \[ J^2 |j\rangle=(J_+J_-+J_-J_++J_3^2) |j\rangle=(J_+J_-+J_3^2) |j\rangle=(N_{j-1}^+N_j^-+j^2) |j\rangle=j(j+1) |j\rangle. \]
@@ -64,16 +66,17 @@ In the above we have used  that $J_+|j\rangle=0$, otherwise the highest weight a
 The property of the Casimir invariant also allows us to find explicit expressions for the normalisation constants using
 \[|N_m^\pm|^2= \langle m|J_\mp J_\pm |m\rangle
 = \frac{1}{2}\langle m| J^2-J_3^2\mp J_3 |m\rangle=\frac{1}{2}( j(j+1)-m^2\mp m),  \]
-which gives\footnote{We choose an arbitrary phase factor to be real and positive. There is an alternative way of arriving at the same result that uses recursion relationships for the normalisations constants, but this is very heavy and tedious algebraically.}
+which gives\footnote{We choose an arbitrary phase factor to be real and positive. There is an alternative way of arriving at the same result that uses recursion relationships for the normalisations constants, but this is very  tedious algebraically.}
 \begin{equation*}
 N^\pm_m = \frac{1}{\sqrt{2}}\sqrt{ j(j+1)-m^2\mp m }.
 \end{equation*}
 In turn, this finally allows us to determine where the ladder of states ends. The ladder ends with $J_-|m\rangle=0$ if and only if $m=-j$ since $N_{-j}^-=0$. However, this also implies that $j=0,\frac{1}{2},1,\frac{3}{2},\ldots$, {\it i.e.}\ it is half-integer, since otherwise we would not reach $m=-j$ from $m=j$ in a whole number of steps and then the ladder would never end, which contradicts the finite-dimensional nature of the representation.
 
-What we have now is proof that there exists an infinite tower of finite-dimensional representations of $\mathfrak{su}(2)$ that are indexed, or labeled, by the non-negative half-integer $j$, with one representation for every dimension. Although it is beyond the scope of these notes, these representations are irreducible, and they are indeed {\it all} the irreducible representations of $\mathfrak{su}(2)$. This fulfils the promise of Schur's lemma, namely that the irreducible representations are labeled by the eigenvalues of the Casimir, and show that these eigenvalues have a physical interpretation, in this case the total spin or angular momentum. Each of these representations has dimension $2j+1$, with that many states denoted by $|j,m\rangle$, $m=-j,j+1,\ldots,j-1,j$, that are eigenstates of the $J_3$ generator. We call these representations the spin-$j$ representations because they are indeed the representations of $SU(2)$ used for the different spin possibilities.
+What we have now is proof that there exists an infinite tower of finite-dimensional representations of $\mathfrak{su}(2)$ that are indexed, or labeled, by the non-negative half-integer $j$. Although it is beyond the scope of these notes, these representations are irreducible, and they are indeed {\it all} the irreducible representations of $\mathfrak{su}(2)$. This fulfils the promise of Schur's lemma, namely that the irreducible representations are labeled by the eigenvalues of the Casimir, and show that these eigenvalues have a physical interpretation, in this case the total spin or angular momentum. Each of these representations has dimension $2j+1$, with that many states denoted by $|j,m\rangle$, $m=-j,j+1,\ldots,j-1,j$, that are eigenstates of the $J_3$ generator. This gives one representation for every dimension of the vector space. We call these representations the spin-$j$ representations because they are indeed the representations of $SU(2)$ used for the different spin possibilities.
 These representations can also be used for $SO(3)$ in odd dimensions, where $j$ is integer
 
-%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The lowest-dimensional representations}
 \label{sec:SU2_irreps}
 The spin-0 representation is the trivial representation where $j=0$ and the representation space is one dimensional and everything acts as the identity element. 
@@ -123,12 +126,14 @@ We have now shown what the representations of $SU(2)$ look like, but we have not
 \section{The Lorentz Group}
 \label{sec:Lorentz_group}
 %%%%%%%%%%%%%%
-Einstein's requirement in Special Relativity was that the laws of physics should be invariant under rotations and/or boosts (changes of velocity) between different inertial reference frames. A point in the Minkowski space-time manifold $\mathbb{M}_4$ is given by a four-vector $x^\mu = (t,x,y,z)$. The resulting transformations of the space-time coordinates are captured in the Lorentz group.
-\df{The {\bf Lorentz group} $L$ is the group of linear transformations $x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu$ such that $x^2 \equiv x_\mu x^\mu = x'_\mu x'{}^{\mu}$ is invariant. The {\bf proper orthochronous} or {\bf restricted Lorentz group} is a subgroup of the Lorentz group where $\det \Lambda = 1$  ({\bf proper}) and $\Lambda^0{}_0 \geq 1$({\bf orthochronous}).
+Einstein's requirement in Special Relativity was that the laws of physics should be invariant under rotations and/or boosts (changes of velocity) between different inertial reference frames. This is possible in Minkowski space $\mathbb{M}^4$ (a manifold) where space-time points are given by a contravariant four-vector $x^\mu = (t,x,y,z)$. The dual of the contravariant vector is the covariant vector $x_\mu = (t,-x,-y,-z)$, and the contraction between two four vectors is given by $x^2\equiv x^\mu x_\mu=t^2-x^2-y^2-z^2$.
+
+The resulting transformations of the space-time coordinates in Special Relativity are captured in the Lorentz group.
+\df{The {\bf Lorentz group} $L$ is the group of linear transformations in Minkowski space \[x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu,\] such that $x^2 \equiv x_\mu x^\mu = x'_\mu x'{}^{\mu}$ is invariant. The {\bf proper orthochronous} or {\bf restricted Lorentz group} is a subgroup of the Lorentz group where $\det \Lambda = 1$  ({\bf proper}) and $\Lambda^0{}_0 \geq 1$ ({\bf orthochronous}).
 }
 The physical interpretation of the orthochronous property is that it keeps the direction (sign) of time of the four vector, while a proper group preserves orientation in rotations.
 
-Since the definition of the Lorentz group is in terms of a continuous transformation of coordinates we have strong reason to suspect that it is a Lie group. In fact, if we allow for a slight extension of the orthogonal group $O(n)$ to the {\bf indefinite orthogonal group} $O(m,n)$, where instead of the orthogonality property for group members $O$, meaning $O^{-1}=O^T$, we demand $O^{-1}=g^{-1}O^Tg$ where
+Since the definition of the Lorentz group is in terms of a continuous transformation of coordinates we have strong reason to suspect that it is a Lie group. In fact, if we allow for a slight extension of the orthogonal group $O(n)$ to the {\bf indefinite orthogonal group} $O(n,m)$, where instead of the orthogonality property for group members $O$, meaning $O^{-1}=O^T$, we demand $O^{-1}=g^{-1}O^Tg$ where
 \[g=\text{diag}(\underbrace{1,\ldots,1}_n,\underbrace{-1,\ldots,-1}_m),\] is the {\bf metric},\footnote{Indeed, we can recognise this matrix relationship as one of the defining (necessary) properties of Lorentz transformations $\Lambda^Tg\Lambda=g$.} then we can write the Lorentz group as $SO^+(1,3)$, where the plus sign signifies the orthochronous property.\footnote{Because of the metric, $\det O=1$ alone no longer insures that we do not have time or parity reversal.} This is also the part of the group that contains the identity element. As a subgroup of the general linear group $GL(4)$ this is indeed a Lie group.
 
 Compared to the $SO(4)$ group which it resembles the Lorentz group is more complicated. Unlike $SO(4)$, because of the metric, it is not compact which means that it does not have any non-trivial finite-dimensional unitary representations. Fortunately, its algebra is semi-simple, so its finite-dimensional representations are equivalent to direct sums of irreducible representations by Weyl’s complete reducibility theorem. So we need only to find the irreducible representations to construct any representation.
@@ -165,14 +170,14 @@ where we can more or less  see how the differential generators for $SO(3)$ in (\
 
 With the generators from the defining representation we can now write a general element $\Lambda \in SO^+(1,3)$ as\footnote{So this is definitely a finite-dimensional representation, but is it not also unitary? (Meaning conserves the length of vectors.) It does conserve Lorentz invariants, yes, however, those are not defined as the length of vectors.}
 \begin{equation}
-\Lambda^\mu{}_\nu = \left[\exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}\right)\right]^\mu_{~\nu},
+\Lambda^\mu{}_\nu = \exp\left(\frac{i}{2}\omega^{\rho \sigma}M_{\rho \sigma}\right)^\mu_{~\nu},
 \label{eq:exp_map_Lorentz}
 \end{equation}
-where $\omega_{\rho\sigma} = -\omega_{\sigma \rho}$ are the six free parameters of the transformation (the parameters that were used to derive the generators). The anti-symmetry of $\omega$ is a consequence of the anti-symmetry of $M$. The factor of a half takes into account that all generators appear twice in $M$. 
+where $\omega_{\rho\sigma} = -\omega_{\sigma \rho}$ are the six free parameters of the transformation (the parameters that were used to derive the generators). The anti-symmetry of $\omega$ is a consequence of the anti-symmetry of $M$. The factor of a half is a conventional normalisation constant that takes into account that all generators appear twice in $M$. 
 
 The generators $M_{\rho \sigma}$ form the Lie algebra $\mathfrak{so}(1,3)$. In fact, this is also the algebra of $O(1,3)$ since the orthochronous and proper requirements do not change the number of free parameters, but rather restricts us to a subset of the matrices that do not change the sign on the time and position components of the four-vector. 
-As we have seen, in general the exponential map from the algebra to the group is not guaranteed to be one-to-one, but describes the group locally around the identity. Using the $\mathfrak{so}(1,3)$ generators we can in fact not get outside of the $SO^+(1,3)$ subgroup of $O(1,3)$. The larger group $O(1,3)$ can be seen as four disconnected parts with $\det\Lambda=\pm1$ and $|\Lambda^0{}_0| \geq1$ that are joined by the time $T$ and parity $P$ inversion operators.
-However, the exponential map (\ref{eq:exp_map_Lorentz}) is surjective (onto) $SO^+(1,3)$ . Thus, any group element in the connected component around the identity can be expressed as an exponential of an element of the Lie algebra. 
+As we have seen, in general the exponential map from the algebra to the group is not guaranteed to be onto, but describes the group locally around the identity. Using the $\mathfrak{so}(1,3)$ generators we can in fact not get outside of the $SO^+(1,3)$ subgroup of $O(1,3)$. The larger group $O(1,3)$ can be seen as four disconnected parts with $\det\Lambda=\pm1$ and $|\Lambda^0{}_0| \geq1$ that are joined by the time $T$ and parity $P$ inversion operators.
+However, the exponential map (\ref{eq:exp_map_Lorentz}) is surjective (onto) $SO^+(1,3)$. Thus, any group element in the connected component around the identity can be expressed as an exponential of an element of the Lie algebra. 
 
 To learn more about the representations of the Lorentz group we want to look at the structure of the Lie algebra $\mathfrak{so}(1,3)$. If study  the algebra as given in  (\ref{eq:Jalgebra})--(\ref{eq:Kalgebra}) carefully we may notice that a small change  in basis would allow us to rewrite the algebra in a more symmetric fashion. We define a new basis of six generators from a linear combination (not to be confused with the earlier ladder operators):
 \begin{equation*}
@@ -198,21 +203,21 @@ We will not immediately use this information to study the representations of the
 \section{The Poincaré group}
 \label{sec:Poincare_group}
 %%%%%%%%%%%%%%%%%
-We can now extend $O(1,3)$ by adding translation by a constant four-vector $a^\mu$ to the transformation of the Lorentz group:  $x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu + a^\mu$. This transformation leaves lengths $(x-y)^2$ invariant in $\mathbb{M}_4$, and invariance under this group add symmetry of time and space translation to the symmetries of the Lorentz group.
+We can now extend $O(1,3)$ by adding translation by a constant four-vector $a^\mu$ to the transformation of the Lorentz group:  $x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu + a^\mu$. This transformation leaves lengths $(x-y)^2$ invariant in $\mathbb{M}^4$, and invariance under this group add symmetry of time and space translation to the symmetries of the Lorentz group.
 \df{The {\bf Poincaré group} $P$ is the group of all transformations of the form
-\[x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu + a^\mu.\]
-We can also construct the {\bf restricted Poincaré group} by restricting the matrices $\Lambda$ in the same way as in $SO^+(1,3)$.}
+\[x^\mu \to x'{}^\mu = \Lambda^\mu{}_\nu x^\nu + a^\mu,\]
+on Minkoswki space. We can also construct the {\bf restricted Poincaré group} by restricting the matrices $\Lambda$ in the same way as in $SO^+(1,3)$.}
 
 Writing a group member in terms of its parameters $(\Lambda, a)$, we can see  from the explicit form of the transformation that the composition of two elements in this group is:
 \[(\Lambda_1, a_1)\circ(\Lambda_2, a_2) = (\Lambda_1\Lambda_2, \Lambda_1a_2 + a_1).\]
-This tells us that the Poincar\'{e} group is {\it not} a direct product of the Lorentz group and the translation group, but rather a {\it semi-direct product} of $O(1,3)$ and the (indefinite) translation group $T(1,3)$, $O(1,3) \ltimes T(1,3)$. The translation group is a normal subgroup, and while the Lorentz group is a subgroup, it is not normal. The restricted Poincaré group is written in the same way as the restricted Lorentz group, $SO^+(1,3) \ltimes T(1,3)$.
+This tells us that the Poincar\'{e} group is {\it not} a direct product of the Lorentz group and the translation group, but rather a {\it semi-direct product} of $O(1,3)$ and the (indefinite) translation group $T(1,3)$, $O(1,3) \ltimes T(1,3)$. This is just as the symmetry group of Euclidean space $\mathbb E^n$ was a semi-direct product of the translation and rotation groups. The translation group is a normal subgroup of the Poincaré group, and while the Lorentz group is a subgroup, it is not normal. The restricted Poincaré group is written in the same way as the restricted Lorentz group, $SO^+(1,3) \ltimes T(1,3)$.
 
 The translation part of the Poincaré group adds four parameters to the six parameters of the rotations and boosts. This means that there are four more generators compared to the Lorentz group. Given our earlier discussion of the translation group in Sec.~\ref{sec:expmap} we can convince ourselves that we can use the momentum operators $P_\mu=-i\partial_\mu$ as a differential representation. These generators have a trivial commutation relationship:
 %\footnote{This also means that the translation group in Minkowski space is abelian. This is obvious, since $x^\mu + y^\mu = y^\mu + x^\mu$.}
 \begin{equation}\label{eq:poco2}
 [P_\mu, P_\nu] = 0.
 \end{equation}
-Using the differential representation of $M_{\mu\nu}$ one can also show the following commutators with the generators of the Lorentz group:
+Using the differential representation of $M_{\mu\nu}$, one can also show the following commutators with the generators of the Lorentz group:
 \begin{equation}
 [M_{\mu\nu}, P_\rho] = -i(g_\mu{}_\rho P_\nu - g_{\nu \rho} P_\mu).
 \label{eq:poco3}
@@ -233,7 +238,7 @@ The Poincaré group, like the Lorentz group, is not compact, and thus does not h
 \section{Irreducible representations of the Poincaré group}
 \label{sec:Poincare_irreps}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-We would now like to ask the following fundamental question: what sort of physical objects -- in particles physics what particles or maybe what quantum fields -- can exist if we require that they are representations of the Poincaré group, and what properties do they as a result have?\footnote{Exist here in the sense of being described by a vector space that the group representations act on.} We have already learnt that this is an infinite-dimensional representation because of the non-compact nature of the Poincaré algebra.
+We would now like to ask the following fundamental question: what sort of physical objects---in particles physics what particles or maybe what quantum fields---can exist if we require that they are representations of the Poincaré group, and what properties do they as a result have?\footnote{Exist here in the sense of being described by a vector space that the group representations act on.} We have already learnt that this is an infinite-dimensional representation because of the non-compact nature of the Poincaré algebra.
 
 To answer that question we will classify the irreducible representations of the Poincaré group. This seems like a dramatically difficult task, however, we will follow the arguments used for $SU(2)$ in Sec.~\ref{sec:su2_rep} to find and classify the representations by the eigenvalues of the Casimir invariants (via Schur's lemma), and the states in each representation by the eigenvalues of the set of commuting generators.
 
@@ -740,7 +745,7 @@ Find the spin-$\frac{3}{2}$ representation of $\mathfrak{su}(2)$.
 
 
 \begin{Exercise}[label=ex:boost_generators]
-Find an explicit expression for the boost generators $K_i$ and show the commutation properties of the Lorentz group generators $J_i$ and $K_i$. {\it Hint:} We advise that you use rapidity to parametrise the boosts to avoid excessive algebra.
+Find an explicit expression for the boost generators $K_i$ and show the commutation properties of the Lorentz group generators $J_i$ and $K_i$. {\it Hint:} We advise that you use rapidity to parametrise the boosts to avoid excessive algebra. It suffices to look at boosts in the $x$-direction.
 \end{Exercise}
 
 \begin{Answer} 
@@ -755,7 +760,7 @@ Copying this for the $y$- and $z$-directions gives
 \[ K_2 =  i\left[\begin{matrix} 0 & 0  & 1 &  0\\  0 & 0 & 0 & 0 \\  1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{matrix}\right] \quad\text{and}\quad
 K_3 = i \left[\begin{matrix} 0 & 0  & 0 &  1\\  0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 1 & 0 & 0 & 0 \end{matrix}\right].  \]
 
-Since rotations do not change time the corresponding matrices for the rotations must consist of the generators for $SO(3)$ from Eq.~(\ref{eq:SO3_diff_generators}) inserted into the lower $3\times3$ part of a $4\times4$ matrix which is otherwise zero. We also append them with a factor $i$ to consistently make them Hermitian to be consistent with our definition of generators. This gives
+Since rotations do not change time the corresponding matrices for the rotations must consist of the generators for $SO(3)$ from Eq.~(\ref{eq:SO3_generators}) inserted into the lower $3\times3$ part of a $4\times4$ matrix which is otherwise zero. This gives
 \[ J_1 = i\left[\begin{matrix} 0 & 0  & 0 &  0\\  0 & 0 & 0 & 0 \\  0 & 0 & 0 & -1 \\ 0 & 0 & 1 & 0 \end{matrix}\right], \quad 
 J_2 = i\left[\begin{matrix} 0 & 0  & 0 &  0\\  0 & 0 & 0 & 1 \\  0 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \end{matrix}\right], \quad
 J_3 = i\left[\begin{matrix} 0 & 0  & 0 &  0\\  0 & 0 & -1 & 0 \\  0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{matrix}\right].  \]

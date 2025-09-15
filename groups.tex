@@ -451,6 +451,9 @@ are called the $d$ differential {\bf generators} of the Lie group. We see here t
 
 It is these generators $X$ that then define the effect of the Lie group members in a given representation (near the zero parameter), while the $d$ numbers $a_j$ are mere parameters. We say that the generators determine the local structure of the group. It turns out that this linearisation, often called the {\bf tangent space}, of a group using an infinitesimal change near the origin is sufficient to recover the whole group locally. Note that the generators are not unique, they do depend on the parameterisation of the group, but as we shall see later some of their properties are independent of this.
 
+
+%%%%%%%%%%%%%%%%
+\subsubsection{Examples of generators}
 For the translation group $T(1)$ the action of the group on the domain $\mathbb{R}^1$ of the functions in the representation space, is $x'=f(x,a) = x+a$. The resulting (single) generator is
 \[ iX^1=\frac{\partial f}{\partial a} \frac{\partial}{\partial x}= \frac{\partial}{\partial x}. \]
 Notice here how we represented a generic element of $T(1)$ by the parameter and the generator as
@@ -471,16 +474,18 @@ As we have seen, the group $SU(2)$ has three free parameters $a_i$, so it must h
 [X_i,X_j]=i\epsilon_{ijk}X^k.
 \label{eq:su2_algebra}
 \end{equation}
-These commutators should look familiar to us as they have the same structure as the commutators for the spin $S_i$ operators in quantum mechanics.\footnote{This would be $[S_i,S_j]=i\hbar\epsilon_{ijk}S^k$.} 
+These commutators should look familiar to us as they have the same structure as the commutators for the spin $S_i$ operators in quantum mechanics.\footnote{This would be $[S_i,S_j]=i\hbar\epsilon_{ijk}S^k$.}  
 
 For matrix groups there is an alternative method to the generating functions for finding the generators that sees a lot of use. Since we are looking for infinitesimal deviations from the identity (matrix) $I$, we add an infinitesimal matrix $dM$ (the generator) and look at the properties of $dM$ given the definition of the group. Let us take $SO(2)$ as an example. Here a matrix in the group $O$ must fulfil $O^TO=I$ and $\det O=1$. Writing near the identity $O=I+dM$ we get the requirement $O^TO=I+dM+dM^T=I$ to first order in the infinitesimal. Thus the generator must fulfil $dM=-dM^T$ (it is a real, anti-symmetric matrix). This means that the diagonal of $dM$ must be zero, and in two dimensions, up to a constant, the only matrix that fits the role of the generator is
 \[ X=\left[\begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix}\right],\]
 so that the group element can be written $O=I+d\theta X$, where $d\theta$ is some infinitesimal parameter of the group. To check the determinant we need to consider how we use the generator to recreate the group since the generator is defined through an infinitesimal change. For reasons that will become clearer later we use the exponential $O=\exp(\theta X)$, which to first order in an infinitesimal parameter $d\theta$ recreates the behaviour near the identity we used.
 By the properties of matrix exponentiation we  can now check that $\det O=\det \exp(\theta X)=\exp(\theta \Tr X)=\exp(0)=1$. Since $X$ is an anti-Hermitian matrix, and we as physicists are more comfortable as Hermitian, we tend to use instead
 \[ X=-i\left[\begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix}\right]=\left[\begin{matrix} 0 & -i \\ i & 0 \end{matrix}\right],\]
-as the generator, writing the group element as $O=\exp(i\theta X)$.
+as the generator, writing the group element as $O=\exp(i\theta X)$. 
 
-A similar calculation for $SO(3)$, which has three free parameters, gives the generators $X^i=\frac{1}{2}L^i$, where $L^i$ are the three matrices in Eq~(\ref{eq:SO3_generators}), see Ex.~\ref{ex:SO3_matrix_generators}. These generators have the exact same commutator as the $SU(2)$ generators, $[X_i,X_j]=i\epsilon_{ijk}X^k$, indicating a structural similarity between the groups $SU(2)$ and $SO(3)$. For $SO(3)$ we can further find a corresponding set of differential generators
+A similar calculation for $SO(3)$, which has three free parameters, gives the generators $X^i=\frac{1}{2}L^i$, where $L^i$ are the three matrices in Eq~(\ref{eq:SO3_generators}), see Ex.~\ref{ex:SO3_matrix_generators}. These generators have the exact same commutator as the $SU(2)$ generators, $[X_i,X_j]=i\epsilon_{ijk}X^k$, indicating a structural similarity between the groups $SU(2)$ and $SO(3)$. Notice how the generators are themselves in general not members of their group, the $L_i$ matrices are not even invertible since they have determinant zero.
+
+For $SO(3)$ we can further find a corresponding set of differential generators
 \begin{equation}
 L_x=-i\left(y\frac{\partial}{\partial z}-z\frac{\partial}{\partial y} \right),\quad
 L_y=-i\left(z\frac{\partial}{\partial x}-x\frac{\partial}{\partial z} \right),\quad
@@ -508,6 +513,7 @@ We can also show that there is a {\bf Jacobi identity} among the generators that
 which in turn leads to a corresponding identity for the structure constants:
 \begin{equation}
 C_{il}^{~~m}C_{jk}^{~~l} + C_{jl}^{~~m}C_{ki}^{~~l} + C_{kl}^{~~m}C_{ij}^{~~l} = 0.
+\label{eq:Jacobi_structure_constants}
 \end{equation}
 
 Note that just like the generators are basis dependent, so are the structure constants. However, the closure in the commutation relationship is not. For example, we could have chosen the Pauli matrices to be the generators of $SU(2)$. They would then fulfil the commutator relationship
