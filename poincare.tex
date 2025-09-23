@@ -805,7 +805,7 @@ or $K_1=i(x_1\partial_0 -x_0\partial_1)$. Similarly for boost in the $y$- and $z
 \end{Answer}
 
 
-\begin{Exercise}[]
+\begin{Exercise}[label=ex:Lorentz_explicit_x]
 Use Eq.~(\ref{eq:exp_map_Lorentz}) to write out an explicit expression for a Lorentz boost in the $x$-direction with rapidity $\eta$.
 \end{Exercise}
 \begin{Answer} 
@@ -832,6 +832,93 @@ Show that a general boost in the direction of the unit vector $\mathbf n$ with r
 B(\eta,\mathbf n)=I+(\cosh\eta-1)(\mathbf n \cdot \mathbf K)^2-i\sinh\eta (\mathbf n \cdot \mathbf K).
 \end{equation*}
 \end{Exercise}
+\begin{Answer}
+The boost generators are given by
+\begin{align*}
+    iK_1=- \begin{bmatrix}
+        0 & 1 & 0 & 0\\
+        1 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}, \quad
+    iK_2=- \begin{bmatrix}
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 0\\
+        1 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}, \quad
+    iK_3=- \begin{bmatrix}
+        0 & 0 & 0 & 1\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0\\
+        1 & 0 & 0 & 0
+    \end{bmatrix},
+\end{align*}
+thus we have (using $n_x^2+n_y^2+n_z^2=1$):
+\begin{align*}
+    i \vec{n}\cdot\vec{K} &= -\begin{bmatrix}
+        0 & n_x & n_y & n_z \\
+        n_x & 0 & 0 & 0 \\
+        n_y & 0 & 0 & 0 \\
+        n_z & 0 & 0 & 0
+    \end{bmatrix},
+    \\
+    (i \vec{n} \cdot \vec{K})^2 &= \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & n_x^2 & n_xn_y & n_xn_z \\
+        0 & n_xn_y & n_y^2 & n_yn_z \\
+        0 & n_xn_z & n_yn_z & n_z^2
+    \end{bmatrix}
+    \\
+    (i \vec{n} \cdot \vec{K})^3 &= - \begin{bmatrix}
+        0 & n_x & n_y & n_z \\
+        n_x & 0 & 0 & 0 \\
+        n_y & 0 & 0 & 0 \\
+        n_z & 0 & 0 & 0
+    \end{bmatrix} = \vec{n}\cdot\vec{K}.
+\end{align*}
+We see that $(i \vec{n}\cdot\vec{K})^{2k+1}= i \vec{n}\cdot\vec{K}$ and $(i \vec{n}\cdot\vec{K})^{2k}=(i \vec{n}\cdot\vec{K})^2$. Using this we find (setting $\omega^{00}=\omega^{ij}=0$ and $\omega^{i0}=-\omega^{0i}=n^i \eta$)
+\begin{align*}
+    B(\eta,\vec{n}) &= \exp\Bigl(\frac{i}{2}\omega^{\rho\sigma}M_{\rho\sigma}\Bigr)
+    \\
+    &= \exp \bigl(\eta (i \vec{n}\cdot\vec{K})\bigr)
+    \\
+    &= I+\eta(i\vec{n}\cdot\vec{K})+\frac{1}{2}\eta^2(i\vec{n}\cdot\vec{K})^2+\cdots
+    \\
+    &= I+\frac{1}{2}\eta^2(i \vec{n}\cdot\vec{K})^2+\frac{1}{4!}\eta^4(i\vec{n}\cdot\vec{K})^4+\cdots
+    \\ &\qquad +\eta(i\vec{n}\cdot\vec{K})+\frac{1}{3!}\eta^3(i\vec{n}\cdot\vec{K})^3+\cdots
+    \\
+    &= I + \Bigl(\frac{1}{2}\eta^2+\frac{1}{4!}\eta^4+\cdots\Bigr)(i\vec{n}\cdot\vec{K})^2+\Bigl(\eta+\frac{1}{3!}\eta^3+\cdots\Bigr)(i\vec{n}\cdot\vec{K})
+    \\
+    &= I + (\cosh\eta-1)(i\vec{n}\cdot\vec{K})^2+\sinh\eta (i\vec{n}\cdot\vec{K})
+    \\
+    &= I - (\cosh\eta-1)(\vec{n}\cdot\vec{K})^2+i\sinh\eta(\vec{n}\cdot\vec{K}),
+\end{align*}
+which is \emph{almost} the expression given in the text. Setting $\vec{n}=\vec{e_x}$ should give the result from Ex.~\ref{ex:Lorentz_explicit_x}:
+\begin{align*}
+    B(\eta,\vec{e_x})&=I+(\cosh\eta-1)(iK_1)^2+\sinh\eta(iK_1)
+    \\
+    &= I+(\cosh\eta-1)\begin{bmatrix}
+        1&0&0&0 \\ 0&1&0&0 \\ 0&0&0&0 \\ 0&0&0&0
+    \end{bmatrix} -\sinh\eta \begin{bmatrix}
+        0&1&0&0 \\ 1&0&0&0 \\ 0&0&0&0 \\ 0&0&0&0
+    \end{bmatrix},
+\end{align*}
+which is the answer to Ex.~\ref{ex:Lorentz_explicit_x}. Since these results coincide, I suspect there is an error in this exercise, and that the answer really should be
+\begin{equation*}
+    B(\eta,\vec{n}) = I + (\cosh\eta-1)(i\vec{n}\cdot\vec{K})^2+\sinh\eta (i\vec{n}\cdot\vec{K}).
+\end{equation*}
+For comparison, the expression given in the problem gives
+\begin{align*}
+    B(\eta,\vec{e_x}) &= I+(\cosh\eta-1) K_1^2-i\sinh(\eta) K_1
+    \\
+    &= I - (\cosh\eta-1)\begin{bmatrix}
+        1&0&0&0 \\ 0&1&0&0 \\ 0&0&0&0 \\ 0&0&0&0
+    \end{bmatrix} +\sinh\eta \begin{bmatrix}
+        0&1&0&0 \\ 1&0&0&0 \\ 0&0&0&0 \\ 0&0&0&0
+    \end{bmatrix}.
+\end{align*}
+\end{Answer}
 
 
 \begin{Exercise}[]
