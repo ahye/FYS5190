@@ -156,6 +156,7 @@ To simplify notation these generators can further be structured into an anti-sym
 M_{\mu\nu} = \begin{bmatrix}0 & -K_1 & -K_2 & -K_3\\ K_1 & 0 & J_3 & -J_2\\ K_2 & -J_3 & 0 & J_1 \\ K_3 & J_2 & - J_1 & 0\end{bmatrix}.
 \label{eq:M}
 \end{equation}
+If we want to we can reverse this in the standard way: $J^i=\half \epsilon^{ijk} M_{jk}$ and $K^i=M^{0i}$.
 In terms of $M$ the commutation relations of the algebra (\ref{eq:Jalgebra})--(\ref{eq:Kalgebra})  can be written:
 \begin{equation}\label{eq:poco1}
 [M_\mu{}_\nu, M_\rho{}_\sigma] = -i(g_{\mu\rho}M_{\nu\sigma} - g_{\mu\sigma}M_{\nu\rho} - g_{\nu\rho}M_{\mu\sigma} + g_{\nu\sigma}M_{\mu\rho}).
@@ -510,15 +511,15 @@ and similarly for $\bar\chi$
 \section{The no-go theorem and graded Lie superalgebras}
 \label{sec:superalgebra}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-The Poincaré group contains the complete set of transformations for the symmetries of special relativity (invariance under rotations, translations and boosts), and we have seen that this implies certain properties for the particles, or rather fields, that want to live in representations of the Poincaré group. At the same time we know that the quantum fields have (internal) gauge symmetries. It would then be tempting so ask if these are somehow related and can be described in a larger symmetry.
+The Poincaré group contains the complete set of transformations for the (external) symmetries of special relativity (invariance under rotations, translations and boosts), and we have seen that this implies certain properties for the particles, or rather fields, that want to live in representations of the Poincaré group. At the same time we know that the quantum fields have (internal) gauge symmetries, in particular the Standard Model fields transform under the gauge group $SU(3)_C\times SU(2)_L\times U(1)_Y$. It would then be tempting so ask if these are somehow related and can be described in a larger symmetry that combines the external and internal symmetries.
 
-Unfortunately, the answer to that question is `no', at least as long as we keep to describing our symmetries using Lie algebras. In 1967 Coleman and Mandula~\cite{Coleman:1967ad} showed that under reasonable assumptions any extension of the restricted Pointcaré group $P$ to include gauge symmetries is isomorphic to $G_\text{gauge}\times P$, where $G_\text{gauge}$ is whatever gauge group the Standard Model has. A direct product like this means that the generators of the two groups all commute, meaning that the generators $B_i$ of the standard model gauge groups all have
+Unfortunately, the answer to that question is `no', at least as long as we keep to describing our symmetries using Lie algebras. In 1967 Coleman and Mandula~\cite{Coleman:1967ad} showed that under reasonable assumptions any extension of the restricted Pointcaré group $P$ to include gauge symmetries is isomorphic to $G_\text{gauge}\times P$, where $G_\text{gauge}$ is whatever gauge group the model has. A direct product like this means that the generators of the two groups all commute, meaning that the generators $B_i$ of the gauge group all have
 \[[P_\mu, B_i] = [M_\mu{}_\nu, B_i] = 0.\]
 The result is that there can be no real interaction between the external and internal symmetries.
 
-Not to be defeated by a simple mathematical proof, in 1975 Haag, \L opusza\'{n}ski and Sohnius (HLS)~\cite{Haag:1974qh} showed that there is a way around Coleman and Mandula's no-go theorem, if one introduces the concept of $\mathbb{Z}_2$ {\bf graded Lie superalgebras}.\footnote{The definition of graded Lie algebras can be extended to $\mathbb{Z}_n$ by a direct sum over $n$ vector spaces $\mathfrak l_i$, $\mathfrak l = \oplus_{i=0}^{n-1} \mathfrak l_i$, such that $x_i\circ x_j$ $\in$ $\mathfrak l_{i+j\mod{n}}$, with the same requirements for supersymmetrization and Jacobi identity as for the $\mathbb{Z}_2$ graded algebra.}
+Not to be defeated by a simple mathematical proof, in 1975, Haag, \L opusza\'{n}ski and Sohnius (HLS)~\cite{Haag:1974qh} showed that there is a way around Coleman and Mandula's no-go theorem, if one introduces the concept of $\mathbb{Z}_2$ {\bf graded Lie superalgebras}.\footnote{The definition of graded (Lie) algebras can be extended to $\mathbb{Z}_n$ by a direct sum over $n$ vector spaces $\mathfrak l_i$, $\mathfrak l = \oplus_{i=0}^{n-1} \mathfrak l_i$, such that $x_i\circ x_j$ $\in$ $\mathfrak l_{i+j\mod{n}}$.}
 
-\df{A {\bf graded Lie superalgebra} is a vector space $\mathfrak l$ that is a direct sum of two vector spaces $\mathfrak l_0$ and $\mathfrak l_1$, $\mathfrak l = \mathfrak l_0 \oplus \mathfrak  l_1$, with a binary operation $\circ: \mathfrak l\times \mathfrak l \to \mathfrak  l$ such that for all $x_i \in \mathfrak l_i$ 
+\df{A {\bf graded Lie superalgebra} is a vector space $\mathfrak l$ that is a direct sum of two vector spaces $\mathfrak l_0$ and $\mathfrak l_1$, $\mathfrak l = \mathfrak l_0 \oplus \mathfrak  l_1$, with a multiplication operation $\circ: \mathfrak l\times \mathfrak l \to \mathfrak  l$ such that for all $x_i \in \mathfrak l_i$ 
 \begin{enumerate}[i)]
 \item $x_i\circ x_j$ $\in$ $\mathfrak  l_{i+j\mod{2}}$ (grading)\footnote{For $x_0 \in  \mathfrak  l_0$ and $x_1\in  \mathfrak  l_1$, this means that $x_0 \circ x_0 \in  \mathfrak  l_0$, $x_1 \circ x_1 \in  \mathfrak  l_0$ and $x_0 \circ x_1 \in  \mathfrak l_1$.}
 \item $x_i\circ x_j = -(-1)^{ij}x_j\circ x_i$ (supersymmetrisation)
@@ -530,10 +531,12 @@ The second requirement  generalises the definition of a Lie algebra in Sec.~\ref
 We can now start, following HLS, with the Poincaré Lie algebra ($\mathfrak  l_0 = \mathfrak p$) and add a new vector space $\mathfrak l_1$ spanned by some generators $Q_a$. It can be shown that the superalgebra requirements are fulfilled if there are four generators, $a=1,2,3,4$, that together form a four-component Majorana spinor,\footnote{Thus the four generators are not independent.} also called the {\bf supercharges}. The algebra is then
 \begin{eqnarray}
 \left[Q_a, P_\mu\right] &=& 0,  \label{eq:QP} \\
-\left[Q_a, M_\mu{}_\nu\right] &=& (\sigma_{\mu}{}_\nu Q)_a, \label{eq:QM}\\
+\left[Q_a, M_\mu{}_\nu\right] &=& (\Sigma_{\mu}{}_\nu Q)_a, \label{eq:QM}\\
 \{Q_a, \bar{Q}_b\} &=& 2 \slashed{P}_{ab},\label{eq:QQ}
 \end{eqnarray}
-where $\sigma_{\mu\nu}$ is given in terms of the $\gamma$-matrices, $\sigma_{\mu\nu} \equiv \frac{i}{4}[\gamma_\mu, \gamma_\nu]$, and as usual $\slashed{P}\equiv P_\mu\gamma^\mu$ and $\bar{Q}_a \equiv (Q^\dagger \gamma_0)_a$.\footnote{Alternatively, (\ref{eq:QQ}) can be written as $\{Q_a, Q_b\} = -2(\gamma^\mu C)_{ab}P_\mu$.}
+where $\Sigma_{\mu\nu}$ is given in terms of the $\gamma$-matrices, 
+\[\Sigma_{\mu\nu} \equiv \frac{i}{4}[\gamma_\mu, \gamma_\nu]=\begin{pmatrix}\sigma^{\mu\nu} & 0 \\  0 & \bar\sigma^{\mu\nu} \end{pmatrix},\] 
+and as usual $\slashed{P}\equiv P_\mu\gamma^\mu$ and $\bar{Q}_a \equiv (Q^\dagger \gamma_0)_a$.\footnote{Alternatively, (\ref{eq:QQ}) can be written as $\{Q_a, Q_b\} = -2(\gamma^\mu C)_{ab}P_\mu$, where $C$ is the charge conjugation matrix.}
 Together with the commutators in (\ref{eq:poco1}), (\ref{eq:poco2}) and (\ref{eq:poco3}) this is called the {\bf super-Poincaré algebra} $\mathfrak{sp}$.
 
 Because of (\ref{eq:QQ}) this new algebra is a non-trivial extension of the Poincaré algebra that avoids the no-go theorem. This extension can be proven, under some reasonable assumptions, to be the {\it largest possible} extension of the symmetries of Special Relativity. However, in the $Q_a$ we have introduced new operators that (disappointingly) do not correspond to the generators of the gauge groups, which should in any case  be related by commutators, not anti-commutators. The gauge group generators {\it can} appear in the algebra if we instead extend the algebra with $N>1$ sets of new spinors $Q_a^\alpha$, where $\alpha = 1,\ldots,N$. This gives rise to so-called $N>1$ supersymmetries, while a single set of $Q_a$ is called $N=1$ supersymmetry. Given a gauge group algebra $[B_i,B_j]=iC_{ij}^{~~k}B_k$, we can then extended the superalgebra by the non-trivial commutator $[Q_a^\alpha,B_l]=iS_l^{\alpha\beta}Q_a^\beta$, where $S_l$ are matrix representations of the gauge symmetry group, which does not work for $N=1$. 
@@ -551,9 +554,8 @@ for the Majorana spinor charges, we have instead
 \left[Q_A, P_\mu\right] &=& [\bar{Q}_{\dot{A}}, P_\mu] = 0, \label{eq:QPweyl}\\
 \left[Q_A, M^{\mu \nu}\right] &=& \sigma^{\mu\nu}_A{}^B Q_B,  \label{eq:QMweyl}\\
 \{Q_A, Q_B\} &=& \{\bar{Q}_{\dot{A}}, \bar{Q}_{\dot{B}}\} = 0,\label{eq:QQweyl}\\
-\{Q_A, \bar{Q}_{\dot{B}}\} &=& 2\sigma^\mu_{A\dot{B}}P_\mu, \label{eq:QQbarweyl}
+\{Q_A, \bar{Q}_{\dot{B}}\} &=& 2\sigma^\mu_{A\dot{B}}P_\mu. \label{eq:QQbarweyl}
 \end{eqnarray}
-where now the  $\sigma^{\mu\nu}$ are given in terms of the Pauli matrices $\sigma^{\mu\nu} = \frac{i}{4}(\sigma^\mu \bar{\sigma}^\nu - \sigma^\nu \bar{\sigma}^\mu)$.
 
 
 
@@ -625,6 +627,7 @@ C^2 &=& 2B_\mu P_\nu B^\mu P^\nu - 2B_\mu P_\nu B^\nu P^\mu\\
 where we used that $[B_\mu,P_\nu]=0$, which we get from  (\ref{eq:PW_commutator}) and (\ref{eq:XP_commutator}). From the definition of $B_\mu$:
 \begin{equation}
 B_k = W_k + \frac{1}{4}X_k = mS_k + \frac{1}{8}\bar{Q}\gamma_k \gamma^5 Q \equiv m J_k.
+\label{eq:def_Jk}
 \end{equation}
 
 The operator we just defined, $J_k \equiv \frac{1}{m} B_k$, is an extension of the ordinary spin operator which we have here renamed to $S_k$ due to a shortage of letters. This gives us, still in the rest frame,
@@ -644,15 +647,22 @@ for $j=0,\frac{1}{2},1,\frac{3}{2},\ldots$. In addition, for each irrep with a v
 labelling also the states of the irrep. The above follows from the identical argument we made for the Poincaré algebra, which in turn relies just on the properties of the $\mathfrak{su}(2)$ algebra. 
 
 
-%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The states of the irreps of the super-Poincaré group}
 \label{sec:superalgebrarep}
-%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 What we have learned above is that the irreducible representations of the superalgebra can be labeled by $(m, j)$, and any given set of $m$ and $j$ will give us $2j+1$ eigenstates of $J_3$ with different eigenvalues $j_3$, as well as an infinite number of momentum eigenstates.\footnote{Make sure you remember that $j$ here is {\it not} the spin of the particles, but a generalisation of spin.}
 However, unlike for spin, because we have introduced another generator $Q$ this does not exhaust the number of states for the representation. We can have simultaneous eigenstates of $P^2$, $C^2$, $P_\mu$, $J^2$, and $J_3$, but also of the original spin operator $S_3$ which we can see commutes with all the other operators in this list.\footnote{We know this for $P_\mu$ and $M_{\mu\nu}$ already, and commutation with $J_k$ follows from (\ref{eq:JQ}).}
 
 To find all the states it is useful to write the generators $Q$ in terms of two-component Weyl spinors instead of four-component Dirac spinors, making explicit use of their Majorana nature, as we did in Section~\ref{sec:weyl}. We note that from Eq.~(\ref{eq:JQ}) above 
 \[[J_k, Q_A] = [J_k, \bar{Q}_{\dot{B}}] = 0.\]
+From (\ref{eq:def_Jk}) we can also write
+\begin{equation}
+J_k = S_k - \frac{1}{4m}\bar{Q}_{\dot{B}}\bar{\sigma}_k^{\dot{B}A}Q_A.
+\label{eq:Jk_twocomp}
+\end{equation}
+
+
 
 We begin by claiming that for any eigenstate of $J_3$ with eigenvalue $j_3$ there must then exist a state $|\Omega\rangle$ -- possibly the same state -- that has the same eigenvalue $j_3$ and for which
 \begin{equation}
@@ -672,12 +682,7 @@ J_3 |\Omega\rangle = J_3Q_1Q_2|\beta\rangle =Q_1Q_2J_3|\beta\rangle = j_3|\Omega
 \end{equation*}
 in other words, $|\Omega\rangle$ has the same value for $j_3$ as the $|\beta\rangle$ it was constructed from and  the Clifford vacuum exists. This proof demonstrates a general feature of the supercharges, if one supercharge with a particular index repeats in a term, then the term is zero by the anticommutation property of the supercharges.
 
-We can now use the explicit expression  for $J_k$ in terms of the two-component supercharges
-\begin{equation}
-J_k = S_k - \frac{1}{4m}\bar{Q}_{\dot{B}}\bar{\sigma}_k^{\dot{B}A}Q_A,
-\label{eq:Jk_twocomp}
-\end{equation}
-in order to find the spin for this state. First we can see that
+We can now use the explicit expression  for $J_k$ in terms of the two-component supercharges (\ref{eq:Jk_twocomp}) in order to find the spin for this state. First we can see that
 \[S_3|\Omega\rangle = J_3|\Omega\rangle =j_3|\Omega\rangle,\]
 meaning that $s_3 = j_3$ is the eigenvalue of $S_3$ for the Clifford vacuum $|\Omega\rangle$. Further, since 
 \[S^2|\Omega\rangle = J^2|\Omega\rangle =j(j+1)|\Omega\rangle,\]
@@ -906,6 +911,10 @@ Show that
 %Thus $\exp{iaJ_1)=\cos(aJ_1)+i\sin(aJ_1)=I+(\cos(a)-1)+i\sin(a)$
 %\end{Answer}
 
+\begin{Exercise}[]
+Show that $SO^+(1,3)$ and $SL(2, \mathbb{C})$ are indeed homomorphic, {\it i.e.}\ that the mapping defined by (\ref{eq:LambdaofM}) or (\ref{eq:MofLambda}) has the property that $\Lambda(M_1M_2)=\Lambda(M_1)\Lambda(M_2)$ or $M(\Lambda_1\Lambda_2)=M(\Lambda_1)M(\Lambda_2)$.
+\end{Exercise}
+
 
 \begin{Exercise}[]
 Starting from the four-component form of the super-Poincaré algebra, derive the two-component (Weyl spinor) form.
@@ -923,16 +932,12 @@ Show that $[X_\mu,P_\nu]=0$.
 \end{Answer}
 
 \begin{Exercise}[]
-Show that $SO^+(1,3)$ and $SL(2, \mathbb{C})$ are indeed homomorphic, {\it i.e.}\ that the mapping defined by (\ref{eq:LambdaofM}) or (\ref{eq:MofLambda}) has the property that $\Lambda(M_1M_2)=\Lambda(M_1)\Lambda(M_2)$ or $M(\Lambda_1\Lambda_2)=M(\Lambda_1)M(\Lambda_2)$.
-\end{Exercise}
-
-\begin{Exercise}[]
 Show that the generalisation of the spin operator, $J_k\equiv S_k + \frac{1}{8m}\bar{Q}\gamma_\mu \gamma^5 Q$, fulfils the algebra
 \[[J_i, J_j] = i\epsilon_{ijk}J_k.\]
 \end{Exercise}
 
 \begin{Exercise}[]
-What are the states for $j=1$?
+What are the states in the irrep $|m,j\rangle$ of the super-Poincaré algebra for $m^2>0$ and $j=1$?
 \end{Exercise}
 
 \end{document}
