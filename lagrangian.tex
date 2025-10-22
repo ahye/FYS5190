@@ -255,27 +255,26 @@ V(A_i, A_i^*) = \sum_i |F_i|^2+\sum_a D^aD^a = \sum_i\left|\frac{\partial W[A_1,
 %%%%%%%%%%%%%%%%
 The Lagrangian we have constructed is invariant under both internal gauge transformations and external (coordinate) super-Poincaré transformations, where the latter has been built in through the superspace coordinates. The Minkowski part of superspace, the four-vector coordinates, transform under the Lorentz group, and since all our Lagrangian ingredients are Lorentz scalars they are invariant. We can now ask the question if there is any transformation of the superspace coordinates $\theta$ and $\bar\theta$ that the Lagrangian is also invariant under. 
 
-In Sec.~\ref{sec:superalgebra} we  saw that the only nontrivial interaction between a gauge group and the supersymmetry generators for $N=1$ supersymmetry is given by  (\ref{eq:QR_commutator_dirac}), which in Weyl spinor notation for the supercharges is
+In Sec.~\ref{sec:superalgebra} we  saw that the only possible nontrivial interaction between a gauge group and the supersymmetry generators for $N=1$ supersymmetry is given by  (\ref{eq:QR_commutator_dirac}), which in Weyl spinor notation for the supercharges is
 \begin{equation}
 [Q_A, R] = Q_A, \quad  [\bar Q_{\dot A}, R ] = -\bar Q_{\dot A},
 \end{equation}
-where $R$ is the generator for an abelian $U(1)$ gauge group.
-Using this generator we can define a $U(1)_R$ transformation on the superspace coordinates called {\bf $\mathbf R$-symmetry} as
-\begin{equation}
-\theta_A \to \theta_A' = e^{i\alpha} \theta_A, \quad \bar\theta_{\dot A} \to  \bar\theta'_{\dot A}= e^{-i\alpha} \bar\theta_{\dot A},
-\end{equation}
-where $\alpha$ is the parameter of the transformation and the charge of $\theta$ and $\bar\theta$ under the transformation is 1 and $-1$, respectively. It follows from the differential representation of the supersymmetry generators (\ref{eq:diffrepQ}) and (\ref{eq:diffrepQbar}) that we must have
-\begin{equation}
-Q_A \to Q_A' = e^{-i\alpha} Q_A, \quad \bar Q_{\dot A} \to  \bar Q'_{\dot A}= e^{i\alpha} \bar Q_{\dot A}.
-\end{equation}
+where $R$ is the generator for an abelian $U(1)_R$ gauge group. If we impose such an  {\bf $\mathbf R$-symmetry}  it must act differently on the different components of a superfield since it does not commute with the supercharges.
 
-
-If a supersymmetric Lagrangian is to be invariant under such a transformation at all then a superfield $\Phi$ must transform as
+If a supersymmetric Lagrangian is to be invariant under an $U(1)_R$ transformation at all then a scalar superfield $\Phi$ must transform as
 \begin{equation}
 \Phi(x,\theta,\bar\theta)\to \Phi'(x,\theta',\bar\theta')= e^{ir_\Phi\alpha}\Phi(x,\theta, \bar\theta),
 \end{equation}
-where $r_\Phi$ is the charge of that superfield under the transformation. The charge of a product of two superfields is then just the sum of the charges of the fields. This is required so that the kinetic term in the Lagrangian is invariant under the transformation.
+where $r_\Phi$ is the charge of that superfield under the transformation, and $\alpha$ is the parameter of the transformation. The charge of a product of two superfields is then just the sum of the charges of the fields. This is required so that the kinetic term in the Lagrangian is invariant under the transformation.
 
+We can then define the  transformation on the superspace coordinates as
+\begin{equation}
+\theta_A \to \theta_A' = e^{i\alpha} \theta_A, \quad \bar\theta_{\dot A} \to  \bar\theta'_{\dot A}= e^{-i\alpha} \bar\theta_{\dot A},
+\end{equation}
+where and the charge of $\theta$ and $\bar\theta$ under the transformation is 1 and $-1$, respectively. It follows from the differential representation of the supersymmetry generators (\ref{eq:diffrepQ}) and (\ref{eq:diffrepQbar}) that we must have
+\begin{equation}
+Q_A \to Q_A' = e^{-i\alpha} Q_A, \quad \bar Q_{\dot A} \to  \bar Q'_{\dot A}= e^{i\alpha} \bar Q_{\dot A}.
+\end{equation}
 This means that for a scalar (left- or right-handed) superfield the component fields $A$, $\psi$, and $F$ must transform as
 \begin{equation}
 A\to e^{ir_\Phi\alpha}A,\quad \psi\to e^{i(r_\Phi-1)\alpha} \psi,\quad F\to e^{i(r_\Phi-2)\alpha} F,
@@ -284,6 +283,7 @@ while vector superfields must have zero $R$-charge since they are real, and thei
 \begin{equation}
 V_\mu \to V_\mu ,\quad \lambda \to e^{i\alpha} \lambda,\quad D\to D.
 \end{equation}
+
 We can check that all the terms in the Lagrangian (\ref{eq:SUSY_Lagrangian}) are invariant under this transformation, with the exception of the superpotential $W$, which must have total $R$-charge 2 for the superpotential term to be invariant. For example, with a single superfield $\Phi$, in the superpotential $W(\Phi)=t\Phi+m\Phi^2+\lambda\Phi^3$, the tadpole term will only be allowed if the $R$-charge of $\Phi$ is 2, the mass term only if the charge is 1 and the Yukawa term only if the charge is $2/3$.
 This will exclude most allowed charge assignments for the scalar superfields, and in the minimal supersymmetric models we shall look at there will be no viable continuous $R$-symmetry. However, $R$-symmetry has importance in building models of supersymmetry breaking, and could remain as a broken symmetry in the model.
 
@@ -297,19 +297,12 @@ There is a fundamental problem with having scalar particles in a quantum field t
 V(h)=-\mu^2|h|^2+\lambda |h|^4,
 \label{eq:SM_Higgs_potential}
 \end{equation}
-where $\mu$ is the tree-level mass. and $\lambda$ is its self-coupling. If we naively calculate loop-corrections to its mass in self-energy diagrams like the ones shown in Fig.~\ref{fig:hierarchy}, where $f$ is a fermion and $s$ some other scalar, they both diverge due to their loop momenta integrals, meaning they are infinite. This then needs what is called {\bf regularisation} in order to yield a finite answer. 
+where $\mu$ is the tree-level mass and $\lambda$ is its self-coupling. If we naively calculate loop-corrections to its mass in {\bf self-energy diagrams} like the ones shown in Fig.~\ref{fig:hierarchy}, where $s$ is some other scalar (spin-0 boson), $f$ is a fermion (spin-$\half$), and $V$ is a vector boson (spin-1), they all diverge due to their loop momenta integrals in the {\bf ultraviolet} (UV) limit  where the loop momenta go to infinity. This then needs what is called {\bf regularisation} in order to yield a finite answer. 
 
 \begin{figure}
 \centering
 \begin{tikzpicture}
 \begin{feynman}
-%
-\diagram [layered layout, horizontal=b to c] {
-a [particle=$h$] -- [scalar] b [dot, black, label=$\lambda_f\hphantom{m}$]
--- [fermion, half left, out=90, in=90, edge label = $f$] c [dot, black, label=$\hphantom{nm}\lambda_f$]
--- [fermion, half left, out=90, in=90, edge label = $\bar{f}$] b,
-c -- [scalar] d [particle=$h$],
-};
 %
 \diagram [xshift=6cm, yshift=-0.6cm, layered layout, horizontal=b to c] {
 a [particle=$h$] -- [scalar] b [dot, black,  label=$\lambda_s$]
@@ -320,29 +313,36 @@ a [particle=$h$] -- [scalar] b [dot, black,  label=$\lambda_s$]
 \draw [dashed] (A) circle(0.8);
 \draw (B) node[above] {$s$};
 %
+\diagram [layered layout, horizontal=b to c] {
+a [particle=$h$] -- [scalar] b [dot, black, label=$\lambda_f\hphantom{m}$]
+-- [fermion, half left, out=90, in=90, edge label = $f$] c [dot, black, label=$\hphantom{nm}\lambda_f$]
+-- [fermion, half left, out=90, in=90, edge label = $\bar{f}$] b,
+c -- [scalar] d [particle=$h$],
+};
+%
 \diagram [xshift=10cm, layered layout, horizontal=b to c] {
 a [particle=$h$] -- [scalar] b [dot, black, label=$\lambda_V\hphantom{m}$]
 -- [boson, half left, out=90, in=90, edge label = $V$] c [dot, black, label=$\hphantom{nm}\lambda_V$]
--- [boson, half left, out=90, in=90, edge label = $\bar{V}$] b,
+-- [boson, half left, out=90, in=90, edge label = $V$] b,
 c -- [scalar] d [particle=$h$],
 };
 %
 \end{feynman}
 \end{tikzpicture}
-\caption{Higgs self-energy diagrams with fermions $f$ (left) and scalars $s$ (right). The dots indicate vertices with the given coupling strength.}  
+\caption{Higgs self-energy diagrams with  scalars $s$ (left),  fermions $f$ (middle), and vectors $V$ (right). The dots indicate vertices with the given coupling strength.}  
 \label{fig:hierarchy}
 \end{figure}
 
-There are different ways of achieving regularisation. Since we know that the Standard Model is an incomplete theory, at least when we go up to Planck scale energies where we need an unknown quantum theory of gravity, we can introduce a {\bf cut-off regularisation} where we limit the integral in the loop-correction to momenta below a scale $\Lambda$. Then the loop-corrections to the Higgs mass are
+There are different ways of achieving regularisation. Since we know that the Standard Model is an incomplete theory, at least when we go up to Planck scale energies where we need an unknown quantum theory of gravity, we can introduce a {\bf cut-off regularisation} where we limit the integral in the loop-correction to momenta below a scale $\Lambda$. Then the one-loop corrections to the Higgs mass are
 \begin{eqnarray}
-\Delta m_{h,f}^2 &=& \frac{|\lambda_f|^2}{16\pi^2}\left[-2\Lambda^2 +6m_f^2\ln\frac{\Lambda}{m_f}+\ldots \right], \label{eq:higgsqdiv} \\
-\Delta m_{h,s}^2 &=&  \frac{\lambda_s}{16\pi^2}\left[\Lambda^2 -2m_s^2\ln\frac{\Lambda}{m_s}+\ldots\right],  \\
-\Delta m_{h,V}^2 &=& \frac{3\lambda_V^2}{16\pi^2}\left[\Lambda^2 - 2M_V^2\ln\frac{\Lambda}{M_V}+\ldots \right],
+\Delta m_{h,s}^2 &=&  \frac{\lambda_s}{16\pi^2}\left[\Lambda^2 -m_s^2\ln\frac{\Lambda^2}{m_s^2}+\ldots\right],  \nonumber\\
+\Delta m_{h,f}^2 &=& \frac{|\lambda_f|^2}{16\pi^2}\left[-2\Lambda^2 +3m_f^2\ln\frac{\Lambda^2}{m_f^2}+\ldots \right], \label{eq:higgsqdiv} \\
+\Delta m_{h,V}^2 &=& \frac{3\lambda_V^2}{16\pi^2}\left[\Lambda^2 - M_V^2\ln\frac{\Lambda^2}{M_V^2}+\ldots \right], \nonumber
 \end{eqnarray}
-where $\lambda_f$, $\lambda_s$ and $\lambda_V$ are the couplings of $f$, $s$ and $V$ to the Higgs, respectively, from the Lagrangian interaction terms $\mathcal L \sim \lambda_f \bar\psi\psi h+\text{h.c.}-\frac{1}{4}\lambda_s |s|^2 |h|^2-\frac{1}{4}\lambda_V VV h$. The dots represents terms that are not divergent in terms of the cut-off scale.
-Picking $\Lambda$  suggestively as the Planck scale, $\Lambda_{UV} =M_P = 2.44\times 10^{18}$ GeV, means that the quantum corrections to the Higgs mass are some 15 orders of magnitude greater than its measured value. 
+where $\lambda_s$, $\lambda_f$ and $\lambda_V$ are the couplings of $s$, $f$ and $V$ to the Higgs, respectively, from the Lagrangian interaction terms $\mathcal L \sim \lambda_f \bar\psi\psi h+\text{h.c.}-\lambda_s |s|^2 |h|^2-\lambda_V M_V VV h$. The dots represents terms that are not divergent in terms of the cut-off scale.
+Picking $\Lambda$  suggestively as the Planck scale, $\Lambda_{UV} =M_P = 2.44\times 10^{18}$ GeV, means that the quantum corrections to the Higgs mass are some 15 orders of magnitude greater than its measured value of $m_h=125.20$ GeV~\cite{ParticleDataGroup:2024cfk}.
 
-We observe that the difference in sign between the fermions and bosons in (\ref{eq:higgsqdiv}) means that it could {\it in principle} be possible that these huge contributions cancel to keep $m_h \sim 125$\,GeV as measured,\footnote{Could we not fix this by introducing a very large Lagrangian Higgs mass $\mu$? Not really, in that the tree-level Higgs mass is constrained by the properties of the other electroweak masses, {\it i.e.}\ the $Z$ and $W$-bosons.} however, as physicists we should worry why the Universe seems to be organised in such a strange way without any specific cause. This is known as the {\bf Higgs fine tuning problem}, or the scale {\bf hierarchy problem} because it is fundamentally a problem of why the electroweak scale at around 100 GeV where the Higgs lives, is so much lighter than the Planck scale of $10^{18}$ GeV, when the former should in principle be pulled up to the latter by the sensitivity of scalars to loop corrections.\footnote{With some background in renormalisation you may ask: What about choosing dimensional regularisation instead where there is no cut-off scale? That would in principle work, however, as soon as you introduce {\it any} new particle (significantly) heavier than the Higgs there is still a quadratic correction of the form of (\ref{eq:higgsqdiv}) with the new particle masses as the scale, meaning that we cannot complete the Standard Model at a higher scale without reintroducing the problem.}
+We observe that the difference in sign between the fermions and bosons in (\ref{eq:higgsqdiv}) means that it could {\it in principle} be possible that these huge contributions cancel to keep $m_h \sim 125$\,GeV,\footnote{Could we not fix this by introducing a very large Lagrangian Higgs mass $\mu$? Not really, in that the tree-level Higgs mass is constrained by the properties of the other electroweak masses, {\it i.e.}\ the $Z$ and $W$-bosons.} however, as physicists we should worry why the Universe seems to be organised in such a strange way without any specific cause. This is known as the {\bf Higgs fine tuning problem}, or the scale {\bf hierarchy problem} because it is fundamentally a problem of why the electroweak scale at around 100 GeV where the Higgs lives, is so much lighter than the Planck scale of $10^{18}$ GeV, when the former should in principle be pulled up to the latter by the sensitivity of scalars to loop corrections.\footnote{With some background in renormalisation you may ask: What about choosing dimensional regularisation instead where there is no cut-off scale? That would in principle work, however, as soon as you introduce {\it any} new particle (significantly) heavier than the Higgs there is still a quadratic correction of the form of (\ref{eq:higgsqdiv}) with the new particle masses as the scale, meaning that we cannot complete the Standard Model at a higher scale without reintroducing the problem.}
 
 Enter supersymmetry to the rescue: with unbroken supersymmetry we find that we automatically have $|\lambda_f|^2 = \lambda_s$ and exactly twice as many scalar as fermion degrees of freedom running around in loops. This provides a magical exact cancellation of the quadratic divergence in Eq.~(\ref{eq:higgsqdiv}). To see that this relation between the couplings holds, notice that it is the superpotential term $W \sim \lambda_{ijk}\Phi_i\Phi_j \Phi_k$ which is responsible for generating Lagrangian Yukawa terms of the form $\lambda_{ijk} \psi_i\psi_j A_k$ that couple two fermions to a scalar $A_k$. If the superfield $\Phi_k$ is the one that contains the Higgs boson this means that $A_k$ is the Higgs boson field $h$, and it couples to the left-handed Weyl-spinors $\psi_i$ and $\psi_j$  in the superfields $\Phi_i$ and $\Phi_j$  as $\lambda_{ijk}\psi_i\psi_j h$, with the coupling $\lambda_{ijk}$. From the superpotential with right-handed scalar superfields the same term appears with right-handed Weyl-spinors $\lambda_{ijk}\bar\psi_i\bar\psi_j h^*$. These two terms can be combined to the same interaction term with a single Dirac fermion $\psi$,  $\lambda_{ijk}\bar\psi\psi h$, as in the Standard Model, giving $\lambda_f = \lambda_{ijk}$. There are no other such terms coupling two fermions to a scalar in the whole Lagrangian.
 
@@ -352,7 +352,7 @@ V(A,A^*) \sim \left|\frac{\partial W}{\partial A_i}\right|^2 = |\lambda_{ijk}|^2
 \end{equation}
 If $A_j$ is the second scalar $s$ in Fig.~\ref{fig:hierarchy}, then this term becomes $|\lambda_{ijk}|^2|s|^2|h|^2$ and we have $\lambda_s=|\lambda_{ijk}|^2$. As a result $\lambda_f^2=\lambda_s$.
 
-There is a similar matching between the vector bosons and the fermions in the vector superfields.
+There is a similar matching between the vector bosons $V_\mu$ and the fermions $\lambda$ in the vector superfields.
 
 The fact that there are loop contributions from two scalars for each fermion due to the same number of states (two scalar states per fermion state), means that unbroken supersymmetry predicts an exact cancellation in Eq.~(\ref{eq:higgsqdiv}).\footnote{To keep the argument simple we have avoided the contributions from vector bosons, however, we can show that these also cancel exactly against the contributions from their fermionic partners.} Notice that there is nothing here that is special about the Higgs boson, this mechanism will in fact protect all scalar particles from quadratic corrections to their mass in supersymmetric models.
 
@@ -407,7 +407,7 @@ The fact that there are loop contributions from two scalars for each fermion due
 %%%%%%%%%%%%%
 To explain the measured accelerated expansion of the universe one can introduce a constant term $\Lambda$ in Einstein's field equation, 
 \begin{equation}
-R_{\mu\nu}-\half R g_{\mu\nu}-g_{\mu\nu}\Lambda = \frac{1}{M_P^2}T_{\mu\nu}
+R_{\mu\nu}-\half R g_{\mu\nu}-g_{\mu\nu}\Lambda = \frac{1}{M_P^2}T_{\mu\nu},
 \end{equation}
 and this contribution has been coined {\bf dark energy}. 
 The measured value of dark energy in terms of an energy scale is $\Lambda_{DE} \simeq 2.4\times 10^{-3}$\,eV. To get some sense of this energy scale the rest mass of the lightest charged particle, the electron, is around 0.511 MeV, while the energy of a photon in visible light is of the order of 1 eV.
@@ -420,11 +420,11 @@ of Grisaru, Roach and Siegel (1979)~\cite{Grisaru:1979wc} to show that the predi
 \theo{{\bf Non-renormalisation theorem}\\
 All higher order contributions to the effective supersymmetric action $S_{\rm eff}$  for a process can be written:
 \begin{equation}
-S_{\rm eff} = \sum_n \int d^4x_i...d^4x_nd^4\theta \,F_1(x_1,\theta,\bar{\theta})\times...\times F_n(x_1,\theta,\bar{\theta})\times G(x_1, ..., x_n),
+S_{\rm eff} = \sum_n \int d^4x_1...d^4x_nd^4\theta \,F_1(x_1,\theta,\bar{\theta})\times...\times F_n(x_1,\theta,\bar{\theta})\times G(x_1, ..., x_n),
 \end{equation}
 where $F_i$ are products of the $n$ external superfields in the process and their covariant derivatives, and $G$ is a supersymmetry invariant function.}
 
-While this is a rather technical statement, that fact that vacuum diagrams do not have external superfields means that the higher order contributions are all zero, and since there are no tree-level contributions for vacuum diagrams -- you must have loops to not have external legs -- there can be no contribution at all. 
+While this is a rather technical statement, that fact that vacuum diagrams do not have external superfields means that the higher order contributions are all zero, and since there are no tree-level contributions for vacuum diagrams---you must have loops to not have external legs---there can be no contribution at all. 
 
 This was a victory for supersymmetry before the discovery of dark energy, when the problem was instead to prove that $\Lambda=0$, modulo the fact that the breaking of supersymmetry, as we will be doing in Chapter \ref{chap:breaking}, changes this prediction. As we shall see there, the scale of the contribution to the vacuum energy in broken supersymmetry has to be the mass scale of the supersymmetric particles, so with for example $m_{SUSY} \simeq 2$\,TeV as this scale, we have $m_{SUSY}/\Lambda_{DE} \simeq 10^{15}$, some 15 orders of magnitude too large, which is better than the Standard Model prediction of $M_P/\Lambda_{DE} = 10^{30}$, but still a bit off the measured value.\footnote{So, one would be tempted to say that supersymmetry has solved half the problem. On a more serious note, there is a significant difference in that the Standard Model prediction requires a cut-off to be finite, while supersymmetry predicts a finite but too large value.}
 
