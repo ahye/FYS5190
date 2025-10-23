@@ -253,9 +253,7 @@ V(A_i, A_i^*) = \sum_i |F_i|^2+\sum_a D^aD^a = \sum_i\left|\frac{\partial W[A_1,
 \section{$R$-symmetry}
 \label{sec:R_symmetry}
 %%%%%%%%%%%%%%%%
-The Lagrangian we have constructed is invariant under both internal gauge transformations and external (coordinate) super-Poincaré transformations, where the latter has been built in through the superspace coordinates. The Minkowski part of superspace, the four-vector coordinates, transform under the Lorentz group, and since all our Lagrangian ingredients are Lorentz scalars they are invariant. We can now ask the question if there is any transformation of the superspace coordinates $\theta$ and $\bar\theta$ that the Lagrangian is also invariant under. 
-
-In Sec.~\ref{sec:superalgebra} we  saw that the only possible nontrivial interaction between a gauge group and the supersymmetry generators for $N=1$ supersymmetry is given by  (\ref{eq:QR_commutator_dirac}), which in Weyl spinor notation for the supercharges is
+The Lagrangian we have constructed is invariant under both internal gauge transformations and external (coordinate) super-Poincaré transformations, where the latter has been built in through the superspace coordinates. In Sec.~\ref{sec:superalgebra} we  saw that the only possible nontrivial interaction between a gauge group and the supersymmetry generators for $N=1$ supersymmetry is given by  (\ref{eq:QR_commutator_dirac}), which in Weyl spinor notation for the supercharges is
 \begin{equation}
 [Q_A, R] = Q_A, \quad  [\bar Q_{\dot A}, R ] = -\bar Q_{\dot A},
 \end{equation}
@@ -304,7 +302,7 @@ where $\mu$ is the tree-level mass and $\lambda$ is its self-coupling. If we nai
 \begin{tikzpicture}
 \begin{feynman}
 %
-\diagram [xshift=6cm, yshift=-0.6cm, layered layout, horizontal=b to c] {
+\diagram [yshift=-0.6cm, layered layout, horizontal=b to c] {
 a [particle=$h$] -- [scalar] b [dot, black,  label=$\lambda_s$]
 -- [scalar] c [particle=$h$],
 };
@@ -313,7 +311,7 @@ a [particle=$h$] -- [scalar] b [dot, black,  label=$\lambda_s$]
 \draw [dashed] (A) circle(0.8);
 \draw (B) node[above] {$s$};
 %
-\diagram [layered layout, horizontal=b to c] {
+\diagram [xshift=5cm, layered layout, horizontal=b to c] {
 a [particle=$h$] -- [scalar] b [dot, black, label=$\lambda_f\hphantom{m}$]
 -- [fermion, half left, out=90, in=90, edge label = $f$] c [dot, black, label=$\hphantom{nm}\lambda_f$]
 -- [fermion, half left, out=90, in=90, edge label = $\bar{f}$] b,
