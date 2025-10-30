@@ -504,9 +504,105 @@ Show the vector superfield supergauge transformation properties for the componen
 \[D(x) \to D(x) - \frac{1}{4}\Box C(x).\]
 \end{Exercise}
 
+\begin{Answer}
+Målsetningen her er å finne komponentfelt-transformasjonen til et vektorsuperfelt under en superjustér-transformasjon. For kompletthet, starter vi også med å minne om hvordan skalare superfelt transformerer under superjustér-transformasjoner.
+\begin{equation*}
+    \Phi_i \to \Phi_i' = e^{i q_i \Lambda}\Phi_i,
+\end{equation*}
+hvor $q_i$ er superfeltets ladning. En justér-transformasjon endrer ikke feltets superpoincaré-egenskaper, så det transformerte feltet bør også være venstrehendt.
+\begin{align*}
+    \bar{D}_{\dot{A}}\Phi_i \to \bar{D}_{\dot{A}}\Phi_i' = \bar{D}_{\dot{A}}\left[e^{i q_i \Lambda}\Phi_i\right] = e^{iq_i \Lambda}\underbrace{\bar{D}_{\dot{A}}\Phi_i}_{=0} + iq_i\left(\bar{D}_{\dot{A}}\Lambda\right)e^{i q_i \Lambda}\Phi_i \overset{(!)}{=} 0.
+\end{align*}
+Den siste likheten holder kun dersom $\bar{D}_{\dot{A}}\Lambda = 0$, altså oppfører $\Lambda$ seg som et venstrehendt skalart superfelt. For et høyrehendt skalart superfelt, $\Phi_i$, har vi 
+\begin{align*}
+    D_A \Phi_i^\dagger \to D_A \left(e^{i p_i \Lambda}\Phi_i\right)^\dagger = \big(\underbrace{D_A \Phi_i^\dagger}_{=0}\big)e^{-i p_i \Lambda^\dagger} - i p_i \Phi_i^\dagger\left(D_A \Lambda^\dagger\right)e^{- i p_i \Lambda^\dagger} \overset{(!)}{=} 0,
+\end{align*}
+som igjen krever at $D_A\Lambda^\dagger = 0$, altså er $\Lambda^\dagger$ et høyrehendt skalart superfelt.
+Definisjonen av en abelsk superjustér-transformasjon for et vektor-superfelt er 
+\begin{equation*}
+    V \to V' = V - i \left[\Lambda - \Lambda^\dagger\right].
+\end{equation*}
+Parameter $\Lambda$ er igjen et skalart superfelt. Vi minner om formen på et vektorsuperfelt,
+\begin{equation}
+    \begin{aligned}
+        \Phi(x, \theta, \bar{\theta}) &= C(x) + \theta^{A}\chi_A(x) + \bar{\theta}_{\dot{A}}\bar{\chi}^{\dot{A}}(x) + \theta \theta M(x) + \bar{\theta}\bar{\theta}M^*(x) \\
+        & \quad + (\theta \sigma^\mu \bar{\theta})V_{\mu}(x) + \theta \theta \bar{\theta}_{\dot{A}}\bar{\lambda}^{\dot{A}}(x) + \bar{\theta}\bar{\theta}\theta^A\lambda_{A}(x) + \theta\theta \bar{\theta}\bar{\theta}D(x),
+    \end{aligned}
+    \label{vektorsuperfelt2}
+\end{equation}
+hvor vi har gitt komponentfeltene nye navn for ikke å ha navnekollisjon med skalarfeltene. Vi minner også om venstre- og høyrehendt-skalarfeltene, med samme navnekonvensjon som i forelesningsnotatene\footnote{Legge til en lenke her!}. Merk at i forhold til likning \eqref{venstrehendt skalart superfelt eksplisitt}, så er 
+\begin{align}
+    \label{venstrehendt skalarfelt2} 
+    \Phi & =A(x) + i(\theta\sigma^\mu\bar{\theta})\partial_\mu A(x) - \frac{1}{4}\theta\theta\bar{\theta}\bar{\theta}\partial_\mu\partial^{\mu}A(x) + \sqrt{2}\theta^A\psi_{A}(x) - \frac{i}{\sqrt{2}}\theta\theta (\sigma^\mu\bar\theta)^A\partial_\mu \psi_A (x) + \theta \theta F(x)\\
+    \label{høyrehendt skalarfelt2}
+    \Phi^\dagger &= A^*(x) - i(\theta \sigma^{\mu}\bar{\theta})\partial_\mu A^*(x) - \frac{1}{4}\theta\theta\bar{\theta}\bar{\theta}\partial_\mu\partial^\mu A^*(x) + \sqrt{2}\bar{\theta}_{\dot{A}}\bar{\psi}^{\dot{A}}(x) + \frac{i}{\sqrt{2}}\bar{\theta} \bar{\theta}(\theta\sigma^{\mu})_{\dot{A}}\partial_\mu\bar{\psi}^{\dot{A}}(x) + \bar{\theta}\bar{\theta}F^*(x).
+\end{align}
+
+Vi kan for eksempel bruke at $\Lambda = i \Phi$, og likningene \eqref{vektorsuperfelt2}, \eqref{venstrehendt skalarfelt2} og  \eqref{høyrehendt skalarfelt2}
+\begin{align}
+    V \to V' &= V - i \left[\Lambda - \Lambda^\dagger \right] = V - i\Lambda - (i\Lambda)^\dagger \nonumber\\
+   [\Lambda = i\Phi]\quad \quad  &= V + \Phi + \Phi^\dagger \nonumber \\
+   [\eqref{vektorsuperfelt2}] \quad \quad &=
+   C + \theta^{A}\chi_A + \bar{\theta}_{\dot{A}}\bar{\chi}^{\dot{A}} + \theta \theta M + \bar{\theta}\bar{\theta}M^* + (\theta \sigma^\mu \bar{\theta})V_{\mu} + \theta \theta \bar{\theta}_{\dot{A}}\bar{\lambda}^{\dot{A}} + \bar{\theta}\bar{\theta}\theta^A\lambda_{A} + \theta\theta \bar{\theta}\bar{\theta}D \nonumber \\
+    [\eqref{venstrehendt skalarfelt2}] \quad \quad     & \quad \, +A + i(\theta\sigma^\mu\bar{\theta})\partial_\mu A - \frac{1}{4}\theta\theta\bar{\theta}\bar{\theta}\partial_\mu\partial^{\mu}A + \sqrt{2}\theta^A\psi_{A} + \frac{i}{\sqrt{2}}\theta\theta (\sigma^\mu\bar\theta)^A\partial_\mu \psi_A + \theta \theta F \nonumber \\
+    [\eqref{høyrehendt skalarfelt2}] \quad \quad    & \quad \, +A^* - i(\theta \sigma^{\mu}\bar{\theta})\partial_\mu A^* - \frac{1}{4}\theta\theta\bar{\theta}\bar{\theta}\partial_\mu\partial^\mu A^* + \sqrt{2}\bar{\theta}_{\dot{A}}\bar{\psi}^{\dot{A}} + \frac{i}{\sqrt{2}}\bar{\theta} \bar{\theta}(\theta\sigma^{\mu})_{\dot{A}}\partial_\mu\bar{\psi}^{\dot{A}} + \bar{\theta}\bar{\theta}F^* \nonumber \\
+    &= C + A^* + A + \theta^A( \chi_A + \sqrt{2}\psi_A) + \bar{\theta}_{\dot{A}}(\bar{\chi}^{\dot{A}} + \sqrt{2}\bar{\psi}^{\dot{A}}) + \theta \theta (M + F) + \bar{\theta}\bar{\theta}(M^* + F^*) \nonumber \\
+    &\quad \, + (\theta \sigma^\mu \bar{\theta})[V_\mu + i \partial_\mu(A - A^*)] + \theta \theta \bar{\theta}_{\dot{A}}\left( \bar{\lambda}^{\dot{A}} + \frac{i}{\sqrt{2}}\sigma^{\mu B}_{\:\:\,\dot{A}}\partial_\mu \psi_B\right) + \bar{\theta}\bar{\theta}\theta^{A}\left(\lambda_A + \frac{i}{\sqrt{2}}\sigma^{\mu}_{A\dot{B}}\partial_\mu\bar{\psi}^{\dot{B}}\right) \nonumber \\
+    & \quad \, + \theta \theta \bar{\theta}\bar{\theta}\left(D -  \frac{1}{4}\partial_\mu \partial^\mu[A + A^*]\right) 
+    \label{superjustér-vektortrafo}\\
+    &= C' + \theta^A \chi_A' + \bar{\theta}_{\dot{A}}\bar{\chi}_{\dot{A}}' + \theta \theta M' + \bar{\theta}\bar{\theta}M'^* + (\theta \sigma^\mu \bar{\theta})V_{\mu}' + \theta \theta \bar{\theta}_{\dot{A}}\bar{\lambda}'^{\dot{A}} + \bar{\theta}\bar{\theta}\theta^A\lambda_{A}' + \theta\theta \bar{\theta}\bar{\theta}D'.\nonumber
+\end{align}
+I siste linje har vi skrevet opp de transformerte komponentfeltene, og ved å sammenlikne med linjen over, kan vi lese ut hvordan komponentfeltene transformerer under en superjustér-transformasjon. Vi legger merke til at $\Box[A + A^*]$ dukker opp sammen med $D$-feltet, og at $[A + A^*]$ dukker opp sammen med $C$-feltet. Ved å redefinere $D \to D - \frac{1}{4}\Box C$, ser vi at den siste termen etter superjustèr-transformasjonen tar formen 
+\begin{align*}
+    \theta \theta \bar{\theta}\bar{\theta}D' = \theta \theta \bar{\theta}\bar{\theta}\left(D -  \frac{1}{4}\Box[A + A^*]\right) \xrightarrow[D \to D - \frac{1}{4}\Box C]{\text{redefinisjon}}\, & \theta \theta \bar{\theta}\bar{\theta}\left(D - \frac{1}{4}\Box C - \frac{1}{4}\Box[A + A^*]\right) \\
+    =\, & \theta \theta \bar{\theta}\bar{\theta}\left(D -  \frac{1}{4}\Box[C + A + A^*]\right) = \theta \theta \bar{\theta}\bar{\theta}(D' + C').
+\end{align*}
+Vi kan gjøre det samme med $\lambda$. La $\lambda_A \to \lambda_A + \frac{i}{2}\sigma^\mu_{A\dot{B}}\partial_\mu \bar{\chi}^{\dot{B}}$. Dette er motivert av at vi ser at $\chi_A' = \chi_A + \sqrt{2}\psi_A$. Vi tar utregningen for $\lambda$, og så vet vi at det samme holder for $\bar{\lambda} = \lambda^\dagger$.
+\begin{align*}
+    \bar{\theta}\bar{\theta}\theta^{A}\lambda_A' = \bar{\theta}\bar{\theta}\theta^{A}\left(\lambda_A + \frac{i}{\sqrt{2}}\sigma^\mu_{A\dot{B}}\partial_\mu \bar{\psi}^{\dot{B}}\right) \xrightarrow[\lambda_A \to \lambda_A + \tfrac{i}{2}\sigma^\mu_{A\dot{B}}\bar{\chi}^{\dot{B}}]{\text{redefinisjon}} 
+    & \, \bar{\theta}\bar{\theta}\theta^A\left(\lambda_A + \frac{i}{2}\sigma^\mu_{A\dot{B}}\partial_\mu\left[\bar{\chi}^{\dot{B}} + \sqrt{2} \bar{\psi}^{\dot{B}}\right]\right) \\
+    =&\, \bar{\theta}\bar{\theta}\theta^A(\lambda_A' + \frac{i}{2}\sigma^\mu_{A\dot{B}}\partial_\mu \bar{\chi}'^{\dot{B}}).
+\end{align*}
+Med disse to redefinisjonene, ser vi at hverken $D$ eller $\lambda$ transformerer under superjustér-transformasjon. De andre feltene kan vi lese ut av likning \eqref{superjustér-vektortrafo}. Sammenfattet har vi 
+\begin{align*}
+    C &\to C' = C + A + A^* \\
+    \chi_A &\to \chi_A' = \chi_A + \sqrt{2}\psi_A \\
+    M & \to M' = M + F \\
+    V_\mu &\to V_\mu' = V_\mu + i \partial_\mu(A - A^*)\\
+    \lambda_A &\to \lambda_A' = \lambda_A   \quad \quad [\text{Ingen transformasjon}] \\
+    D &\to D' = D \quad \quad \, \,\,[\text{Ingen transformasjon}]
+\end{align*}
+\end{Answer}
+
 \begin{Exercise}
 Derive the expression for $V_{WZ}^2$ in Eq.~(\ref{eq:V2_WZ}).
 \end{Exercise}
+
+\begin{Answer}
+The Wess--Zumino gauge is  defined by the component field relations
+\begin{align*}
+    A + A^* &= -C, \\
+    \psi & = -\frac{1}{\sqrt{2}}\chi, \\
+    F &= -M.
+\end{align*}
+This gauge choice removes many terms from the vector superfield. Inserting into Eq.~\eqref{superjustér-vektortrafo}, we find
+\begin{align}
+    V \xrightarrow[\text{gauge}]{\text{Wess--Zumino}} V_{\text{WZ}} = (\theta \sigma^\mu \bar{\theta})\left[V_\mu + i\partial_\mu(A - A^*)\right] + \bar{\theta}\bar{\theta}\theta^{A}\lambda_A + \theta \theta \bar{\theta}_{\dot{A}}\bar{\lambda}^{\dot{A}} + \theta \theta \bar{\theta}\bar{\theta}D.
+\end{align}
+Here, all component fields have at least two factors of $\theta$. This is neat, because then $V_{\text{WZ}}^n = 0$ for all $n > 2$. We then calculate $V^2_{\text{WZ}}$. We notice that all terms, except the first, has three $\theta$ or $\bar{\theta}$ factors, and will not survive the squaring. Thus,
+\begin{align*}
+    V_{\text{WZ}}^2 &\, \,\,\,= (\theta\sigma^\mu\bar{\theta})[V_\mu + i\partial_\mu (A - A^*)](\theta\sigma^\nu \bar{\theta})[V_\nu + i\partial_\nu (A - A^*)] \\
+    &\overset{\eqref{theta-sigma-theta-bar-kvadrat}}{=} \frac{1}{2}\theta \theta \bar{\theta}\bar{\theta}[V_\mu V^\mu + i\partial_\mu(A - A^*)V^\mu + V_\mu i \partial_\mu(A - A^*)-\partial_\mu(A - A^*)\partial^\mu(A - A^*)].
+\end{align*}
+This gives the following compact expression for the exponential of $V_{\text{WZ}}$,
+\begin{align}
+    e^{V_{\text{WZ}}} &= 1 + V_{\text{WZ}} + \frac{1}{2}V_{\text{WZ}}^2 \nonumber \\
+    &= 1 + (\theta \sigma^\mu \bar{\theta})\left[V_\mu + i\partial_\mu(A - A^*)\right] + \bar{\theta}\bar{\theta}\theta^{A}\lambda_A + \theta \theta \bar{\theta}_{\dot{A}}\bar{\lambda}^{\dot{A}} \nonumber \\
+    & \quad \,+ \frac{1}{4}\theta \theta \bar{\theta}\bar{\theta}\left[4D + V_\mu V^{\mu} + 2iV_\mu\partial^{\mu}(A - A^*) - \partial_\mu(A - A^*)\partial^{\mu}(A - A^*) \right].
+    \label{Eksponensial, Wess-Zumino}
+\end{align}
+\end{Answer}
+
 
 %\begin{Exercise}
 %We start from the original superfield in (\ref{eq:leftscalarsuperfield})
