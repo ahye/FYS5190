@@ -444,18 +444,18 @@ where $K_{ij}=\partial_i\partial_jK[A,A^*]$ is the {\bf Kähler metric},  $D_i$ 
 
 \begin{Exercise}[]
 \label{ex:simpleL}
-Write down the Lagrangian and find the action of the simplest possible supersymmetric field theory with a single scalar superfield, without gauge transformations, in terms of component fields, and show that it contains no kinetic terms for the $F$-field. Then show how the $F$-field can be eliminated by the equations of motion. {\it Hint:} The kinetic part of the action will turn out to be
-\begin{equation}
+Write down the Lagrangian and find the action of the simplest possible (renormalisable) supersymmetric field theory with a single scalar superfield  $\Phi$, without gauge transformations, in terms of component fields, and show that it contains no kinetic terms for the $F$-field. Then show how the $F$-field can be eliminated by the equations of motion. {\it Hint:} The kinetic part of the action will turn out to be
+\begin{equation*}
 S_\text{kin}=\int d^4x \left\{-A^*(x)\square A(x)+|F(x)|^2+i\partial_\mu\psi(x)\bar\sigma^\mu\psi(x)\right\}.
-\end{equation}
+\end{equation*}
 To show this you may have use of the identities in Sec.~\ref{sec:Weylspinor_calc}.
 \end{Exercise}
 
 \begin{Answer}
-The Lagrangian for a single scalar superfield $\Phi$ is
-\begin{equation}
+The most general Lagrangian for a single scalar superfield $\Phi$ is
+\begin{equation*}
 \mathcal{L}=\Phi^\dagger \Phi + \delta^2(\bar{\theta}) (g\Phi+m\Phi\Phi+\lambda\Phi\Phi\Phi) + \delta^2(\theta) (g\Phi^\dagger+m\Phi^\dagger\Phi^\dagger+\lambda\Phi^\dagger\Phi^\dagger\Phi^\dagger). 
-\end{equation}
+\end{equation*}
 
 Using the following expressions for the scalar superfield in terms on component fields
 \begin{eqnarray}
@@ -468,9 +468,9 @@ we have for the kinetic term,
 \begin{eqnarray}
 \int d^4\theta \,\Phi^\dagger\Phi&=& - \frac{1}{4}A\Box A^* -\frac{1}{4} A^*\Box A  +  |F|^2 \nonumber \\
 &&+\int d^4\theta \left\{ (\theta\sigma^\mu \bar{\theta})\partial_\mu A^*(\theta\sigma^\nu \bar{\theta})\partial_\nu A
-+i\bar{\theta}\bar{\theta}\theta \sigma^\mu\partial_\mu \bar{\psi}\theta \psi - i\bar{\theta}r{\psi}\theta\theta\partial_\mu \psi\sigma^\mu\bar{\theta}\right\},\nonumber
++i\bar{\theta}\bar{\theta}\theta \sigma^\mu\partial_\mu \bar{\psi}\theta \psi - i\bar{\theta}\bar{\psi}\theta\theta\partial_\mu \psi\sigma^\mu\bar{\theta}\right\},\nonumber
 \end{eqnarray}
-where we have removed the factor $\theta\theta\bar{\theta}\bar{\theta}$ by integration. Using the identities
+where we have removed the factor $\theta\theta\bar{\theta}\bar{\theta}$ by integration in the first three terms. Using the identities
 \begin{eqnarray}
 (\theta\sigma^\mu \bar{\theta})(\theta\sigma^\nu \bar{\theta})&=&\frac{1}{2}g^{\mu\nu}\theta\theta\bar{\theta}\bar{\theta},\\
 \theta\sigma^\mu\partial_\mu \bar\psi \theta\psi &=& -\frac{1}{2}\psi\sigma^\mu\partial_\mu \bar\psi \theta\theta,\\
@@ -478,8 +478,7 @@ where we have removed the factor $\theta\theta\bar{\theta}\bar{\theta}$ by integ
 \end{eqnarray}
 gives
 \begin{eqnarray}
-\int d^4\theta \,\Phi^\dagger\Phi&=& - \frac{1}{4}A\Box A^* -\frac{1}{4} A^*\Box A +\frac{1}{2}\partial^\mu A\partial_\mu A^* +  |F|^2 \nonumber \\
-&&-\frac{i}{2}\psi\sigma^\mu\partial_\mu \bar\psi+ \frac{i}{2}\partial_\mu\psi\sigma^\mu \bar\psi.\nonumber
+\int d^4\theta \,\Phi^\dagger\Phi&=& - \frac{1}{4}A\Box A^* -\frac{1}{4} A^*\Box A +\frac{1}{2}\partial^\mu A\partial_\mu A^* +  |F|^2 -\frac{i}{2}\psi\sigma^\mu\partial_\mu \bar\psi+ \frac{i}{2}\partial_\mu\psi\sigma^\mu \bar\psi.\nonumber
 \end{eqnarray}
 Now, since
 \begin{equation}
