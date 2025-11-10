@@ -344,7 +344,7 @@ As we discussed at the end of Sec.~\ref{sec:Lorentz_group} there exists a two-to
 \Lambda^\mu{}_\nu(M) &=& \frac{1}{2}{\rm Tr}[\bar{\sigma}^\mu M \sigma_\nu M^\dagger],\label{eq:LambdaofM}\\
 M(\Lambda^\mu{}_\nu) &=& \pm \frac{1}{\sqrt{\det(\Lambda^\mu{}_\nu \sigma_\mu \bar{\sigma}^\nu)}}\Lambda^\mu{}_\nu \sigma_\mu \bar{\sigma}^\nu,\label{eq:MofLambda}
 \end{eqnarray}
-where $\bar{\sigma}^\mu = (1, -\vec{\sigma})$ and $\sigma^\mu = (1, \vec{\sigma})$. The generators of $SO^+(1,3)$ can be shown to transform to (be proportional to) the Pauli matrices in $SL(2,\mathbb C)$:
+where $\bar{\sigma}^\mu = (1, -\mathbf{\sigma})$ and $\sigma^\mu = (1, \mathbf{\sigma})$. The generators of $SO^+(1,3)$ can be shown to transform to (be proportional to) the Pauli matrices in $SL(2,\mathbb C)$:
 \[ J_i=\half \sigma_i, \quad K_i=\frac{i}{2}\sigma_i. \]
 
 This two-to-one correspondence means that $SO^+(1,3) \cong SL(2, \mathbb{C})/\mathbb{Z}_2$ and the groups have the same algebra, as discussed in Sec.~\ref{sec:Lorentz_group}. Thus we can look at the representations of $SL(2, \mathbb{C})$ instead of the  Lorentz group, when we describe spin-$\half$ particles,\footnote{We can of course also use the $SL(2, \mathbb{C})$ representations to construct representations for higher spin.} and working in $SL(2, \mathbb{C})$ is often easier. But what are those representations? It turns out that there are two inequivalent fundamental representations $\rho$ of $SL(2, \mathbb{C})$ in terms of $2\times2$ matrices $M\in SL(2, \mathbb{C})$:\footnote{There is no similarity transform between them.}
@@ -818,7 +818,7 @@ or $K_1=i(x_1\partial_0 -x_0\partial_1)$. Similarly for boost in the $y$- and $z
 \end{Answer}
 
 
-\begin{Exercise}[]
+\begin{Exercise}[label=ex:Lorentz_explicit_x]
 Use Eq.~(\ref{eq:exp_map_Lorentz}) to write out an explicit expression for a Lorentz boost in the $x$-direction with rapidity $\eta$.
 \end{Exercise}
 \begin{Answer} 
@@ -842,9 +842,83 @@ Thus we are left with the standard matrix for Lorentz transformations in the $x$
 \begin{Exercise}[]
 Show that a general boost in the direction of the unit vector $\mathbf n$ with rapidity $\eta$ can be written as
 \begin{equation*}
-B(\eta,\mathbf n)=I+(\cosh\eta-1)(\mathbf n \cdot \mathbf K)^2-i\sinh\eta (\mathbf n \cdot \mathbf K).
+B(\eta,\mathbf n)=I-(\cosh\eta-1)(\mathbf n \cdot \mathbf K)^2+i\sinh\eta (\mathbf n \cdot \mathbf K).
 \end{equation*}
 \end{Exercise}
+\begin{Answer}
+The boost generators are given by
+\begin{align*}
+    iK_1=- \begin{bmatrix}
+        0 & 1 & 0 & 0\\
+        1 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}, \quad
+    iK_2=- \begin{bmatrix}
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 0\\
+        1 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}, \quad
+    iK_3=- \begin{bmatrix}
+        0 & 0 & 0 & 1\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0\\
+        1 & 0 & 0 & 0
+    \end{bmatrix},
+\end{align*}
+thus we have (using $\mathbf n^2=n_x^2+n_y^2+n_z^2=1$)
+\begin{align*}
+    i \mathbf{n}\cdot\mathbf{K} &= -\begin{bmatrix}
+        0 & n_x & n_y & n_z \\
+        n_x & 0 & 0 & 0 \\
+        n_y & 0 & 0 & 0 \\
+        n_z & 0 & 0 & 0
+    \end{bmatrix}, 
+    \quad 
+    (i \mathbf{n} \cdot \mathbf{K})^2 = \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & n_x^2 & n_xn_y & n_xn_z \\
+        0 & n_xn_y & n_y^2 & n_yn_z \\
+        0 & n_xn_z & n_yn_z & n_z^2
+    \end{bmatrix}
+    \\
+    (i \mathbf{n} \cdot \mathbf{K})^3 &= - \begin{bmatrix}
+        0 & n_x & n_y & n_z \\
+        n_x & 0 & 0 & 0 \\
+        n_y & 0 & 0 & 0 \\
+        n_z & 0 & 0 & 0
+    \end{bmatrix} = \mathbf{n}\cdot\mathbf{K}.
+\end{align*}
+We see that $(i \mathbf{n}\cdot\mathbf{K})^{2k+1}= i \mathbf{n}\cdot\mathbf{K}$ and $(i \mathbf{n}\cdot\mathbf{K})^{2k}=(i \mathbf{n}\cdot\mathbf{K})^2$. Using this we find (setting $\omega^{00}=\omega^{ij}=0$ and $\omega^{i0}=-\omega^{0i}=n^i \eta$)
+\begin{align*}
+    B(\eta,\mathbf{n}) &= \exp(\frac{i}{2}\omega^{\rho\sigma}M_{\rho\sigma})
+    \\
+    &= \exp (\eta (i \mathbf{n}\cdot\mathbf{K}) )
+    \\
+    &= I+\eta(i\mathbf{n}\cdot\mathbf{K})+\frac{1}{2}\eta^2(i\mathbf{n}\cdot\mathbf{K})^2+\cdots
+    \\
+    &= I+\frac{1}{2}\eta^2(i \mathbf{n}\cdot\mathbf{K})^2+\frac{1}{4!}\eta^4(i\mathbf{n}\cdot\mathbf{K})^4+\cdots
+    \\ &\qquad +\eta(i\mathbf{n}\cdot\mathbf{K})+\frac{1}{3!}\eta^3(i\mathbf{n}\cdot\mathbf{K})^3+\cdots
+    \\
+    &= I + \left(\frac{1}{2}\eta^2+\frac{1}{4!}\eta^4+\cdots\right)(i\mathbf{n}\cdot\mathbf{K})^2+\left(\eta+\frac{1}{3!}\eta^3+\cdots\right)(i\mathbf{n}\cdot\mathbf{K})
+    \\
+    &= I + (\cosh\eta-1)(i\mathbf{n}\cdot\mathbf{K})^2+\sinh\eta (i\mathbf{n}\cdot\mathbf{K})
+    \\
+    &= I - (\cosh\eta-1)(\mathbf{n}\cdot\mathbf{K})^2+i\sinh\eta(\mathbf{n}\cdot\mathbf{K}),
+\end{align*}
+which is the expression requested. As a consistency check, setting $\mathbf{n}=\mathbf{e_x}$ gives the result from Ex.~\ref{ex:Lorentz_explicit_x}:
+\begin{align*}
+    B(\eta,\mathbf{e_x})&=I+(\cosh\eta-1)(iK_1)^2+\sinh\eta(iK_1)
+    \\
+    &= I+(\cosh\eta-1)\begin{bmatrix}
+        1&0&0&0 \\ 0&1&0&0 \\ 0&0&0&0 \\ 0&0&0&0
+    \end{bmatrix} -\sinh\eta \begin{bmatrix}
+        0&1&0&0 \\ 1&0&0&0 \\ 0&0&0&0 \\ 0&0&0&0
+    \end{bmatrix}.
+\end{align*}
+
+\end{Answer}
 
 
 \begin{Exercise}[]
