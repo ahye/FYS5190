@@ -239,13 +239,75 @@ While this parameterisation looks independent of the messenger mass $M$, the mes
 %%%%%%%%%%%%%
 
 \begin{Exercise}[]
+\label{ex:SQED_FI}
 Show that adding a Fayet-Iliopolous term to the SQED constructed in Exercise \ref{chap:lagrangian}.\ref{ex:SQED} will break supersymmetry spontaneously.
 \end{Exercise}
+
+\begin{Answer}
+The Fayet-Iliopolous term is given by
+\begin{equation*}
+    \mathcal{L} \supset \int d^4\theta kV = kD.
+\end{equation*}
+Including the other terms containing the $D$-field, that were found in Exercise~\ref{chap:lagrangian}.\ref{ex:SQED}, we find
+\begin{equation*}
+    \mathcal{L} \supset 2D^2 + e(|A_L|^2-|A_E|^2) + kD,
+\end{equation*}
+which gives the equation of motion for $D$:
+\begin{align*}
+    \frac{\partial \mathcal{L}}{\partial D} &= 4D + e(|A_L|^2-|A_E|^2) + k = 0
+    \\
+    D &= -\frac{1}{4} \big[ e(|A_L|^2-|A_E|^2) + k \bigr],
+\end{align*}
+and it follows that the square of $D$ is
+\begin{equation*}
+    D^2 = \frac{1}{16} \bigl[
+        e^2 (|A_L|^2-|A_E|^2)^2 + 2ek(|A_L|^2-|A_E|^2) + k^2
+    \bigr].
+\end{equation*}
+For this to be zero the first term requires $(|A_L|^2-|A_E|^2)=0$, but this gives $D^2 = \frac{k^2}{16} \neq 0$, thus we have that $D^2 > 0$, and consequently for the scalar potential:
+\begin{equation*}
+    V(A_{L,E},A_{L,E}^*) = |F_L|^2 + |F_E|^2 + D^2 > 0,
+\end{equation*}
+which means that supersymmetry is spontaneously broken.
+\end{Answer}
 
 \begin{Exercise}[]
 Write down the supertrace relationship for a spontaneously broken SQED.
 \end{Exercise}
 
+\begin{Answer}
+From Exercise~\ref{ex:SQED_FI} we have
+\begin{equation*}
+    D = -\frac{1}{4} \bigl[ e(|A_L|^2-|A_E|^2) + k \bigr],
+\end{equation*}
+and from this we can find all the Lagrangian terms containing the $D$-field:
+\begin{align*}
+    \mathcal{L} &\supset e(|A_L|^2-|A_E|^2)D + 2D^2 + kD
+    \\
+    &= -\frac{e}{4} (|A_L|^2-|A_E|^2) \bigl[ e(|A_L|^2-|A_E|^2)+k \bigr]
+    \\ &\qquad + \frac{1}{8} \bigl[ e(|A_L|^2-|A_E|^2)+k \bigr]^2 - \frac{k}{4} \bigl[ e(|A_L|^2-|A_E|^2)+k \bigr]
+    \\
+    &= -\frac{e^2}{8} (|A_L|^2-|A_E|^2)^2 - \frac{ek}{4} (|A_L|^2-|A_E|^2) - \frac{k^2}{8}.
+\end{align*}
+This gives two new mass contributions to the scalar component fields $A_L$ and $A_E$. The mass terms in the Lagrangian are then
+\begin{align*}
+    \mathcal{L}_{\mathrm{mass}} = -\bigg( |m|^2 + \frac{ek}{4} \bigg) |A_L|^2 - \bigg( |m|^2 - \frac{ek}{4} \bigg) |A_E|^2 + m\psi_L\psi_E + m^*\bar\psi_L\bar\psi_E,
+\end{align*}
+giving the supertrace
+\begin{align*}
+    \operatorname{STr}(M^2) &= \sum_s (-1)^{2s}(2s+1) \operatorname{Tr}[M_s^2]
+    \\
+    &= \operatorname{Tr}\Bigg[ \begin{pmatrix}
+        |m|^2 + \frac{ek}{4} & 0 \\
+        0 & |m|^2 - \frac{ek}{4}
+    \end{pmatrix} \Bigg] - 2 |m|^2
+    \\
+    &= |m|^2 + \frac{ek}{4} + |m|^2 - \frac{ek}{4} - 2 |m|^2
+    \\
+    &= 0,
+\end{align*}
+as expected.
+\end{Answer}
 
 
 \end{document}
