@@ -76,20 +76,20 @@ We mentioned earlier that the two Higgs superfields have opposite hypercharge. T
 \begin{feynman}
 %
 \diagram [layered layout, horizontal=a to b] {
-a [particle=$B$] -- [boson] b,
-b -- [boson] c [particle=$B$],
-b -- [boson] d [particle=$B$],
+a [particle=$A$] -- [boson] b,
+b -- [boson] c [particle=$V$],
+b -- [boson] d [particle=$V$],
 };
 %
 \diagram [xshift=6cm, small, horizontal=a to t1] {
-a [particle=$B$] -- [boson] t1 -- [fermion] t2 -- [fermion, edge label=$f$] t3 -- [fermion] t1,
-t2 -- [boson] p1 [particle=$B$],
-t3 -- [boson] p2 [particle=$B$],
+a [particle=$A$] -- [boson] t1 -- [fermion] t2 -- [fermion, edge label=$f$] t3 -- [fermion] t1,
+t2 -- [boson] p1 [particle=$V$],
+t3 -- [boson] p2 [particle=$V$],
 p1 -- [opacity=0] p2,
 };
 \end{feynman}
 \end{tikzpicture}
-\caption{The tree level coupling between three gauge bosons $B$ (left), and the one-loop fermion contribution to the same process (right).}  
+\caption{The tree level coupling between three gauge bosons with vector $V$ and axial vector $A$ couplings (left), and the one-loop fermion contribution to the same process (right).}  
 \label{fig:anomaly}
 \end{figure}
 %%%
@@ -304,13 +304,17 @@ In total, after using our freedom to choose our basis for the fields wisely in o
 \section{Renormalisation group equations}
 \label{sec:RGE}
 %%%%%%%%%%%%%%%%%%%%%%
-Renormalisation, the removal of infinities from field theory predictions, introduces a fixed scale $\mu$ at which the fields and the parameters of the Lagrangian, the couplings, are defined. For example, the charge of the electron is not simply the {\bf bare charge} $e_0$ given in the original Lagrangian, but a charge at a given energy scale $\mu$, $e(\mu)$, which is the scale at which the theory wants to describe the electron, and which we can measure in an experiment at that scale. Describing the scattering an electron at very high energy will require a different value of $e(\mu)$ than at a low energy. This scale dependence in the coupling is an experimentally well verified fact.\footnote{It is also impossible to avoid if we accept that the electron is a point particle. Since the potential has the form $V(r)\propto e/r$ an infinite energy would appear unless we were somehow to modify the charge at high energies, or equivalently, short distances.} The relationship between a bare field or coupling, and the (dressed) renormalised field or coupling can be found from the so-called {\bf renormalisation constant} $Z$ that renormalises the parameter. For example for a field $\phi$, $\phi=Z_\phi \phi_0$, and for coupling $g$, $g=Z_gg_0$.
+Renormalisation, the removal of infinities from field theory predictions, introduces a fixed scale $\mu$ at which the fields and the parameters of the Lagrangian, the couplings, are defined. For example, the charge of the electron is not simply the {\bf bare charge} $e_0$ given in the original Lagrangian, but a charge at a given energy scale $\mu$, $e(\mu)$, which is the scale at which the theory wants to describe the electron, and which we can measure in an experiment at that scale. Describing the scattering an electron at very high energy will require a different value of $e(\mu)$ than at a low energy. This scale dependence in the coupling is an experimentally well verified fact.\footnote{It is also impossible to avoid if we accept that the electron is a point particle. Since the Coulomb potential has the form $V(r)\propto e/r$, an infinite energy would appear unless we were somehow to modify the charge at high energies, or equivalently, short distances.} The relationship between a bare field or coupling, and the (dressed) renormalised field or coupling can be found from the so-called {\bf renormalisation constant} $Z$ that renormalises the parameter. For example for a field $\phi$, $\phi=Z_\phi \phi_0$, and for coupling $g$, $g=Z_gg_0$.
 
 However, since $\mu$ is not an observable {\it per se} but in principle a choice of how to write down the theory to compare to an experiment (at which energy scale to write down the Lagrangian), the renormalised effective action $S$ for a physical process should be invariant under a change of $\mu$, which is expressed as:\footnote{It is more common in the literature to find this expressed in terms of the Green's function $G^{(n)}$ for a given $n$-point correlation, {\it i.e.}\ a process with $n$-field insertions. In this form the equation is known as the {\bf Callan--Symanzik equation}.}
 \begin{equation}
 \mu \frac{d}{d\mu}S(\Phi, \lambda, \mu) = 0,
 \end{equation}
-where $\lambda$ is a generic name for the couplings of the theory and $\Phi$ represents the (super)fields that have been renormalised.\footnote{In Sec.~\ref{sec:vacuum_energy} we mentioned how the non-renormalisation theorem implies that we do not need to renormalise the coupling constants of the superpotential separately. In the MSSM this is the $\mu$ coupling (not to be confused with the energy scale here also called $\mu$) and the Yukawa couplings. This will now have the consequence that their renormalisation can be expressed in terms of the renormalisation of the fields.} This equation can be re-written in terms of partial derivatives
+where $\lambda$ is a generic name for the couplings of the theory and $\Phi$ represents the (super)fields that have been renormalised.\footnote{In Sec.~\ref{sec:vacuum_energy} we mentioned how the non-renormalisation theorem implies that we do not need to renormalise the coupling constants of the superpotential separately. In the MSSM this is the $\mu$ coupling (not to be confused with the energy scale here also called $\mu$) and the Yukawa couplings. This will now have the consequence that their renormalisation can be expressed in terms of the renormalisation of the fields.} 
+
+Starting from the relationship between the renormalised action $S_R$ and the bare action $S_0$,
+\[ S_R(\Phi,\lambda,\mu)= Z_\Phi^{n_\Phi/2} S_0(\Phi_0,\lambda_0,\mu),\]
+this equation can be re-written in terms of partial derivatives
 \begin{equation}
 \left(\mu \frac{\partial}{\partial \mu} + \beta_\lambda\frac{\partial}{\partial\lambda}+n_\Phi\gamma_\Phi\right)S(\Phi, \lambda, \mu)=0,
 \end{equation}
@@ -318,7 +322,11 @@ which is the {\bf renormalisation group equation} (RGE). Here $\beta_\lambda$ is
 \begin{equation}
 \beta_\lambda\equiv\mu\frac{\partial \lambda}{\partial \mu}.
 \end{equation}
-which describes the behaviour of a Lagrangian parameter $\lambda$ as a function of the energy scale $\mu$ away from the value where it was defined, often denoted $\mu_0$. The {\bf anomalous dimension} $\boldsymbol\gamma$ describes the scaling of the fields and the factor $n$ gives the number of fields (of a given kind) in the effective action. The RGE balances the different contributions to sum to zero.
+which describes the behaviour of a Lagrangian parameter $\lambda$ as a function of the energy scale $\mu$ away from the value where it was defined, often denoted $\mu_0$. The {\bf anomalous dimension} of the field
+\begin{equation}
+\boldsymbol\gamma =  \mu\frac{\partial}{\partial\mu}\ln Z^\half_\Phi,
+\end{equation} 
+describes the scaling of the fields and the factor $n_\Phi$ gives the number of external fields (of a given kind) in the effective action. The RGE balances the different contributions to sum to zero.
 
 The reason for keeping around the factor of $\mu$ in the definition of the $\beta$-function is that it typically changes very slowly over large differences in energy scale, so it is practical to change variable to $t = \ln\frac{\mu}{\mu_0}$, so that $\mu\frac{\partial}{\partial\mu}=\frac{\partial}{\partial t}$ and $\beta_\lambda = \frac{\partial \lambda}{\partial t}$.
 If the $\beta$-functions of a quantum field theory are zero at some value of the couplings, then the value of the theory is said to be {\bf scale-invariant}. 
@@ -357,18 +365,16 @@ For the adjoint representation of $U(1)$ this is 0, and for $SU(N)$ this is $N$.
 %\beta_g
 %\end{eqnarray}
 
-As a second relevant example, for the soft-breaking parameters $M_i$ in (\ref{eq:gensoftterms}) we have the one-loop  $\beta$-functions
+
+For the soft-breaking parameters $M_i$ in (\ref{eq:gensoftterms}) we similarly have the one-loop  $\beta$-functions
 \begin{equation}
 \beta_{M_i}\equiv \frac{d}{dt}M_i = \frac{1}{16\pi^2}g_i^2M_i\left(2\sum_R T(R)-6C(A)\right).
 \label{eq:Mi_beta}
 \end{equation}
 
 
-
-%%%%%%%%%%%%%%%%%%
-\section{Gauge coupling unification}
-\label{sec:GUT}
-%%%%%%%%%%%%%%%%%%
+%%%%%
+\subsection{$\beta$-functions in the MSSM}
 The one-loop $\beta$-functions for gauge couplings in a generic supersymmetric model were given in Eq.~(\ref{eq:ccbeta}). With the MSSM field content and the gauge couplings discussed in this chapter:\footnote{The normalisation choice for $g_1$ may seem a bit strange, however, this is the correct numerical factor when for example breaking a unified group such as SU(5) or SO(10) down to the Standard Model gauge group. This factor might be different with a different unified group.} 
 \[g_1 = \sqrt{\frac{5}{3}}g', \indent g_2 = g, \indent g_3=g_s,\]
 we arrive at
@@ -386,11 +392,46 @@ and
 \[T(R)_{SU(3)} = \frac{1}{2}, \indent T(R)_{SU(2)} = \frac{1}{2}, \indent T(R)_{U(1)} = \frac{3}{5}Y^2,\]
 where for example $b_3 = \frac{1}{2}\cdot 12 - 3\cdot 3 = -3$ in the MSSM, because, after careful counting, we have twelve quark/squark scalar superfields transforming under $SU(3)_C$.
 
+
+Some  examples of other $\beta$-functions in the MSSM:
+\begin{itemize}
+\item For the supersymmetry parameter $\mu$
+\begin{equation}
+\beta_{\mu}\equiv \frac{d}{dt} \mu = \frac{1}{16\pi^2}\mu [3|y_t|^2+3|y_b|^2+|y_\tau|^2-3g_2^2-\frac{3}{5}g_1^2],
+\label{eq:mu_beta}
+\end{equation}
+where $y_t$, $y_b$ and $y_\tau$, are the top and bottom quark, and tau lepton Yukawa couplings. Other Yukawa couplings also contribute to one-loop order, but due to their small size they can usually be safely ignored. Since the gauge couplings appear on the right-hand side here, we see that the differential equations that determine the running of $mu$ and the gauge couplings are coupled. It is a general property of the $\beta$-functions that they couple the running of all parameters, which is caused by the (eventual) appearance of all particles as virtual particles in loops when we go to high-enough order.
+\item For the soft-breaking parameters $M_i$ in (\ref{eq:gensoftterms}) we get the one-loop $\beta$-functions
+\begin{equation}
+\beta_{M_i}\equiv \frac{d}{dt}M_i = \frac{1}{8\pi^2}g_i^2M_ib_i,
+\label{eq:beta_Mi}
+\end{equation}
+where $b_i$ is given above.
+\item For the Higgs soft masses
+\begin{eqnarray}
+\beta_{m_{H_u}^2} &\equiv& \frac{dm_{H_u}^2}{dt} = \frac{1}{16\pi^2}(X_t-\frac{6}{5} g_1^2|M_1|^2- 6g_2^2|M_2|^2)  ,\label{eq:beta_Hu2}\\
+\beta_{m_{H_d}^2} &\equiv& \frac{dm_{H_d}^2}{dt} = \frac{1}{16\pi^2}( X_b +X_\tau -\frac{6}{5} g_1^2|M_1|^2 - 6g_2^2|M_2|^2) \label{eq:beta_Hd2},
+\end{eqnarray}
+where we have used the standard abbreviations
+\begin{eqnarray*}
+X_t &\equiv& 6 |y_t|^2(m_{H_u}^2 + m_{Q_3}^2 + m_{u_3}^2) + 6|a_t|^2,\\
+X_b &\equiv& 6 |y_b|^2(m_{H_d}^2 + m_{Q_3}^2 + m_{d_3}^2) + 6|a_b|^2,\\
+X_\tau &\equiv& 2 |y_\tau|^2(m_{H_d}^2 + m_{L_3}^2 + m_{e_3}^2) + 2|a_\tau|^2,
+\end{eqnarray*}
+and where $m_{Q_3} = m_{33}^Q$, $m_{u_3}  = m_{33}^u$, $m_{d_3} = m_{33}^d$, $a_t=a_{33}^u$, $a_b=a_{33}^d$, and $a_\tau=a_{33}^e$,  in a simplification of our previous notation for the soft-term parameters in Sec.~\ref{sec:MSSM_soft_terms}.  
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%
+\section{Grand unified theories}
+\label{sec:GUT}
+%%%%%%%%%%%%%%%%%%
+
 At one-loop order we can do a neat rewrite using $\alpha_i\equiv\frac{g_i^2}{4\pi}$. Since \[\frac{d}{dt}\alpha^{-1}_i = -2\frac{4\pi}{g_i^3}\frac{d}{dt}g_i,\] we have:
 \[\beta_{\alpha_i^{-1}} \equiv \frac{d}{dt}\alpha^{-1}_i = -\frac{8\pi}{g_i^3}\frac{1}{16\pi^2}g_i^3b_i = -\frac{b_i}{2\pi}.\]
 Thus $\alpha^{-1}$ runs linearly with $t$ at one loop. 
 
-By running the couplings $\alpha_i^{-1}$ from their values measured at the electroweak scale to high energies it is observed that in the MSSM the coupling constants intersect at a single point, which they do not naturally do in the Standard Model. See Fig.~\ref{fig:unification}, taken from Martin~\cite{Martin:1997ns}. The common assumption made is then that a unified gauge group, {\it e.g.}\ $SU(5)$ or $SO(10)$, is broken at that scale, called the {\bf grand unification theory} scale or GUT-scale, down to the Standard Model gauge group. This scale is $\mu_\text{GUT} \approx 2\cdot 10^{16}$\,GeV, about two orders of magnitude below the Planck scale. 
+By running the couplings $\alpha_i^{-1}$ from their values measured at the electroweak scale to high energies it is observed that in the MSSM the coupling constants intersect at a single point, called {\bf gauge coupling unification}, which they do not naturally do in the Standard Model. See Fig.~\ref{fig:unification}, taken from Martin~\cite{Martin:1997ns}. The common assumption made is then that a unified gauge group, {\it e.g.}\ $SU(5)$ or $SO(10)$, is broken at that scale, called the {\bf grand unification theory} scale or GUT-scale, down to the Standard Model gauge group. This scale is $\mu_\text{GUT} \approx 2\cdot 10^{16}$\,GeV, about two orders of magnitude below the Planck scale. 
 
 \begin{figure}[h]
 \centering
@@ -399,15 +440,11 @@ By running the couplings $\alpha_i^{-1}$ from their values measured at the elect
 \label{fig:unification}
 \end{figure}
 
-Something funny happens to the gaugino soft-mass parameters $M_i$ if we look at their running. From (\ref{eq:Mi_beta}) the one-loop $\beta$-functions for the $M_i$ in the MSSM are
+Something funny happens to the gaugino soft-mass parameters $M_i$ if we look at their running. From (\ref{eq:beta_Mi}) we find that all three ratios $M_i/g_i^2$ are scale independent at one loop. To see this let $R_i=M_i/g_i^2$, then
 \begin{equation}
-\beta_{M_i}|_{\rm 1-loop} \equiv \frac{d}{dt}M_i = \frac{1}{8\pi^2}g_i^2M_ib_i.
+\beta_{R_i} \equiv \frac{dR_i}{dt}= \frac{\frac{dM_i }{dt}g_i^2 - M_i \frac{d}{dt} g_i^2}{g_i^4} = \frac{\frac{1}{8\pi^2}g_i^2M_ib_i\cdot g_i^2 - M_i\cdot 2g_i\cdot\frac{1}{16\pi} g_i^3 b_i}{g_i^4} = 0.
 \end{equation}
-As a consequence all three ratios $M_i/g_i^2$ are scale independent at one loop. To see this let $R=M_i/g_i^2$, then
-\begin{equation}
-\beta_R \equiv \frac{dR}{dt}= \frac{\frac{dM_i }{dt}g_i^2 - M_i \frac{d}{dt} g_i^2}{g_i^4} = \frac{\frac{1}{8\pi^2}g_i^2M_ib_i\cdot g_i^2 - M_i\cdot 2g_i\cdot\frac{1}{16\pi} g_i^3 b_i}{g_i^4} = 0.
-\end{equation}
-In other words, $R$ does not change with scale $t$.
+In other words, $R_i$ does not change with scale $t$ at one-loop level.
 
 If we now use that the coupling constants unify at the GUT scale to the coupling $g_u$, and assume that the soft-masses are the same at that scale $m_{1/2} = M_1(\mu_\text{GUT}) = M_2(\mu_\text{GUT}) = M_3(\mu_\text{GUT})$,\footnote{Again, not unreasonable if the spontaneous symmetry breaking mechanism acts uniformly for all the gauginos.} it follows that
 \begin{equation}
@@ -417,11 +454,11 @@ at all scales!\footnote{At one-loop level.} This is a very powerful and predicti
 \begin{equation}
 M_3 = \frac{\alpha_s}{\alpha}\sin^2\theta_WM_2 = \frac{3}{5}\frac{\alpha_s}{\alpha}\cos^2\theta_W M_1,
 \end{equation}
-which, inserting values for the fine structure constant, the strong coupling, and the Weinberg angle, numerically predicts
-\[M_3:M_2:M_1 \simeq 6:2:1\]
-at the electroweak scale. We will return to the implications of this when discussing the gauginos in Sec.~\ref{sec:electroweakinos}.
+which, inserting values for the fine structure constant $\alpha$, the strong coupling $\alpha_s$, and the Weinberg angle $\sin^2\theta_W$, evaluated at the electroweak scale,  numerically predicts
+\[M_3:M_2:M_1 \simeq 6:2:1.\]
+We will return to the implications of this when discussing the gauginos in Sec.~\ref{sec:electroweakinos}.
 
-In Fig.~\ref{fig:MSSMrun}, again taken from Martin~\cite{Martin:1997ns}, we show the running of all the types of soft parameters in the MSSM. We assume unified soft-mass parameters $m_{1/2}$ for the gauginos and $m_0$ for the Higgs and sfermions at the GUT scale. Shown is the gaugino mass parameters $M_i$ (solid black), the Higgs mass parameters $m_{H_{d/u}}^2$ (dot-dashed green), the third generation sfermion soft terms $m_{d_3}$, $m_{Q_3}$, $m_{u_3}$, $m_{L_3}$ and $m_{e_3}$ (dashed red and blue, listed from top to bottom), and the corresponding first and second generation terms (solid red and blue lines).
+In Fig.~\ref{fig:MSSMrun}, again taken from Martin~\cite{Martin:1997ns}, we show the running of all the types of soft parameters in the MSSM. We assume unified soft-mass parameters $m_{1/2}$ for the gauginos and $m_0$ for the Higgs and sfermions at the GUT scale. Shown is the gaugino mass parameters $M_i$ (solid black), the Higgs mass parameters $m_{H_{d/u}}^2$ (dot-dashed green), the third generation sfermion soft terms $m_{d_3}$, $m_{Q_3}$, $m_{u_3}$, $m_{L_3}$ and $m_{e_3}$ (dashed blue and red, listed from top to bottom), and the corresponding first and second generation terms $m_{d_1}=m_{d_2}$, $m_{Q_1}=m_{Q_2}$, $m_{u_1}=m_{u_2}$, $m_{L_1}=m_{L_2}$ and $m_{e_1}=m_{e_2}$ (solid blue and red lines).
 %%%%%%%%% 
 \begin{figure}[h]
 \centering
@@ -434,11 +471,11 @@ used for this illustration were $m_0 = 200$\,GeV, $m_{1/2 }= -A_0 =600$\,GeV, $\
 
 
 
-%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Radiative Electroweak Symmetry Breaking}
 \label{sec:rewsb}
-%%%%%%%%%%%%%
-In the Standard Model the gauge symmetries prevent mass terms for both vector bosons and fermions. The $W$ and $Z$ bosons, and all the fermions are given mass by spontaneously electroweak symmetry breaking (EWSB), which is induced by the shape of the scalar potential for the Higgs field $H$, which is an $SU(2)_L$ doublet of scalar fields:
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+In the Standard Model the gauge symmetries prevent mass terms for both vector bosons and fermions. The $W$ and $Z$ bosons, and all the fermions are given mass by spontaneous electroweak symmetry breaking (EWSB), which is induced by the shape of the scalar potential for the Higgs field $H$, which is an $SU(2)_L$ doublet of scalar fields:
 \begin{equation}
 V(H) = \mu^2 |H|^2+ \lambda |H|^4,
 \label{eq:SMscalarpot}
@@ -462,19 +499,26 @@ V(H_u,H_d) &=& |\mu|^2 (|H_u^0|^2 + |H_u^+|^2 + |H_d^0|^2 + |H_d^-|^2)  \text{\i
 && + [b(H_u^+H_d^- - H_u^0H_d^0) + \text{c.c.}]
 \label{eq:MSSMscalarpot}
 \end{eqnarray}
-This potential has 8 d.o.f.\ from 4 complex scalar fields $H_u^+$, $H_u^0$, $H_d^0$ and $H_d^-$. At the same time it has 6 parameters: the two Standard Model gauge couplings $g$ and $g'$, the magnitude of the supersymmetric parameter $\mu$, and the three soft-breaking parameters $b$, $m_{H_u}^2$ and $m_{H_d}^2$. Notice how if $b=m_{H_u}^2=m_{H_d}^2=0$, meaning no supersymmetry breaking terms, the Higgs potential has a global minimum at $V=0$ for zero values of all the Higgs fields. In this case there is no EWSB, so EWSB is intimately connected to supersymmetry breaking in the MSSM.
+This potential has 8 d.o.f.\ from 4 complex scalar fields $H_u^+$, $H_u^0$, $H_d^0$ and $H_d^-$. At the same time it has 7 parameters: the two Standard Model gauge couplings $g$ and $g'$, the magnitude of the supersymmetric parameter $\mu$, and the three soft-breaking parameters $b$, $m_{H_u}^2$ and $m_{H_d}^2$. Notice how if $b=m_{H_u}^2=m_{H_d}^2=0$, meaning no supersymmetry breaking terms, the Higgs potential has a global minimum at $V=0$ for zero values of all the Higgs fields. In this case there is no EWSB, so EWSB is intimately connected to supersymmetry breaking in the MSSM.
 
 We now want to do as in the Standard Model and break $SU(2)_L\times U(1)_Y \to U(1)_{\rm em}$ in order to give masses to gauge bosons and SM fermions.\footnote{You may ask why we can not use the soft-terms from the spontaneous breaking of {\it supersymmetry} to do this. However, the soft-terms are unable to effectively provide masses to vector bosons and fermions because they deal (mostly) with scalar fields.} To do this we need to show that, and under which conditions, Eq.~(\ref{eq:MSSMscalarpot}) has: i) a minimum for finite, {\it i.e.}\ non-zero, field values, ii) that this minimum has a remaining $U(1)_{\rm em}$ symmetry and iii) that the potential is bounded from below. We will here restrict our analysis to tree level, ignoring loop effects on the potential.
 
-We start by using our $SU(2)_L$ gauge freedom, picking a gauge so that we rotate away any field value for $H_u^+$ at the minimum of the potential. So without loss of generality we can use that $H_u^+ = 0$ at the minimum in what follows. At the minimum we must also have $\partial V/\partial H_u^+= 0$ since it is a minimum, and by explicit differentiation of the potential one can show that $H_u^+ = 0$ then also leads to $H^-_d = 0$. This is good and proper since it guarantees our item ii), that $U(1)_{\rm em}$ is a symmetry for the minimum of the potential, since the charged fields then have no vevs. 
+We start by using our $SU(2)_L$ gauge freedom, picking a gauge so that we rotate away any field value for $H_u^+$ at the minimum of the potential.\footnote{Can this always be done? Yes. The action of a member of $SU(2)$ on the two component vector of Higgs fields is 
+\[ \left [\begin{matrix} \alpha & -\beta^*  \\ \beta & \alpha^* \end{matrix}\right]  \left( \begin{matrix} H_u^+ \\ H_u^0 \end{matrix}\right),\] 
+with $|\alpha|^2+|\beta|^2=1$, where $\alpha$ and $\beta$ can be picked so that $\alpha H_u^+ -\beta^* H_u^0 =0$ by choosing $\alpha=H_u^0/(|H_u^0|^2+ |H_u^+|^2)$ and $\beta^*=H_u^+/(|H_u^0|^2+ |H_u^+|^2)$.} So without loss of generality we can use that $H_u^+ = 0$ at the minimum in what follows. At the minimum we must also have $\partial V/\partial H_u^+= 0$ since it is a minimum. By explicit differentiation of the potential\footnote{Warning! We are here taking the partial differential with respect to a complex number.} 
+\begin{eqnarray}
+\frac{\partial V}{\partial H_u^+} &=& |\mu|^2 H_u^{+*} +\frac{1}{4} (g^2 + g'{}^2)(|H^0_u|^2 + |H_u^+|^2 - |H^0_d|^2 - |H_d^-|^2) H_u^{+*} \nonumber\\
+&& +\half  g^2(H_u^{+*}H_d^0 + H_u^{0*} H^-_d) H_d^{0*} + m_{H_u}^2 H_u^{+*} + bH_d^-,
+\end{eqnarray}
+we can see that $H_u^+ = 0$ also leads to $H^-_d = 0$ at the minimum. This is good and proper since it will work as a guarantee for our item ii), that $U(1)_{\rm em}$ is a symmetry for the minimum of the potential, since the charged fields then have no vevs and the minimum is then unaffected by $U(1)_{\rm em}$ gauge transformations. 
 
 We are now left with the following potential only in terms of the uncharged Higgs fields $H_u^0$ and $H_d^0$ (after the $SU(2)_L$ gauge choice and at the minimum):
 \begin{eqnarray}
-V(H_u^0,H_d^0) &=& (|\mu|^2 + m_{H_u}^2)|H^0_u|^2 + (|\mu|^2 + m_{H_d}^2)|H^0_d|^2 \nonumber\\
+V_\text{min}(H_u^0,H_d^0) &=& (|\mu|^2 + m_{H_u}^2)|H^0_u|^2 + (|\mu|^2 + m_{H_d}^2)|H^0_d|^2 \nonumber\\
 &&+ \frac{1}{8}(g^2 + g'{}^2)(|H_u^0|^2 - |H_d^0|^2)^2 - (bH_u^0H_d^0 + \text{c.c.})
 \label{eq:higgspot_gauged}
 \end{eqnarray}
-We can now absorb a complex phase in $H^0_u$ or $H_d^0$, in order to take $b$ to be real and positive. This does not affect other terms because they are protected by absolute values. The minimum must also have the total phase of $H_u^0H_d^0$ real and positive, to get an as large as possible negative contribution from the $b$ term, which is the only term that can be negative. Thus the vevs $v_u \equiv\langle H_u^0\rangle$ and $v_d \equiv \langle H_d^0\rangle$ must have opposite phases. By the remaining $U(1)_Y$ gauge symmetry of the potential, which is effectively a phase rotation, and the fact that $H^0_u$ and $H_d^0$ have opposite hypercharge, we can transform $v_u$ and $v_d$ so that they are real and have the same sign. For the potential to have a negative mass term, and thus fulfill point i) above, we must then have
+We can now absorb a complex phase in $H^0_u$ or $H_d^0$, in order to take $b$ to be real and positive. This does not affect other terms because they are protected by absolute values. The minimum must also have the total phase of $H_u^0H_d^0$ real and positive, to get an as large as possible negative contribution from the $b$ term, which is the only term that can be negative. Thus the vevs $v_u \equiv\langle H_u^0\rangle$ and $v_d \equiv \langle H_d^0\rangle$ must have opposite phases. By the remaining $U(1)_Y$ gauge symmetry of the potential, which is effectively a phase rotation, and the fact that $H^0_u$ and $H_d^0$ have opposite hypercharge, we can transform $v_u$ and $v_d$ so that they are real, non-zero and have the same sign. For the potential to have a negative mass term, and thus fulfill point i) above, we must then have
 \begin{equation}\label{eq:higgsbound2}
 b^2 > (|\mu|^2 + m_{H_u}^2)(|\mu|^2 + m_{H_d}^2).
 \end{equation}
@@ -484,24 +528,9 @@ Since we have broken supersymmetry we must also check that the potential is actu
 2b < 2|\mu|^2 + m_{H_u}^2 + m_{H_d}^2.
 \end{equation}
 
-To summarise what we have learnt so far: at the minimum of the Higgs potential we know that there exists a gauge choice so that the expectation values of the charged Higgs component fields are zero, $\langle H_u^+\rangle =0$ and $\langle H_d^-\rangle =0$, and we fulfil the condition for the existence of an extremal point in the neutral Higgs component fields
-\begin{equation}
-\frac{\partial V}{\partial H_u^0}=\frac{\partial V}{\partial H_d^0}= 0.
-\label{eq:EWSB_condition}
-\end{equation}
-In addition, for the minimum to have non-zero field values that break EWSB, and for the potential to be bounded from below, the parameters of the potential must simultaneously fulfil the inequalities
-\begin{eqnarray}
-b^2 &>& (|\mu|^2 + m_{H_u}^2)(|\mu|^2 + m_{H_d}^2), \nonumber\\
-2b &<& 2|\mu|^2 + m_{H_u}^2 + m_{H_d}^2. \nonumber
-\end{eqnarray}
-The resulting non-zero expectation values at the minimum for the neutral Higgs component fields are denoted $v_u$ and $v_d$.
-
 To satisfy (\ref{eq:higgsbound2}) and (\ref{eq:higgsbound1}),  a negative value for $m_{H_u}^2$ (or $m_{H_d}^2$) can help, in particular if $|\mu|^2+m_{H_u}^2<0$, as that automatically fulfils (\ref{eq:higgsbound2}). Such a negative value is indeed perfectly allowed as a parameter in the Lagrangian. No negative particle masses will result. 
 
-In fact, if we assume that $m_{H_d} = m_{H_u}$ at some scale  $\mu$, for example the GUT scale, then \eqref{eq:higgsbound2} and \eqref{eq:higgsbound1} cannot be simultaneously be satisfied {\it at that scale}. However, to 1-loop the RGE running of these mass parameters is:
-\[16\pi^2 \beta_{m_{H_u}^2} \equiv 16\pi^2 \frac{dm_{H_u}^2}{dt} = 6|y_t|^2(m_{H_u}^2 + m_{Q_3}^2 + m_{u_3}^2) + ...\]
-\[16\pi^2 \beta_{m_{H_d}^2} \equiv 16\pi^2 \frac{dm_{H_d}^2}{dt} = 6|y_b|^2(m_{H_d}^2 + m_{Q_3}^2 + m_{d_3}^2) + ...,\]
-where $y_t$ and $y_b$ are the top and bottom quark Yukawa couplings, and $m_{Q_3} = m_{33}^Q$, $m_{u_3}  = m_{33}^u$, and $m_{d_3} = m_{33}^d$, in a simplification of our previous notation for the soft-masses in Sec.~\ref{sec:MSSM_soft_terms}. Because $y_t\gg y_b$, $m_{H_u}^2$ runs much faster with scale than $m_{H_d}^2$. If the parameters start out the same at some high scale, say from some universal supersymmetry breaking effect,  as we go down to the electroweak scale  $m_{H_u}^2$ becomes significantly smaller than  $m_{H_d}^2$, and may become negative, fulfilling the EWSB criteria. For an illustration, see Fig.~\ref{fig:MSSMrun}, where the running of  $\mu^2+m_{H_u}^2$ and  $\mu^2+m_{H_u}^2$ is shown.
+In fact, if we assume that $m_{H_d} = m_{H_u}$ at some scale  $\mu$, for example the GUT scale, then \eqref{eq:higgsbound2} and \eqref{eq:higgsbound1} cannot be simultaneously be satisfied {\it at that scale}. However, to 1-loop the RGE running of these mass parameters were given in (\ref{eq:beta_Hu2}) and (\ref{eq:beta_Hd2}). Because $y_t\gg y_b$, $m_{H_u}^2$ runs much faster with scale than $m_{H_d}^2$. If the parameters start out the same at some high scale, say from some universal supersymmetry breaking effect,  as we go down to the electroweak scale  $m_{H_u}^2$ becomes significantly smaller than  $m_{H_d}^2$, and may become negative, fulfilling the EWSB criteria. For an illustration, see Fig.~\ref{fig:MSSMrun}, where the running of  $\mu^2+m_{H_u}^2$ and  $\mu^2+m_{H_u}^2$ is shown.
 It is this property of starting our from some universal Higgs parameters at a high scale, which then by RGE effects break electroweak symmetry at lower scales, that is termed {\bf radiative EWSB} (REWSB). Thus, in the MSSM with universal soft terms at a high scale there is an explanation why EWSB happens, it is not put in by hand in the potential as it is in the Standard Model.
 
 %\begin{figure}[h]
@@ -511,16 +540,45 @@ It is this property of starting our from some universal Higgs parameters at a hi
 %\label{fig:REWSB}
 %\end{figure}
 
+
+%%%%%
+\subsection{Parameters of the Higgs sector}
+To summarise what we have learnt so far: at the minimum of the Higgs potential we know that there exists a gauge choice so that the expectation values of the charged Higgs component fields are zero, $\langle H_u^+\rangle =0$ and $\langle H_d^-\rangle =0$, and we fulfil the remaining conditions for the existence of an extremal point in the neutral Higgs component fields by
+\begin{equation}
+\frac{\partial V}{\partial H_u^0}=\frac{\partial V}{\partial H_d^0}= 0.
+\label{eq:EWSB_condition}
+\end{equation}
+These conditions require at the minimum
+\begin{eqnarray}
+\frac{\partial V}{\partial H_d^0} &=&(|\mu|^2  + m_{H_d}^2) H_d^{0*} -\frac{1}{4} (g^2 + g'{}^2)(|H^0_u|^2  - |H^0_d|^2 )H_d^{0^*}   -b H_u^0 =0 , \label{eq:EWSB_condition_Hd0} \\
+\frac{\partial V}{\partial H_u^0} &=&(|\mu|^2  + m_{H_u}^2) H_u^{0*} +\frac{1}{4} (g^2 + g'{}^2)(|H^0_u|^2  - |H^0_d|^2 )H_u^{0^*}   -b H_d^0 = 0.\label{eq:EWSB_condition_Hu0}
+\end{eqnarray}
+
+In addition, for the minimum to have non-zero field values that break EWSB, and for the potential to be bounded from below, the parameters of the potential must simultaneously fulfil the inequalities
+\begin{eqnarray}
+b^2 &>& (|\mu|^2 + m_{H_u}^2)(|\mu|^2 + m_{H_d}^2), \nonumber\\
+2b &<& 2|\mu|^2 + m_{H_u}^2 + m_{H_d}^2. \nonumber
+\end{eqnarray}
+The resulting non-zero expectation values at the minimum for the neutral Higgs component fields are denoted $\langle H_u^0\rangle \equiv v_u$ and $\langle H_d^0\rangle \equiv v_d$.
+
+
 Following EWSB, to get the familiar vector boson masses measured by experiment, the vevs need to satisfy the constraint from the electroweak parameters:
 \begin{equation}
-v_u^2 + v_d^2 \equiv v^2 = \frac{2m_{Z}^2}{g^2 + g'{}^2} \approx (174~\text{GeV})^2.
+v_u^2 + v_d^2 \equiv v^2 = \frac{2M_Z^2}{g^2 + g'^2} \approx (174~\text{GeV})^2.
 \label{eq:Zmass_vev_condition}
 \end{equation}
 Thus we have one free parameter coming from the two Higgs vevs in the MSSM. We can write this as 
-\[\tan\beta \equiv \frac{v_u}{v_d},\]
+\begin{equation}
+\tan\beta \equiv \frac{v_u}{v_d},
+\end{equation}
 where by convention $0<\beta<\pi/2$, so that $0<\tan\beta<\infty$. 
 
-Using the condition for the existence of an extremal point in (\ref{eq:EWSB_condition}), the two non-SM parameters $b$ and $|\mu|$ can be eliminated as free parameters from the model, however, not the sign of $\mu$. Alternatively, we can choose to eliminate $m_{H_u}^2$ and $m_{H_d}^2$. You can look at this as giving away the freedom of these parameters to the vevs, and then fixing one vev by the electroweak constraint, and using $\tan\beta$ for the other.
+Using the condition for the existence of an extremal point in (\ref{eq:EWSB_condition_Hd0}) and (\ref{eq:EWSB_condition_Hu0}), we then have the relationships
+\begin{eqnarray}
+|\mu|^2  + m_{H_d}^2 -\half M_Z^2\cos(2\beta)  -b \tan\beta&=& 0 , \label{eq:EWSB_condition_Hd0_vevs} \\
+|\mu|^2  + m_{H_u}^2 +\half M_Z^2\cos(2\beta) -b\cot\beta  &=& 0.\label{eq:EWSB_condition_Hu0_vevs}
+\end{eqnarray}
+Using these, the two non-SM parameters $b$ and $|\mu|$ can be eliminated as free parameters from the model, however, not the sign of $\mu$. Alternatively, we can choose to eliminate $m_{H_u}^2$ and $m_{H_d}^2$. You can look at this as giving away the freedom of these parameters to the vevs, and then fixing one vev by the electroweak constraint, and using $\tan\beta$ for the other.
 
 Let us make a little remark here on the parameter $\mu$. Given the criteria for REWSB above we have what is called the {\bf $\boldsymbol \mu$ problem}. The soft terms all get their scale from some common mechanism at some common high energy scale, it is assumed, setting the parameters $b$, $m_{H_u}^2$ and $m_{H_d}^2$ in the Higgs potential.  However, $\mu$ is a mass term in the superpotential (the only one in fact) and could {\it a priori} take {\it any} value, even $M_P$. Why is $\mu$ then of the order of the soft terms, which is what allows us to achieve REWSB, when a much larger value would prevent us from fulfilling the criteria in  (\ref{eq:higgsbound2}) and (\ref{eq:higgsbound1})?\footnote{This problem can be solved in extensions of the MSSM such as the Next-to-Minimal Supersymmetric Standard Model (NMSSM).}
 
