@@ -627,11 +627,11 @@ To do calculations with the Higgs bosons in the MSSM we need the Feynman rules t
 %%%%%%%%%%%%%%%
 \section{The gluino}
 %%%%%%%%%%%%%%%
-The fermion partner of the Standard Model gluon $g$ is called the {\bf gluino} $\tilde g$, and as the gluon it is a colour octet Majorana fermion. We usually talk about the gluino as being one particle, however, as an adjoint representation of $SU(3)$ there are actually eight  (thus octet) distinct gluons, and we write $\tilde g^a$ when we want to make the distinction. As a colour octet it has nothing to mix with in the MSSM -- this is still true even if we allow for R-parity violation -- and at tree level the mass is given by the soft term $M_3$. Since it lives in the same superfield as the massless gluon it would otherwise had zero mass. 
+The fermion partner of the Standard Model gluon $g$ is called the {\bf gluino} $\tilde g$, and as the gluon it is a colour octet Majorana fermion. We usually talk about the gluino as being one particle, however, as an adjoint representation of $SU(3)$ there are actually eight  (thus octet) distinct gluons, and we write $\tilde g^a$ when we want to make the distinction. As a colour octet it has nothing to mix with in the MSSM---this is still true even if we allow for R-parity violation---and at tree level the mass is given by the soft term $M_3$. Since it lives in the same superfield as the massless gluon it would otherwise had zero mass. 
 
 The one complication for the gluino is that it is strongly interacting so $M_3(\mu)$ runs, relatively speaking, quickly with energy scale $\mu$. It is useful to instead talk about the scale-independent {\bf pole-mass}  $m_{\tilde{g}}$, meaning the pole of the renormalised propagator,
 \[ \frac{i}{\slashed{p}-m_0-\Sigma(\slashed p)},\]
-where $m_0$ is the Lagrangian mass, $\Sigma$ is the self-energy, and the pole mass is the solution $\slashed p=m$ to the equation $\slashed{p}-m_0-\Sigma(\slashed p) =0$.
+where $m_0$ is the Lagrangian bare mass, $\Sigma$ is the self-energy, and the pole mass is the solution $\slashed p=m$ to the equation $\slashed{p}-m_0-\Sigma(\slashed p) =0$.
 For the gluino, including all one-loop effects in the self-energy due to gluon exchange and squark loops, see Fig.~\ref{fig:cogluion}, in the $\overline{DR}$ renormalisation scheme we get:\footnote{Note that the right-hand side here {\it is} $\mu$ dependent since the expression is only to finite order.} 
 \[m_{\tilde{g}} \simeq M_3(\mu)\left[1 + \frac{\alpha_s}{4\pi}\left(15 + 6\ln\frac{\mu}{M_3}+ \sum_{{\rm all}\,\tilde q} A_{\tilde{q}}\right) \right],\]
 where the squark loop contribution $A_{\tilde q}$ for a given squark depends on the squark $m_{\tilde{q}}$ and corresponding quark $m_q$ masses, and are given by
@@ -689,19 +689,18 @@ With the $Z$-mass condition on the vevs (\ref{eq:Zmass_vev_condition}) we can al
 \frac{1}{\sqrt{2}}gv_u &=& \sin\beta \cos\theta_W m_Z .\label{eq:g_vu}
 \end{eqnarray}
 
-The mass matrix can now be diagonalised to find the $\tilde\chi^0_i$ masses. If $N$ is a unitary diagonalisation matrix for $M_{\tilde\chi}$, we can write\footnote{A symmetric matrix is always unitary diagonalisable.}
-\[\mathcal{L}_{\chi-{\rm mass}} = -\frac{1}{2}\tilde{\psi}^{0T}N^TN^*M_{\tilde\chi} N^\dagger N \tilde{\psi}^0 + \text{c.c.},
+The mass matrix can now be diagonalised to find the $\tilde\chi^0_i$ masses. If $N$ is a unitary diagonalisation matrix for $M_{\tilde\chi}$, we can write\footnote{A symmetric matrix $M$ is always unitary diagonalisable, even if complex. For real symmetric matrices the diagonalisation can be carried out with an orthogonal matrix $N$ (which is a special case of unitary), giving the diagonal matrix $D=NMN^T$ with real, but possibly negative, entries. For complex matrices this can be done by so-called {\bf Takagi factorisation} using a unitary matrix $N$ so that $D=NMN^T$ is a diagonal matrix with real non-negative entries.}
+\[\mathcal{L}_{\chi-{\rm mass}} = -\frac{1}{2}\tilde{\psi}^{0T}N^TN^*M_{\tilde\chi} N^\dagger N \tilde{\psi}^0 + \text{c.c.}
 = -\frac{1}{2}\tilde{\chi}^{0T} D\tilde{\chi}^0 + \text{c.c.},\]
-where $D=N^*M_{\tilde{\chi}}N^\dagger$ is diagonal and contains the real and non-negative neutralino masses $m_{\tilde\chi_i^0}\ge0$ that are the eigenvalues of $M_{\tilde\chi}$. We also see that $N$ gives the mixing of the gauge eigenstates  $\tilde{\psi}^0$ into the mass eigenstates $\tilde\chi^0=N\tilde{\psi}^0$. We number the neutralino mass eigenstates in (\ref{eq:neutralino}), or, equivalently, sort the mass eigenvalues after diagonalisation, so that the neutralinos are numbered from lightest to heaviest. The neutralinos also have loop corrections to their masses coming from the self energies, however, since the coupling is weak -- in the technical sense -- these are usually significantly smaller than for the gluino.
-
+where $D=N^*M_{\tilde{\chi}}N^\dagger$ is diagonal and contains the real and non-negative neutralino masses $m_{\tilde\chi_i^0}\ge0$ that are the eigenvalues of $M_{\tilde\chi}$. We also see that $N$ gives the mixing of the gauge eigenstates  $\tilde{\psi}^0$ into the mass eigenstates $\tilde\chi^0=N\tilde{\psi}^0$. We number the neutralino mass eigenstates in (\ref{eq:neutralino}), or, equivalently, sort the mass eigenvalues after diagonalisation, so that the neutralinos are numbered from lightest to heaviest. The neutralinos also have loop corrections to their masses coming from the self energies, however, since the coupling is weak---in the technical sense---these are usually significantly smaller than for the gluino.
 
 The mass parameters of the neutralino mass matrix may in general be complex, leading to complex entries in $N$. Redefinition of fields can rotate away either the $M_1$ or $M_2$ phase, to make the parameter real and positive, but not both of these, and not the $\mu$-phase. These phases give rise to problematic CP-violation that can easily be in contradiction with experiments. Therefore, $M_1$, $M_2$ and $\mu$ are often just assumed to be real in order not to violate experimental bounds. In this case a diagonalisation matrix $N$ can be found that is orthogonal, meaning with only real entries, which simplifies calculations. In this case the diagonal mass values in $D$ are not guaranteed to be positive. This does not imply negative fermion masses, but instead indicates a phase factor that must be incorporated into Feynman rules for the interactions of the mass eigenstates.
 
-One particularly interesting solution to the diagonalisation is in the limit where EWSB is a small effect, $m_Z\ll |\mu \pm M_1|$, $|\mu \pm M_2|$, and when we have the hierarchy $M_1<M_2\ll |\mu|$. The mass eigenvalues scale with the size of the supersymmetric parameters, which makes the lightest neutralino bino-like, $\tilde{\chi}_1^0\approx \tilde{B}^0$, the next-to-lightest wino like, $\tilde{\chi}_2^0\approx \tilde{W}^0$, and $\tilde{\chi}^0_{3,4} \approx \frac{1}{\sqrt{2}}(\tilde{H}^0_d \pm \tilde{H}^0_u)$, and the masses are to first order in $1/\mu$:
+One particularly interesting solution to the diagonalisation is in the limit where EWSB is a small effect, $M_Z\ll |\mu \pm M_1|$, $|\mu \pm M_2|$, and when we have the hierarchy $M_1<M_2\ll |\mu|$. The mass eigenvalues scale with the size of the supersymmetric parameters, which makes the lightest neutralino bino-like, $\tilde{\chi}_1^0\approx \tilde{B}^0$, the next-to-lightest wino like, $\tilde{\chi}_2^0\approx \tilde{W}^0$, and $\tilde{\chi}^0_{3,4} \approx \frac{1}{\sqrt{2}}(\tilde{H}^0_d \pm \tilde{H}^0_u)$, and the masses are to first order in the small quantity $M_Z/\mu$:
 \begin{eqnarray}
-m_{\tilde{\chi}^0_1} &=& M_1 +\frac{m_Z^2\sin^2\theta_W\sin2\beta}{\mu} +\ldots\\
-m_{\tilde{\chi}^0_2} &=& M_2 -\frac{m_W^2\sin2\beta}{\mu} +\ldots\\
-m_{\tilde{\chi}^0_{3,4}} &=& |\mu| +\frac{m_Z^2}{2\mu}({\rm sgn}\,\mu \mp \sin2\beta) + \ldots
+m_{\tilde{\chi}^0_1} &=& M_1 +\frac{M_Z^2\sin^2\theta_W\sin2\beta}{\mu} +\ldots\\
+m_{\tilde{\chi}^0_2} &=& M_2 -\frac{M_W^2\sin2\beta}{\mu} +\ldots\\
+m_{\tilde{\chi}^0_{3,4}} &=& |\mu| +\frac{M_Z^2}{2\mu}({\rm sgn}\,\mu \mp \sin2\beta) + \ldots
 \end{eqnarray}
 
 Since the LSP is stable in R-parity conserving theories the lightest neutralino is an excellent candidate for dark matter. In particular since a neutralino with mass around 100 GeV has a natural relic density close to the measured dark matter density of the Universe. We will return to this issue in Chapter~\ref{chap:dm}.
@@ -728,7 +727,7 @@ Note that in this limit $m_{\tilde{\chi}^0_2} \simeq m_{\tilde{\chi}^\pm_1}$ sin
 
 We saw earlier that the soft-mass ratio
 \[M_3:M_2:M_1 \simeq 6:2:1,\]
-appears at a scale of around $\mu=1$\,TeV if the same soft-masses unify at the GUT-scale. From our above discussion, as long as $|\mu|\gg M_1,M_2$, this gives the very predictive mass relationships $m_{\tilde{g}} \simeq 6m_{\tilde{\chi}^0_1}$, $m_{\tilde{\chi}^0_2} \simeq m_{\tilde{\chi}^\pm_1} \simeq 2m_{\tilde{\chi}^0_1}$. However, it is important to remember that this often used relationship is based on the {\it conjecture} of gauge coupling unification, and the unification of gaugino soft masses!
+appears at a scale of around 1\,TeV if the same soft-masses unify at the GUT-scale. From our above discussion, as long as $|\mu|\gg M_1,M_2$, this gives the very predictive mass relationships $m_{\tilde{g}} \simeq 6m_{\tilde{\chi}^0_1}$, $m_{\tilde{\chi}^0_2} \simeq m_{\tilde{\chi}^\pm_1} \simeq 2m_{\tilde{\chi}^0_1}$. However, it is important to remember that this often used relationship is based on the {\it conjecture} of gauge coupling unification, and the unification of gaugino soft masses!
 
 
 We should mention that some authors prefer other symbols for the neutralinos and charginos. Common examples are $\tilde N_i$ or $\tilde Z_i$ for neutralinos, and $\tilde C_i$ or $\tilde W_i$ (again!) for the charginos. 
