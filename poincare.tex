@@ -401,7 +401,7 @@ For Weyl spinors $\psi$, $\eta$, and $\phi$ with anti-commuting components we ca
 \eta\sigma^\mu\bar\psi 	&=& - \bar\psi\bar\sigma^\mu\eta,  \label{eq:Weylspinor_etasigmapsi} \\
 (\sigma^\mu \bar{\eta})_A(\eta\sigma^\nu \bar{\eta})&=&\frac{1}{2}g^{\mu\nu}\eta_A(\bar{\eta}\bar{\eta}), \label{eq:Weylspinor_sigmaetaetasigmaeta}\\
 (\eta\sigma^\mu \bar{\eta})(\eta\sigma^\nu \bar{\eta})&=&\frac{1}{2}g^{\mu\nu}(\eta\eta)(\bar{\eta}\bar{\eta}),   \label{eq:Weylspinor_etasigmamuetaetasigmanueta} \\
-(\eta\sigma^\mu\partial_\mu \bar\psi )(\eta\psi) &=& -\frac{1}{2}(\psi\sigma^\mu\partial_\mu \bar\psi)(\eta\eta),\\
+(\eta\sigma^\mu\partial_\mu \bar\psi )(\eta\psi) &=& -\frac{1}{2}(\psi\sigma^\mu\partial_\mu \bar\psi)(\eta\eta),\label{eq:Weylspinor_notlast} \\
 (\partial_\mu\psi\sigma^\mu \bar\eta)(\bar\eta\bar\psi) &=& -\frac{1}{2}(\partial_\mu\psi\sigma^\mu \bar\psi)(\bar\eta\bar\eta), \label{eq:Weylspinor_last} \\
 \eta\sigma^{\mu\nu}\psi	&=&-\psi\sigma^{\mu\nu}\eta.   \label{eq:Weylspinor_etasigmamunupsi} 
 \end{eqnarray}
@@ -993,16 +993,225 @@ Show that
 %Thus $\exp{iaJ_1)=\cos(aJ_1)+i\sin(aJ_1)=I+(\cos(a)-1)+i\sin(a)$
 %\end{Answer}
 
+%%%
 \begin{Exercise}[]
 Show that $SO^+(1,3)$ and $SL(2, \mathbb{C})$ are indeed homomorphic, {\it i.e.}\ that the mapping defined by (\ref{eq:LambdaofM}) or (\ref{eq:MofLambda}) has the property that $\Lambda(M_1M_2)=\Lambda(M_1)\Lambda(M_2)$ or $M(\Lambda_1\Lambda_2)=M(\Lambda_1)M(\Lambda_2)$.
 \end{Exercise}
+%%%
 
 
+%%%
+\begin{Exercise}[]
+Show the Weyl-spinor relationships given in Eqs.~\eqref{eq:Weylspinor_etasigmapsi}, \eqref{eq:Weylspinor_notlast}, and \eqref{eq:Weylspinor_last}.
+\end{Exercise}
+
+\begin{Answer}
+We start with Eq.~\eqref{eq:Weylspinor_etasigmapsi}. Note that $\bar{\sigma}^\mu$ makes an appearance, and we define it by $\bar{\sigma}^\mu = (\sigma^0, - \vec{\sigma})$.
+\begin{align}
+\label{spinor-sigma-kontraksjon}
+    \eta^{A}\sigma^{\mu}_{A \dot{B}}\bar{\psi}^{\dot{B}} = \eta_{C}\underbrace{\epsilon^{AC}\sigma^\mu_{A\dot{B}}\epsilon^{\dot{B}\dot{D}}}_{\equiv\Sigma^{\mu \,C\dot{D}}}\bar{\psi}_{\dot{D}} = -\bar{\psi}_{\dot{D}} \Sigma^{\mu \, C\dot{D}}\eta_{C} = -\bar{\psi}_{\dot{D}}\left(\Sigma^{\mu \,T}\right)^{\dot{D}C}\eta_{C}.
+\end{align}
+The problem is now rewritten into needing to identify the matrix we have named $(\Sigma^{\mu \,T})^{\dot{D}C}$. Let $\epsilon = \left(\begin{smallmatrix}0 & 1 \\ -1 & 0\end{smallmatrix}\right)$, {\it i.e.}\ corresponding to $\epsilon$ with upper indices. Note the order of indices in the first $\epsilon$ in the equation above. If we transpose it, it is in the form of an ordinary matrix multiplication
+\begin{align*}
+    \Sigma^{\mu \, T} &= (\epsilon^T \sigma^{\mu}\epsilon)^{T} = \epsilon^T (\sigma^{\mu})^T\epsilon \nonumber \\
+    &=\begin{pmatrix}
+        0 & -1 \\
+        1 & 0
+    \end{pmatrix}\begin{pmatrix}
+        \sigma^{\mu}_{11} & \sigma^{\mu}_{21} \\
+        \sigma^{\mu}_{12} & \sigma^{\mu}_{22}
+    \end{pmatrix} \begin{pmatrix}
+        0 & 1 \\ 
+        -1 & 0
+    \end{pmatrix} = \begin{pmatrix}
+        0 & -1 \\
+        1 & 0
+    \end{pmatrix} \begin{pmatrix}
+        -\sigma^{\mu}_{21} & \sigma^{\mu}_{11} \\
+        -\sigma^{\mu}_{22} & \sigma^{\mu}_{12}
+    \end{pmatrix} \nonumber\\
+    &= \begin{pmatrix}
+        \sigma^{\mu}_{22} & -\sigma^{\mu}_{12} \\
+        -\sigma^{\mu}_{21} & \sigma^{\mu}_{11}
+    \end{pmatrix}.
+\end{align*}
+This gives us four distinct cases, one for each $\mu \in \{0, 1, 2, 3 \}$. Note that when we write $\sigma^\mu$,  it is implicitly with \emph{lower} indices, $\sigma^{\mu}_{A\dot{B}}$. For  $\Sigma^{\mu \, T}$ it is the other way around--- it is implied that the matrix has upper indices, $\left(\Sigma^{\mu \, T} \right)^{\dot{B}A}$.
+\begin{equation}
+    \Sigma^{\mu \, T} = \begin{cases}\mu = 0, \quad \sigma^0 = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1 
+    \end{pmatrix} \implies \Sigma^{0\, T} = \begin{pmatrix}
+        1 & 0 \\ 
+        0 & 1
+    \end{pmatrix},  \\
+    \mu = 1, \quad \sigma^1 = \begin{pmatrix}
+        0 & 1 \\
+        1 & 0 
+    \end{pmatrix} \implies \Sigma^{1 \, T} = \begin{pmatrix}
+        0 & -1 \\ 
+        -1 & 0
+    \end{pmatrix},   \\
+    \mu = 2, \quad \sigma^1 = \begin{pmatrix}
+        0 & -i \\
+        i & 0 
+    \end{pmatrix} \implies \Sigma^{2 \, T} = \begin{pmatrix}
+        0 & i \\ 
+        -i & 0
+    \end{pmatrix},   \\
+    \mu = 3, \quad \sigma^1 = \begin{pmatrix}
+        1 & 0 \\
+        0 & -1 
+    \end{pmatrix} \implies \Sigma^{3 \, T} = \begin{pmatrix}
+        -1 & 0 \\ 
+        0 & 1
+    \end{pmatrix}.
+    \end{cases}
+\end{equation}
+We see that the matrix form for $\Sigma^\mu$ flips the sign of the Pauli-matrices for $\mu \in \{1, 2, 3 \}$, so that we have the equality
+\begin{equation}
+\label{Sigma-og-sigma-bar-matriser}
+    \Sigma^{\mu \, T} = (\sigma^0, -\vec{\sigma}) = \bar{\sigma}.
+\end{equation}
+As we have already pointed out, $\Sigma$ has upper spinor indices. Thus we interpret $\bar{\sigma}$with upper spinor indices in contrast to $\sigma^{\mu}$, which has lower spinor indices. In addition $\bar{\sigma}^\mu$ has first a dotted index and then an undotted index, {\it i.e.}\ the opposite order of $\sigma^{\mu}$. Combining Eq.~\eqref{spinor-sigma-kontraksjon} and \eqref{Sigma-og-sigma-bar-matriser}, we find
+\begin{equation*}
+    \eta \sigma^{\mu}\bar{\psi} = \eta^{A}\sigma^{\mu}_{A \dot{B}}\bar{\psi}^{\dot{B}} = -\bar{\psi}_{\dot{B}} \bar{\sigma}^{\mu \, \dot{B}A}\eta_A = - \bar{\psi}\bar{\sigma}^{\mu}\eta,
+\end{equation*}
+which is what we wanted to show.
+
+Next we deal with \eqref{eq:Weylspinor_notlast}. If we write out the left-hand side in component form and use that $\eta$ anti-commutes with itself and with $\psi$, we find
+\begin{align*}
+    \eta^A\sigma_{A\dot{B}}^\mu \partial_\mu\Bar{\psi}^{\dot{B}}\eta^C\psi_C &= -\sigma^\mu_{A\dot{B}}\partial_\mu \Bar{\psi}^{\dot{B}} \psi_{C}\eta^A\eta^C \\
+    &= -\sigma^\mu_{A\dot{B}}\partial_\mu \Bar{\psi}^{\dot{B}}\epsilon_{CD}\psi^{D}\eta^A\eta^{C} \\
+    &=-\partial_\mu \Bar{\psi}^{\dot{B}}\big(\underbrace{\sigma^\mu_{1\dot{B}}(-1)\psi^{2}\eta^2\eta^1}_{C=1 \implies D=2, \, A=1} + \underbrace{\sigma^\mu_{2\dot{B}}\cdot 1 \cdot \psi^1\eta^{1}\eta^{2}}_{C=2\implies D=1, \, A=2}\big) \\
+    [\eta \eta \equiv\eta^A\eta_A = 2\eta^2 \eta^1]\quad \quad  &= \frac{1}{2}\partial_\mu \Bar{\psi} ^{\dot{B}}\big(\sigma^{\mu}_{1\dot{B}}\psi^{1} + \sigma^{\mu}_{2\dot{B}}\psi^2\big)(\eta \eta) = \frac{1}{2}\partial_\mu \Bar{\psi} ^{\dot{B}} \sigma^{\mu}_{A\dot{B}}\psi^{A}\\
+    \left[\partial_\mu \Bar\psi^{\dot{B}}\psi^{A} = \{\partial_\mu \Bar\psi^{\dot{B}}, \psi^{A}\} - \psi^{A} \partial_\mu \Bar\psi^{\dot{B}}\right]\quad \quad  &= -\frac{1}{2}\psi^{A}\sigma^{\mu}_{A\dot{B}}\partial_\mu \Bar\psi^{\dot{B}}(\eta \eta) + \{\partial_\mu \Bar\psi^{\dot{B}},\psi^{A}\}\sigma^{\mu}_{A\dot{B}}(\eta \eta) \\
+    &= -\frac{1}{2}(\psi \sigma^\mu \partial_\mu\Bar{\psi})(\eta \eta) + \{\partial_\mu \Bar\psi^{\dot{B}}, \psi^{A}\}\sigma^{\mu}_{A\dot{B}}(\eta \eta).
+\end{align*}
+We could cross our fingers and hope that the anti-commutator term vanishes---but we can also make an effort to show it. To achieve this, we need to know the equations of motion for the fermionic field operators.
+\begin{align*}
+    \{\partial_\mu \bar{\psi}^{\dot{B}}, \psi^{A}\}\sigma^{\mu}_{A\dot{B}} &= \{\partial_\mu \bar{\psi}_{\dot{C}}\epsilon^{AD} \sigma^{\mu}_{A\dot{B}}\epsilon^{\dot{B}\dot{C}}, \psi_D\} \overset{\text{Eq. }\eqref{spinor-sigma-kontraksjon}+\eqref{Sigma-og-sigma-bar-matriser}}{=} \{\partial_\mu \bar{\psi}_{\dot{C}}\bar{\sigma}^{\mu \dot{C}D},\psi_{D}\} \\
+    &= im \{\psi^D,\psi_D\} = 0.
+\end{align*}
+In the transition to the last line we used the equation of motion for a Weyl-fermion, where $m$ is the Weyl-fermion mass. The final anticommutator vanishes---this can be shown explicitly by inserting the expansion of $\psi$ in momentum modes and using the corresponding anticommutation relations.
+
+Fortunately, Eq.~\eqref{eq:Weylspinor_last} is simpler. We start with the left-hand side in component form
+\begin{align*}
+    \partial_\mu \psi^A \sigma^\mu_{A\dot{B}}\bar{\eta}^{\dot{B}}\bar{\eta}_{\dot{C}}\bar{\psi}^{\dot{C}} &= (-1)^2\partial_\mu \psi^A \sigma^\mu_{A\dot{B}}\bar{\psi}^{\dot{C}}\bar{\eta}^{\dot{B}}\epsilon_{\dot{C}\dot{D}}\bar{\eta}^{\dot{D}} \\
+    &= \partial_\mu \psi^A \big( \underbrace{\sigma^\mu_{A1}\bar{\psi}^{1} \bar{\eta}^1(-1)\bar{\eta}^{2}}_{\dot{B} = 1 \implies \dot{D}=2, \, \dot{C} = 1} + \underbrace{\sigma^\mu_{A2}\bar{\psi}^{2} \bar{\eta}^2\cdot1\cdot\bar{\eta}^{1}}_{\dot{B} = 2 \implies \dot{D}=1, \, \dot{C} = 2} \big) \\
+    \left[\bar{\eta}\bar{\eta} \equiv \eta_{\dot{A}}\bar{\eta}^{\dot{A}} = 2 \bar{\eta}^1\bar{\eta}^2\right] \quad \quad &= -\frac{1}{2}\partial_\mu \psi^A \left(\sigma^\mu_{A1}\bar{\psi}^{1} +  \sigma^\mu_{A2}\bar{\psi}^{2}\right)(\bar{\eta}\bar{\eta}) \\
+    &=-\frac{1}{2}(\partial_\mu \psi\sigma^\mu \bar{\psi})(\bar{\eta}\bar{\eta}).
+\end{align*}
+And everything ended well.
+
+
+\end{Answer}
+%%%
+
+%%%
 \begin{Exercise}[]
 Starting from the four-component form of the super-Poincaré algebra, derive the two-component (Weyl spinor) form.
 \end{Exercise}
 
+\begin{Answer}
+The goal is to move from the 4-component form of the super-Poincaré algebra (with Majorana fermions $Q_a$, $a \in \{1, 2, 3, 4 \}$) to the 2-component form (Weyl-fermions $Q_A$, $\Bar{Q}^{\dot{A}}$, $A, \dot{A} \in \{ 1, 2 \}$). The relationship between the two is that
+\begin{equation*}
+    Q_a = \begin{pmatrix}
+    Q_A \\
+    \Bar{Q}^{\dot{A}}
+    \end{pmatrix}, \quad \quad (Q_A)^\dagger = \Bar{Q}_{\dot{A}}.
+\end{equation*}
+We will also need to raise and lower the fermion indices. This is done using the $2\times2$-matrices $\epsilon^{AB}$ and $\epsilon_{AB}$.
+\begin{equation*}
+    \epsilon^{AB} = \begin{pmatrix}
+        0 & 1 \\
+        -1 & 0
+    \end{pmatrix}, \quad \quad \epsilon_{AB} = \begin{pmatrix}
+        0 & -1 \\
+        1 & 0
+    \end{pmatrix}, \quad \quad \text{with} \quad \quad Q^A = \epsilon^{AB}Q_A \quad \quad \text{and} \quad \quad Q_{B} = \epsilon_{BC}Q^{C}.
+\end{equation*}
+A small calculation example can convince us that this works the same way also for $\Bar{Q}^{\dot{A}}$:
+\begin{equation*}
+    \Bar{Q}^{\dot{A}} = (Q^A)^{\dagger} = (\epsilon^{AB}Q_{B})^\dagger = (\delta^{A}_{1} Q_{2} - \delta^{A}_{2}Q_{1})^\dagger = \delta^{\dot{A}}_{1}\Bar{Q}_{\dot{2}} - \delta^{\dot{A}}_{2}\Bar{Q}_{\dot{1}} = \epsilon^{\dot{A}\dot{B}}\Bar{Q}_{\dot{B}}.
+\end{equation*}
+We recall the relevant (anti-)commutators
+\begin{eqnarray}
+    \label{kommutator_P_Q}
+    [P_\mu, Q_a] &=& 0, \\
+    \label{kommutator_Q_M}
+    [Q_a, M_{\mu \nu}] &=& \tfrac{i}{4}\left([\gamma_{\mu}, \gamma_{\nu}]Q\right)_a,\\
+    \label{antikommutator_Q_Q_bar}
+    \{ Q_a, \Bar{Q}_b\} &=& 2P_\mu \gamma^{\mu}_{ab}.
+\end{eqnarray}
+We are now ready to calculate. Equation \eqref{kommutator_P_Q} immediately gives
+\begin{align*}
+    [P_\mu, Q_{A}] &= 0 \quad \quad \text{(by setting $a=1$ and $a=2$)}, \\
+    [P_\mu, \Bar{Q}^{\dot{A}}] &= 0 \quad \quad \text{(by  setting $a = 3$ and $a=4$).}
+\end{align*}
+For Eq.~\eqref{kommutator_Q_M} we use the  Weyl-representation of the $\gamma$-matrices,
+\begin{equation*}
+    \gamma_\mu = \begin{pmatrix}
+        0 & \sigma_\mu \\
+        \Bar{\sigma}_\mu & 0
+    \end{pmatrix}, \quad \quad \text{with} \quad \quad \sigma_\mu = (\sigma_0, \vec{\sigma}), \quad \Bar{\sigma}_\mu = (\sigma_0, -\vec{\sigma}).
+\end{equation*}
+Consider now the right-hand side of Eq.~\eqref{kommutator_Q_M},
+\begin{align*}
+    \tfrac{i}{4}[\gamma_{\mu}, \gamma_{\nu}]Q &= \frac{i}{4}\left[\begin{pmatrix}
+        0 & \sigma_\mu \\
+        \Bar{\sigma}_\mu & 0
+    \end{pmatrix}\begin{pmatrix}
+        0 & \sigma_\nu \\
+        \Bar{\sigma}_\nu & 0
+    \end{pmatrix} - \begin{pmatrix}
+        0 & \sigma_\nu \\
+        \Bar{\sigma}_\nu & 0
+    \end{pmatrix}\begin{pmatrix}
+        0 & \sigma_\mu \\
+        \Bar{\sigma}_\mu & 0
+    \end{pmatrix}\right]\begin{pmatrix}
+        Q_A \\
+        \Bar{Q}^{\dot{A}}
+    \end{pmatrix} \\
+    &= \frac{i}{4}\begin{pmatrix}
+        \sigma_{\mu}\Bar{\sigma}_{\nu} - \sigma_{\nu}\Bar{\sigma}_\mu & 0 \\
+        0 & \Bar{\sigma}_\nu\sigma_\nu - \Bar{\sigma}_\nu \sigma_\mu
+    \end{pmatrix}\begin{pmatrix}
+        Q_A \\
+        \Bar{Q}^{\dot{A}}
+    \end{pmatrix} \\
+    &=\frac{i}{4}\begin{pmatrix}
+        \left[\sigma_{\mu}\Bar{\sigma}_{\nu} - \sigma_{\nu}\Bar{\sigma}_\mu\right]Q_A \\
+        \left[\Bar{\sigma}_\nu\sigma_\nu - \Bar{\sigma}_\nu \sigma_\mu \right]\Bar{Q}^{\dot{A}}
+    \end{pmatrix}.
+\end{align*}
+From the last line we can read off the commutator relationships
+\begin{align*}
+    [Q_A, M_{\mu \nu}] &= \frac{i}{4}\left[\sigma_{\mu}\Bar{\sigma}_{\nu} - \sigma_{\nu}\Bar{\sigma}_\mu\right]_A^{\;\;B}Q_B, \\
+    [\Bar{Q}^{\dot{A}}, M_{\mu \nu}]& = \frac{i}{4}\left[\Bar{\sigma}_\nu\sigma_\nu - \Bar{\sigma}_\nu \sigma_\mu \right]^{\dot{A}}_{\;\;\dot{B}}\Bar{Q}^{\dot{B}}.
+\end{align*}
+Finally, only the anti-commutator remains. We consider again the right-hand side
+\begin{equation}
+    2 P_\mu \gamma^\mu = 2\begin{pmatrix}
+        0 & P_\mu \sigma^\mu \\
+        P_\mu \bar{\sigma}^\mu & 0 \nonumber
+    \end{pmatrix}.
+\end{equation}
+From this matrix we see that by setting $a \in \{1, 2\}$ and $b\in \{1, 2\}$, or $a \in \{3, 4\}$ and $b\in \{3, 4\}$, the right-hand side disappears. This means that
+\begin{equation}
+    \{Q_A, Q_B\} = \{\Bar{Q}^{\dot{A}}, \Bar{Q}^{\dot{B}}\} = 0.\nonumber
+\end{equation}
+Additionally, we find that 
+\begin{align*}
+    \{Q_A, \Bar{Q}^{\dot{B}}\} = 2P_\mu\sigma^{\mu \;\,\dot{B}}_{\;A}, \\
+    \{\Bar{Q}^{\dot{A}}Q_{B}\} = 2P_\mu\Bar{\sigma}^{\mu \dot{A}}_{\;\;\;B},
+\end{align*}
+which concludes the mission to find the properties of the super-Poincaré algebra on Weyl-fermion form.
+\end{Answer}
+%%%
 
+
+%%%
 \begin{Exercise}[]
 Show that $[X_\mu,P_\nu]=0$.
 \end{Exercise}
@@ -1012,7 +1221,10 @@ Show that $[X_\mu,P_\nu]=0$.
 [X_\mu,P_\nu]=\frac{1}{2}[\bar Q\gamma_\mu\gamma^5Q,P_\nu]=\frac{1}{2}(\bar Q\gamma_\mu\gamma^5)_a[Q_a,P_\nu]+\frac{1}{2}[\bar Q_a,P_\nu](\gamma_\mu\gamma^5Q)_a=0
 \]
 \end{Answer}
+%%%
 
+
+%%%
 \begin{Exercise}[]
 Show that the generalisation of the spin operator, $J_k\equiv S_k + \frac{1}{8m}\bar{Q}\gamma_\mu \gamma^5 Q$, fulfils the algebra
 \[[J_i, J_j] = i\epsilon_{ijk}J_k.\]
